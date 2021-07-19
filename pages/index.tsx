@@ -8,6 +8,7 @@ import Checkbox from '@/components/Checkbox'
 import TextField from '@/components/TextField'
 import Droplist from '@/components/Droplist'
 import Autocomplete from '@/components/Autocomplete'
+import Avatar from '@/components/Avatar'
 
 export default function Home() {
   const items = [
