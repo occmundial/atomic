@@ -15,9 +15,8 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/config/*": ["config/*"],
-      "@/graphql/*": ["graphql/*"]
+      "@/components/*": ["lib/components/*"],
+      "@/tokens/*": ["lib/tokens/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./jest.setup.ts"],

@@ -1,0 +1,29 @@
+# Babel
+.babelrc
+
+# ESLint
+.eslintrc
+
+# Tests
+jest.config.js
+jest.setup.js
+
+# Source
+lib/
+pages/
+styles/
+
+# Next
+next-env.d.ts
+next.config.js
+.next/
+
+# Typescript
+tsconfig.json
+tsconfig.lib.json
+
+# Whitesource
+.whitesource
+
+# Husky
+.husky

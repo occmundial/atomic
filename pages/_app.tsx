@@ -1,19 +1,9 @@
 import '../styles/globals.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import type { AppProps } from 'next/app'
-import {
-  ApolloProvider,
-  ApolloClient,
-  NormalizedCacheObject
-} from '@apollo/client'
-
-import { useApollo } from '../graphql/apollo'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const client: ApolloClient<NormalizedCacheObject> = useApollo(
-    pageProps.initialApolloState
-  )
-
+  const [isClient, setIsClient] = useState(false)
   useEffect(() => {
     const style: HTMLElement | null =
       document.getElementById('server-side-styles')
@@ -22,11 +12,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [])
 
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   return (
     <>
-      <ApolloProvider client={client}>
-        <Component {...pageProps} />
-      </ApolloProvider>
+      <Component key={isClient} {...pageProps} />
     </>
   )
 }
