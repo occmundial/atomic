@@ -1,10 +1,4 @@
-import React, {
-  JSXElementConstructor,
-  ReactElement,
-  ReactNode,
-  useCallback,
-  useMemo
-} from 'react'
+import { ReactNode, useCallback, useMemo, createElement } from 'react'
 import classnames from 'classnames'
 
 import useStyles from './styles'
@@ -256,7 +250,7 @@ const Text = ({
     filter
   ])
 
-  return React.createElement(
+  return createElement(
     tag,
     {
       className: classnames(

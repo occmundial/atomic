@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["lib/components/*"],
-      "@/tokens/*": ["lib/tokens/*"]
+      "@/tokens/*": ["lib/tokens/*"],
+      "@/hooks/*": ["lib/hooks/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./jest.setup.ts"],

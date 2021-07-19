@@ -18,7 +18,8 @@
       "baseUrl": ".",
       "paths": {
         "@/components/*": ["lib/components/*"],
-        "@/tokens/*": ["lib/tokens/*"]
+        "@/tokens/*": ["lib/tokens/*"],
+        "@/hooks/*": ["lib/hooks/*"]
       }
     },
     "include": ["lib/**/*.ts", "lib/**/*.tsx"],

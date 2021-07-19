@@ -1,4 +1,4 @@
-import React from 'react'
+import { createElement } from 'react'
 import classnames from 'classnames'
 
 import useStyles from './styles'
@@ -22,7 +22,7 @@ export interface IconProps {
 const Icon = (props: IconProps) => {
   const classes = useStyles(props)
   const { className, style, id, onClick, alt } = props
-  return React.createElement(onClick ? 'button' : 'span', {
+  return createElement(onClick ? 'button' : 'span', {
     id,
     className: classnames(
       classes.icon,
