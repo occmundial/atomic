@@ -1,5 +1,4 @@
-import { useState, useEffect, ReactNode } from 'react'
-import PropTypes from 'prop-types'
+import { useState, useEffect, ReactNode, CSSProperties } from 'react'
 import classnames from 'classnames'
 
 import Text from '../Text'
@@ -16,7 +15,7 @@ interface CheckboxProps {
   trk?: string
   id?: string
   className?: string
-  style?: { [key: string]: string }
+  style?: CSSProperties
 }
 
 const Checkbox = ({

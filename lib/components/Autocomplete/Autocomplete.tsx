@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
-import PropTypes from 'prop-types'
+import { useState, useEffect, useRef, useCallback, CSSProperties } from 'react'
 import cloneDeep from 'lodash/cloneDeep'
 import classnames from 'classnames'
 
@@ -55,13 +54,9 @@ export interface AutocompleteProps {
   showInitialData?: boolean
   id?: string
   className?: string
-  style?: { [key: string]: string }
+  style?: CSSProperties
 }
 
-/**
- * This component integrates the TextField and Droplist components.
- * The value of TextField filters the list in Droplist.
- */
 const Autocomplete = (props: AutocompleteProps) => {
   const {
     textfieldProps,

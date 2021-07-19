@@ -1,4 +1,4 @@
-import { createElement } from 'react'
+import { createElement, CSSProperties } from 'react'
 import classnames from 'classnames'
 
 import useStyles from './styles'
@@ -15,10 +15,9 @@ export interface IconProps {
   alt?: string
   id?: string
   className?: string
-  style?: object
+  style?: CSSProperties
 }
 
-/** Component to display any of the icons on the library. */
 const Icon = (props: IconProps) => {
   const classes = useStyles(props)
   const { className, style, id, onClick, alt } = props

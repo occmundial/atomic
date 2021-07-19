@@ -3,10 +3,8 @@ import {
   useState,
   useEffect,
   useCallback,
-  MouseEvent,
-  EventHandler
+  CSSProperties
 } from 'react'
-import PropTypes from 'prop-types'
 import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
 import classnames from 'classnames'
@@ -43,14 +41,9 @@ export interface DroplistProps {
   isOnFocus?: boolean
   id?: string
   className?: string
-  style?: { [key: string]: string }
+  style?: CSSProperties
 }
 
-/**
- * The Droplist component displays a list and filters it with the prop 'term'.
- * The value of 'term' es highlighted in every item that matches.
- * The array of objects needed to display the items needs a text and an id, and can contain a text that floats on the right. If you're going to group your items by category, you first need to set an array of groups, and each group must contain an array with the items.
- */
 const Droplist = ({
   items,
   filter,

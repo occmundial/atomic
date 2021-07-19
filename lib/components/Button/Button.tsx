@@ -1,13 +1,7 @@
-import { EventHandler, ReactNode, SyntheticEvent } from 'react'
+import { CSSProperties, EventHandler, ReactNode, SyntheticEvent } from 'react'
 import classnames from 'classnames'
 
 import useStyles from './styles'
-
-/**
-.* A flexible button component, with seven pre-stablished themes.
-.* The Buton can behave like any button with an onClick function, or like an anchor with href and target.
-.* There are 3 sizes available: small, medium and large.
-*/
 
 export interface ButtonProps {
   children: ReactNode
@@ -32,7 +26,7 @@ export interface ButtonProps {
   rel?: string
   id?: string
   className?: string
-  style?: { [key: string]: string }
+  style?: CSSProperties
 }
 const Button = (props: ButtonProps) => {
   const {

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 
 import useStyles from './styles'
 
@@ -10,10 +10,9 @@ interface CardProps {
   noPadding?: boolean
   id?: string
   className?: string
-  style?: { [key: string]: string }
+  style?: CSSProperties
 }
 
-/** Container component with a card style */
 const Card = ({
   children,
   rest,

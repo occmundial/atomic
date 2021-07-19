@@ -1,4 +1,10 @@
-import { ReactNode, useCallback, useMemo, createElement } from 'react'
+import {
+  ReactNode,
+  useCallback,
+  useMemo,
+  createElement,
+  CSSProperties
+} from 'react'
 import classnames from 'classnames'
 
 import useStyles from './styles'
@@ -45,7 +51,7 @@ interface TextProps {
   tag?: string
   className?: string
   id?: string
-  style?: { [key: string]: string }
+  style?: CSSProperties
 }
 
 const Text = ({

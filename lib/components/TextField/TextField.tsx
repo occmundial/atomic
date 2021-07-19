@@ -6,7 +6,8 @@ import {
   forwardRef,
   useCallback,
   useMemo,
-  ReactNode
+  ReactNode,
+  CSSProperties
 } from 'react'
 import MaskedInput from 'react-text-mask'
 import classnames from 'classnames'
@@ -53,12 +54,9 @@ export interface TextFieldProps {
   alignRight?: boolean
   id?: string
   className?: string
-  style?: { [key: string]: string }
+  style?: CSSProperties
 }
 
-/**
- * TextField component that includes all the markup, functions and behaviors to implement any type of input field.
- */
 const TextField = forwardRef(
   (
     {

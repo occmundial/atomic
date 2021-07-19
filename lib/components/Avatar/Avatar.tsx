@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import { CSSProperties } from 'react'
 import classnames from 'classnames'
 
 import AvatarContent from './AvatarContent'
@@ -10,13 +9,9 @@ import useStyles from './styles'
 export interface AvatarProps extends AvatarContentProps {
   id?: string
   className?: string
-  style?: { [key: string]: string }
+  style?: CSSProperties
 }
 
-/**
- * The Avatar component shows a rounded avatar with a profile picture, a gender icon or the first two capital letters of a name.
- * You can use more than one property as a fallback in case one of the props is empty or wrong.
- */
 const Avatar = (props: AvatarProps) => {
   const { photo, gender, name, size, id, className, style } = props
   const classes = useStyles(props)
