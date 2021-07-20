@@ -40,5 +40,5 @@ export const occDartWhite = {
 
 export const occDartBlue = {
   ...sharedProperties,
-  icon: () => icon('#0046ff')
+  icon: () => icon(colors.brand)
 }

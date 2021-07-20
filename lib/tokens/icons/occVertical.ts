@@ -61,5 +61,5 @@ export const occVerticalWhite = {
 
 export const occVerticalBlue = {
   ...sharedProperties,
-  icon: () => icon('#0046ff')
+  icon: () => icon(colors.brand)
 }

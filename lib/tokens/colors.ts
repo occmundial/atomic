@@ -34,7 +34,8 @@ const colors = {
   warningText: '#ffc549',
   error: '#db3737',
   errorText: '#db3737',
-  textLink: '#0946CB'
+  textLink: '#0946CB',
+  brand: '#0046ff'
 }
 
 export default colors

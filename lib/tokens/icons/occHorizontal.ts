@@ -63,5 +63,5 @@ export const occHorizontalWhite = {
 
 export const occHorizontalBlue = {
   ...sharedProperties,
-  icon: () => icon('#0046ff')
+  icon: () => icon(colors.brand)
 }
