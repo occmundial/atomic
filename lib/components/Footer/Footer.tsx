@@ -14,28 +14,28 @@ import { ListItem } from './List/List'
 
 interface ColumnItem {
   key: string | number
-  title: string
-  collapse: boolean
+  title?: string
+  collapse?: boolean
   items: ListItem[]
 }
 
-interface Column extends Array<ColumnItem> {}
+export interface Column extends Array<ColumnItem> {}
 
 interface BottomLink {
   key: string | number
   text: string
-  onClick: (e: MouseEvent) => void
-  href: string
-  target: string
-  rel: string
+  onClick?: (e: MouseEvent) => void
+  href?: string
+  target?: string
+  rel?: string
 }
 
 interface Aux {
   text: string
-  icon: string
-  href: string
-  target: string
-  iconRight: string
+  icon?: string
+  href?: string
+  target?: string
+  iconRight?: string
 }
 
 interface FooterProps {
