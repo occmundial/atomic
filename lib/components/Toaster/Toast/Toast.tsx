@@ -22,6 +22,7 @@ export interface ToastType {
   action?: ToastAction
   hasIcon?: boolean
   closing?: boolean
+  timer?: 'normal' | 'longer'
 }
 
 interface ToastProps extends Omit<ToastType, 'type'> {

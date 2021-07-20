@@ -1,15 +1,14 @@
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
 import Toast from './Toast'
-import { toaster, Timer } from './functions'
+import { toastLauncher, Timer } from './functions'
 import useStyles from './styles'
 import { ToastType } from './Toast/Toast'
 
 const timings = {
   normal: 5000,
   longer: 8000
-}
+} as const
 
 interface ToasterProps {
   container?: HTMLElement
@@ -26,13 +25,13 @@ const Toaster = ({ container }: ToasterProps) => {
   }, [timer])
 
   const onClose = useCallback(
-    toast => {
+    (toast: ToastType) => {
       const newToast = { ...toast }
       resetTimer()
       newToast.closing = true
       setToast(newToast)
       timer.current = new Timer(() => {
-        toaster.removeToast()
+        toastLauncher.removeToast()
         setToast(null)
       }, 300)
     },
@@ -40,7 +39,7 @@ const Toaster = ({ container }: ToasterProps) => {
   )
 
   const addTimer = useCallback(
-    toast => {
+    (toast: ToastType) => {
       const defaultTime = timings.normal
       const time = toast.timer
         ? timings[toast.timer] || defaultTime
@@ -68,12 +67,11 @@ const Toaster = ({ container }: ToasterProps) => {
   const resumeTimer = useCallback(() => timer.current.resume(), [timer])
 
   useEffect(() => {
-    toaster.registerAddListener(onAdd)
-    toaster.registerCloseListener(onClose)
+    const listener = { add: onAdd, close: onClose }
+    toastLauncher.addListener(listener)
 
     return () => {
-      toaster.registerAddListener(null)
-      toaster.registerCloseListener(null)
+      toastLauncher.removeListener(listener)
     }
   }, [onAdd, onClose])
 
