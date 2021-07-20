@@ -1,8 +1,7 @@
 import { createUseStyles } from 'react-jss'
 
 import colors from '@/tokens/colors'
-import fonts from '@/tokens/fonts'
-import spacing from 'dist/tokens/spacing'
+import spacing from '@/tokens/spacing'
 
 export default createUseStyles({
   container: {

@@ -14,8 +14,8 @@ import StackItem from './Stack'
 import ChoiceItem from './Choice'
 
 import useStyles from './styles'
-import Text from 'dist/components/Text'
-import iconSizes from 'dist/tokens/iconSizes'
+import Text from '@/components/Text'
+import iconSizes from '@/tokens/iconSizes'
 
 export interface PillType {
   id: string | number
