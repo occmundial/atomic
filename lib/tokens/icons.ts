@@ -188,7 +188,7 @@ const icons = {
     width: '45px',
     height: '45px',
     display: 'inline-block',
-    icon: function (color = [colors.white]) {
+    icon: function (color = [colors.bgWhite]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 200.9 203" style="enable-background:new 0 0 200.9 203;" xml:space="preserve">
             <path fill="${color[0]}" d="M41.3,94.1c0.6-1.4,1.3-2.8,2-4.2c2.9-6,6.1-12,9.5-17.9c5.6-9.8,11.7-19,17.9-27.3c2.8-3.7,5.6-7.3,8.5-10.7
@@ -224,7 +224,7 @@ const icons = {
     width: '5px',
     height: '5px',
     display: 'inline-block',
-    icon: function (color = ['#000']) {
+    icon: function (color = [colors.grey900]) {
       return `testing - ${color[0]}`
     }
   },
@@ -232,7 +232,7 @@ const icons = {
     width: '24px',
     height: '24px',
     display: 'inline-block',
-    icon: function (color = [colors.white]) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
             <path fill="${color[0]}" d="M17.5,12.9h-4.6v4.6c0,0.3-0.2,0.5-0.5,0.5h-0.7c-0.3,0-0.5-0.2-0.5-0.5v-4.6H6.5c-0.3,0-0.5-0.2-0.5-0.5v-0.7
@@ -245,7 +245,7 @@ const icons = {
     width: '24px',
     height: '24px',
     display: 'inline-block',
-    icon: function (color = ['#abb6bd']) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
             <polygon fill="${color[0]}" points="5.4,4 4,5.4 10.7,12.1 4.2,18.6 5.6,20 12.1,13.5 18.4,19.8 19.8,18.4 13.5,12.1 20,5.6 18.6,4.2
@@ -257,7 +257,7 @@ const icons = {
     width: '24px',
     height: '24px',
     display: 'inline-block',
-    icon: function (color = [colors.error]) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
             <path fill="${color[0]}" d="M12,3c0.2,0,0.5,0.1,0.6,0.4l8.3,16.5c0.2,0.5-0.1,1.1-0.6,1.1H3.7c-0.5,0-0.8-0.6-0.6-1.1l8.3-16.5C11.5,3.1,11.7,3,12,3z
@@ -270,7 +270,7 @@ const icons = {
     width: '24px',
     height: '24px',
     display: 'inline-block',
-    icon: function (color = [colors.bgWhite]) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
             <path fill="${color[0]}" d="M10,19c0,1.1,0.9,2,2,2s2-0.9,2-2s-0.9-2-2-2S10,17.9,10,19"/>
@@ -297,7 +297,7 @@ const icons = {
     width: '24px',
     height: '24px',
     display: 'inline-block',
-    icon: function (color = ['#adb4bb']) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
             <path fill="${color[0]}" d="M12,0C5.4,0,0,5.4,0,12s5.4,12,12,12s12-5.4,12-12S18.7,0,12,0z M17.8,12.2l-4.7,4.8c0,0-0.1,0-0.2,0
@@ -358,7 +358,7 @@ const icons = {
     width: '24px',
     height: '24px',
     display: 'inline-block',
-    icon: function (color = ['#ADB4BB']) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
             <path fill="${color[0]}" d="M13.7,9.8c0-0.8,0.7-1.5,1.5-1.5c0.8,0,1.5,0.7,1.5,1.5c0,0.8-0.7,1.5-1.5,1.5C14.4,11.3,13.7,10.6,13.7,9.8
@@ -371,7 +371,7 @@ const icons = {
     width: '24px',
     height: '24px',
     display: 'inline-block',
-    icon: function (color = ['#ADB4BB']) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
             <path fill="${color[0]}" d="M10.5,16.9c-0.9,0-1.6-0.8-1.6-1.7c0-0.9,0.7-1.7,1.6-1.7s1.6,0.8,1.6,1.7C12.1,16.1,11.4,16.9,10.5,16.9
@@ -384,7 +384,7 @@ const icons = {
     width: '24px',
     height: '24px',
     display: 'inline-block',
-    icon: function (color = ['#ADB4BB']) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
             <path fill="${color[0]}" d="M12.1,16h-0.2c-0.3,0-0.5-0.2-0.5-0.5v-0.7c-1.1-0.2-1.9-0.9-1.9-2h1.2c0,0.7,0.6,1.2,1.3,1.2
@@ -399,7 +399,7 @@ const icons = {
     width: '24px',
     height: '24px',
     display: 'inline-block',
-    icon: function (color = ['#ADB4BB']) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
             <path fill="${color[0]}" d="M12,2.7c5.2,0,9.3,4.2,9.3,9.3s-4.2,9.3-9.3,9.3S2.7,17.2,2.7,12S6.8,2.7,12,2.7z M12,19.5
@@ -412,7 +412,7 @@ const icons = {
     width: '24px',
     height: '24px',
     display: 'inline-block',
-    icon: function (color = ['#ADB4BB']) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
             <path fill="${color[0]}" d="M6.1,13.1v3.3c0,0.2,0.1,0.3,0.2,0.4l5.7,3.2c0.1,0.1,0.3,0.1,0.4,0l5.7-3.2c0.1-0.1,0.2-0.2,0.2-0.4v-3.3
@@ -478,7 +478,7 @@ const icons = {
     width: '12px',
     height: '12px',
     display: 'inline-block',
-    icon: function (color = ['#A4C639']) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
             <path fill="${color[0]}" d="M15.1,6.6H5C4.7,6.6,4.6,6.8,4.6,7v8.5C4.6,15.8,4.7,16,5,16h1.8v2.9C6.8,19.5,7.3,20,8,20l0,0
@@ -499,7 +499,7 @@ const icons = {
     width: '12px',
     height: '12px',
     display: 'inline-block',
-    icon: function (color = [colors.white]) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
             <path fill="${color[0]}" d="M5.5,20.3C5.2,20.2,5,19.9,5,19.5V5.7C5,5.4,5.2,5.1,5.4,5l0,0l6.9,7.7L5.5,20.3L5.5,20.3z"/>
@@ -513,7 +513,7 @@ const icons = {
     width: '12px',
     height: '12px',
     display: 'inline-block',
-    icon: function (color = ['#A8B1B8']) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
             <path fill="${color[0]}" d="M15.4,10.6c0-2.5,2.1-3.8,2.2-3.8c-1.2-1.7-3-2-3.7-2c-1.6-0.2-3,0.9-3.8,0.9s-2-0.9-3.3-0.9
@@ -527,7 +527,7 @@ const icons = {
     width: '12px',
     height: '12px',
     display: 'inline-block',
-    icon: function (color = [colors.white]) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
             <path fill="${color[0]}" d="M15.4,7.6c1.9,0,3.1,1.8,3.1,1.8s-1.9,1-1.9,3.1c0,2.5,2.3,3.3,2.3,3.3S17.2,20,15.1,20c-1.2,0-1.2-0.7-2.8-0.7
@@ -540,7 +540,7 @@ const icons = {
     width: '25px',
     height: '25px',
     display: 'block',
-    icon: function (color = ['#DFEDFF']) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 50 41.9" style="enable-background:new 0 0 50 41.9;" xml:space="preserve">
             <path fill="${color[0]}" d="M25,0C11.2,0,0,9.1,0,20.3c0,4,1.5,7.8,4,10.9c0.3,0.4,1,1,0.8,1.8c-0.1,0.5-2.3,7.6-2.3,7.6
@@ -553,7 +553,7 @@ const icons = {
     width: '16px',
     height: '16px',
     display: 'inline-block',
-    icon: function (color = [colors.white]) {
+    icon: function (color = [colors.grey900]) {
       return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
             <circle fill="${color[0]}" cx="7.9" cy="2.9" r="1.5"/>

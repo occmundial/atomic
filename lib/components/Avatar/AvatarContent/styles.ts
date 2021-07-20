@@ -2,6 +2,7 @@ import { createUseStyles } from 'react-jss'
 
 import fonts from '@/tokens/fonts'
 import icons from '@/tokens/icons'
+import colors from '@/tokens/colors'
 
 export default createUseStyles({
   wrap: {
@@ -29,8 +30,8 @@ export default createUseStyles({
     fontSize: 70 * 0.4,
     lineHeight: '70px',
     fontWeight: '600',
-    background: '#dae1e5',
-    color: '#afb8c0',
+    background: colors.grey200,
+    color: colors.grey400,
     textAlign: 'center'
   }
 })

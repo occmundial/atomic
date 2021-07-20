@@ -13,7 +13,7 @@ export default createUseStyles({
     transition: '0.3s all',
     outline: '0',
     '&:hover': {
-      background: '#ECECEE'
+      background: colors.grey100
     }
   },
   active: {
