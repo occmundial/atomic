@@ -1,4 +1,4 @@
-import { createGenerateId, createUseStyles } from 'react-jss'
+import { createUseStyles } from 'react-jss'
 
 import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'

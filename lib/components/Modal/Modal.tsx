@@ -49,7 +49,6 @@ interface ImageLeft extends ModalImage {
 export interface ModalProps {
   children: ReactNode
   show?: boolean
-  container?: HTMLElement
   onClose: () => void
   size?: 'sm' | 'md' | 'lg' | 'xl'
   title: string
