@@ -3,7 +3,6 @@ import React, {
   useEffect,
   useCallback,
   useMemo,
-  useRef,
   ReactNode
 } from 'react'
 import classnames from 'classnames'
@@ -84,21 +83,15 @@ const NavTab = ({
     setCurrentScroll(window.pageYOffset)
   }, [currentScroll])
 
-  const visibilityRef = useRef<() => void>()
-
-  useEffect(() => {
-    visibilityRef.current = determineVisibility
-  }, [determineVisibility])
-
   useEffect(() => {
     if (fixed && hideOnScroll) {
-      window.addEventListener('scroll', visibilityRef.current)
+      window.addEventListener('scroll', determineVisibility)
       setCurrentScroll(window.pageYOffset)
     }
     return () => {
-      window.removeEventListener('scroll', visibilityRef.current)
+      window.removeEventListener('scroll', determineVisibility)
     }
-  }, [fixed, hideOnScroll])
+  }, [fixed, hideOnScroll, determineVisibility])
 
   const renderLink = useCallback(
     item => {
