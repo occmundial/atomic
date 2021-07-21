@@ -3,7 +3,8 @@ import { createUseStyles } from 'react-jss'
 import spacing from '@/tokens/spacing'
 import grid from '@/tokens/grid'
 import colors from '@/tokens/colors'
-import { ModalProps } from './Modal'
+
+import { ModalProps } from './'
 
 export default createUseStyles<any, ModalProps>({
   '@global': {
