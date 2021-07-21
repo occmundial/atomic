@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import ReactDOM from 'react-dom'
-import Toast from './Toast'
-import { toastLauncher, Timer } from './functions'
+
+import Toast, { ToastType } from './Toast'
+import { toastLauncher, Timer } from './helper'
 import useStyles from './styles'
-import { ToastType } from './Toast/Toast'
 
 const timings = {
   normal: 5000,

@@ -7,20 +7,19 @@ import React, {
 } from 'react'
 import classnames from 'classnames'
 
-import Grid from '../Grid'
-import Flexbox from '../Flexbox'
-import NavItem from '../NavItem'
-import NavIcon from '../NavIcon'
-import NavTop from '../NavTop'
-import Button from '../Button'
-import Icon from '../Icon'
+import Grid from '@/components/Grid'
+import Flexbox from '@/components/Flexbox'
+import NavItem from '@/components/NavItem'
+import NavIcon from '@/components/NavIcon'
+import NavTop, { TopProps } from '@/components/NavTop'
+import Button from '@/components/Button'
+import Icon from '@/components/Icon'
 import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
 import grid from '@/tokens/grid'
 import useWindowSize from '@/hooks/useWindowSize'
 
 import useStyles from './styles'
-import { TopProps } from '../NavTop/NavTop'
 
 interface NavElement {
   key: string | number

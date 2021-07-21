@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss'
 import spacing from '@/tokens/spacing'
 import icons from '@/tokens/icons'
 import colors from '@/tokens/colors'
-import { NavIconProps } from './NavIcon'
+import { NavIconProps } from './'
 
 export default createUseStyles<any, NavIconProps>({
   cont: {

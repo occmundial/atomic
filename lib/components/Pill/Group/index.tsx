@@ -2,8 +2,7 @@ import classnames from 'classnames'
 
 import Text from '@/components/Text'
 
-import { PillType } from '../Pill'
-
+import { PillType } from '../'
 import useStyles from './styles'
 
 interface PillGroupProps {

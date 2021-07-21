@@ -1,9 +1,7 @@
 import { CSSProperties } from 'react'
 import classnames from 'classnames'
 
-import AvatarContent from './AvatarContent'
-import { AvatarContentProps } from './AvatarContent/AvatarContent'
-
+import AvatarContent, { AvatarContentProps } from './AvatarContent'
 import useStyles from './styles'
 
 export interface AvatarProps extends AvatarContentProps {

@@ -1,7 +1,8 @@
 import { useState, useEffect, ReactNode, CSSProperties } from 'react'
 import classnames from 'classnames'
 
-import Text from '../Text'
+import Text from '@/components/Text'
+
 import useStyles from './styles'
 
 interface CheckboxProps {

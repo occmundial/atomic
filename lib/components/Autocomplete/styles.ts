@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss'
 
 import spacing from '@/tokens/spacing'
-import { AutocompleteProps } from './Autocomplete'
+import { AutocompleteProps } from './'
 
 export default createUseStyles<any, AutocompleteProps>({
   autoComplete: {

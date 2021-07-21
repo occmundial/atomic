@@ -1,5 +1,5 @@
-import colors from '../colors'
-import spacing from '../spacing'
+import colors from '@/tokens/colors'
+import spacing from '@/tokens/spacing'
 
 const lock = {
   width: spacing.base,

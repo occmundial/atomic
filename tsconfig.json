@@ -17,7 +17,8 @@
     "paths": {
       "@/components/*": ["lib/components/*"],
       "@/tokens/*": ["lib/tokens/*"],
-      "@/hooks/*": ["lib/hooks/*"]
+      "@/hooks/*": ["lib/hooks/*"],
+      "@/styles/*": ["styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./jest.setup.ts"],

@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
 
-import { AvatarProps } from './Avatar'
+import { AvatarProps } from './'
 
 export default createUseStyles<any, AvatarProps>({
   circle: {

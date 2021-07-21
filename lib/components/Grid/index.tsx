@@ -1,9 +1,8 @@
 import { CSSProperties, EventHandler, ReactNode, SyntheticEvent } from 'react'
 import classnames from 'classnames'
 
-import RowItem from './Row'
-import ColItem from './Col'
-
+import Row from './Row'
+import Col from './Col'
 import useStyles from './styles'
 
 interface GridProps {
@@ -40,7 +39,7 @@ const Grid = ({
   )
 }
 
-Grid.Row = RowItem
-Grid.Col = ColItem
+Grid.Row = Row
+Grid.Col = Col
 
 export default Grid

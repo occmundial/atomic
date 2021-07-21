@@ -8,14 +8,14 @@ import {
 } from 'react'
 import classnames from 'classnames'
 
-import Icon from '../Icon'
+import Icon from '@/components/Icon'
+import Text from '@/components/Text'
+import iconSizes from '@/tokens/iconSizes'
+
 import GroupItem from './Group'
 import StackItem from './Stack'
 import ChoiceItem from './Choice'
-
 import useStyles from './styles'
-import Text from '@/components/Text'
-import iconSizes from '@/tokens/iconSizes'
 
 export interface PillType {
   id: string | number

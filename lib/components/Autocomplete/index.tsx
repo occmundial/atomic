@@ -2,15 +2,11 @@ import { useState, useEffect, useRef, useCallback, CSSProperties } from 'react'
 import cloneDeep from 'lodash/cloneDeep'
 import classnames from 'classnames'
 
-import TextField from '../TextField'
-import Droplist from '../Droplist'
-
-import useStyles from './styles'
-
+import TextField, { TextFieldProps } from '@/components/TextField'
+import Droplist, { DroplistProps } from '@/components/Droplist'
 import usePrevious from '@/hooks/usePrevious'
 
-import { TextFieldProps } from '../TextField/TextField'
-import { DroplistProps } from '../Droplist/Droplist'
+import useStyles from './styles'
 
 export interface AutocompleteProps {
   textfieldProps: Pick<

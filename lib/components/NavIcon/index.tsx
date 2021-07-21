@@ -1,7 +1,8 @@
 import React, { EventHandler, MouseEvent } from 'react'
 import classnames from 'classnames'
-import Text from '../Text'
-import Flexbox from '../Flexbox'
+
+import Text from '@/components/Text'
+import Flexbox from '@/components/Flexbox'
 
 import useStyles from './styles'
 

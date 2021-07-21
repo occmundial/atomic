@@ -2,7 +2,7 @@ import { createUseStyles } from 'react-jss'
 
 import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
-import { PlaceholderProps } from './Placeholder'
+import { PlaceholderProps } from './'
 
 export default createUseStyles<any, PlaceholderProps>({
   '@keyframes placeholderPulse': {

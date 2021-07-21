@@ -1,10 +1,9 @@
 import React, { useCallback } from 'react'
 import classnames from 'classnames'
 
-import Flexbox from '../Flexbox'
-import Grid from '../Grid'
-import NavItem from '../NavItem'
-import { NavItemProps } from '../NavItem/NavItem'
+import Flexbox from '@/components/Flexbox'
+import Grid from '@/components/Grid'
+import NavItem, { NavItemProps } from '@/components/NavItem'
 
 import useStyles from './styles'
 

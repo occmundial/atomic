@@ -1,16 +1,14 @@
-import React, { MouseEvent, ReactElement, ReactNode } from 'react'
+import React, { MouseEvent, ReactElement } from 'react'
 
-import Grid from '../Grid'
-import Flexbox from '../Flexbox'
-import List from './List'
-import Text from '../Text'
-import Button from '../Button'
+import Grid from '@/components/Grid'
+import Flexbox from '@/components/Flexbox'
+import Text from '@/components/Text'
+import Button from '@/components/Button'
 import grid from '@/tokens/grid'
-
 import useWindowSize from '@/hooks/useWindowSize'
 
+import List, { ListItem } from './List'
 import useStyles from './styles'
-import { ListItem } from './List/List'
 
 interface ColumnItem {
   key: string | number

@@ -7,15 +7,13 @@ import React, {
 } from 'react'
 import classnames from 'classnames'
 
-import Icon from '../Icon'
+import Icon from '@/components/Icon'
+import usePrevious from '@/hooks/usePrevious'
+import colors from '@/tokens/colors'
 
 import Page from './Page'
 import Break from './Break'
-
 import useStyles from './styles'
-
-import usePrevious from '@/hooks/usePrevious'
-import colors from '@/tokens/colors'
 
 interface PagerProps {
   pageCount?: number

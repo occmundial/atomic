@@ -12,9 +12,8 @@ import {
 import MaskedInput from 'react-text-mask'
 import classnames from 'classnames'
 
-import Text from '../Text'
-import Icon from '../Icon'
-
+import Text from '@/components/Text'
+import Icon from '@/components/Icon'
 import colors from '@/tokens/colors'
 import iconSizes from '@/tokens/iconSizes'
 import usePrevious from '@/hooks/usePrevious'

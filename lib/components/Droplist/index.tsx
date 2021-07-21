@@ -9,13 +9,14 @@ import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
 import classnames from 'classnames'
 
-import useStyles from './styles'
-import Text from '../Text'
-import Icon from '../Icon'
+import Text from '@/components/Text'
+import Icon from '@/components/Icon'
 import Colors from '@/tokens/colors'
 import iconSizes from '@/tokens/iconSizes'
 import usePrevious from '@/hooks/usePrevious'
-import { compareText, separateText } from './functions'
+
+import { compareText, separateText } from './helper'
+import useStyles from './styles'
 
 const arrowDown = 40
 const arrowUp = 38

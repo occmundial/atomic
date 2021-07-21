@@ -1,11 +1,9 @@
 import { useCallback, useMemo, CSSProperties, ReactElement } from 'react'
-import isString from 'lodash/isString'
-import flatten from 'lodash/flatten'
 import classnames from 'classnames'
 
-import Flexbox from '../Flexbox'
-import Text from '../Text'
-import Icon from '../Icon'
+import Flexbox from '@/components/Flexbox'
+import Text from '@/components/Text'
+import Icon from '@/components/Icon'
 import colors from '@/tokens/colors'
 
 import useStyles from './styles'

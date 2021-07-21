@@ -1,5 +1,6 @@
 import isEmpty from 'lodash/isEmpty'
-import { ToastType } from './Toast/Toast'
+
+import { ToastType } from './Toast'
 
 interface ToastListener {
   add: CallableFunction

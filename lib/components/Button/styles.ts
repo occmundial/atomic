@@ -5,7 +5,7 @@ import fonts from '@/tokens/fonts'
 import icons from '@/tokens/icons'
 import iconSizes from '@/tokens/iconSizes'
 import spacing from '@/tokens/spacing'
-import { ButtonProps } from './Button'
+import { ButtonProps } from './'
 
 const renderIcon = (props, color) => {
   if (props.icon) {

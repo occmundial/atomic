@@ -1,7 +1,8 @@
 import { createUseStyles } from 'react-jss'
 
 import icons from '@/tokens/icons'
-import { IconProps } from './Icon'
+
+import { IconProps } from './'
 
 export default createUseStyles<any, IconProps>({
   icon: {
