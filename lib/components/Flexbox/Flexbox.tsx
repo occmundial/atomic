@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import useStyles from './styles'
 
 interface FlexboxProps {
-  children: ReactNode
+  children?: ReactNode
   display?: 'flex' | 'inline-flex'
   direction?: 'col' | 'row' | 'colR' | 'rowR'
   wrap?: 'wrap' | 'noWrap' | 'wrapR'
