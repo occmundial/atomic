@@ -12,6 +12,8 @@ jest.setup.js
 lib/
 pages/
 styles/
+src/
+out/
 
 # Next
 next-env.d.ts

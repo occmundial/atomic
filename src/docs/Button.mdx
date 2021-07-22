@@ -1,0 +1,44 @@
+---
+slug: Button
+title: Button
+section: components
+---
+
+import Button from '@/components/Button'
+
+# Button
+
+This is a Button
+
+## Props
+
+| Name         | Type          | Default value  | Description      |
+|--------------|---------------|----------------|------------------|
+| theme        | string        | primary        | button type      |
+| size         | string        | md             | button size      |
+| disabled     | bool          | false          | disable button   |
+| loading      | bool          | false          | loading button   |
+| icon         | string        | -              | button icon      |
+
+
+```jsx
+import Button from '@occmundial/atomic/dist/Button'
+
+function Component() {
+  return (
+    <Button>Hey, click me!</Button>
+  )
+}
+```
+
+<div>
+  <div style={{ display: 'grid', columnGap: 12, gridAutoFlow: 'column', padding: 12, background: colors.primLighter, justifyContent: 'start' }}>
+    <Button>Primary</Button>
+    <Button theme="secondary">Secondary</Button>
+    <Button theme="tertiary">Tertiary</Button>
+    <Button theme="tertiaryWhite">Tertiary White</Button>
+    <Button theme="ghostPink">Ghost Pink</Button>
+    <Button theme="ghostGrey">Ghost Grey</Button>
+    <Button theme="ghostWhite">Ghost White</Button>
+  </div>
+</div>

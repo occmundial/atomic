@@ -4,3 +4,4 @@ html, body {
   background-color: #F5F5F8;
 }
 * { box-sizing: border-box; font-family: 'HK Grotesk'; }
+pre * { font-family: 'Fira Code', monospace; }
