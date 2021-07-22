@@ -19,7 +19,7 @@ export interface AutocompleteProps {
     | 'selectOnFocus'
     | 'clear'
     | 'iconName'
-    | 'valueProp'
+    | 'value'
     | 'className'
     | 'inputClassName'
     | 'disabled'
@@ -70,7 +70,7 @@ const Autocomplete = (props: AutocompleteProps) => {
     style
   } = props
   const classes = useStyles(props)
-  const [value, setValue] = useState(textfieldProps.valueProp || '')
+  const [value, setValue] = useState(textfieldProps.value || '')
   const [focus, setFocus] = useState(false)
   const autocompleteRef = useRef(null)
   const textfieldRef = useRef(null)
@@ -80,9 +80,9 @@ const Autocomplete = (props: AutocompleteProps) => {
     : value && focus && droplistProps.items
 
   useEffect(() => {
-    if (textfieldProps.valueProp !== prevTextfieldProps.valueProp)
-      setValue(textfieldProps.valueProp)
-  }, [textfieldProps.valueProp, prevTextfieldProps.valueProp])
+    if (textfieldProps.value !== prevTextfieldProps.value)
+      setValue(textfieldProps.value)
+  }, [textfieldProps.value, prevTextfieldProps.value])
 
   const _onChange = useCallback(
     value => {
@@ -150,7 +150,6 @@ const Autocomplete = (props: AutocompleteProps) => {
         onBlur={_onBlur}
         onKeyUp={_onKeyUp}
         onClear={_onClear}
-        valueProp={value}
       />
       {showDropList && (
         <Droplist
