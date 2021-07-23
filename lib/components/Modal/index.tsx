@@ -50,9 +50,9 @@ export interface ModalProps {
   show?: boolean
   onClose: () => void
   size?: 'sm' | 'md' | 'lg' | 'xl'
-  title: string
-  mainBtn: ButtonType
-  secBtn: ButtonType
+  title?: string
+  mainBtn?: ButtonType
+  secBtn?: ButtonType
   imgTop?: ImageTop
   imgLeft?: ImageLeft
   onTransitionEnd?: TransitionEventHandler<HTMLDivElement>

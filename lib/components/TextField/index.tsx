@@ -34,7 +34,7 @@ export interface TextFieldProps {
   error?: boolean
   allowError?: boolean
   lockHeight?: boolean
-  valueProp?: string
+  value?: string
   selectOnFocus?: boolean
   mask?: any
   guide?: boolean
@@ -60,7 +60,7 @@ const TextField = forwardRef(
   (
     {
       className,
-      valueProp,
+      value,
       disabled,
       onFocus,
       selectOnFocus,
@@ -97,7 +97,7 @@ const TextField = forwardRef(
   ) => {
     const classes = useStyles()
     const [status, setStatus] = useState('default')
-    const [value, setValue] = useState(valueProp || '')
+    const [_value, setValue] = useState(value || '')
     const [touched, setTouched] = useState(false)
     const [showPass, setShowPass] = useState(false)
     const [passIconBeingClicked, setPassIconBeingClicked] = useState(false)
@@ -106,13 +106,16 @@ const TextField = forwardRef(
     const valueRef = useRef<string>()
 
     useEffect(() => {
-      valueRef.current = value
+      valueRef.current = _value
     })
 
     useEffect(() => {
-      if (valueProp !== valueRef.current) setValue(valueProp)
+      if (value !== valueRef.current) setValue(value)
+    }, [value])
+
+    useEffect(() => {
       if (disabled && !prevDisabled) setStatus('default')
-    }, [valueProp, disabled, prevDisabled])
+    }, [disabled, prevDisabled])
 
     useImperativeHandle(ref, () => ({
       focus: () => inputRef.current.focus(),
@@ -264,7 +267,9 @@ const TextField = forwardRef(
     const element = useMemo(() => {
       if (disabled) {
         if (type === 'select') {
-          const selectedOption = options.filter(option => option.value == value)
+          const selectedOption = options.filter(
+            option => option.value == _value
+          )
           let optionLabel
           if (selectedOption.length) optionLabel = selectedOption[0].label
           return (
@@ -273,7 +278,7 @@ const TextField = forwardRef(
                 [classes.hasIcon]: iconName
               })}
             >
-              {optionLabel ? optionLabel : value ? value : placeholder}
+              {optionLabel ? optionLabel : _value ? _value : placeholder}
             </label>
           )
         } else
@@ -285,7 +290,7 @@ const TextField = forwardRef(
                 { [classes.hasIcon]: iconName }
               )}
             >
-              {value ? value : placeholder}
+              {_value ? _value : placeholder}
             </label>
           )
       } else if (type === 'select')
@@ -356,7 +361,7 @@ const TextField = forwardRef(
       placeholder,
       showPass,
       type,
-      value,
+      _value,
       InputType
     ])
 
@@ -436,7 +441,7 @@ const TextField = forwardRef(
             </div>
           )}
           {type == 'password' && passIcon}
-          {value && clear && (
+          {_value && clear && (
             <div onClick={_onClear} className={classes.clear}>
               <Icon iconName="close" />
             </div>
@@ -473,7 +478,7 @@ const TextField = forwardRef(
                 low={!disabled}
                 className={classnames(classes.label, classes.right)}
               >
-                {value.length} / {maxLength}
+                {_value.length} / {maxLength}
               </Text>
             )}
           </div>
@@ -485,7 +490,7 @@ const TextField = forwardRef(
 
 TextField.defaultProps = {
   type: 'text',
-  valueProp: '',
+  value: '',
   options: [],
   hjWhitelist: true
 }

@@ -17,6 +17,7 @@
     "build:lib": "npm run build:js && npm run build:types"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
     "hex-rgba": "^1.0.2",
     "react-text-mask": "^5.4.3",
     "unorm": "^1.6.0"
