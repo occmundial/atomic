@@ -48,6 +48,16 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdn-h4.occ.com.mx/fonts/stylesheet.css"
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+            rel="stylesheet"
+          />
         </Head>
 
         <body>
