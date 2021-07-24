@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import ReactDOM from 'react-dom'
 
 import Toast, { ToastType } from './Toast'
-import { toastLauncher, Timer } from './helper'
+import { ToastLauncher, Timer } from './helper'
 import useStyles from './styles'
 
 const timings = {
@@ -12,9 +12,10 @@ const timings = {
 
 interface ToasterProps {
   container?: HTMLElement
+  toastLauncher: ToastLauncher
 }
 
-const Toaster = ({ container }: ToasterProps) => {
+const Toaster = ({ container, toastLauncher }: ToasterProps) => {
   const classes = useStyles()
   const [toast, setToast] = useState<ToastType | null>()
   const [toastId, setToastId] = useState()
@@ -35,7 +36,7 @@ const Toaster = ({ container }: ToasterProps) => {
         setToast(null)
       }, 300)
     },
-    [resetTimer, timer]
+    [resetTimer, timer, toastLauncher]
   )
 
   const addTimer = useCallback(
@@ -73,7 +74,7 @@ const Toaster = ({ container }: ToasterProps) => {
     return () => {
       toastLauncher.removeListener(listener)
     }
-  }, [onAdd, onClose])
+  }, [onAdd, onClose, toastLauncher])
 
   useEffect(() => {
     if (toast && !toast.closing) addTimer(toast)
