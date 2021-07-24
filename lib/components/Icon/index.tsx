@@ -5,12 +5,11 @@ import useStyles from './styles'
 
 export interface IconProps {
   iconName: string
-  width?: number
-  height?: number
-  display?: string
+  size?: number
+  display?: 'inline' | 'inline-block'
   transition?: string
-  colors?: string[]
-  hover?: string[]
+  color?: string
+  hoverColor?: string
   onClick?: CallableFunction
   alt?: string
   id?: string
@@ -20,11 +19,14 @@ export interface IconProps {
 
 const Icon = (props: IconProps) => {
   const classes = useStyles(props)
-  const { className, style, id, onClick, alt } = props
+  const { iconName, display, className, style, id, onClick, alt } = props
   return createElement(onClick ? 'button' : 'span', {
     id,
     className: classnames(
       classes.icon,
+      `atomic-${iconName}`,
+      { [classes.inline]: display === 'inline' },
+      { [classes.inlineBlock]: display === 'inline-block' },
       { [classes.click]: onClick },
       className
     ),
@@ -35,7 +37,7 @@ const Icon = (props: IconProps) => {
 }
 
 Icon.defaultProps = {
-  transition: '0.3s all'
+  display: 'inline-block'
 }
 
 export default Icon

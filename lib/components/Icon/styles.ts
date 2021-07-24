@@ -1,47 +1,29 @@
 import { createUseStyles } from 'react-jss'
 
-import icons from '@/tokens/icons'
+import iconSizes from '@/tokens/iconSizes'
 
 import { IconProps } from './'
+import colors from '@/tokens/colors'
 
 export default createUseStyles<any, IconProps>({
   icon: {
     boxSizing: 'border-box',
-    width: props =>
-      props.width
-        ? `${props.width}px`
-        : icons[props.iconName]
-        ? icons[props.iconName].width
-        : '',
-    height: props =>
-      props.height
-        ? `${props.height}px`
-        : icons[props.iconName]
-        ? icons[props.iconName].height
-        : '',
-    display: props =>
-      props.display
-        ? props.display
-        : icons[props.iconName]
-        ? icons[props.iconName].display
-        : '',
+    width: props => (props.size ? props.size : iconSizes.base),
+    height: props => (props.size ? props.size : iconSizes.base),
+    lineHeight: props =>
+      props.size ? `${props.size}px` : `${iconSizes.base}px`,
+    fontSize: props => (props.size ? props.size : iconSizes.base),
+    padding: 0,
+    background: 'none',
     border: '0',
     outline: '0',
-    background: props =>
-      props.iconName
-        ? icons.base(
-            icons[props.iconName].icon(props.colors ? props.colors : undefined)
-          )
-        : '',
-    transition: props => (props.transition ? props.transition : '0.3s all'),
+    color: props => (props.color ? props.color : colors.grey900),
+    transition: '0.3s all',
     '&:hover': {
-      background: props =>
-        props.hover && props.iconName
-          ? icons.base(icons[props.iconName].icon(props.hover))
-          : undefined
+      color: props => (props.hoverColor ? props.hoverColor : colors.grey900)
     }
   },
-  click: {
-    cursor: 'pointer'
-  }
+  inline: { display: 'inline' },
+  inlineBlock: { display: 'inline-block' },
+  click: { cursor: 'pointer' }
 })
