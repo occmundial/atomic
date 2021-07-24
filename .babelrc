@@ -1,1 +1,13 @@
-{ "presets": ["next/babel", "@babel/preset-typescript"] }
+{
+  "presets": ["next/babel", "@babel/preset-typescript"],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./"],
+      "alias": {
+        "@/components": "./lib/components",
+        "@/tokens": "./lib/tokens",
+        "@/hooks": "./lib/hooks"
+      }
+    }]
+  ]
+}
