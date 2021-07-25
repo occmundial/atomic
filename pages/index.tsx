@@ -1,20 +1,30 @@
-import { getMdxContent } from '@/src/utils/getMDXContent'
+import { MDXRemote } from 'next-mdx-remote'
 
-export default function DocsPage({ allMdx }) {
-  console.log(allMdx)
-  return <div>Hey</div>
+import Layout from '@/src/components/Layout'
+import { getMdxContent } from '@/src/utils/getMDXContent'
+import components from '@/src/components/MDXComponents'
+import scope from '@/src/utils/scope'
+
+export default function DocsPage({ docs, homeFile }) {
+  return (
+    <Layout docs={docs}>
+      <MDXRemote {...homeFile.mdx} components={components} scope={scope} />
+    </Layout>
+  )
 }
 
 export async function getStaticProps() {
   const posts = await getMdxContent('./src/docs')
-  const allMdx = posts.map(post => ({
+  const docs = posts.map(post => ({
     slug: post.slug,
     ...post.data
   }))
+  const homeFile = posts.find(post => post.data.section === 'home')
 
   return {
     props: {
-      allMdx
+      docs,
+      homeFile
     }
   }
 }

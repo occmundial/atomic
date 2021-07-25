@@ -1,20 +1,21 @@
 import { MDXRemote } from 'next-mdx-remote'
 
+import Layout from '@/src/components/Layout'
 import { getMdxContent } from '@/src/utils/getMDXContent'
 import components from '@/src/components/MDXComponents'
 import scope from '@/src/utils/scope'
 
-export default function DocsPage({ post }) {
+export default function DocsPage({ docs, doc }) {
   return (
-    <div>
-      <MDXRemote {...post.mdx} components={components} scope={scope} />
-    </div>
+    <Layout docs={docs}>
+      <MDXRemote {...doc.mdx} components={components} scope={scope} />
+    </Layout>
   )
 }
 
 export async function getStaticPaths() {
-  const posts = await getMdxContent('./src/docs')
-  const paths = posts.map(({ slug }) => ({
+  const docs = await getMdxContent('./src/docs')
+  const paths = docs.map(({ slug }) => ({
     params: {
       slug
     }
@@ -27,16 +28,17 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const posts = await getMdxContent('./src/docs')
-  const [post] = posts.filter(post => post.slug === slug)
+  const docs = await getMdxContent('./src/docs')
+  const doc = docs.find(docs => docs.slug === slug)
 
-  if (!post) {
+  if (!doc) {
     console.warn(`No content found for slug ${slug}`)
   }
 
   return {
     props: {
-      post
+      docs,
+      doc
     }
   }
 }

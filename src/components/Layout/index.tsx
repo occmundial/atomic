@@ -1,10 +1,18 @@
-import NavTab from '@/components/NavTab'
+import { ReactNode } from 'react'
 
-export default function Layout({ children }) {
+import Header from '@/src/components/Header'
+import Content from '@/src/components/Content'
+
+interface LayoutProps {
+  children: ReactNode
+  docs: any
+}
+
+export default function Layout({ children, docs }: LayoutProps) {
   return (
     <div>
-      <NavTab blue fixed hideOnScroll />
-      {children}
+      <Header docs={docs} />
+      <Content>{children}</Content>
     </div>
   )
 }
