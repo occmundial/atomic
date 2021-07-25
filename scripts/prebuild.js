@@ -9,6 +9,7 @@ function main() {
   delete sourceObj.devDependencies
   delete sourceObj['lint-staged']
   delete sourceObj.publishConfig
+  sourceObj.private = false
   if (sourceObj.main.startsWith('dist/')) {
     sourceObj.main = sourceObj.main.slice(5)
   }
