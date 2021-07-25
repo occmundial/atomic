@@ -1,6 +1,6 @@
 {
   "branches": [
-    "semantic-release"
+    "main"
   ],
   "dryRun": true,
   "ci": false,
