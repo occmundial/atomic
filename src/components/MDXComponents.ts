@@ -3,6 +3,7 @@ import slugify from 'slugify'
 
 import Demo from './Demo'
 import Code from './Code'
+import InlineCode from './InlineCode'
 import Table from './Table'
 import Tr from './Table/Tr'
 import Th from './Table/Th'
@@ -21,6 +22,7 @@ const mdxComponents = {
   // Docs components
   Demo,
   code: Code,
+  inlineCode: InlineCode,
   table: Table,
   tr: Tr,
   th: Th,

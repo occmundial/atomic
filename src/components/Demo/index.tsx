@@ -16,7 +16,7 @@ export default function Demo({ children, background, title }: DemoProps) {
   const classes = useStyles()
 
   return (
-    <div>
+    <div className={classes.container}>
       <Flexbox
         display="flex"
         justifyContent="start"

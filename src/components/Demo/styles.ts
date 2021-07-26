@@ -2,8 +2,15 @@ import { createUseStyles } from 'react-jss'
 
 import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
+import shadows from '@/tokens/shadows'
 
 export default createUseStyles({
+  container: {
+    marginTop: spacing.tiny,
+    marginBottom: spacing.small,
+    boxShadow: shadows.lvl5,
+    borderRadius: spacing.radius
+  },
   header: {
     background: colors.grey200,
     padding: spacing.small,
@@ -30,7 +37,6 @@ export default createUseStyles({
   },
   screen: {
     padding: spacing.small,
-    border: `1px solid ${colors.bgGrey}`,
     borderTop: 'none',
     borderRadius: [0, 0, spacing.radius, spacing.radius]
   }

@@ -7,8 +7,8 @@ import Button from '@/components/Button'
 
 # Button
 
-- [Code](#Code)
 - [Props](#Props)
+- [Themes](#Themes)
 
 This is a Button
 
@@ -16,24 +16,14 @@ This is a Button
 
 | Name         | Type          | Default value  | Description      |
 |--------------|---------------|----------------|------------------|
-| theme        | string        | primary        | button type      |
-| size         | string        | md             | button size      |
-| disabled     | bool          | false          | disable button   |
-| loading      | bool          | false          | loading button   |
-| icon         | string        | -              | button icon      |
+| `theme`      | **string**    | `primary`      | Button's predefined styles. Available options are: `primary`, `secondary`, `tertiary`, `tertiaryWhite`, `ghostPink`, `ghostGrey` and `ghostWhite` |
+| `size`       | **string**    | `md`           | Button size. Available options are: `sm`, `md` and `lg` |
+| `disabled`   | **boolean**   | `false`        | disable button   |
+| `loading`    | **boolean**   | `false`        | loading button   |
+| `icon`       | **string**    | -              | button icon      |
 
-### Code
-```jsx
-// How to import and use a Button
-import Button from '@occmundial/atomic/dist/Button'
-
-function Component() {
-  return (
-    <Button>Hey, click me!</Button>
-  )
-}
-```
-
+### Themes
+You can choose any of the 7 predefined themes:
 <Demo title="Button themes" background={colors.grey400}>
   <Flexbox display="flex" justifyContent="center" alignItems="center" wrap="wrap">
     <Button style={{margin: spacing.tiny}}>Primary</Button>
@@ -45,3 +35,21 @@ function Component() {
     <Button theme="ghostWhite" style={{margin: spacing.tiny}}>Ghost White</Button>
   </Flexbox>
 </Demo>
+
+```jsx
+// How to use themes
+function Component() {
+  return (
+    <>
+      {/* `primary` is the default value. */}
+      <Button>Primary</Button>
+      <Button theme="secondary">Secondary</Button>
+      <Button theme="tertiary">Tertiary</Button>
+      <Button theme="tertiaryWhite">Tertiary White</Button>
+      <Button theme="ghostPink">Ghost Pink</Button>
+      <Button theme="ghostGrey">Ghost Grey</Button>
+      <Button theme="ghostWhite">Ghost White</Button>
+    </>
+  )
+}
+```
