@@ -1,8 +1,14 @@
-import useStyles from './styles'
+import { ReactNode } from 'react'
 
 import Text from '@/components/Text'
 
-export default function Td({ children }) {
+import useStyles from './styles'
+
+interface TdProps {
+  children: ReactNode
+}
+
+export default function Td({ children }: TdProps) {
   const classes = useStyles()
 
   return (

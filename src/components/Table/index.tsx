@@ -1,6 +1,12 @@
+import { ReactNode } from 'react'
+
 import useStyles from './styles'
 
-export default function Table({ children }) {
+interface TableProps {
+  children: ReactNode
+}
+
+export default function Table({ children }: TableProps) {
   const classes = useStyles()
 
   return (

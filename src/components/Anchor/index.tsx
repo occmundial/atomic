@@ -1,8 +1,14 @@
-import Text from '@/components/Text'
+import { ReactNode } from 'react'
 import Link from 'next/link'
+
 import useStyles from './styles'
 
-export default function Anchor({ children, href }) {
+interface AnchorProps {
+  children: ReactNode
+  href: string
+}
+
+export default function Anchor({ children, href }: AnchorProps) {
   const classes = useStyles()
   return (
     <Link href={href}>

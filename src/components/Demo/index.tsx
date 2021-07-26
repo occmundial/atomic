@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import classnames from 'classnames'
 
 import Text from '@/components/Text'
@@ -5,7 +6,13 @@ import Flexbox from '@/components/Flexbox'
 
 import useStyles from './styles'
 
-export default function Demo({ children, background, title }) {
+interface DemoProps {
+  children: ReactNode
+  background: string
+  title: string
+}
+
+export default function Demo({ children, background, title }: DemoProps) {
   const classes = useStyles()
 
   return (

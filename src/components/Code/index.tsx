@@ -8,7 +8,12 @@ import Text from '@/components/Text'
 
 import useStyles from './styles'
 
-export default function Code({ children, className }) {
+interface CodeProps {
+  children: string
+  className?: string
+}
+
+export default function Code({ children, className }: CodeProps) {
   const classes = useStyles()
 
   const language = useMemo(

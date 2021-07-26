@@ -1,8 +1,14 @@
-import useStyles from './styles'
+import { ReactNode } from 'react'
 
 import Text from '@/components/Text'
 
-export default function Tr({ children }) {
+import useStyles from './styles'
+
+interface TrProps {
+  children: ReactNode
+}
+
+export default function Tr({ children }: TrProps) {
   const classes = useStyles()
 
   return (
