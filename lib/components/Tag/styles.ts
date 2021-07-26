@@ -19,7 +19,8 @@ const {
   errorText,
   grey900,
   grey100,
-  textLink
+  textLink,
+  bgWhite
 } = colors
 const { xTiny, tiny, small, gutter } = spacing
 const iconHeight = 13
@@ -58,6 +59,10 @@ export default createUseStyles<any, TagProps>({
     color: grey900,
     background: grey100
   },
+  basic: {
+    color: grey900,
+    background: bgWhite
+  },
   info: {
     color: infoText,
     backgroundColor: hexToRgba(info, 10)
@@ -86,12 +91,14 @@ export default createUseStyles<any, TagProps>({
     width: gutter,
     height: iconHeight,
     paddingBottom: 0,
-    position: 'relative',
-    top: 0,
     left: 0,
     backgroundRepeat: 'no-repeat'
   },
   defaultIcon: {
+    background: props =>
+      props.iconName ? icons.base(icons[props.iconName].icon([grey900])) : ''
+  },
+  basicIcon: {
     background: props =>
       props.iconName ? icons.base(icons[props.iconName].icon([grey900])) : ''
   },

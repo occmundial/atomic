@@ -1,6 +1,8 @@
 import React, { CSSProperties, ReactNode } from 'react'
 import classnames from 'classnames'
 
+import Flexbox from '@/components/Flexbox'
+
 import useStyles from './styles'
 
 export interface TagProps {
@@ -24,16 +26,18 @@ const Tag = (props: TagProps) => {
       )}
       style={style}
     >
-      {iconName && (
-        <span
-          className={classnames(
-            classes.icon,
-            { [classes[`${theme}Icon`]]: theme },
-            { [classes.defaultIcon]: !theme }
-          )}
-        />
-      )}
-      <span className={classes.tagText}>{children}</span>
+      <Flexbox display="flex" alignItems="center" wrap="noWrap">
+        {iconName && (
+          <span
+            className={classnames(
+              classes.icon,
+              { [classes[`${theme}Icon`]]: theme },
+              { [classes.defaultIcon]: !theme }
+            )}
+          />
+        )}
+        <span className={classes.tagText}>{children}</span>
+      </Flexbox>
     </label>
   )
 }
