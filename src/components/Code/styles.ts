@@ -3,7 +3,6 @@ import { createUseStyles } from 'react-jss'
 import spacing from '@/tokens/spacing'
 import shadows from '@/tokens/shadows'
 import colors from '@/tokens/colors'
-import grid from '@/tokens/grid'
 
 export default createUseStyles({
   code: {
@@ -16,13 +15,10 @@ export default createUseStyles({
     fontSize: 14,
     backgroundColor: [colors.grey900, '!important']
   },
-  buttons: {
+  header: {
     paddingBottom: spacing.small,
     borderBottom: `1px solid ${colors.grey800}`,
-    marginBottom: spacing.small,
-    [`@media screen and (max-width:${grid.sm}px)`]: {
-      display: 'none'
-    }
+    marginBottom: spacing.small
   },
   button: {
     display: 'inline-block',
@@ -39,5 +35,8 @@ export default createUseStyles({
   },
   green: {
     background: colors.success
+  },
+  title: {
+    marginLeft: spacing.tiny
   }
 })

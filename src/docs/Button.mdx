@@ -2,10 +2,13 @@
 title: Button
 section: components
 ---
-
+import Demo from '@/utils/components/Demo'
 import Button from '@/components/Button'
 
 # Button
+
+- [Code](#Code)
+- [Props](#Props)
 
 This is a Button
 
@@ -19,8 +22,9 @@ This is a Button
 | loading      | bool          | false          | loading button   |
 | icon         | string        | -              | button icon      |
 
-
+### Code
 ```jsx
+// How to import and use a Button
 import Button from '@occmundial/atomic/dist/Button'
 
 function Component() {
@@ -30,14 +34,14 @@ function Component() {
 }
 ```
 
-<div>
-  <div style={{ display: 'grid', columnGap: 12, gridAutoFlow: 'column', padding: 12, background: colors.primLighter, justifyContent: 'start' }}>
-    <Button>Primary</Button>
-    <Button theme="secondary">Secondary</Button>
-    <Button theme="tertiary">Tertiary</Button>
-    <Button theme="tertiaryWhite">Tertiary White</Button>
-    <Button theme="ghostPink">Ghost Pink</Button>
-    <Button theme="ghostGrey">Ghost Grey</Button>
-    <Button theme="ghostWhite">Ghost White</Button>
-  </div>
-</div>
+<Demo title="Button themes" background={colors.grey400}>
+  <Flexbox display="flex" justifyContent="center" alignItems="center" wrap="wrap">
+    <Button style={{margin: spacing.tiny}}>Primary</Button>
+    <Button theme="secondary" style={{margin: spacing.tiny}}>Secondary</Button>
+    <Button theme="tertiary" style={{margin: spacing.tiny}}>Tertiary</Button>
+    <Button theme="tertiaryWhite" style={{margin: spacing.tiny}}>Tertiary White</Button>
+    <Button theme="ghostPink" style={{margin: spacing.tiny}}>Ghost Pink</Button>
+    <Button theme="ghostGrey" style={{margin: spacing.tiny}}>Ghost Grey</Button>
+    <Button theme="ghostWhite" style={{margin: spacing.tiny}}>Ghost White</Button>
+  </Flexbox>
+</Demo>

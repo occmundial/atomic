@@ -1,32 +1,50 @@
+import { useMemo } from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/vsDark'
 import classnames from 'classnames'
 
 import Flexbox from '@/components/Flexbox'
+import Text from '@/components/Text'
 
 import useStyles from './styles'
 
 export default function Code({ children, className }) {
   const classes = useStyles()
-  const language = className.replace(/language-/, '')
+
+  const language = useMemo(
+    () => className.replace(/language-/, ''),
+    [className]
+  )
+  const { title, code } = useMemo(() => {
+    let code = children
+    const title =
+      children.indexOf('//') === 0
+        ? children.split('\n')[0].replace('// ', '')
+        : ''
+    if (title) {
+      code = children.split('\n').slice(1).join('\n')
+    }
+    return { title, code }
+  }, [children])
+
   return (
-    <Highlight
-      {...defaultProps}
-      theme={theme}
-      code={children.trim()}
-      language={language}
-    >
+    <Highlight {...defaultProps} theme={theme} code={code} language={language}>
       {({ className, tokens, getLineProps, getTokenProps }) => (
         <pre className={classnames(classes.code, className)}>
           <Flexbox
             display="flex"
             justifyContent="start"
-            alignItems="start"
-            className={classes.buttons}
+            alignItems="center"
+            className={classes.header}
           >
             <span className={classnames(classes.button, classes.red)} />
             <span className={classnames(classes.button, classes.yellow)} />
             <span className={classnames(classes.button, classes.green)} />
+            {title && (
+              <Text white strong className={classes.title}>
+                {title}
+              </Text>
+            )}
           </Flexbox>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
