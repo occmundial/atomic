@@ -51,6 +51,15 @@ export interface TextFieldProps {
   regex?: string
   required?: boolean
   alignRight?: boolean
+  inputMode?:
+    | 'none'
+    | 'text'
+    | 'decimal'
+    | 'numeric'
+    | 'tel'
+    | 'search'
+    | 'email'
+    | 'url'
   id?: string
   className?: string
   style?: CSSProperties
@@ -91,7 +100,8 @@ const TextField = forwardRef(
       required,
       mask,
       guide,
-      disableAutoComplete
+      disableAutoComplete,
+      inputMode
     }: TextFieldProps,
     ref
   ) => {
@@ -247,6 +257,7 @@ const TextField = forwardRef(
         onChange: _onChange,
         onKeyUp: _onKeyUp,
         ref: inputRef,
+        inputMode,
         required
       }),
       [
@@ -260,6 +271,7 @@ const TextField = forwardRef(
         _onBlur,
         _onChange,
         _onKeyUp,
+        inputMode,
         required
       ]
     )
