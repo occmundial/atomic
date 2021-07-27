@@ -1,4 +1,5 @@
 import React, { MouseEvent, ReactElement } from 'react'
+import classNames from 'classnames'
 
 import Grid from '@/components/Grid'
 import Flexbox from '@/components/Flexbox'
@@ -63,7 +64,11 @@ const Footer = ({ columns, bottomLinks, copyText, aux }: FooterProps) => {
             className={classes.column}
           >
             {columns.map((column, index) => (
-              <Flexbox key={index} flex="1" className={classes.list}>
+              <Flexbox
+                key={index}
+                flex="1"
+                className={classNames({ [classes.list]: !isMobile })}
+              >
                 {column.map(list => (
                   <List list={list} isMobile={isMobile} key={list.key} />
                 ))}
