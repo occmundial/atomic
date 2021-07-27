@@ -1,5 +1,5 @@
 import React, { MouseEvent, ReactElement } from 'react'
-import classNames from 'classnames'
+import classnames from 'classnames'
 
 import Grid from '@/components/Grid'
 import Flexbox from '@/components/Flexbox'
@@ -35,19 +35,27 @@ interface Aux {
   href?: string
   target?: string
   iconRight?: string
+  className?: string
 }
 
 interface FooterProps {
-  columns: Column[]
-  bottomLinks: BottomLink[]
-  copyText: string | ReactElement
-  aux: Aux
+  columns?: Column[]
+  bottomLinks?: BottomLink[]
+  copyText?: string | ReactElement
+  aux?: Aux
+  listClassName?: string
 }
 
-const Footer = ({ columns, bottomLinks, copyText, aux }: FooterProps) => {
+const Footer = ({
+  columns,
+  bottomLinks,
+  copyText,
+  aux,
+  listClassName
+}: FooterProps) => {
   const classes = useStyles()
   const { width } = useWindowSize()
-  const { text, icon, href, target, iconRight } = aux
+  const { text, icon, href, target, iconRight, className: auxClassName } = aux
   const isMobile = width < grid.sm
 
   return (
@@ -67,10 +75,15 @@ const Footer = ({ columns, bottomLinks, copyText, aux }: FooterProps) => {
               <Flexbox
                 key={index}
                 flex="1"
-                className={classNames({ [classes.list]: !isMobile })}
+                className={classnames({ [classes.list]: !isMobile })}
               >
                 {column.map(list => (
-                  <List list={list} isMobile={isMobile} key={list.key} />
+                  <List
+                    key={list.key}
+                    list={list}
+                    isMobile={isMobile}
+                    listClassName={listClassName}
+                  />
                 ))}
               </Flexbox>
             ))}
@@ -121,7 +134,10 @@ const Footer = ({ columns, bottomLinks, copyText, aux }: FooterProps) => {
                   iconRight={iconRight}
                   size="md"
                   theme="ghostPink"
-                  className={isMobile ? classes.buttonMobile : ''}
+                  className={classnames(
+                    { [classes.buttonMobile]: isMobile },
+                    auxClassName
+                  )}
                 >
                   {text}
                 </Button>
