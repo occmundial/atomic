@@ -85,6 +85,17 @@ export default createUseStyles({
     '&::placeholder': {
       color: colors.inkLighter,
       transition: '0.3s all'
+    },
+    '&::-webkit-outer-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0
+    },
+    '&::-webkit-inner-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0
+    },
+    '&[type=number]': {
+      '-moz-appearance': 'textfield'
     }
   },
   inputDisabled: {
