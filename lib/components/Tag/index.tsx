@@ -9,17 +9,18 @@ export interface TagProps {
   iconName?: string
   className?: string
   style?: CSSProperties
+  size?: 'small' | 'medium' | 'large'
 }
 
 const Tag = (props: TagProps) => {
-  const { children, className, style, theme, iconName } = props
+  const { children, className, style, theme, iconName, size } = props
   const classes = useStyles(props)
   return (
     <label
       className={classnames(
         classes.tag,
-        { [classes[theme]]: theme },
-        { [classes.default]: !theme },
+        classes[size],
+        classes[theme],
         className
       )}
       style={style}
@@ -28,18 +29,21 @@ const Tag = (props: TagProps) => {
         <span
           className={classnames(
             classes.icon,
-            { [classes[`${theme}Icon`]]: theme },
-            { [classes.defaultIcon]: !theme }
+            classes[`${size}Icon`],
+            classes[`${theme}Icon`]
           )}
         />
       )}
-      <span className={classes.tagText}>{children}</span>
+      <span className={classnames(classes.tagText, classes[`${size}TagText`])}>
+        {children}
+      </span>
     </label>
   )
 }
 
 Tag.defaultProps = {
-  theme: 'default'
+  theme: 'default',
+  size: 'small'
 }
 
 export default Tag
