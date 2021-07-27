@@ -26,7 +26,7 @@ const capitalLetter = name => {
 const AvatarContent = ({ photo, gender, name, size }: AvatarContentProps) => {
   const classes = useStyles()
   return (
-    <div className={classes.wrap} data-testid="avatar-content">
+    <div className={classes.wrap}>
       {gender && <div className={classnames(classes.cont, classes[gender])} />}
       {!gender && name && (
         <div

@@ -15,7 +15,6 @@ const Avatar = (props: AvatarProps) => {
   const classes = useStyles(props)
   return (
     <div
-      data-testid="avatar"
       id={id}
       className={classnames(classes.circle, className)}
       style={style}
