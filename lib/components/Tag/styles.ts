@@ -37,11 +37,11 @@ export default createUseStyles<any, TagProps>({
     display: 'inline-block'
   },
   small: {
-    padding: [2, tiny],
+    padding: [1, tiny, 3, tiny],
     height: small
   },
   medium: {
-    padding: [tiny, gutter],
+    padding: [5, gutter, 7, gutter],
     height: medium
   },
   large: {
@@ -103,7 +103,7 @@ export default createUseStyles<any, TagProps>({
     content: '""',
     paddingBottom: 0,
     position: 'relative',
-    top: 0,
+    top: -2,
     left: 0,
     backgroundRepeat: 'no-repeat'
   },
