@@ -13,6 +13,7 @@ import {
 import { occDartGrey, occDartWhite, occDartBlue } from './icons/occDart'
 import avatarSmile from './icons/avatarSmile'
 import hourGlass from './icons/hourGlass'
+import location from './icons/location'
 import bars from './icons/bars'
 import back from './icons/back'
 import forward from './icons/forward'
@@ -115,6 +116,7 @@ const icons = {
   occDartBlue,
   avatarSmile,
   hourGlass,
+  location,
   bars,
   back,
   forward,
