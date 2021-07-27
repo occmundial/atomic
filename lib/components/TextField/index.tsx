@@ -38,6 +38,16 @@ export interface TextFieldProps {
   selectOnFocus?: boolean
   mask?: any
   guide?: boolean
+  pattern?: string
+  inputMode?:
+    | 'text'
+    | 'none'
+    | 'search'
+    | 'tel'
+    | 'url'
+    | 'email'
+    | 'numeric'
+    | 'decimal'
   disableAutoComplete?: boolean
   onFocus?: () => void
   onBlur?: (item: any) => void
@@ -91,6 +101,8 @@ const TextField = forwardRef(
       required,
       mask,
       guide,
+      pattern,
+      inputMode,
       disableAutoComplete
     }: TextFieldProps,
     ref
@@ -233,7 +245,9 @@ const TextField = forwardRef(
         onChange: _onChange,
         onKeyUp: _onKeyUp,
         ref: inputRef,
-        required
+        required,
+        pattern,
+        inputMode
       }),
       [
         name,
@@ -246,7 +260,9 @@ const TextField = forwardRef(
         _onBlur,
         _onChange,
         _onKeyUp,
-        required
+        required,
+        pattern,
+        inputMode
       ]
     )
 
