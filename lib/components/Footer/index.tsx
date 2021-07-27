@@ -63,7 +63,7 @@ const Footer = ({ columns, bottomLinks, copyText, aux }: FooterProps) => {
             className={classes.column}
           >
             {columns.map((column, index) => (
-              <Flexbox key={index} flex="1">
+              <Flexbox key={index} flex="1" className={classes.list}>
                 {column.map(list => (
                   <List list={list} isMobile={isMobile} key={list.key} />
                 ))}

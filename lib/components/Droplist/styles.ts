@@ -29,7 +29,8 @@ export default createUseStyles({
   },
   right: {
     float: 'right',
-    transition: '0.1s all'
+    transition: '0.1s all',
+    marginLeft: small
   },
   onFocus: {
     background: primLighter,

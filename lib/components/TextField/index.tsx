@@ -217,21 +217,7 @@ const TextField = forwardRef(
           { 'data-hj-whitelist': hjWhitelist },
           inputClassName
         ),
-      [
-        alignRight,
-        classes.alignRight,
-        classes.hasClear,
-        classes.hasIcon,
-        classes.hasPass,
-        classes.input,
-        classes.select,
-        classes.textarea,
-        clear,
-        hjWhitelist,
-        iconName,
-        inputClassName,
-        type
-      ]
+      [alignRight, classes, clear, hjWhitelist, iconName, inputClassName, type]
     )
 
     const commonProps = useMemo(
@@ -270,7 +256,7 @@ const TextField = forwardRef(
           const selectedOption = options.filter(
             option => option.value == _value
           )
-          let optionLabel
+          let optionLabel: string
           if (selectedOption.length) optionLabel = selectedOption[0].label
           return (
             <label
@@ -278,7 +264,14 @@ const TextField = forwardRef(
                 [classes.hasIcon]: iconName
               })}
             >
-              {optionLabel ? optionLabel : _value ? _value : placeholder}
+              <div
+                className={classnames(
+                  classes.inputDisabled,
+                  classes.hasRightIcon
+                )}
+              >
+                {optionLabel ? optionLabel : _value ? _value : placeholder}
+              </div>
             </label>
           )
         } else
@@ -290,7 +283,9 @@ const TextField = forwardRef(
                 { [classes.hasIcon]: iconName }
               )}
             >
-              {_value ? _value : placeholder}
+              <div className={classes.inputDisabled}>
+                {_value ? _value : placeholder}
+              </div>
             </label>
           )
       } else if (type === 'select')
@@ -348,9 +343,7 @@ const TextField = forwardRef(
           />
         )
     }, [
-      classes.hasIcon,
-      classes.input,
-      classes.textarea,
+      classes,
       commonProps,
       disableAutoComplete,
       disabled,

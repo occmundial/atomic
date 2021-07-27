@@ -70,7 +70,7 @@ export default createUseStyles({
     color: colors.ink,
     fontFamily: fonts.body,
     fontWeight: 'normal',
-    fontSize: 14,
+    fontSize: 15,
     lineHeight: '24px',
     background: colors.bgWhite,
     border: `1px solid ${colors.grey200}`,
@@ -87,19 +87,26 @@ export default createUseStyles({
       transition: '0.3s all'
     }
   },
+  inputDisabled: {
+    overflow: 'hidden',
+    whiteSpace: 'nowrap'
+  },
+  hasRightIcon: {
+    marginRight: spacing.small
+  },
   select: {
     '&::-ms-expand': {
       display: 'none'
     },
     paddingRight: spacing.medium,
     '& optgroup': {
-      fontSize: 12,
+      fontSize: 13,
       fontWeight: 'normal',
       lineHeight: '40px',
       color: colors.inkLight
     },
     '& option': {
-      fontSize: 14,
+      fontSize: 15,
       lineHeight: '40px',
       color: colors.ink,
       '&:disabled': {

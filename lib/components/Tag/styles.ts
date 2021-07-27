@@ -64,13 +64,13 @@ export default createUseStyles<any, TagProps>({
     paddingRight: props => (props.iconName ? xTiny : 0)
   },
   smallTagText: {
-    fontSize: 10
+    fontSize: 11
   },
   mediumTagText: {
-    fontSize: 14
+    fontSize: 15
   },
   largeTagText: {
-    fontSize: 16
+    fontSize: 17
   },
   default: {
     color: grey900,
