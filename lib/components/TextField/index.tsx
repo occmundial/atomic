@@ -328,7 +328,8 @@ const TextField = forwardRef(
           <MaskedInput
             {...commonProps}
             placeholder={placeholder}
-            type="text"
+            type={type === 'password' && showPass ? 'text' : type}
+            {...(disableAutoComplete && { autoComplete: 'off' })}
             mask={mask}
             guide={guide}
           />
