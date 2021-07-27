@@ -11,6 +11,7 @@ import {
   occVerticalBlue
 } from './icons/occVertical'
 import { occDartGrey, occDartWhite, occDartBlue } from './icons/occDart'
+import avatarSmile from './icons/avatarSmile'
 import bars from './icons/bars'
 import back from './icons/back'
 import forward from './icons/forward'
@@ -106,6 +107,7 @@ const icons = {
   occDartGrey,
   occDartWhite,
   occDartBlue,
+  avatarSmile,
   bars,
   back,
   forward,
