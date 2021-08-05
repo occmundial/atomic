@@ -11,12 +11,19 @@ import {
   occVerticalBlue
 } from './icons/occVertical'
 import { occDartGrey, occDartWhite, occDartBlue } from './icons/occDart'
+import avatarSmile from './icons/avatarSmile'
+import hourGlass from './icons/hourGlass'
+import location from './icons/location'
 import bars from './icons/bars'
 import back from './icons/back'
 import forward from './icons/forward'
 import bullet from './icons/bullet'
 import messages from './icons/messages'
 import messagesSolid from './icons/messagesSolid'
+import noMessages from './icons/noMessages'
+import noMessagesSolid from './icons/noMessagesSolid'
+import sendMessage from './icons/sendMessage'
+import sendMessageSolid from './icons/sendMessageSolid'
 import bell from './icons/bell'
 import bellSolid from './icons/bellSolid'
 import panel from './icons/panel'
@@ -70,6 +77,7 @@ import phone from './icons/phone'
 import phoneSolid from './icons/phoneSolid'
 import tag from './icons/tag'
 import cross from './icons/cross'
+import crossSolid from './icons/crossSolid'
 import trash from './icons/trash'
 import trashSolid from './icons/trashSolid'
 import bulb from './icons/bulb'
@@ -106,12 +114,19 @@ const icons = {
   occDartGrey,
   occDartWhite,
   occDartBlue,
+  avatarSmile,
+  hourGlass,
+  location,
   bars,
   back,
   forward,
   bullet,
   messages,
   messagesSolid,
+  noMessages,
+  noMessagesSolid,
+  sendMessage,
+  sendMessageSolid,
   bell,
   bellSolid,
   panel,
@@ -165,6 +180,7 @@ const icons = {
   phoneSolid,
   tag,
   cross,
+  crossSolid,
   trash,
   trashSolid,
   bulb,

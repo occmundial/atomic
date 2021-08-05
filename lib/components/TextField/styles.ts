@@ -70,7 +70,7 @@ export default createUseStyles({
     color: colors.ink,
     fontFamily: fonts.body,
     fontWeight: 'normal',
-    fontSize: 14,
+    fontSize: 15,
     lineHeight: '24px',
     background: colors.bgWhite,
     border: `1px solid ${colors.grey200}`,
@@ -85,7 +85,25 @@ export default createUseStyles({
     '&::placeholder': {
       color: colors.inkLighter,
       transition: '0.3s all'
+    },
+    '&::-webkit-outer-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0
+    },
+    '&::-webkit-inner-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0
+    },
+    '&[type=number]': {
+      '-moz-appearance': 'textfield'
     }
+  },
+  inputDisabled: {
+    overflow: 'hidden',
+    whiteSpace: 'nowrap'
+  },
+  hasRightIcon: {
+    marginRight: spacing.small
   },
   select: {
     '&::-ms-expand': {
@@ -93,13 +111,13 @@ export default createUseStyles({
     },
     paddingRight: spacing.medium,
     '& optgroup': {
-      fontSize: 12,
+      fontSize: 13,
       fontWeight: 'normal',
       lineHeight: '40px',
       color: colors.inkLight
     },
     '& option': {
-      fontSize: 14,
+      fontSize: 15,
       lineHeight: '40px',
       color: colors.ink,
       '&:disabled': {
