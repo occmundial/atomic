@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Link from 'next/link'
 
 import Text from '@/components/Text'
 import NavTab from '@/components/NavTab'
@@ -8,11 +9,14 @@ import Menu from '@/src/components/Menu'
 
 import { Doc } from '@/src/components/Layout'
 
+import useStyles from './styles'
+
 interface HeaderProps {
   docs: Doc[]
 }
 
 export default function Header({ docs }: HeaderProps) {
+  const classes = useStyles()
   const [showAside, setShowAside] = useState(false)
 
   return (
@@ -29,9 +33,12 @@ export default function Header({ docs }: HeaderProps) {
           },
           {
             key: 1,
-            type: 'link',
-            text: 'ATOMIC',
-            link: '/'
+            type: 'custom',
+            custom: (
+              <Link href="/">
+                <a className={classes.title}>Atomic</a>
+              </Link>
+            )
           }
         ]}
       />
