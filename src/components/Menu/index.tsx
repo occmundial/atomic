@@ -1,10 +1,13 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import Text from '@/components/Text'
 import SlideDown from '@/components/SlideDown'
 import { Doc } from '@/src/components/Layout'
+import MenuItem from './MenuItem'
 
 import useStyles from './styles'
+import { useMemo } from 'react'
 
 interface MenuProps {
   docs: Doc[]
@@ -13,31 +16,41 @@ interface MenuProps {
 
 export default function Menu({ docs, close }: MenuProps) {
   const classes = useStyles()
-  const home = docs.find(doc => doc.section === 'home')
-  const components = docs.filter(doc => doc.section === 'components')
+  const route = useRouter()
+  const selected = useMemo(
+    () =>
+      docs.find(
+        doc => doc.slug === route.query?.slug || doc.section === 'home'
+      ),
+    [docs, route]
+  )
+  const home = useMemo(() => docs.find(doc => doc.section === 'home'), [docs])
+  const components = useMemo(
+    () => docs.filter(doc => doc.section === 'components'),
+    [docs]
+  )
   return (
     <div>
       <ul className={classes.list}>
         {home && (
-          <Text tag="li" strong className={classes.item}>
-            <Link href="/">
-              <a className={classes.link} onClick={close}>
-                {home.title}
-              </a>
-            </Link>
-          </Text>
+          <MenuItem
+            doc={home}
+            close={close}
+            link="/"
+            selected={selected.slug === home.slug}
+          />
         )}
       </ul>
       <SlideDown expanded title="Components" strong textSize="lg">
         <ul className={classes.list}>
           {components.map(doc => (
-            <Text tag="li" strong className={classes.item} key={doc.title}>
-              <Link href={doc.slug}>
-                <a className={classes.link} onClick={close}>
-                  {doc.title}
-                </a>
-              </Link>
-            </Text>
+            <MenuItem
+              key={doc.slug}
+              doc={doc}
+              close={close}
+              link={doc.slug}
+              selected={selected.slug === doc.slug}
+            />
           ))}
         </ul>
       </SlideDown>
