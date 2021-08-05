@@ -38,6 +38,16 @@ export interface TextFieldProps {
   selectOnFocus?: boolean
   mask?: any
   guide?: boolean
+  pattern?: string
+  inputMode?:
+    | 'text'
+    | 'none'
+    | 'search'
+    | 'tel'
+    | 'url'
+    | 'email'
+    | 'numeric'
+    | 'decimal'
   disableAutoComplete?: boolean
   onFocus?: () => void
   onBlur?: (item: any) => void
@@ -91,6 +101,8 @@ const TextField = forwardRef(
       required,
       mask,
       guide,
+      pattern,
+      inputMode,
       disableAutoComplete
     }: TextFieldProps,
     ref
@@ -217,21 +229,7 @@ const TextField = forwardRef(
           { 'data-hj-whitelist': hjWhitelist },
           inputClassName
         ),
-      [
-        alignRight,
-        classes.alignRight,
-        classes.hasClear,
-        classes.hasIcon,
-        classes.hasPass,
-        classes.input,
-        classes.select,
-        classes.textarea,
-        clear,
-        hjWhitelist,
-        iconName,
-        inputClassName,
-        type
-      ]
+      [alignRight, classes, clear, hjWhitelist, iconName, inputClassName, type]
     )
 
     const commonProps = useMemo(
@@ -239,7 +237,7 @@ const TextField = forwardRef(
         name,
         id,
         className: _inputClassName,
-        value,
+        value: _value,
         autoFocus,
         maxLength,
         onFocus: _onFocus,
@@ -247,20 +245,24 @@ const TextField = forwardRef(
         onChange: _onChange,
         onKeyUp: _onKeyUp,
         ref: inputRef,
-        required
+        required,
+        pattern,
+        inputMode
       }),
       [
         name,
         id,
         _inputClassName,
-        value,
+        _value,
         autoFocus,
         maxLength,
         _onFocus,
         _onBlur,
         _onChange,
         _onKeyUp,
-        required
+        required,
+        pattern,
+        inputMode
       ]
     )
 
@@ -270,7 +272,7 @@ const TextField = forwardRef(
           const selectedOption = options.filter(
             option => option.value == _value
           )
-          let optionLabel
+          let optionLabel: string
           if (selectedOption.length) optionLabel = selectedOption[0].label
           return (
             <label
@@ -278,7 +280,14 @@ const TextField = forwardRef(
                 [classes.hasIcon]: iconName
               })}
             >
-              {optionLabel ? optionLabel : _value ? _value : placeholder}
+              <div
+                className={classnames(
+                  classes.inputDisabled,
+                  classes.hasRightIcon
+                )}
+              >
+                {optionLabel ? optionLabel : _value ? _value : placeholder}
+              </div>
             </label>
           )
         } else
@@ -290,7 +299,9 @@ const TextField = forwardRef(
                 { [classes.hasIcon]: iconName }
               )}
             >
-              {_value ? _value : placeholder}
+              <div className={classes.inputDisabled}>
+                {_value ? _value : placeholder}
+              </div>
             </label>
           )
       } else if (type === 'select')
@@ -333,7 +344,8 @@ const TextField = forwardRef(
           <MaskedInput
             {...commonProps}
             placeholder={placeholder}
-            type="text"
+            type={type === 'password' && showPass ? 'text' : type}
+            {...(disableAutoComplete && { autoComplete: 'off' })}
             mask={mask}
             guide={guide}
           />
@@ -348,9 +360,7 @@ const TextField = forwardRef(
           />
         )
     }, [
-      classes.hasIcon,
-      classes.input,
-      classes.textarea,
+      classes,
       commonProps,
       disableAutoComplete,
       disabled,
