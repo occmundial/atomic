@@ -8,6 +8,7 @@ import Table from './Table'
 import Tr from './Table/Tr'
 import Th from './Table/Th'
 import Td from './Table/Td'
+import Hr from './Hr'
 import Button from '@/components/Button'
 import Card from '@/components/Card'
 import Flexbox from '@/components/Flexbox'
@@ -27,6 +28,7 @@ const mdxComponents = {
   tr: Tr,
   th: Th,
   td: Td,
+  hr: Hr,
   p: Text,
   h1: props =>
     createElement(Text, {

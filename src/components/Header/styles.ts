@@ -9,5 +9,12 @@ export default createUseStyles({
     textDecoration: 'none',
     fontSize: 28,
     lineHeight: '32px'
+  },
+  titleBig: {
+    fontFamily: '"Pacifico", sans-serif',
+    color: colors.sec,
+    textDecoration: 'none',
+    fontSize: 36,
+    lineHeight: '48px'
   }
 })

@@ -29,6 +29,10 @@ export default function Menu({ docs, close }: MenuProps) {
     () => docs.filter(doc => doc.section === 'components'),
     [docs]
   )
+  const tokens = useMemo(
+    () => docs.filter(doc => doc.section === 'tokens'),
+    [docs]
+  )
   return (
     <div>
       <ul className={classes.list}>
@@ -44,6 +48,19 @@ export default function Menu({ docs, close }: MenuProps) {
       <SlideDown expanded title="Components" strong textSize="lg">
         <ul className={classes.list}>
           {components.map(doc => (
+            <MenuItem
+              key={doc.slug}
+              doc={doc}
+              close={close}
+              link={doc.slug}
+              selected={selected.slug === doc.slug}
+            />
+          ))}
+        </ul>
+      </SlideDown>
+      <SlideDown expanded title="Tokens" strong textSize="lg">
+        <ul className={classes.list}>
+          {tokens.map(doc => (
             <MenuItem
               key={doc.slug}
               doc={doc}

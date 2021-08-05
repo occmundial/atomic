@@ -45,7 +45,7 @@ export default function Header({ docs }: HeaderProps) {
       <Portal show={showAside}>
         <NavAside
           onClose={() => setShowAside(false)}
-          top={<Text heading>Atomic</Text>}
+          top={<span className={classes.titleBig}>Atomic</span>}
         >
           <Menu docs={docs} close={() => setShowAside(false)} />
         </NavAside>
