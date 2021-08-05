@@ -28,8 +28,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const docs = await getMdxContent('./src/docs')
-  const doc = docs.find(docs => docs.slug === slug)
+  const docsData = await getMdxContent('./src/docs')
+  const docs = docsData.map(doc => ({
+    slug: doc.slug,
+    ...doc.data
+  }))
+  const doc = docsData.find(docs => docs.slug === slug)
 
   if (!doc) {
     console.warn(`No content found for slug ${slug}`)

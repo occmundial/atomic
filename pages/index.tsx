@@ -14,12 +14,12 @@ export default function DocsPage({ docs, homeFile }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getMdxContent('./src/docs')
-  const docs = posts.map(post => ({
-    slug: post.slug,
-    ...post.data
+  const docsData = await getMdxContent('./src/docs')
+  const docs = docsData.map(doc => ({
+    slug: doc.slug,
+    ...doc.data
   }))
-  const homeFile = posts.find(post => post.data.section === 'home')
+  const homeFile = docsData.find(doc => doc.data.section === 'home')
 
   return {
     props: {
