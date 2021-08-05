@@ -41,6 +41,14 @@ export default function Header({ docs }: HeaderProps) {
             )
           }
         ]}
+        right={[
+          {
+            key: 0,
+            type: 'link',
+            link: 'https://github.com/occmundial/atomic',
+            text: 'View on Github'
+          }
+        ]}
       />
       <Portal show={showAside}>
         <NavAside
