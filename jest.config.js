@@ -1,4 +1,5 @@
 module.exports = {
+  preset: 'ts-jest',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testPathIgnorePatterns: [
     '<rootDir>/.next',
