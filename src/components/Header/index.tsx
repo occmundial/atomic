@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-import Text from '@/components/Text'
 import NavTab from '@/components/NavTab'
 import NavAside from '@/components/NavAside'
 import Portal from '@/components/Portal'
 import Menu from '@/src/components/Menu'
+import Search from '@/src/components/Search'
 
 import { Doc } from '@/src/components/Layout'
 
@@ -47,6 +47,13 @@ export default function Header({ docs }: HeaderProps) {
             type: 'link',
             link: 'https://github.com/occmundial/atomic',
             text: 'View on Github'
+          }
+        ]}
+        center={[
+          {
+            key: 0,
+            type: 'custom',
+            custom: <Search docs={docs} />
           }
         ]}
       />

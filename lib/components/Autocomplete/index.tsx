@@ -37,6 +37,7 @@ export interface AutocompleteProps {
     | 'groupItemsKey'
     | 'className'
     | 'filter'
+    | 'term'
   >
   onChange?: (item: any) => void
   onKeyUp?: (item: any) => void
