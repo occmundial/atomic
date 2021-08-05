@@ -28,7 +28,7 @@ export default createUseStyles<any, ButtonProps>({
     borderRadius: spacing.radius,
     fontFamily: fonts.body,
     fontWeight: 600,
-    fontSize: 12,
+    fontSize: 13,
     lineHeight: `${spacing.base}px`,
     letterSpacing: 1,
     textAlign: 'center',
@@ -244,7 +244,7 @@ export default createUseStyles<any, ButtonProps>({
   },
   // Sizes
   md: {
-    fontSize: 14,
+    fontSize: 15,
     height: 40,
     lineHeight: `${spacing.base}px`,
     '& i': {
@@ -256,7 +256,7 @@ export default createUseStyles<any, ButtonProps>({
     }
   },
   lg: {
-    fontSize: 14,
+    fontSize: 15,
     height: spacing.large,
     lineHeight: `${spacing.base}px`,
     '& i': {

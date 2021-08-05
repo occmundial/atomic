@@ -18,6 +18,8 @@ export default createUseStyles({
     outline: 0,
     flex: 1,
     overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
     transition: '0.3s all',
     cursor: 'pointer',
     '&:first-child': {

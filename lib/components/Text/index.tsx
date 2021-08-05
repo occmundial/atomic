@@ -15,6 +15,7 @@ interface TextProps {
   headline?: boolean
   heading?: boolean
   subheading?: boolean
+  extraLarge?: boolean
   large?: boolean
   standard?: boolean
   small?: boolean
@@ -64,6 +65,7 @@ const Text = ({
   headline,
   heading,
   subheading,
+  extraLarge,
   large,
   standard,
   small,
@@ -115,6 +117,7 @@ const Text = ({
       { headline },
       { heading },
       { subheading },
+      { extraLarge },
       { large },
       { standard },
       { small },
