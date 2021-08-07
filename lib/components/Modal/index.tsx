@@ -5,6 +5,7 @@ import React, {
   useCallback,
   useMemo
 } from 'react'
+import withStyles from 'react-jss'
 import classnames from 'classnames'
 
 import Card from '@/components/Card'
@@ -18,7 +19,7 @@ import iconSizes from '@/tokens/iconSizes'
 import useWindowSize from '@/hooks/useWindowSize'
 import useEventListener from '@/hooks/useEventListener'
 
-import useStyles from './styles'
+import styles from './styles'
 
 interface ButtonType {
   text: string
@@ -46,6 +47,7 @@ interface ImageLeft extends ModalImage {
 }
 
 export interface ModalProps {
+  classes: { [key: string]: string }
   children: ReactNode
   show?: boolean
   onClose: () => void
@@ -61,6 +63,7 @@ export interface ModalProps {
 
 const Modal = (props: ModalProps) => {
   const {
+    classes,
     onClose,
     children,
     title,
@@ -73,7 +76,6 @@ const Modal = (props: ModalProps) => {
     onTransitionEnd,
     fullSize
   } = props
-  const classes = useStyles(props)
   const { width } = useWindowSize()
   const isMobile = useMemo(() => width < grid.xs, [width])
 
@@ -93,9 +95,8 @@ const Modal = (props: ModalProps) => {
       <div className={classes.closeIcon}>
         <Icon
           iconName="close"
-          width={iconSizes.base}
-          height={iconSizes.base}
-          colors={[colors.grey900]}
+          size={iconSizes.base}
+          color={colors.grey900}
           onClick={onClose}
         />
       </div>
@@ -210,4 +211,4 @@ Modal.defaultProps = {
   size: 'md'
 }
 
-export default Modal
+export default withStyles(styles)(Modal)

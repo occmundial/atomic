@@ -1,12 +1,10 @@
-import { createUseStyles } from 'react-jss'
-
 import spacing from '@/tokens/spacing'
 import grid from '@/tokens/grid'
 import colors from '@/tokens/colors'
 
 import { ModalProps } from './'
 
-export default createUseStyles<any, ModalProps>({
+const styles = {
   '@global': {
     body: {
       overflow: 'hidden'
@@ -64,9 +62,9 @@ export default createUseStyles<any, ModalProps>({
       padding: spacing.medium
     },
     [`@media screen and (max-width:${grid.xs - 1}px)`]: {
-      padding: ({ fullSize }) => fullSize && spacing.base,
-      minHeight: ({ fullSize }) => fullSize && '100vh',
-      borderRadius: ({ fullSize }) => fullSize && 0
+      padding: ({ fullSize }: ModalProps) => fullSize && spacing.base,
+      minHeight: ({ fullSize }: ModalProps) => fullSize && '100vh',
+      borderRadius: ({ fullSize }: ModalProps) => fullSize && 0
     }
   },
   cardShow: {
@@ -135,12 +133,13 @@ export default createUseStyles<any, ModalProps>({
   },
   imgLeft: {
     width: 200,
-    backgroundImage: ({ imgLeft }) => `url(${imgLeft?.img || null})`,
-    backgroundPosition: ({ imgLeft }) =>
+    backgroundImage: ({ imgLeft }: ModalProps) =>
+      `url(${imgLeft?.img || null})`,
+    backgroundPosition: ({ imgLeft }: ModalProps) =>
       `center ${imgLeft?.position || 'center'}`,
-    backgroundSize: ({ imgLeft }) =>
+    backgroundSize: ({ imgLeft }: ModalProps) =>
       imgLeft?.size === 'contain' ? '100% auto' : 'cover',
-    backgroundColor: ({ imgLeft }) => imgLeft?.color || null,
+    backgroundColor: ({ imgLeft }: ModalProps) => imgLeft?.color || null,
     backgroundRepeat: 'no-repeat',
     borderRadius: [spacing.radius, 0, 0, spacing.radius],
     marginLeft: -spacing.small,
@@ -157,12 +156,12 @@ export default createUseStyles<any, ModalProps>({
   imgTop: {
     position: 'relative',
     height: 128,
-    backgroundImage: ({ imgTop }) => `url(${imgTop?.img || null})`,
-    backgroundPosition: ({ imgTop }) =>
+    backgroundImage: ({ imgTop }: ModalProps) => `url(${imgTop?.img || null})`,
+    backgroundPosition: ({ imgTop }: ModalProps) =>
       `${imgTop?.position || 'center'} center`,
-    backgroundSize: ({ imgTop }) =>
+    backgroundSize: ({ imgTop }: ModalProps) =>
       imgTop?.size === 'contain' ? 'auto 100%' : 'cover',
-    backgroundColor: ({ imgTop }) => imgTop?.color || null,
+    backgroundColor: ({ imgTop }: ModalProps) => imgTop?.color || null,
     backgroundRepeat: 'no-repeat',
     borderRadius: [spacing.radius, spacing.radius, 0, 0],
     marginLeft: -spacing.small,
@@ -185,4 +184,6 @@ export default createUseStyles<any, ModalProps>({
       right: spacing.medium
     }
   }
-})
+}
+
+export default styles
