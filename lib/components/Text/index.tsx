@@ -132,6 +132,7 @@ const Text = ({
     headline,
     heading,
     subheading,
+    extraLarge,
     large,
     standard,
     small,
