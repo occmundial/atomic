@@ -21,6 +21,7 @@
     "@babel/runtime": "^7.14.8",
     "classnames": "^2.3.1",
     "hex-rgba": "^1.0.2",
+    "lodash": "^4.17.21",
     "react-text-mask": "^5.4.3",
     "unorm": "^1.6.0"
   },
