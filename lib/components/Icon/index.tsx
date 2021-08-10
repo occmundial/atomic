@@ -1,16 +1,17 @@
-import { createElement, CSSProperties } from 'react'
+import { useContext, CSSProperties } from 'react'
 import classnames from 'classnames'
+
+import { useAtomic } from '@/components/Provider'
 
 import useStyles from './styles'
 
 export interface IconProps {
   iconName: string
   size?: number
-  display?: 'inline' | 'inline-block'
   transition?: string
   color?: string
   hoverColor?: string
-  onClick?: CallableFunction
+  onClick?: () => void
   alt?: string
   id?: string
   className?: string
@@ -19,25 +20,27 @@ export interface IconProps {
 
 const Icon = (props: IconProps) => {
   const classes = useStyles(props)
-  const { iconName, display, className, style, id, onClick, alt } = props
-  return createElement(onClick ? 'button' : 'span', {
-    id,
-    className: classnames(
-      classes.icon,
-      `atomic-${iconName}`,
-      { [classes.inline]: display === 'inline' },
-      { [classes.inlineBlock]: display === 'inline-block' },
-      { [classes.click]: onClick },
-      className
-    ),
-    style,
-    onClick,
-    alt
-  })
-}
-
-Icon.defaultProps = {
-  display: 'inline-block'
+  const atomic = useAtomic()
+  const { iconName, className, style, id, onClick } = props
+  return (
+    <svg
+      className={classnames(
+        classes.icon,
+        `${atomic.iconsPrefix}__${iconName}`,
+        {
+          [classes.click]: onClick
+        },
+        className
+      )}
+      id={id}
+      style={style}
+      onClick={onClick}
+    >
+      <use
+        xlinkHref={`${atomic.iconsUrl}#${atomic.iconsPrefix}__${iconName}`}
+      />
+    </svg>
+  )
 }
 
 export default Icon
