@@ -2,19 +2,8 @@ import { createUseStyles } from 'react-jss'
 
 import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
-import icons from '@/tokens/icons'
-import iconSizes from '@/tokens/iconSizes'
 import spacing from '@/tokens/spacing'
 import { ButtonProps } from './'
-
-const renderIcon = (props, color) => {
-  if (props.icon) {
-    return icons.base(icons[props.icon].icon(color))
-  } else if (props.iconRight) {
-    return icons.base(icons[props.iconRight].icon(color))
-  }
-  return ''
-}
 
 export default createUseStyles<any, ButtonProps>({
   btn: {
@@ -74,9 +63,6 @@ export default createUseStyles<any, ButtonProps>({
       background: colors.secDark,
       color: colors.white,
       borderColor: colors.secDark
-    },
-    '& i': {
-      background: props => renderIcon(props, [colors.bgWhite])
     }
   },
   secondary: {
@@ -84,21 +70,12 @@ export default createUseStyles<any, ButtonProps>({
     color: colors.sec,
     border: `1px solid ${colors.secLighter}`,
     '&:hover, &:active': {
-      color: colors.secDark,
-      '& i': {
-        background: props => renderIcon(props, [colors.secDark])
-      }
-    },
-    '& i': {
-      background: props => renderIcon(props, [colors.sec])
+      color: colors.secDark
     },
     '&$disabled': {
       background: `${colors.secLighter} !important`,
       color: `${colors.sec} !important`,
       border: `1px solid ${colors.secLighter} !important`
-    },
-    '& $loadIcon': {
-      background: icons.base(icons.loading.icon([colors.sec]))
     }
   },
   tertiary: {
@@ -106,24 +83,12 @@ export default createUseStyles<any, ButtonProps>({
     color: colors.ink,
     border: `1px solid ${colors.grey200}`,
     '&:hover, &:active': {
-      color: colors.inkLight,
-      '& i': {
-        background: props => renderIcon(props, [colors.grey600])
-      }
-    },
-    '& i': {
-      background: props => renderIcon(props, [colors.grey900])
+      color: colors.inkLight
     },
     '&$disabled': {
       background: `${colors.bgWhite} !important`,
       color: `${colors.ink} !important`,
-      border: `1px solid ${colors.grey200} !important`,
-      '& i': {
-        background: props => renderIcon(props, [colors.grey900])
-      }
-    },
-    '& $loadIcon': {
-      background: icons.base(icons.loading.icon([colors.grey600]))
+      border: `1px solid ${colors.grey200} !important`
     }
   },
   tertiaryWhite: {
@@ -133,16 +98,10 @@ export default createUseStyles<any, ButtonProps>({
     '&:hover, &:active': {
       opacity: 0.6
     },
-    '& i': {
-      background: props => renderIcon(props, [colors.bgWhite])
-    },
     '&$disabled': {
       background: `transparent !important`,
       color: `${colors.white} !important`,
-      border: `1px solid ${colors.grey200} !important`,
-      '& i': {
-        background: props => renderIcon(props, [colors.bgWhite])
-      }
+      border: `1px solid ${colors.grey200} !important`
     }
   },
   ghostPink: {
@@ -152,24 +111,12 @@ export default createUseStyles<any, ButtonProps>({
     paddingLeft: 0,
     paddingRight: 0,
     '&:hover, &:active': {
-      color: colors.secDark,
-      '& i': {
-        background: props => renderIcon(props, [colors.secDark])
-      }
-    },
-    '& i': {
-      background: props => renderIcon(props, [colors.sec])
+      color: colors.secDark
     },
     '&$disabled': {
       background: `transparent !important`,
       color: `${colors.sec} !important`,
-      border: `none !important`,
-      '& i': {
-        background: props => renderIcon(props, [colors.grey900])
-      }
-    },
-    '& $loadIcon': {
-      background: icons.base(icons.loading.icon([colors.sec]))
+      border: `none !important`
     }
   },
   ghostGrey: {
@@ -179,24 +126,12 @@ export default createUseStyles<any, ButtonProps>({
     paddingLeft: 0,
     paddingRight: 0,
     '&:hover, &:active': {
-      color: colors.inkLight,
-      '& i': {
-        background: props => renderIcon(props, [colors.grey600])
-      }
-    },
-    '& i': {
-      background: props => renderIcon(props, [colors.grey900])
+      color: colors.inkLight
     },
     '&$disabled': {
       background: `transparent !important`,
       color: `${colors.ink} !important`,
-      border: `none !important`,
-      '& i': {
-        background: props => renderIcon(props, [colors.grey900])
-      }
-    },
-    '& $loadIcon': {
-      background: icons.base(icons.loading.icon([colors.grey600]))
+      border: `none !important`
     }
   },
   ghostWhite: {
@@ -208,16 +143,10 @@ export default createUseStyles<any, ButtonProps>({
     '&:hover, &:active': {
       opacity: 0.6
     },
-    '& i': {
-      background: props => renderIcon(props, [colors.bgWhite])
-    },
     '&$disabled': {
       background: `transparent !important`,
       color: `${colors.white} !important`,
-      border: `none !important`,
-      '& i': {
-        background: props => renderIcon(props, [colors.bgWhite])
-      }
+      border: `none !important`
     }
   },
   loading: {
@@ -233,9 +162,6 @@ export default createUseStyles<any, ButtonProps>({
     cursor: 'default',
     pointerEvents: 'none',
     opacity: 0.4,
-    '& i': {
-      background: props => renderIcon(props, [colors.bgWhite])
-    },
     '&:hover, &:active, &:focus': {
       background: colors.sec,
       color: colors.white,
@@ -247,10 +173,6 @@ export default createUseStyles<any, ButtonProps>({
     fontSize: 15,
     height: 40,
     lineHeight: `${spacing.base}px`,
-    '& i': {
-      width: iconSizes.small,
-      height: iconSizes.small
-    },
     '&$iconOnly': {
       padding: `0 ${spacing.gutter}px`
     }
@@ -259,10 +181,6 @@ export default createUseStyles<any, ButtonProps>({
     fontSize: 15,
     height: spacing.large,
     lineHeight: `${spacing.base}px`,
-    '& i': {
-      width: iconSizes.small,
-      height: iconSizes.small
-    },
     '&$iconOnly': {
       padding: `0 ${spacing.small}px`
     }
@@ -273,36 +191,23 @@ export default createUseStyles<any, ButtonProps>({
     width: '100%'
   },
   // Icon
-  icon: {
-    width: iconSizes.tiny,
-    height: iconSizes.tiny,
-    marginRight: 4,
-    display: 'inline-block',
-    transition: '0.3s all'
+  iconLeft: {
+    marginRight: 4
   },
   iconRight: {
-    width: iconSizes.tiny,
-    height: iconSizes.tiny,
-    marginLeft: 4,
-    display: 'inline-block',
-    transition: '0.3s all'
+    marginLeft: 4
   },
   '@keyframes iconRotate': {
     from: { transform: 'rotate(0deg)' },
     to: { transform: 'rotate(360deg)' }
   },
   iconOnly: {
-    padding: `0 ${spacing.tiny}px`,
-    '& i': {
-      marginRight: 0
-    }
+    padding: [0, spacing.tiny]
+  },
+  round: {
+    borderRadius: '50%'
   },
   loadIcon: {
-    width: spacing.base,
-    height: spacing.base,
-    display: 'inline-block',
-    transition: '0.3s all',
-    animation: '$iconRotate 1s infinite linear',
-    background: icons.base(icons.loading.icon())
+    animation: '$iconRotate 1s infinite linear'
   }
 })
