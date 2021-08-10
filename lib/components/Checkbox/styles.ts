@@ -2,8 +2,6 @@ import { createUseStyles } from 'react-jss'
 
 import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
-import icons from '@/tokens/icons'
-import iconSizes from '@/tokens/iconSizes'
 
 export default createUseStyles({
   cont: {
@@ -19,8 +17,8 @@ export default createUseStyles({
       display: 'table',
       clear: 'both'
     },
-    '&:hover $check:after': {
-      background: icons.base(icons.check.icon([colors.grey200]))
+    '&:hover $icon': {
+      fill: colors.grey200
     }
   },
   check: {
@@ -38,28 +36,26 @@ export default createUseStyles({
       transform: 'translate(-50%, -50%)',
       border: `1px solid ${colors.grey200}`,
       background: colors.bgWhite
-    },
-    '&:after': {
-      content: '""',
-      width: iconSizes.small,
-      height: iconSizes.small,
-      marginTop: -1,
-      position: 'absolute',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      transition: '0.3s all',
-      background: 'transparent'
     }
   },
+  icon: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    marginTop: -1,
+    fill: 'none',
+    transition: '0.3s fill',
+    zIndex: 1
+  },
   active: {
-    '& $check:after': {
-      background: [icons.base(icons.check.icon([colors.prim])), '!important']
+    '& $icon': {
+      fill: [colors.prim, '!important']
     }
   },
   undetermined: {
-    '& $check:after': {
-      background: [icons.base(icons.minus.icon([colors.prim])), '!important'],
+    '& $icon': {
+      fill: [colors.prim, '!important'],
       marginTop: 0
     }
   },

@@ -9,6 +9,8 @@ import {
 import classnames from 'classnames'
 
 import Text from '@/components/Text'
+import Icon from '@/components/Icon'
+import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 
@@ -41,7 +43,7 @@ const Checkbox = ({
 }: CheckboxProps) => {
   const classes = useStyles()
   const [_value, setValue] = useState(value)
-  const [iUndetermined, setUndetermined] = useState(undetermined)
+  const [_undetermined, setUndetermined] = useState(undetermined)
   const valueRef = useRef<boolean>()
 
   useEffect(() => {
@@ -65,15 +67,21 @@ const Checkbox = ({
       id={id}
       className={classnames(
         classes.cont,
-        { [classes.undetermined]: iUndetermined },
-        { [classes.active]: value && !iUndetermined },
+        { [classes.undetermined]: _undetermined },
+        { [classes.active]: value && !_undetermined },
         { [classes.disabled]: disabled },
         className
       )}
       onClick={toggle}
       style={style}
     >
-      <div className={classes.check} id={trk} />
+      <div className={classes.check} id={trk}>
+        <Icon
+          iconName={_undetermined ? 'minus' : 'success'}
+          className={classes.icon}
+          size={iconSizes.tiny}
+        />
+      </div>
       {label && (
         <Text
           tag="label"
