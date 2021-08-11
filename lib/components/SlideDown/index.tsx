@@ -121,8 +121,8 @@ const SlideDown = ({
           </Flexbox>
           <Flexbox flex="0 0 auto">
             <Icon
-              iconName="arrowDown"
-              colors={[iconColor]}
+              iconName="arrow-down-o"
+              color={iconColor}
               className={classes.icon}
               style={{ transform: toggled ? 'rotate(180deg)' : '' }}
             />
