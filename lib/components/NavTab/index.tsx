@@ -20,6 +20,7 @@ import grid from '@/tokens/grid'
 import useWindowSize from '@/hooks/useWindowSize'
 
 import useStyles from './styles'
+import iconSizes from '@/tokens/iconSizes'
 
 interface NavElement {
   key: string | number
@@ -116,11 +117,12 @@ const NavTab = ({
         >
           {item.text}{' '}
           <Icon
-            iconName="arrowDown"
+            iconName="arrow-down-o"
+            size={iconSizes.small}
             className={classnames(classes.arrow, {
               [classes.arrowUp]: item.selected
             })}
-            colors={blue ? [colors.white] : [colors.grey900]}
+            color={blue ? colors.white : colors.grey900}
           />
         </NavItem>
       )
