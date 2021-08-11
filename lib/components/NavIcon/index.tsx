@@ -4,9 +4,9 @@ import classnames from 'classnames'
 import Text from '@/components/Text'
 import Flexbox from '@/components/Flexbox'
 import Icon from '@/components/Icon'
+import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
-import iconSizes from '@/tokens/iconSizes'
 
 export interface NavIconProps {
   selected?: boolean

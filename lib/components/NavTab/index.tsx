@@ -17,10 +17,10 @@ import Icon from '@/components/Icon'
 import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
 import grid from '@/tokens/grid'
+import iconSizes from '@/tokens/iconSizes'
 import useWindowSize from '@/hooks/useWindowSize'
 
 import useStyles from './styles'
-import iconSizes from '@/tokens/iconSizes'
 
 interface NavElement {
   key: string | number
