@@ -12,12 +12,11 @@ export default createUseStyles<any, IconProps>({
     height: ({ size }: IconProps) => (size ? size : iconSizes.base),
     border: '0',
     outline: '0',
-    fill: ({ color }: IconProps) => (color ? color : 'currentColor'),
+    fill: ({ color }: IconProps) => (color ? color : 'currentcolor'),
     transition: ({ transition }: IconProps) =>
       transition ? transition : '0.3s all',
     '&:hover': {
-      fill: ({ hoverColor }: IconProps) =>
-        hoverColor ? hoverColor : 'currentColor'
+      fill: ({ hoverColor }: IconProps) => (hoverColor ? hoverColor : null)
     }
   },
   click: { cursor: 'pointer' }
