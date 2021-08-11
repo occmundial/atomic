@@ -6,7 +6,7 @@ import Content from '@/src/components/Content'
 export interface Doc {
   slug: string
   title: string
-  section: 'components' | 'home'
+  section: 'components' | 'tokens' | 'hooks' | 'home'
   index?: number
 }
 
