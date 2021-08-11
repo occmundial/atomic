@@ -3,24 +3,26 @@ import classnames from 'classnames'
 
 import Text from '@/components/Text'
 import Flexbox from '@/components/Flexbox'
+import Icon from '@/components/Icon'
 
 import useStyles from './styles'
+import iconSizes from '@/tokens/iconSizes'
 
 export interface NavIconProps {
-  selected: boolean
-  iconName: string
-  label: string
-  onClick: EventHandler<MouseEvent>
-  showBar: boolean
-  direction: 'col' | 'row'
-  className: string
-  width: number
-  white: boolean
+  selected?: boolean
+  iconName?: string
+  label?: string
+  onClick?: EventHandler<MouseEvent>
+  showBar?: boolean
+  direction?: 'col' | 'row'
+  className?: string
+  width?: number
+  white?: boolean
 }
 
 const NavIcon = (props: NavIconProps) => {
   const classes = useStyles(props)
-  const { selected, label, onClick, direction, className } = props
+  const { iconName, selected, label, onClick, direction, className } = props
   return (
     <div
       className={classnames(
@@ -37,9 +39,13 @@ const NavIcon = (props: NavIconProps) => {
         alignItems="center"
         className={classes.flex}
       >
-        <div className={classes.icon} />
+        <Icon
+          iconName={iconName}
+          size={iconSizes.base}
+          className={classes.icon}
+        />
         {label && (
-          <Text micro>
+          <Text micro current>
             <span className={classes.text}>{label}</span>
           </Text>
         )}
