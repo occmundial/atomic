@@ -82,7 +82,7 @@ const NavAside = ({
             )}
             <div className={classes.closeIcon}>
               <Icon
-                iconName="close"
+                iconName="x"
                 size={iconSizes.base}
                 color={colors.grey900}
                 onClick={onClose}
