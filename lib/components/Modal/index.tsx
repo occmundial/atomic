@@ -47,7 +47,7 @@ interface ImageLeft extends ModalImage {
 }
 
 export interface ModalProps {
-  classes: { [key: string]: string }
+  classes?: { [key: string]: string }
   children: ReactNode
   show?: boolean
   onClose: () => void
@@ -70,7 +70,7 @@ const Modal = (props: ModalProps) => {
     mainBtn,
     show,
     secBtn,
-    size,
+    size = 'md',
     imgTop,
     imgLeft,
     onTransitionEnd,
@@ -94,7 +94,7 @@ const Modal = (props: ModalProps) => {
     () => (
       <div className={classes.closeIcon}>
         <Icon
-          iconName="close"
+          iconName="x"
           size={iconSizes.base}
           color={colors.grey900}
           onClick={onClose}
@@ -205,10 +205,6 @@ const Modal = (props: ModalProps) => {
       </div>
     </div>
   )
-}
-
-Modal.defaultProps = {
-  size: 'md'
 }
 
 export default withStyles(styles)(Modal)
