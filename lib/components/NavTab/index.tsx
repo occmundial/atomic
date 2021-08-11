@@ -25,6 +25,7 @@ interface NavElement {
   key: string | number
   type: 'button' | 'link' | 'dropdownLink' | 'icon' | 'custom' | 'logo'
   text?: string
+  label?: string
   onClick?: () => void
   selected?: boolean
   link?: string
@@ -37,6 +38,7 @@ interface NavElement {
     | 'ghostGrey'
     | 'ghostWhite'
   iconName?: string
+  showBar?: boolean
   custom?: ReactNode
 }
 
