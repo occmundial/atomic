@@ -181,8 +181,7 @@ const Pill = ({
               {realStatus == 'error' && (
                 <Icon
                   iconName="warning"
-                  width={iconSizes.small}
-                  height={iconSizes.small}
+                  size={iconSizes.small}
                   className={classes.errorIcon}
                 />
               )}

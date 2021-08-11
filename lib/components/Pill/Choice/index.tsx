@@ -51,12 +51,7 @@ const Choice = ({
       id={idPrefix ? `${idPrefix}${id}` : null}
     >
       {leftIcon && (
-        <Icon
-          iconName={leftIcon}
-          colors={[iconColor]}
-          width={iconSizes.small}
-          height={iconSizes.small}
-        />
+        <Icon iconName={leftIcon} color={iconColor} size={iconSizes.small} />
       )}
       {children && (
         <Text
@@ -69,12 +64,7 @@ const Choice = ({
         </Text>
       )}
       {rightIcon && (
-        <Icon
-          iconName={rightIcon}
-          colors={[iconColor]}
-          width={iconSizes.small}
-          height={iconSizes.small}
-        />
+        <Icon iconName={rightIcon} color={iconColor} size={iconSizes.small} />
       )}
     </button>
   )
