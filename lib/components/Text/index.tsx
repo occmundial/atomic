@@ -32,6 +32,7 @@ interface TextProps {
   disabled?: boolean
   white?: boolean
   link?: boolean
+  current?: boolean
   left?: boolean
   center?: boolean
   right?: boolean
@@ -81,6 +82,7 @@ const Text = ({
   disabled,
   white,
   link,
+  current,
   left,
   center,
   right,
@@ -156,7 +158,8 @@ const Text = ({
       { info },
       { disabled },
       { white },
-      { link }
+      { link },
+      { current }
     ]
     const filtered = filter(colors)
     if (filtered.length == 0) return null
@@ -172,6 +175,7 @@ const Text = ({
     disabled,
     white,
     link,
+    current,
     filter
   ])
 
