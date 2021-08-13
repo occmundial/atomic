@@ -2,7 +2,6 @@ import { createUseStyles } from 'react-jss'
 
 import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
-import icons from '@/tokens/icons'
 
 export default createUseStyles({
   cont: {
@@ -27,9 +26,6 @@ export default createUseStyles({
     background: colors.prim,
     '& $slider': {
       left: 16
-    },
-    '& $icon': {
-      background: icons.base(icons.check.icon([colors.prim]))
     }
   },
   slider: {
@@ -41,13 +37,6 @@ export default createUseStyles({
     height: 20,
     borderRadius: '50%',
     background: colors.bgWhite,
-    transition: '0.3s all'
-  },
-  icon: {
-    width: '100%',
-    height: '100%',
-    display: 'block',
-    background: icons.base(icons.cross.icon([colors.grey400])),
     transition: '0.3s all'
   },
   disabled: {

@@ -68,7 +68,7 @@ const Checkbox = ({
       className={classnames(
         classes.cont,
         { [classes.undetermined]: _undetermined },
-        { [classes.active]: value && !_undetermined },
+        { [classes.active]: _value && !_undetermined },
         { [classes.disabled]: disabled },
         className
       )}

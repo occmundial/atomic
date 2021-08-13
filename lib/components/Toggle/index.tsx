@@ -9,12 +9,16 @@ import React, {
 import classnames from 'classnames'
 
 import Text from '@/components/Text'
+import Icon from '@/components/Icon'
 
 import useStyles from './styles'
+import colors from '@/tokens/colors'
+
+const ICON_SIZE = 20
 
 interface ToggleProps {
   value?: boolean
-  onChange: CallableFunction
+  onChange?: CallableFunction
   disabled?: boolean
   label?: ReactNode
   trk?: string
@@ -42,9 +46,7 @@ const Toggle = ({
   })
 
   useEffect(() => {
-    if (valueRef.current !== value) {
-      setValue(value)
-    }
+    if (valueRef.current !== value) setValue(value)
   }, [value])
 
   const toggle = useCallback(() => {
@@ -66,11 +68,15 @@ const Toggle = ({
     >
       <div
         id={trk}
-        className={classnames(classes.switch, { [classes.checked]: value })}
+        className={classnames(classes.switch, { [classes.checked]: _value })}
         onClick={toggle}
       >
         <span className={classes.slider}>
-          <span className={classes.icon} />
+          <Icon
+            iconName={_value ? 'check-o' : 'x'}
+            size={ICON_SIZE}
+            color={_value ? colors.prim : colors.grey400}
+          />
         </span>
       </div>
       {label && (
