@@ -31,9 +31,9 @@ interface BottomLink {
 
 interface Aux {
   text: string
-  icon?: string
   href?: string
   target?: string
+  iconLeft?: string
   iconRight?: string
   className?: string
 }
@@ -55,7 +55,14 @@ const Footer = ({
 }: FooterProps) => {
   const classes = useStyles()
   const { width } = useWindowSize()
-  const { text, icon, href, target, iconRight, className: auxClassName } = aux
+  const {
+    text,
+    iconLeft,
+    href,
+    target,
+    iconRight,
+    className: auxClassName
+  } = aux
   const isMobile = width < grid.sm
 
   return (
@@ -130,7 +137,7 @@ const Footer = ({
                 <Button
                   href={href}
                   target={target}
-                  icon={icon}
+                  iconLeft={iconLeft}
                   iconRight={iconRight}
                   size="md"
                   theme="ghostPink"
