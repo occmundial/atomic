@@ -9,11 +9,18 @@ import colors from '@/tokens/colors'
 import useStyles from './styles'
 
 const boldRegex = /\*(.*?)\*/g
+const icons = {
+  info: 'infoSolid',
+  warning: 'warning',
+  success: 'checkSolid',
+  error: 'crossSolid',
+  promote: null
+}
 
 interface AlertProps {
   theme?: 'info' | 'warning' | 'success' | 'error'
   children: ReactElement | string
-  icon?: string
+  icon?: boolean
   id?: string
   className?: string
   style?: CSSProperties
@@ -23,6 +30,7 @@ const Alert = ({ id, style, className, icon, theme, children }: AlertProps) => {
   const classes = useStyles()
   const themeObj = useMemo(() => ({ [theme]: true }), [theme])
   const iconColor = useMemo(() => [colors[`${theme}Text`]], [theme])
+  const iconName = useMemo(() => icons[theme], [theme])
 
   const boldMatch = useCallback(
     (match, i) => {
@@ -60,7 +68,11 @@ const Alert = ({ id, style, className, icon, theme, children }: AlertProps) => {
         className={classnames(classes.container, classes[theme])}
       >
         {icon && (
-          <Icon iconName={icon} className={classes.icon} colors={iconColor} />
+          <Icon
+            iconName={iconName}
+            className={classes.icon}
+            colors={iconColor}
+          />
         )}
         <Flexbox flex="1">
           <Text standard tag="div" {...themeObj}>
