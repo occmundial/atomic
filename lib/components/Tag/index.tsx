@@ -1,13 +1,23 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { useMemo, CSSProperties, ReactNode } from 'react'
 import classnames from 'classnames'
 
 import Flexbox from '@/components/Flexbox'
+import Icon from '@/components/Icon'
+import spacing from '@/tokens/spacing'
+import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 
 export interface TagProps {
   children: ReactNode
-  theme?: 'default' | 'info' | 'success' | 'warning' | 'error'
+  theme?:
+    | 'default'
+    | 'info'
+    | 'success'
+    | 'warning'
+    | 'error'
+    | 'basic'
+    | 'link'
   iconName?: string
   className?: string
   style?: CSSProperties
@@ -17,6 +27,10 @@ export interface TagProps {
 const Tag = (props: TagProps) => {
   const { children, className, style, theme, iconName, size } = props
   const classes = useStyles(props)
+  const iconSize = useMemo(
+    () => (size === 'small' ? spacing.gutter : iconSizes.small),
+    [size]
+  )
   return (
     <label
       className={classnames(
@@ -29,13 +43,7 @@ const Tag = (props: TagProps) => {
     >
       <Flexbox display="flex" alignItems="center" wrap="noWrap">
         {iconName && (
-          <span
-            className={classnames(
-              classes.icon,
-              classes[`${size}Icon`],
-              classes[`${theme}Icon`]
-            )}
-          />
+          <Icon iconName={iconName} className={classes.icon} size={iconSize} />
         )}
         <span
           className={classnames(classes.tagText, classes[`${size}TagText`])}
