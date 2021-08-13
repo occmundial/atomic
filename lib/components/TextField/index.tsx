@@ -382,9 +382,8 @@ const TextField = forwardRef(
             <div className={classes.passIcon}>
               <Icon
                 iconName="eye"
-                width={iconSizes.small}
-                height={iconSizes.small}
-                colors={[colors.grey100]}
+                size={iconSizes.small}
+                color={colors.grey200}
               />
             </div>
           ) : null
@@ -396,10 +395,9 @@ const TextField = forwardRef(
             className={classes.passIcon}
           >
             <Icon
-              iconName="eye"
-              width={iconSizes.small}
-              height={iconSizes.small}
-              colors={showPass ? [colors.grey500] : [colors.grey200]}
+              iconName={showPass ? 'eye' : 'eye-close'}
+              size={iconSizes.small}
+              color={showPass ? colors.grey900 : colors.grey400}
             />
           </div>
         ) : null,
@@ -434,26 +432,24 @@ const TextField = forwardRef(
           {iconName && (
             <Icon
               iconName={iconName}
-              width={iconSizes.base}
-              height={iconSizes.base}
+              size={iconSizes.base}
               className={classes.icon}
-              colors={[colors.grey500]}
+              color={colors.grey500}
             />
           )}
           {type == 'select' && (
             <div className={classes.selectIcon}>
               <Icon
-                iconName="arrowDown"
-                width={iconSizes.small}
-                height={iconSizes.small}
-                colors={disabled ? [colors.grey200] : [colors.grey900]}
+                iconName="arrow-down"
+                size={iconSizes.small}
+                color={disabled ? colors.grey200 : colors.grey900}
               />
             </div>
           )}
           {type == 'password' && passIcon}
           {_value && clear && (
             <div onClick={_onClear} className={classes.clear}>
-              <Icon iconName="close" />
+              <Icon iconName="x" color={colors.grey400} />
             </div>
           )}
           {element}
@@ -472,8 +468,7 @@ const TextField = forwardRef(
                 {realStatus == 'error' ? (
                   <Icon
                     iconName="warning"
-                    width={iconSizes.tiny}
-                    height={iconSizes.tiny}
+                    size={iconSizes.tiny}
                     className={classes.errorIcon}
                   />
                 ) : null}{' '}
