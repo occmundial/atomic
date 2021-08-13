@@ -6,6 +6,7 @@ import {
   forwardRef,
   useCallback,
   useMemo,
+  createElement,
   ReactNode,
   CSSProperties
 } from 'react'
@@ -166,8 +167,8 @@ const TextField = forwardRef(
     )
 
     const _onKeyUp = useCallback(
-      ({ which, keyCode }) => {
-        if (onKeyUp) onKeyUp(which || keyCode)
+      ({ code }: KeyboardEvent) => {
+        if (onKeyUp) onKeyUp(code)
       },
       [onKeyUp]
     )
@@ -205,7 +206,7 @@ const TextField = forwardRef(
       [status, disabled, errorStatus]
     )
 
-    const InputType = useMemo(
+    const inputType = useMemo(
       () =>
         type == 'select' ? 'select' : type == 'textarea' ? 'textarea' : 'input',
       [type]
@@ -305,40 +306,43 @@ const TextField = forwardRef(
             </label>
           )
       } else if (type === 'select')
-        return (
-          <InputType {...commonProps}>
-            <option value="" disabled hidden>
-              {placeholder}
-            </option>
-            {options.map(item =>
-              item.grouped ? (
-                <optgroup
-                  key={item.key}
-                  label={item.label}
-                  disabled={item.disabled}
-                >
-                  {item.options.map(option => (
-                    <option
-                      key={option.value}
-                      value={option.value}
-                      disabled={option.disabled}
-                    >
-                      {option.label}
-                    </option>
-                  ))}
-                </optgroup>
-              ) : (
-                <option
-                  key={item.value}
-                  value={item.value}
-                  disabled={item.disabled}
-                >
-                  {item.label}
-                </option>
-              )
-            )}
-          </InputType>
-        )
+        return createElement(inputType, {
+          ...commonProps,
+          children: (
+            <>
+              <option value="" disabled hidden>
+                {placeholder}
+              </option>
+              {options.map(item =>
+                item.grouped ? (
+                  <optgroup
+                    key={item.key}
+                    label={item.label}
+                    disabled={item.disabled}
+                  >
+                    {item.options.map(option => (
+                      <option
+                        key={option.value}
+                        value={option.value}
+                        disabled={option.disabled}
+                      >
+                        {option.label}
+                      </option>
+                    ))}
+                  </optgroup>
+                ) : (
+                  <option
+                    key={item.value}
+                    value={item.value}
+                    disabled={item.disabled}
+                  >
+                    {item.label}
+                  </option>
+                )
+              )}
+            </>
+          )
+        })
       else if (mask)
         return (
           <MaskedInput
@@ -351,14 +355,12 @@ const TextField = forwardRef(
           />
         )
       else
-        return (
-          <InputType
-            {...commonProps}
-            placeholder={placeholder}
-            type={type == 'password' && showPass ? 'text' : type}
-            {...(disableAutoComplete && { autoComplete: 'off' })}
-          />
-        )
+        return createElement(inputType, {
+          ...commonProps,
+          placeholder,
+          type: type === 'password' && showPass ? 'text' : type,
+          ...(disableAutoComplete && { autoComplete: 'off' })
+        })
     }, [
       classes,
       commonProps,
@@ -372,7 +374,7 @@ const TextField = forwardRef(
       showPass,
       type,
       _value,
-      InputType
+      inputType
     ])
 
     const passIcon = useMemo(
