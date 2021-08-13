@@ -21,6 +21,8 @@ import useEventListener from '@/hooks/useEventListener'
 
 import styles from './styles'
 
+const ESCAPE = 'Escape'
+
 interface ButtonType {
   text: string
   onClick: (event: MouseEvent<HTMLButtonElement>) => void
@@ -80,8 +82,8 @@ const Modal = (props: ModalProps) => {
   const isMobile = useMemo(() => width < grid.xs, [width])
 
   const onKeyDown = useCallback(
-    ({ which }) => {
-      if (onClose && which == 27) onClose()
+    ({ code }: KeyboardEvent) => {
+      if (onClose && code == ESCAPE) onClose()
     },
     [onClose]
   )

@@ -16,6 +16,8 @@ import useEventListener from '@/hooks/useEventListener'
 
 import styles from './styles'
 
+const ESCAPE = 'Escape'
+
 interface NavAsideProps {
   classes: { [key: string]: string }
   top?: ReactNode
@@ -36,8 +38,8 @@ const NavAside = ({
   right
 }: NavAsideProps) => {
   const onKeyDown = useCallback(
-    ({ which }) => {
-      if (which == 27) onClose()
+    ({ code }: KeyboardEvent) => {
+      if (code == ESCAPE) onClose()
     },
     [onClose]
   )

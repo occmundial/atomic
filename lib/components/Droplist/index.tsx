@@ -195,19 +195,19 @@ const Droplist = ({
   }, [_items, currentGroup, currentItem, moveToPreviousGroup, moveUp])
 
   const onKeyDown = useCallback(
-    (e: KeyboardEvent) => {
+    ({ code, preventDefault }: KeyboardEvent) => {
       if (isOnFocus) {
-        if (e.code === ARROW_UP || e.code === ARROW_DOWN) {
-          e.preventDefault()
+        if (code === ARROW_UP || code === ARROW_DOWN) {
+          preventDefault()
           if (groups) {
-            if (e.code === ARROW_DOWN) moveGroupDown()
+            if (code === ARROW_DOWN) moveGroupDown()
             else moveGroupUp()
           } else {
-            if (e.code === ARROW_DOWN) moveDown(_items)
+            if (code === ARROW_DOWN) moveDown(_items)
             else moveUp(_items)
           }
         }
-        if (e.code === ENTER) _onEnter()
+        if (code === ENTER) _onEnter()
       }
     },
     [
