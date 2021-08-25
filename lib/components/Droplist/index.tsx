@@ -11,7 +11,7 @@ import classnames from 'classnames'
 
 import Text from '@/components/Text'
 import Icon from '@/components/Icon'
-import Colors from '@/tokens/colors'
+import colors from '@/tokens/colors'
 import iconSizes from '@/tokens/iconSizes'
 import usePrevious from '@/hooks/usePrevious'
 
@@ -21,7 +21,7 @@ import useStyles from './styles'
 const arrowDown = 40
 const arrowUp = 38
 const enter = 13
-const { inkLighter } = Colors
+const { inkLighter, inkLightest } = colors
 const { small: iconSmall } = iconSizes
 
 export interface DroplistProps {
@@ -298,14 +298,17 @@ const Droplist = ({
           )
         } else
           content = (
-            <Text className={item.iconName ? classes.iconText : ''}>
+            <Text
+              className={item.iconName ? classes.iconText : ''}
+              disabled={item.disabled}
+            >
               {item[itemTextKey]}
             </Text>
           )
         return (
           <div
             key={item[itemIdKey]}
-            onClick={e => _onClick(item, e)}
+            onClick={!item.disabled ? e => _onClick(item, e) : null}
             onMouseDown={e => _onMouseDown(item, e)}
             onMouseUp={e => _onMouseUp(item, e)}
             className={itemClassName}
@@ -318,13 +321,13 @@ const Droplist = ({
                   height={iconSmall}
                   display="inline-block"
                   className={classes.icon}
-                  colors={[inkLighter]}
+                  colors={[item.disabled ? inkLightest : inkLighter]}
                 />
               )}
               {content}
               {item[itemTextRightKey] && (
                 <span className={classes.right}>
-                  <Text tag="span" low>
+                  <Text tag="span" low disabled={item.disabled}>
                     {item[itemTextRightKey]}
                   </Text>
                 </span>
