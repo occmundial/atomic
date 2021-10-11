@@ -90,12 +90,7 @@ const Button = (props: ButtonProps) => {
   )
   const loadingLayer = loading ? (
     <span className={classes.loadCont}>
-      <Icon
-        size={iconSizes.base}
-        iconName="spinner"
-        className={classes.loadIcon}
-        transition="none"
-      />
+      <i className={classes.loadIcon} />
     </span>
   ) : null
   if (href) {

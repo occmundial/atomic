@@ -3,6 +3,7 @@ import occVertical from './icons/occVertical'
 import occIcon from './icons/occIcon'
 import male from './icons/male'
 import female from './icons/female'
+import spinner from './icons/spinner'
 
 const icons = {
   base: function (icon) {
@@ -13,7 +14,8 @@ const icons = {
   occVertical,
   occIcon,
   male,
-  female
+  female,
+  spinner
 }
 
 export default icons

@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss'
 import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
 import spacing from '@/tokens/spacing'
+import icons from '@/tokens/icons'
 import { ButtonProps } from './'
 
 export default createUseStyles<any, ButtonProps>({
@@ -63,19 +64,26 @@ export default createUseStyles<any, ButtonProps>({
       background: colors.secDark,
       color: colors.white,
       borderColor: colors.secDark
+    },
+    '& $loadIcon': {
+      background: icons.base(icons.spinner.icon(colors.bgWhite))
     }
   },
   secondary: {
-    background: colors.secLighter,
-    color: colors.sec,
-    border: `1px solid ${colors.secLighter}`,
+    background: colors.primLighter,
+    color: colors.textLink,
+    border: `1px solid ${colors.primLighter}`,
     '&:hover, &:active': {
-      color: colors.secDark
+      background: colors.primLight,
+      color: colors.textLink
     },
     '&$disabled': {
-      background: `${colors.secLighter} !important`,
-      color: `${colors.sec} !important`,
-      border: `1px solid ${colors.secLighter} !important`
+      background: `${colors.primLighter} !important`,
+      color: `${colors.textLink} !important`,
+      border: `1px solid ${colors.primLighter} !important`
+    },
+    '& $loadIcon': {
+      background: icons.base(icons.spinner.icon(colors.textLink))
     }
   },
   tertiary: {
@@ -89,6 +97,9 @@ export default createUseStyles<any, ButtonProps>({
       background: `${colors.bgWhite} !important`,
       color: `${colors.ink} !important`,
       border: `1px solid ${colors.grey200} !important`
+    },
+    '& $loadIcon': {
+      background: icons.base(icons.spinner.icon(colors.grey600))
     }
   },
   tertiaryWhite: {
@@ -102,6 +113,9 @@ export default createUseStyles<any, ButtonProps>({
       background: `transparent !important`,
       color: `${colors.white} !important`,
       border: `1px solid ${colors.grey200} !important`
+    },
+    '& $loadIcon': {
+      background: icons.base(icons.spinner.icon(colors.bgWhite))
     }
   },
   ghostPink: {
@@ -117,6 +131,9 @@ export default createUseStyles<any, ButtonProps>({
       background: `transparent !important`,
       color: `${colors.sec} !important`,
       border: `none !important`
+    },
+    '& $loadIcon': {
+      background: icons.base(icons.spinner.icon(colors.sec))
     }
   },
   ghostGrey: {
@@ -132,6 +149,9 @@ export default createUseStyles<any, ButtonProps>({
       background: `transparent !important`,
       color: `${colors.ink} !important`,
       border: `none !important`
+    },
+    '& $loadIcon': {
+      background: icons.base(icons.spinner.icon(colors.grey600))
     }
   },
   ghostWhite: {
@@ -147,6 +167,9 @@ export default createUseStyles<any, ButtonProps>({
       background: `transparent !important`,
       color: `${colors.white} !important`,
       border: `none !important`
+    },
+    '& $loadIcon': {
+      background: icons.base(icons.spinner.icon(colors.bgWhite))
     }
   },
   loading: {
@@ -208,6 +231,10 @@ export default createUseStyles<any, ButtonProps>({
     borderRadius: '50%'
   },
   loadIcon: {
+    width: spacing.base,
+    height: spacing.base,
+    display: 'inline-block',
+    transition: '0.3s all',
     animation: '$iconRotate 1s infinite linear'
   }
 })
