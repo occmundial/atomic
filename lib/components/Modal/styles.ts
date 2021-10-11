@@ -156,12 +156,12 @@ export default createUseStyles<any, ModalProps>({
   },
   imgTop: {
     position: 'relative',
-    height: 128,
+    height: ({ imgTop }) => imgTop.height || 128,
     backgroundImage: ({ imgTop }) => `url(${imgTop?.img || null})`,
     backgroundPosition: ({ imgTop }) =>
       `${imgTop?.position || 'center'} center`,
     backgroundSize: ({ imgTop }) =>
-      imgTop?.size === 'contain' ? 'auto 100%' : 'cover',
+      imgTop?.size === 'contain' ? 'auto 100%' : imgTop.size || 'cover',
     backgroundColor: ({ imgTop }) => imgTop?.color || null,
     backgroundRepeat: 'no-repeat',
     borderRadius: [spacing.radius, spacing.radius, 0, 0],
