@@ -42,9 +42,14 @@ interface List {
 interface ListProps {
   list: List
   isMobile?: boolean
+  listClassName?: string
 }
 
-const List = ({ list: { collapse, title, items }, isMobile }: ListProps) => {
+const List = ({
+  list: { collapse, title, items },
+  isMobile,
+  listClassName
+}: ListProps) => {
   const classes = useStyles()
   const [toggle, setToggle] = useState(false)
 
@@ -127,9 +132,13 @@ const List = ({ list: { collapse, title, items }, isMobile }: ListProps) => {
         )}
       </div>
       <div
-        className={classnames(classes.list, {
-          [classes.toggle]: toggle || !isCollapsible
-        })}
+        className={classnames(
+          classes.list,
+          {
+            [classes.toggle]: toggle || !isCollapsible
+          },
+          listClassName
+        )}
       >
         {items.map(item => renderItem(item))}
       </div>

@@ -98,7 +98,7 @@ const SlideDown = ({
 
   return (
     <div className={classes.wrapper}>
-      <div className={classes.button} onClick={() => toggleContent(!expanded)}>
+      <div className={classes.button} onClick={() => toggleContent(!_expanded)}>
         <Flexbox display="flex" justifyContent="between" alignItems="start">
           <Flexbox display="flex" alignItems="center">
             <Flexbox display="flex" alignItems="start" wrap="wrap">
@@ -129,7 +129,7 @@ const SlideDown = ({
           </Flexbox>
         </Flexbox>
       </div>
-      {expanded && (
+      {_expanded && (
         <div
           className={classNames(
             classes.content,

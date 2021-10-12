@@ -5,6 +5,7 @@ import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
 import icons from '@/tokens/icons'
 import spacing from '@/tokens/spacing'
+import iconSizes from '@/tokens/iconSizes'
 
 import { TagProps } from './'
 
@@ -19,9 +20,11 @@ const {
   errorText,
   grey900,
   grey100,
-  textLink
+  textLink,
+  bgWhite
 } = colors
-const { xTiny, tiny, small, gutter } = spacing
+const { xTiny, tiny, small, medium, gutter } = spacing
+const { small: smallIcon } = iconSizes
 const iconHeight = 13
 
 export default createUseStyles<any, TagProps>({
@@ -30,14 +33,22 @@ export default createUseStyles<any, TagProps>({
     lineHeight: '12px',
     textAlign: 'center',
     borderRadius: small,
-    paddingRight: tiny,
-    paddingLeft: tiny,
-    height: small,
     position: 'relative',
     overflow: 'hidden',
-    display: 'inline-block',
-    paddingTop: 1,
-    paddingBottom: 2
+    display: 'inline-block'
+  },
+  small: {
+    padding: [1, tiny, 3, tiny],
+    height: small
+  },
+  medium: {
+    padding: [5, gutter, 7, gutter],
+    height: medium
+  },
+  large: {
+    padding: [tiny, small],
+    height: 40,
+    borderRadius: medium
   },
   tagText: {
     boxSizing: 'border-box',
@@ -45,18 +56,30 @@ export default createUseStyles<any, TagProps>({
     fontWeight: '600',
     fontStyle: 'normal',
     fontStretch: 'normal',
-    lineHeight: `${iconHeight}px`,
+    lineHeight: 1.4,
     letterSpacing: 'normal',
     textAlign: 'center',
     position: 'relative',
     overflow: 'hidden',
     display: 'inline-block',
-    fontSize: 10,
     paddingRight: props => (props.iconName ? xTiny : 0)
+  },
+  smallTagText: {
+    fontSize: 11
+  },
+  mediumTagText: {
+    fontSize: 15
+  },
+  largeTagText: {
+    fontSize: 17
   },
   default: {
     color: grey900,
     background: grey100
+  },
+  basic: {
+    color: grey900,
+    background: bgWhite
   },
   info: {
     color: infoText,
@@ -83,15 +106,27 @@ export default createUseStyles<any, TagProps>({
     display: 'inline-block',
     marginRight: xTiny,
     content: '""',
-    width: gutter,
-    height: iconHeight,
     paddingBottom: 0,
-    position: 'relative',
-    top: 0,
     left: 0,
     backgroundRepeat: 'no-repeat'
   },
+  smallIcon: {
+    width: gutter,
+    height: gutter
+  },
+  mediumIcon: {
+    width: smallIcon,
+    height: smallIcon
+  },
+  largeIcon: {
+    width: smallIcon,
+    height: smallIcon
+  },
   defaultIcon: {
+    background: props =>
+      props.iconName ? icons.base(icons[props.iconName].icon([grey900])) : ''
+  },
+  basicIcon: {
     background: props =>
       props.iconName ? icons.base(icons[props.iconName].icon([grey900])) : ''
   },

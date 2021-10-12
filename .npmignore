@@ -16,6 +16,10 @@ src/
 out/
 scripts/
 
+# Tests
+lib/**/*.test.tsx
+lib/**/*.test.ts
+
 # Next
 next-env.d.ts
 next.config.js

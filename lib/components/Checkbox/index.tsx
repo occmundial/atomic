@@ -1,4 +1,11 @@
-import { useState, useEffect, ReactNode, CSSProperties } from 'react'
+import {
+  useState,
+  useEffect,
+  ReactNode,
+  CSSProperties,
+  useRef,
+  useCallback
+} from 'react'
 import classnames from 'classnames'
 
 import Text from '@/components/Text'
@@ -33,20 +40,25 @@ const Checkbox = ({
   trk
 }: CheckboxProps) => {
   const classes = useStyles()
-  const [iValue, setValue] = useState(value)
+  const [_value, setValue] = useState(value)
   const [iUndetermined, setUndetermined] = useState(undetermined)
+  const valueRef = useRef<boolean>()
 
   useEffect(() => {
-    if (iValue !== value) setValue(value)
-  }, [iValue, value])
+    valueRef.current = _value
+  })
 
-  const toggle = () => {
+  useEffect(() => {
+    if (valueRef.current !== value) setValue(value)
+  }, [value])
+
+  const toggle = useCallback(() => {
     if (!disabled) {
-      setValue(!iValue)
+      setValue(!_value)
       setUndetermined(false)
-      if (onChange) onChange(!iValue, id)
+      if (onChange) onChange(!_value)
     }
-  }
+  }, [_value, disabled, onChange])
 
   return (
     <div

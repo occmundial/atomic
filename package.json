@@ -8,7 +8,8 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint --dir lib --dir pages --dir src",
-    "test": "jest --silent",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "postinstall": "husky install",
     "pre-commit": "lint-staged",
     "type-check": "tsc --noEmit",
@@ -29,7 +30,7 @@
   "peerDependencies": {
     "react": ">16.8.0",
     "react-dom": ">16.8.0",
-    "react-jss": "^10.6.0"
+    "react-jss": "10.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.5",
@@ -46,8 +47,10 @@
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.9",
     "@types/babel__core": "^7.1.15",
+    "@types/jest": "^26.0.24",
     "@types/node": "^16.0.1",
     "@types/react": "17.0.13",
+    "@types/react-jss": "^10.0.0",
     "babel-jest": "^27.0.6",
     "babel-plugin-module-resolver": "^4.1.0",
     "cross-env": "^7.0.3",
@@ -70,6 +73,8 @@
     "replace-json-property": "^1.6.3",
     "rimraf": "^3.0.2",
     "semantic-release": "^17.4.4",
+    "slugify": "^1.6.0",
+    "ts-jest": "^27.0.4",
     "ts-node": "^10.0.0",
     "typescript": "4.3.5"
   },

@@ -2,8 +2,8 @@ import unorm from 'unorm'
 
 export const compareText = (text = '', term = '') => {
   const accents = /[\u0300-\u036f]/g
-  const textLC = <string>unorm.nfd(text.toLowerCase().replace(accents, ''))
-  const termLC = <string>unorm.nfd(term.toLowerCase().replace(accents, ''))
+  const textLC = <string>unorm.nfd(text.toLowerCase()).replace(accents, '')
+  const termLC = <string>unorm.nfd(term.toLowerCase()).replace(accents, '')
   const index = textLC.indexOf(termLC)
   return index
 }
