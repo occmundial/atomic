@@ -34,7 +34,7 @@ interface ModalImage {
   img: string
   color?: string
   alt?: string
-  size?: 'contain' | 'cover' | number
+  size?: 'contain' | 'cover' | string
   height: number
 }
 
