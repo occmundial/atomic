@@ -37,7 +37,8 @@ interface ModalImage {
   img: string
   color?: string
   alt?: string
-  size?: 'contain' | 'cover'
+  size?: 'contain' | 'cover' | string
+  height: number
 }
 
 interface ImageTop extends ModalImage {

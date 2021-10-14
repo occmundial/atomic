@@ -155,12 +155,12 @@ const styles = {
   },
   imgTop: {
     position: 'relative',
-    height: 128,
+    height: ({ imgTop }: ModalProps) => imgTop.height || 128,
     backgroundImage: ({ imgTop }: ModalProps) => `url(${imgTop?.img || null})`,
     backgroundPosition: ({ imgTop }: ModalProps) =>
       `${imgTop?.position || 'center'} center`,
     backgroundSize: ({ imgTop }: ModalProps) =>
-      imgTop?.size === 'contain' ? 'auto 100%' : 'cover',
+      imgTop?.size === 'contain' ? 'auto 100%' : imgTop.size || 'cover',
     backgroundColor: ({ imgTop }: ModalProps) => imgTop?.color || null,
     backgroundRepeat: 'no-repeat',
     borderRadius: [spacing.radius, spacing.radius, 0, 0],
