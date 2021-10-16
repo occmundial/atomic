@@ -1,4 +1,4 @@
-import { useContext, CSSProperties } from 'react'
+import { CSSProperties } from 'react'
 import classnames from 'classnames'
 
 import { useAtomic } from '@/components/Provider'
@@ -36,9 +36,7 @@ const Icon = (props: IconProps) => {
       style={style}
       onClick={onClick}
     >
-      <use
-        xlinkHref={`${atomic.iconsUrl}#${atomic.iconsPrefix}__${iconName}`}
-      />
+      <use xlinkHref={`#${atomic.iconsPrefix}__${iconName}`} />
     </svg>
   )
 }

@@ -2,6 +2,7 @@ import {
   createContext,
   ReactNode,
   useContext,
+  useEffect,
   useLayoutEffect,
   useRef,
   useState
@@ -22,6 +23,9 @@ interface AtomicProviderProps {
   children: ReactNode
 }
 
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect
+
 const AtomicProvider = ({ data, children }: AtomicProviderProps) => {
   const [value, setValue] = useState<Partial<AtomicData>>({
     iconsUrl: '',
@@ -31,15 +35,32 @@ const AtomicProvider = ({ data, children }: AtomicProviderProps) => {
   const valueRef = useRef<Partial<AtomicData>>()
   const prevData = usePrevious(data)
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     valueRef.current = value
   }, [value])
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (prevData && !isEqual(prevData, data)) {
       setValue({ ...valueRef.current, ...data })
     }
   }, [data, prevData])
+
+  useIsomorphicLayoutEffect(() => {
+    if (value.iconsUrl) loadSprite(value.iconsUrl)
+  }, [value.iconsUrl])
+
+  const loadSprite = async (url: string) => {
+    try {
+      const res = await fetch(url)
+      const data = await res.text()
+      const div = document.createElement('div')
+      div.style.display = 'none'
+      div.innerHTML = data
+      document.body.insertBefore(div, document.body.firstChild)
+    } catch (e) {
+      console.error(e)
+    }
+  }
 
   return (
     <AtomicContext.Provider value={value}>{children}</AtomicContext.Provider>
