@@ -1,28 +1,24 @@
 import { createUseStyles } from 'react-jss'
 
 import spacing from '@/tokens/spacing'
-import icons from '@/tokens/icons'
 import colors from '@/tokens/colors'
 import { NavIconProps } from './'
 
 export default createUseStyles<any, NavIconProps>({
   cont: {
     width: props => (props.width ? props.width : null),
+    color: props => (props.white ? colors.white : colors.inkLight),
     display: 'inline-block',
     height: spacing.xLarge,
     cursor: 'pointer',
     position: 'relative',
+    '&:hover': {
+      color: props => (props.white ? colors.white : colors.ink)
+    },
     '&:hover $icon': {
-      background: props =>
-        icons.base(
-          icons[props.iconName].icon([
-            props.white ? colors.bgWhite : colors.grey900
-          ])
-        ),
       opacity: props => (props.white ? 0.6 : null)
     },
     '&:hover $text': {
-      color: props => (props.white ? colors.white : colors.ink),
       opacity: props => (props.white ? 0.6 : null)
     },
     '&:after': {
@@ -40,15 +36,8 @@ export default createUseStyles<any, NavIconProps>({
     height: spacing.xLarge
   },
   selected: {
-    '& $icon, &:hover $icon': {
-      background: props =>
-        icons.base(
-          icons[props.iconName].icon([
-            props.white ? colors.bgWhite : colors.prim
-          ])
-        )
-    },
-    '& $text, &:hover $text': {
+    color: props => (props.white ? colors.white : colors.prim),
+    '&:hover': {
       color: props => (props.white ? colors.white : colors.prim)
     },
     '&:after': {
@@ -56,19 +45,8 @@ export default createUseStyles<any, NavIconProps>({
         props.showBar ? (props.white ? colors.sec : colors.prim) : null
     }
   },
-  icon: {
-    width: spacing.base,
-    height: spacing.base,
-    background: props =>
-      icons.base(
-        icons[props.iconName].icon([
-          props.white ? colors.bgWhite : colors.grey600
-        ])
-      ),
-    transition: '0.3s all'
-  },
+  icon: {},
   text: {
-    color: props => (props.white ? colors.white : colors.inkLight),
     marginLeft: props => (props.direction !== 'col' ? spacing.xTiny : null),
     textTransform: 'uppercase',
     transition: '0.3s all'

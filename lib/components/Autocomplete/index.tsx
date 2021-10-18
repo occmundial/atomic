@@ -3,7 +3,7 @@ import cloneDeep from 'lodash/cloneDeep'
 import classnames from 'classnames'
 
 import TextField, { TextFieldProps } from '@/components/TextField'
-import Droplist, { DroplistProps } from '@/components/Droplist'
+import Droplist, { DroplistProps, Item, Group } from '@/components/Droplist'
 import usePrevious from '@/hooks/usePrevious'
 
 import useStyles from './styles'
@@ -27,17 +27,7 @@ export interface AutocompleteProps {
   >
   droplistProps: Pick<
     DroplistProps,
-    | 'items'
-    | 'itemIdKey'
-    | 'itemTextKey'
-    | 'itemTextRightKey'
-    | 'groups'
-    | 'groupIdKey'
-    | 'groupNameKey'
-    | 'groupItemsKey'
-    | 'className'
-    | 'filter'
-    | 'term'
+    'items' | 'groups' | 'className' | 'filter' | 'term'
   >
   onChange?: (item: any) => void
   onKeyUp?: (item: any) => void
@@ -117,23 +107,23 @@ const Autocomplete = (props: AutocompleteProps) => {
   }, [onClear])
 
   const _onMouseDown = useCallback(
-    item => {
-      setValue(item[droplistProps.itemTextKey])
+    (item: Item) => {
+      setValue(item.text)
       setFocus(false)
-      if (onChange) onChange(item[droplistProps.itemTextKey])
+      if (onChange) onChange(item.text)
       if (onMouseDown) onMouseDown(item)
     },
-    [droplistProps.itemTextKey, onChange, onMouseDown]
+    [onChange, onMouseDown]
   )
 
   const _onEnter = useCallback(
-    item => {
-      setValue(item[droplistProps.itemTextKey])
+    (item: Item) => {
+      setValue(item.text)
       setFocus(false)
-      if (onChange) onChange(item[droplistProps.itemTextKey])
+      if (onChange) onChange(item.text)
       if (onEnter) onEnter(item)
     },
-    [droplistProps.itemTextKey, onChange, onEnter]
+    [onChange, onEnter]
   )
 
   return (
@@ -145,6 +135,7 @@ const Autocomplete = (props: AutocompleteProps) => {
     >
       <TextField
         {...textfieldProps}
+        value={value}
         ref={textfieldRef}
         onChange={_onChange}
         onFocus={_onFocus}

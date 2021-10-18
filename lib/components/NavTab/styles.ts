@@ -124,7 +124,7 @@ export default createUseStyles({
   },
   icon: {},
   arrow: {
-    marginBottom: -3,
+    marginBottom: -spacing.xTiny,
     transition: '0.3s all'
   },
   arrowUp: {

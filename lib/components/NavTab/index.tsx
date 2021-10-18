@@ -17,6 +17,7 @@ import Icon from '@/components/Icon'
 import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
 import grid from '@/tokens/grid'
+import iconSizes from '@/tokens/iconSizes'
 import useWindowSize from '@/hooks/useWindowSize'
 
 import useStyles from './styles'
@@ -25,6 +26,7 @@ interface NavElement {
   key: string | number
   type: 'button' | 'link' | 'dropdownLink' | 'icon' | 'custom' | 'logo'
   text?: string
+  label?: string
   onClick?: () => void
   selected?: boolean
   link?: string
@@ -37,6 +39,7 @@ interface NavElement {
     | 'ghostGrey'
     | 'ghostWhite'
   iconName?: string
+  showBar?: boolean
   custom?: ReactNode
 }
 
@@ -114,11 +117,12 @@ const NavTab = ({
         >
           {item.text}{' '}
           <Icon
-            iconName="arrowDown"
+            iconName="arrow-down-o"
+            size={iconSizes.small}
             className={classnames(classes.arrow, {
               [classes.arrowUp]: item.selected
             })}
-            colors={blue ? [colors.white] : [colors.grey900]}
+            color={blue ? colors.white : colors.grey900}
           />
         </NavItem>
       )

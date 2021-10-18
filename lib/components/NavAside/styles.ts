@@ -1,12 +1,10 @@
-import { createUseStyles } from 'react-jss'
-
 import spacing from '@/tokens/spacing'
 import grid from '@/tokens/grid'
 import colors from '@/tokens/colors'
 
 const ASIDE_SIZE = 320
 
-export default createUseStyles({
+const styles = {
   '@global': {
     body: {
       overflow: 'hidden'
@@ -97,4 +95,6 @@ export default createUseStyles({
     display: 'flex',
     alignItems: 'center'
   }
-})
+}
+
+export default styles

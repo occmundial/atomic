@@ -19,8 +19,7 @@
       "paths": {
         "@/components/*": ["lib/components/*"],
         "@/tokens/*": ["lib/tokens/*"],
-        "@/hooks/*": ["lib/hooks/*"],
-        "@/styles/*": ["styles/*"]
+        "@/hooks/*": ["lib/hooks/*"]
       }
     },
     "include": ["lib/**/*.ts", "lib/**/*.tsx"],

@@ -80,9 +80,8 @@ const List = ({
         <div key={item.key} className={classes.iconWrapper} title={item.title}>
           <Icon
             iconName={item.iconName}
-            className={classes.icon}
             onClick={item.onClick}
-            colors={[colors.grey600]}
+            color={colors.grey600}
           />
         </div>
       )
@@ -120,14 +119,9 @@ const List = ({
         <Text tag="span">{title}</Text>
         {isCollapsible && (
           <Icon
-            iconName="forward"
-            width={spacing.small}
-            height={spacing.small}
-            className={classnames(
-              classes.arrow,
-              { [classes.arrowUp]: toggle },
-              { [classes.arrowDown]: !toggle }
-            )}
+            iconName="arrow-down"
+            size={spacing.small}
+            className={classnames(classes.arrow, { [classes.arrowUp]: toggle })}
           />
         )}
       </div>

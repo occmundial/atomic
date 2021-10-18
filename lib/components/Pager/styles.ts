@@ -43,5 +43,8 @@ export default createUseStyles({
   disabled: {
     pointerEvents: 'none',
     opacity: '0.4'
+  },
+  icon: {
+    marginBottom: -2
   }
 })

@@ -14,6 +14,7 @@ import colors from '@/tokens/colors'
 import Page from './Page'
 import Break from './Break'
 import useStyles from './styles'
+import iconSizes from '@/tokens/iconSizes'
 
 interface PagerProps {
   pageCount?: number
@@ -171,7 +172,13 @@ const Pager = ({
         tabIndex={0}
         onClick={handlePrevPage}
       >
-        <Icon iconName="arrowDown" colors={[colors.grey400]} /> {previousLabel}
+        <Icon
+          iconName="arrow-left-o"
+          color={colors.grey400}
+          size={iconSizes.tiny}
+          className={classes.icon}
+        />{' '}
+        {previousLabel}
       </li>
       {!hideNumbers && pagination()}
       <li
@@ -181,7 +188,13 @@ const Pager = ({
         tabIndex={0}
         onClick={handleNextPage}
       >
-        {nextLabel} <Icon iconName="arrowDown" colors={[colors.grey400]} />
+        {nextLabel}{' '}
+        <Icon
+          iconName="arrow-right-o"
+          color={colors.grey400}
+          size={iconSizes.tiny}
+          className={classes.icon}
+        />
       </li>
     </ul>
   )
