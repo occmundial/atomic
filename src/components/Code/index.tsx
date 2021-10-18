@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/vsDark'
 import classnames from 'classnames'
 
@@ -19,7 +19,8 @@ export default function Code({ children, className }: CodeProps) {
   const language = useMemo(
     () => className.replace(/language-/, ''),
     [className]
-  )
+  ) as Language
+
   const { title, code } = useMemo(() => {
     let code = children
     const title =

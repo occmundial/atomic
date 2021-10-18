@@ -15,9 +15,7 @@ export default createUseStyles({
   },
   icon: {
     marginLeft: spacing.xTiny,
-    marginTop: 2,
-    width: iconSizes.tiny,
-    height: iconSizes.tiny
+    marginTop: 2
   },
   cardWrap: {
     position: 'absolute',

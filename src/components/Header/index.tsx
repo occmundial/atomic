@@ -27,7 +27,7 @@ export default function Header({ docs }: HeaderProps) {
           {
             key: 0,
             type: 'icon',
-            iconName: 'bars',
+            iconName: 'menu',
             onClick: () => setShowAside(true)
           },
           {

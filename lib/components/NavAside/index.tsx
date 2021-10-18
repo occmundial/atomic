@@ -4,17 +4,22 @@ import React, {
   TransitionEventHandler,
   useCallback
 } from 'react'
+import withStyles from 'react-jss'
 import classnames from 'classnames'
 
 import Card from '@/components/Card'
 import Flexbox from '@/components/Flexbox'
 import Icon from '@/components/Icon'
 import colors from '@/tokens/colors'
+import iconSizes from '@/tokens/iconSizes'
 import useEventListener from '@/hooks/useEventListener'
 
-import useStyles from './styles'
+import styles from './styles'
+
+const ESCAPE = 'Escape'
 
 interface NavAsideProps {
+  classes: { [key: string]: string }
   top?: ReactNode
   children: ReactNode
   onClose: () => void
@@ -24,6 +29,7 @@ interface NavAsideProps {
 }
 
 const NavAside = ({
+  classes,
   top,
   children,
   onClose,
@@ -31,11 +37,9 @@ const NavAside = ({
   onTransitionEnd,
   right
 }: NavAsideProps) => {
-  const classes = useStyles()
-
   const onKeyDown = useCallback(
-    ({ which }) => {
-      if (which == 27) onClose()
+    ({ code }: KeyboardEvent) => {
+      if (code == ESCAPE) onClose()
     },
     [onClose]
   )
@@ -80,10 +84,9 @@ const NavAside = ({
             )}
             <div className={classes.closeIcon}>
               <Icon
-                iconName="close"
-                width={24}
-                height={24}
-                colors={[colors.grey900]}
+                iconName="x"
+                size={iconSizes.base}
+                color={colors.grey900}
                 onClick={onClose}
               />
             </div>
@@ -95,4 +98,4 @@ const NavAside = ({
   )
 }
 
-export default NavAside
+export default withStyles(styles)(NavAside)

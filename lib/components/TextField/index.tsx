@@ -6,6 +6,7 @@ import {
   forwardRef,
   useCallback,
   useMemo,
+  createElement,
   ReactNode,
   CSSProperties
 } from 'react'
@@ -166,8 +167,8 @@ const TextField = forwardRef(
     )
 
     const _onKeyUp = useCallback(
-      ({ which, keyCode }) => {
-        if (onKeyUp) onKeyUp(which || keyCode)
+      ({ code }: KeyboardEvent) => {
+        if (onKeyUp) onKeyUp(code)
       },
       [onKeyUp]
     )
@@ -205,7 +206,7 @@ const TextField = forwardRef(
       [status, disabled, errorStatus]
     )
 
-    const InputType = useMemo(
+    const inputType = useMemo(
       () =>
         type == 'select' ? 'select' : type == 'textarea' ? 'textarea' : 'input',
       [type]
@@ -305,40 +306,43 @@ const TextField = forwardRef(
             </label>
           )
       } else if (type === 'select')
-        return (
-          <InputType {...commonProps}>
-            <option value="" disabled hidden>
-              {placeholder}
-            </option>
-            {options.map(item =>
-              item.grouped ? (
-                <optgroup
-                  key={item.key}
-                  label={item.label}
-                  disabled={item.disabled}
-                >
-                  {item.options.map(option => (
-                    <option
-                      key={option.value}
-                      value={option.value}
-                      disabled={option.disabled}
-                    >
-                      {option.label}
-                    </option>
-                  ))}
-                </optgroup>
-              ) : (
-                <option
-                  key={item.value}
-                  value={item.value}
-                  disabled={item.disabled}
-                >
-                  {item.label}
-                </option>
-              )
-            )}
-          </InputType>
-        )
+        return createElement(inputType, {
+          ...commonProps,
+          children: (
+            <>
+              <option value="" disabled hidden>
+                {placeholder}
+              </option>
+              {options.map(item =>
+                item.grouped ? (
+                  <optgroup
+                    key={item.key}
+                    label={item.label}
+                    disabled={item.disabled}
+                  >
+                    {item.options.map(option => (
+                      <option
+                        key={option.value}
+                        value={option.value}
+                        disabled={option.disabled}
+                      >
+                        {option.label}
+                      </option>
+                    ))}
+                  </optgroup>
+                ) : (
+                  <option
+                    key={item.value}
+                    value={item.value}
+                    disabled={item.disabled}
+                  >
+                    {item.label}
+                  </option>
+                )
+              )}
+            </>
+          )
+        })
       else if (mask)
         return (
           <MaskedInput
@@ -351,14 +355,12 @@ const TextField = forwardRef(
           />
         )
       else
-        return (
-          <InputType
-            {...commonProps}
-            placeholder={placeholder}
-            type={type == 'password' && showPass ? 'text' : type}
-            {...(disableAutoComplete && { autoComplete: 'off' })}
-          />
-        )
+        return createElement(inputType, {
+          ...commonProps,
+          placeholder,
+          type: type === 'password' && showPass ? 'text' : type,
+          ...(disableAutoComplete && { autoComplete: 'off' })
+        })
     }, [
       classes,
       commonProps,
@@ -372,7 +374,7 @@ const TextField = forwardRef(
       showPass,
       type,
       _value,
-      InputType
+      inputType
     ])
 
     const passIcon = useMemo(
@@ -382,9 +384,8 @@ const TextField = forwardRef(
             <div className={classes.passIcon}>
               <Icon
                 iconName="eye"
-                width={iconSizes.small}
-                height={iconSizes.small}
-                colors={[colors.grey100]}
+                size={iconSizes.small}
+                color={colors.grey200}
               />
             </div>
           ) : null
@@ -396,10 +397,9 @@ const TextField = forwardRef(
             className={classes.passIcon}
           >
             <Icon
-              iconName="eye"
-              width={iconSizes.small}
-              height={iconSizes.small}
-              colors={showPass ? [colors.grey500] : [colors.grey200]}
+              iconName={showPass ? 'eye' : 'eye-close'}
+              size={iconSizes.small}
+              color={showPass ? colors.grey900 : colors.grey400}
             />
           </div>
         ) : null,
@@ -434,26 +434,24 @@ const TextField = forwardRef(
           {iconName && (
             <Icon
               iconName={iconName}
-              width={iconSizes.base}
-              height={iconSizes.base}
+              size={iconSizes.base}
               className={classes.icon}
-              colors={[colors.grey500]}
+              color={colors.grey500}
             />
           )}
           {type == 'select' && (
             <div className={classes.selectIcon}>
               <Icon
-                iconName="arrowDown"
-                width={iconSizes.small}
-                height={iconSizes.small}
-                colors={disabled ? [colors.grey200] : [colors.grey900]}
+                iconName="arrow-down"
+                size={iconSizes.small}
+                color={disabled ? colors.grey200 : colors.grey900}
               />
             </div>
           )}
           {type == 'password' && passIcon}
           {_value && clear && (
             <div onClick={_onClear} className={classes.clear}>
-              <Icon iconName="close" />
+              <Icon iconName="x" color={colors.grey400} />
             </div>
           )}
           {element}
@@ -472,8 +470,7 @@ const TextField = forwardRef(
                 {realStatus == 'error' ? (
                   <Icon
                     iconName="warning"
-                    width={iconSizes.tiny}
-                    height={iconSizes.tiny}
+                    size={iconSizes.tiny}
                     className={classes.errorIcon}
                   />
                 ) : null}{' '}

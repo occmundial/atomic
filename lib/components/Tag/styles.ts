@@ -3,29 +3,25 @@ import hexToRgba from 'hex-rgba'
 
 import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
-import icons from '@/tokens/icons'
 import spacing from '@/tokens/spacing'
-import iconSizes from '@/tokens/iconSizes'
 
 import { TagProps } from './'
 
 const {
-  info,
   infoText,
-  success,
+  infoLight,
   successText,
-  warning,
+  successLight,
   warningText,
-  error,
+  warningLight,
   errorText,
+  errorLight,
   grey900,
   grey100,
   textLink,
   bgWhite
 } = colors
 const { xTiny, tiny, small, medium, gutter } = spacing
-const { small: smallIcon } = iconSizes
-const iconHeight = 13
 
 export default createUseStyles<any, TagProps>({
   tag: {
@@ -83,25 +79,24 @@ export default createUseStyles<any, TagProps>({
   },
   info: {
     color: infoText,
-    backgroundColor: hexToRgba(info, 10)
+    backgroundColor: infoLight
   },
   success: {
     color: successText,
-    background: hexToRgba(success, 10)
+    background: successLight
   },
   warning: {
     color: warningText,
-    background: hexToRgba(warning, 10)
+    background: warningLight
   },
   error: {
     color: errorText,
-    background: hexToRgba(error, 10)
+    background: errorLight
   },
   link: {
     color: textLink,
     background: hexToRgba(textLink, 10)
   },
-  /* Icon with themes */
   icon: {
     display: 'inline-block',
     marginRight: xTiny,
@@ -109,47 +104,5 @@ export default createUseStyles<any, TagProps>({
     paddingBottom: 0,
     left: 0,
     backgroundRepeat: 'no-repeat'
-  },
-  smallIcon: {
-    width: gutter,
-    height: gutter
-  },
-  mediumIcon: {
-    width: smallIcon,
-    height: smallIcon
-  },
-  largeIcon: {
-    width: smallIcon,
-    height: smallIcon
-  },
-  defaultIcon: {
-    background: props =>
-      props.iconName ? icons.base(icons[props.iconName].icon([grey900])) : ''
-  },
-  basicIcon: {
-    background: props =>
-      props.iconName ? icons.base(icons[props.iconName].icon([grey900])) : ''
-  },
-  infoIcon: {
-    background: props =>
-      props.iconName ? icons.base(icons[props.iconName].icon([info])) : ''
-  },
-  successIcon: {
-    background: props =>
-      props.iconName ? icons.base(icons[props.iconName].icon([success])) : ''
-  },
-  warningIcon: {
-    background: props =>
-      props.iconName
-        ? icons.base(icons[props.iconName].icon([warningText]))
-        : ''
-  },
-  errorIcon: {
-    background: props =>
-      props.iconName ? icons.base(icons[props.iconName].icon([error])) : ''
-  },
-  linkIcon: {
-    background: props =>
-      props.iconName ? icons.base(icons[props.iconName].icon([textLink])) : ''
   }
 })

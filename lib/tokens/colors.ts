@@ -28,12 +28,16 @@ const colors = {
   grey900: '#222222',
   info: '#5736ab',
   infoText: '#5736ab',
+  infoLight: '#efebf7',
   success: '#009537',
   successText: '#009537',
+  successLight: '#e6f5eb',
   warning: '#ffc549',
-  warningText: '#ffc549',
+  warningText: '#e69000',
+  warningLight: '#fffaed',
   error: '#db3737',
   errorText: '#db3737',
+  errorLight: '#fcebeb',
   textLink: '#0946CB',
   brand: '#0046ff'
 }

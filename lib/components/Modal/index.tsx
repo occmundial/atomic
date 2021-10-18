@@ -5,6 +5,7 @@ import React, {
   useCallback,
   useMemo
 } from 'react'
+import withStyles from 'react-jss'
 import classnames from 'classnames'
 
 import Card from '@/components/Card'
@@ -18,7 +19,9 @@ import iconSizes from '@/tokens/iconSizes'
 import useWindowSize from '@/hooks/useWindowSize'
 import useEventListener from '@/hooks/useEventListener'
 
-import useStyles from './styles'
+import styles from './styles'
+
+const ESCAPE = 'Escape'
 
 interface ButtonType {
   text: string
@@ -47,6 +50,7 @@ interface ImageLeft extends ModalImage {
 }
 
 export interface ModalProps {
+  classes?: { [key: string]: string }
   children: ReactNode
   show?: boolean
   onClose: () => void
@@ -62,25 +66,25 @@ export interface ModalProps {
 
 const Modal = (props: ModalProps) => {
   const {
+    classes,
     onClose,
     children,
     title,
     mainBtn,
     show,
     secBtn,
-    size,
+    size = 'md',
     imgTop,
     imgLeft,
     onTransitionEnd,
     fullSize
   } = props
-  const classes = useStyles(props)
   const { width } = useWindowSize()
   const isMobile = useMemo(() => width < grid.xs, [width])
 
   const onKeyDown = useCallback(
-    ({ which }) => {
-      if (onClose && which == 27) onClose()
+    ({ code }: KeyboardEvent) => {
+      if (onClose && code == ESCAPE) onClose()
     },
     [onClose]
   )
@@ -93,10 +97,9 @@ const Modal = (props: ModalProps) => {
     () => (
       <div className={classes.closeIcon}>
         <Icon
-          iconName="close"
-          width={iconSizes.base}
-          height={iconSizes.base}
-          colors={[colors.grey900]}
+          iconName="x"
+          size={iconSizes.base}
+          color={colors.grey900}
           onClick={onClose}
         />
       </div>
@@ -207,8 +210,4 @@ const Modal = (props: ModalProps) => {
   )
 }
 
-Modal.defaultProps = {
-  size: 'md'
-}
-
-export default Modal
+export default withStyles(styles)(Modal)

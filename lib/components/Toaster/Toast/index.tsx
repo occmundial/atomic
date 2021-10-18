@@ -47,11 +47,11 @@ const Toast = ({
   const getIconData = () => {
     switch (theme) {
       case 'success':
-        return { icon: 'checkSolid', color: colors.bgWhite }
+        return { icon: 'check', color: colors.bgWhite }
       case 'error':
         return { icon: 'warning', color: colors.bgWhite }
       case 'info':
-        return { icon: 'infoSolid', color: colors.bgWhite }
+        return { icon: 'info', color: colors.bgWhite }
       case 'warning':
         return { icon: 'warning', color: colors.grey900 }
     }
@@ -75,7 +75,7 @@ const Toast = ({
           {hasIcon && (
             <Icon
               iconName={iconData.icon}
-              colors={[iconData.color]}
+              color={iconData.color}
               className={classes.icon}
             />
           )}

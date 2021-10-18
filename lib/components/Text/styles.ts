@@ -96,6 +96,9 @@ export default createUseStyles({
   link: {
     color: colors.textLink
   },
+  current: {
+    color: 'currentcolor'
+  },
   // Emphasis
   highEmphasis: {
     color: colors.ink
