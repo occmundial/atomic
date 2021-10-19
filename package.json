@@ -1,6 +1,7 @@
 {
   "name": "@occmundial/atomic",
   "version": "0.0.0-development",
+  "license": "ISC",
   "private": false,
   "main": "dist/index.js",
   "scripts": {
