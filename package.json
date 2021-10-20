@@ -2,7 +2,7 @@
   "name": "@occmundial/atomic",
   "version": "1.0.0",
   "license": "ISC",
-  "private": false,
+  "private": true,
   "main": "dist/index.js",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
