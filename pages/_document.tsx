@@ -44,10 +44,18 @@ class MyDocument extends Document {
             type="image/x-icon"
             href="https://cdn-h4.occ.com.mx/images/common/favicon.png"
           />
+          {/* This is the font used by all components: HK Grotesk */}
           <link
             rel="stylesheet"
             href="https://cdn-h4.occ.com.mx/fonts/stylesheet.css"
           />
+          {/* This is the stylesheet to use the icons */}
+          <link rel="preconnect" href="https://cdn-h4.occ.com.mx" />
+          <link
+            href="https://cdn-h4.occ.com.mx/icons/styles.css"
+            rel="stylesheet"
+          />
+          {/* This font is just used for the documentation site, you can remove it if you don't need it */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
@@ -55,8 +63,8 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
             rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Pacifico&display=swap"
           />
         </Head>
 

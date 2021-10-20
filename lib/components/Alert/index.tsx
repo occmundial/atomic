@@ -7,33 +7,61 @@ import Icon from '@/components/Icon'
 import colors from '@/tokens/colors'
 
 import useStyles from './styles'
+import iconSizes from '@/tokens/iconSizes'
 
 const boldRegex = /\*(.*?)\*/g
+const icons = {
+  info: 'info',
+  warning: 'warning',
+  success: 'check',
+  error: 'x-micro',
+  promote: null
+}
+
+interface AlertAction {
+  href?: string
+  target?: string
+  onClick?: () => void
+  text?: string
+}
 
 interface AlertProps {
-  theme?: 'info' | 'warning' | 'success' | 'error'
+  theme?: 'info' | 'warning' | 'success' | 'error' | 'promote'
   children: ReactElement | string
-  icon?: string
+  icon?: boolean
+  noBorderRadius?: boolean
+  center?: boolean
+  onClose?: () => void
+  spacedClose?: boolean
+  cta?: AlertAction
   id?: string
   className?: string
   style?: CSSProperties
 }
 
-const Alert = ({ id, style, className, icon, theme, children }: AlertProps) => {
+const Alert = ({
+  id,
+  style,
+  className,
+  icon,
+  theme,
+  children,
+  noBorderRadius,
+  center,
+  onClose,
+  spacedClose,
+  cta
+}: AlertProps) => {
   const classes = useStyles()
-  const themeObj = useMemo(() => ({ [theme]: true }), [theme])
-  const iconColor = useMemo(() => [colors[`${theme}Text`]], [theme])
+  const iconName = useMemo(() => icons[theme], [theme])
 
-  const boldMatch = useCallback(
-    (match, i) => {
-      return (
-        <Text key={i} strong tag="b" {...themeObj}>
-          {match}
-        </Text>
-      )
-    },
-    [themeObj]
-  )
+  const boldMatch = useCallback((match, i) => {
+    return (
+      <Text key={i} strong tag="b" current>
+        {match}
+      </Text>
+    )
+  }, [])
 
   const replaceStringToBold = useCallback(
     text => {
@@ -48,25 +76,70 @@ const Alert = ({ id, style, className, icon, theme, children }: AlertProps) => {
   )
 
   const renderText = useCallback(() => {
-    if (typeof children === 'string') return replaceStringToBold(children)
-    return children
-  }, [children, replaceStringToBold])
+    let text: any[] = []
+    if (typeof children === 'string') text = replaceStringToBold(children)
+    else text = [children]
+
+    if (cta) {
+      text.push(
+        <>
+          {' '}
+          <Text tag="span" current>
+            <a
+              className={classes.cta}
+              href={cta.href}
+              target={cta.target}
+              onClick={cta.onClick}
+            >
+              {cta.text}
+            </a>
+          </Text>
+        </>
+      )
+    }
+    return text
+  }, [classes, children, replaceStringToBold, cta])
 
   return (
     <div id={id} className={className} style={style}>
       <Flexbox
         display="flex"
         justifyContent="start"
-        className={classnames(classes.container, classes[theme])}
+        className={classnames(classes.container, classes[theme], {
+          [classes.noBorderRadius]: noBorderRadius
+        })}
       >
-        {icon && (
-          <Icon iconName={icon} className={classes.icon} colors={iconColor} />
-        )}
-        <Flexbox flex="1">
-          <Text standard tag="div" {...themeObj}>
-            {renderText()}
-          </Text>
+        <Flexbox
+          display="flex"
+          flex="1"
+          justifyContent={center ? 'center' : null}
+          alignItems="center"
+        >
+          {icon && (
+            <Icon
+              iconName={iconName}
+              className={classes.icon}
+              size={iconSizes.base}
+            />
+          )}
+          <div
+            className={classnames(
+              { [classes.textWithIcon]: icon },
+              { [classes.text]: !icon }
+            )}
+          >
+            <Text standard tag="div" current>
+              {renderText()}
+            </Text>
+          </div>
         </Flexbox>
+        {onClose && (
+          <Icon
+            iconName="x"
+            onClick={onClose}
+            className={spacedClose ? classes.spacedClose : null}
+          />
+        )}
       </Flexbox>
     </div>
   )

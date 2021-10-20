@@ -1,7 +1,16 @@
-import { useState, useEffect, ReactNode, CSSProperties } from 'react'
+import {
+  useState,
+  useEffect,
+  ReactNode,
+  CSSProperties,
+  useRef,
+  useCallback
+} from 'react'
 import classnames from 'classnames'
 
 import Text from '@/components/Text'
+import Icon from '@/components/Icon'
+import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 
@@ -33,35 +42,46 @@ const Checkbox = ({
   trk
 }: CheckboxProps) => {
   const classes = useStyles()
-  const [iValue, setValue] = useState(value)
-  const [iUndetermined, setUndetermined] = useState(undetermined)
+  const [_value, setValue] = useState(value)
+  const [_undetermined, setUndetermined] = useState(undetermined)
+  const valueRef = useRef<boolean>()
 
   useEffect(() => {
-    if (iValue !== value) setValue(value)
-  }, [iValue, value])
+    valueRef.current = _value
+  })
 
-  const toggle = () => {
+  useEffect(() => {
+    if (valueRef.current !== value) setValue(value)
+  }, [value])
+
+  const toggle = useCallback(() => {
     if (!disabled) {
-      setValue(!iValue)
+      setValue(!_value)
       setUndetermined(false)
-      if (onChange) onChange(!iValue, id)
+      if (onChange) onChange(!_value)
     }
-  }
+  }, [_value, disabled, onChange])
 
   return (
     <div
       id={id}
       className={classnames(
         classes.cont,
-        { [classes.undetermined]: iUndetermined },
-        { [classes.active]: value && !iUndetermined },
+        { [classes.undetermined]: _undetermined },
+        { [classes.active]: _value && !_undetermined },
         { [classes.disabled]: disabled },
         className
       )}
       onClick={toggle}
       style={style}
     >
-      <div className={classes.check} id={trk} />
+      <div className={classes.check} id={trk}>
+        <Icon
+          iconName={_undetermined ? 'minus' : 'success'}
+          className={classes.icon}
+          size={iconSizes.tiny}
+        />
+      </div>
       {label && (
         <Text
           tag="label"

@@ -26,10 +26,7 @@ export default createUseStyles({
     marginBottom: -spacing.xTiny
   },
   arrowUp: {
-    transform: 'rotate(-90deg)'
-  },
-  arrowDown: {
-    transform: 'rotate(90deg)'
+    transform: 'rotate(-180deg)'
   },
   link: {
     color: colors.grey600,
@@ -38,7 +35,6 @@ export default createUseStyles({
       color: colors.grey600
     }
   },
-  icon: {},
   iconWrapper: {
     marginBottom: spacing.tiny,
     marginRight: spacing.tiny,

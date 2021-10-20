@@ -13,6 +13,7 @@ import Icon from '@/components/Icon'
 import Flexbox from '@/components/Flexbox'
 import Card from '@/components/Card'
 import colors from '@/tokens/colors'
+import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 
@@ -97,7 +98,8 @@ const OrderBy = ({
           </Text>
           <Icon
             iconName={iconName}
-            colors={[colors.grey600]}
+            size={iconSizes.tiny}
+            color={colors.grey600}
             className={classes.icon}
           />
         </Flexbox>

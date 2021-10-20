@@ -98,7 +98,7 @@ const SlideDown = ({
 
   return (
     <div className={classes.wrapper}>
-      <div className={classes.button} onClick={() => toggleContent(!expanded)}>
+      <div className={classes.button} onClick={() => toggleContent(!_expanded)}>
         <Flexbox display="flex" justifyContent="between" alignItems="start">
           <Flexbox display="flex" alignItems="center">
             <Flexbox display="flex" alignItems="start" wrap="wrap">
@@ -121,15 +121,15 @@ const SlideDown = ({
           </Flexbox>
           <Flexbox flex="0 0 auto">
             <Icon
-              iconName="arrowDown"
-              colors={[iconColor]}
+              iconName="arrow-down-o"
+              color={iconColor}
               className={classes.icon}
               style={{ transform: toggled ? 'rotate(180deg)' : '' }}
             />
           </Flexbox>
         </Flexbox>
       </div>
-      {expanded && (
+      {_expanded && (
         <div
           className={classNames(
             classes.content,

@@ -42,9 +42,14 @@ interface List {
 interface ListProps {
   list: List
   isMobile?: boolean
+  listClassName?: string
 }
 
-const List = ({ list: { collapse, title, items }, isMobile }: ListProps) => {
+const List = ({
+  list: { collapse, title, items },
+  isMobile,
+  listClassName
+}: ListProps) => {
   const classes = useStyles()
   const [toggle, setToggle] = useState(false)
 
@@ -75,9 +80,8 @@ const List = ({ list: { collapse, title, items }, isMobile }: ListProps) => {
         <div key={item.key} className={classes.iconWrapper} title={item.title}>
           <Icon
             iconName={item.iconName}
-            className={classes.icon}
             onClick={item.onClick}
-            colors={[colors.grey600]}
+            color={colors.grey600}
           />
         </div>
       )
@@ -115,21 +119,20 @@ const List = ({ list: { collapse, title, items }, isMobile }: ListProps) => {
         <Text tag="span">{title}</Text>
         {isCollapsible && (
           <Icon
-            iconName="forward"
-            width={spacing.small}
-            height={spacing.small}
-            className={classnames(
-              classes.arrow,
-              { [classes.arrowUp]: toggle },
-              { [classes.arrowDown]: !toggle }
-            )}
+            iconName="arrow-down"
+            size={spacing.small}
+            className={classnames(classes.arrow, { [classes.arrowUp]: toggle })}
           />
         )}
       </div>
       <div
-        className={classnames(classes.list, {
-          [classes.toggle]: toggle || !isCollapsible
-        })}
+        className={classnames(
+          classes.list,
+          {
+            [classes.toggle]: toggle || !isCollapsible
+          },
+          listClassName
+        )}
       >
         {items.map(item => renderItem(item))}
       </div>

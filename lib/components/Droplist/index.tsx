@@ -3,7 +3,8 @@ import {
   useState,
   useEffect,
   useCallback,
-  CSSProperties
+  CSSProperties,
+  MouseEvent
 } from 'react'
 import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
@@ -18,22 +19,29 @@ import usePrevious from '@/hooks/usePrevious'
 import { compareText, separateText } from './helper'
 import useStyles from './styles'
 
-const arrowDown = 40
-const arrowUp = 38
-const enter = 13
+const ARROW_DOWN = 'ArrowDown'
+const ARROW_UP = 'ArrowUp'
+const ENTER = 'Enter'
 const { inkLighter } = Colors
 const { small: iconSmall } = iconSizes
 
+export interface Item {
+  id: string
+  text: string
+  textRight?: string
+  iconName?: string
+}
+
+export interface Group {
+  id: string
+  text: string
+  items: Item[]
+}
+
 export interface DroplistProps {
-  items: any[]
+  items: Item[] | Group[]
   term?: string
-  itemTextKey?: string
-  itemTextRightKey?: string
-  itemIdKey?: string
   groups?: boolean
-  groupNameKey?: string
-  groupIdKey?: string
-  groupItemsKey?: string
   onClick?: (item: any) => void
   onMouseDown?: (item: any) => void
   onMouseUp?: (item: any) => void
@@ -51,12 +59,6 @@ const Droplist = ({
   term,
   isOnFocus,
   groups,
-  groupNameKey,
-  groupIdKey,
-  groupItemsKey,
-  itemIdKey,
-  itemTextKey,
-  itemTextRightKey,
   onClick,
   onEnter,
   onMouseDown,
@@ -78,7 +80,7 @@ const Droplist = ({
   }, [])
 
   const _onClick = useCallback(
-    (item, e) => {
+    (item: Item, e: MouseEvent) => {
       e.stopPropagation()
       resetPosition()
       if (onClick) onClick(item)
@@ -87,7 +89,7 @@ const Droplist = ({
   )
 
   const _onMouseDown = useCallback(
-    (item, e) => {
+    (item: Item, e: MouseEvent) => {
       e.stopPropagation()
       resetPosition()
       if (onMouseDown) onMouseDown(item)
@@ -96,7 +98,7 @@ const Droplist = ({
   )
 
   const _onMouseUp = useCallback(
-    (item, e) => {
+    (item: Item, e: MouseEvent) => {
       e.stopPropagation()
       resetPosition()
       if (onMouseUp) onMouseUp(item)
@@ -107,30 +109,26 @@ const Droplist = ({
   const _onEnter = useCallback(() => {
     if (currentItem > -1) {
       if (groups) {
-        const selectedGroup = _items.find((group, i) => i === currentGroup)
-        const selectedItem = selectedGroup[groupItemsKey].find(
-          (item, i) => i === currentItem
+        const selectedGroup = (_items as Group[]).find(
+          (_, i) => i === currentGroup
+        )
+        const selectedItem = selectedGroup.items.find(
+          (_, i) => i === currentItem
         )
         resetPosition()
         if (onEnter) onEnter(selectedItem)
       } else {
-        const selectedItem = _items.find((item, i) => i === currentItem)
+        const selectedItem = (_items as Item[]).find(
+          (_, i) => i === currentItem
+        )
         setCurrentItem(-1)
         if (onEnter) onEnter(selectedItem)
       }
     }
-  }, [
-    _items,
-    currentGroup,
-    currentItem,
-    groupItemsKey,
-    groups,
-    onEnter,
-    resetPosition
-  ])
+  }, [_items, currentGroup, currentItem, groups, onEnter, resetPosition])
 
   const moveDown = useCallback(
-    items => {
+    (items: Item[]) => {
       if (currentItem === items.length - 1) setCurrentItem(-1)
       else setCurrentItem(currentItem + 1)
     },
@@ -144,32 +142,25 @@ const Droplist = ({
       const newGroup = currentGroup + 1
       setCurrentGroup(newGroup)
       if (
-        _items[newGroup][groupItemsKey] &&
-        _items[newGroup][groupItemsKey].length
+        (_items as Group[])[newGroup].items &&
+        (_items as Group[])[newGroup].items.length
       )
         setCurrentItem(0)
       else moveToNextGroup()
     }
-  }, [_items, currentGroup, groupItemsKey, resetPosition])
+  }, [_items, currentGroup, resetPosition])
 
   const moveGroupDown = useCallback(() => {
     if (currentGroup === -1) moveToNextGroup()
     else {
-      const groupItems = _items[currentGroup][groupItemsKey]
+      const groupItems = (_items as Group[])[currentGroup].items
       if (currentItem === groupItems.length - 1) moveToNextGroup()
       else moveDown(groupItems)
     }
-  }, [
-    _items,
-    currentGroup,
-    currentItem,
-    groupItemsKey,
-    moveDown,
-    moveToNextGroup
-  ])
+  }, [_items, currentGroup, currentItem, moveDown, moveToNextGroup])
 
   const moveUp = useCallback(
-    items => {
+    (items: Item[]) => {
       if (currentItem === -1) setCurrentItem(items.length - 1)
       else setCurrentItem(currentItem - 1)
     },
@@ -180,7 +171,7 @@ const Droplist = ({
     if (currentGroup === -1) {
       const newGroup = _items.length - 1
       setCurrentGroup(newGroup)
-      const subItems = _items[newGroup][groupItemsKey] || []
+      const subItems = (_items as Group[])[newGroup].items || []
       if (subItems.length) setCurrentItem(subItems.length - 1)
       else moveToPreviousGroup()
     } else if (currentGroup === 0) {
@@ -188,42 +179,35 @@ const Droplist = ({
     } else {
       const newGroup = currentGroup - 1
       setCurrentGroup(newGroup)
-      const subItems = _items[newGroup][groupItemsKey] || []
+      const subItems = (_items as Group[])[newGroup].items || []
       if (subItems.length) setCurrentItem(subItems.length - 1)
       else moveToPreviousGroup()
     }
-  }, [_items, currentGroup, groupItemsKey, resetPosition])
+  }, [_items, currentGroup, resetPosition])
 
   const moveGroupUp = useCallback(() => {
     if (currentGroup === -1) moveToPreviousGroup()
     else {
-      const groupItems = _items[currentGroup][groupItemsKey]
+      const groupItems = (_items as Group[])[currentGroup].items
       if (currentItem === 0) moveToPreviousGroup()
       else moveUp(groupItems)
     }
-  }, [
-    _items,
-    currentGroup,
-    currentItem,
-    groupItemsKey,
-    moveToPreviousGroup,
-    moveUp
-  ])
+  }, [_items, currentGroup, currentItem, moveToPreviousGroup, moveUp])
 
   const onKeyDown = useCallback(
-    e => {
+    ({ code, preventDefault }: KeyboardEvent) => {
       if (isOnFocus) {
-        if (e.which === arrowUp || e.which === arrowDown) {
-          e.preventDefault()
+        if (code === ARROW_UP || code === ARROW_DOWN) {
+          preventDefault()
           if (groups) {
-            if (e.which === arrowDown) moveGroupDown()
+            if (code === ARROW_DOWN) moveGroupDown()
             else moveGroupUp()
           } else {
-            if (e.which === arrowDown) moveDown(_items)
+            if (code === ARROW_DOWN) moveDown(_items)
             else moveUp(_items)
           }
         }
-        if (e.which === enter) _onEnter()
+        if (code === ENTER) _onEnter()
       }
     },
     [
@@ -239,25 +223,25 @@ const Droplist = ({
   )
 
   const filterItems = useCallback(
-    (items, term) => {
+    (items: Item[] | Group[], term: string) => {
       if (groups) {
-        let newItems = cloneDeep(items)
-        newItems = items.map(group => {
-          group[groupItemsKey] = group[groupItemsKey].filter(
-            item => compareText(item[itemTextKey], term) >= 0
+        const groupsItems = cloneDeep(items) as Group[]
+        const newItems = groupsItems.reduce((groups: Group[], group) => {
+          group.items = group.items.filter(
+            item => compareText(item.text, term) >= 0
           )
-          return group
-        })
-        newItems = newItems.filter(group => group[groupItemsKey].length > 0)
+          if (group.items.length) groups.push(group)
+          return groups
+        }, [])
         setItems(newItems)
       } else {
-        const newItems = items.filter(
-          item => compareText(item[itemTextKey], term) >= 0
+        const newItems = (items as Item[]).filter(
+          item => compareText(item.text, term) >= 0
         )
         setItems(newItems)
       }
     },
-    [groupItemsKey, groups, itemTextKey]
+    [groups]
   )
 
   useEffect(() => {
@@ -278,15 +262,15 @@ const Droplist = ({
   }, [term, filter, items, prevTerm, prevItems, filterItems])
 
   const renderList = useCallback(
-    (items, selectedGroup) => {
+    (items: Item[], selectedGroup: boolean) => {
       const itemsDOM = items.map((item, i) => {
-        let index = compareText(item[itemTextKey], term)
+        let index = compareText(item.text, term)
         const itemClassName = classnames(classes.item, {
           [classes.onFocus]: selectedGroup && currentItem === i
         })
         let content
         if (index >= 0) {
-          let text = separateText(item[itemTextKey], index, term)
+          let text = separateText(item.text, index, term)
           content = (
             <Text className={item.iconName ? classes.iconText : ''}>
               {text[0].length ? text[0] : ''}
@@ -299,12 +283,12 @@ const Droplist = ({
         } else
           content = (
             <Text className={item.iconName ? classes.iconText : ''}>
-              {item[itemTextKey]}
+              {item.text}
             </Text>
           )
         return (
           <div
-            key={item[itemIdKey]}
+            key={item.id}
             onClick={e => _onClick(item, e)}
             onMouseDown={e => _onMouseDown(item, e)}
             onMouseUp={e => _onMouseUp(item, e)}
@@ -314,18 +298,16 @@ const Droplist = ({
               {item.iconName && (
                 <Icon
                   iconName={item.iconName}
-                  width={iconSmall}
-                  height={iconSmall}
-                  display="inline-block"
+                  size={iconSmall}
                   className={classes.icon}
-                  colors={[inkLighter]}
+                  color={inkLighter}
                 />
               )}
               {content}
-              {item[itemTextRightKey] && (
+              {item.textRight && (
                 <span className={classes.right}>
                   <Text tag="span" low>
-                    {item[itemTextRightKey]}
+                    {item.textRight}
                   </Text>
                 </span>
               )}
@@ -335,28 +317,18 @@ const Droplist = ({
       })
       return itemsDOM
     },
-    [
-      _onClick,
-      _onMouseDown,
-      _onMouseUp,
-      classes,
-      currentItem,
-      itemIdKey,
-      itemTextKey,
-      itemTextRightKey,
-      term
-    ]
+    [_onClick, _onMouseDown, _onMouseUp, classes, currentItem, term]
   )
 
   return (
     <div className={classnames(classes.block, className)} id={id} style={style}>
       {groups
-        ? _items.map((group, i) => (
-            <div key={group[groupIdKey]}>
+        ? (_items as Group[]).map((group, i) => (
+            <div key={group.id}>
               <Text small mid className={classes.group}>
-                {group[groupNameKey].toUpperCase()}
+                {group.text.toUpperCase()}
               </Text>
-              {renderList(group[groupItemsKey], currentGroup === i)}
+              {renderList(group.items, currentGroup === i)}
             </div>
           ))
         : renderList(_items, true)}
@@ -366,12 +338,6 @@ const Droplist = ({
 
 Droplist.defaultProps = {
   groups: false,
-  groupNameKey: 'text',
-  groupIdKey: 'id',
-  groupItemsKey: 'items',
-  itemTextKey: 'text',
-  itemTextRightKey: 'textRight',
-  itemIdKey: 'id',
   term: '',
   filter: true
 }

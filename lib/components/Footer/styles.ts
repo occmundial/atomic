@@ -24,6 +24,11 @@ export default createUseStyles({
     paddingRight: spacing.gutter,
     paddingBottom: spacing.small
   },
+  list: {
+    '&:not(:first-child)': {
+      marginLeft: spacing.small
+    }
+  },
   link: {
     color: colors.grey600,
     textDecoration: 'none',

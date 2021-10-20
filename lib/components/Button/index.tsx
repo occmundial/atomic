@@ -1,10 +1,13 @@
 import { CSSProperties, EventHandler, ReactNode, SyntheticEvent } from 'react'
 import classnames from 'classnames'
 
+import Icon from '@/components/Icon'
+import iconSizes from '@/tokens/iconSizes'
+
 import useStyles from './styles'
 
 export interface ButtonProps {
-  children: ReactNode
+  children?: ReactNode
   theme:
     | 'primary'
     | 'secondary'
@@ -17,9 +20,10 @@ export interface ButtonProps {
   size?: 'sm' | 'md' | 'lg'
   block?: boolean
   disabled?: boolean
-  icon?: string
+  iconLeft?: string
   iconRight?: string
   loading?: boolean
+  round?: boolean
   onClick?: EventHandler<SyntheticEvent>
   href?: string
   target?: string
@@ -35,9 +39,10 @@ const Button = (props: ButtonProps) => {
     size,
     block,
     disabled,
-    icon,
+    iconLeft,
     iconRight,
     loading,
+    round,
     onClick,
     href,
     target,
@@ -55,13 +60,32 @@ const Button = (props: ButtonProps) => {
     { [classes[size]]: ['md', 'lg'].includes(size) },
     { [classes.block]: block },
     className,
-    { [classes.iconOnly]: !children && icon }
+    { [classes.iconOnly]: !children && iconLeft },
+    { [classes.round]: !children && iconLeft && round }
   )
   const content = (
     <span className={classes.cont}>
-      {icon ? <i className={classes.icon} /> : ''}
+      {iconLeft ? (
+        <Icon
+          size={size === 'sm' ? iconSizes.tiny : iconSizes.small}
+          iconName={iconLeft}
+          className={classnames({ [classes.iconLeft]: children })}
+          transition="none"
+        />
+      ) : (
+        ''
+      )}
       {children}
-      {iconRight ? <i className={classes.iconRight} /> : ''}
+      {iconRight ? (
+        <Icon
+          size={size === 'sm' ? iconSizes.tiny : iconSizes.small}
+          iconName={iconRight}
+          className={classes.iconRight}
+          transition="none"
+        />
+      ) : (
+        ''
+      )}
     </span>
   )
   const loadingLayer = loading ? (

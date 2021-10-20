@@ -6,6 +6,7 @@ import {
   forwardRef,
   useCallback,
   useMemo,
+  createElement,
   ReactNode,
   CSSProperties
 } from 'react'
@@ -38,6 +39,16 @@ export interface TextFieldProps {
   selectOnFocus?: boolean
   mask?: any
   guide?: boolean
+  pattern?: string
+  inputMode?:
+    | 'text'
+    | 'none'
+    | 'search'
+    | 'tel'
+    | 'url'
+    | 'email'
+    | 'numeric'
+    | 'decimal'
   disableAutoComplete?: boolean
   onFocus?: () => void
   onBlur?: (item: any) => void
@@ -91,6 +102,8 @@ const TextField = forwardRef(
       required,
       mask,
       guide,
+      pattern,
+      inputMode,
       disableAutoComplete
     }: TextFieldProps,
     ref
@@ -154,8 +167,8 @@ const TextField = forwardRef(
     )
 
     const _onKeyUp = useCallback(
-      ({ which, keyCode }) => {
-        if (onKeyUp) onKeyUp(which || keyCode)
+      ({ code }: KeyboardEvent) => {
+        if (onKeyUp) onKeyUp(code)
       },
       [onKeyUp]
     )
@@ -193,7 +206,7 @@ const TextField = forwardRef(
       [status, disabled, errorStatus]
     )
 
-    const InputType = useMemo(
+    const inputType = useMemo(
       () =>
         type == 'select' ? 'select' : type == 'textarea' ? 'textarea' : 'input',
       [type]
@@ -217,21 +230,7 @@ const TextField = forwardRef(
           { 'data-hj-whitelist': hjWhitelist },
           inputClassName
         ),
-      [
-        alignRight,
-        classes.alignRight,
-        classes.hasClear,
-        classes.hasIcon,
-        classes.hasPass,
-        classes.input,
-        classes.select,
-        classes.textarea,
-        clear,
-        hjWhitelist,
-        iconName,
-        inputClassName,
-        type
-      ]
+      [alignRight, classes, clear, hjWhitelist, iconName, inputClassName, type]
     )
 
     const commonProps = useMemo(
@@ -239,7 +238,7 @@ const TextField = forwardRef(
         name,
         id,
         className: _inputClassName,
-        value,
+        value: _value,
         autoFocus,
         maxLength,
         onFocus: _onFocus,
@@ -247,20 +246,24 @@ const TextField = forwardRef(
         onChange: _onChange,
         onKeyUp: _onKeyUp,
         ref: inputRef,
-        required
+        required,
+        pattern,
+        inputMode
       }),
       [
         name,
         id,
         _inputClassName,
-        value,
+        _value,
         autoFocus,
         maxLength,
         _onFocus,
         _onBlur,
         _onChange,
         _onKeyUp,
-        required
+        required,
+        pattern,
+        inputMode
       ]
     )
 
@@ -270,7 +273,7 @@ const TextField = forwardRef(
           const selectedOption = options.filter(
             option => option.value == _value
           )
-          let optionLabel
+          let optionLabel: string
           if (selectedOption.length) optionLabel = selectedOption[0].label
           return (
             <label
@@ -278,7 +281,14 @@ const TextField = forwardRef(
                 [classes.hasIcon]: iconName
               })}
             >
-              {optionLabel ? optionLabel : _value ? _value : placeholder}
+              <div
+                className={classnames(
+                  classes.inputDisabled,
+                  classes.hasRightIcon
+                )}
+              >
+                {optionLabel ? optionLabel : _value ? _value : placeholder}
+              </div>
             </label>
           )
         } else
@@ -290,67 +300,69 @@ const TextField = forwardRef(
                 { [classes.hasIcon]: iconName }
               )}
             >
-              {_value ? _value : placeholder}
+              <div className={classes.inputDisabled}>
+                {_value ? _value : placeholder}
+              </div>
             </label>
           )
       } else if (type === 'select')
-        return (
-          <InputType {...commonProps}>
-            <option value="" disabled hidden>
-              {placeholder}
-            </option>
-            {options.map(item =>
-              item.grouped ? (
-                <optgroup
-                  key={item.key}
-                  label={item.label}
-                  disabled={item.disabled}
-                >
-                  {item.options.map(option => (
-                    <option
-                      key={option.value}
-                      value={option.value}
-                      disabled={option.disabled}
-                    >
-                      {option.label}
-                    </option>
-                  ))}
-                </optgroup>
-              ) : (
-                <option
-                  key={item.value}
-                  value={item.value}
-                  disabled={item.disabled}
-                >
-                  {item.label}
-                </option>
-              )
-            )}
-          </InputType>
-        )
+        return createElement(inputType, {
+          ...commonProps,
+          children: (
+            <>
+              <option value="" disabled hidden>
+                {placeholder}
+              </option>
+              {options.map(item =>
+                item.grouped ? (
+                  <optgroup
+                    key={item.key}
+                    label={item.label}
+                    disabled={item.disabled}
+                  >
+                    {item.options.map(option => (
+                      <option
+                        key={option.value}
+                        value={option.value}
+                        disabled={option.disabled}
+                      >
+                        {option.label}
+                      </option>
+                    ))}
+                  </optgroup>
+                ) : (
+                  <option
+                    key={item.value}
+                    value={item.value}
+                    disabled={item.disabled}
+                  >
+                    {item.label}
+                  </option>
+                )
+              )}
+            </>
+          )
+        })
       else if (mask)
         return (
           <MaskedInput
             {...commonProps}
             placeholder={placeholder}
-            type="text"
+            type={type === 'password' && showPass ? 'text' : type}
+            {...(disableAutoComplete && { autoComplete: 'off' })}
             mask={mask}
             guide={guide}
           />
         )
       else
-        return (
-          <InputType
-            {...commonProps}
-            placeholder={placeholder}
-            type={type == 'password' && showPass ? 'text' : type}
-            {...(disableAutoComplete && { autoComplete: 'off' })}
-          />
-        )
+        return createElement(inputType, {
+          ...commonProps,
+          placeholder,
+          type: type === 'password' && showPass ? 'text' : type,
+          ...(disableAutoComplete && { autoComplete: 'off' })
+        })
     }, [
-      classes.hasIcon,
-      classes.input,
-      classes.textarea,
+      classes,
       commonProps,
       disableAutoComplete,
       disabled,
@@ -362,7 +374,7 @@ const TextField = forwardRef(
       showPass,
       type,
       _value,
-      InputType
+      inputType
     ])
 
     const passIcon = useMemo(
@@ -372,9 +384,8 @@ const TextField = forwardRef(
             <div className={classes.passIcon}>
               <Icon
                 iconName="eye"
-                width={iconSizes.small}
-                height={iconSizes.small}
-                colors={[colors.grey100]}
+                size={iconSizes.small}
+                color={colors.grey200}
               />
             </div>
           ) : null
@@ -386,10 +397,9 @@ const TextField = forwardRef(
             className={classes.passIcon}
           >
             <Icon
-              iconName="eye"
-              width={iconSizes.small}
-              height={iconSizes.small}
-              colors={showPass ? [colors.grey500] : [colors.grey200]}
+              iconName={showPass ? 'eye' : 'eye-close'}
+              size={iconSizes.small}
+              color={showPass ? colors.grey900 : colors.grey400}
             />
           </div>
         ) : null,
@@ -424,26 +434,24 @@ const TextField = forwardRef(
           {iconName && (
             <Icon
               iconName={iconName}
-              width={iconSizes.base}
-              height={iconSizes.base}
+              size={iconSizes.base}
               className={classes.icon}
-              colors={[colors.grey500]}
+              color={colors.grey500}
             />
           )}
           {type == 'select' && (
             <div className={classes.selectIcon}>
               <Icon
-                iconName="arrowDown"
-                width={iconSizes.small}
-                height={iconSizes.small}
-                colors={disabled ? [colors.grey200] : [colors.grey900]}
+                iconName="arrow-down"
+                size={iconSizes.small}
+                color={disabled ? colors.grey200 : colors.grey900}
               />
             </div>
           )}
           {type == 'password' && passIcon}
           {_value && clear && (
             <div onClick={_onClear} className={classes.clear}>
-              <Icon iconName="close" />
+              <Icon iconName="x" color={colors.grey400} />
             </div>
           )}
           {element}
@@ -462,8 +470,7 @@ const TextField = forwardRef(
                 {realStatus == 'error' ? (
                   <Icon
                     iconName="warning"
-                    width={iconSizes.tiny}
-                    height={iconSizes.tiny}
+                    size={iconSizes.tiny}
                     className={classes.errorIcon}
                   />
                 ) : null}{' '}

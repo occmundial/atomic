@@ -1,43 +1,55 @@
 {
-  "name": "atomic",
-  "version": "2.0.0",
+  "name": "@occmundial/atomic",
+  "version": "1.0.0",
+  "license": "ISC",
   "private": true,
+  "main": "dist/index.js",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint --dir lib --dir pages --dir src",
-    "test": "jest --silent",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "postinstall": "husky install",
     "pre-commit": "lint-staged",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "build:types": "tsc --project tsconfig.lib.json",
     "build:js": "babel lib --out-dir dist --extensions \".ts,.tsx\"",
-    "build:lib": "npm run build:js && npm run build:types"
+    "prebuild:lib": "rimraf dist && mkdirp dist && node scripts/prebuild.js",
+    "build:lib": "npm run build:js && npm run build:types",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
     "classnames": "^2.3.1",
     "hex-rgba": "^1.0.2",
+    "lodash": "^4.17.21",
     "react-text-mask": "^5.4.3",
     "unorm": "^1.6.0"
   },
   "peerDependencies": {
     "react": ">16.8.0",
     "react-dom": ">16.8.0",
-    "react-jss": "^10.6.0"
+    "react-jss": "10.6.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.5",
     "@babel/core": "^7.14.6",
     "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-angular": "^13.1.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/exec": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
     "@testing-library/dom": "^8.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.9",
     "@types/babel__core": "^7.1.15",
+    "@types/jest": "^26.0.24",
     "@types/node": "^16.0.1",
     "@types/react": "17.0.13",
     "babel-jest": "^27.0.6",
@@ -51,17 +63,31 @@
     "husky": "^7.0.1",
     "jest": "^27.0.6",
     "lint-staged": "^11.0.0",
+    "mkdirp": "^1.0.4",
     "next": "11.0.1",
     "next-mdx-remote": "^3.0.4",
     "prettier": "^2.3.2",
     "prism-react-renderer": "^1.2.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-jss": "^10.7.1",
+    "react-jss": "^10.6.0",
+    "replace-json-property": "^1.6.3",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^17.4.4",
+    "semantic-release-slack-bot": "^2.1.1",
+    "slugify": "^1.6.0",
+    "ts-jest": "^27.0.4",
     "ts-node": "^10.0.0",
     "typescript": "4.3.5"
   },
   "lint-staged": {
     "**/*.{js,ts,jsx,tsx}": "eslint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/occmundial/atomic.git"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
