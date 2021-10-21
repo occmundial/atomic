@@ -1,7 +1,5 @@
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import Text from '@/components/Text'
 import SlideDown from '@/components/SlideDown'
 import { Doc } from '@/src/components/Layout'
 import MenuItem from './MenuItem'

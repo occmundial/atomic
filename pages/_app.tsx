@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <AtomicProvider
         data={{
-          iconsUrl: 'https://cdn-icons-occ.occ.com.mx/atomic-icons-1.0.0.svg'
+          iconsUrl: 'https://cdn-icons.occ.com.mx/atomic-icons-1.0.0.svg'
         }}
       >
         <Component key={isClient} {...pageProps} />

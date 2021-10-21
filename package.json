@@ -4,11 +4,12 @@
   "license": "ISC",
   "private": true,
   "main": "dist/index.js",
+  "homepage": "https://occmundial.github.io/atomic",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint --dir lib --dir pages --dir src",
+    "lint": "next lint --dir lib --dir pages --dir src --dir scripts",
     "test": "jest",
     "test:watch": "jest --watch",
     "postinstall": "husky install",
@@ -19,7 +20,9 @@
     "build:js": "babel lib --out-dir dist --extensions \".ts,.tsx\"",
     "prebuild:lib": "rimraf dist && mkdirp dist && node scripts/prebuild.js",
     "build:lib": "npm run build:js && npm run build:types",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "predeploy": "npm run build",
+    "deploy": "node scripts/deploy.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
@@ -59,6 +62,7 @@
     "eslint-config-next": "11.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "gh-pages": "^3.2.3",
     "gray-matter": "^4.0.3",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
