@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react'
 import classnames from 'classnames'
 
-import { useAtomic } from '@/components/Provider'
+import useAtomic from '@/hooks/useAtomic'
 
 import useStyles from './styles'
 

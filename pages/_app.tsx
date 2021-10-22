@@ -2,7 +2,7 @@ import '@/styles/globals.css'
 import { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 
-import { AtomicProvider } from '@/components/Provider'
+import AtomicProvider from '@/components/Provider'
 import useIsClient from '@/hooks/useIsClient'
 
 function MyApp({ Component, pageProps }: AppProps) {
