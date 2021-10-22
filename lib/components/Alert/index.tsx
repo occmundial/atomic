@@ -4,7 +4,6 @@ import classnames from 'classnames'
 import Flexbox from '@/components/Flexbox'
 import Text from '@/components/Text'
 import Icon from '@/components/Icon'
-import colors from '@/tokens/colors'
 
 import useStyles from './styles'
 import iconSizes from '@/tokens/iconSizes'
