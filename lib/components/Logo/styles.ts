@@ -1,14 +1,11 @@
 import { createUseStyles } from 'react-jss'
 
-import icons from '@/tokens/icons'
+import { base } from '@/tokens/icons'
+import occHorizontal from '@/tokens/icons/occHorizontal'
+import occVertical from '@/tokens/icons/occVertical'
+import occIcon from '@/tokens/icons/occIcon'
 import { LogoProps } from '.'
 import colors from '@/tokens/colors'
-
-const logoVersions = {
-  icon: 'occIcon',
-  horizontal: 'occHorizontal',
-  vertical: 'occVertical'
-}
 
 const logoColors = {
   black: colors.ink,
@@ -25,28 +22,19 @@ export default createUseStyles<any, LogoProps>({
     outline: '0'
   },
   horizontal: {
-    background: props =>
-      icons.base(icons[logoVersions.horizontal].icon(logoColors[props.theme])),
-    width: props =>
-      props.width ? props.width : icons[logoVersions.horizontal].width,
-    height: props =>
-      props.height ? props.height : icons[logoVersions.horizontal].height
+    background: props => base(occHorizontal.icon(logoColors[props.theme])),
+    width: props => (props.width ? props.width : occHorizontal.width),
+    height: props => (props.height ? props.height : occHorizontal.height)
   },
   vertical: {
-    background: props =>
-      icons.base(icons[logoVersions.vertical].icon(logoColors[props.theme])),
-    width: props =>
-      props.width ? props.width : icons[logoVersions.vertical].width,
-    height: props =>
-      props.height ? props.height : icons[logoVersions.vertical].height
+    background: props => base(occVertical.icon(logoColors[props.theme])),
+    width: props => (props.width ? props.width : occVertical.width),
+    height: props => (props.height ? props.height : occVertical.height)
   },
   icon: {
-    background: props =>
-      icons.base(icons[logoVersions.icon].icon(logoColors[props.theme])),
-    width: props =>
-      props.width ? props.width : icons[logoVersions.icon].width,
-    height: props =>
-      props.height ? props.height : icons[logoVersions.icon].height
+    background: props => base(occIcon.icon(logoColors[props.theme])),
+    width: props => (props.width ? props.width : occIcon.width),
+    height: props => (props.height ? props.height : occIcon.height)
   },
   click: {
     cursor: 'pointer'

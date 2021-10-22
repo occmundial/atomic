@@ -1,7 +1,6 @@
 import {
   createContext,
   ReactNode,
-  useContext,
   useEffect,
   useLayoutEffect,
   useRef,
@@ -13,7 +12,7 @@ import usePrevious from '@/hooks/usePrevious'
 
 const AtomicContext = createContext<Partial<AtomicData>>({})
 
-interface AtomicData {
+export interface AtomicData {
   iconsUrl: string
   iconsPrefix: string
 }
@@ -66,8 +65,6 @@ const AtomicProvider = ({ data, children }: AtomicProviderProps) => {
     <AtomicContext.Provider value={value}>{children}</AtomicContext.Provider>
   )
 }
-const useAtomic = () => {
-  return useContext(AtomicContext)
-}
 
-export { AtomicProvider, AtomicContext, useAtomic }
+export { AtomicContext }
+export default AtomicProvider

@@ -27,4 +27,5 @@ jobs:
       - name: Deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NODE_ENV: production
         run: yarn deploy

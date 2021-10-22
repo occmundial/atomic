@@ -3,7 +3,8 @@ import { createUseStyles } from 'react-jss'
 import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
 import spacing from '@/tokens/spacing'
-import icons from '@/tokens/icons'
+import { base } from '@/tokens/icons'
+import spinner from '@/tokens/icons/spinner'
 import { ButtonProps } from './'
 
 export default createUseStyles<any, ButtonProps>({
@@ -66,7 +67,7 @@ export default createUseStyles<any, ButtonProps>({
       borderColor: colors.secDark
     },
     '& $loadIcon': {
-      background: icons.base(icons.spinner.icon(colors.bgWhite))
+      background: base(spinner.icon(colors.bgWhite))
     }
   },
   secondary: {
@@ -83,7 +84,7 @@ export default createUseStyles<any, ButtonProps>({
       border: `1px solid ${colors.primLighter} !important`
     },
     '& $loadIcon': {
-      background: icons.base(icons.spinner.icon(colors.textLink))
+      background: base(spinner.icon(colors.textLink))
     }
   },
   tertiary: {
@@ -99,7 +100,7 @@ export default createUseStyles<any, ButtonProps>({
       border: `1px solid ${colors.grey200} !important`
     },
     '& $loadIcon': {
-      background: icons.base(icons.spinner.icon(colors.grey600))
+      background: base(spinner.icon(colors.grey600))
     }
   },
   tertiaryWhite: {
@@ -115,7 +116,7 @@ export default createUseStyles<any, ButtonProps>({
       border: `1px solid ${colors.grey200} !important`
     },
     '& $loadIcon': {
-      background: icons.base(icons.spinner.icon(colors.bgWhite))
+      background: base(spinner.icon(colors.bgWhite))
     }
   },
   ghostPink: {
@@ -133,7 +134,7 @@ export default createUseStyles<any, ButtonProps>({
       border: `none !important`
     },
     '& $loadIcon': {
-      background: icons.base(icons.spinner.icon(colors.sec))
+      background: base(spinner.icon(colors.sec))
     }
   },
   ghostGrey: {
@@ -151,7 +152,7 @@ export default createUseStyles<any, ButtonProps>({
       border: `none !important`
     },
     '& $loadIcon': {
-      background: icons.base(icons.spinner.icon(colors.grey600))
+      background: base(spinner.icon(colors.grey600))
     }
   },
   ghostWhite: {
@@ -169,7 +170,7 @@ export default createUseStyles<any, ButtonProps>({
       border: `none !important`
     },
     '& $loadIcon': {
-      background: icons.base(icons.spinner.icon(colors.bgWhite))
+      background: base(spinner.icon(colors.bgWhite))
     }
   },
   loading: {
