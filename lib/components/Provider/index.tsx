@@ -12,7 +12,7 @@ import usePrevious from '@/hooks/usePrevious'
 
 const AtomicContext = createContext<Partial<AtomicData>>({})
 
-interface AtomicData {
+export interface AtomicData {
   iconsUrl: string
   iconsPrefix: string
 }
