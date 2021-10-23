@@ -1,3 +1,10 @@
+# [1.1.0-beta.2](https://github.com/occmundial/atomic/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2021-10-23)
+
+
+### Bug Fixes
+
+* Change in import and export of babel plugin ([824daaf](https://github.com/occmundial/atomic/commit/824daaff3a60a5173a87d8ffa33b4bc582ae4ef3))
+
 # [1.1.0-beta.1](https://github.com/occmundial/atomic/compare/v1.0.0...v1.1.0-beta.1) (2021-10-22)
 
 
