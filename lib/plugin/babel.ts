@@ -1,4 +1,4 @@
-import types from '@babel/types'
+const types = require('@babel/types')
 
 function error(msg) {
   throw new Error(`babel-plugin-atomic: ${msg}`)
@@ -71,3 +71,5 @@ module.exports = function () {
     }
   }
 }
+
+export {}
