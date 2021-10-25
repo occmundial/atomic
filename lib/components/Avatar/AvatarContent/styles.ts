@@ -1,7 +1,9 @@
 import { createUseStyles } from 'react-jss'
 
 import fonts from '@/tokens/fonts'
-import icons from '@/tokens/icons'
+import { base } from '@/tokens/icons'
+import male from '@/tokens/icons/male'
+import female from '@/tokens/icons/female'
 import colors from '@/tokens/colors'
 
 export default createUseStyles({
@@ -20,10 +22,10 @@ export default createUseStyles({
     overflow: 'hidden'
   },
   m: {
-    background: icons.base(icons.male.icon())
+    background: base(male.icon())
   },
   f: {
-    background: icons.base(icons.female.icon())
+    background: base(female.icon())
   },
   capital: {
     fontFamily: fonts.body,

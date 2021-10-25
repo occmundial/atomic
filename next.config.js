@@ -1,4 +1,4 @@
 module.exports = {
   reactStrictMode: true,
-  basePath: '/atomic'
+  basePath: process.env.NODE_ENV === 'production' ? '/atomic' : ''
 }
