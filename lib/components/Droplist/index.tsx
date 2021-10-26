@@ -26,14 +26,14 @@ const { inkLighter } = Colors
 const { small: iconSmall } = iconSizes
 
 export interface Item {
-  id: string
+  id: string | number
   text: string
   textRight?: string
   iconName?: string
 }
 
 export interface Group {
-  id: string
+  id: string | number
   text: string
   items: Item[]
 }
@@ -42,10 +42,10 @@ export interface DroplistProps {
   items: Item[] | Group[]
   term?: string
   groups?: boolean
-  onClick?: (item: any) => void
-  onMouseDown?: (item: any) => void
-  onMouseUp?: (item: any) => void
-  onEnter?: (item: any) => void
+  onClick?: (item: Item) => void
+  onMouseDown?: (item: Item) => void
+  onMouseUp?: (item: Item) => void
+  onEnter?: (item: Item) => void
   filter?: boolean
   isOnFocus?: boolean
   id?: string
@@ -195,10 +195,11 @@ const Droplist = ({
   }, [_items, currentGroup, currentItem, moveToPreviousGroup, moveUp])
 
   const onKeyDown = useCallback(
-    ({ code, preventDefault }: KeyboardEvent) => {
+    (event: KeyboardEvent) => {
+      const { code, preventDefault } = event
       if (isOnFocus) {
         if (code === ARROW_UP || code === ARROW_DOWN) {
-          preventDefault()
+          preventDefault.call(event)
           if (groups) {
             if (code === ARROW_DOWN) moveGroupDown()
             else moveGroupUp()

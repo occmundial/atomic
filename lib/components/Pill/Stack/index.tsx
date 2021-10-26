@@ -12,8 +12,8 @@ interface PillStackProps {
   children: string
   id: string | number
   disabled: boolean
-  onClick: CallableFunction
-  onClose: CallableFunction
+  onClick: (id: string | number) => void
+  onClose: (id: string | number) => void
   idPrefix: string
 }
 

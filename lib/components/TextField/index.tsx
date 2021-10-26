@@ -51,15 +51,14 @@ export interface TextFieldProps {
     | 'decimal'
   disableAutoComplete?: boolean
   onFocus?: () => void
-  onBlur?: (item: any) => void
-  onChange?: (item: any) => void
-  onKeyUp?: (item: any) => void
+  onBlur?: (value: string) => void
+  onChange?: (value: string) => void
+  onKeyUp?: (code: string) => void
   onClear?: () => void
   options?: any[]
   iconName?: string
   inputClassName?: string
-  hjWhitelist?: boolean
-  regex?: string
+  regex?: string | RegExp
   required?: boolean
   alignRight?: boolean
   id?: string
@@ -85,7 +84,6 @@ const TextField = forwardRef(
       type,
       inputClassName,
       alignRight,
-      hjWhitelist,
       label,
       placeholder,
       counter,
@@ -227,10 +225,9 @@ const TextField = forwardRef(
           { [classes.select]: type === 'select' },
           { [classes.textarea]: type === 'textarea' },
           { [classes.hasPass]: type === 'password' },
-          { 'data-hj-whitelist': hjWhitelist },
           inputClassName
         ),
-      [alignRight, classes, clear, hjWhitelist, iconName, inputClassName, type]
+      [alignRight, classes, clear, iconName, inputClassName, type]
     )
 
     const commonProps = useMemo(
@@ -498,8 +495,7 @@ const TextField = forwardRef(
 TextField.defaultProps = {
   type: 'text',
   value: '',
-  options: [],
-  hjWhitelist: true
+  options: []
 }
 
 export default TextField

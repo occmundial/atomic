@@ -36,9 +36,9 @@ interface PillProps {
   stack?: PillType[]
   choice?: ChoiceType[]
   selected?: string | number
-  onChange?: CallableFunction
-  onClick?: CallableFunction
-  onClose?: CallableFunction
+  onChange?: (selected: string | number) => void
+  onClick?: (id: string | number) => void
+  onClose?: (id: string | number) => void
   error?: boolean
   allowError?: boolean
   disabled?: boolean

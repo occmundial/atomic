@@ -3,7 +3,7 @@ import cloneDeep from 'lodash/cloneDeep'
 import classnames from 'classnames'
 
 import TextField, { TextFieldProps } from '@/components/TextField'
-import Droplist, { DroplistProps, Item, Group } from '@/components/Droplist'
+import Droplist, { DroplistProps, Item } from '@/components/Droplist'
 import usePrevious from '@/hooks/usePrevious'
 
 import useStyles from './styles'
@@ -29,14 +29,13 @@ export interface AutocompleteProps {
     DroplistProps,
     'items' | 'groups' | 'className' | 'filter' | 'term'
   >
-  onChange?: (item: any) => void
-  onKeyUp?: (item: any) => void
+  onChange?: (value: string) => void
+  onKeyUp?: (code: string) => void
   onEnter?: (item: any) => void
   onMouseDown?: (item: any) => void
   onFocus?: () => void
   onBlur?: () => void
   onClear?: () => void
-  onRef?: CallableFunction
   disableAutoComplete?: boolean
   showInitialData?: boolean
   id?: string
@@ -76,7 +75,7 @@ const Autocomplete = (props: AutocompleteProps) => {
   }, [textfieldProps.value, prevTextfieldProps.value])
 
   const _onChange = useCallback(
-    value => {
+    (value: string) => {
       setValue(value)
       setFocus(true)
       if (onChange) onChange(value)
@@ -95,8 +94,8 @@ const Autocomplete = (props: AutocompleteProps) => {
   }, [onBlur])
 
   const _onKeyUp = useCallback(
-    key => {
-      if (onKeyUp) onKeyUp(key)
+    (code: string) => {
+      if (onKeyUp) onKeyUp(code)
     },
     [onKeyUp]
   )

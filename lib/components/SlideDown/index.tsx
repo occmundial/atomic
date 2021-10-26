@@ -15,7 +15,7 @@ interface SlideDownProps {
   title?: string
   expanded?: boolean
   tag?: string
-  onToggle?: CallableFunction
+  onToggle?: (value: boolean) => void
   textSize?: 'sm' | 'md' | 'lg'
   strong?: boolean
   theme?: 'default' | 'blue'
@@ -37,7 +37,7 @@ const SlideDown = ({
   const prevExpanded = usePrevious(expanded)
 
   const toggleContent = useCallback(
-    value => {
+    (value: boolean) => {
       if (value) setExpanded(value)
       else setToggled(value)
       if (onToggle) onToggle(value)

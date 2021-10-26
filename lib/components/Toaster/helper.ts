@@ -3,8 +3,8 @@ import isEmpty from 'lodash/isEmpty'
 import { ToastType } from './Toast'
 
 interface ToastListener {
-  add: CallableFunction
-  close: CallableFunction
+  add: (toast: ToastType, toastId: number) => void
+  close: (toast: ToastType) => void
 }
 export class ToastLauncher {
   toastId: number
@@ -77,9 +77,9 @@ export class Timer {
   private timerId: number
   private start: Date
   private remaining: number
-  private callback: CallableFunction
+  private callback: () => void
 
-  constructor(callback: CallableFunction, delay: number) {
+  constructor(callback: () => void, delay: number) {
     this.remaining = delay
     this.callback = callback
     this.resume()

@@ -18,7 +18,7 @@ const ICON_SIZE = 20
 
 interface ToggleProps {
   value?: boolean
-  onChange?: CallableFunction
+  onChange?: (value: boolean) => void
   disabled?: boolean
   label?: ReactNode
   trk?: string
@@ -52,9 +52,9 @@ const Toggle = ({
   const toggle = useCallback(() => {
     if (!disabled) {
       setValue(!_value)
-      if (onChange) onChange(!_value, id)
+      if (onChange) onChange(!_value)
     }
-  }, [onChange, id, disabled, _value])
+  }, [onChange, disabled, _value])
 
   return (
     <div
