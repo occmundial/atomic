@@ -22,7 +22,7 @@ interface PagerProps {
   marginPagesDisplayed?: number
   previousLabel?: string
   nextLabel?: string
-  onPageChange?: CallableFunction
+  onPageChange?: (selected: number) => void
   initialPage?: number
   forcePage?: number
   disableInitialCallback?: boolean
@@ -51,7 +51,7 @@ const Pager = ({
 
   const callCallback = useCallback(
     (selectedItem: number) => {
-      if (onPageChange) onPageChange({ selected: selectedItem })
+      if (onPageChange) onPageChange(selectedItem)
     },
     [onPageChange]
   )
