@@ -15,7 +15,7 @@ interface RadioOption {
 
 interface RadioProps {
   selected?: string | number
-  onChange?: CallableFunction
+  onChange?: (value: string | number) => void
   options?: RadioOption[]
   textOverflow?: boolean
   id?: string
