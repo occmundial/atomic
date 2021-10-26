@@ -10,7 +10,7 @@ import useStyles from './styles'
 
 interface PillChoiceProps {
   id: string | number
-  onClick: CallableFunction
+  onClick: (id: string | number) => void
   children: string
   selected: boolean
   disabled: boolean
