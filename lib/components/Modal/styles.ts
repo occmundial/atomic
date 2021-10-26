@@ -155,7 +155,7 @@ const styles = {
   },
   imgTop: {
     position: 'relative',
-    height: ({ imgTop }: ModalProps) => imgTop.height || 128,
+    height: ({ imgTop }: ModalProps) => imgTop?.height || 128,
     backgroundImage: ({ imgTop }: ModalProps) => `url(${imgTop?.img || null})`,
     backgroundPosition: ({ imgTop }: ModalProps) =>
       `${imgTop?.position || 'center'} center`,
