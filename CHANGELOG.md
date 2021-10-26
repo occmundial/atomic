@@ -1,3 +1,20 @@
+## [1.1.1](https://github.com/occmundial/atomic/compare/v1.1.0...v1.1.1) (2021-10-26)
+
+
+### Bug Fixes
+
+* Change onPageChange prop in Pager ([5f0988b](https://github.com/occmundial/atomic/commit/5f0988b7c887771899d556fa7f0483dec0505994))
+* Fix types in Autocomplete ([f0c003c](https://github.com/occmundial/atomic/commit/f0c003c38a9ad4b800688ca36f49a16808892d00))
+* Fix types in Checkbox ([494365e](https://github.com/occmundial/atomic/commit/494365e839959f6d8f960daf3b440bd2275e2dc9))
+* Fix types in Droplist and bind context to preventDefault ([89c48d6](https://github.com/occmundial/atomic/commit/89c48d6106afcc97ca23b1d4c8ddf759ee6608ca))
+* Fix types in OrderBy ([d56a6de](https://github.com/occmundial/atomic/commit/d56a6de9eb42aa262d4265f742fd069d7cf16bf6))
+* Fix types in Pill ([1c370e9](https://github.com/occmundial/atomic/commit/1c370e9efcb1479eabfdd613127c1b8a7bfc24fc))
+* Fix types in Radio ([8fd8a24](https://github.com/occmundial/atomic/commit/8fd8a24b868e7e8c09eb25280356aec9094fa77c))
+* Fix types in SlideDown ([94d43e4](https://github.com/occmundial/atomic/commit/94d43e4ba0746391a80362bf28be1f8da0e7e16c))
+* Fix types in TextField ([d2bc864](https://github.com/occmundial/atomic/commit/d2bc86487d802861190b31e53f3c557236a51d21))
+* Fix types in Toaster ([85eb498](https://github.com/occmundial/atomic/commit/85eb498c2a40fd6851977c169b2eeb70155d9c73))
+* Fix types in Toggle ([8baf74c](https://github.com/occmundial/atomic/commit/8baf74cce19009ea9d3e207f01e3d2ba7c2c74df))
+
 # [1.1.0](https://github.com/occmundial/atomic/compare/v1.0.0...v1.1.0) (2021-10-25)
 
 
