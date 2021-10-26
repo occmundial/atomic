@@ -17,11 +17,16 @@ import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 
+interface Option {
+  value: string | number
+  text: string
+}
+
 interface OrderByProps {
   text?: string
-  options?: any
-  selected?: any
-  onChange?: CallableFunction
+  options?: Option[]
+  selected?: string | number
+  onChange?: (value: string | number) => void
   iconName?: string
   hideSelectedText?: boolean
   id?: string
@@ -65,7 +70,7 @@ const OrderBy = ({
   )
 
   const handleOnChange = useCallback(
-    value => {
+    (value: string | number) => {
       if (onChange) onChange(value)
       hideCard()
     },
