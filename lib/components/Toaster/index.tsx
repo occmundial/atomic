@@ -17,7 +17,7 @@ interface ToasterProps {
 const Toaster = ({ container }: ToasterProps) => {
   const classes = useStyles()
   const [toast, setToast] = useState<ToastType | null>()
-  const [toastId, setToastId] = useState()
+  const [toastId, setToastId] = useState<number>()
   const timer = useRef(null)
 
   const resetTimer = useCallback(() => {
@@ -52,7 +52,7 @@ const Toaster = ({ container }: ToasterProps) => {
   )
 
   const onAdd = useCallback(
-    (toast, toastId) => {
+    (toast: ToastType, toastId: number) => {
       const newToast = { ...toast }
       resetTimer()
       newToast.closing = false

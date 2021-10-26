@@ -27,7 +27,7 @@ export interface ToastType {
 
 interface ToastProps extends Omit<ToastType, 'type'> {
   theme?: ToastTheme
-  onClose?: CallableFunction
+  onClose?: () => void
   pauseTimer: EventHandler<SyntheticEvent>
   resumeTimer: EventHandler<SyntheticEvent>
 }
