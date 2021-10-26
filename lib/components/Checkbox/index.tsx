@@ -17,7 +17,7 @@ import useStyles from './styles'
 interface CheckboxProps {
   value?: boolean
   undetermined?: boolean
-  onChange?: CallableFunction
+  onChange?: (value: boolean) => void
   disabled?: boolean
   label?: ReactNode
   right?: string | number
