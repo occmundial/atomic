@@ -28,12 +28,12 @@
     "@babel/runtime": "^7.14.8",
     "classnames": "^2.3.1",
     "hex-rgba": "^1.0.2",
-    "lodash": "^4.17.21",
     "react-text-mask": "^5.4.3",
     "unorm": "^1.6.0"
   },
   "peerDependencies": {
     "@babel/types": "^7.14.5",
+    "lodash": "^4.17.21",
     "react": ">16.8.0",
     "react-dom": ">16.8.0",
     "react-jss": "10.6.0"
@@ -69,6 +69,7 @@
     "husky": "^7.0.1",
     "jest": "^27.0.6",
     "lint-staged": "^11.0.0",
+    "lodash": "^4.17.21",
     "mkdirp": "^1.0.4",
     "next": "11.1.1",
     "next-mdx-remote": "^3.0.4",
