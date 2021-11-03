@@ -160,7 +160,7 @@ const styles = {
     backgroundPosition: ({ imgTop }: ModalProps) =>
       `${imgTop?.position || 'center'} center`,
     backgroundSize: ({ imgTop }: ModalProps) =>
-      imgTop?.size === 'contain' ? 'auto 100%' : imgTop.size || 'cover',
+      imgTop?.size === 'contain' ? 'auto 100%' : imgTop?.size || 'cover',
     backgroundColor: ({ imgTop }: ModalProps) => imgTop?.color || null,
     backgroundRepeat: 'no-repeat',
     borderRadius: [spacing.radius, spacing.radius, 0, 0],
