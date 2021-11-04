@@ -1,3 +1,15 @@
+## [1.1.3](https://github.com/occmundial/atomic/compare/v1.1.2...v1.1.3) (2021-11-03)
+
+
+### Bug Fixes
+
+* Fix size when property is undefined ([a932ea4](https://github.com/occmundial/atomic/commit/a932ea44a5ce961cee3917376191f58af7470017))
+
+
+### Features
+
+* **gh-page:** Upgrade Next.js ([0f8a157](https://github.com/occmundial/atomic/commit/0f8a157f3906a579ab8fe5b64525278a15180e61))
+
 ## [1.1.2](https://github.com/occmundial/atomic/compare/v1.1.1...v1.1.2) (2021-10-27)
 
 
