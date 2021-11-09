@@ -15,6 +15,7 @@ import iconSizes from '@/tokens/iconSizes'
 import useEventListener from '@/hooks/useEventListener'
 
 import styles from './styles'
+import useLockBodyScroll from '@/hooks/useLockBodyScroll'
 
 const ESCAPE = 'Escape'
 
@@ -37,6 +38,7 @@ const NavAside = ({
   onTransitionEnd,
   right
 }: NavAsideProps) => {
+  useLockBodyScroll()
   const onKeyDown = useCallback(
     ({ code }: KeyboardEvent) => {
       if (code == ESCAPE) onClose()

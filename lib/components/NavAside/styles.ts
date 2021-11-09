@@ -5,11 +5,6 @@ import colors from '@/tokens/colors'
 const ASIDE_SIZE = 320
 
 const styles = {
-  '@global': {
-    body: {
-      overflow: 'hidden'
-    }
-  },
   '@keyframes overlayFadeIn': {
     from: { opacity: 0 },
     to: { opacity: 1 }

@@ -20,6 +20,7 @@ import useWindowSize from '@/hooks/useWindowSize'
 import useEventListener from '@/hooks/useEventListener'
 
 import styles from './styles'
+import useLockBodyScroll from '@/hooks/useLockBodyScroll'
 
 const ESCAPE = 'Escape'
 
@@ -80,6 +81,7 @@ const Modal = (props: ModalProps) => {
     fullSize
   } = props
   const { width } = useWindowSize()
+  useLockBodyScroll()
   const isMobile = useMemo(() => width < grid.xs, [width])
 
   const onKeyDown = useCallback(
