@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/occmundial/atomic/compare/v1.1.3...v1.2.0) (2021-11-09)
+
+
+### Features
+
+* Add useLockBodyScroll hook and replace global body styles ([641496e](https://github.com/occmundial/atomic/commit/641496ef84dfa5498af3cc609195ed83044e267a))
+
 ## [1.1.3](https://github.com/occmundial/atomic/compare/v1.1.2...v1.1.3) (2021-11-03)
 
 
