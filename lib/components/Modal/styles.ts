@@ -5,11 +5,6 @@ import colors from '@/tokens/colors'
 import { ModalProps } from './'
 
 const styles = {
-  '@global': {
-    body: {
-      overflow: 'hidden'
-    }
-  },
   '@keyframes modalFadeIn': {
     from: { opacity: 0 },
     to: { opacity: 1 }
