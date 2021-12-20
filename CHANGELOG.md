@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/occmundial/atomic/compare/v1.2.0...v1.2.1) (2021-12-20)
+
+
+### Bug Fixes
+
+* Fix spinner icon ([51bfda0](https://github.com/occmundial/atomic/commit/51bfda0cb22f23246706c4c34ab32f36b31234f9))
+
 # [1.2.0](https://github.com/occmundial/atomic/compare/v1.1.3...v1.2.0) (2021-11-09)
 
 
