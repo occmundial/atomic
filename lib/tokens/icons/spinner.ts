@@ -5,14 +5,21 @@ const spinner = {
   height: '24px',
   display: 'inline-block',
   icon: (color = colors.grey900) => `
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-      <radialGradient id="paint0_angular" cx="0" cy="0" r="1" gradientTransform="translate(12 12) scale(9)" gradientUnits="userSpaceOnUse">
-        <stop offset=".041" stop-color="${color}" stop-opacity=".01"/>
-        <stop offset=".742" stop-color="${color}"/>
-        <stop offset=".743" stop-color="${color}" stop-opacity=".01"/>
-      </radialGradient>
-      <path fill="url(#paint0_angular)" fill-rule="evenodd" d="M12 19.227c-3.992 0-7.227-3.235-7.227-7.227 0-3.991 3.235-7.227 7.227-7.227 3.992 0 7.227 3.236 7.227 7.227 0 3.992-3.235 7.227-7.227 7.227zM12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z" clip-rule="evenodd"/>
-    </svg>`
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+    <style type="text/css">
+      .st0{fill:url(#SVGID_1_);}
+    </style>
+    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="21" y1="12" x2="3" y2="12">
+      <stop offset="0.1778" style="stop-color:${color};stop-opacity:0"/>
+      <stop offset="0.2271" style="stop-color:${color};stop-opacity:0.1"/>
+      <stop offset="0.3157" style="stop-color:${color};stop-opacity:0.4"/>
+      <stop offset="0.4525" style="stop-color:${color};stop-opacity:0.7"/>
+      <stop offset="0.5546" style="stop-color:${color}"/>
+      <stop offset="0.9278" style="stop-color:${color}"/>
+    </linearGradient>
+    <path class="st0" d="M19.1,12c0.1,4-3.1,7.2-7.1,7.2S4.8,16,4.8,12S8,4.8,12,4.8V3c-5,0-9,4-9,9s4,9,9,9s9-4,9-9H19.1z"/>
+  </svg>`
 }
 
 export default spinner
