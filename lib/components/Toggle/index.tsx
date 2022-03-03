@@ -73,7 +73,7 @@ const Toggle = ({
       >
         <span className={classes.slider}>
           <Icon
-            iconName={_value ? 'check-o' : 'x'}
+            iconName={_value ? 'check-o' : 'x-micro-o'}
             size={ICON_SIZE}
             color={_value ? colors.prim : colors.grey400}
           />
