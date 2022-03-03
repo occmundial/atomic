@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/occmundial/atomic/compare/v1.2.1...v1.2.2) (2022-03-03)
+
+
+### Bug Fixes
+
+* Change icon in Toggle ([f4b252d](https://github.com/occmundial/atomic/commit/f4b252d305886a0d5415ce0ed04e51a49d7c56c0))
+
 ## [1.2.1](https://github.com/occmundial/atomic/compare/v1.2.0...v1.2.1) (2021-12-20)
 
 
