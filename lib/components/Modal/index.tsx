@@ -147,9 +147,9 @@ const Modal = (props: ModalProps) => {
               <Flexbox flex={imgLeft?.img ? '1' : null}>
                 {fullSize && isMobile ? (
                   <div className={classes.top}>
-                    <div className={classes.top}>
+                    <Flexbox className={classes.top}>
                       {!imgTop?.img && onClose && closeButton}
-                    </div>
+                    </Flexbox>
                     {title && (
                       <Text heading className={classes.title}>
                         {title}
