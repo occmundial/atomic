@@ -93,7 +93,8 @@ const styles = {
   closeIcon: {
     height: spacing.medium,
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'end'
   },
   content: {
     marginLeft: -spacing.small,
