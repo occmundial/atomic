@@ -1,3 +1,11 @@
+## [1.2.3](https://github.com/occmundial/atomic/compare/v1.2.2...v1.2.3) (2022-04-26)
+
+
+### Bug Fixes
+
+* Change logical expresion for close Button (fullSize prop) ([68c06a8](https://github.com/occmundial/atomic/commit/68c06a8fae500f64af3c62a3debba8bdd485201a))
+* Moved close icon to the left again ([2279390](https://github.com/occmundial/atomic/commit/2279390499a37be75dbee4d12f77a8ca30779112))
+
 ## [1.2.2](https://github.com/occmundial/atomic/compare/v1.2.1...v1.2.2) (2022-03-03)
 
 
