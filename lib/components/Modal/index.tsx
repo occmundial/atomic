@@ -139,7 +139,7 @@ const Modal = (props: ModalProps) => {
                     { [classes.imgTop]: !imgLeft.img }
                   )}
                 >
-                  {imgTop.img && onClose && (
+                  {imgTop?.img && onClose && (
                     <div className={classes.closePosition}>{closeButton}</div>
                   )}
                 </div>
