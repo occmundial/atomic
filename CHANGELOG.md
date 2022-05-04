@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/occmundial/atomic/compare/v1.2.3...v1.2.4) (2022-05-04)
+
+
+### Bug Fixes
+
+* Fix modal condition to render images ([2c1039b](https://github.com/occmundial/atomic/commit/2c1039b438ac5e5ceb09ad1d9030cccd9acece56))
+
 ## [1.2.3](https://github.com/occmundial/atomic/compare/v1.2.2...v1.2.3) (2022-04-26)
 
 
