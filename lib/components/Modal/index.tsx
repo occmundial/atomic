@@ -135,8 +135,8 @@ const Modal = (props: ModalProps) => {
               {(imgLeft?.img || imgTop?.img) && (
                 <div
                   className={classnames(
-                    { [classes.imgLeft]: imgLeft.img },
-                    { [classes.imgTop]: !imgLeft.img }
+                    { [classes.imgLeft]: imgLeft?.img },
+                    { [classes.imgTop]: !imgLeft?.img }
                   )}
                 >
                   {imgTop?.img && onClose && (
