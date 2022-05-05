@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/occmundial/atomic/compare/v1.2.4...v1.2.5) (2022-05-05)
+
+
+### Bug Fixes
+
+* Validate fields when passing imgTop prop only ([420759b](https://github.com/occmundial/atomic/commit/420759bac1ecd685154cd2763e84c0af6aa65337))
+
 ## [1.2.4](https://github.com/occmundial/atomic/compare/v1.2.3...v1.2.4) (2022-05-04)
 
 
