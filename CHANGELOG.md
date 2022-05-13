@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/occmundial/atomic/compare/v1.2.5...v1.3.0) (2022-05-13)
+
+
+### Features
+
+* Update typescript to 4.6.4 ([c9a75dc](https://github.com/occmundial/atomic/commit/c9a75dcf5387bbd428ba0d224547054696ed3765))
+
 ## [1.2.5](https://github.com/occmundial/atomic/compare/v1.2.4...v1.2.5) (2022-05-05)
 
 
