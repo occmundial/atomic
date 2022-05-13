@@ -71,8 +71,6 @@ export class ToastLauncher {
   }
 }
 
-export const toastLauncher = new ToastLauncher()
-
 export class Timer {
   private timerId: number
   private start: Date
