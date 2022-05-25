@@ -64,9 +64,9 @@ const Alert = ({
 
   const replaceStringToBold = useCallback(
     text => {
-      if (text === '') return text
+      if (text === '') return [text]
       const chunks = text.split(boldRegex)
-      if (chunks.length === 1) return text
+      if (chunks.length === 1) return [text]
       return chunks.map((chunk: string, i: number) =>
         i % 2 === 0 ? chunk : boldMatch(chunk, i)
       ) as (JSX.Element | string)[]
