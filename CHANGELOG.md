@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/occmundial/atomic/compare/v1.3.0...v1.3.1) (2022-05-27)
+
+
+### Bug Fixes
+
+* Return array in alert component text ([eec9a2a](https://github.com/occmundial/atomic/commit/eec9a2a075acdc858fb525b619940c41fcb33442))
+
 # [1.3.0](https://github.com/occmundial/atomic/compare/v1.2.5...v1.3.0) (2022-05-13)
 
 
