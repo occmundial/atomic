@@ -57,6 +57,7 @@ export interface TextFieldProps {
   onClear?: () => void
   options?: any[]
   iconName?: string
+  searchField?: boolean
   inputClassName?: string
   regex?: string | RegExp
   required?: boolean
@@ -101,6 +102,7 @@ const TextField = forwardRef(
       mask,
       guide,
       pattern,
+      searchField,
       inputMode,
       disableAutoComplete
     }: TextFieldProps,
@@ -200,8 +202,10 @@ const TextField = forwardRef(
           ? 'disabled'
           : status !== 'focus' && errorStatus
           ? 'error'
+          : status !== 'focus' && searchField && value
+          ? 'filled'
           : status,
-      [status, disabled, errorStatus]
+      [status, disabled, errorStatus, searchField, value]
     )
 
     const inputType = useMemo(
@@ -222,13 +226,23 @@ const TextField = forwardRef(
           { [classes.hasIcon]: iconName },
           { [classes.hasClear]: clear },
           { [classes.alignRight]: alignRight },
+          { [classes.searchField]: searchField },
+          { [classes.searchFieldHasIcon]: searchField && iconName },
           { [classes.select]: type === 'select' },
           { [classes.textarea]: type === 'textarea' },
           { [classes.hasPass]: type === 'password' },
           inputClassName
         ),
-      [alignRight, classes, clear, iconName, inputClassName, type]
+      [alignRight, classes, clear, iconName, inputClassName, type, searchField]
     )
+
+    const setIconColor = useMemo(() => {
+      if (disabled) return colors.grey500
+      if (status === 'focus' && searchField) return colors.prim
+      if (error && (allowError || touched)) return colors.error
+      if (status !== 'focus' && searchField && value) return colors.grey900
+      return colors.grey500
+    }, [disabled, searchField, allowError, error, touched, status, value])
 
     const commonProps = useMemo(
       () => ({
@@ -431,9 +445,9 @@ const TextField = forwardRef(
           {iconName && (
             <Icon
               iconName={iconName}
-              size={iconSizes.base}
+              size={iconSizes.small}
               className={classes.icon}
-              color={colors.grey500}
+              color={setIconColor}
             />
           )}
           {type == 'select' && (
@@ -448,7 +462,11 @@ const TextField = forwardRef(
           {type == 'password' && passIcon}
           {_value && clear && (
             <div onClick={_onClear} className={classes.clear}>
-              <Icon iconName="x" color={colors.grey400} />
+              <Icon
+                iconName="x"
+                color={colors.grey400}
+                size={iconSizes.small}
+              />
             </div>
           )}
           {element}

@@ -30,6 +30,13 @@ export default createUseStyles({
   focus: {
     '& $input': {
       borderColor: colors.prim
+    },
+    '& $searchField': {
+      borderWidth: 2,
+      paddingLeft: spacing.tiny - 1
+    },
+    '& $searchFieldHasIcon': {
+      paddingLeft: 41
     }
   },
   error: {
@@ -40,6 +47,24 @@ export default createUseStyles({
     },
     '& $input::placeholder': {
       color: colors.error
+    },
+    '& $searchField': {
+      borderWidth: 2,
+      color: colors.ink,
+      paddingLeft: spacing.tiny - 1
+    },
+    '& $searchFieldHasIcon': {
+      paddingLeft: 41
+    }
+  },
+  filled: {
+    '& $input': {
+      borderColor: colors.grey900,
+      borderWidth: 2,
+      paddingLeft: spacing.tiny - 1
+    },
+    '& $searchFieldHasIcon': {
+      paddingLeft: 41
     }
   },
   label: {
@@ -141,8 +166,9 @@ export default createUseStyles({
   },
   icon: {
     position: 'absolute',
-    left: spacing.gutter,
-    top: spacing.tiny
+    left: spacing.small,
+    top: '50%',
+    transform: 'translateY(-50%)'
   },
   passIcon: {
     width: spacing.base,
@@ -180,11 +206,12 @@ export default createUseStyles({
     height: spacing.base,
     background: 'none',
     border: 0,
-    padding: 0,
+    padding: 3,
     margin: 0,
     position: 'absolute',
     right: 12,
-    top: spacing.tiny,
+    top: '50%',
+    transform: 'translateY(-50%)',
     zIndex: 1,
     outline: 0,
     cursor: 'pointer'
@@ -198,5 +225,12 @@ export default createUseStyles({
   bottom: {
     height: 20,
     marginTop: spacing.xTiny
-  }
+  },
+  searchField: {
+    height: spacing.large,
+    borderRadius: spacing.base,
+    borderColor: colors.grey600,
+    background: [colors.bgWhite, '!important']
+  },
+  searchFieldHasIcon: {}
 })
