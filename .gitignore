@@ -36,3 +36,6 @@ yarn-error.log*
 
 # VS Code
 .vscode
+
+# TS dev files
+tsconfig.tsbuildinfo
