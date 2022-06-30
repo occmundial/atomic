@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/occmundial/atomic/compare/v1.3.1...v1.4.0) (2022-06-30)
+
+
+### Features
+
+* Add searchField prop to TextField ([c0493d4](https://github.com/occmundial/atomic/commit/c0493d4f1820995633829bbcadf70fb1364153ba))
+
 ## [1.3.1](https://github.com/occmundial/atomic/compare/v1.3.0...v1.3.1) (2022-05-27)
 
 
