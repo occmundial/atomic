@@ -1,4 +1,12 @@
-import { useState, useEffect, useRef, useCallback, CSSProperties } from 'react'
+import {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  CSSProperties,
+  forwardRef,
+  useImperativeHandle
+} from 'react'
 import cloneDeep from 'lodash/cloneDeep'
 import classnames from 'classnames'
 
@@ -43,7 +51,7 @@ export interface AutocompleteProps {
   style?: CSSProperties
 }
 
-const Autocomplete = (props: AutocompleteProps) => {
+const Autocomplete = forwardRef((props: AutocompleteProps, ref) => {
   const {
     textfieldProps,
     droplistProps,
@@ -66,13 +74,19 @@ const Autocomplete = (props: AutocompleteProps) => {
   const textfieldRef = useRef(null)
   const prevTextfieldProps = usePrevious(textfieldProps) || {}
   const showDropList = showInitialData
-    ? focus && droplistProps.items
-    : value && focus && droplistProps.items
+    ? focus && !!droplistProps.items.length
+    : value && focus && !!droplistProps.items.length
 
   useEffect(() => {
     if (textfieldProps.value !== prevTextfieldProps.value)
       setValue(textfieldProps.value)
   }, [textfieldProps.value, prevTextfieldProps.value])
+
+  useImperativeHandle(ref, () => ({
+    focus: () => textfieldRef.current.focus(),
+    blur: () => textfieldRef.current.blur(),
+    setValue
+  }))
 
   const _onChange = useCallback(
     (value: string) => {
@@ -155,11 +169,13 @@ const Autocomplete = (props: AutocompleteProps) => {
       )}
     </div>
   )
-}
+})
 
 Autocomplete.defaultProps = {
   textfieldProps: {},
-  droplistProps: {},
+  droplistProps: {
+    items: []
+  },
   disableAutoComplete: false,
   showInitialData: false
 }
