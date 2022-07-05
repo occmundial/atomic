@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/occmundial/atomic/compare/v1.4.0...v1.5.0) (2022-07-05)
+
+
+### Features
+
+* Add Ref to Autocomplete field ([13af50d](https://github.com/occmundial/atomic/commit/13af50d70dfb59c1b807daa1a49ef8a819f62e2d))
+
 # [1.4.0](https://github.com/occmundial/atomic/compare/v1.3.1...v1.4.0) (2022-06-30)
 
 
