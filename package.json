@@ -79,7 +79,7 @@
     "react-jss": "^10.6.0",
     "replace-json-property": "^1.6.3",
     "rimraf": "^3.0.2",
-    "semantic-release": "^17.4.4",
+    "semantic-release": "^19.0.3",
     "semantic-release-slack-bot": "^2.1.1",
     "slugify": "^1.6.0",
     "ts-jest": "^27.0.4",
