@@ -75,6 +75,10 @@ export default createUseStyles<any, TagProps>({
     color: grey900,
     background: grey100
   },
+  primary: {
+    color: white,
+    background: primDark
+  },
   basic: {
     color: grey900,
     background: bgWhite
@@ -98,10 +102,6 @@ export default createUseStyles<any, TagProps>({
   link: {
     color: textLink,
     background: hexToRgba(textLink, 10)
-  },
-  altLink: {
-    color: white,
-    background: primDark
   },
   icon: {
     display: 'inline-block',
