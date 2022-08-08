@@ -19,7 +19,9 @@ const {
   grey900,
   grey100,
   textLink,
-  bgWhite
+  bgWhite,
+  white,
+  primDark
 } = colors
 const { xTiny, tiny, small, medium, gutter } = spacing
 
@@ -72,6 +74,10 @@ export default createUseStyles<any, TagProps>({
   default: {
     color: grey900,
     background: grey100
+  },
+  primary: {
+    color: white,
+    background: primDark
   },
   basic: {
     color: grey900,

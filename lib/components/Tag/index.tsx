@@ -12,6 +12,7 @@ export interface TagProps {
   children: ReactNode
   theme?:
     | 'default'
+    | 'primary'
     | 'info'
     | 'success'
     | 'warning'
