@@ -19,7 +19,9 @@ const {
   grey900,
   grey100,
   textLink,
-  bgWhite
+  bgWhite,
+  white,
+  primDark
 } = colors
 const { xTiny, tiny, small, medium, gutter } = spacing
 
@@ -96,6 +98,10 @@ export default createUseStyles<any, TagProps>({
   link: {
     color: textLink,
     background: hexToRgba(textLink, 10)
+  },
+  altLink: {
+    color: white,
+    background: primDark
   },
   icon: {
     display: 'inline-block',

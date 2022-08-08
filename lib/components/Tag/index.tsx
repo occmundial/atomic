@@ -18,6 +18,7 @@ export interface TagProps {
     | 'error'
     | 'basic'
     | 'link'
+    | 'altLink'
   iconName?: string
   className?: string
   style?: CSSProperties
