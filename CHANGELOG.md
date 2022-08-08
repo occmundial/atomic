@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/occmundial/atomic/compare/v1.5.0...v1.6.0) (2022-08-08)
+
+
+### Features
+
+* Add new Tag color theme ([bd4e3b1](https://github.com/occmundial/atomic/commit/bd4e3b11c84e6301c6d32f3ee4615bcf0322e606))
+
 # [1.5.0](https://github.com/occmundial/atomic/compare/v1.4.0...v1.5.0) (2022-07-05)
 
 
