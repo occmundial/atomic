@@ -98,13 +98,18 @@ const OrderBy = ({
     <div className={classnames(classes.wrap, className)} id={id} style={style}>
       <div className={classes.button} onClick={toggleCard}>
         <Flexbox display="inline-flex">
-          <Text small mid>
-            {text} {hideSelectedText ? '' : selectedText}
+          <Text small>
+            {text}{' '}
+            {!hideSelectedText && (
+              <Text small strong tag="span">
+                {selectedText}
+              </Text>
+            )}
           </Text>
           <Icon
             iconName={iconName}
             size={iconSizes.tiny}
-            color={colors.grey600}
+            color={colors.grey800}
             className={classes.icon}
           />
         </Flexbox>
