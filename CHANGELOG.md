@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/occmundial/atomic/compare/v1.6.0...v1.7.0) (2022-08-30)
+
+
+### Features
+
+* Update orderBy labels ([9c6c82b](https://github.com/occmundial/atomic/commit/9c6c82b02050671ff88ca726e050cf31c541fa9e))
+
 # [1.6.0](https://github.com/occmundial/atomic/compare/v1.5.0...v1.6.0) (2022-08-08)
 
 
