@@ -30,7 +30,7 @@ export default createUseStyles({
     }
   },
   link: {
-    color: colors.grey600,
+    color: colors.grey800,
     textDecoration: 'none',
     cursor: 'pointer',
     '&:hover, &:focus, &:active': {

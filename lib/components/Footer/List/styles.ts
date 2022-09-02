@@ -29,7 +29,7 @@ export default createUseStyles({
     transform: 'rotate(-180deg)'
   },
   link: {
-    color: colors.grey600,
+    color: colors.grey800,
     textDecoration: 'none',
     '&:hover, &:focus, &:active': {
       color: colors.grey600
@@ -42,5 +42,8 @@ export default createUseStyles({
   },
   title: {
     marginBottom: spacing.tiny
+  },
+  titleColor: {
+    color: colors.grey800
   }
 })
