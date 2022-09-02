@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/occmundial/atomic/compare/v1.7.0...v1.8.0) (2022-09-02)
+
+
+### Features
+
+* Change footer font color ([ded183a](https://github.com/occmundial/atomic/commit/ded183a21edf06a0e22f7b5ce89deae6abf09188))
+
 # [1.7.0](https://github.com/occmundial/atomic/compare/v1.6.0...v1.7.0) (2022-08-30)
 
 
