@@ -127,11 +127,7 @@ const Footer = ({
                     </div>
                   ))}
                 </Text>
-                {copyText && (
-                  <Text small mid>
-                    {copyText}
-                  </Text>
-                )}
+                {copyText && <Text small>{copyText}</Text>}
               </Flexbox>
               {aux && (
                 <Button

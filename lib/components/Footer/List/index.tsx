@@ -116,7 +116,9 @@ const List = ({
           [classes.collapsible]: isCollapsible
         })}
       >
-        <Text tag="span">{title}</Text>
+        <Text tag="span" strong className={classes.titleColor}>
+          {title}
+        </Text>
         {isCollapsible && (
           <Icon
             iconName="arrow-down"
