@@ -14,8 +14,6 @@ export default createUseStyles({
   btn: {
     display: 'inline-block',
     fontFamily: fonts.body,
-    border: `1px solid ${colors.grey300}`,
-    borderRadius: '5px',
     padding: '3px 13px',
     transition: '0.3s all',
     cursor: 'pointer',
@@ -29,13 +27,11 @@ export default createUseStyles({
     }
   },
   prev: {
-    marginRight: '15px',
     '& span': {
       transform: 'rotate(90deg)'
     }
   },
   next: {
-    marginLeft: '15px',
     '& span': {
       transform: 'rotate(-90deg)'
     }

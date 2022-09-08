@@ -6,10 +6,10 @@ export default createUseStyles({
   li: {
     display: 'inline-block',
     cursor: 'pointer',
-    padding: '2px 11px',
+    padding: '6px 11px',
     marginLeft: '4px',
     marginRight: '4px',
-    borderRadius: '13px',
+    borderRadius: '50%',
     transition: '0.3s all',
     outline: '0',
     '&:hover': {
