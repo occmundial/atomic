@@ -174,7 +174,7 @@ const Pager = ({
       >
         <Icon
           iconName="arrow-left"
-          color={colors.prim}
+          color={colors.inkLight}
           size={iconSizes.tiny}
           className={classes.icon}
         />{' '}
@@ -191,7 +191,7 @@ const Pager = ({
         {nextLabel}{' '}
         <Icon
           iconName="arrow-right"
-          color={colors.prim}
+          color={colors.inkLight}
           size={iconSizes.tiny}
           className={classes.icon}
         />

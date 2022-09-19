@@ -8,7 +8,7 @@ export default createUseStyles({
     listStyle: 'none',
     paddingLeft: '0',
     fontFamily: fonts.body,
-    color: colors.grey600,
+    color: colors.inkLight,
     fontSize: '13px'
   },
   btn: {
@@ -18,6 +18,8 @@ export default createUseStyles({
     transition: '0.3s all',
     cursor: 'pointer',
     outline: '0',
+    borderRadius: '6px',
+    border: [1, 'solid', colors.inkLighter],
     '& span': {
       marginBottom: '-2px'
     },
