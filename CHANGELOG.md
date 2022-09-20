@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/occmundial/atomic/compare/v1.8.0...v1.9.0) (2022-09-20)
+
+
+### Features
+
+* Update number styles in Page ([6b3c1d8](https://github.com/occmundial/atomic/commit/6b3c1d85c4bb3885c390c1bc6901bdeaeb710575))
+
 # [1.8.0](https://github.com/occmundial/atomic/compare/v1.7.0...v1.8.0) (2022-09-02)
 
 
