@@ -8,18 +8,18 @@ export default createUseStyles({
     listStyle: 'none',
     paddingLeft: '0',
     fontFamily: fonts.body,
-    color: colors.grey600,
+    color: colors.inkLight,
     fontSize: '13px'
   },
   btn: {
     display: 'inline-block',
     fontFamily: fonts.body,
-    border: `1px solid ${colors.grey300}`,
-    borderRadius: '5px',
     padding: '3px 13px',
     transition: '0.3s all',
     cursor: 'pointer',
     outline: '0',
+    borderRadius: '6px',
+    border: [1, 'solid', colors.inkLighter],
     '& span': {
       marginBottom: '-2px'
     },
@@ -29,13 +29,11 @@ export default createUseStyles({
     }
   },
   prev: {
-    marginRight: '15px',
     '& span': {
       transform: 'rotate(90deg)'
     }
   },
   next: {
-    marginLeft: '15px',
     '& span': {
       transform: 'rotate(-90deg)'
     }
