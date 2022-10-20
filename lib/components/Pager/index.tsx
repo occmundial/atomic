@@ -167,7 +167,8 @@ const Pager = ({
     <ul className={classnames(classes.pager, className)}>
       <li
         className={classnames(classes.btn, classes.prev, {
-          [classes.disabled]: selected === 1
+          [classes.disabled]: selected === 1,
+          [classes.prevOnly]: hideNumbers
         })}
         tabIndex={0}
         onClick={handlePrevPage}
@@ -183,7 +184,8 @@ const Pager = ({
       {!hideNumbers && pagination()}
       <li
         className={classnames(classes.btn, classes.next, {
-          [classes.disabled]: selected === pageCount
+          [classes.disabled]: selected === pageCount,
+          [classes.nextOnly]: hideNumbers
         })}
         tabIndex={0}
         onClick={handleNextPage}
