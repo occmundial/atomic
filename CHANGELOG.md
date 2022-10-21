@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/occmundial/atomic/compare/v1.9.0...v1.10.0) (2022-10-21)
+
+
+### Features
+
+* Add margins when numbers are hidden ([d8f1fd0](https://github.com/occmundial/atomic/commit/d8f1fd01a864871fa3e18208951c0f53c98bc474))
+
 # [1.9.0](https://github.com/occmundial/atomic/compare/v1.8.0...v1.9.0) (2022-09-20)
 
 
