@@ -38,6 +38,12 @@ export default createUseStyles({
       transform: 'rotate(-90deg)'
     }
   },
+  nextOnly: {
+    marginLeft: '16px'
+  },
+  prevOnly: {
+    marginRight: '16px'
+  },
   disabled: {
     pointerEvents: 'none',
     opacity: '0.4'
