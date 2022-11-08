@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/occmundial/atomic/compare/v1.10.0...v1.11.0) (2022-11-08)
+
+
+### Features
+
+* Add value in ref exposed properties ([fcda4cf](https://github.com/occmundial/atomic/commit/fcda4cfe4ce9f24c38cd8fee737e484d9d4a3ef6))
+
 # [1.10.0](https://github.com/occmundial/atomic/compare/v1.9.0...v1.10.0) (2022-10-21)
 
 
