@@ -85,6 +85,7 @@ const Autocomplete = forwardRef((props: AutocompleteProps, ref) => {
   useImperativeHandle(ref, () => ({
     focus: () => textfieldRef.current.focus(),
     blur: () => textfieldRef.current.blur(),
+    value,
     setValue
   }))
 
