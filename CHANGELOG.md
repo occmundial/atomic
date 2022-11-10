@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/occmundial/atomic/compare/v1.11.0...v1.12.0) (2022-11-10)
+
+
+### Features
+
+* Add options to focus fn in ref ([76c60c5](https://github.com/occmundial/atomic/commit/76c60c5199ce8309f6a022e4e5ad0b55365bad62))
+
 # [1.11.0](https://github.com/occmundial/atomic/compare/v1.10.0...v1.11.0) (2022-11-08)
 
 
