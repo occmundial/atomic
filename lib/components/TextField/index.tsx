@@ -115,7 +115,7 @@ const TextField = forwardRef(
     const [showPass, setShowPass] = useState(false)
     const [passIconBeingClicked, setPassIconBeingClicked] = useState(false)
     const prevDisabled = usePrevious(disabled)
-    const inputRef = useRef(null)
+    const inputRef = useRef<HTMLInputElement | null>(null)
     const valueRef = useRef<string>()
 
     useEffect(() => {
@@ -131,7 +131,7 @@ const TextField = forwardRef(
     }, [disabled, prevDisabled])
 
     useImperativeHandle(ref, () => ({
-      focus: () => inputRef.current.focus(),
+      focus: (options?: FocusOptions) => inputRef.current.focus(options),
       blur: () => inputRef.current.blur()
     }))
 
