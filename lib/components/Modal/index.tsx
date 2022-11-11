@@ -192,7 +192,7 @@ const Modal = (props: ModalProps) => {
                         disabled={secBtn.disabled}
                         id={secBtn.id}
                         {...(testId && {
-                          testId: `${testId}__button_secondary`
+                          testId: `${testId}__button-secondary`
                         })}
                       >
                         {secBtn.text}
@@ -207,7 +207,7 @@ const Modal = (props: ModalProps) => {
                       disabled={mainBtn.disabled}
                       id={mainBtn.id}
                       {...(testId && {
-                        testId: `${testId}__button_main`
+                        testId: `${testId}__button-main`
                       })}
                     >
                       {mainBtn.text}
