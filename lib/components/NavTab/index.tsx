@@ -41,6 +41,7 @@ interface NavElement {
   iconName?: string
   showBar?: boolean
   custom?: ReactNode
+  testId?: string
 }
 
 export interface NavPosition extends Array<NavElement> {}

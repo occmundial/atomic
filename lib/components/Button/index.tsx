@@ -31,6 +31,7 @@ export interface ButtonProps {
   id?: string
   className?: string
   style?: CSSProperties
+  testId?: string
 }
 const Button = (props: ButtonProps) => {
   const {
@@ -49,7 +50,8 @@ const Button = (props: ButtonProps) => {
     rel,
     id,
     className,
-    style
+    style,
+    testId
   } = props
   const classes = useStyles(props)
   const buttonClassName = classnames(
@@ -103,6 +105,7 @@ const Button = (props: ButtonProps) => {
         onClick={!disabled ? onClick : null}
         id={id}
         style={style}
+        data-testid={testId}
       >
         {content}
         {loadingLayer}
@@ -115,6 +118,7 @@ const Button = (props: ButtonProps) => {
         onClick={!disabled ? onClick : null}
         id={id}
         style={style}
+        data-testid={testId}
       >
         {content}
         {loadingLayer}

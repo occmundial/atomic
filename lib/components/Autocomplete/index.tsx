@@ -32,10 +32,11 @@ export interface AutocompleteProps {
     | 'inputClassName'
     | 'disabled'
     | 'lockHeight'
+    | 'testId'
   >
   droplistProps: Pick<
     DroplistProps,
-    'items' | 'groups' | 'className' | 'filter' | 'term'
+    'items' | 'groups' | 'className' | 'filter' | 'term' | 'testId'
   >
   onChange?: (value: string) => void
   onKeyUp?: (code: string) => void
