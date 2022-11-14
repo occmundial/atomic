@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/occmundial/atomic/compare/v1.12.0...v1.13.0) (2022-11-14)
+
+
+### Features
+
+* Add testid prop to interactive components ([be87251](https://github.com/occmundial/atomic/commit/be8725168d0de0b677d4a4c091dba016d69816eb))
+
 # [1.12.0](https://github.com/occmundial/atomic/compare/v1.11.0...v1.12.0) (2022-11-10)
 
 
