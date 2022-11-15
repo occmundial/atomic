@@ -6,6 +6,7 @@ import Document, {
   DocumentContext
 } from 'next/document'
 import { SheetsRegistry, JssProvider } from 'react-jss'
+import { mediaStyle } from '@/components/Media'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -66,6 +67,7 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Pacifico&display=swap"
           />
+          <style dangerouslySetInnerHTML={{ __html: mediaStyle }} />
         </Head>
 
         <body>

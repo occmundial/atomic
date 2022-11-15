@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 
 import AtomicProvider from '@/components/Provider'
+import { MediaContextProvider } from '@/components/Media'
 import useIsClient from '@/hooks/useIsClient'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -18,13 +19,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <AtomicProvider
-        data={{
-          iconsUrl: 'https://cdn-icons.occ.com.mx/atomic-icons-1.0.0.svg'
-        }}
-      >
-        <Component key={isClient} {...pageProps} />
-      </AtomicProvider>
+      <MediaContextProvider>
+        <AtomicProvider
+          data={{
+            iconsUrl: 'https://cdn-icons.occ.com.mx/atomic-icons-1.0.0.svg'
+          }}
+        >
+          <Component key={isClient} {...pageProps} />
+        </AtomicProvider>
+      </MediaContextProvider>
     </>
   )
 }
