@@ -106,7 +106,7 @@ const Modal = (props: ModalProps) => {
           color={colors.grey900}
           onClick={onClose}
           {...(testId && {
-            'data-testid': `${testId}__container-close-icon`
+            testId: `${testId}__close-icon`
           })}
         />
       </div>

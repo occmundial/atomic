@@ -16,12 +16,13 @@ export interface IconProps {
   id?: string
   className?: string
   style?: CSSProperties
+  testId?: string
 }
 
 const Icon = (props: IconProps) => {
   const classes = useStyles(props)
   const atomic = useAtomic()
-  const { iconName, className, style, id, onClick } = props
+  const { iconName, className, style, id, onClick, testId } = props
   return (
     <svg
       className={classnames(
@@ -35,6 +36,7 @@ const Icon = (props: IconProps) => {
       id={id}
       style={style}
       onClick={onClick}
+      data-testid={testId}
     >
       <use xlinkHref={`#${atomic.iconsPrefix}__${iconName}`} />
     </svg>
