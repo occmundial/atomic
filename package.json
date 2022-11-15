@@ -25,6 +25,7 @@
     "deploy": "node scripts/deploy.js"
   },
   "dependencies": {
+    "@artsy/fresnel": "^6.1.0",
     "@babel/runtime": "^7.14.8",
     "classnames": "^2.3.1",
     "hex-rgba": "^1.0.2",
