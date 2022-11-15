@@ -18,7 +18,6 @@ import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
 import grid from '@/tokens/grid'
 import iconSizes from '@/tokens/iconSizes'
-import useWindowSize from '@/hooks/useWindowSize'
 
 import useStyles from './styles'
 
@@ -45,7 +44,7 @@ interface NavElement {
 
 export interface NavPosition extends Array<NavElement> {}
 
-interface NavTabProps {
+export interface NavTabProps {
   left?: NavPosition
   right?: NavPosition
   center?: NavPosition
@@ -57,6 +56,8 @@ interface NavTabProps {
   bottom?: boolean
   zIndex?: number
   className?: string
+  /** The recommendation is to set the breakpoint at `grid.xl` */
+  isFluid?: boolean
 }
 
 const NavTab = ({
@@ -70,12 +71,12 @@ const NavTab = ({
   bottom,
   className,
   zIndex,
-  hideOnScroll
+  hideOnScroll,
+  isFluid
 }: NavTabProps) => {
   const classes = useStyles()
   const [show, setShow] = useState(true)
   const [currentScroll, setCurrentScroll] = useState(0)
-  const { width } = useWindowSize()
 
   const determineVisibility = useCallback(() => {
     setShow(
@@ -186,7 +187,6 @@ const NavTab = ({
     ]
   )
 
-  const isFluid = useMemo(() => width < grid.xl, [width])
   return (
     <div
       className={classnames(

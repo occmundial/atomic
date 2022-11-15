@@ -5,8 +5,6 @@ import Grid from '@/components/Grid'
 import Flexbox from '@/components/Flexbox'
 import Text from '@/components/Text'
 import Button from '@/components/Button'
-import grid from '@/tokens/grid'
-import useWindowSize from '@/hooks/useWindowSize'
 
 import List, { ListItem } from './List'
 import useStyles from './styles'
@@ -44,6 +42,10 @@ interface FooterProps {
   copyText?: string | ReactElement
   aux?: Aux
   listClassName?: string
+  /** The recommendation is to set the breakpoint at `grid.sm` */
+  isMobile?: boolean
+  /** The recommendation is to set the breakpoint at `grid.xl` */
+  isFluid?: boolean
 }
 
 const Footer = ({
@@ -51,10 +53,11 @@ const Footer = ({
   bottomLinks,
   copyText,
   aux,
-  listClassName
+  listClassName,
+  isMobile,
+  isFluid
 }: FooterProps) => {
   const classes = useStyles()
-  const { width } = useWindowSize()
   const {
     text,
     iconLeft,
@@ -63,7 +66,6 @@ const Footer = ({
     iconRight,
     className: auxClassName
   } = aux
-  const isMobile = width < grid.sm
 
   return (
     <div
@@ -71,7 +73,7 @@ const Footer = ({
         columns.length > 0 ? classes.footer : classes.footerWithoutColumns
       }
     >
-      <Grid fluid={width < grid.xl}>
+      <Grid fluid={isFluid}>
         <Grid.Row>
           <Flexbox
             display="flex"
