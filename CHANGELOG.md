@@ -1,3 +1,20 @@
+# [2.0.0-beta.1](https://github.com/occmundial/atomic/compare/v1.13.0...v2.0.0-beta.1) (2022-11-15)
+
+
+### Bug Fixes
+
+* Remove conditional rendering logic from components ([2e06e19](https://github.com/occmundial/atomic/commit/2e06e19322c2967487c4c845a45da2b1dd684951))
+
+
+### Features
+
+* Add Media component ([7d6c017](https://github.com/occmundial/atomic/commit/7d6c017dbc64610a4ce8a578df8cc13a0af4ee6b))
+
+
+### BREAKING CHANGES
+
+* The components in the library are not responsible anymore for the conditional rendering derived from the window size. Instead it is suggested to pass a prop on the client side to determine when the component should show a mobile version or when its grid has to be fluid.
+
 # [1.13.0](https://github.com/occmundial/atomic/compare/v1.12.0...v1.13.0) (2022-11-14)
 
 
