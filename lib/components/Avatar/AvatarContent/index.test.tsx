@@ -21,7 +21,6 @@ describe('AvatarContent', () => {
     const photoUrl = 'https://example.com/photo.png'
     const { container } = render(<AvatarContent photo={photoUrl} />)
     const avatarContent = container.firstChild as HTMLElement
-    console.log(avatarContent.className)
     expect(avatarContent).toBeInTheDocument()
     const avatarPhoto = avatarContent.firstChild as HTMLElement
     expect(avatarPhoto).toHaveStyle(
