@@ -18,11 +18,13 @@ export interface NavIconProps {
   className?: string
   width?: number
   white?: boolean
+  testId?: string
 }
 
 const NavIcon = (props: NavIconProps) => {
   const classes = useStyles(props)
-  const { iconName, selected, label, onClick, direction, className } = props
+  const { iconName, selected, label, onClick, direction, className, testId } =
+    props
   return (
     <div
       className={classnames(
@@ -31,6 +33,7 @@ const NavIcon = (props: NavIconProps) => {
         className
       )}
       onClick={onClick}
+      data-testid={testId}
     >
       <Flexbox
         display="flex"

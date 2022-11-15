@@ -65,6 +65,7 @@ export interface TextFieldProps {
   id?: string
   className?: string
   style?: CSSProperties
+  testId?: string
 }
 
 const TextField = forwardRef(
@@ -104,7 +105,8 @@ const TextField = forwardRef(
       pattern,
       searchField,
       inputMode,
-      disableAutoComplete
+      disableAutoComplete,
+      testId
     }: TextFieldProps,
     ref
   ) => {
@@ -115,7 +117,7 @@ const TextField = forwardRef(
     const [showPass, setShowPass] = useState(false)
     const [passIconBeingClicked, setPassIconBeingClicked] = useState(false)
     const prevDisabled = usePrevious(disabled)
-    const inputRef = useRef(null)
+    const inputRef = useRef<HTMLInputElement | null>(null)
     const valueRef = useRef<string>()
 
     useEffect(() => {
@@ -131,7 +133,7 @@ const TextField = forwardRef(
     }, [disabled, prevDisabled])
 
     useImperativeHandle(ref, () => ({
-      focus: () => inputRef.current.focus(),
+      focus: (options?: FocusOptions) => inputRef.current.focus(options),
       blur: () => inputRef.current.blur()
     }))
 
@@ -259,7 +261,8 @@ const TextField = forwardRef(
         ref: inputRef,
         required,
         pattern,
-        inputMode
+        inputMode,
+        'data-testid': testId
       }),
       [
         name,
@@ -274,7 +277,8 @@ const TextField = forwardRef(
         _onKeyUp,
         required,
         pattern,
-        inputMode
+        inputMode,
+        testId
       ]
     )
 
@@ -336,6 +340,9 @@ const TextField = forwardRef(
                         key={option.value}
                         value={option.value}
                         disabled={option.disabled}
+                        {...(testId && {
+                          'data-testid': `${testId}__item-${item.value}`
+                        })}
                       >
                         {option.label}
                       </option>
@@ -346,6 +353,9 @@ const TextField = forwardRef(
                     key={item.value}
                     value={item.value}
                     disabled={item.disabled}
+                    {...(testId && {
+                      'data-testid': `${testId}__item-${item.value}`
+                    })}
                   >
                     {item.label}
                   </option>
@@ -461,7 +471,13 @@ const TextField = forwardRef(
           )}
           {type == 'password' && passIcon}
           {_value && clear && (
-            <div onClick={_onClear} className={classes.clear}>
+            <div
+              onClick={_onClear}
+              className={classes.clear}
+              {...(testId && {
+                'data-testid': `${testId}__container-close-icon`
+              })}
+            >
               <Icon
                 iconName="x"
                 color={colors.grey400}

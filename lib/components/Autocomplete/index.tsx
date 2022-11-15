@@ -32,10 +32,11 @@ export interface AutocompleteProps {
     | 'inputClassName'
     | 'disabled'
     | 'lockHeight'
+    | 'testId'
   >
   droplistProps: Pick<
     DroplistProps,
-    'items' | 'groups' | 'className' | 'filter' | 'term'
+    'items' | 'groups' | 'className' | 'filter' | 'term' | 'testId'
   >
   onChange?: (value: string) => void
   onKeyUp?: (code: string) => void
@@ -85,6 +86,7 @@ const Autocomplete = forwardRef((props: AutocompleteProps, ref) => {
   useImperativeHandle(ref, () => ({
     focus: () => textfieldRef.current.focus(),
     blur: () => textfieldRef.current.blur(),
+    value,
     setValue
   }))
 

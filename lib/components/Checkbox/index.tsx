@@ -26,6 +26,7 @@ interface CheckboxProps {
   id?: string
   className?: string
   style?: CSSProperties
+  testId?: string
 }
 
 const Checkbox = ({
@@ -39,7 +40,8 @@ const Checkbox = ({
   id,
   className,
   style,
-  trk
+  trk,
+  testId
 }: CheckboxProps) => {
   const classes = useStyles()
   const [_value, setValue] = useState(value)
@@ -74,6 +76,10 @@ const Checkbox = ({
       )}
       onClick={toggle}
       style={style}
+      data-testid={testId}
+      {...(testId && {
+        'data-value': value ? 1 : 0
+      })}
     >
       <div className={classes.check} id={trk}>
         <Icon

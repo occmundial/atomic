@@ -1,3 +1,24 @@
+# [1.13.0](https://github.com/occmundial/atomic/compare/v1.12.0...v1.13.0) (2022-11-14)
+
+
+### Features
+
+* Add testid prop to interactive components ([be87251](https://github.com/occmundial/atomic/commit/be8725168d0de0b677d4a4c091dba016d69816eb))
+
+# [1.12.0](https://github.com/occmundial/atomic/compare/v1.11.0...v1.12.0) (2022-11-10)
+
+
+### Features
+
+* Add options to focus fn in ref ([76c60c5](https://github.com/occmundial/atomic/commit/76c60c5199ce8309f6a022e4e5ad0b55365bad62))
+
+# [1.11.0](https://github.com/occmundial/atomic/compare/v1.10.0...v1.11.0) (2022-11-08)
+
+
+### Features
+
+* Add value in ref exposed properties ([fcda4cf](https://github.com/occmundial/atomic/commit/fcda4cfe4ce9f24c38cd8fee737e484d9d4a3ef6))
+
 # [1.10.0](https://github.com/occmundial/atomic/compare/v1.9.0...v1.10.0) (2022-10-21)
 
 

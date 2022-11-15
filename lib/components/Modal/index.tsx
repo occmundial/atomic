@@ -63,6 +63,7 @@ export interface ModalProps {
   fullSize?: boolean
   /** The recommendation is to set the breakpoint at `grid.xs` */
   isMobile?: boolean
+  testId?: string
 }
 
 const Modal = (props: ModalProps) => {
@@ -79,7 +80,8 @@ const Modal = (props: ModalProps) => {
     imgLeft,
     onTransitionEnd,
     fullSize,
-    isMobile
+    isMobile,
+    testId
   } = props
   useLockBodyScroll()
 
@@ -102,10 +104,13 @@ const Modal = (props: ModalProps) => {
           size={iconSizes.base}
           color={colors.grey900}
           onClick={onClose}
+          {...(testId && {
+            'data-testid': `${testId}__container-close-icon`
+          })}
         />
       </div>
     ),
-    [classes, onClose]
+    [classes, onClose, testId]
   )
 
   return (
@@ -185,6 +190,9 @@ const Modal = (props: ModalProps) => {
                         loading={secBtn.loading}
                         disabled={secBtn.disabled}
                         id={secBtn.id}
+                        {...(testId && {
+                          testId: `${testId}__button-secondary`
+                        })}
                       >
                         {secBtn.text}
                       </Button>
@@ -197,6 +205,9 @@ const Modal = (props: ModalProps) => {
                       loading={mainBtn.loading}
                       disabled={mainBtn.disabled}
                       id={mainBtn.id}
+                      {...(testId && {
+                        testId: `${testId}__button-main`
+                      })}
                     >
                       {mainBtn.text}
                     </Button>

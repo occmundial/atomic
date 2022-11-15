@@ -51,6 +51,7 @@ export interface DroplistProps {
   id?: string
   className?: string
   style?: CSSProperties
+  testId?: string
 }
 
 const Droplist = ({
@@ -65,7 +66,8 @@ const Droplist = ({
   onMouseUp,
   className,
   id,
-  style
+  style,
+  testId
 }: DroplistProps) => {
   const classes = useStyles()
   const [currentItem, setCurrentItem] = useState(-1)
@@ -294,6 +296,9 @@ const Droplist = ({
             onMouseDown={e => _onMouseDown(item, e)}
             onMouseUp={e => _onMouseUp(item, e)}
             className={itemClassName}
+            {...(testId && {
+              'data-testid': `${testId}__droplist-item-${item.id}`
+            })}
           >
             <Fragment>
               {item.iconName && (
@@ -318,7 +323,7 @@ const Droplist = ({
       })
       return itemsDOM
     },
-    [_onClick, _onMouseDown, _onMouseUp, classes, currentItem, term]
+    [_onClick, _onMouseDown, _onMouseUp, classes, currentItem, term, testId]
   )
 
   return (

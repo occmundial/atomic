@@ -15,6 +15,7 @@ export interface NavItemProps {
   notification?: boolean
   white?: boolean
   className?: string
+  testId?: string
 }
 
 const NavItem = ({
@@ -26,7 +27,8 @@ const NavItem = ({
   notification,
   white,
   small,
-  className
+  className,
+  testId
 }: NavItemProps) => {
   const classes = useStyles()
 
@@ -36,6 +38,7 @@ const NavItem = ({
       href={!selected ? link : null}
       onClick={!selected ? onClick : null}
       target={target}
+      data-testid={testId}
     >
       <Text
         tag="span"
