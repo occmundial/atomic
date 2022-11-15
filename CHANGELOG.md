@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/occmundial/atomic/compare/v1.13.0...v1.13.1) (2022-11-15)
+
+
+### Bug Fixes
+
+* Add testid to icon component ([150e764](https://github.com/occmundial/atomic/commit/150e764bad11c7131fb4cf4b04d8c1ada7705c8e))
+
 # [1.13.0](https://github.com/occmundial/atomic/compare/v1.12.0...v1.13.0) (2022-11-14)
 
 
