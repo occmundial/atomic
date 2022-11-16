@@ -22,9 +22,15 @@ export interface PlaceholderProps {
   round?: boolean
 }
 
-const Placeholder = (props: PlaceholderProps) => {
-  const { textSize, round, top, bottom } = props
-  const classes = useStyles(props)
+const Placeholder = ({
+  textSize,
+  round,
+  top,
+  bottom,
+  width,
+  height
+}: PlaceholderProps) => {
+  const classes = useStyles()
   return (
     <Flexbox
       display="flex"
@@ -37,6 +43,10 @@ const Placeholder = (props: PlaceholderProps) => {
     >
       <div
         className={classnames(classes.placeholder, { [classes.round]: round })}
+        style={{
+          width: width ? width : '100%',
+          height: height ? height : 14
+        }}
       />
     </Flexbox>
   )

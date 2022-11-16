@@ -1,9 +1,10 @@
-import { CSSProperties } from 'react'
+import { CSSProperties, useMemo, useState } from 'react'
 import classnames from 'classnames'
 
 import useAtomic from '@/hooks/useAtomic'
 
 import useStyles from './styles'
+import iconSizes from '@/tokens/iconSizes'
 
 export interface IconProps {
   iconName: string
@@ -18,10 +19,25 @@ export interface IconProps {
   style?: CSSProperties
 }
 
-const Icon = (props: IconProps) => {
-  const classes = useStyles(props)
+const Icon = ({
+  size,
+  color,
+  hoverColor,
+  transition,
+  iconName,
+  className,
+  style,
+  id,
+  onClick
+}: IconProps) => {
+  const [hover, setHover] = useState(false)
+  const classes = useStyles()
   const atomic = useAtomic()
-  const { iconName, className, style, id, onClick } = props
+  const iconColor = useMemo(() => {
+    if (hover && hoverColor) return hoverColor
+    if (color) return color
+    return 'currentcolor'
+  }, [color, hoverColor, hover])
   return (
     <svg
       className={classnames(
@@ -32,9 +48,17 @@ const Icon = (props: IconProps) => {
         },
         className
       )}
+      width={size ? size : iconSizes.base}
+      height={size ? size : iconSizes.base}
+      fill={iconColor}
       id={id}
-      style={style}
+      style={{
+        ...style,
+        transition: transition ? transition : '0.3s all'
+      }}
       onClick={onClick}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       <use xlinkHref={`#${atomic.iconsPrefix}__${iconName}`} />
     </svg>

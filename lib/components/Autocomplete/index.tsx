@@ -52,126 +52,137 @@ export interface AutocompleteProps {
   style?: CSSProperties
 }
 
-const Autocomplete = forwardRef((props: AutocompleteProps, ref) => {
-  const {
-    textfieldProps,
-    droplistProps,
-    onChange,
-    onFocus,
-    onBlur,
-    onKeyUp,
-    onClear,
-    onMouseDown,
-    onEnter,
-    showInitialData,
-    id,
-    className,
-    style
-  } = props
-  const classes = useStyles(props)
-  const [value, setValue] = useState(textfieldProps.value || '')
-  const [focus, setFocus] = useState(false)
-  const autocompleteRef = useRef(null)
-  const textfieldRef = useRef(null)
-  const prevTextfieldProps = usePrevious(textfieldProps) || {}
-  const showDropList = showInitialData
-    ? focus && !!droplistProps.items.length
-    : value && focus && !!droplistProps.items.length
+const Autocomplete = forwardRef(
+  (
+    {
+      textfieldProps,
+      droplistProps,
+      onChange,
+      onFocus,
+      onBlur,
+      onKeyUp,
+      onClear,
+      onMouseDown,
+      onEnter,
+      showInitialData,
+      id,
+      className,
+      style
+    }: AutocompleteProps,
+    ref
+  ) => {
+    const classes = useStyles()
+    const [value, setValue] = useState(textfieldProps.value || '')
+    const [focus, setFocus] = useState(false)
+    const autocompleteRef = useRef(null)
+    const textfieldRef = useRef(null)
+    const prevTextfieldProps = usePrevious(textfieldProps) || {}
+    const showDropList = showInitialData
+      ? focus && !!droplistProps.items.length
+      : value && focus && !!droplistProps.items.length
 
-  useEffect(() => {
-    if (textfieldProps.value !== prevTextfieldProps.value)
-      setValue(textfieldProps.value)
-  }, [textfieldProps.value, prevTextfieldProps.value])
+    useEffect(() => {
+      if (textfieldProps.value !== prevTextfieldProps.value)
+        setValue(textfieldProps.value)
+    }, [textfieldProps.value, prevTextfieldProps.value])
 
-  useImperativeHandle(ref, () => ({
-    focus: () => textfieldRef.current.focus(),
-    blur: () => textfieldRef.current.blur(),
-    value,
-    setValue
-  }))
+    useImperativeHandle(ref, () => ({
+      focus: () => textfieldRef.current.focus(),
+      blur: () => textfieldRef.current.blur(),
+      value,
+      setValue
+    }))
 
-  const _onChange = useCallback(
-    (value: string) => {
-      setValue(value)
+    const _onChange = useCallback(
+      (value: string) => {
+        setValue(value)
+        setFocus(true)
+        if (onChange) onChange(value)
+      },
+      [onChange]
+    )
+
+    const _onFocus = useCallback(() => {
       setFocus(true)
-      if (onChange) onChange(value)
-    },
-    [onChange]
-  )
+      if (onFocus) onFocus()
+    }, [onFocus])
 
-  const _onFocus = useCallback(() => {
-    setFocus(true)
-    if (onFocus) onFocus()
-  }, [onFocus])
-
-  const _onBlur = useCallback(() => {
-    setFocus(false)
-    if (onBlur) onBlur()
-  }, [onBlur])
-
-  const _onKeyUp = useCallback(
-    (code: string) => {
-      if (onKeyUp) onKeyUp(code)
-    },
-    [onKeyUp]
-  )
-
-  const _onClear = useCallback(() => {
-    setValue('')
-    if (onClear) onClear()
-  }, [onClear])
-
-  const _onMouseDown = useCallback(
-    (item: Item) => {
-      setValue(item.text)
+    const _onBlur = useCallback(() => {
       setFocus(false)
-      if (onChange) onChange(item.text)
-      if (onMouseDown) onMouseDown(item)
-    },
-    [onChange, onMouseDown]
-  )
+      if (onBlur) onBlur()
+    }, [onBlur])
 
-  const _onEnter = useCallback(
-    (item: Item) => {
-      setValue(item.text)
-      setFocus(false)
-      if (onChange) onChange(item.text)
-      if (onEnter) onEnter(item)
-    },
-    [onChange, onEnter]
-  )
+    const _onKeyUp = useCallback(
+      (code: string) => {
+        if (onKeyUp) onKeyUp(code)
+      },
+      [onKeyUp]
+    )
 
-  return (
-    <div
-      className={classnames(classes.autoComplete, className)}
-      id={id}
-      style={style}
-      ref={autocompleteRef}
-    >
-      <TextField
-        {...textfieldProps}
-        value={value}
-        ref={textfieldRef}
-        onChange={_onChange}
-        onFocus={_onFocus}
-        onBlur={_onBlur}
-        onKeyUp={_onKeyUp}
-        onClear={_onClear}
-      />
-      {showDropList && (
-        <Droplist
-          {...droplistProps}
-          items={cloneDeep(droplistProps.items)}
-          term={value}
-          onMouseDown={_onMouseDown}
-          onEnter={_onEnter}
-          isOnFocus
-          className={classnames(classes.droplist, droplistProps.className)}
+    const _onClear = useCallback(() => {
+      setValue('')
+      if (onClear) onClear()
+    }, [onClear])
+
+    const _onMouseDown = useCallback(
+      (item: Item) => {
+        setValue(item.text)
+        setFocus(false)
+        if (onChange) onChange(item.text)
+        if (onMouseDown) onMouseDown(item)
+      },
+      [onChange, onMouseDown]
+    )
+
+    const _onEnter = useCallback(
+      (item: Item) => {
+        setValue(item.text)
+        setFocus(false)
+        if (onChange) onChange(item.text)
+        if (onEnter) onEnter(item)
+      },
+      [onChange, onEnter]
+    )
+
+    return (
+      <div
+        className={classnames(classes.autoComplete, className)}
+        id={id}
+        style={style}
+        ref={autocompleteRef}
+      >
+        <TextField
+          {...textfieldProps}
+          value={value}
+          ref={textfieldRef}
+          onChange={_onChange}
+          onFocus={_onFocus}
+          onBlur={_onBlur}
+          onKeyUp={_onKeyUp}
+          onClear={_onClear}
         />
-      )}
-    </div>
-  )
-})
+        {showDropList && (
+          <Droplist
+            {...droplistProps}
+            items={cloneDeep(droplistProps.items)}
+            term={value}
+            onMouseDown={_onMouseDown}
+            onEnter={_onEnter}
+            isOnFocus
+            className={classnames(
+              classes.droplist,
+              {
+                [classes.pushDroplist]:
+                  textfieldProps?.label || textfieldProps?.lockHeight
+              },
+              droplistProps.className
+            )}
+          />
+        )}
+      </div>
+    )
+  }
+)
 
 Autocomplete.defaultProps = {
   textfieldProps: {},

@@ -14,27 +14,12 @@ const logoColors = {
   blue: colors.prim
 }
 
-export default createUseStyles<any, LogoProps>({
+export default createUseStyles({
   logo: {
     boxSizing: 'border-box',
     display: 'inline-block',
     border: '0',
     outline: '0'
-  },
-  horizontal: {
-    background: props => base(occHorizontal.icon(logoColors[props.theme])),
-    width: props => (props.width ? props.width : occHorizontal.width),
-    height: props => (props.height ? props.height : occHorizontal.height)
-  },
-  vertical: {
-    background: props => base(occVertical.icon(logoColors[props.theme])),
-    width: props => (props.width ? props.width : occVertical.width),
-    height: props => (props.height ? props.height : occVertical.height)
-  },
-  icon: {
-    background: props => base(occIcon.icon(logoColors[props.theme])),
-    width: props => (props.width ? props.width : occIcon.width),
-    height: props => (props.height ? props.height : occIcon.height)
   },
   click: {
     cursor: 'pointer'

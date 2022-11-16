@@ -2,9 +2,8 @@ import { createUseStyles } from 'react-jss'
 
 import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
-import { PlaceholderProps } from './'
 
-export default createUseStyles<any, PlaceholderProps>({
+export default createUseStyles({
   '@keyframes placeholderPulse': {
     '0%': {
       opacity: 0.5
@@ -17,8 +16,6 @@ export default createUseStyles<any, PlaceholderProps>({
     }
   },
   placeholder: {
-    width: props => (props.width ? props.width : '100%'),
-    height: props => (props.height ? props.height : 14),
     background: colors.grey100,
     animation: '$placeholderPulse 1s infinite ease-in-out',
     borderRadius: spacing.xTiny
