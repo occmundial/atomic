@@ -2,25 +2,13 @@ import { createUseStyles } from 'react-jss'
 
 import spacing from '@/tokens/spacing'
 import colors from '@/tokens/colors'
-import { NavIconProps } from './'
 
-export default createUseStyles<any, NavIconProps>({
+export default createUseStyles({
   cont: {
-    width: props => (props.width ? props.width : null),
-    color: props => (props.white ? colors.white : colors.inkLight),
     display: 'inline-block',
     height: spacing.xLarge,
     cursor: 'pointer',
     position: 'relative',
-    '&:hover': {
-      color: props => (props.white ? colors.white : colors.ink)
-    },
-    '&:hover $icon': {
-      opacity: props => (props.white ? 0.6 : null)
-    },
-    '&:hover $text': {
-      opacity: props => (props.white ? 0.6 : null)
-    },
     '&:after': {
       content: '""',
       position: 'absolute',
@@ -32,23 +20,49 @@ export default createUseStyles<any, NavIconProps>({
       transition: '0.3s all'
     }
   },
+  white: {
+    color: colors.white
+  },
+  black: {
+    color: colors.inkLight,
+    '&:hover': {
+      color: colors.ink
+    }
+  },
   flex: {
     height: spacing.xLarge
   },
   selected: {
-    color: props => (props.white ? colors.white : colors.prim),
+    color: colors.prim,
     '&:hover': {
-      color: props => (props.white ? colors.white : colors.prim)
-    },
+      color: colors.prim
+    }
+  },
+  selectedWhite: {
+    color: colors.white,
+    '&:hover': {
+      color: colors.white
+    }
+  },
+  showBar: {
     '&:after': {
-      background: props =>
-        props.showBar ? (props.white ? colors.sec : colors.prim) : null
+      background: colors.prim
+    }
+  },
+  showBarSec: {
+    '&:after': {
+      background: colors.sec
     }
   },
   icon: {},
   text: {
-    marginLeft: props => (props.direction !== 'col' ? spacing.xTiny : null),
     textTransform: 'uppercase',
     transition: '0.3s all'
+  },
+  pushText: {
+    marginLeft: spacing.xTiny
+  },
+  withOpacity: {
+    opacity: 0.6
   }
 })

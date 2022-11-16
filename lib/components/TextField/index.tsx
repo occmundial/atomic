@@ -8,7 +8,8 @@ import {
   useMemo,
   createElement,
   ReactNode,
-  CSSProperties
+  CSSProperties,
+  KeyboardEvent
 } from 'react'
 import MaskedInput from 'react-text-mask'
 import classnames from 'classnames'
@@ -117,7 +118,7 @@ const TextField = forwardRef(
     const [showPass, setShowPass] = useState(false)
     const [passIconBeingClicked, setPassIconBeingClicked] = useState(false)
     const prevDisabled = usePrevious(disabled)
-    const inputRef = useRef<HTMLInputElement | null>(null)
+    const inputRef = useRef<HTMLInputElement>(null)
     const valueRef = useRef<string>()
 
     useEffect(() => {
@@ -364,18 +365,28 @@ const TextField = forwardRef(
             </>
           )
         })
-      else if (mask)
+      else if (mask) {
+        const { ref, ...remainingProps } = commonProps
         return (
           <MaskedInput
-            {...commonProps}
+            {...remainingProps}
             placeholder={placeholder}
             type={type === 'password' && showPass ? 'text' : type}
             {...(disableAutoComplete && { autoComplete: 'off' })}
             mask={mask}
             guide={guide}
+            render={(textMaskRef, props) => (
+              <input
+                {...props}
+                ref={node => {
+                  textMaskRef(node)
+                  ref.current = node
+                }}
+              />
+            )}
           />
         )
-      else
+      } else
         return createElement(inputType, {
           ...commonProps,
           placeholder,
@@ -395,7 +406,8 @@ const TextField = forwardRef(
       showPass,
       type,
       _value,
-      inputType
+      inputType,
+      testId
     ])
 
     const passIcon = useMemo(

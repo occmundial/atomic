@@ -33,27 +33,26 @@ export interface ButtonProps {
   style?: CSSProperties
   testId?: string
 }
-const Button = (props: ButtonProps) => {
-  const {
-    children,
-    theme,
-    size,
-    block,
-    disabled,
-    iconLeft,
-    iconRight,
-    loading,
-    round,
-    onClick,
-    href,
-    target,
-    rel,
-    id,
-    className,
-    style,
-    testId
-  } = props
-  const classes = useStyles(props)
+const Button = ({
+  children,
+  theme,
+  size,
+  block,
+  disabled,
+  iconLeft,
+  iconRight,
+  loading,
+  round,
+  onClick,
+  href,
+  target,
+  rel,
+  id,
+  className,
+  style,
+  testId
+}: ButtonProps) => {
+  const classes = useStyles()
   const buttonClassName = classnames(
     classes.btn,
     { [classes[theme]]: theme },
