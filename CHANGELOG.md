@@ -1,3 +1,10 @@
+# [2.0.0-beta.2](https://github.com/occmundial/atomic/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2022-11-16)
+
+
+### Bug Fixes
+
+* Remove function styles, replace them for class togglin ([511c7bb](https://github.com/occmundial/atomic/commit/511c7bbd7d0bae0f3daad468968760732139c996))
+
 # [2.0.0-beta.1](https://github.com/occmundial/atomic/compare/v1.13.0...v2.0.0-beta.1) (2022-11-15)
 
 
