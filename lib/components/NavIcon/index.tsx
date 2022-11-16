@@ -22,8 +22,6 @@ export interface NavIconProps {
   testId?: string
 }
 
-const OPACITY = 0.6
-
 const NavIcon = ({
   iconName,
   selected,
