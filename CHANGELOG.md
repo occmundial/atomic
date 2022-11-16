@@ -1,3 +1,10 @@
+# [2.0.0-beta.3](https://github.com/occmundial/atomic/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2022-11-16)
+
+
+### Bug Fixes
+
+* Change in babel plugin to include Media ([df2d1c3](https://github.com/occmundial/atomic/commit/df2d1c334f67b267b7664111af0892441e463bdd))
+
 # [2.0.0-beta.2](https://github.com/occmundial/atomic/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2022-11-16)
 
 
