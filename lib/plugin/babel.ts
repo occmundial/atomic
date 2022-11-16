@@ -34,6 +34,12 @@ function importComponents(path) {
         specifier,
         '@occmundial/atomic/components/Toaster/helper'
       )
+    } else if (
+      importName === 'MediaContextProvider' ||
+      importName === 'Media' ||
+      importName === 'mediaStyle'
+    ) {
+      return importDeclaration(specifier, '@occmundial/atomic/components/Media')
     } else {
       return importDeclaration(
         types.importDefaultSpecifier(types.identifier(importName)),
