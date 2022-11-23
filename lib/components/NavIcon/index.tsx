@@ -7,7 +7,6 @@ import Icon from '@/components/Icon'
 import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
-import colors from '@/tokens/colors'
 
 export interface NavIconProps {
   selected?: boolean

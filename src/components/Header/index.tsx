@@ -19,16 +19,16 @@ export default function Header({ docs }: HeaderProps) {
   const classes = useStyles()
   const [showAside, setShowAside] = useState(false)
 
-  const navTabContent = {
+  const navTabContent: NavTabProps = {
     left: [
       {
-        key: 0,
+        key: 'icon',
         type: 'icon',
         iconName: 'menu',
         onClick: () => setShowAside(true)
       },
       {
-        key: 1,
+        key: 'custom',
         type: 'custom',
         custom: (
           <Link href="/">
@@ -39,7 +39,7 @@ export default function Header({ docs }: HeaderProps) {
     ],
     right: [
       {
-        key: 0,
+        key: 'link',
         type: 'link',
         link: 'https://github.com/occmundial/atomic',
         text: 'View on Github'
@@ -47,12 +47,12 @@ export default function Header({ docs }: HeaderProps) {
     ],
     center: [
       {
-        key: 0,
+        key: 'custom2',
         type: 'custom',
         custom: <Search docs={docs} />
       }
     ]
-  } as NavTabProps
+  }
 
   return (
     <>

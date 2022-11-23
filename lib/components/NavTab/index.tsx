@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useCallback,
-  useMemo,
-  ReactNode
-} from 'react'
+import React, { useState, useEffect, useCallback, ReactNode } from 'react'
 import classnames from 'classnames'
 
 import Grid from '@/components/Grid'
@@ -12,36 +6,74 @@ import Flexbox from '@/components/Flexbox'
 import NavItem from '@/components/NavItem'
 import NavIcon from '@/components/NavIcon'
 import NavTop, { TopProps } from '@/components/NavTop'
-import Button from '@/components/Button'
+import Button, { ButtonTheme } from '@/components/Button'
 import Icon from '@/components/Icon'
 import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
-import grid from '@/tokens/grid'
 import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 
-interface NavElement {
+interface LinkElement {
   key: string | number
-  type: 'button' | 'link' | 'dropdownLink' | 'icon' | 'custom' | 'logo'
-  text?: string
-  label?: string
+  type: 'link'
+  text: string
   onClick?: () => void
   selected?: boolean
   link?: string
-  theme?:
-    | 'primary'
-    | 'secondary'
-    | 'tertiary'
-    | 'tertiaryWhite'
-    | 'ghostPink'
-    | 'ghostGrey'
-    | 'ghostWhite'
-  iconName?: string
-  showBar?: boolean
-  custom?: ReactNode
   testId?: string
 }
+
+interface ButtonElement {
+  key: string | number
+  type: 'button'
+  text?: string
+  onClick?: () => void
+  theme?: ButtonTheme
+  iconName?: string
+  testId?: string
+}
+
+interface DropdownElement {
+  key: string | number
+  type: 'dropdownLink'
+  text: string
+  onClick?: () => void
+  selected?: boolean
+  link?: string
+  testId?: string
+}
+
+interface IconElement {
+  key: string | number
+  type: 'icon'
+  label?: string
+  onClick?: () => void
+  selected?: boolean
+  iconName: string
+  testId?: string
+  showBar?: boolean
+}
+
+interface CustomElement {
+  key: string | number
+  type: 'custom'
+  custom: ReactNode
+}
+
+interface LogoElement {
+  key: string | number
+  type: 'logo'
+  logo: ReactNode
+}
+
+type NavElement =
+  | LinkElement
+  | ButtonElement
+  | DropdownElement
+  | IconElement
+  | CustomElement
+  | LogoElement
 
 export interface NavPosition extends Array<NavElement> {}
 
@@ -98,7 +130,7 @@ const NavTab = ({
   }, [fixed, hideOnScroll, determineVisibility])
 
   const renderLink = useCallback(
-    item => {
+    (item: LinkElement) => {
       return (
         <NavItem white={blue} {...item} className={classes.navItem}>
           {item.text}
@@ -109,7 +141,7 @@ const NavTab = ({
   )
 
   const renderDropdownLink = useCallback(
-    item => {
+    (item: DropdownElement) => {
       return (
         <NavItem
           white={blue}
@@ -133,7 +165,7 @@ const NavTab = ({
   )
 
   const renderButton = useCallback(
-    item => {
+    (item: ButtonElement) => {
       return (
         <Button className={classes.button} {...item}>
           {item.text}
@@ -144,7 +176,7 @@ const NavTab = ({
   )
 
   const renderIcon = useCallback(
-    item => {
+    (item: IconElement) => {
       return (
         <div className={classes.iconWrap} key={item.key}>
           <NavIcon className={classes.icon} white={blue} {...item} />
@@ -155,7 +187,7 @@ const NavTab = ({
   )
 
   const renderLogo = useCallback(
-    item => {
+    (item: LogoElement) => {
       return (
         <div className={classes.logo} key={item.key}>
           {item.logo}
@@ -165,18 +197,26 @@ const NavTab = ({
     [classes]
   )
 
-  const renderCustom = useCallback(item => {
+  const renderCustom = useCallback((item: CustomElement) => {
     return <div key={item.key}>{item.custom}</div>
   }, [])
 
   const renderItem = useCallback(
-    item => {
-      if (item.type == 'link') return renderLink(item)
-      else if (item.type == 'dropdownLink') return renderDropdownLink(item)
-      else if (item.type == 'button') return renderButton(item)
-      else if (item.type == 'icon') return renderIcon(item)
-      else if (item.type == 'logo') return renderLogo(item)
-      else if (item.type == 'custom') return renderCustom(item)
+    (item: NavElement) => {
+      switch (item.type) {
+        case 'link':
+          return renderLink(item)
+        case 'dropdownLink':
+          return renderDropdownLink(item)
+        case 'button':
+          return renderButton(item)
+        case 'icon':
+          return renderIcon(item)
+        case 'logo':
+          return renderLogo(item)
+        case 'custom':
+          return renderCustom(item)
+      }
     },
     [
       renderLink,
