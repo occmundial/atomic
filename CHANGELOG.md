@@ -1,3 +1,10 @@
+# [2.0.0-beta.4](https://github.com/occmundial/atomic/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2022-11-23)
+
+
+### Bug Fixes
+
+* Change in type definitions for NavTab ([d2a4646](https://github.com/occmundial/atomic/commit/d2a464601186007d967be7ee80b6cbe2e19cf0de))
+
 # [2.0.0-beta.3](https://github.com/occmundial/atomic/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2022-11-16)
 
 
