@@ -6,17 +6,19 @@ import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 
+export type ButtonTheme =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'tertiaryWhite'
+  | 'ghostPink'
+  | 'ghostGrey'
+  | 'ghostWhite'
+  | null
+
 export interface ButtonProps {
   children?: ReactNode
-  theme:
-    | 'primary'
-    | 'secondary'
-    | 'tertiary'
-    | 'tertiaryWhite'
-    | 'ghostPink'
-    | 'ghostGrey'
-    | 'ghostWhite'
-    | null
+  theme: ButtonTheme
   size?: 'sm' | 'md' | 'lg'
   block?: boolean
   disabled?: boolean

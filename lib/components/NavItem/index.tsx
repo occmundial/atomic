@@ -1,4 +1,4 @@
-import React, { EventHandler, MouseEvent, ReactElement, useMemo } from 'react'
+import React, { EventHandler, MouseEvent, ReactNode } from 'react'
 import classnames from 'classnames'
 
 import Text from '@/components/Text'
@@ -6,7 +6,7 @@ import Text from '@/components/Text'
 import useStyles from './styles'
 
 export interface NavItemProps {
-  children: string
+  children: string | ReactNode
   link?: string
   target?: string
   onClick?: EventHandler<MouseEvent>
