@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/occmundial/atomic/compare/v1.13.1...v1.13.2) (2022-11-23)
+
+
+### Bug Fixes
+
+* Change password icon ([c9c4b6a](https://github.com/occmundial/atomic/commit/c9c4b6adafc5c3ec35f2d92e072b4fc41da2cd98))
+
 ## [1.13.1](https://github.com/occmundial/atomic/compare/v1.13.0...v1.13.1) (2022-11-15)
 
 
