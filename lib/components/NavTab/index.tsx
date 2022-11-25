@@ -59,6 +59,7 @@ export interface IconElement {
   iconName: string
   testId?: string
   showBar?: boolean
+  direction?: 'col' | 'row'
 }
 
 export interface CustomElement {
