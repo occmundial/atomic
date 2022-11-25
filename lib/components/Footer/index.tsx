@@ -9,7 +9,7 @@ import Button from '@/components/Button'
 import List, { ListItem } from './List'
 import useStyles from './styles'
 
-interface ColumnItem {
+export interface ColumnItem {
   key: string | number
   title?: string
   collapse?: boolean
@@ -18,7 +18,7 @@ interface ColumnItem {
 
 export interface Column extends Array<ColumnItem> {}
 
-interface BottomLink {
+export interface BottomLink {
   key: string | number
   text: string
   onClick?: (e: MouseEvent) => void
@@ -27,7 +27,7 @@ interface BottomLink {
   rel?: string
 }
 
-interface Aux {
+export interface Aux {
   text: string
   href?: string
   target?: string
@@ -36,7 +36,7 @@ interface Aux {
   className?: string
 }
 
-interface FooterProps {
+export interface FooterProps {
   columns?: Column[]
   bottomLinks?: BottomLink[]
   copyText?: string | ReactElement
@@ -49,8 +49,8 @@ interface FooterProps {
 }
 
 const Footer = ({
-  columns,
-  bottomLinks,
+  columns = [],
+  bottomLinks = [],
   copyText,
   aux,
   listClassName,
@@ -58,14 +58,6 @@ const Footer = ({
   isFluid
 }: FooterProps) => {
   const classes = useStyles()
-  const {
-    text,
-    iconLeft,
-    href,
-    target,
-    iconRight,
-    className: auxClassName
-  } = aux
 
   return (
     <div
@@ -133,18 +125,18 @@ const Footer = ({
               </Flexbox>
               {aux && (
                 <Button
-                  href={href}
-                  target={target}
-                  iconLeft={iconLeft}
-                  iconRight={iconRight}
+                  href={aux.href}
+                  target={aux.target}
+                  iconLeft={aux.iconLeft}
+                  iconRight={aux.iconRight}
                   size="md"
                   theme="ghostPink"
                   className={classnames(
                     { [classes.buttonMobile]: isMobile },
-                    auxClassName
+                    aux.className
                   )}
                 >
-                  {text}
+                  {aux.text}
                 </Button>
               )}
             </Flexbox>
@@ -153,11 +145,6 @@ const Footer = ({
       </Grid>
     </div>
   )
-}
-
-Footer.defaultProps = {
-  bottomLinks: [],
-  columns: []
 }
 
 export default Footer
