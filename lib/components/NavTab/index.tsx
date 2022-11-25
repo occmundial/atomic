@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useCallback, ReactNode } from 'react'
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  ReactNode,
+  SyntheticEvent
+} from 'react'
 import classnames from 'classnames'
 
 import Grid from '@/components/Grid'
@@ -14,60 +20,60 @@ import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 
-interface LinkElement {
+export interface LinkElement {
   key: string | number
   type: 'link'
   text: string
-  onClick?: () => void
+  onClick?: (e: SyntheticEvent) => void
   selected?: boolean
   link?: string
   testId?: string
 }
 
-interface ButtonElement {
+export interface ButtonElement {
   key: string | number
   type: 'button'
   text?: string
-  onClick?: () => void
+  onClick?: (e: SyntheticEvent) => void
   theme?: ButtonTheme
   iconName?: string
   testId?: string
 }
 
-interface DropdownElement {
+export interface DropdownElement {
   key: string | number
   type: 'dropdownLink'
   text: string
-  onClick?: () => void
+  onClick?: (e: SyntheticEvent) => void
   selected?: boolean
   link?: string
   testId?: string
 }
 
-interface IconElement {
+export interface IconElement {
   key: string | number
   type: 'icon'
   label?: string
-  onClick?: () => void
+  onClick?: (e: SyntheticEvent) => void
   selected?: boolean
   iconName: string
   testId?: string
   showBar?: boolean
 }
 
-interface CustomElement {
+export interface CustomElement {
   key: string | number
   type: 'custom'
   custom: ReactNode
 }
 
-interface LogoElement {
+export interface LogoElement {
   key: string | number
   type: 'logo'
   logo: ReactNode
 }
 
-type NavElement =
+export type NavElement =
   | LinkElement
   | ButtonElement
   | DropdownElement
