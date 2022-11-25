@@ -1,3 +1,11 @@
+# [2.0.0-beta.5](https://github.com/occmundial/atomic/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2022-11-25)
+
+
+### Bug Fixes
+
+* Export NavElement types and change onClick type ([6762058](https://github.com/occmundial/atomic/commit/67620584ba2f8b106906cc30a8c8b5c96d375c20))
+* Fix Footer error when aux is undefined ([a17a623](https://github.com/occmundial/atomic/commit/a17a6234a24f2ba2b23e97893a7d0aa84b0b8eb9))
+
 # [2.0.0-beta.4](https://github.com/occmundial/atomic/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2022-11-23)
 
 

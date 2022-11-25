@@ -1,6 +1,6 @@
 {
   "name": "@occmundial/atomic",
-  "version": "2.0.0-beta.4",
+  "version": "2.0.0-beta.5",
   "license": "ISC",
   "private": true,
   "main": "dist/index.js",
