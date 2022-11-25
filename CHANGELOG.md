@@ -1,3 +1,10 @@
+# [2.0.0-beta.6](https://github.com/occmundial/atomic/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2022-11-25)
+
+
+### Bug Fixes
+
+* Add direction to IconElement type ([3d2a65a](https://github.com/occmundial/atomic/commit/3d2a65a8275dbc50e258977fcf082a1cbbd1c0c7))
+
 # [2.0.0-beta.5](https://github.com/occmundial/atomic/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2022-11-25)
 
 
