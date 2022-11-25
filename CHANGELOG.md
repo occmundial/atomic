@@ -1,3 +1,10 @@
+# [2.0.0-beta.7](https://github.com/occmundial/atomic/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2022-11-25)
+
+
+### Bug Fixes
+
+* Add width to IconElement type ([a13756f](https://github.com/occmundial/atomic/commit/a13756f0f7c6898b35df84045aaeac0fcd9b6e42))
+
 # [2.0.0-beta.6](https://github.com/occmundial/atomic/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2022-11-25)
 
 
