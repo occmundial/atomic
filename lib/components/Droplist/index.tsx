@@ -30,6 +30,7 @@ export interface Item {
   text: string
   textRight?: string
   iconName?: string
+  extraText?: string
 }
 
 export interface Group {
@@ -272,6 +273,11 @@ const Droplist = ({
           [classes.onFocus]: selectedGroup && currentItem === i
         })
         let content
+        const extraText = item.extraText && (
+          <Text tag="span" strong className={classes.extraText}>
+            {item.extraText}
+          </Text>
+        )
         if (index >= 0) {
           let text = separateText(item.text, index, term)
           content = (
@@ -281,12 +287,14 @@ const Droplist = ({
                 {text[1].length ? text[1] : ''}
               </Text>
               {text[2].length ? text[2] : ''}
+              {extraText}
             </Text>
           )
         } else
           content = (
             <Text className={item.iconName ? classes.iconText : ''}>
               {item.text}
+              {extraText}
             </Text>
           )
         return (
