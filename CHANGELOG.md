@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/occmundial/atomic/compare/v1.13.2...v1.14.0) (2022-11-29)
+
+
+### Features
+
+* Add extraText property ([ba25977](https://github.com/occmundial/atomic/commit/ba259772ba034e9b9a5e405a88e357cce587ab5f))
+
 ## [1.13.2](https://github.com/occmundial/atomic/compare/v1.13.1...v1.13.2) (2022-11-23)
 
 
