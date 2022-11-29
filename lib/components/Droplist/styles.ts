@@ -4,7 +4,7 @@ import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
 
 const { gutter, tiny, small, base, xTiny } = spacing
-const { primLighter, grey50, grey200, bgWhite } = colors
+const { primLighter, grey50, grey200, bgWhite, textLink } = colors
 
 export default createUseStyles({
   block: {
@@ -46,5 +46,9 @@ export default createUseStyles({
   iconText: {
     display: 'inline-block',
     marginLeft: base
+  },
+  extraText: {
+    marginLeft: tiny,
+    color: textLink
   }
 })
