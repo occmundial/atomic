@@ -1,3 +1,10 @@
+# [2.0.0-beta.9](https://github.com/occmundial/atomic/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2022-12-05)
+
+
+### Features
+
+* Add bottomItem change to beta branch ([26a1a98](https://github.com/occmundial/atomic/commit/26a1a98d77c618742927ef3052ba2d68df1ac3ed))
+
 # [2.0.0-beta.8](https://github.com/occmundial/atomic/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2022-11-29)
 
 
