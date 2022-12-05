@@ -41,6 +41,7 @@ export interface FooterProps {
   bottomLinks?: BottomLink[]
   copyText?: string | ReactElement
   aux?: Aux
+  bottomItem?: ReactElement
   listClassName?: string
   /** The recommendation is to set the breakpoint at `grid.sm` */
   isMobile?: boolean
@@ -53,6 +54,7 @@ const Footer = ({
   bottomLinks = [],
   copyText,
   aux,
+  bottomItem,
   listClassName,
   isMobile,
   isFluid
@@ -92,11 +94,27 @@ const Footer = ({
           <div className={classes.footerBottom}>
             <Flexbox
               display="flex"
-              alignItems="start"
+              alignItems={isMobile ? 'start' : 'end'}
               className={classes.bottomWrap}
               direction={isMobile ? 'col' : 'row'}
             >
               <Flexbox flex="1">
+                {aux && (
+                  <Button
+                    href={aux.href}
+                    target={aux.target}
+                    iconLeft={aux.iconLeft}
+                    iconRight={aux.iconRight}
+                    size="md"
+                    theme="ghostPink"
+                    className={classnames(
+                      { [classes.buttonMobile]: isMobile },
+                      aux.className
+                    )}
+                  >
+                    {aux.text}
+                  </Button>
+                )}
                 <Text small mid bottomTiny tag="div">
                   {bottomLinks.map(item => (
                     <div
@@ -123,22 +141,7 @@ const Footer = ({
                 </Text>
                 {copyText && <Text small>{copyText}</Text>}
               </Flexbox>
-              {aux && (
-                <Button
-                  href={aux.href}
-                  target={aux.target}
-                  iconLeft={aux.iconLeft}
-                  iconRight={aux.iconRight}
-                  size="md"
-                  theme="ghostPink"
-                  className={classnames(
-                    { [classes.buttonMobile]: isMobile },
-                    aux.className
-                  )}
-                >
-                  {aux.text}
-                </Button>
-              )}
+              {bottomItem}
             </Flexbox>
           </div>
         </Grid.Row>
