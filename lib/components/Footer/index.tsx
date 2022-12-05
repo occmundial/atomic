@@ -43,6 +43,7 @@ interface FooterProps {
   bottomLinks?: BottomLink[]
   copyText?: string | ReactElement
   aux?: Aux
+  bottomItem?: ReactElement
   listClassName?: string
 }
 
@@ -51,6 +52,7 @@ const Footer = ({
   bottomLinks,
   copyText,
   aux,
+  bottomItem,
   listClassName
 }: FooterProps) => {
   const classes = useStyles()
@@ -98,11 +100,27 @@ const Footer = ({
           <div className={classes.footerBottom}>
             <Flexbox
               display="flex"
-              alignItems="start"
+              alignItems={isMobile ? 'start' : 'end'}
               className={classes.bottomWrap}
               direction={isMobile ? 'col' : 'row'}
             >
               <Flexbox flex="1">
+                {aux && (
+                  <Button
+                    href={href}
+                    target={target}
+                    iconLeft={iconLeft}
+                    iconRight={iconRight}
+                    size="md"
+                    theme="ghostPink"
+                    className={classnames(
+                      { [classes.buttonMobile]: isMobile },
+                      auxClassName
+                    )}
+                  >
+                    {text}
+                  </Button>
+                )}
                 <Text small mid bottomTiny tag="div">
                   {bottomLinks.map(item => (
                     <div
@@ -129,22 +147,7 @@ const Footer = ({
                 </Text>
                 {copyText && <Text small>{copyText}</Text>}
               </Flexbox>
-              {aux && (
-                <Button
-                  href={href}
-                  target={target}
-                  iconLeft={iconLeft}
-                  iconRight={iconRight}
-                  size="md"
-                  theme="ghostPink"
-                  className={classnames(
-                    { [classes.buttonMobile]: isMobile },
-                    auxClassName
-                  )}
-                >
-                  {text}
-                </Button>
-              )}
+              {bottomItem}
             </Flexbox>
           </div>
         </Grid.Row>
