@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/occmundial/atomic/compare/v1.14.0...v1.15.0) (2022-12-05)
+
+
+### Features
+
+* Update footer to support new logo ([3dc339e](https://github.com/occmundial/atomic/commit/3dc339e503b744873a503269efff39eb130a929f))
+
 # [1.14.0](https://github.com/occmundial/atomic/compare/v1.13.2...v1.14.0) (2022-11-29)
 
 
