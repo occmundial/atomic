@@ -16,8 +16,10 @@ import usePrevious from '@/hooks/usePrevious'
 
 import useStyles from './styles'
 
+type Optional<T, K extends keyof T> = Omit<T, K> & Partial<T>
+
 export interface AutocompleteProps {
-  textfieldProps: Pick<
+  textfieldProps: Optional<
     TextFieldProps,
     | 'id'
     | 'type'
@@ -34,9 +36,9 @@ export interface AutocompleteProps {
     | 'lockHeight'
     | 'testId'
   >
-  droplistProps: Pick<
+  droplistProps: Optional<
     DroplistProps,
-    'items' | 'groups' | 'className' | 'filter' | 'term' | 'testId'
+    'groups' | 'className' | 'filter' | 'term' | 'testId'
   >
   onChange?: (value: string) => void
   onKeyUp?: (code: string) => void
