@@ -1,3 +1,10 @@
+# [2.0.0-beta.10](https://github.com/occmundial/atomic/compare/v2.0.0-beta.9...v2.0.0-beta.10) (2023-01-18)
+
+
+### Bug Fixes
+
+* Declare optional props for autocomplete ([35098c9](https://github.com/occmundial/atomic/commit/35098c95b79093c531ca8a0c09995299c9e9c878))
+
 # [2.0.0-beta.9](https://github.com/occmundial/atomic/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2022-12-05)
 
 
