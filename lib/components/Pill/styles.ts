@@ -30,15 +30,10 @@ export default createUseStyles({
     display: 'flex',
     alignItems: 'center'
   },
-  assistiveText: {
-    color: colors.inkLighter
-  },
-  errorAssistiveText: {
-    color: colors.errorText
-  },
   errorIcon: {
     marginTop: -2,
-    marginRight: spacing.xTiny
+    marginRight: spacing.xTiny,
+    color: colors.errorText
   },
   stackGroup: {
     display: 'flex',
