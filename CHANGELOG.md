@@ -1,3 +1,10 @@
+# [2.0.0-beta.11](https://github.com/occmundial/atomic/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2023-02-08)
+
+
+### Bug Fixes
+
+* Fix Pill error color ([fbe81f3](https://github.com/occmundial/atomic/commit/fbe81f366b355a38a37d4e03ecf77ce6b21390e5))
+
 # [2.0.0-beta.10](https://github.com/occmundial/atomic/compare/v2.0.0-beta.9...v2.0.0-beta.10) (2023-01-18)
 
 
