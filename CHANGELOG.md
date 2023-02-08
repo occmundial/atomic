@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/occmundial/atomic/compare/v1.16.0...v1.16.1) (2023-02-08)
+
+
+### Bug Fixes
+
+* Fix Pill error color ([524e123](https://github.com/occmundial/atomic/commit/524e123c782087449074734d8ef08006a30bf521))
+
 # [1.16.0](https://github.com/occmundial/atomic/compare/v1.15.0...v1.16.0) (2023-02-01)
 
 
