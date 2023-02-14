@@ -1,3 +1,10 @@
+# [2.0.0-beta.12](https://github.com/occmundial/atomic/compare/v2.0.0-beta.11...v2.0.0-beta.12) (2023-02-14)
+
+
+### Bug Fixes
+
+* Optional prop ([b326f7a](https://github.com/occmundial/atomic/commit/b326f7ab4378261fa10855762118f88e077d3607))
+
 # [2.0.0-beta.11](https://github.com/occmundial/atomic/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2023-02-08)
 
 
