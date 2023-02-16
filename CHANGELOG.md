@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/occmundial/atomic/compare/v1.17.0...v1.18.0) (2023-02-16)
+
+
+### Features
+
+* Add missing index ([94b202c](https://github.com/occmundial/atomic/commit/94b202c96d69ebf06a7f1c26079dd94fe7dd1fcf))
+
 # [1.17.0](https://github.com/occmundial/atomic/compare/v1.16.1...v1.17.0) (2023-02-16)
 
 
