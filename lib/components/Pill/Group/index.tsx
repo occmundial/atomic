@@ -27,7 +27,7 @@ const Group = ({
         <button
           key={item.id}
           id={idPrefix ? `${idPrefix}${item.id}` : null}
-          data-testid={testId ? `${testId}` : null}
+          data-testid={testId ? `${testId}${item.id}` : null}
           className={classnames(
             classes.pill,
             { [classes.selected]: selected === item.id },

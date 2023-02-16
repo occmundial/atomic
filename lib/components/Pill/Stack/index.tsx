@@ -49,7 +49,7 @@ const Stack = ({
       className={classnames(classes.pill, { [classes.disabled]: disabled })}
       onClick={() => handleOnClick(id)}
       id={idPrefix ? `${idPrefix}${id}` : null}
-      data-testid={testId ? `${testId}` : null}
+      data-testid={testId ? `${testId}${id}` : null}
     >
       {children && (
         <Text className={classes.text} tag="span" disabled={disabled}>
