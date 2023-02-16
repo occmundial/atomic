@@ -23,11 +23,11 @@ const Group = ({
   const classes = useStyles()
   return (
     <div className={classes.pillGroup}>
-      {items.map(item => (
+      {items.map((item, index) => (
         <button
           key={item.id}
           id={idPrefix ? `${idPrefix}${item.id}` : null}
-          data-testid={testId ? `${testId}${item.id}` : null}
+          data-testid={testId ? `${testId}${index}` : null}
           className={classnames(
             classes.pill,
             { [classes.selected]: selected === item.id },
