@@ -10,9 +10,16 @@ interface PillGroupProps {
   onSelect: (id: string | number) => void
   selected: string | number
   idPrefix: string
+  testId: string
 }
 
-const Group = ({ items, selected, onSelect, idPrefix }: PillGroupProps) => {
+const Group = ({
+  items,
+  selected,
+  onSelect,
+  idPrefix,
+  testId
+}: PillGroupProps) => {
   const classes = useStyles()
   return (
     <div className={classes.pillGroup}>
@@ -20,6 +27,7 @@ const Group = ({ items, selected, onSelect, idPrefix }: PillGroupProps) => {
         <button
           key={item.id}
           id={idPrefix ? `${idPrefix}${item.id}` : null}
+          data-testid={testId ? `${testId}${item.id}` : null}
           className={classnames(
             classes.pill,
             { [classes.selected]: selected === item.id },
