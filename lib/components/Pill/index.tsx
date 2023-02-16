@@ -45,6 +45,7 @@ interface PillProps {
   lockHeight?: boolean
   idPrefix?: string
   id?: string
+  testId?: string
   className?: string
   style?: CSSProperties
 }
@@ -65,6 +66,7 @@ const Pill = ({
   lockHeight,
   idPrefix,
   id,
+  testId,
   className,
   style
 }: PillProps) => {
@@ -140,6 +142,7 @@ const Pill = ({
           onSelect={handleGroupOnSelect}
           selected={_selected}
           idPrefix={idPrefix}
+          testId={testId}
         />
       ) : stack ? (
         <div className={classes.stackGroup}>
@@ -148,6 +151,7 @@ const Pill = ({
               key={pill.id}
               idPrefix={idPrefix}
               id={pill.id}
+              testId={testId}
               disabled={pill.disabled}
               onClick={onClick ? handleStackItemOnClick : null}
               onClose={onClose ? handleStackItemOnClose : null}
@@ -163,6 +167,7 @@ const Pill = ({
               key={pill.id}
               idPrefix={idPrefix}
               id={pill.id}
+              testId={testId}
               disabled={pill.disabled}
               selected={pill.selected}
               onClick={handleChoiceOnSelect}
