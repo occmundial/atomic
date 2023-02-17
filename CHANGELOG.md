@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/occmundial/atomic/compare/v1.18.0...v1.19.0) (2023-02-17)
+
+
+### Features
+
+* Add index in droplist item ([0dd5488](https://github.com/occmundial/atomic/commit/0dd5488ad8ff1cdd4e4a5796444fe84b1a10d6aa))
+
 # [1.18.0](https://github.com/occmundial/atomic/compare/v1.17.0...v1.18.0) (2023-02-16)
 
 
