@@ -1,3 +1,10 @@
+# [2.0.0-beta.13](https://github.com/occmundial/atomic/compare/v2.0.0-beta.12...v2.0.0-beta.13) (2023-02-20)
+
+
+### Features
+
+* Extend leftImg prop in Modal component ([51afa5a](https://github.com/occmundial/atomic/commit/51afa5ad7e5069e48e8bf3b6a629605c3e81f95d))
+
 # [2.0.0-beta.12](https://github.com/occmundial/atomic/compare/v2.0.0-beta.11...v2.0.0-beta.12) (2023-02-14)
 
 
