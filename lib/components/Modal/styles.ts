@@ -133,7 +133,7 @@ const styles = {
     backgroundPosition: ({ imgLeft }: ModalProps) =>
       `center ${imgLeft?.position || 'center'}`,
     backgroundSize: ({ imgLeft }: ModalProps) =>
-      imgLeft?.size === 'contain' ? '100% auto' : 'cover',
+      imgLeft?.size === 'contain' ? '100% auto' : imgLeft?.size || 'cover',
     backgroundColor: ({ imgLeft }: ModalProps) => imgLeft?.color || null,
     backgroundRepeat: 'no-repeat',
     borderRadius: [spacing.radius, 0, 0, spacing.radius],
