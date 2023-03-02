@@ -1,3 +1,10 @@
+# [2.0.0-beta.14](https://github.com/occmundial/atomic/compare/v2.0.0-beta.13...v2.0.0-beta.14) (2023-03-02)
+
+
+### Features
+
+* Add iconsPath property to Provider ([845a70a](https://github.com/occmundial/atomic/commit/845a70a57f6d9c542d51cc7a4e7bd4f18e51bd46))
+
 # [2.0.0-beta.13](https://github.com/occmundial/atomic/compare/v2.0.0-beta.12...v2.0.0-beta.13) (2023-02-20)
 
 
