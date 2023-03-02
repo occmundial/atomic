@@ -13,12 +13,16 @@ import usePrevious from '@/hooks/usePrevious'
 const AtomicContext = createContext<Partial<AtomicData>>({})
 
 export interface AtomicData {
+  /** URL to fetch an svg sprite and insert it in the DOM as inline (does not work with `iconsPath`) */
   iconsUrl: string
+  /** Path to access a local svg sprite (does not work with `iconsUrl`) */
+  iconsPath: string
+  /** A prefix for the icon name in the svg sprite */
   iconsPrefix: string
 }
 
 interface AtomicProviderProps {
-  data: Partial<AtomicData>
+  data?: Partial<AtomicData>
   children: ReactNode
 }
 
@@ -28,6 +32,7 @@ const useIsomorphicLayoutEffect =
 const AtomicProvider = ({ data, children }: AtomicProviderProps) => {
   const [value, setValue] = useState<Partial<AtomicData>>({
     iconsUrl: '',
+    iconsPath: '',
     iconsPrefix: 'atomic',
     ...data
   })
