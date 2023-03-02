@@ -60,7 +60,9 @@ const Icon = ({
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <use xlinkHref={`#${atomic.iconsPrefix}__${iconName}`} />
+      <use
+        xlinkHref={`${atomic.iconsPath}#${atomic.iconsPrefix}__${iconName}`}
+      />
     </svg>
   )
 }
