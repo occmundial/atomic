@@ -34,6 +34,7 @@ export interface ButtonProps {
   className?: string
   style?: CSSProperties
   testId?: string
+  ariaLabel?: string
 }
 const Button = ({
   children,
@@ -52,7 +53,8 @@ const Button = ({
   id,
   className,
   style,
-  testId
+  testId,
+  ariaLabel
 }: ButtonProps) => {
   const classes = useStyles()
   const buttonClassName = classnames(
@@ -107,6 +109,7 @@ const Button = ({
         id={id}
         style={style}
         data-testid={testId}
+        aria-label={ariaLabel}
       >
         {content}
         {loadingLayer}
@@ -120,6 +123,7 @@ const Button = ({
         id={id}
         style={style}
         data-testid={testId}
+        aria-label={ariaLabel}
       >
         {content}
         {loadingLayer}
