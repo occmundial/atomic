@@ -1,3 +1,10 @@
+# [2.0.0-beta.15](https://github.com/occmundial/atomic/compare/v2.0.0-beta.14...v2.0.0-beta.15) (2023-03-06)
+
+
+### Features
+
+* Add ariaLabel to button component ([d2cfa7a](https://github.com/occmundial/atomic/commit/d2cfa7a880d84d6fb3058345c61d23b29fc1fda0))
+
 # [2.0.0-beta.14](https://github.com/occmundial/atomic/compare/v2.0.0-beta.13...v2.0.0-beta.14) (2023-03-02)
 
 
