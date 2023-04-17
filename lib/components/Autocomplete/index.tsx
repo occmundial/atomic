@@ -167,6 +167,7 @@ const Autocomplete = forwardRef((props: AutocompleteProps, ref) => {
           onEnter={_onEnter}
           isOnFocus
           className={classnames(classes.droplist, droplistProps.className)}
+          testId={droplistProps.testId}
         />
       )}
     </div>
