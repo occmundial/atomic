@@ -1,0 +1,120 @@
+---
+title: Icon
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Icon from '@/components/Icon'
+import { colors } from '@/components/tokens'
+
+# Icon
+
+---
+
+Component to display any of the icons on the library.
+
+- [Props](#Props)
+  - [Icon](#Icon)
+  - [Sizes](#Sizes)
+  - [Color](#Color)
+  - [Click](#Click)
+
+## Props
+
+| Name         | Type       | Default value | Description                                                                                   |
+| ------------ | ---------- | ------------- | --------------------------------------------------------------------------------------------- |
+| `iconName`   | **string** | -             | Name of the icon to render. It must match with any of the icons of the library, atomic-icons. |
+| `size`       | **number** | -             | The size of the icon to render. This applies for height and width.                            |
+| `color`      | **string** | -             | Hex value of a color. By default the icon has the color defined on the library.               |
+| `hoverColor` | **string** | -             | Hex value of a color, renders on hover.                                                       |
+| `transition` | **string** | `'0.3s all'`  | Transition for animations. For example: **'1s all'**                                          |
+| `onClick`    | **func**   | -             | Function to call when icon is clicked.                                                        |
+| `alt`        | **string** | -             | Alt property.                                                                                 |
+| `id`         | **string** | -             | Id property of the icon.                                                                      |
+| `testId`     | **string** | -             | data-testid property of the icon.                                                             |
+| `className`  | **string** | -             | The icon className.                                                                           |
+| `style`      | **object** | -             | Object with direct style properties.                                                          |
+
+## Examples
+
+### Icon
+
+Renders an icon
+
+<Demo title="Icon" background={colors.bgWhite}>
+  <Icon iconName="search" />
+</Demo>
+
+```jsx
+// How to set an icon
+function Component() {
+  return (
+    <>
+      <Icon iconName='search' />
+    </Icon>
+  )
+}
+
+```
+
+### Sizes
+
+Icon with a custom size
+
+<Demo title="Icon size" background={colors.bgWhite}>
+  <Icon iconName="search" size={64} />
+</Demo>
+
+```jsx
+// How use size
+function Component() {
+  return (
+    <>
+      <Icon iconName='search' size={64} />
+    </Icon>
+  )
+}
+```
+
+### Color
+
+Icon color.
+Color for hover can be adjusted as well.
+
+<Demo title="Icon color" background={colors.bgWhite}>
+  <Icon iconName="search" color={colors.prim} hoverColor={colors.sec} />
+</Demo>
+
+```jsx
+// How to use color and hoverColor
+function Component() {
+  return (
+    <>
+      <Icon iconName='search' color={colors.prim} hoverColor={colors.sec} />
+    </Icon>
+  )
+}
+```
+
+### Click
+
+Its possible to pass an onClick function to the icons.
+
+<Demo title="Icon onClick" background={colors.bgWhite}>
+  <Icon
+    iconName="search"
+    color={colors.sec}
+    onClick={() => alert('Icon clicked!')}
+  />
+</Demo>
+
+```jsx
+// How to use onClick
+function Component() {
+  return (
+    <>
+      <Icon iconName='search' color={colors.sec} onClick={() => alert('Icon clicked!')} />
+    </Icon>
+  )
+}
+```

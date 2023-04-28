@@ -2,18 +2,96 @@
 title: Card
 section: components
 ---
+
 import Demo from '@/utils/components/Demo'
 import Card from '@/components/Card'
+import { spacing } from '@/components/tokens'
 
 # Card
+
 ---
 
-This is a Card
+Container with a card style.
 
-<Demo title="Raisable card" background={colors.bgGrey}>
-  <Card raisable>This is a card</Card>
+- [Props](#Props)
+  - [Elevations](#Elevations)
+  - [Raisable](#Raisable)
+  - [NoPadding](#NoPadding)
+
+## Props
+
+| Name        | Type          | Default value | Description                                                      |
+| ----------- | ------------- | ------------- | ---------------------------------------------------------------- |
+| `children`  | **ReactNode** | -             | Children component passed to this container.                     |
+| `rest`      | **boolean**   | -             | The rest prop cancels the elevation of the card.                 |
+| `raised`    | **boolean**   | -             | The raised prop gives a higher elevation to the card.            |
+| `raisable`  | **boolean**   | -             | The raisable prop gives a higher elevation to the card on hover. |
+| `noPadding` | **boolean**   | -             | The card has a default padding, use this prop to remove it.      |
+| `id`        | **string**    | -             | The card component id.                                           |
+| `className` | **string**    | -             | The card component className.                                    |
+| `style`     | **object**    | -             | Object with direct style properties.                             |
+
+## Examples
+
+### Elevations
+
+You can choose from 3 elevation types
+
+<Demo title="Elevations of card" background={colors.bgGrey}>
+  <div style={{ marginBottom: spacing.small }}>
+    <Card rest>This is a rest card</Card>
+  </div>
+  <div style={{ marginBottom: spacing.small }}>
+    <Card>This is a default card</Card>
+  </div>
+  <div style={{ marginBottom: spacing.small }}>
+    <Card raised>This is a raised card</Card>
+  </div>
 </Demo>
 
 ```jsx
-<Card>This is a card</Card>
+// How to use elevation
+function Component() {
+  return (
+    <>
+      <Card rest>This is a rest card</Card>
+      <Card>This is a default card</Card>
+      <Card raised>This is a raised card</Card>
+    </>
+  )
+}
+```
+
+### Raisable
+
+<Demo title="Raisable card" background={colors.bgGrey}>
+  <Card raisable>This is a raisable card on hover</Card>
+</Demo>
+
+```jsx
+// How to use raisable
+function Component() {
+  return (
+    <>
+      <Card raisable>This is a raisable card on hover</Card>
+    </>
+  )
+}
+```
+
+### NoPadding
+
+<Demo title="No padding card" background={colors.bgGrey}>
+  <Card noPadding>This is a card with no padding</Card>
+</Demo>
+
+```jsx
+// How to use noPadding
+function Component() {
+  return (
+    <>
+      <Card noPadding>This is a card with no padding</Card>
+    </>
+  )
+}
 ```
