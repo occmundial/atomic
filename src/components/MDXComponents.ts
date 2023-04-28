@@ -11,13 +11,20 @@ import Td from './Table/Td'
 import Hr from './Hr'
 import Button from '@/components/Button'
 import Card from '@/components/Card'
+import Alert from '@/components/Alert'
+import Tag from '@/components/Tag'
 import Flexbox from '@/components/Flexbox'
+import Icon from '@/components/Icon'
 import Text from '@/components/Text'
 import Anchor from './Anchor'
 
 const mdxComponents = {
   // Library components
   Button,
+  Text,
+  Alert,
+  Tag,
+  Icon,
   Card,
   Flexbox,
   // Docs components
