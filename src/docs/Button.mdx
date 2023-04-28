@@ -2,51 +2,83 @@
 title: Button
 section: components
 ---
+
 import Demo from '@/utils/components/Demo'
 import Button from '@/components/Button'
 
 # Button
+
 ---
 
 - [Props](#Props)
 - [Examples](#Examples)
   - [Theme](#Theme)
   - [Size](#Size)
+  - [Block](#Block)
+  - [Icon](#Icon)
+  - [Loading](#Loading)
+  - [Disabled](#Disabled)
+  - [Round](#Round)
+  - [Click](#Click)
+  - [Href](#Href)
 
-This is a Button
+A flexible component button, with six pre-stablished themes.
+The button can behave like any button with onClick event, or like an anchor with href and target.
 
 ## Props
 
-| Name         | Type          | Default value  | Description      |
-|--------------|---------------|----------------|------------------|
-| `theme`      | **string**    | `primary`      | Button's predefined styles. Available options are: `primary`, `secondary`, `tertiary`, `tertiaryWhite`, `ghostPink`, `ghostGrey` and `ghostWhite`. |
-| `size`       | **string**    | `md`           | Button size. Available options are: `sm`, `md` and `lg`. |
-| `block`      | **boolean**   | `false`        | If true, the button will be displayed in a block. |
-| `disabled`   | **boolean**   | `false`        | It disables the button functionality and shows it with a different style. |
-| `icon`       | **string**    | -              | Displays an icon on the left side of the button. |
-| `iconRight`  | **string**    | -              | Displays as icon on the right side of the button. |
-| `loading`    | **boolean**   | `false`        | The loading state disables the button and displays a spinner inside. |
-| `onClick`    | **function**  | -              | Callback function that is called when the button is clicked. |
-| `href`       | **string**    | -              | The link that the button will navigate to. |
-| `target`     | **string**    | -              | The link target. |
-| `rel`        | **string**    | -              | Only used if the `href` attribute is present. |
-| `id`         | **string**    | -              | The id of the button. |
-| `className`  | **string**    | -              | The className of the button. |
-| `style`      | **object**    | -              | The style of the button. |
-
+| Name        | Type          | Default value | Description                                                                                                                                        |
+| ----------- | ------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`  | **ReactNode** | -             | Children component passed to this container.                                                                                                       |
+| `theme`     | **string**    | `primary`     | Button's predefined styles. Available options are: `primary`, `secondary`, `tertiary`, `tertiaryWhite`, `ghostPink`, `ghostGrey` and `ghostWhite`. |
+| `size`      | **string**    | `md`          | Button size. Available options are: `sm`, `md` and `lg`.                                                                                           |
+| `block`     | **boolean**   | `false`       | If true, the button will be displayed in a block.                                                                                                  |
+| `disabled`  | **boolean**   | `false`       | It disables the button functionality and shows it with a different style.                                                                          |
+| `icon`      | **string**    | -             | Displays an icon on the left side of the button.                                                                                                   |
+| `iconRight` | **string**    | -             | Displays as icon on the right side of the button.                                                                                                  |
+| `round`     | **boolean**   | -             | Property to make the button round when it only has an `iconLeft` and no `children`.                                                                |
+| `loading`   | **boolean**   | `false`       | The loading state disables the button and displays a spinner inside.                                                                               |
+| `onClick`   | **function**  | -             | Callback function that is called when the button is clicked.                                                                                       |
+| `href`      | **string**    | -             | The link that the button will navigate to.                                                                                                         |
+| `target`    | **string**    | -             | The link target.                                                                                                                                   |
+| `rel`       | **string**    | -             | Only used if the `href` attribute is present.                                                                                                      |
+| `id`        | **string**    | -             | The id of the button.                                                                                                                              |
+| `testId`    | **string**    | -             | The data-testid of the button.                                                                                                                     |
+| `className` | **string**    | -             | The className of the button.                                                                                                                       |
+| `style`     | **object**    | -             | The style of the button.                                                                                                                           |
 
 ## Examples
+
 ### Theme
+
 You can choose any of the 7 predefined themes:
+
 <Demo title="Button themes" background={colors.grey400}>
-  <Flexbox display="flex" justifyContent="center" alignItems="center" wrap="wrap">
-    <Button style={{margin: spacing.tiny}}>Primary</Button>
-    <Button theme="secondary" style={{margin: spacing.tiny}}>Secondary</Button>
-    <Button theme="tertiary" style={{margin: spacing.tiny}}>Tertiary</Button>
-    <Button theme="tertiaryWhite" style={{margin: spacing.tiny}}>Tertiary White</Button>
-    <Button theme="ghostPink" style={{margin: spacing.tiny}}>Ghost Pink</Button>
-    <Button theme="ghostGrey" style={{margin: spacing.tiny}}>Ghost Grey</Button>
-    <Button theme="ghostWhite" style={{margin: spacing.tiny}}>Ghost White</Button>
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button style={{ margin: spacing.tiny }}>Primary</Button>
+    <Button theme="secondary" style={{ margin: spacing.tiny }}>
+      Secondary
+    </Button>
+    <Button theme="tertiary" style={{ margin: spacing.tiny }}>
+      Tertiary
+    </Button>
+    <Button theme="tertiaryWhite" style={{ margin: spacing.tiny }}>
+      Tertiary White
+    </Button>
+    <Button theme="ghostPink" style={{ margin: spacing.tiny }}>
+      Ghost Pink
+    </Button>
+    <Button theme="ghostGrey" style={{ margin: spacing.tiny }}>
+      Ghost Grey
+    </Button>
+    <Button theme="ghostWhite" style={{ margin: spacing.tiny }}>
+      Ghost White
+    </Button>
   </Flexbox>
 </Demo>
 
@@ -69,12 +101,25 @@ function Component() {
 ```
 
 ### Size
+
 There's 3 available sizes for Buttons:
+
 <Demo title="Button sizes">
-  <Flexbox display="flex" justifyContent="center" alignItems="center" wrap="wrap">
-    <Button size="sm" style={{margin: spacing.tiny}}>Small</Button>
-    <Button size="md" style={{margin: spacing.tiny}}>Medium</Button>
-    <Button size="lg" style={{margin: spacing.tiny}}>Large</Button>
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="sm" style={{ margin: spacing.tiny }}>
+      Small
+    </Button>
+    <Button size="md" style={{ margin: spacing.tiny }}>
+      Medium
+    </Button>
+    <Button size="lg" style={{ margin: spacing.tiny }}>
+      Large
+    </Button>
   </Flexbox>
 </Demo>
 
@@ -87,6 +132,219 @@ function Component() {
       <Button>Small</Button>
       <Button size="md">Medium</Button>
       <Button size="lg">Large</Button>
+    </>
+  )
+}
+```
+
+### Block
+
+<Demo title="Button block">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="md" block>
+      Block
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use block
+function Component() {
+  return (
+    <>
+      <Button size="md" block>
+        Block
+      </Button>
+    </>
+  )
+}
+```
+
+### Icon
+
+<Demo title="Button with icon">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button iconLeft="search" style={{ margin: spacing.tiny }}>
+      Icon at left side
+    </Button>
+    <Button iconRight="book" style={{ margin: spacing.tiny }}>
+      Icon at right side
+    </Button>
+    <Button iconLeft="search" iconRight="book">
+      Icon at both sides
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to set an icon
+function Component() {
+  return (
+    <>
+      <Button iconLeft="search">Icon at left side</Button>
+      <Button iconRight="book">Icon at right side</Button>
+      <Button iconLeft="search" iconRight="book">
+        Icon at both sides
+      </Button>
+    </>
+  )
+}
+```
+
+### Loading
+
+<Demo title="Button loading">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="md" loading>
+      Loading
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use loading
+function Component() {
+  return (
+    <>
+      <Button size="md" loading>
+        Loading
+      </Button>
+    </>
+  )
+}
+```
+
+### Disabled
+
+<Demo title="Button disabled">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="md" disabled>
+      Disabled
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use disabled
+function Component() {
+  return (
+    <>
+      <Button size="md" disabled>
+        Disabled
+      </Button>
+    </>
+  )
+}
+```
+
+### Round
+
+<Demo title="Button round">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="md" round iconLeft="search" round />
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use round
+function Component() {
+  return (
+    <>
+      {/* The button can be round only when it has no child and has an iconLeft, round properties. */}
+      <Button size="md" round iconLeft="search" round />
+    </>
+  )
+}
+```
+
+### Click
+
+<Demo title="Button onClick">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="md" onClick={() => alert('Button clicked!')}>
+      Button
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use onClick
+function Component() {
+  return (
+    <>
+      <Button size="md" onClick={() => alert('Button clicked!')}>
+        Button
+      </Button>
+    </>
+  )
+}
+```
+
+### Href
+
+The button can recive the href, target, and rel properties of an anchor, to render a link with the styling of a button.
+
+<Demo title="Button href">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button
+      size="md"
+      href="https://www.google.com"
+      target="_blank"
+      rel="nofollow"
+    >
+      Button href
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use href, rel and target
+function Component() {
+  return (
+    <>
+      <Button
+        size="md"
+        href="https://www.google.com"
+        target="_blank"
+        rel="nofollow"
+      >
+        Button href
+      </Button>
     </>
   )
 }
