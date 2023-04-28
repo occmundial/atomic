@@ -1,0 +1,247 @@
+---
+title: Text
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Text from '@/components/Text'
+
+# Text
+
+---
+
+- [Props](#Props)
+- [Examples](#Examples)
+  - [Sizes](#Sizes)
+  - [Colors](#Colors)
+  - [Align](#Align)
+  - [Spacing](#Spacing)
+  - [Strong](#Strong)
+
+## Props
+
+| Name           | Type       | Default value | Description                                                           |
+| -------------- | ---------- | ------------- | --------------------------------------------------------------------- |
+| `hero`         | **bool**   | -             | Hero size style.                                                      |
+| `headline`     | **bool**   | -             | Headline size style.                                                  |
+| `heading`      | **bool**   | -             | Heading size style.                                                   |
+| `subheading`   | **bool**   | -             | Subheading size style.                                                |
+| `extraLarge`   | **bool**   | -             | Extra-Large size style.                                               |
+| `large`        | **bool**   | -             | Large size style.                                                     |
+| `standard`     | **bool**   | -             | Standard size style.                                                  |
+| `small`        | **bool**   | -             | Small size style.                                                     |
+| `micro`        | **bool**   | -             | Micro size style.                                                     |
+| `strong`       | **bool**   | -             | Strong style. Only applies in large, standard, small and micro sizes. |
+| `mid`          | **bool**   | -             | Medium emphasis color style.                                          |
+| `primary`      | **bool**   | -             | Primary emphasis color style.                                         |
+| `secondary`    | **bool**   | -             | Secondary emphasis color style.                                       |
+| `success`      | **bool**   | -             | Success emphasis color style.                                         |
+| `error`        | **bool**   | -             | Error emphasis color style.                                           |
+| `warning`      | **bool**   | -             | Warning emphasis color style.                                         |
+| `info`         | **bool**   | -             | Info emphasis color style.                                            |
+| `disabled`     | **bool**   | -             | Disabled emphasis color style.                                        |
+| `white`        | **bool**   | -             | White emphasis color style.                                           |
+| `link`         | **bool**   | -             | Link emphasis color style.                                            |
+| `left`         | **bool**   | -             | Left align style.                                                     |
+| `center`       | **bool**   | -             | Center align style.                                                   |
+| `right`        | **bool**   | -             | Right align style.                                                    |
+| `topXTiny`     | **bool**   | -             | X-Tiny top spacing style.                                             |
+| `topTiny`      | **bool**   | -             | Tiny top spacing style.                                               |
+| `topSmall`     | **bool**   | -             | Small top spacing style.                                              |
+| `topBase`      | **bool**   | -             | Base top spacing style.                                               |
+| `topMedium`    | **bool**   | -             | Medium top spacing style.                                             |
+| `topLarge`     | **bool**   | -             | Large top spacing style.                                              |
+| `topXLarge`    | **bool**   | -             | X-Large top spacing style.                                            |
+| `bottomXTiny`  | **bool**   | -             | X-Tiny bottom spacing style.                                          |
+| `bottomTiny`   | **bool**   | -             | Tiny bottom spacing style.                                            |
+| `bottomSmall`  | **bool**   | -             | Small bottom spacing style.                                           |
+| `bottomBase`   | **bool**   | -             | Base bottom spacing style.                                            |
+| `bottomMedium` | **bool**   | -             | Medium bottom spacing style.                                          |
+| `bottomLarge`  | **bool**   | -             | Large bottom spacing style.                                           |
+| `bottomXLarge` | **bool**   | -             | X-Large bottom spacing style.                                         |
+| `tag`          | **string** | `'p'`         | HTML tag.                                                             |
+| `className`    | **string** | -             | The className of the text.                                            |
+| `id`           | **string** | -             | The id of the text.                                                   |
+
+## Examples
+
+### Sizes
+
+You can choose any of the 9 sizes:
+
+<Demo title="Text sizes" background={colors.white}>
+  <Flexbox display="flex" justifyContent="start" direction="col" wrap="wrap">
+    <Text hero>Hero text</Text>
+    <Text headline>Headline text</Text>
+    <Text heading>Heading text</Text>
+    <Text subheading>Subheading text</Text>
+    <Text extraLarge>Extra-large</Text>
+    <Text large>Large body</Text>
+    <Text standard>Standard body</Text>
+    <Text small>Small Caption</Text>
+    <Text micro>Micro</Text>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use Text sizes
+function Component() {
+  return (
+    <>
+      {/* `standard` is the default value. */}
+      <Text hero>Hero text</Text>
+      <Text headline>Headline text</Text>
+      <Text heading>Heading text</Text>
+      <Text subheading>Subheading text</Text>
+      <Text extraLarge>Extra-large</Text>
+      <Text large>Large body</Text>
+      <Text standard>Standard body</Text>
+      <Text small>Small Caption</Text>
+      <Text micro>Micro</Text>
+    </>
+  )
+}
+```
+
+### Colors
+
+You can choose from 11 colors
+
+<Demo title="Text colors" background={colors.white}>
+  <Flexbox display="flex" justifyContent="start" direction="col" wrap="wrap">
+    <Text>High emphasis</Text>
+    <Text mid>Medium emphasis</Text>
+    <Text low>Low emphasis</Text>
+    <Text primary>Primary</Text>
+    <Text secondary>Secondary</Text>
+    <Text success>Success</Text>
+    <Text error>Error</Text>
+    <Text warning>Warning</Text>
+    <Text info>Info</Text>
+    <Text disabled>Disabled</Text>
+    <Text link>Link</Text>
+    <div style={{ background: colors.prim }}>
+      <Text white>White</Text>
+    </div>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use colors
+function Component() {
+  return (
+    <>
+      <Text>High emphasis</Text>
+      <Text mid>Medium emphasis</Text>
+      <Text low>Low emphasis</Text>
+      <Text primary>Primary</Text>
+      <Text secondary>Secondary</Text>
+      <Text success>Success</Text>
+      <Text error>Error</Text>
+      <Text warning>Warning</Text>
+      <Text info>Info</Text>
+      <Text disabled>Disabled</Text>
+      <Text link>Link</Text>
+      <div style={{ background: colors.prim }}>
+        <Text white>White</Text>
+      </div>
+    </>
+  )
+}
+```
+
+### Align
+
+<Demo title="Text align" background={colors.white}>
+  <Flexbox display="flex" justifyContent="start" direction="col" wrap="wrap">
+    <Text left>Left</Text>
+    <Text center>Center</Text>
+    <Text right>Right</Text>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use alignment
+function Component() {
+  return (
+    <>
+      <Text left>Left</Text>
+      <Text center>Center</Text>
+      <Text right>Right</Text>
+    </>
+  )
+}
+```
+
+### Spacing
+
+You can choose spacing for top and bottom
+
+<Demo title="Text spacing" background={colors.white}>
+  <Flexbox display="flex" justifyContent="start" direction="col" wrap="wrap">
+    <Text bottomXTiny>X-Tiny</Text>
+    <Text bottomTiny>Tiny</Text>
+    <Text bottomSmall>Small</Text>
+    <Text bottomBase>Base</Text>
+    <Text bottomMedium>Medium</Text>
+    <Text bottomLarge>Large</Text>
+    <Text bottomXLarge>XLarge</Text>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use spacing
+function Component() {
+  return (
+    <>
+      {/* These can be applied for top values, such as topXTiny */}
+      <Text bottomXTiny>X-Tiny</Text>
+      <Text bottomTiny>Tiny</Text>
+      <Text bottomSmall>Small</Text>
+      <Text bottomBase>Base</Text>
+      <Text bottomMedium>Medium</Text>
+      <Text bottomLarge>Large</Text>
+      <Text bottomXLarge>XLarge</Text>
+    </>
+  )
+}
+```
+
+### Strong
+
+You can set strong to render a message in bold text
+
+<Demo title="Text strong" background={colors.white}>
+  <Flexbox display="flex" justifyContent="start" direction="col" wrap="wrap">
+    <Text large strong>
+      Large strong
+    </Text>
+    <Text strong>Standard strong</Text>
+    <Text small strong>
+      Small strong
+    </Text>
+    <Text micro strong>
+      Micro strong
+    </Text>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use strong
+function Component() {
+  return (
+    <>
+      <Text large strong>
+        Large strong
+      </Text>
+      <Text strong>Standard strong</Text>
+      <Text small strong>
+        Small strong
+      </Text>
+      <Text micro strong>
+        Micro strong
+      </Text>
+    </>
+  )
+}
+```
