@@ -2,6 +2,718 @@
 title: Colors
 section: tokens
 ---
+
+import { colors, spacing, shadows } from '@/components/tokens'
+import Demo from '@/utils/components/Demo'
+import Text from '@/components/Text'
+
 # Colors
+
 ---
-Colors docs.
+
+#### Atomic colors following the styleguide.
+
+```jsx
+// How to use colors
+import { colors } from '@occmundial/atomic/tokens'
+
+// Destructuring the colors object
+const { sec } = colors
+
+function Component() {
+  return (
+    <>
+      <div style={{ background: colors.prim }} />
+      <div style={{ background: sec }} />
+    </>
+  )
+}
+```
+
+## Examples
+
+### Colors
+
+<Demo title="Colors" background={colors.white}>
+  {/* Primary */}
+  <div
+    style={{
+      width: spacing.xLarge * 10,
+      boxShadow: shadows.lvl4,
+      borderRadius: 10,
+      overflow: 'hidden',
+      maxWidth: '100%'
+    }}
+  >
+    <div
+      style={{
+        background: colors.primLighter,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>Lighter</Text>
+        <Text strong>colors.primLighter</Text>
+        <Text>#e4edff</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.primLight,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>Light</Text>
+        <Text strong>colors.primLight</Text>
+        <Text>#c8d9ff</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.prim,
+        paddingTop: spacing.medium,
+        paddingBottom: spacing.medium,
+        paddingRight: spacing.tiny,
+        paddingLeft: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>Primary</Text>
+        <Text white strong>
+          colors.prim
+        </Text>
+        <Text white>#083cae</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.primDark,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>Dark</Text>
+        <Text white strong>
+          colors.primDark
+        </Text>
+        <Text white>#002b99</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.primDarker,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>Darker</Text>
+        <Text white strong>
+          colors.primDarker
+        </Text>
+        <Text white>#001d7c</Text>
+      </Flexbox>
+    </div>
+  </div>
+  {/* Secondary */}
+  <div
+    style={{
+      marginTop: spacing.medium,
+      width: spacing.xLarge * 10,
+      boxShadow: shadows.lvl4,
+      borderRadius: 10,
+      overflow: 'hidden',
+      maxWidth: '100%'
+    }}
+  >
+    <div
+      style={{
+        background: colors.secLighter,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>Lighter</Text>
+        <Text strong>colors.secLighter</Text>
+        <Text>#feeff3</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.secLight,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>Light</Text>
+        <Text strong>colors.secLight</Text>
+        <Text>#fa90ac</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.sec,
+        paddingTop: spacing.medium,
+        paddingBottom: spacing.medium,
+        paddingRight: spacing.tiny,
+        paddingLeft: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>Secondary</Text>
+        <Text white strong>
+          colors.sec
+        </Text>
+        <Text white>#f13465</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.secDark,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>Dark</Text>
+        <Text white strong>
+          colors.secDark
+        </Text>
+        <Text white>#cc1b4a</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.secDarker,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>Darker</Text>
+        <Text white strong>
+          colors.secDarker
+        </Text>
+        <Text white>#990932</Text>
+      </Flexbox>
+    </div>
+  </div>
+  {/* Ink */}
+  <div
+    style={{
+      marginTop: spacing.medium,
+      width: spacing.xLarge * 10,
+      boxShadow: shadows.lvl4,
+      borderRadius: 10,
+      overflow: 'hidden',
+      maxWidth: '100%'
+    }}
+  >
+    <div
+      style={{
+        background: colors.inkLightest,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>Lightest</Text>
+        <Text strong>colors.inkLightest</Text>
+        <Text>#dddddd</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.inkLighter,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>Lighter</Text>
+        <Text strong>colors.inkLighter</Text>
+        <Text>#aaaaaa</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.inkLight,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>Light</Text>
+        <Text strong white>
+          colors.inkLight
+        </Text>
+        <Text white>#777777</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.ink,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>Ink</Text>
+        <Text strong white>
+          colors.ink
+        </Text>
+        <Text white>#222222</Text>
+      </Flexbox>
+    </div>
+  </div>
+  {/* White */}
+  <div
+    style={{
+      marginTop: spacing.medium,
+      width: spacing.xLarge * 10,
+      boxShadow: shadows.lvl4,
+      borderRadius: 10,
+      overflow: 'hidden',
+      maxWidth: '100%'
+    }}
+  >
+    <div
+      style={{
+        background: colors.white,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>White</Text>
+        <Text strong>colors.white</Text>
+        <Text>#ffffff</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.bgGrey,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>Grey</Text>
+        <Text strong>colors.bgGrey</Text>
+        <Text>#f5f5f8</Text>
+      </Flexbox>
+    </div>
+  </div>
+  {/* Grey */}
+  <div
+    style={{
+      marginTop: spacing.medium,
+      width: spacing.xLarge * 10,
+      boxShadow: shadows.lvl4,
+      borderRadius: 10,
+      overflow: 'hidden',
+      maxWidth: '100%'
+    }}
+  >
+    <div
+      style={{
+        background: colors.grey50,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>50</Text>
+        <Text strong>colors.grey50</Text>
+        <Text>#fafafa</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.grey100,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>100</Text>
+        <Text strong>colors.grey100</Text>
+        <Text>#f5f5f5</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.grey200,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>200</Text>
+        <Text strong>colors.grey200</Text>
+        <Text>#dddddd</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.grey300,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>300</Text>
+        <Text strong>colors.grey300</Text>
+        <Text>#cccccc</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.grey400,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>400</Text>
+        <Text strong>colors.grey400</Text>
+        <Text>#aaaaaa</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.grey500,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>500</Text>
+        <Text strong white>
+          colors.grey500
+        </Text>
+        <Text white>#999999</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.grey600,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>600</Text>
+        <Text strong white>
+          colors.grey600
+        </Text>
+        <Text white>#777777</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.grey700,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>700</Text>
+        <Text strong white>
+          colors.grey700
+        </Text>
+        <Text white>#666666</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.grey800,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>800</Text>
+        <Text strong white>
+          colors.grey800
+        </Text>
+        <Text white>#444444</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.grey900,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>900</Text>
+        <Text strong white>
+          colors.grey900
+        </Text>
+        <Text white>#222222</Text>
+      </Flexbox>
+    </div>
+  </div>
+  {/* Link */}
+  <div
+    style={{
+      marginTop: spacing.medium,
+      width: spacing.xLarge * 10,
+      boxShadow: shadows.lvl4,
+      borderRadius: 10,
+      overflow: 'hidden',
+      maxWidth: '100%'
+    }}
+  >
+    <div
+      style={{
+        background: colors.textLink,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>Text Link</Text>
+        <Text strong white>
+          colors.textLink
+        </Text>
+        <Text white>#0946CB</Text>
+      </Flexbox>
+    </div>
+  </div>
+  {/* Info*/}
+  <div
+    style={{
+      marginTop: spacing.medium,
+      width: spacing.xLarge * 10,
+      boxShadow: shadows.lvl4,
+      borderRadius: 10,
+      overflow: 'hidden',
+      maxWidth: '100%'
+    }}
+  >
+    <div
+      style={{
+        background: colors.info,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>Info</Text>
+        <Text strong white>
+          colors.info
+        </Text>
+        <Text white>#5736ab</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.infoLight,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text info>Info Light</Text>
+        <Text strong info>
+          colors.infoLight
+        </Text>
+        <Text info>#efebf7</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.white,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text info>Info Text</Text>
+        <Text strong info>
+          colors.infoText
+        </Text>
+        <Text info>#5736ab</Text>
+      </Flexbox>
+    </div>
+  </div>
+  {/* Warning*/}
+  <div
+    style={{
+      marginTop: spacing.medium,
+      width: spacing.xLarge * 10,
+      boxShadow: shadows.lvl4,
+      borderRadius: 10,
+      overflow: 'hidden',
+      maxWidth: '100%'
+    }}
+  >
+    <div
+      style={{
+        background: colors.warning,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>Warnign</Text>
+        <Text strong>colors.warning</Text>
+        <Text>#ffc549</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.warningLight,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text warning>Warning Light</Text>
+        <Text strong warning>
+          colors.warningLight
+        </Text>
+        <Text warning>#fffaed</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.white,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text warning>Warnign Text</Text>
+        <Text strong warning>
+          colors.warningText
+        </Text>
+        <Text warning>#e69000</Text>
+      </Flexbox>
+    </div>
+  </div>
+  {/* Success*/}
+  <div
+    style={{
+      marginTop: spacing.medium,
+      width: spacing.xLarge * 10,
+      boxShadow: shadows.lvl4,
+      borderRadius: 10,
+      overflow: 'hidden',
+      maxWidth: '100%'
+    }}
+  >
+    <div
+      style={{
+        background: colors.success,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>Success</Text>
+        <Text strong white>
+          colors.success
+        </Text>
+        <Text white>#009537</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.successLight,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text success>Success Light</Text>
+        <Text strong success>
+          colors.successLight
+        </Text>
+        <Text success>#e6f5eb</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.white,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text success>Success Text</Text>
+        <Text strong success>
+          colors.successText
+        </Text>
+        <Text success>#009537</Text>
+      </Flexbox>
+    </div>
+  </div>
+  {/* Error */}
+  <div
+    style={{
+      marginTop: spacing.medium,
+      width: spacing.xLarge * 10,
+      boxShadow: shadows.lvl4,
+      borderRadius: 10,
+      overflow: 'hidden',
+      maxWidth: '100%'
+    }}
+  >
+    <div
+      style={{
+        background: colors.error,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>Error</Text>
+        <Text strong white>
+          colors.error
+        </Text>
+        <Text white>#db3737</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.errorLight,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text error>Error Light</Text>
+        <Text strong error>
+          colors.errorLight
+        </Text>
+        <Text error>#fcebeb</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.white,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text error>Error Text</Text>
+        <Text strong error>
+          colors.errorText
+        </Text>
+        <Text error>#db3737</Text>
+      </Flexbox>
+    </div>
+  </div>
+  {/* Others */}
+  <div
+    style={{
+      marginTop: spacing.medium,
+      width: spacing.xLarge * 10,
+      boxShadow: shadows.lvl4,
+      borderRadius: 10,
+      overflow: 'hidden',
+      maxWidth: '100%'
+    }}
+  >
+    <div
+      style={{
+        background: colors.brand,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text white>Brand</Text>
+        <Text strong white>
+          colors.brand
+        </Text>
+        <Text white>#0046ff</Text>
+      </Flexbox>
+    </div>
+    <div
+      style={{
+        background: colors.bgWhite,
+        padding: spacing.tiny
+      }}
+    >
+      <Flexbox display="flex" direction="row" justifyContent="between">
+        <Text>BG White</Text>
+        <Text strong>colors.bgWhite</Text>
+        <Text>#ffffff</Text>
+      </Flexbox>
+    </div>
+  </div>
+</Demo>
