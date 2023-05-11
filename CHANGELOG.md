@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/occmundial/atomic/compare/v1.19.0...v1.20.0) (2023-05-11)
+
+
+### Features
+
+* Add type prop to button ([7ced219](https://github.com/occmundial/atomic/commit/7ced219c1ae6d1a8019988074e30761c337f8bb3))
+
 # [1.19.0](https://github.com/occmundial/atomic/compare/v1.18.0...v1.19.0) (2023-02-17)
 
 
