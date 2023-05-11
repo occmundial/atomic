@@ -25,6 +25,7 @@ export interface ButtonProps {
   loading?: boolean
   round?: boolean
   onClick?: EventHandler<SyntheticEvent>
+  type?: 'button' | 'submit' | 'reset' | null
   href?: string
   target?: string
   rel?: string
@@ -45,6 +46,7 @@ const Button = (props: ButtonProps) => {
     loading,
     round,
     onClick,
+    type,
     href,
     target,
     rel,
@@ -119,6 +121,7 @@ const Button = (props: ButtonProps) => {
         id={id}
         style={style}
         data-testid={testId}
+        type={type}
       >
         {content}
         {loadingLayer}
