@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/occmundial/atomic/compare/v1.20.0...v1.21.0) (2023-05-12)
+
+
+### Features
+
+* Add new props ([1aba82c](https://github.com/occmundial/atomic/commit/1aba82c0d4614f87d784007dcbc056d8c6147c6a))
+
 # [1.20.0](https://github.com/occmundial/atomic/compare/v1.19.0...v1.20.0) (2023-05-11)
 
 
