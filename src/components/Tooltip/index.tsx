@@ -65,7 +65,7 @@ export interface TooltipProps {
 export default function Tooltip({
   children,
   text,
-  placement = 'top-start',
+  placement = 'top',
   openOnHover = false,
   closeDelay = 8000,
   theme,
