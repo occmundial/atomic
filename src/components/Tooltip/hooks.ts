@@ -30,9 +30,12 @@ export function useOpenTooltipState(
   )
 
   function setOpen(open: boolean) {
-    if (!open || closeDelay > 0) return setOpenSourceDelay(open)
-    delay.cancel()
-    setOpenSource(open)
+    if (open) {
+      delay.cancel()
+      setOpenSource(true)
+    } else {
+      closeDelay > 0 ? setOpenSourceDelay(false) : setOpenSource(false)
+    }
   }
 
   useEffect(() => {
