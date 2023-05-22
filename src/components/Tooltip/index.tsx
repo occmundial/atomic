@@ -14,6 +14,7 @@ import {
 import useStyles from './styles'
 import classNames from 'classnames'
 import colors from '@/tokens/colors'
+import { useOpenTooltipState } from './hooks'
 
 const {
   successLight,
@@ -64,27 +65,19 @@ export interface TooltipProps {
 export default function Tooltip({
   children,
   text,
-  placement = 'top-start',
+  placement = 'top',
   openOnHover = false,
   closeDelay = 8000,
   theme,
   showArrow = true,
-  show: openManual,
+  show,
   zIndex = 10,
-  onShowChange: setOpenManual
+  onShowChange
 }: TooltipProps) {
   const classes = useStyles()
   const arrowRef = useRef(null)
 
-  const [openAuto, setInnerShow] = useState(false)
-
-  const open = useMemo(() => openManual ?? openAuto, [openManual, openAuto])
-
-  const setOpen = useMemo(
-    () =>
-      openManual !== undefined ? setOpenManual ?? (() => {}) : setInnerShow,
-    [openManual, setOpenManual, setInnerShow]
-  )
+  const [open, setOpen] = useOpenTooltipState(show, onShowChange, closeDelay)
 
   const getMiddlewares = () => {
     const middlewares = [offset(8)]
