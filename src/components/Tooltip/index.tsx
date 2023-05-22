@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
+import { useState, useRef, useMemo } from 'react'
 import {
   useFloating,
   autoUpdate,
@@ -14,7 +14,6 @@ import {
 import useStyles from './styles'
 import classNames from 'classnames'
 import colors from '@/tokens/colors'
-import { useOpenTooltipState } from './helper'
 
 const {
   successLight,
