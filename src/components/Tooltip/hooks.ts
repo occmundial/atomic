@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useThrottle } from '@/src/hooks/useThrottle'
 
 type OpenTooltipState = [boolean, (show: boolean) => void]
