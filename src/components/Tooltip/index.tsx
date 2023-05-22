@@ -36,7 +36,7 @@ enum Themes {
   ERROR = 'error'
 }
 
-const colorsTheme = {
+const colorsArrow = {
   [Themes.DARK]: grey900,
   [Themes.LIGHT]: white,
   [Themes.SUCCESS]: successLight,
@@ -113,15 +113,10 @@ export default function Tooltip({
       <FloatingPortal>
         {open && (
           <div
-            className={classNames(classes.container, {
-              [classes.dark]: theme === Themes.DARK,
-              [classes.light]: theme === Themes.LIGHT,
-              [classes.success]: theme === Themes.SUCCESS,
-              [classes.info]: theme === Themes.INFO,
-              [classes.warning]: theme === Themes.WARNING,
-              [classes.error]: theme === Themes.ERROR,
-              [classes.purple]: !colorsTheme[theme] || theme === Themes.PURPLE
-            })}
+            className={classNames(
+              classes.container,
+              classes[theme] || classes.purple
+            )}
             ref={refs.setFloating}
             style={{ ...floatingStyles, zIndex }}
             {...getFloatingProps()}
@@ -131,7 +126,7 @@ export default function Tooltip({
               <FloatingArrow
                 ref={arrowRef}
                 context={context}
-                fill={colorsTheme[theme] || colorsTheme[Themes.PURPLE]}
+                fill={colorsArrow[theme] || colorsArrow[Themes.PURPLE]}
               />
             )}
           </div>
