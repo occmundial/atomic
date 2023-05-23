@@ -19,6 +19,8 @@ import { useOpenTooltipState } from './hooks'
 
 const { infoLight, white, grey900, info } = colors
 
+const maxWidth = 220
+
 enum Themes {
   DARK = 'dark',
   LIGHT = 'light',
@@ -73,7 +75,19 @@ export default function Tooltip({
   const [open, setOpen] = useOpenTooltipState(show, onShowChange, closeDelay)
 
   const getMiddlewares = useCallback(() => {
-    const middlewares = [offset(8)]
+    const middlewares = [
+      offset(8),
+      size({
+        apply({ availableWidth, availableHeight, elements }) {
+          // Do things with the data, e.g.
+          Object.assign(elements.floating.style, {
+            maxWidth: `${
+              availableWidth < maxWidth ? availableWidth : maxWidth
+            }px`
+          })
+        }
+      })
+    ]
     showArrow && middlewares.push(arrow({ element: arrowRef, padding: 16 }))
     fit &&
       middlewares.push(
