@@ -75,7 +75,7 @@ export default function Tooltip({
   const [open, setOpen] = useOpenTooltipState(show, onShowChange, closeDelay)
 
   const getMiddlewares = useCallback(() => {
-    const middlewares = [offset(8)]
+    const middlewares = [offset(16)]
     showArrow && middlewares.push(arrow({ element: arrowRef, padding: 16 }))
     middlewares.push(
       size({
@@ -138,6 +138,8 @@ export default function Tooltip({
                 ref={arrowRef}
                 context={context}
                 fill={colorsArrow[theme] || colorsArrow[Themes.PURPLE]}
+                width={14}
+                height={10}
               />
             )}
           </div>
