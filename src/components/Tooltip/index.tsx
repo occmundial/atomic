@@ -50,7 +50,7 @@ export interface TooltipProps {
     container: string
   }
   fit?: boolean
-  maxWidth?: number
+  maxWidth?: number | 'auto'
   onShowChange?: (show: boolean) => void
 }
 
@@ -81,9 +81,10 @@ export default function Tooltip({
         apply({ availableWidth, elements }) {
           // Do things with the data, e.g.
           Object.assign(elements.floating.style, {
-            maxWidth: `${
-              availableWidth < maxWidth ? availableWidth : maxWidth
-            }px`
+            maxWidth:
+              maxWidth === 'auto'
+                ? maxWidth
+                : `${availableWidth < maxWidth ? availableWidth : maxWidth}px`
           })
         }
       })
@@ -100,7 +101,7 @@ export default function Tooltip({
         })
       )
     return middlewares
-  }, [showArrow, fit])
+  }, [showArrow, fit, maxWidth])
 
   const { refs, floatingStyles, context } = useFloating({
     open: open,
