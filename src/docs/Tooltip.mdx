@@ -14,18 +14,19 @@ Alert component to display messages within a container.
 
 ## Props
 
-| Name          | Type          | Default value | Description                                                                                                                                                                       |
-| ------------- | ------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `children`    | **ReactNode** | -             | It accepts any type of the followins `boolean`,`null`,`undefined`,`ReactFragment`,`ReactPortal`,`ReactChild`                                                                      |
-| `theme`       | **string**    | `purple`      | This property can be used to set the theme of the component. The possible values for the theme property are `info`, `warning`, `success`, `error`, `light`, `dark`, and `purple`. |
-| `show`        | **boolean**   | -             | This property can be used to control whether or not the component is displayed.                                                                                                   |
-| `text`        | **string**    | -             | This property can be used to set the text that is displayed by the component.                                                                                                     |
-| `openOnHover` | **boolean**   | `false`       | Designates whether the tooltip should open on activator hover.                                                                                                                    |
-| `closeDelay`  | **number**    | `8000`        | Time on millisecond that it will take to close the tooltip.                                                                                                                       |
-| `zIndex`      | **number**    | `10`          | Spacing between the component and the floating tooltip.                                                                                                                           |
-| `placement`   | **Placement** | `top`         | Placement for a component. Available options are `top`, `top-start`, `top-end`, `bottom`, `bottom-start`, `bottom-end`, `left`, `right`.                                          |
-| `className`   | **string**    | -             | Alert component className.                                                                                                                                                        |
-| `showArrow`   | **boolean**   | `true`        | This property can be used to control whether or not an arrow is displayed.                                                                                                        |
+| Name          | Type          | Default value | Description                                                                                                                                        |
+| ------------- | ------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`    | **ReactNode** | -             | It accepts any type of the followins `boolean`,`null`,`undefined`,`ReactFragment`,`ReactPortal`,`ReactChild`                                       |
+| `theme`       | **string**    | `purple`      | This property can be used to set the theme of the component. The possible values for the theme property are `info`, `light`, `dark`, and `purple`. |
+| `show`        | **boolean**   | -             | This property can be used to control whether or not the component is displayed.                                                                    |
+| `text`        | **string**    | -             | This property can be used to set the text that is displayed by the component.                                                                      |
+| `openOnHover` | **boolean**   | `false`       | Designates whether the tooltip should open on activator hover.                                                                                     |
+| `closeDelay`  | **number**    | `4000`        | Time on millisecond that it will take to close the tooltip.                                                                                        |
+| `zIndex`      | **number**    | `10`          | Spacing between the component and the floating tooltip.                                                                                            |
+| `placement`   | **Placement** | `top`         | Placement for a component. Available options are `top`, `top-start`, `top-end`, `bottom`, `bottom-start`, `bottom-end`, `left`, `right`.           |
+| `className`   | **string**    | -             | Alert component className.                                                                                                                         |
+| `showArrow`   | **boolean**   | `true`        | This property can be used to control whether or not an arrow is displayed.                                                                         |
+| `fit`         | **boolean**   | `false`       | This property allows the Tooltip to be adjusted to the length of the associated component.                                                         |
 
 ## Examples
 
@@ -54,15 +55,6 @@ Alert component to display messages within a container.
       <Tooltip theme="info" text="Info Theme" show>
         <Button size="md">Button</Button>
       </Tooltip>
-      <Tooltip theme="warning" text="Warning Theme" show>
-        <Button size="md">Button</Button>
-      </Tooltip>
-      <Tooltip theme="success" text="Success Theme" show>
-        <Button size="md">Button</Button>
-      </Tooltip>
-      <Tooltip theme="error" text="Error Theme" show>
-        <Button size="md">Button</Button>
-      </Tooltip>
     </div>
   </Flexbox>
 </Demo>
@@ -84,15 +76,6 @@ function Component() {
       </Tooltip>
       <Tooltip theme="info" show>
         <Button size="md">Info</Button>
-      </Tooltip>
-      <Tooltip theme="warning" show>
-        <Button size="md">Warning</Button>
-      </Tooltip>
-      <Tooltip theme="success" show>
-        <Button size="md">Success</Button>
-      </Tooltip>
-      <Tooltip theme="error" show>
-        <Button size="md">Error</Button>
       </Tooltip>
     </>
   )
@@ -118,9 +101,9 @@ function Component() {
         <Tooltip placement="top-start" text="Top-start" show>
           <Button size="md">Button</Button>
         </Tooltip>
-          <Tooltip placement="top-end" text="Top-end" show>
-            <Button size="md">Button</Button>
-          </Tooltip>
+        <Tooltip placement="top-end" text="Top-end" show>
+          <Button size="md">Button</Button>
+        </Tooltip>
       </div>
     </Flexbox>
   </Flexbox>
@@ -219,10 +202,51 @@ function Component() {
 function Component() {
   return (
     <>
-      <Tooltip placement="left" show>
+      <Tooltip placement="left" text="Left" show>
         <Button>Button</Button>
       </Tooltip>
-      <Tooltip placement="right" show>
+      <Tooltip placement="right" text="Right" show>
+        <Button>Button</Button>
+      </Tooltip>
+    </>
+  )
+}
+```
+
+### Fit
+
+<Demo title="Fit property" background={colors.bgGrey}>
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Flexbox flex-direction="column">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '110px' }}>
+        <div style={{ marginTop: '50px' }}>
+          <Tooltip text="This is a large text" fit="false" show>
+            <Button size="md">Button</Button>
+          </Tooltip>
+        </div>
+        <Tooltip text="This is another large text" fit="true" show>
+          <Button size="md">Button</Button>
+        </Tooltip>
+      </div>
+    </Flexbox>
+  </Flexbox>
+</Demo>
+
+```jsx
+// Examples of Sides Placement
+function Component() {
+  return (
+    <>
+      {/* `false` is the default value. */}
+      <Tooltip text="This is a large text" show>
+        <Button>Button</Button>
+      </Tooltip>
+      <Tooltip text="This is another large text" fit="true" show>
         <Button>Button</Button>
       </Tooltip>
     </>
