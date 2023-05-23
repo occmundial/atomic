@@ -19,8 +19,6 @@ import { useOpenTooltipState } from './hooks'
 
 const { infoLight, white, grey900, info } = colors
 
-const maxWidth = 220
-
 enum Themes {
   DARK = 'dark',
   LIGHT = 'light',
@@ -52,21 +50,23 @@ export interface TooltipProps {
     container: string
   }
   fit?: boolean
+  maxWidth?: number
   onShowChange?: (show: boolean) => void
 }
 
 export default function Tooltip({
+  show,
   children,
   text,
-  placement = 'top',
+  theme,
   openOnHover = false,
   closeDelay = 4000,
-  theme,
-  showArrow = true,
-  fit = false,
-  show,
   zIndex = 10,
+  placement = 'top',
+  showArrow = true,
   className,
+  fit = false,
+  maxWidth = 220,
   onShowChange
 }: TooltipProps) {
   const classes = useStyles()
@@ -78,7 +78,7 @@ export default function Tooltip({
     const middlewares = [
       offset(8),
       size({
-        apply({ availableWidth, availableHeight, elements }) {
+        apply({ availableWidth, elements }) {
           // Do things with the data, e.g.
           Object.assign(elements.floating.style, {
             maxWidth: `${
