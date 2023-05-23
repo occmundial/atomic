@@ -17,34 +17,20 @@ import classNames from 'classnames'
 import colors from '@/tokens/colors'
 import { useOpenTooltipState } from './hooks'
 
-const {
-  successLight,
-  errorLight,
-  warningLight,
-  infoLight,
-  white,
-  grey900,
-  info
-} = colors
+const { infoLight, white, grey900, info } = colors
 
 enum Themes {
   DARK = 'dark',
   LIGHT = 'light',
-  SUCCESS = 'success',
   INFO = 'info',
-  PURPLE = 'purple',
-  WARNING = 'warning',
-  ERROR = 'error'
+  PURPLE = 'purple'
 }
 
 const colorsArrow = {
   [Themes.DARK]: grey900,
   [Themes.LIGHT]: white,
-  [Themes.SUCCESS]: successLight,
   [Themes.INFO]: infoLight,
-  [Themes.PURPLE]: info,
-  [Themes.WARNING]: warningLight,
-  [Themes.ERROR]: errorLight
+  [Themes.PURPLE]: info
 }
 
 type TooltipThemes = `${Themes}`
@@ -72,10 +58,10 @@ export default function Tooltip({
   text,
   placement = 'top',
   openOnHover = false,
-  closeDelay = 8000,
+  closeDelay = 4000,
   theme,
   showArrow = true,
-  fit = true,
+  fit = false,
   show,
   zIndex = 10,
   className,
