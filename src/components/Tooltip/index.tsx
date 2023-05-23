@@ -46,8 +46,8 @@ export interface TooltipProps {
   placement?: Placement
   showArrow?: boolean
   className?: {
-    activator: string
-    container: string
+    activator?: string
+    container?: string
   }
   fit?: boolean
   width?: number | string
