@@ -9,7 +9,8 @@ import {
   FloatingPortal,
   Placement,
   arrow,
-  FloatingArrow
+  FloatingArrow,
+  shift
 } from '@floating-ui/react'
 import useStyles from './styles'
 import classNames from 'classnames'
@@ -58,7 +59,10 @@ export interface TooltipProps {
   zIndex?: number
   placement?: Placement
   showArrow?: boolean
-  className?: string
+  className?: {
+    activator: string
+    container: string
+  }
   onShowChange?: (show: boolean) => void
 }
 
@@ -72,6 +76,7 @@ export default function Tooltip({
   showArrow = true,
   show,
   zIndex = 10,
+  className,
   onShowChange
 }: TooltipProps) {
   const classes = useStyles()
@@ -80,7 +85,7 @@ export default function Tooltip({
   const [open, setOpen] = useOpenTooltipState(show, onShowChange, closeDelay)
 
   const getMiddlewares = () => {
-    const middlewares = [offset(8)]
+    const middlewares = [offset(8), shift({ padding: 8, mainAxis: false })]
     showArrow && middlewares.push(arrow({ element: arrowRef, padding: 16 }))
     return middlewares
   }
@@ -105,7 +110,7 @@ export default function Tooltip({
       <div
         ref={refs.setReference}
         {...getReferenceProps()}
-        className={classes.activator}
+        className={classNames(classes.activator, className?.activator)}
       >
         {children}
       </div>
@@ -115,6 +120,7 @@ export default function Tooltip({
           <div
             className={classNames(
               classes.container,
+              className?.container,
               classes[theme] || classes.purple
             )}
             ref={refs.setFloating}
