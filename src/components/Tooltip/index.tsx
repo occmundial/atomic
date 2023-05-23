@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo } from 'react'
+import { useRef, useCallback } from 'react'
 import {
   useFloating,
   autoUpdate,
@@ -10,7 +10,8 @@ import {
   Placement,
   arrow,
   FloatingArrow,
-  shift
+  shift,
+  size
 } from '@floating-ui/react'
 import useStyles from './styles'
 import classNames from 'classnames'
@@ -63,6 +64,7 @@ export interface TooltipProps {
     activator: string
     container: string
   }
+  fit?: boolean
   onShowChange?: (show: boolean) => void
 }
 
@@ -74,6 +76,7 @@ export default function Tooltip({
   closeDelay = 8000,
   theme,
   showArrow = true,
+  fit = true,
   show,
   zIndex = 10,
   className,
@@ -84,11 +87,21 @@ export default function Tooltip({
 
   const [open, setOpen] = useOpenTooltipState(show, onShowChange, closeDelay)
 
-  const getMiddlewares = () => {
+  const getMiddlewares = useCallback(() => {
     const middlewares = [offset(8), shift({ padding: 8, mainAxis: false })]
     showArrow && middlewares.push(arrow({ element: arrowRef, padding: 16 }))
+    fit &&
+      middlewares.push(
+        size({
+          apply({ elements, rects }) {
+            Object.assign(elements.floating.style, {
+              width: `${rects.reference.width}px`
+            })
+          }
+        })
+      )
     return middlewares
-  }
+  }, [showArrow, fit])
 
   const { refs, floatingStyles, context } = useFloating({
     open: open,
