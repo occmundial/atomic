@@ -10,7 +10,6 @@ import {
   Placement,
   arrow,
   FloatingArrow,
-  shift,
   size
 } from '@floating-ui/react'
 import useStyles from './styles'
@@ -88,7 +87,7 @@ export default function Tooltip({
   const [open, setOpen] = useOpenTooltipState(show, onShowChange, closeDelay)
 
   const getMiddlewares = useCallback(() => {
-    const middlewares = [offset(8), shift({ padding: 8, mainAxis: false })]
+    const middlewares = [offset(8)]
     showArrow && middlewares.push(arrow({ element: arrowRef, padding: 16 }))
     fit &&
       middlewares.push(
