@@ -10,8 +10,7 @@ export default createUseStyles({
     padding: '16px',
     borderRadius: '4px',
     fontSize: '13px',
-    lineHeight: '16px',
-    maxWidth: '260px'
+    lineHeight: '16px'
   },
   info: {
     background: infoLight,
