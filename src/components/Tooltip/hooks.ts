@@ -4,20 +4,25 @@ import { useThrottle } from '@/src/hooks/useThrottle'
 type OpenTooltipState = [boolean, (show: boolean) => void]
 
 export function useOpenTooltipState(
-  openManual: boolean,
-  setOpenManual: (show: boolean) => void,
+  openExternal: boolean,
+  setOpenExternal: (show: boolean) => void,
   closeDelay: number
 ): OpenTooltipState {
   const delay = useThrottle({ trailing: true, leading: false })
 
-  const [openAuto, setInnerShow] = useState(false)
+  const [openInternal, setOpenInternal] = useState(false)
 
-  const open = useMemo(() => openManual ?? openAuto, [openManual, openAuto])
+  const open = useMemo(
+    () => openExternal ?? openInternal,
+    [openExternal, openInternal]
+  )
 
   const setOpenSource = useMemo(
     () =>
-      openManual !== undefined ? setOpenManual ?? (() => {}) : setInnerShow,
-    [openManual, setOpenManual, setInnerShow]
+      openExternal !== undefined
+        ? setOpenExternal ?? (() => {})
+        : setOpenInternal,
+    [openExternal, setOpenExternal, setOpenInternal]
   )
 
   const setOpenSourceDelay = useMemo(
@@ -39,10 +44,10 @@ export function useOpenTooltipState(
   }
 
   useEffect(() => {
-    if (openManual === false || closeDelay <= 0) return
+    if (openExternal === false || closeDelay <= 0) return
     delay.cancel()
     setOpenSourceDelay(false)
-  }, [openManual, setOpenSourceDelay, setOpenSource, delay, closeDelay])
+  }, [openExternal, setOpenSourceDelay, setOpenSource, delay, closeDelay])
 
   return [open, setOpen]
 }

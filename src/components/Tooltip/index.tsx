@@ -77,24 +77,20 @@ export default function Tooltip({
   const getMiddlewares = useCallback(() => {
     const middlewares = [offset(8)]
     showArrow && middlewares.push(arrow({ element: arrowRef, padding: 16 }))
-
     middlewares.push(
-      fit
-        ? size({
-            apply({ elements, rects }) {
-              Object.assign(elements.floating.style, {
-                width: `${rects.reference.width}px`
-              })
-            }
-          })
-        : size({
-            apply({ availableWidth, elements }) {
-              Object.assign(elements.floating.style, {
-                maxWidth: `${availableWidth}px`,
-                width: typeof width === 'string' ? width : `${width}px`
-              })
-            }
-          })
+      size({
+        apply({ elements, rects, availableWidth }) {
+          const styles: Record<string, string> = {}
+          if (fit) {
+            styles.width = `${rects.reference.width}px`
+          } else {
+            styles.maxWidth = `${availableWidth}px`
+            if (width)
+              styles.width = typeof width === 'string' ? width : `${width}px`
+          }
+          Object.assign(elements.floating.style, styles)
+        }
+      })
     )
     return middlewares
   }, [showArrow, fit, width])
