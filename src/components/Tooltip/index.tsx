@@ -50,7 +50,7 @@ export interface TooltipProps {
     container: string
   }
   fit?: boolean
-  maxWidth?: number | 'auto'
+  width?: number | string
   onShowChange?: (show: boolean) => void
 }
 
@@ -66,7 +66,7 @@ export default function Tooltip({
   showArrow = true,
   className,
   fit = false,
-  maxWidth = 220,
+  width = 220,
   onShowChange
 }: TooltipProps) {
   const classes = useStyles()
@@ -75,33 +75,29 @@ export default function Tooltip({
   const [open, setOpen] = useOpenTooltipState(show, onShowChange, closeDelay)
 
   const getMiddlewares = useCallback(() => {
-    const middlewares = [
-      offset(8),
-      size({
-        apply({ availableWidth, elements }) {
-          // Do things with the data, e.g.
-          Object.assign(elements.floating.style, {
-            maxWidth:
-              maxWidth === 'auto'
-                ? maxWidth
-                : `${availableWidth < maxWidth ? availableWidth : maxWidth}px`
-          })
-        }
-      })
-    ]
+    const middlewares = [offset(8)]
     showArrow && middlewares.push(arrow({ element: arrowRef, padding: 16 }))
-    fit &&
-      middlewares.push(
-        size({
-          apply({ elements, rects }) {
-            Object.assign(elements.floating.style, {
-              width: `${rects.reference.width}px`
-            })
-          }
-        })
-      )
+
+    middlewares.push(
+      fit
+        ? size({
+            apply({ elements, rects }) {
+              Object.assign(elements.floating.style, {
+                width: `${rects.reference.width}px`
+              })
+            }
+          })
+        : size({
+            apply({ availableWidth, elements }) {
+              Object.assign(elements.floating.style, {
+                maxWidth: `${availableWidth}px`,
+                width: typeof width === 'string' ? width : `${width}px`
+              })
+            }
+          })
+    )
     return middlewares
-  }, [showArrow, fit, maxWidth])
+  }, [showArrow, fit, width])
 
   const { refs, floatingStyles, context } = useFloating({
     open: open,
