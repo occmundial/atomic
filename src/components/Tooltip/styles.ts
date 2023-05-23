@@ -16,7 +16,7 @@ const {
 
 export default createUseStyles({
   activator: {
-    display: 'inline'
+    display: 'inline-block'
   },
   container: {
     padding: '16px',

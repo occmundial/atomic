@@ -59,7 +59,10 @@ export interface TooltipProps {
   zIndex?: number
   placement?: Placement
   showArrow?: boolean
-  className?: string
+  className?: {
+    activator: string
+    container: string
+  }
   fit?: boolean
   onShowChange?: (show: boolean) => void
 }
@@ -75,6 +78,7 @@ export default function Tooltip({
   fit = true,
   show,
   zIndex = 10,
+  className,
   onShowChange
 }: TooltipProps) {
   const classes = useStyles()
@@ -118,7 +122,7 @@ export default function Tooltip({
       <div
         ref={refs.setReference}
         {...getReferenceProps()}
-        className={classes.activator}
+        className={classNames(classes.activator, className?.activator)}
       >
         {children}
       </div>
@@ -128,6 +132,7 @@ export default function Tooltip({
           <div
             className={classNames(
               classes.container,
+              className?.container,
               classes[theme] || classes.purple
             )}
             ref={refs.setFloating}
