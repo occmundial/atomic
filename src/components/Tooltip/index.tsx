@@ -1,4 +1,4 @@
-import { useRef, useCallback } from 'react'
+import { useRef, useMemo } from 'react'
 import {
   useFloating,
   autoUpdate,
@@ -74,24 +74,24 @@ export default function Tooltip({
 
   const [open, setOpen] = useOpenTooltipState(show, onShowChange, closeDelay)
 
-  const getMiddlewares = useCallback(() => {
+  const getMiddlewares = useMemo(() => {
     const middlewares = [offset(16)]
     showArrow && middlewares.push(arrow({ element: arrowRef, padding: 16 }))
-    middlewares.push(
-      size({
-        apply({ elements, rects, availableWidth }) {
-          const styles: Record<string, string> = {}
-          if (fit) {
-            styles.width = `${rects.reference.width}px`
-          } else {
-            styles.maxWidth = `${availableWidth}px`
-            if (width)
-              styles.width = typeof width === 'string' ? width : `${width}px`
-          }
-          Object.assign(elements.floating.style, styles)
+    const sizeMiddleware = size({
+      apply({ elements, rects, availableWidth }) {
+        const styles: Record<string, string> = {}
+        if (fit) {
+          styles.width = `${rects.reference.width}px`
+        } else {
+          styles.maxWidth = `${availableWidth}px`
+          if (width)
+            styles.width = typeof width === 'string' ? width : `${width}px`
         }
-      })
-    )
+        Object.assign(elements.floating.style, styles)
+      }
+    })
+    sizeMiddleware.name = `size-${fit}-${width}`
+    middlewares.push(sizeMiddleware)
     return middlewares
   }, [showArrow, fit, width])
 
@@ -100,7 +100,7 @@ export default function Tooltip({
     onOpenChange: setOpen,
     placement,
     whileElementsMounted: autoUpdate,
-    middleware: getMiddlewares()
+    middleware: getMiddlewares
   })
 
   const hover = useHover(context, {
