@@ -6,7 +6,7 @@ export default createUseStyles({
   activator: {
     display: 'inline-block'
   },
-  container: {
+  tooltip: {
     padding: '16px',
     borderRadius: '4px',
     fontSize: '13px',

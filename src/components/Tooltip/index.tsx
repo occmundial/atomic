@@ -47,7 +47,7 @@ export interface TooltipProps {
   showArrow?: boolean
   className?: {
     activator?: string
-    container?: string
+    tooltip?: string
   }
   fit?: boolean
   width?: number | string
@@ -124,8 +124,8 @@ export default function Tooltip({
         {open && (
           <div
             className={classNames(
-              classes.container,
-              className?.container,
+              classes.tooltip,
+              className?.tooltip,
               classes[theme] || classes.purple
             )}
             ref={refs.setFloating}
