@@ -1,3 +1,14 @@
+# [2.0.0-beta.16](https://github.com/occmundial/atomic/compare/v2.0.0-beta.15...v2.0.0-beta.16) (2023-05-25)
+
+
+### Features
+
+* Added dependencies ([912e523](https://github.com/occmundial/atomic/commit/912e52376b1f33ba5488087bb9a0e50aa38f7c3b))
+* Added onShowChange to documentation ([fd535e8](https://github.com/occmundial/atomic/commit/fd535e844411185d8e0dccf7bce9aa799ff97e14))
+* Added Tooltip component ([8871e97](https://github.com/occmundial/atomic/commit/8871e974bbb4f17dc8b3cf54e831057d43d2ebb0))
+* Tooltip Documentation ([2ddbc5e](https://github.com/occmundial/atomic/commit/2ddbc5ebf1dfcd7703a1a8237b34e6b7602482b0))
+* Tooltip Hooks ([f7fad1c](https://github.com/occmundial/atomic/commit/f7fad1c3388087b2da8c4b7a45282606f7ba16f0))
+
 # [2.0.0-beta.15](https://github.com/occmundial/atomic/compare/v2.0.0-beta.14...v2.0.0-beta.15) (2023-03-06)
 
 
