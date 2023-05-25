@@ -27,6 +27,8 @@
   "dependencies": {
     "@artsy/fresnel": "^6.1.0",
     "@babel/runtime": "^7.14.8",
+    "@floating-ui/react": "^0.24.1",
+    "@types/lodash": "^4.14.194",
     "classnames": "^2.3.1",
     "hex-rgba": "^1.0.2",
     "lodash": "^4.17.21",
