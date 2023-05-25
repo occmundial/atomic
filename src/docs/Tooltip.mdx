@@ -1,0 +1,258 @@
+---
+title: Tooltip
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Tooltip from '@/components/Tooltip'
+
+# Tooltip
+
+---
+
+Alert component to display messages within a container.
+
+## Props
+
+| Name          | Type                   | Default value | Description                                                                                                                                                      |
+| ------------- | ---------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`    | **ReactNode**          | -             | It accepts any type of the followings `boolean`,`null`,`undefined`,`ReactFragment`,`ReactPortal`,`ReactChild`                                                    |
+| `theme`       | **string**             | `purple`      | This property can be used to set the theme of the component. The possible values for the theme property are `info`, `light`, `dark`, and `purple`.               |
+| `open`        | **boolean**            | -             | This property can be used to control whether or not the component is displayed.                                                                                  |
+| `text`        | **string**             | -             | This property can be used to set the text that is displayed by the component.                                                                                    |
+| `openOnHover` | **boolean**            | `false`       | Designates whether the tooltip should open on activator hover.                                                                                                   |
+| `closeDelay`  | **number**             | `4000`        | Time on millisecond that it will take to close the tooltip.                                                                                                      |
+| `zIndex`      | **number**             | `10`          | Sets the Tooltip stack order.                                                                                                                                    |
+| `placement`   | **Placement**          | `top`         | Allows to specify the placement of Tooltip. Available options are `top`, `top-start`, `top-end`, `bottom`, `bottom-start`, `bottom-end`, `left`, `right`.        |
+| `className`   | **object**             | -             | Allows to specify classes to activador and tooltip. Object has the next properties: `activator(string)`, `tooltip(string)`.                                      |
+| `showArrow`   | **boolean**            | `true`        | This property can be used to control whether or not an arrow is displayed.                                                                                       |
+| `fit`         | **boolean**            | `false`       | This property allows the Tooltip to be adjusted to the length of the associated component.                                                                       |
+| `width`       | **number/string/null** | `220`         | The "Width" property of the Tooltip enables modification of its width and accepts a number (e.g., 220), a string (e.g., '220px' or 'auto') or null as its value. |
+| `onChange`    | **function**           | ``            | Callback fired when the Tooltip show state changes. The function signature is (open: boolean) => void.                                                            |
+
+## Examples
+
+### Themes
+
+<Demo title="Themes for Tooltip" background={colors.bgGrey}>
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Flexbox flex-direction="column">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
+        <div style={{ marginTop: '70px' }}>
+          <Tooltip theme="light" text="Light Theme" open>
+            <Button size="md">Button</Button>
+          </Tooltip>
+        </div>
+        <Tooltip theme="dark" text="Dark Theme" open>
+          <Button size="md">Button</Button>
+        </Tooltip>
+        <Tooltip theme="purple" text="Purple Theme" open>
+          <Button size="md">Button</Button>
+        </Tooltip>
+        <Tooltip theme="info" text="Info Theme" open>
+          <Button size="md">Button</Button>
+        </Tooltip>
+      </div>
+    </Flexbox>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use Tooltip themes
+function Component() {
+  return (
+    <>
+      {/* `purple` is the default value. */}
+      <Tooltip>
+        <Button size="md">Purple</Button>
+      </Tooltip>
+      <Tooltip theme="light" open>
+        <Button size="md">Light</Button>
+      </Tooltip>
+      <Tooltip theme="dark" open>
+        <Button size="md">Dark</Button>
+      </Tooltip>
+      <Tooltip theme="info" open>
+        <Button size="md">Info</Button>
+      </Tooltip>
+    </>
+  )
+}
+```
+
+### Placement Top
+
+<Demo title="Types of top placement" background={colors.bgGrey}>
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Flexbox flex-direction="column">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '70px' }}>
+        <div style={{ marginTop: '70px' }}>
+          <Tooltip placement="top" text="Top" open>
+            <Button size="md">Button</Button>
+          </Tooltip>
+        </div>
+        <Tooltip placement="top-start" text="Top-start" open>
+          <Button size="md">Button</Button>
+        </Tooltip>
+        <Tooltip placement="top-end" text="Top-end" open>
+          <Button size="md">Button</Button>
+        </Tooltip>
+      </div>
+    </Flexbox>
+  </Flexbox>
+</Demo>
+
+```jsx
+// Examples of Top Placement
+function Component() {
+  return (
+    <>
+      {/* `top` is the default value. */}
+      <Tooltip open>
+        <Button>Button</Button>
+      </Tooltip>
+      <Tooltip placement="top-start" open>
+        <Button>Button</Button>
+      </Tooltip>
+      <Tooltip placement="top-end" open>
+        <Button>Button</Button>
+      </Tooltip>
+    </>
+  )
+}
+```
+
+### Placement Bottom
+
+<Demo title="Types of bottom placement" background={colors.bgGrey}>
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Flexbox flex-direction="column">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '70px' }}>
+        <Tooltip placement="bottom" text="Bottom" open>
+          <Button size="md">Button</Button>
+        </Tooltip>
+        <Tooltip placement="bottom-start" text="Bottom-start" open>
+          <Button size="md">Button</Button>
+        </Tooltip>
+        <div style={{ marginBottom: '70px' }}>
+          <Tooltip placement="bottom-end" text="Botton-end" open>
+            <Button size="md">Button</Button>
+          </Tooltip>
+        </div>
+      </div>
+    </Flexbox>
+  </Flexbox>
+</Demo>
+
+```jsx
+// Examples of Bottom Placement
+function Component() {
+  return (
+    <>
+      <Tooltip placement="bottom" open>
+        <Button>Button</Button>
+      </Tooltip>
+      <Tooltip placement="bottom-start" open>
+        <Button>Button</Button>
+      </Tooltip>
+      <Tooltip placement="bottom-end" open>
+        <Button>Button</Button>
+      </Tooltip>
+    </>
+  )
+}
+```
+
+### Placement Sides
+
+<Demo title="Types of sides placement" background={colors.bgGrey}>
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Flexbox flex-direction="column">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <Tooltip placement="left" text="Left" open>
+          <Button size="md">Button</Button>
+        </Tooltip>
+        <Tooltip placement="right" text="Right" open>
+          <Button size="md">Button</Button>
+        </Tooltip>
+      </div>
+    </Flexbox>
+  </Flexbox>
+</Demo>
+
+```jsx
+// Examples of Sides Placement
+function Component() {
+  return (
+    <>
+      <Tooltip placement="left" text="Left" open>
+        <Button>Button</Button>
+      </Tooltip>
+      <Tooltip placement="right" text="Right" open>
+        <Button>Button</Button>
+      </Tooltip>
+    </>
+  )
+}
+```
+
+### Fit
+
+<Demo title="Fit property" background={colors.bgGrey}>
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Flexbox flex-direction="column">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '110px' }}>
+        <div style={{ marginTop: '70px' }}>
+          <Tooltip text="This is a large text" open>
+            <Button size="md">Button</Button>
+          </Tooltip>
+        </div>
+        <Tooltip text="This is another large text" fit={true} open>
+          <Button size="md">Button</Button>
+        </Tooltip>
+      </div>
+    </Flexbox>
+  </Flexbox>
+</Demo>
+
+```jsx
+// Examples of Sides Placement
+function Component() {
+  return (
+    <>
+      {/* `false` is the default value. */}
+      <Tooltip text="This is a large text" open>
+        <Button>Button</Button>
+      </Tooltip>
+      <Tooltip text="This is another large text" fit={true} open>
+        <Button>Button</Button>
+      </Tooltip>
+    </>
+  )
+}
+```

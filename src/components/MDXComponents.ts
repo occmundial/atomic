@@ -14,12 +14,14 @@ import Card from '@/components/Card'
 import Flexbox from '@/components/Flexbox'
 import Text from '@/components/Text'
 import Anchor from './Anchor'
+import Tooltip from './Tooltip'
 
 const mdxComponents = {
   // Library components
   Button,
   Card,
   Flexbox,
+  Tooltip,
   // Docs components
   Demo,
   code: Code,
