@@ -31,6 +31,7 @@ import TextField from './TextField'
 import Toaster from './Toaster'
 import { toastLauncher } from './Toaster/helper'
 import Toggle from './Toggle'
+import Tooltip from './Tooltip'
 
 export {
   Alert,
@@ -67,5 +68,6 @@ export {
   TextField,
   Toaster,
   toastLauncher,
-  Toggle
+  Toggle,
+  Tooltip
 }
