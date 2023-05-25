@@ -36,7 +36,7 @@ const colorsArrow = {
 type TooltipThemes = `${Themes}`
 
 export interface TooltipProps {
-  show?: boolean
+  open?: boolean
   children?: React.ReactNode
   text: string
   theme?: TooltipThemes
@@ -51,11 +51,11 @@ export interface TooltipProps {
   }
   fit?: boolean
   width?: number | string
-  onShowChange?: (show: boolean) => void
+  onChange?: (open: boolean) => void
 }
 
 export default function Tooltip({
-  show,
+  open: openProp,
   children,
   text,
   theme,
@@ -67,12 +67,12 @@ export default function Tooltip({
   className,
   fit = false,
   width = 220,
-  onShowChange
+  onChange
 }: TooltipProps) {
   const classes = useStyles()
   const arrowRef = useRef(null)
 
-  const [open, setOpen] = useOpenTooltipState(show, onShowChange, closeDelay)
+  const [open, setOpen] = useOpenTooltipState(openProp, onChange, closeDelay)
 
   const getMiddlewares = useMemo(() => {
     const middlewares = [offset(16)]
