@@ -18,7 +18,7 @@ Alert component to display messages within a container.
 | ------------- | ---------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `children`    | **ReactNode**          | -             | It accepts any type of the followings `boolean`,`null`,`undefined`,`ReactFragment`,`ReactPortal`,`ReactChild`                                                    |
 | `theme`       | **string**             | `purple`      | This property can be used to set the theme of the component. The possible values for the theme property are `info`, `light`, `dark`, and `purple`.               |
-| `show`        | **boolean**            | -             | This property can be used to control whether or not the component is displayed.                                                                                  |
+| `open`        | **boolean**            | -             | This property can be used to control whether or not the component is displayed.                                                                                  |
 | `text`        | **string**             | -             | This property can be used to set the text that is displayed by the component.                                                                                    |
 | `openOnHover` | **boolean**            | `false`       | Designates whether the tooltip should open on activator hover.                                                                                                   |
 | `closeDelay`  | **number**             | `4000`        | Time on millisecond that it will take to close the tooltip.                                                                                                      |
@@ -44,17 +44,17 @@ Alert component to display messages within a container.
     <Flexbox flex-direction="column">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
         <div style={{ marginTop: '70px' }}>
-          <Tooltip theme="light" text="Light Theme" show>
+          <Tooltip theme="light" text="Light Theme" open>
             <Button size="md">Button</Button>
           </Tooltip>
         </div>
-        <Tooltip theme="dark" text="Dark Theme" show>
+        <Tooltip theme="dark" text="Dark Theme" open>
           <Button size="md">Button</Button>
         </Tooltip>
-        <Tooltip theme="purple" text="Purple Theme" show>
+        <Tooltip theme="purple" text="Purple Theme" open>
           <Button size="md">Button</Button>
         </Tooltip>
-        <Tooltip theme="info" text="Info Theme" show>
+        <Tooltip theme="info" text="Info Theme" open>
           <Button size="md">Button</Button>
         </Tooltip>
       </div>
@@ -71,13 +71,13 @@ function Component() {
       <Tooltip>
         <Button size="md">Purple</Button>
       </Tooltip>
-      <Tooltip theme="light" show>
+      <Tooltip theme="light" open>
         <Button size="md">Light</Button>
       </Tooltip>
-      <Tooltip theme="dark" show>
+      <Tooltip theme="dark" open>
         <Button size="md">Dark</Button>
       </Tooltip>
-      <Tooltip theme="info" show>
+      <Tooltip theme="info" open>
         <Button size="md">Info</Button>
       </Tooltip>
     </>
@@ -97,14 +97,14 @@ function Component() {
     <Flexbox flex-direction="column">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '70px' }}>
         <div style={{ marginTop: '70px' }}>
-          <Tooltip placement="top" text="Top" show>
+          <Tooltip placement="top" text="Top" open>
             <Button size="md">Button</Button>
           </Tooltip>
         </div>
-        <Tooltip placement="top-start" text="Top-start" show>
+        <Tooltip placement="top-start" text="Top-start" open>
           <Button size="md">Button</Button>
         </Tooltip>
-        <Tooltip placement="top-end" text="Top-end" show>
+        <Tooltip placement="top-end" text="Top-end" open>
           <Button size="md">Button</Button>
         </Tooltip>
       </div>
@@ -118,13 +118,13 @@ function Component() {
   return (
     <>
       {/* `top` is the default value. */}
-      <Tooltip show>
+      <Tooltip open>
         <Button>Button</Button>
       </Tooltip>
-      <Tooltip placement="top-start" show>
+      <Tooltip placement="top-start" open>
         <Button>Button</Button>
       </Tooltip>
-      <Tooltip placement="top-end" show>
+      <Tooltip placement="top-end" open>
         <Button>Button</Button>
       </Tooltip>
     </>
@@ -143,14 +143,14 @@ function Component() {
   >
     <Flexbox flex-direction="column">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '70px' }}>
-        <Tooltip placement="bottom" text="Bottom" show>
+        <Tooltip placement="bottom" text="Bottom" open>
           <Button size="md">Button</Button>
         </Tooltip>
-        <Tooltip placement="bottom-start" text="Bottom-start" show>
+        <Tooltip placement="bottom-start" text="Bottom-start" open>
           <Button size="md">Button</Button>
         </Tooltip>
         <div style={{ marginBottom: '70px' }}>
-          <Tooltip placement="bottom-end" text="Botton-end" show>
+          <Tooltip placement="bottom-end" text="Botton-end" open>
             <Button size="md">Button</Button>
           </Tooltip>
         </div>
@@ -164,13 +164,13 @@ function Component() {
 function Component() {
   return (
     <>
-      <Tooltip placement="bottom" show>
+      <Tooltip placement="bottom" open>
         <Button>Button</Button>
       </Tooltip>
-      <Tooltip placement="bottom-start" show>
+      <Tooltip placement="bottom-start" open>
         <Button>Button</Button>
       </Tooltip>
-      <Tooltip placement="bottom-end" show>
+      <Tooltip placement="bottom-end" open>
         <Button>Button</Button>
       </Tooltip>
     </>
@@ -189,10 +189,10 @@ function Component() {
   >
     <Flexbox flex-direction="column">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        <Tooltip placement="left" text="Left" show>
+        <Tooltip placement="left" text="Left" open>
           <Button size="md">Button</Button>
         </Tooltip>
-        <Tooltip placement="right" text="Right" show>
+        <Tooltip placement="right" text="Right" open>
           <Button size="md">Button</Button>
         </Tooltip>
       </div>
@@ -205,10 +205,10 @@ function Component() {
 function Component() {
   return (
     <>
-      <Tooltip placement="left" text="Left" show>
+      <Tooltip placement="left" text="Left" open>
         <Button>Button</Button>
       </Tooltip>
-      <Tooltip placement="right" text="Right" show>
+      <Tooltip placement="right" text="Right" open>
         <Button>Button</Button>
       </Tooltip>
     </>
@@ -228,11 +228,11 @@ function Component() {
     <Flexbox flex-direction="column">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '110px' }}>
         <div style={{ marginTop: '70px' }}>
-          <Tooltip text="This is a large text" show>
+          <Tooltip text="This is a large text" open>
             <Button size="md">Button</Button>
           </Tooltip>
         </div>
-        <Tooltip text="This is another large text" fit={true} show>
+        <Tooltip text="This is another large text" fit={true} open>
           <Button size="md">Button</Button>
         </Tooltip>
       </div>
@@ -246,10 +246,10 @@ function Component() {
   return (
     <>
       {/* `false` is the default value. */}
-      <Tooltip text="This is a large text" show>
+      <Tooltip text="This is a large text" open>
         <Button>Button</Button>
       </Tooltip>
-      <Tooltip text="This is another large text" fit={true} show>
+      <Tooltip text="This is another large text" fit={true} open>
         <Button>Button</Button>
       </Tooltip>
     </>
