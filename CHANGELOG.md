@@ -1,3 +1,11 @@
+# [2.0.0-beta.17](https://github.com/occmundial/atomic/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2023-05-26)
+
+
+### Bug Fixes
+
+* Added missing Tooltip export ([8e33217](https://github.com/occmundial/atomic/commit/8e33217c4f0b6e692a04d0d466d7ebbce3f82bba))
+* Moved Tooltip component to lib ([e71f7e7](https://github.com/occmundial/atomic/commit/e71f7e7b746366832597d45c441b17c92bc9e6e3))
+
 # [2.0.0-beta.16](https://github.com/occmundial/atomic/compare/v2.0.0-beta.15...v2.0.0-beta.16) (2023-05-25)
 
 
