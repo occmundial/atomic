@@ -6,7 +6,6 @@ import {
   useHover,
   useRole,
   useInteractions,
-  FloatingPortal,
   Placement,
   arrow,
   FloatingArrow,
@@ -120,31 +119,29 @@ export default function Tooltip({
         {children}
       </div>
 
-      <FloatingPortal>
-        {open && (
-          <div
-            className={classNames(
-              classes.tooltip,
-              className?.tooltip,
-              classes[theme] || classes.purple
-            )}
-            ref={refs.setFloating}
-            style={{ ...floatingStyles, zIndex }}
-            {...getFloatingProps()}
-          >
-            {text}
-            {showArrow && (
-              <FloatingArrow
-                ref={arrowRef}
-                context={context}
-                fill={colorsArrow[theme] || colorsArrow[Themes.PURPLE]}
-                width={14}
-                height={10}
-              />
-            )}
-          </div>
-        )}
-      </FloatingPortal>
+      {open && (
+        <div
+          className={classNames(
+            classes.tooltip,
+            className?.tooltip,
+            classes[theme] || classes.purple
+          )}
+          ref={refs.setFloating}
+          style={{ ...floatingStyles, zIndex }}
+          {...getFloatingProps()}
+        >
+          {text}
+          {showArrow && (
+            <FloatingArrow
+              ref={arrowRef}
+              context={context}
+              fill={colorsArrow[theme] || colorsArrow[Themes.PURPLE]}
+              width={14}
+              height={10}
+            />
+          )}
+        </div>
+      )}
     </>
   )
 }
