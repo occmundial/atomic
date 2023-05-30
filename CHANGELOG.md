@@ -1,3 +1,10 @@
+# [2.0.0-beta.18](https://github.com/occmundial/atomic/compare/v2.0.0-beta.17...v2.0.0-beta.18) (2023-05-30)
+
+
+### Bug Fixes
+
+* Tooltip delay and position on display fiexed ([7d85a37](https://github.com/occmundial/atomic/commit/7d85a3732e541da94c2cbcc7ac3b3e8fe38fb5b7))
+
 # [2.0.0-beta.17](https://github.com/occmundial/atomic/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2023-05-26)
 
 
