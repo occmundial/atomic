@@ -1,3 +1,10 @@
+# [2.0.0-beta.19](https://github.com/occmundial/atomic/compare/v2.0.0-beta.18...v2.0.0-beta.19) (2023-05-31)
+
+
+### Features
+
+* Add strategy prop ([4ee833f](https://github.com/occmundial/atomic/commit/4ee833fc01b8b5497576ff03c5afecd1d39849f9))
+
 # [2.0.0-beta.18](https://github.com/occmundial/atomic/compare/v2.0.0-beta.17...v2.0.0-beta.18) (2023-05-30)
 
 
