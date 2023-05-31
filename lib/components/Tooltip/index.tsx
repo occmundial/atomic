@@ -9,7 +9,8 @@ import {
   Placement,
   arrow,
   FloatingArrow,
-  size
+  size,
+  FloatingPortal
 } from '@floating-ui/react'
 import useStyles from './styles'
 import classNames from 'classnames'
@@ -49,6 +50,7 @@ export interface TooltipProps {
     tooltip?: string
   }
   fit?: boolean
+  strategy?: 'absolute' | 'fixed'
   width?: number | string
   onChange?: (open: boolean) => void
 }
@@ -66,6 +68,7 @@ export default function Tooltip({
   className,
   fit = false,
   width = 220,
+  strategy = 'absolute',
   onChange
 }: TooltipProps) {
   const classes = useStyles()
@@ -98,6 +101,7 @@ export default function Tooltip({
     open: open,
     onOpenChange: setOpen,
     placement,
+    strategy,
     whileElementsMounted: autoUpdate,
     middleware: getMiddlewares
   })
@@ -120,27 +124,29 @@ export default function Tooltip({
       </div>
 
       {open && (
-        <div
-          className={classNames(
-            classes.tooltip,
-            className?.tooltip,
-            classes[theme] || classes.purple
-          )}
-          ref={refs.setFloating}
-          style={{ ...floatingStyles, zIndex }}
-          {...getFloatingProps()}
-        >
-          {text}
-          {showArrow && (
-            <FloatingArrow
-              ref={arrowRef}
-              context={context}
-              fill={colorsArrow[theme] || colorsArrow[Themes.PURPLE]}
-              width={14}
-              height={10}
-            />
-          )}
-        </div>
+        <FloatingPortal>
+          <div
+            className={classNames(
+              classes.tooltip,
+              className?.tooltip,
+              classes[theme] || classes.purple
+            )}
+            ref={refs.setFloating}
+            style={{ ...floatingStyles, zIndex, position: strategy }}
+            {...getFloatingProps()}
+          >
+            {text}
+            {showArrow && (
+              <FloatingArrow
+                ref={arrowRef}
+                context={context}
+                fill={colorsArrow[theme] || colorsArrow[Themes.PURPLE]}
+                width={14}
+                height={10}
+              />
+            )}
+          </div>
+        </FloatingPortal>
       )}
     </>
   )
