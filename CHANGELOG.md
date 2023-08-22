@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/occmundial/atomic/compare/v1.21.0...v1.22.0) (2023-08-22)
+
+
+### Features
+
+* Add noJustified to SlideDown Component ([646605f](https://github.com/occmundial/atomic/commit/646605ff026f546e7cf6b99342ee778e6176e3d9))
+
 # [1.21.0](https://github.com/occmundial/atomic/compare/v1.20.0...v1.21.0) (2023-05-12)
 
 
