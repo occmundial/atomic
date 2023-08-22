@@ -19,6 +19,7 @@ interface SlideDownProps {
   textSize?: 'sm' | 'md' | 'lg'
   strong?: boolean
   theme?: 'default' | 'blue'
+  noJustified?: boolean
 }
 
 const SlideDown = ({
@@ -29,7 +30,8 @@ const SlideDown = ({
   onToggle,
   textSize,
   theme,
-  strong
+  strong,
+  noJustified
 }: SlideDownProps) => {
   const classes = useStyles()
   const [_expanded, setExpanded] = useState(expanded)
@@ -99,7 +101,11 @@ const SlideDown = ({
   return (
     <div className={classes.wrapper}>
       <div className={classes.button} onClick={() => toggleContent(!_expanded)}>
-        <Flexbox display="flex" justifyContent="between" alignItems="start">
+        <Flexbox
+          display="flex"
+          justifyContent={!noJustified ? 'between' : null}
+          alignItems="start"
+        >
           <Flexbox display="flex" alignItems="center">
             <Flexbox display="flex" alignItems="start" wrap="wrap">
               <div>
@@ -146,7 +152,8 @@ const SlideDown = ({
 
 SlideDown.defaultProps = {
   textSize: 'md',
-  theme: 'default'
+  theme: 'default',
+  noJustified: false
 }
 
 export default SlideDown
