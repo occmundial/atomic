@@ -32,6 +32,7 @@ interface ButtonType {
   disabled?: boolean
   loading?: boolean
   id?: string
+  type?: 'button' | 'submit' | 'reset'
 }
 
 interface ModalImage {
@@ -183,6 +184,7 @@ const Modal = (props: ModalProps) => {
                   <div className={classes.bottom}>
                     {secBtn && (
                       <Button
+                        type={secBtn.type}
                         theme="ghostGrey"
                         className={classes.secBtn}
                         onClick={secBtn.onClick}
@@ -200,6 +202,7 @@ const Modal = (props: ModalProps) => {
                     )}
                     <Button
                       className={classes.mainBtn}
+                      type={mainBtn.type}
                       onClick={mainBtn.onClick}
                       href={mainBtn.href}
                       target={mainBtn.target}
