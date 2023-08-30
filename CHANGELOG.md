@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/occmundial/atomic/compare/v1.22.0...v1.23.0) (2023-08-30)
+
+
+### Features
+
+* Aff type button in modal ([77b632e](https://github.com/occmundial/atomic/commit/77b632edb78ec5cc156f5e97d181b002d00facd0))
+
 # [1.22.0](https://github.com/occmundial/atomic/compare/v1.21.0...v1.22.0) (2023-08-22)
 
 
