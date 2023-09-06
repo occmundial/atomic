@@ -64,6 +64,7 @@ export interface ModalProps {
   /** The recommendation is to set the breakpoint at `grid.xs` */
   isMobile?: boolean
   testId?: string
+  id?: string
 }
 
 const Modal = (props: ModalProps) => {
@@ -81,7 +82,8 @@ const Modal = (props: ModalProps) => {
     onTransitionEnd,
     fullSize,
     isMobile,
-    testId
+    testId,
+    id
   } = props
   useLockBodyScroll()
 
@@ -115,6 +117,7 @@ const Modal = (props: ModalProps) => {
 
   return (
     <div
+      id={id}
       className={classnames(
         classes.overlay,
         { [classes.overlayShow]: show },
