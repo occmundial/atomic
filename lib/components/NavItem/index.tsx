@@ -16,6 +16,7 @@ export interface NavItemProps {
   white?: boolean
   className?: string
   testId?: string
+  id?: string
 }
 
 const NavItem = ({
@@ -28,12 +29,14 @@ const NavItem = ({
   white,
   small,
   className,
-  testId
+  testId,
+  id
 }: NavItemProps) => {
   const classes = useStyles()
 
   return (
     <a
+      id={id}
       className={classnames(classes.link, className)}
       href={!selected ? link : null}
       onClick={!selected ? onClick : null}

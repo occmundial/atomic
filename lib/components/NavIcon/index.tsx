@@ -19,6 +19,7 @@ export interface NavIconProps {
   width?: number
   white?: boolean
   testId?: string
+  id?: string
 }
 
 const NavIcon = ({
@@ -31,12 +32,14 @@ const NavIcon = ({
   testId,
   width,
   white,
-  showBar
+  showBar,
+  id
 }: NavIconProps) => {
   const classes = useStyles()
   const [hover, setHover] = useState(false)
   return (
     <div
+      id={id}
       className={classnames(
         classes.cont,
         { [classes.white]: white },
