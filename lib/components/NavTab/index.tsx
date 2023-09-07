@@ -21,7 +21,6 @@ import iconSizes from '@/tokens/iconSizes'
 import useStyles from './styles'
 
 export interface LinkElement {
-  id?: string
   key: string | number
   type: 'link'
   text: string
@@ -32,7 +31,6 @@ export interface LinkElement {
 }
 
 export interface ButtonElement {
-  id?: string
   key: string | number
   type: 'button'
   text?: string
@@ -43,7 +41,6 @@ export interface ButtonElement {
 }
 
 export interface DropdownElement {
-  id?: string
   key: string | number
   type: 'dropdownLink'
   text: string
@@ -54,7 +51,6 @@ export interface DropdownElement {
 }
 
 export interface IconElement {
-  id?: string
   key: string | number
   type: 'icon'
   label?: string
@@ -68,17 +64,17 @@ export interface IconElement {
 }
 
 export interface CustomElement {
-  id?: string
   key: string | number
   type: 'custom'
   custom: ReactNode
+  testId?: string
 }
 
 export interface LogoElement {
-  id?: string
   key: string | number
   type: 'logo'
   logo: ReactNode
+  testId?: string
 }
 
 export type NavElement =
@@ -203,7 +199,7 @@ const NavTab = ({
   const renderLogo = useCallback(
     (item: LogoElement) => {
       return (
-        <div id={item.id} className={classes.logo} key={item.key}>
+        <div data-testid={item.testId} className={classes.logo} key={item.key}>
           {item.logo}
         </div>
       )
@@ -213,7 +209,7 @@ const NavTab = ({
 
   const renderCustom = useCallback((item: CustomElement) => {
     return (
-      <div id={item.id} key={item.key}>
+      <div data-testid={item.testId} key={item.key}>
         {item.custom}
       </div>
     )
