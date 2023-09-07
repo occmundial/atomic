@@ -67,12 +67,14 @@ export interface CustomElement {
   key: string | number
   type: 'custom'
   custom: ReactNode
+  testId?: string
 }
 
 export interface LogoElement {
   key: string | number
   type: 'logo'
   logo: ReactNode
+  testId?: string
 }
 
 export type NavElement =
@@ -197,7 +199,7 @@ const NavTab = ({
   const renderLogo = useCallback(
     (item: LogoElement) => {
       return (
-        <div className={classes.logo} key={item.key}>
+        <div data-testid={item.testId} className={classes.logo} key={item.key}>
           {item.logo}
         </div>
       )
@@ -206,7 +208,11 @@ const NavTab = ({
   )
 
   const renderCustom = useCallback((item: CustomElement) => {
-    return <div key={item.key}>{item.custom}</div>
+    return (
+      <div data-testid={item.testId} key={item.key}>
+        {item.custom}
+      </div>
+    )
   }, [])
 
   const renderItem = useCallback(

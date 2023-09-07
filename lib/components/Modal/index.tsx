@@ -115,6 +115,7 @@ const Modal = (props: ModalProps) => {
 
   return (
     <div
+      data-testid={testId}
       className={classnames(
         classes.overlay,
         { [classes.overlayShow]: show },
