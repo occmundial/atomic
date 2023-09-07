@@ -1,3 +1,16 @@
+# [2.0.0-beta.20](https://github.com/occmundial/atomic/compare/v2.0.0-beta.19...v2.0.0-beta.20) (2023-09-07)
+
+
+### Bug Fixes
+
+* Used data-testid instead id ([bfee34a](https://github.com/occmundial/atomic/commit/bfee34a3d7d1cb33c84aa68548e8819f510b455a))
+
+
+### Features
+
+* Added id to nav tab, icon and item ([cf30760](https://github.com/occmundial/atomic/commit/cf30760cd85783d49fe20f28360eb03f424781f4))
+* Added modal id attribute ([d46562f](https://github.com/occmundial/atomic/commit/d46562f730e3b37649027b07409bf3445a1750d9))
+
 # [2.0.0-beta.19](https://github.com/occmundial/atomic/compare/v2.0.0-beta.18...v2.0.0-beta.19) (2023-05-31)
 
 
