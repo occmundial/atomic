@@ -45,10 +45,10 @@ class MyDocument extends Document {
             type="image/x-icon"
             href="https://cdn-h4.occ.com.mx/images/common/favicon.png"
           />
-          {/* This is the font used by all components: HK Grotesk */}
+          {/* This is the font used by all components: OccText */}
           <link
             rel="stylesheet"
-            href="https://cdn-h4.occ.com.mx/fonts/stylesheet.css"
+            href="https://cdn-h4.occ.com.mx/fonts/new-stylesheet.css"
           />
           {/* This is the stylesheet to use the icons */}
           <link rel="preconnect" href="https://cdn-h4.occ.com.mx" />

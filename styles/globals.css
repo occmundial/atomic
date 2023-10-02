@@ -3,5 +3,5 @@ html, body {
   margin: 0;
   background-color: #F5F5F8;
 }
-* { box-sizing: border-box; font-family: 'HK Grotesk'; }
+* { box-sizing: border-box; font-family: 'OccText'; }
 pre * { font-family: 'Fira Code', monospace; }

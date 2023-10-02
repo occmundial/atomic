@@ -1,5 +1,5 @@
 const fonts = {
-  body: `'HK Grotesk', sans-serif`
+  body: `'OccText', sans-serif`
 }
 
 export default fonts
