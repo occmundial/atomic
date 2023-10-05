@@ -48,7 +48,7 @@ class MyDocument extends Document {
           {/* This is the font used by all components: OccText */}
           <link
             rel="stylesheet"
-            href="https://cdn-h4.occ.com.mx/fonts/new-stylesheet.css"
+            href="https://cdn-h4.occ.com.mx/fonts/stylesheet.css"
           />
           {/* This is the stylesheet to use the icons */}
           <link rel="preconnect" href="https://cdn-h4.occ.com.mx" />
