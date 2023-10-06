@@ -45,7 +45,7 @@ class MyDocument extends Document {
             type="image/x-icon"
             href="https://cdn-h4.occ.com.mx/images/common/favicon.png"
           />
-          {/* This is the font used by all components: OccText */}
+          {/* This is the font used by all components: HK Grotesk */}
           <link
             rel="stylesheet"
             href="https://cdn-h4.occ.com.mx/fonts/stylesheet.css"
