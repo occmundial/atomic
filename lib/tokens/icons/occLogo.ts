@@ -1,7 +1,7 @@
 import colors from '@/tokens/colors'
 
 const occLogo = {
-  width: 120,
+  width: 82,
   height: 32,
   icon: (color = colors.prim) => `
     <svg width="82" height="33" viewBox="0 0 82 33" xmlns="http://www.w3.org/2000/svg">
