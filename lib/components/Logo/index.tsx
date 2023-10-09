@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 import useStyles from './styles'
 
-type LogoVariant = 'horizontal' | 'vertical' | 'icon'
+type LogoVariant = 'horizontal' | 'vertical' | 'icon' | 'occLogo'
 type LogoTheme = 'blue' | 'white' | 'black' | 'grey'
 
 export interface LogoProps {
