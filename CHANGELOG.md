@@ -1,3 +1,18 @@
+# [2.0.0-beta.21](https://github.com/occmundial/atomic/compare/v2.0.0-beta.20...v2.0.0-beta.21) (2023-10-10)
+
+
+### Bug Fixes
+
+* Adjust logo width ([1d777b5](https://github.com/occmundial/atomic/commit/1d777b5bf8c7baa6a2686e1ccc50ee8509779b95))
+* Remove font change ([f0564ed](https://github.com/occmundial/atomic/commit/f0564ed61c96ebaba77675a160ae71e34fe5d4bd))
+* Revert new font ([b349a9b](https://github.com/occmundial/atomic/commit/b349a9b8a0b534c63783e1b3c4fcac610c07030a))
+
+
+### Features
+
+* Add new logo to a variant ([c0456f0](https://github.com/occmundial/atomic/commit/c0456f007462503d731aaac4cf097fcf6bd6dba3))
+* Update font to OCCText ([1deca7e](https://github.com/occmundial/atomic/commit/1deca7ee90e0f5be5f0ebacfb8e74888766c37e7))
+
 # [2.0.0-beta.20](https://github.com/occmundial/atomic/compare/v2.0.0-beta.19...v2.0.0-beta.20) (2023-09-07)
 
 
