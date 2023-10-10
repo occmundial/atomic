@@ -1,21 +1,23 @@
-import { CSSProperties, createElement } from 'react'
+import { CSSProperties } from 'react'
 import classnames from 'classnames'
 
 import occHorizontal from '@/tokens/icons/occHorizontal'
 import occVertical from '@/tokens/icons/occVertical'
 import occIcon from '@/tokens/icons/occIcon'
+import occLogo from '@/tokens/icons/occLogo'
 import { base } from '@/tokens/icons'
 
 import useStyles from './styles'
 import colors from '@/tokens/colors'
 
-type LogoVariant = 'horizontal' | 'vertical' | 'icon'
+type LogoVariant = 'horizontal' | 'vertical' | 'icon' | 'occLogo'
 type LogoTheme = 'blue' | 'white' | 'black' | 'grey'
 
 const variants = {
   horizontal: occHorizontal,
   vertical: occVertical,
-  icon: occIcon
+  icon: occIcon,
+  occLogo: occLogo
 }
 
 const logoColors = {
