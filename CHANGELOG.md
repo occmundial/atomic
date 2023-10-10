@@ -1,3 +1,15 @@
+# [1.24.0](https://github.com/occmundial/atomic/compare/v1.23.0...v1.24.0) (2023-10-10)
+
+
+### Bug Fixes
+
+* Adjust logo width ([1aa75c0](https://github.com/occmundial/atomic/commit/1aa75c0b755d0739ef40b7a04eca09f1386a1f98))
+
+
+### Features
+
+* Add new logo variant ([30035b4](https://github.com/occmundial/atomic/commit/30035b47c4b1c5ab2c81972e0a50a0acc7631ffd))
+
 # [1.23.0](https://github.com/occmundial/atomic/compare/v1.22.0...v1.23.0) (2023-08-30)
 
 
