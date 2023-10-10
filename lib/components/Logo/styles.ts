@@ -4,6 +4,7 @@ import { base } from '@/tokens/icons'
 import occHorizontal from '@/tokens/icons/occHorizontal'
 import occVertical from '@/tokens/icons/occVertical'
 import occIcon from '@/tokens/icons/occIcon'
+import occLogo from '@/tokens/icons/occLogo'
 import { LogoProps } from '.'
 import colors from '@/tokens/colors'
 
@@ -33,6 +34,11 @@ export default createUseStyles<any, LogoProps>({
   },
   icon: {
     background: props => base(occIcon.icon(logoColors[props.theme])),
+    width: props => (props.width ? props.width : occIcon.width),
+    height: props => (props.height ? props.height : occIcon.height)
+  },
+  occLogo: {
+    background: props => base(occLogo.icon(logoColors[props.theme])),
     width: props => (props.width ? props.width : occIcon.width),
     height: props => (props.height ? props.height : occIcon.height)
   },
