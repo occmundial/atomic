@@ -24,7 +24,6 @@ export default createUseStyles({
     letterSpacing: 1,
     textAlign: 'center',
     textDecoration: 'none',
-    textTransform: 'uppercase',
     whiteSpace: 'nowrap',
     transition: '0.3s all',
     cursor: 'pointer',
