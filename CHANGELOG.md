@@ -1,3 +1,16 @@
+# [2.0.0-beta.22](https://github.com/occmundial/atomic/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2023-10-18)
+
+
+### Bug Fixes
+
+* Fix font weight ([d130e02](https://github.com/occmundial/atomic/commit/d130e02594887388f2d69f8471500647cdb59c9f))
+
+
+### Features
+
+* Add new font to atomic beta ([8387013](https://github.com/occmundial/atomic/commit/838701360216c282617727e1c5748ef3416dccca))
+* Remove capitalize ([9c7064f](https://github.com/occmundial/atomic/commit/9c7064faa89e99936d389b33aea72d8e61ad8390))
+
 # [2.0.0-beta.21](https://github.com/occmundial/atomic/compare/v2.0.0-beta.20...v2.0.0-beta.21) (2023-10-10)
 
 
