@@ -1,3 +1,16 @@
+# [1.25.0](https://github.com/occmundial/atomic/compare/v1.24.0...v1.25.0) (2023-10-19)
+
+
+### Bug Fixes
+
+* Fix font weight ([5b35ad5](https://github.com/occmundial/atomic/commit/5b35ad5bcc0e09b527e2b7b02d8d243055bef2f0))
+
+
+### Features
+
+* Remove text transform uppercase btn ([6c01dc3](https://github.com/occmundial/atomic/commit/6c01dc34e72549d9d94f23efe4c4eb5762477539))
+* Update font ([2db7795](https://github.com/occmundial/atomic/commit/2db7795f8514495a59eacc5634b0499fb7962394))
+
 # [1.24.0](https://github.com/occmundial/atomic/compare/v1.23.0...v1.24.0) (2023-10-10)
 
 
