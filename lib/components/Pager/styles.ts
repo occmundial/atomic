@@ -9,7 +9,7 @@ export default createUseStyles({
     paddingLeft: '0',
     fontFamily: fonts.body,
     color: colors.inkLight,
-    fontSize: '13px'
+    fontSize: '14px'
   },
   btn: {
     display: 'inline-block',
