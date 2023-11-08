@@ -1,3 +1,15 @@
+# [2.0.0-beta.23](https://github.com/occmundial/atomic/compare/v2.0.0-beta.22...v2.0.0-beta.23) (2023-11-08)
+
+
+### Features
+
+* Add new font styles in Button component ([449965d](https://github.com/occmundial/atomic/commit/449965d326f6bb8c682b0299b969aa020d801d78))
+* Update font styles in Text component ([158b4f0](https://github.com/occmundial/atomic/commit/158b4f0bf8ff05185d29a48e63e91fdc731de149))
+* Update font Styles in TextField component ([2e43c1a](https://github.com/occmundial/atomic/commit/2e43c1a7134f77996c3138e5018a7d0e0f630a20))
+* Update font styles in Tooltip components ([ace9edf](https://github.com/occmundial/atomic/commit/ace9edf098b4f3c3084e3479f40ed4c584f69b1d))
+* Update fontSize ([b494cd4](https://github.com/occmundial/atomic/commit/b494cd4ec2df89da08202bf4d7bd968cde29ae7b))
+* Update fontSize styles in Tag component ([f0b0357](https://github.com/occmundial/atomic/commit/f0b0357983c5168716bb986e1ed45e6b999744ea))
+
 # [2.0.0-beta.22](https://github.com/occmundial/atomic/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2023-10-18)
 
 
