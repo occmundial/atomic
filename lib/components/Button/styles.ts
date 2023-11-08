@@ -18,7 +18,7 @@ export default createUseStyles({
     padding: [0, spacing.small],
     borderRadius: spacing.radius,
     fontFamily: fonts.body,
-    fontWeight: 300,
+    fontWeight: 400,
     fontSize: 14,
     lineHeight: 1.5,
     letterSpacing: 0,
