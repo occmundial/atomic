@@ -93,7 +93,7 @@ export default createUseStyles({
     height: 40,
     color: colors.ink,
     fontFamily: fonts.body,
-    fontWeight: 'normal',
+    fontWeight: 300,
     fontSize: 16,
     lineHeight: 1.5,
     background: colors.bgWhite,
