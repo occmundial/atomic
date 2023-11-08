@@ -9,8 +9,8 @@ export default createUseStyles({
   tooltip: {
     padding: '16px',
     borderRadius: '4px',
-    fontSize: '13px',
-    lineHeight: '16px'
+    fontSize: '14px',
+    lineHeight: 1.5
   },
   info: {
     background: infoLight,
