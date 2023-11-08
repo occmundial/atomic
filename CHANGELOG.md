@@ -1,3 +1,10 @@
+# [2.0.0-beta.25](https://github.com/occmundial/atomic/compare/v2.0.0-beta.24...v2.0.0-beta.25) (2023-11-08)
+
+
+### Features
+
+* Revert fontWeight ([3d39724](https://github.com/occmundial/atomic/commit/3d39724c794a0f849b3282679800668342f4d86c))
+
 # [2.0.0-beta.24](https://github.com/occmundial/atomic/compare/v2.0.0-beta.23...v2.0.0-beta.24) (2023-11-08)
 
 
