@@ -1,3 +1,10 @@
+# [2.0.0-beta.24](https://github.com/occmundial/atomic/compare/v2.0.0-beta.23...v2.0.0-beta.24) (2023-11-08)
+
+
+### Bug Fixes
+
+* Fix font weight ([485dbbc](https://github.com/occmundial/atomic/commit/485dbbc0915ffb7991d47bc36384345ffa97c0e7))
+
 # [2.0.0-beta.23](https://github.com/occmundial/atomic/compare/v2.0.0-beta.22...v2.0.0-beta.23) (2023-11-08)
 
 
