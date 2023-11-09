@@ -491,7 +491,7 @@ const TextField = forwardRef(
           <div className={classes.bottom}>
             {assistiveText && (
               <Text
-                small
+                micro
                 tag="label"
                 disabled={disabled && realStatus !== 'error'}
                 low={!disabled && realStatus !== 'error'}
