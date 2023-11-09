@@ -1,3 +1,14 @@
+# [1.26.0](https://github.com/occmundial/atomic/compare/v1.25.0...v1.26.0) (2023-11-09)
+
+
+### Features
+
+* Update font size styles (button component) ([0f09b70](https://github.com/occmundial/atomic/commit/0f09b70ccefd8069a926467955f1bd4d207623ec))
+* Update font size styles (Pagercomponent) ([579cd6d](https://github.com/occmundial/atomic/commit/579cd6d3229ca4b96d9eb0aa704377a784f12988))
+* Update font style (Tag component) ([46dcd09](https://github.com/occmundial/atomic/commit/46dcd0916790d0f9fd7b1e7a05b45e7a6e8d2c33))
+* Update font styles ([05eec96](https://github.com/occmundial/atomic/commit/05eec96b12eeefa7804d20a41dd9a7384cbdbdca))
+* Update font styles (Text component) ([281fe6b](https://github.com/occmundial/atomic/commit/281fe6b948f4a74cb96532a819e272e59cdc004c))
+
 # [1.25.0](https://github.com/occmundial/atomic/compare/v1.24.0...v1.25.0) (2023-10-19)
 
 
