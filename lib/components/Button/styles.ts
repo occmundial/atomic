@@ -18,10 +18,10 @@ export default createUseStyles<any, ButtonProps>({
     padding: [0, spacing.small],
     borderRadius: spacing.radius,
     fontFamily: fonts.body,
-    fontWeight: 600,
-    fontSize: 13,
-    lineHeight: `${spacing.base}px`,
-    letterSpacing: 1,
+    fontWeight: 400,
+    fontSize: 14,
+    lineHeight: 1.5,
+    letterSpacing: 0,
     textAlign: 'center',
     textDecoration: 'none',
     whiteSpace: 'nowrap',
@@ -193,17 +193,17 @@ export default createUseStyles<any, ButtonProps>({
   },
   // Sizes
   md: {
-    fontSize: 15,
+    fontSize: 16,
     height: 40,
-    lineHeight: `${spacing.base}px`,
+    lineHeight: 1.5,
     '&$iconOnly': {
       padding: `0 ${spacing.gutter}px`
     }
   },
   lg: {
-    fontSize: 15,
+    fontSize: 16,
     height: spacing.large,
-    lineHeight: `${spacing.base}px`,
+    lineHeight: 1.5,
     '&$iconOnly': {
       padding: `0 ${spacing.small}px`
     }
