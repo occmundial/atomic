@@ -28,7 +28,7 @@ const { xTiny, tiny, small, medium, gutter } = spacing
 export default createUseStyles<any, TagProps>({
   tag: {
     boxSizing: 'border-box',
-    lineHeight: '12px',
+    lineHeight: 1.5,
     textAlign: 'center',
     borderRadius: small,
     position: 'relative',
@@ -51,10 +51,10 @@ export default createUseStyles<any, TagProps>({
   tagText: {
     boxSizing: 'border-box',
     fontFamily: fonts.body,
-    fontWeight: '600',
+    fontWeight: '400',
     fontStyle: 'normal',
     fontStretch: 'normal',
-    lineHeight: 1.4,
+    lineHeight: 1.5,
     letterSpacing: 'normal',
     textAlign: 'center',
     position: 'relative',
@@ -63,13 +63,13 @@ export default createUseStyles<any, TagProps>({
     paddingRight: props => (props.iconName ? xTiny : 0)
   },
   smallTagText: {
-    fontSize: 11
+    fontSize: 10
   },
   mediumTagText: {
-    fontSize: 15
+    fontSize: 16
   },
   largeTagText: {
-    fontSize: 17
+    fontSize: 16
   },
   default: {
     color: grey900,
