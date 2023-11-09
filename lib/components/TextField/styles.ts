@@ -68,7 +68,6 @@ export default createUseStyles({
     }
   },
   label: {
-    lineHeight: '20px',
     transition: '0.3s all',
     '& a': {
       color: colors.textLink,
@@ -94,9 +93,9 @@ export default createUseStyles({
     height: 40,
     color: colors.ink,
     fontFamily: fonts.body,
-    fontWeight: 'normal',
-    fontSize: 15,
-    lineHeight: '24px',
+    fontWeight: 300,
+    fontSize: 16,
+    lineHeight: 1.5,
     background: colors.bgWhite,
     border: `1px solid ${colors.grey200}`,
     borderRadius: 4,
@@ -136,14 +135,14 @@ export default createUseStyles({
     },
     paddingRight: spacing.medium,
     '& optgroup': {
-      fontSize: 13,
+      fontSize: 14,
       fontWeight: 'normal',
-      lineHeight: '40px',
+      lineHeight: 1.5,
       color: colors.inkLight
     },
     '& option': {
-      fontSize: 15,
-      lineHeight: '40px',
+      fontSize: 16,
+      lineHeight: 1.5,
       color: colors.ink,
       '&:disabled': {
         color: colors.inkLighter
