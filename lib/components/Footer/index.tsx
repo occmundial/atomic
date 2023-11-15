@@ -25,6 +25,7 @@ export interface BottomLink {
   href?: string
   target?: string
   rel?: string
+  id?: string
 }
 
 export interface Aux {
@@ -125,7 +126,7 @@ const Footer = ({
                       }
                       key={item.key}
                     >
-                      <Text tag="label" small mid>
+                      <Text tag="label" small mid id={item.id}>
                         <a
                           className={classes.link}
                           href={item.href}
