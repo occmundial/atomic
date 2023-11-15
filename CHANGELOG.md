@@ -1,3 +1,10 @@
+# [2.0.0-beta.26](https://github.com/occmundial/atomic/compare/v2.0.0-beta.25...v2.0.0-beta.26) (2023-11-15)
+
+
+### Features
+
+* Add id to bottomLink ([cd0781b](https://github.com/occmundial/atomic/commit/cd0781b0d74e661996eb47aac2da5698cd6fb704))
+
 # [2.0.0-beta.25](https://github.com/occmundial/atomic/compare/v2.0.0-beta.24...v2.0.0-beta.25) (2023-11-08)
 
 
