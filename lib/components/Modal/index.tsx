@@ -30,6 +30,7 @@ interface ButtonType {
   disabled?: boolean
   loading?: boolean
   id?: string
+  type?: 'button' | 'submit' | 'reset'
 }
 
 interface ModalImage {
@@ -105,7 +106,7 @@ const Modal = (props: ModalProps) => {
           color={colors.grey900}
           onClick={onClose}
           {...(testId && {
-            'data-testid': `${testId}__container-close-icon`
+            testId: `${testId}__close-icon`
           })}
         />
       </div>
@@ -183,6 +184,7 @@ const Modal = (props: ModalProps) => {
                   <div className={classes.bottom}>
                     {secBtn && (
                       <Button
+                        type={secBtn.type}
                         theme="ghostGrey"
                         className={classes.secBtn}
                         onClick={secBtn.onClick}
@@ -200,6 +202,7 @@ const Modal = (props: ModalProps) => {
                     )}
                     <Button
                       className={classes.mainBtn}
+                      type={mainBtn.type}
                       onClick={mainBtn.onClick}
                       href={mainBtn.href}
                       target={mainBtn.target}

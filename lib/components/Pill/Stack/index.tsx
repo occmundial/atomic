@@ -15,6 +15,7 @@ interface PillStackProps {
   onClick: (id: string | number) => void
   onClose: (id: string | number) => void
   idPrefix: string
+  testId: string
 }
 
 const Stack = ({
@@ -23,7 +24,8 @@ const Stack = ({
   disabled,
   onClick,
   onClose,
-  idPrefix
+  idPrefix,
+  testId
 }: PillStackProps) => {
   const classes = useStyles()
 
@@ -47,6 +49,7 @@ const Stack = ({
       className={classnames(classes.pill, { [classes.disabled]: disabled })}
       onClick={() => handleOnClick(id)}
       id={idPrefix ? `${idPrefix}${id}` : null}
+      data-testid={testId ? `${testId}${id}` : null}
     >
       {children && (
         <Text className={classes.text} tag="span" disabled={disabled}>

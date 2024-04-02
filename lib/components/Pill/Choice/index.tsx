@@ -17,6 +17,7 @@ interface PillChoiceProps {
   leftIcon: string
   rightIcon: string
   idPrefix: string
+  testId: string
 }
 
 const Choice = ({
@@ -25,6 +26,7 @@ const Choice = ({
   selected,
   disabled,
   idPrefix,
+  testId,
   leftIcon,
   rightIcon,
   id
@@ -49,6 +51,7 @@ const Choice = ({
       )}
       onClick={handleOnClick}
       id={idPrefix ? `${idPrefix}${id}` : null}
+      data-testid={testId ? `${testId}${id}` : null}
     >
       {leftIcon && (
         <Icon iconName={leftIcon} color={iconColor} size={iconSizes.small} />

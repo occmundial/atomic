@@ -305,7 +305,7 @@ const Droplist = ({
             onMouseUp={e => _onMouseUp(item, e)}
             className={itemClassName}
             {...(testId && {
-              'data-testid': `${testId}__droplist-item-${item.id}`
+              'data-testid': `${testId}__droplist-item-${i}`
             })}
           >
             <Fragment>

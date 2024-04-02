@@ -27,6 +27,7 @@ export interface ButtonProps {
   loading?: boolean
   round?: boolean
   onClick?: EventHandler<SyntheticEvent>
+  type?: 'button' | 'submit' | 'reset' | null
   href?: string
   target?: string
   rel?: string
@@ -35,28 +36,34 @@ export interface ButtonProps {
   style?: CSSProperties
   testId?: string
   ariaLabel?: string
+  name?: string
+  value?: any | null
 }
-const Button = ({
-  children,
-  theme,
-  size,
-  block,
-  disabled,
-  iconLeft,
-  iconRight,
-  loading,
-  round,
-  onClick,
-  href,
-  target,
-  rel,
-  id,
-  className,
-  style,
-  testId,
-  ariaLabel
-}: ButtonProps) => {
-  const classes = useStyles()
+const Button = (props: ButtonProps) => {
+  const {
+    children,
+    theme,
+    size,
+    block,
+    disabled,
+    iconLeft,
+    iconRight,
+    loading,
+    round,
+    onClick,
+    type,
+    href,
+    target,
+    rel,
+    id,
+    className,
+    style,
+    testId,
+    ariaLabel,
+    name,
+    value
+  } = props
+  const classes = useStyles(props)
   const buttonClassName = classnames(
     classes.btn,
     { [classes[theme]]: theme },
@@ -124,6 +131,9 @@ const Button = ({
         style={style}
         data-testid={testId}
         aria-label={ariaLabel}
+        type={type}
+        value={value}
+        name={name}
       >
         {content}
         {loadingLayer}

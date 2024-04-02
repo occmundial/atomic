@@ -221,6 +221,134 @@
 
 * The components in the library are not responsible anymore for the conditional rendering derived from the window size. Instead it is suggested to pass a prop on the client side to determine when the component should show a mobile version or when its grid has to be fluid.
 
+# [1.26.0](https://github.com/occmundial/atomic/compare/v1.25.0...v1.26.0) (2023-11-09)
+
+
+### Features
+
+* Update font size styles (button component) ([0f09b70](https://github.com/occmundial/atomic/commit/0f09b70ccefd8069a926467955f1bd4d207623ec))
+* Update font size styles (Pagercomponent) ([579cd6d](https://github.com/occmundial/atomic/commit/579cd6d3229ca4b96d9eb0aa704377a784f12988))
+* Update font style (Tag component) ([46dcd09](https://github.com/occmundial/atomic/commit/46dcd0916790d0f9fd7b1e7a05b45e7a6e8d2c33))
+* Update font styles ([05eec96](https://github.com/occmundial/atomic/commit/05eec96b12eeefa7804d20a41dd9a7384cbdbdca))
+* Update font styles (Text component) ([281fe6b](https://github.com/occmundial/atomic/commit/281fe6b948f4a74cb96532a819e272e59cdc004c))
+
+# [1.25.0](https://github.com/occmundial/atomic/compare/v1.24.0...v1.25.0) (2023-10-19)
+
+
+### Bug Fixes
+
+* Fix font weight ([5b35ad5](https://github.com/occmundial/atomic/commit/5b35ad5bcc0e09b527e2b7b02d8d243055bef2f0))
+
+
+### Features
+
+* Remove text transform uppercase btn ([6c01dc3](https://github.com/occmundial/atomic/commit/6c01dc34e72549d9d94f23efe4c4eb5762477539))
+* Update font ([2db7795](https://github.com/occmundial/atomic/commit/2db7795f8514495a59eacc5634b0499fb7962394))
+
+# [1.24.0](https://github.com/occmundial/atomic/compare/v1.23.0...v1.24.0) (2023-10-10)
+
+
+### Bug Fixes
+
+* Adjust logo width ([1aa75c0](https://github.com/occmundial/atomic/commit/1aa75c0b755d0739ef40b7a04eca09f1386a1f98))
+
+
+### Features
+
+* Add new logo variant ([30035b4](https://github.com/occmundial/atomic/commit/30035b47c4b1c5ab2c81972e0a50a0acc7631ffd))
+
+# [1.23.0](https://github.com/occmundial/atomic/compare/v1.22.0...v1.23.0) (2023-08-30)
+
+
+### Features
+
+* Aff type button in modal ([77b632e](https://github.com/occmundial/atomic/commit/77b632edb78ec5cc156f5e97d181b002d00facd0))
+
+# [1.22.0](https://github.com/occmundial/atomic/compare/v1.21.0...v1.22.0) (2023-08-22)
+
+
+### Features
+
+* Add noJustified to SlideDown Component ([646605f](https://github.com/occmundial/atomic/commit/646605ff026f546e7cf6b99342ee778e6176e3d9))
+
+# [1.21.0](https://github.com/occmundial/atomic/compare/v1.20.0...v1.21.0) (2023-05-12)
+
+
+### Features
+
+* Add new props ([1aba82c](https://github.com/occmundial/atomic/commit/1aba82c0d4614f87d784007dcbc056d8c6147c6a))
+
+# [1.20.0](https://github.com/occmundial/atomic/compare/v1.19.0...v1.20.0) (2023-05-11)
+
+
+### Features
+
+* Add type prop to button ([7ced219](https://github.com/occmundial/atomic/commit/7ced219c1ae6d1a8019988074e30761c337f8bb3))
+
+# [1.19.0](https://github.com/occmundial/atomic/compare/v1.18.0...v1.19.0) (2023-02-17)
+
+
+### Features
+
+* Add index in droplist item ([0dd5488](https://github.com/occmundial/atomic/commit/0dd5488ad8ff1cdd4e4a5796444fe84b1a10d6aa))
+
+# [1.18.0](https://github.com/occmundial/atomic/compare/v1.17.0...v1.18.0) (2023-02-16)
+
+
+### Features
+
+* Add missing index ([94b202c](https://github.com/occmundial/atomic/commit/94b202c96d69ebf06a7f1c26079dd94fe7dd1fcf))
+
+# [1.17.0](https://github.com/occmundial/atomic/compare/v1.16.1...v1.17.0) (2023-02-16)
+
+
+### Features
+
+* Add missing ids ([7676d7d](https://github.com/occmundial/atomic/commit/7676d7d7893706f687f88d006729efe6aa9e9a05))
+* Pill testid has been added ([09e5e06](https://github.com/occmundial/atomic/commit/09e5e06c1315d7f4e589ea8384ff74263635a114))
+
+## [1.16.1](https://github.com/occmundial/atomic/compare/v1.16.0...v1.16.1) (2023-02-08)
+
+
+### Bug Fixes
+
+* Fix Pill error color ([524e123](https://github.com/occmundial/atomic/commit/524e123c782087449074734d8ef08006a30bf521))
+
+# [1.16.0](https://github.com/occmundial/atomic/compare/v1.15.0...v1.16.0) (2023-02-01)
+
+
+### Features
+
+* Add testId to radio button component ([ccdc1d9](https://github.com/occmundial/atomic/commit/ccdc1d9b7fc3a285e0576b7810e4b61a0e9b8e82))
+
+# [1.15.0](https://github.com/occmundial/atomic/compare/v1.14.0...v1.15.0) (2022-12-05)
+
+
+### Features
+
+* Update footer to support new logo ([3dc339e](https://github.com/occmundial/atomic/commit/3dc339e503b744873a503269efff39eb130a929f))
+
+# [1.14.0](https://github.com/occmundial/atomic/compare/v1.13.2...v1.14.0) (2022-11-29)
+
+
+### Features
+
+* Add extraText property ([ba25977](https://github.com/occmundial/atomic/commit/ba259772ba034e9b9a5e405a88e357cce587ab5f))
+
+## [1.13.2](https://github.com/occmundial/atomic/compare/v1.13.1...v1.13.2) (2022-11-23)
+
+
+### Bug Fixes
+
+* Change password icon ([c9c4b6a](https://github.com/occmundial/atomic/commit/c9c4b6adafc5c3ec35f2d92e072b4fc41da2cd98))
+
+## [1.13.1](https://github.com/occmundial/atomic/compare/v1.13.0...v1.13.1) (2022-11-15)
+
+
+### Bug Fixes
+
+* Add testid to icon component ([150e764](https://github.com/occmundial/atomic/commit/150e764bad11c7131fb4cf4b04d8c1ada7705c8e))
+
 # [1.13.0](https://github.com/occmundial/atomic/compare/v1.12.0...v1.13.0) (2022-11-14)
 
 

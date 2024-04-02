@@ -17,6 +17,7 @@ export interface IconProps {
   id?: string
   className?: string
   style?: CSSProperties
+  testId?: string
 }
 
 const Icon = ({
@@ -28,7 +29,8 @@ const Icon = ({
   className,
   style,
   id,
-  onClick
+  onClick,
+  testId
 }: IconProps) => {
   const [hover, setHover] = useState(false)
   const classes = useStyles()
@@ -59,6 +61,7 @@ const Icon = ({
       onClick={onClick}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      data-testid={testId}
     >
       <use
         xlinkHref={`${atomic.iconsPath}#${atomic.iconsPrefix}__${iconName}`}

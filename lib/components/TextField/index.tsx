@@ -416,7 +416,7 @@ const TextField = forwardRef(
           type !== 'select' ? (
             <div className={classes.passIcon}>
               <Icon
-                iconName="eye"
+                iconName="eye-o"
                 size={iconSizes.small}
                 color={colors.grey200}
               />
@@ -430,7 +430,7 @@ const TextField = forwardRef(
             className={classes.passIcon}
           >
             <Icon
-              iconName={showPass ? 'eye' : 'eye-close'}
+              iconName={showPass ? 'eye-o' : 'eye-close-o'}
               size={iconSizes.small}
               color={showPass ? colors.grey900 : colors.grey400}
             />

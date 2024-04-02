@@ -10,6 +10,7 @@ interface RadioOption {
   value?: string | number
   right?: string
   trk?: string
+  testId?: string
   disabled?: boolean
 }
 
@@ -61,6 +62,7 @@ const Radio = ({
       {options.map(option => (
         <div
           id={option.trk}
+          data-testid={option.testId}
           key={option.value}
           className={classnames(
             classes.cont,

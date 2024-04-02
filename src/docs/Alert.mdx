@@ -2,9 +2,198 @@
 title: Alert
 section: components
 ---
+
 import Demo from '@/utils/components/Demo'
 import Alert from '@/components/Alert'
 
 # Alert
+
 ---
-Alert docs.
+
+Alert component to display messages within a container.
+
+- [Props](#Props)
+  - [Themes](#Themes)
+  - [Icon](#Icon)
+  - [Bold](#Bold)
+  - [Action](#Action)
+  - [Others](#Others)
+
+## Props
+
+| Name             | Type         | Default value | Description                                                                                                                       |
+| ---------------- | ------------ | ------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `children`       | **string**   | -             | The Text to be rendered inside the Alert container. Some parts can be displayed as bold text if surrounded by \* symbol.          |
+| `theme`          | **string**   | `info`        | Theme of Alert component. Available options are `info`, `warning`, `success`, `error`, `promote`.                                 |
+| `icon`           | **boolean**  | `false`       | Shows an icon assigned for each theme but `promote`.                                                                              |
+| `cta`            | **object**   | -             | An action appended after text. Object has the next properties: `text(string)`, `href(string)`, `target(string)`, `onClick(func)`. |
+| `center`         | **boolean**  | -             | Centers Alert content.                                                                                                            |
+| `noBorderRadius` | **boolean**  | -             | Cancels the default border radius of Alert.                                                                                       |
+| `onClose`        | **function** | -             | Function to call onClick of the X icon.                                                                                           |
+| `spacedClose`    | **boolean**  | -             | Extra padding on the right of the X icon.                                                                                         |
+| `id`             | **string**   | -             | Alert component id.                                                                                                               |
+| `className`      | **string**   | -             | Alert component className.                                                                                                        |
+| `style`          | **object**   | -             | Object with direct style properties.                                                                                              |
+
+### Themes
+
+<Demo title="Alert themes" background={colors.bgGrey}>
+  <Alert theme="info">Alert with info theme</Alert>
+  <Alert theme="warning">Alert with warning theme</Alert>
+  <Alert theme="success">Alert with success theme</Alert>
+  <Alert theme="error">Alert with error theme</Alert>
+  <Alert theme="promote">Alert with promote theme</Alert>
+</Demo>
+
+```jsx
+// How to use themes
+function Component() {
+  return (
+    <>
+      <Alert theme="info">Alert with info theme</Alert>
+      <Alert theme="warning">Alert with warning theme</Alert>
+      <Alert theme="success">Alert with success theme</Alert>
+      <Alert theme="error">Alert with error theme</Alert>
+      <Alert theme="promote">Alert with promote theme</Alert>
+    </>
+  )
+}
+```
+
+### Icon
+
+Each theme has an associated icon.
+
+<Demo title="Alert with icons" background={colors.bgGrey}>
+  <Alert icon theme="info">
+    Alert with icon
+  </Alert>
+  <Alert icon theme="warning">
+    Alert with icon
+  </Alert>
+  <Alert icon theme="success">
+    Alert with icon
+  </Alert>
+  <Alert icon theme="error">
+    Alert with icon
+  </Alert>
+</Demo>
+
+```jsx
+// How to set an icon
+function Component() {
+  return (
+    <>
+      <Alert icon theme="info">
+        Alert with icon
+      </Alert>
+      <Alert icon theme="warning">
+        Alert with icon
+      </Alert>
+      <Alert icon theme="success">
+        Alert with icon
+      </Alert>
+      <Alert icon theme="error">
+        Alert with icon
+      </Alert>
+      {/* Promote theme has no icon */}
+    </>
+  )
+}
+```
+
+### Bold
+
+You can surround text with \* to make it bold.
+
+<Demo title="Alert with bold text" background={colors.bgGrey}>
+  <Alert theme="info">Alert with *bold* text</Alert>
+</Demo>
+
+```jsx
+// How to set bold text
+function Component() {
+  return (
+    <>
+      <Alert theme="info">Alert with *bold* text</Alert>
+    </>
+  )
+}
+```
+
+### Action
+
+You can pass cta properties to render a button at the end of the alert text.
+
+<Demo title="Alert with cta" background={colors.bgGrey}>
+  <Alert
+    theme="info"
+    cta={{
+      href: 'https://www.google.com',
+      target: '_blank',
+      text: 'Click here.',
+      onClick: () => alert('CTA Clicked')
+    }}
+  >
+    Alert message.
+  </Alert>
+</Demo>
+
+```jsx
+// How to set cta
+function Component() {
+  return (
+    <>
+      <Alert
+        theme="info"
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Alert message.
+      </Alert>
+    </>
+  )
+}
+```
+
+### Others
+
+There is some other properties that can be used with Alert component.
+
+<Demo title="Other Alert properties" background={colors.bgGrey}>
+  <Alert
+    theme="info"
+    icon
+    center
+    noBorderRadius
+    onClose={() => alert('Closing Alert')}
+    spacedClose
+  >
+    Alert message.
+  </Alert>
+</Demo>
+
+```jsx
+// How to use other props
+function Component() {
+  return (
+    <>
+      <Alert
+        theme="info"
+        icon
+        // Other props
+        center
+        noBorderRadius
+        onClose={() => alert('Closing Alert')}
+        spacedClose
+      >
+        Alert message.
+      </Alert>
+    </>
+  )
+}
+```

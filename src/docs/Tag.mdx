@@ -1,0 +1,159 @@
+---
+title: Tag
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Tag from '@/components/Tag'
+
+# Tag
+
+---
+
+Tag component with different themes.
+
+- [Props](#Props)
+  - [Sizes](#Sizes)
+  - [Themes](#Themes)
+  - [Icon](#Icon)
+
+## Props
+
+| Name        | Type          | Default value | Description                                                   |
+| ----------- | ------------- | ------------- | ------------------------------------------------------------- |
+| `children`  | **ReactNode** | -             | Children component passed to this container.                  |
+| `theme`     | **string**    | `'default'`   | The theme of the Tag component.                               |
+| `iconName`  | **string**    | -             | Name of the icon to render inside the Tag.                    |
+| `size`      | **string**    | `'small'`     | The size of the Tag. Chose from `small`, `medium` and `large` |
+| `className` | **string**    | -             | className of the Tag component.                               |
+| `style`     | **object**    | -             | Object with direct style properties.                          |
+
+## Examples
+
+### Sizes
+
+<Demo title="Tag Sizes" background={colors.bgGrey}>
+  <Flexbox
+    display="flex"
+    direction="row"
+    justifyContent="between"
+    wrap="wrap"
+    alignItems="center"
+  >
+    <Tag theme="primary" size="small">
+      Tag small
+    </Tag>
+    <Tag theme="primary" size="medium">
+      Tag Medium
+    </Tag>
+    <Tag theme="primary" size="large">
+      Tag Large
+    </Tag>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use tag sizes
+function Component() {
+  return (
+    <>
+      <Tag theme="primary" size="small">
+        Tag small
+      </Tag>
+      <Tag theme="primary" size="medium">
+        Tag Medium
+      </Tag>
+      <Tag theme="primary" size="large">
+        Tag Large
+      </Tag>
+    </>
+  )
+}
+```
+
+### Themes
+
+<Demo title="Tag themes" background={colors.bgGrey}>
+  <Flexbox display="flex" direction="row" justifyContent="between" wrap="wrap">
+    <Tag size="medium" theme="default">
+      Tag Default
+    </Tag>
+    <Tag size="medium" theme="primary">
+      Tag Primary
+    </Tag>
+    <Tag size="medium" theme="info">
+      Tag Info
+    </Tag>
+    <Tag size="medium" theme="success">
+      Tag Success
+    </Tag>
+    <Tag size="medium" theme="warning">
+      Tag Warning
+    </Tag>
+    <Tag size="medium" theme="error">
+      Tag Error
+    </Tag>
+    <Tag size="medium" theme="basic">
+      Tag Basic
+    </Tag>
+    <Tag size="medium" theme="link">
+      Tag Link
+    </Tag>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use themes
+function Component() {
+  return (
+    <>
+      <Tag size="medium" theme="default">
+        Tag Default
+      </Tag>
+      <Tag size="medium" theme="primary">
+        Tag Primary
+      </Tag>
+      <Tag size="medium" theme="info">
+        Tag Info
+      </Tag>
+      <Tag size="medium" theme="success">
+        Tag Success
+      </Tag>
+      <Tag size="medium" theme="warning">
+        Tag Warning
+      </Tag>
+      <Tag size="medium" theme="error">
+        Tag Error
+      </Tag>
+      <Tag size="medium" theme="basic">
+        Tag Basic
+      </Tag>
+      <Tag size="medium" theme="link">
+        Tag Link
+      </Tag>
+    </>
+  )
+}
+```
+
+### Icon
+
+<Demo title="Tag Icon" background={colors.bgGrey}>
+  <Tag theme="primary" size="medium" iconName="search">
+    Tag Icon
+  </Tag>
+</Demo>
+
+```jsx
+// How to set an icon
+function Component() {
+  return (
+    <>
+      // The icon should match name with one in atomic-icons library
+      <Tag theme="primary" size="medium" iconName="search">
+        Tag Icon
+      </Tag>
+    </>
+  )
+}
+```
