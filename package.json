@@ -4,7 +4,6 @@
   "license": "ISC",
   "private": true,
   "main": "dist/index.js",
-  "homepage": "https://occmundial.github.io/atomic",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build && next export",
