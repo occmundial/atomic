@@ -1,3 +1,40 @@
+# [2.0.0-beta.27](https://github.com/occmundial/atomic/compare/v2.0.0-beta.26...v2.0.0-beta.27) (2024-04-04)
+
+
+### Bug Fixes
+
+* Add testid to icon component ([150e764](https://github.com/occmundial/atomic/commit/150e764bad11c7131fb4cf4b04d8c1ada7705c8e))
+* Adjust logo width ([1aa75c0](https://github.com/occmundial/atomic/commit/1aa75c0b755d0739ef40b7a04eca09f1386a1f98))
+* Change password icon ([c9c4b6a](https://github.com/occmundial/atomic/commit/c9c4b6adafc5c3ec35f2d92e072b4fc41da2cd98))
+* Fix font weight ([5b35ad5](https://github.com/occmundial/atomic/commit/5b35ad5bcc0e09b527e2b7b02d8d243055bef2f0))
+* Fix Pill error color ([524e123](https://github.com/occmundial/atomic/commit/524e123c782087449074734d8ef08006a30bf521))
+* Remove homepage ([73aafe9](https://github.com/occmundial/atomic/commit/73aafe99317e29c10ff0e9749eb3a0128caba19c))
+* Restore homepage ([b358c1e](https://github.com/occmundial/atomic/commit/b358c1ea5d0e4d8a6ea7a144057b6ffffe2e0bdc))
+* Update slack bot dependency ([a9bc8f6](https://github.com/occmundial/atomic/commit/a9bc8f6b971f7f083c0ef269900055f1b7166aec))
+
+
+### Features
+
+* Add extraText property ([ba25977](https://github.com/occmundial/atomic/commit/ba259772ba034e9b9a5e405a88e357cce587ab5f))
+* Add index in droplist item ([0dd5488](https://github.com/occmundial/atomic/commit/0dd5488ad8ff1cdd4e4a5796444fe84b1a10d6aa))
+* Add missing ids ([7676d7d](https://github.com/occmundial/atomic/commit/7676d7d7893706f687f88d006729efe6aa9e9a05))
+* Add missing index ([94b202c](https://github.com/occmundial/atomic/commit/94b202c96d69ebf06a7f1c26079dd94fe7dd1fcf))
+* Add new logo variant ([30035b4](https://github.com/occmundial/atomic/commit/30035b47c4b1c5ab2c81972e0a50a0acc7631ffd))
+* Add new props ([1aba82c](https://github.com/occmundial/atomic/commit/1aba82c0d4614f87d784007dcbc056d8c6147c6a))
+* Add noJustified to SlideDown Component ([646605f](https://github.com/occmundial/atomic/commit/646605ff026f546e7cf6b99342ee778e6176e3d9))
+* Add testId to radio button component ([ccdc1d9](https://github.com/occmundial/atomic/commit/ccdc1d9b7fc3a285e0576b7810e4b61a0e9b8e82))
+* Add type prop to button ([7ced219](https://github.com/occmundial/atomic/commit/7ced219c1ae6d1a8019988074e30761c337f8bb3))
+* Aff type button in modal ([77b632e](https://github.com/occmundial/atomic/commit/77b632edb78ec5cc156f5e97d181b002d00facd0))
+* Pill testid has been added ([09e5e06](https://github.com/occmundial/atomic/commit/09e5e06c1315d7f4e589ea8384ff74263635a114))
+* Remove text transform uppercase btn ([6c01dc3](https://github.com/occmundial/atomic/commit/6c01dc34e72549d9d94f23efe4c4eb5762477539))
+* Update font ([2db7795](https://github.com/occmundial/atomic/commit/2db7795f8514495a59eacc5634b0499fb7962394))
+* Update font size styles (button component) ([0f09b70](https://github.com/occmundial/atomic/commit/0f09b70ccefd8069a926467955f1bd4d207623ec))
+* Update font size styles (Pagercomponent) ([579cd6d](https://github.com/occmundial/atomic/commit/579cd6d3229ca4b96d9eb0aa704377a784f12988))
+* Update font style (Tag component) ([46dcd09](https://github.com/occmundial/atomic/commit/46dcd0916790d0f9fd7b1e7a05b45e7a6e8d2c33))
+* Update font styles ([05eec96](https://github.com/occmundial/atomic/commit/05eec96b12eeefa7804d20a41dd9a7384cbdbdca))
+* Update font styles (Text component) ([281fe6b](https://github.com/occmundial/atomic/commit/281fe6b948f4a74cb96532a819e272e59cdc004c))
+* Update footer to support new logo ([3dc339e](https://github.com/occmundial/atomic/commit/3dc339e503b744873a503269efff39eb130a929f))
+
 # [2.0.0-beta.26](https://github.com/occmundial/atomic/compare/v2.0.0-beta.25...v2.0.0-beta.26) (2023-11-15)
 
 
