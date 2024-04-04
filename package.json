@@ -1,6 +1,6 @@
 {
   "name": "@occmundial/atomic",
-  "version": "1.26.0",
+  "version": "2.0.0-beta.27",
   "license": "ISC",
   "private": true,
   "main": "dist/index.js",
@@ -25,7 +25,10 @@
     "deploy": "node scripts/deploy.js"
   },
   "dependencies": {
+    "@artsy/fresnel": "^6.1.0",
     "@babel/runtime": "^7.14.8",
+    "@floating-ui/react": "^0.24.1",
+    "@types/lodash": "^4.14.194",
     "classnames": "^2.3.1",
     "hex-rgba": "^1.0.2",
     "lodash": "^4.17.21",
@@ -79,8 +82,8 @@
     "react-jss": "^10.6.0",
     "replace-json-property": "^1.6.3",
     "rimraf": "^3.0.2",
-    "semantic-release": "^17.4.4",
-    "semantic-release-slack-bot": "^2.1.1",
+    "semantic-release": "^17.4.7",
+    "semantic-release-slack-bot": "^2.1.2",
     "slugify": "^1.6.0",
     "ts-jest": "^27.0.4",
     "ts-node": "^10.0.0",

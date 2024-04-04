@@ -14,9 +14,7 @@ import Text from '@/components/Text'
 import Flexbox from '@/components/Flexbox'
 import Button from '@/components/Button'
 import colors from '@/tokens/colors'
-import grid from '@/tokens/grid'
 import iconSizes from '@/tokens/iconSizes'
-import useWindowSize from '@/hooks/useWindowSize'
 import useEventListener from '@/hooks/useEventListener'
 
 import styles from './styles'
@@ -40,7 +38,7 @@ interface ModalImage {
   color?: string
   alt?: string
   size?: 'contain' | 'cover' | string
-  height: number
+  height?: number
 }
 
 interface ImageTop extends ModalImage {
@@ -64,6 +62,8 @@ export interface ModalProps {
   imgLeft?: ImageLeft
   onTransitionEnd?: TransitionEventHandler<HTMLDivElement>
   fullSize?: boolean
+  /** The recommendation is to set the breakpoint at `grid.xs` */
+  isMobile?: boolean
   testId?: string
 }
 
@@ -81,11 +81,10 @@ const Modal = (props: ModalProps) => {
     imgLeft,
     onTransitionEnd,
     fullSize,
+    isMobile,
     testId
   } = props
-  const { width } = useWindowSize()
   useLockBodyScroll()
-  const isMobile = useMemo(() => width < grid.xs, [width])
 
   const onKeyDown = useCallback(
     ({ code }: KeyboardEvent) => {
@@ -117,6 +116,7 @@ const Modal = (props: ModalProps) => {
 
   return (
     <div
+      data-testid={testId}
       className={classnames(
         classes.overlay,
         { [classes.overlayShow]: show },

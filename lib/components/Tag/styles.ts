@@ -5,8 +5,6 @@ import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
 import spacing from '@/tokens/spacing'
 
-import { TagProps } from './'
-
 const {
   infoText,
   infoLight,
@@ -25,7 +23,7 @@ const {
 } = colors
 const { xTiny, tiny, small, medium, gutter } = spacing
 
-export default createUseStyles<any, TagProps>({
+export default createUseStyles({
   tag: {
     boxSizing: 'border-box',
     lineHeight: 1.5,
@@ -59,8 +57,7 @@ export default createUseStyles<any, TagProps>({
     textAlign: 'center',
     position: 'relative',
     overflow: 'hidden',
-    display: 'inline-block',
-    paddingRight: props => (props.iconName ? xTiny : 0)
+    display: 'inline-block'
   },
   smallTagText: {
     fontSize: 10

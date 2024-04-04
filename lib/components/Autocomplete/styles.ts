@@ -1,20 +1,19 @@
 import { createUseStyles } from 'react-jss'
 
 import spacing from '@/tokens/spacing'
-import { AutocompleteProps } from './'
 
-export default createUseStyles<any, AutocompleteProps>({
+export default createUseStyles({
   autoComplete: {
     position: 'relative'
   },
   droplist: {
     position: 'absolute',
     zIndex: 2,
-    top: props =>
-      props.textfieldProps?.label || props.textfieldProps?.lockHeight
-        ? spacing.xLarge
-        : 40,
+    top: 40,
     left: 0,
     width: '100%'
+  },
+  pushDroplist: {
+    top: spacing.xLarge
   }
 })

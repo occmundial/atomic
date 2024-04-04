@@ -10,14 +10,27 @@ export interface AvatarProps extends AvatarContentProps {
   style?: CSSProperties
 }
 
-const Avatar = (props: AvatarProps) => {
-  const { photo, gender, name, size, id, className, style } = props
-  const classes = useStyles(props)
+const DEFAULT_SIZE = 70
+
+const Avatar = ({
+  photo,
+  gender,
+  name,
+  size,
+  id,
+  className,
+  style
+}: AvatarProps) => {
+  const classes = useStyles()
   return (
     <div
       id={id}
       className={classnames(classes.circle, className)}
-      style={style}
+      style={{
+        ...style,
+        width: size || DEFAULT_SIZE,
+        height: size || DEFAULT_SIZE
+      }}
     >
       <AvatarContent photo={photo} gender={gender} name={name} size={size} />
     </div>

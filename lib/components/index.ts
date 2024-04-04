@@ -10,6 +10,7 @@ import Footer from './Footer'
 import Grid from './Grid'
 import Icon from './Icon'
 import Logo from './Logo'
+import { MediaContextProvider, Media, mediaStyle } from './Media'
 import Modal from './Modal'
 import NavAside from './NavAside'
 import NavIcon from './NavIcon'
@@ -30,6 +31,7 @@ import TextField from './TextField'
 import Toaster from './Toaster'
 import { toastLauncher } from './Toaster/helper'
 import Toggle from './Toggle'
+import Tooltip from './Tooltip'
 
 export {
   Alert,
@@ -44,6 +46,9 @@ export {
   Grid,
   Icon,
   Logo,
+  Media,
+  MediaContextProvider,
+  mediaStyle,
   Modal,
   NavAside,
   NavIcon,
@@ -63,5 +68,6 @@ export {
   TextField,
   Toaster,
   toastLauncher,
-  Toggle
+  Toggle,
+  Tooltip
 }

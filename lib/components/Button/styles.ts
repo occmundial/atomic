@@ -7,7 +7,7 @@ import { base } from '@/tokens/icons'
 import spinner from '@/tokens/icons/spinner'
 import { ButtonProps } from './'
 
-export default createUseStyles<any, ButtonProps>({
+export default createUseStyles({
   btn: {
     display: 'inline-block',
     boxSizing: 'border-box',

@@ -6,6 +6,8 @@ import Icon from '@/components/Icon'
 import spacing from '@/tokens/spacing'
 import iconSizes from '@/tokens/iconSizes'
 
+const { gutter, xTiny } = spacing
+
 import useStyles from './styles'
 
 export interface TagProps {
@@ -25,11 +27,17 @@ export interface TagProps {
   size?: 'small' | 'medium' | 'large'
 }
 
-const Tag = (props: TagProps) => {
-  const { children, className, style, theme, iconName, size } = props
-  const classes = useStyles(props)
+const Tag = ({
+  children,
+  className,
+  style,
+  theme,
+  iconName,
+  size
+}: TagProps) => {
+  const classes = useStyles()
   const iconSize = useMemo(
-    () => (size === 'small' ? spacing.gutter : iconSizes.small),
+    () => (size === 'small' ? gutter : iconSizes.small),
     [size]
   )
   return (
@@ -48,6 +56,7 @@ const Tag = (props: TagProps) => {
         )}
         <span
           className={classnames(classes.tagText, classes[`${size}TagText`])}
+          style={{ paddingRight: iconName ? xTiny : 0 }}
         >
           {children}
         </span>

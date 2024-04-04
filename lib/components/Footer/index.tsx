@@ -5,13 +5,11 @@ import Grid from '@/components/Grid'
 import Flexbox from '@/components/Flexbox'
 import Text from '@/components/Text'
 import Button from '@/components/Button'
-import grid from '@/tokens/grid'
-import useWindowSize from '@/hooks/useWindowSize'
 
 import List, { ListItem } from './List'
 import useStyles from './styles'
 
-interface ColumnItem {
+export interface ColumnItem {
   key: string | number
   title?: string
   collapse?: boolean
@@ -20,16 +18,17 @@ interface ColumnItem {
 
 export interface Column extends Array<ColumnItem> {}
 
-interface BottomLink {
+export interface BottomLink {
   key: string | number
   text: string
   onClick?: (e: MouseEvent) => void
   href?: string
   target?: string
   rel?: string
+  id?: string
 }
 
-interface Aux {
+export interface Aux {
   text: string
   href?: string
   target?: string
@@ -38,34 +37,30 @@ interface Aux {
   className?: string
 }
 
-interface FooterProps {
+export interface FooterProps {
   columns?: Column[]
   bottomLinks?: BottomLink[]
   copyText?: string | ReactElement
   aux?: Aux
   bottomItem?: ReactElement
   listClassName?: string
+  /** The recommendation is to set the breakpoint at `grid.sm` */
+  isMobile?: boolean
+  /** The recommendation is to set the breakpoint at `grid.xl` */
+  isFluid?: boolean
 }
 
 const Footer = ({
-  columns,
-  bottomLinks,
+  columns = [],
+  bottomLinks = [],
   copyText,
   aux,
   bottomItem,
-  listClassName
+  listClassName,
+  isMobile,
+  isFluid
 }: FooterProps) => {
   const classes = useStyles()
-  const { width } = useWindowSize()
-  const {
-    text,
-    iconLeft,
-    href,
-    target,
-    iconRight,
-    className: auxClassName
-  } = aux
-  const isMobile = width < grid.sm
 
   return (
     <div
@@ -73,7 +68,7 @@ const Footer = ({
         columns.length > 0 ? classes.footer : classes.footerWithoutColumns
       }
     >
-      <Grid fluid={width < grid.xl}>
+      <Grid fluid={isFluid}>
         <Grid.Row>
           <Flexbox
             display="flex"
@@ -107,18 +102,18 @@ const Footer = ({
               <Flexbox flex="1">
                 {aux && (
                   <Button
-                    href={href}
-                    target={target}
-                    iconLeft={iconLeft}
-                    iconRight={iconRight}
+                    href={aux.href}
+                    target={aux.target}
+                    iconLeft={aux.iconLeft}
+                    iconRight={aux.iconRight}
                     size="md"
                     theme="ghostPink"
                     className={classnames(
                       { [classes.buttonMobile]: isMobile },
-                      auxClassName
+                      aux.className
                     )}
                   >
-                    {text}
+                    {aux.text}
                   </Button>
                 )}
                 <Text small mid bottomTiny tag="div">
@@ -131,7 +126,7 @@ const Footer = ({
                       }
                       key={item.key}
                     >
-                      <Text tag="label" small mid>
+                      <Text tag="label" small mid id={item.id}>
                         <a
                           className={classes.link}
                           href={item.href}
@@ -154,11 +149,6 @@ const Footer = ({
       </Grid>
     </div>
   )
-}
-
-Footer.defaultProps = {
-  bottomLinks: [],
-  columns: []
 }
 
 export default Footer

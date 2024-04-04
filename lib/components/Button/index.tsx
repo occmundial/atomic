@@ -6,17 +6,19 @@ import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 
+export type ButtonTheme =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'tertiaryWhite'
+  | 'ghostPink'
+  | 'ghostGrey'
+  | 'ghostWhite'
+  | null
+
 export interface ButtonProps {
   children?: ReactNode
-  theme:
-    | 'primary'
-    | 'secondary'
-    | 'tertiary'
-    | 'tertiaryWhite'
-    | 'ghostPink'
-    | 'ghostGrey'
-    | 'ghostWhite'
-    | null
+  theme: ButtonTheme
   size?: 'sm' | 'md' | 'lg'
   block?: boolean
   disabled?: boolean
@@ -33,6 +35,7 @@ export interface ButtonProps {
   className?: string
   style?: CSSProperties
   testId?: string
+  ariaLabel?: string
   name?: string
   value?: any | null
 }
@@ -56,6 +59,7 @@ const Button = (props: ButtonProps) => {
     className,
     style,
     testId,
+    ariaLabel,
     name,
     value
   } = props
@@ -112,6 +116,7 @@ const Button = (props: ButtonProps) => {
         id={id}
         style={style}
         data-testid={testId}
+        aria-label={ariaLabel}
       >
         {content}
         {loadingLayer}
@@ -125,6 +130,7 @@ const Button = (props: ButtonProps) => {
         id={id}
         style={style}
         data-testid={testId}
+        aria-label={ariaLabel}
         type={type}
         value={value}
         name={name}

@@ -1,4 +1,4 @@
-import { createElement, ReactNode } from 'react'
+import { createElement } from 'react'
 import slugify from 'slugify'
 
 import Demo from './Demo'
@@ -17,6 +17,7 @@ import Flexbox from '@/components/Flexbox'
 import Icon from '@/components/Icon'
 import Text from '@/components/Text'
 import Anchor from './Anchor'
+import Tooltip from '@/components/Tooltip'
 
 const mdxComponents = {
   // Library components
@@ -27,6 +28,7 @@ const mdxComponents = {
   Icon,
   Card,
   Flexbox,
+  Tooltip,
   // Docs components
   Demo,
   code: Code,

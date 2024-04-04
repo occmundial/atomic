@@ -1,4 +1,4 @@
-import React, { EventHandler, MouseEvent } from 'react'
+import React, { EventHandler, MouseEvent, useState } from 'react'
 import classnames from 'classnames'
 
 import Text from '@/components/Text'
@@ -21,18 +21,36 @@ export interface NavIconProps {
   testId?: string
 }
 
-const NavIcon = (props: NavIconProps) => {
-  const classes = useStyles(props)
-  const { iconName, selected, label, onClick, direction, className, testId } =
-    props
+const NavIcon = ({
+  iconName,
+  selected,
+  label,
+  onClick,
+  direction,
+  className,
+  testId,
+  width,
+  white,
+  showBar
+}: NavIconProps) => {
+  const classes = useStyles()
+  const [hover, setHover] = useState(false)
   return (
     <div
       className={classnames(
         classes.cont,
-        { [classes.selected]: selected },
+        { [classes.white]: white },
+        { [classes.black]: !white },
+        { [classes.selectedWhite]: selected && white },
+        { [classes.selected]: selected && !white },
+        { [classes.showBarSec]: showBar && white },
+        { [classes.showBar]: showBar && !white },
         className
       )}
       onClick={onClick}
+      style={{ width }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
       data-testid={testId}
     >
       <Flexbox
@@ -45,11 +63,21 @@ const NavIcon = (props: NavIconProps) => {
         <Icon
           iconName={iconName}
           size={iconSizes.base}
-          className={classes.icon}
+          className={classnames(classes.icon, {
+            [classes.withOpacity]: hover && white
+          })}
         />
         {label && (
           <Text micro current>
-            <span className={classes.text}>{label}</span>
+            <span
+              className={classnames(
+                classes.text,
+                { [classes.withOpacity]: hover && white },
+                { [classes.pushText]: direction !== 'col' }
+              )}
+            >
+              {label}
+            </span>
           </Text>
         )}
       </Flexbox>
