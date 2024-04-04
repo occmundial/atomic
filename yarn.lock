@@ -8755,10 +8755,10 @@ section-matter@^1.0.0:
     extend-shallow "^2.0.1"
     kind-of "^6.0.0"
 
-semantic-release-slack-bot@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/semantic-release-slack-bot/-/semantic-release-slack-bot-2.1.1.tgz#22fd5f10640c468c83af8f2deae7b89bb9d571f7"
-  integrity sha512-keNqVsZ+Ntm1F8O5yqoX3DmIsH1gK+CDmPhcjLAHTOtmJSul2kRFzEnAac1O8LltF9BQ2wW5OJ3BXcFWXt49aw==
+semantic-release-slack-bot@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/semantic-release-slack-bot/-/semantic-release-slack-bot-2.1.2.tgz#d60ee110e70b203df1a2812851f11ba98b70037b"
+  integrity sha512-4rx5ve35+K56HXh6vWhCziFGUZ2zghBm4N6rtQiXCxdscWP8Emd0SGgJNJf+FprtLl89g006akBOoMy24BNoog==
   dependencies:
     "@semantic-release/error" "^2.2.0"
     micromatch "4.0.2"

@@ -83,7 +83,7 @@
     "replace-json-property": "^1.6.3",
     "rimraf": "^3.0.2",
     "semantic-release": "^17.4.7",
-    "semantic-release-slack-bot": "^2.1.1",
+    "semantic-release-slack-bot": "^2.1.2",
     "slugify": "^1.6.0",
     "ts-jest": "^27.0.4",
     "ts-node": "^10.0.0",
