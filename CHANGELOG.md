@@ -1,3 +1,10 @@
+# [2.1.0-beta.1](https://github.com/occmundial/atomic/compare/v2.0.0...v2.1.0-beta.1) (2024-04-04)
+
+
+### Features
+
+* Add new design tokens files ([aaac477](https://github.com/occmundial/atomic/commit/aaac47738a95c19d0a2e2458f55ed223f48fad8a))
+
 # [2.0.0](https://github.com/occmundial/atomic/compare/v1.26.0...v2.0.0) (2024-04-04)
 
 
