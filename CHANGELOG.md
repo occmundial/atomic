@@ -1,3 +1,67 @@
+# [2.0.0](https://github.com/occmundial/atomic/compare/v1.26.0...v2.0.0) (2024-04-04)
+
+
+### Bug Fixes
+
+* Add direction to IconElement type ([3d2a65a](https://github.com/occmundial/atomic/commit/3d2a65a8275dbc50e258977fcf082a1cbbd1c0c7))
+* Add width to IconElement type ([a13756f](https://github.com/occmundial/atomic/commit/a13756f0f7c6898b35df84045aaeac0fcd9b6e42))
+* Added missing Tooltip export ([8e33217](https://github.com/occmundial/atomic/commit/8e33217c4f0b6e692a04d0d466d7ebbce3f82bba))
+* Adjust logo width ([1d777b5](https://github.com/occmundial/atomic/commit/1d777b5bf8c7baa6a2686e1ccc50ee8509779b95))
+* Change in babel plugin to include Media ([df2d1c3](https://github.com/occmundial/atomic/commit/df2d1c334f67b267b7664111af0892441e463bdd))
+* Change in type definitions for NavTab ([d2a4646](https://github.com/occmundial/atomic/commit/d2a464601186007d967be7ee80b6cbe2e19cf0de))
+* Declare optional props for autocomplete ([35098c9](https://github.com/occmundial/atomic/commit/35098c95b79093c531ca8a0c09995299c9e9c878))
+* Export NavElement types and change onClick type ([6762058](https://github.com/occmundial/atomic/commit/67620584ba2f8b106906cc30a8c8b5c96d375c20))
+* Fix font weight ([485dbbc](https://github.com/occmundial/atomic/commit/485dbbc0915ffb7991d47bc36384345ffa97c0e7))
+* Fix font weight ([d130e02](https://github.com/occmundial/atomic/commit/d130e02594887388f2d69f8471500647cdb59c9f))
+* Fix Footer error when aux is undefined ([a17a623](https://github.com/occmundial/atomic/commit/a17a6234a24f2ba2b23e97893a7d0aa84b0b8eb9))
+* Fix Pill error color ([fbe81f3](https://github.com/occmundial/atomic/commit/fbe81f366b355a38a37d4e03ecf77ce6b21390e5))
+* Moved Tooltip component to lib ([e71f7e7](https://github.com/occmundial/atomic/commit/e71f7e7b746366832597d45c441b17c92bc9e6e3))
+* Optional prop ([b326f7a](https://github.com/occmundial/atomic/commit/b326f7ab4378261fa10855762118f88e077d3607))
+* Remove conditional rendering logic from components ([2e06e19](https://github.com/occmundial/atomic/commit/2e06e19322c2967487c4c845a45da2b1dd684951))
+* Remove font change ([f0564ed](https://github.com/occmundial/atomic/commit/f0564ed61c96ebaba77675a160ae71e34fe5d4bd))
+* Remove function styles, replace them for class togglin ([511c7bb](https://github.com/occmundial/atomic/commit/511c7bbd7d0bae0f3daad468968760732139c996))
+* Remove homepage ([73aafe9](https://github.com/occmundial/atomic/commit/73aafe99317e29c10ff0e9749eb3a0128caba19c))
+* Restore homepage ([b358c1e](https://github.com/occmundial/atomic/commit/b358c1ea5d0e4d8a6ea7a144057b6ffffe2e0bdc))
+* Revert new font ([b349a9b](https://github.com/occmundial/atomic/commit/b349a9b8a0b534c63783e1b3c4fcac610c07030a))
+* Tooltip delay and position on display fiexed ([7d85a37](https://github.com/occmundial/atomic/commit/7d85a3732e541da94c2cbcc7ac3b3e8fe38fb5b7))
+* Update slack bot dependency ([a9bc8f6](https://github.com/occmundial/atomic/commit/a9bc8f6b971f7f083c0ef269900055f1b7166aec))
+* Used data-testid instead id ([bfee34a](https://github.com/occmundial/atomic/commit/bfee34a3d7d1cb33c84aa68548e8819f510b455a))
+
+
+### Features
+
+* Add ariaLabel to button component ([d2cfa7a](https://github.com/occmundial/atomic/commit/d2cfa7a880d84d6fb3058345c61d23b29fc1fda0))
+* Add bottomItem change to beta branch ([26a1a98](https://github.com/occmundial/atomic/commit/26a1a98d77c618742927ef3052ba2d68df1ac3ed))
+* Add extraText property ([ba50d51](https://github.com/occmundial/atomic/commit/ba50d519cc415624e729c9b6b1dc2a79591dbbdd))
+* Add iconsPath property to Provider ([845a70a](https://github.com/occmundial/atomic/commit/845a70a57f6d9c542d51cc7a4e7bd4f18e51bd46))
+* Add id to bottomLink ([cd0781b](https://github.com/occmundial/atomic/commit/cd0781b0d74e661996eb47aac2da5698cd6fb704))
+* Add Media component ([7d6c017](https://github.com/occmundial/atomic/commit/7d6c017dbc64610a4ce8a578df8cc13a0af4ee6b))
+* Add new font styles in Button component ([449965d](https://github.com/occmundial/atomic/commit/449965d326f6bb8c682b0299b969aa020d801d78))
+* Add new font to atomic beta ([8387013](https://github.com/occmundial/atomic/commit/838701360216c282617727e1c5748ef3416dccca))
+* Add new logo to a variant ([c0456f0](https://github.com/occmundial/atomic/commit/c0456f007462503d731aaac4cf097fcf6bd6dba3))
+* Add strategy prop ([4ee833f](https://github.com/occmundial/atomic/commit/4ee833fc01b8b5497576ff03c5afecd1d39849f9))
+* Added dependencies ([912e523](https://github.com/occmundial/atomic/commit/912e52376b1f33ba5488087bb9a0e50aa38f7c3b))
+* Added id to nav tab, icon and item ([cf30760](https://github.com/occmundial/atomic/commit/cf30760cd85783d49fe20f28360eb03f424781f4))
+* Added modal id attribute ([d46562f](https://github.com/occmundial/atomic/commit/d46562f730e3b37649027b07409bf3445a1750d9))
+* Added onShowChange to documentation ([fd535e8](https://github.com/occmundial/atomic/commit/fd535e844411185d8e0dccf7bce9aa799ff97e14))
+* Added Tooltip component ([8871e97](https://github.com/occmundial/atomic/commit/8871e974bbb4f17dc8b3cf54e831057d43d2ebb0))
+* Extend leftImg prop in Modal component ([51afa5a](https://github.com/occmundial/atomic/commit/51afa5ad7e5069e48e8bf3b6a629605c3e81f95d))
+* Remove capitalize ([9c7064f](https://github.com/occmundial/atomic/commit/9c7064faa89e99936d389b33aea72d8e61ad8390))
+* Revert fontWeight ([3d39724](https://github.com/occmundial/atomic/commit/3d39724c794a0f849b3282679800668342f4d86c))
+* Tooltip Documentation ([2ddbc5e](https://github.com/occmundial/atomic/commit/2ddbc5ebf1dfcd7703a1a8237b34e6b7602482b0))
+* Tooltip Hooks ([f7fad1c](https://github.com/occmundial/atomic/commit/f7fad1c3388087b2da8c4b7a45282606f7ba16f0))
+* Update font styles in Text component ([158b4f0](https://github.com/occmundial/atomic/commit/158b4f0bf8ff05185d29a48e63e91fdc731de149))
+* Update font Styles in TextField component ([2e43c1a](https://github.com/occmundial/atomic/commit/2e43c1a7134f77996c3138e5018a7d0e0f630a20))
+* Update font styles in Tooltip components ([ace9edf](https://github.com/occmundial/atomic/commit/ace9edf098b4f3c3084e3479f40ed4c584f69b1d))
+* Update font to OCCText ([1deca7e](https://github.com/occmundial/atomic/commit/1deca7ee90e0f5be5f0ebacfb8e74888766c37e7))
+* Update fontSize ([b494cd4](https://github.com/occmundial/atomic/commit/b494cd4ec2df89da08202bf4d7bd968cde29ae7b))
+* Update fontSize styles in Tag component ([f0b0357](https://github.com/occmundial/atomic/commit/f0b0357983c5168716bb986e1ed45e6b999744ea))
+
+
+### BREAKING CHANGES
+
+* The components in the library are not responsible anymore for the conditional rendering derived from the window size. Instead it is suggested to pass a prop on the client side to determine when the component should show a mobile version or when its grid has to be fluid.
+
 # [2.0.0-beta.27](https://github.com/occmundial/atomic/compare/v2.0.0-beta.26...v2.0.0-beta.27) (2024-04-04)
 
 
