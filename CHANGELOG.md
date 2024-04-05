@@ -1,3 +1,10 @@
+# [2.1.0-beta.2](https://github.com/occmundial/atomic/compare/v2.1.0-beta.1...v2.1.0-beta.2) (2024-04-05)
+
+
+### Bug Fixes
+
+* Include json files in the build directory ([c7f81b8](https://github.com/occmundial/atomic/commit/c7f81b86185e0a03b85b535e0766489509f02d16))
+
 # [2.1.0-beta.1](https://github.com/occmundial/atomic/compare/v2.0.0...v2.1.0-beta.1) (2024-04-04)
 
 
