@@ -1,3 +1,21 @@
+# [3.0.0-beta.1](https://github.com/occmundial/atomic/compare/v2.1.0-beta.2...v3.0.0-beta.1) (2024-04-08)
+
+
+### Bug Fixes
+
+* Add a dark mode to the button to use the proper theme names ([a59a71d](https://github.com/occmundial/atomic/commit/a59a71d27a507df8b4277288f2e5920e01ff7f6c))
+* Make Button theme optional ([334cd2b](https://github.com/occmundial/atomic/commit/334cd2bed91f7e12b421bef95ca3c49f6f2bb0d7))
+
+
+### Features
+
+* Change button themes and styles ([57c2405](https://github.com/occmundial/atomic/commit/57c240526d555034f0d69e8f542505cc46115ebe))
+
+
+### BREAKING CHANGES
+
+* The themes of the Button component have changed to match the styles of the button in the new design system. The current themes have slightly different names to the new ones but they all have a corresponding new theme that matches, except for the ghostPink theme.
+
 # [2.1.0-beta.2](https://github.com/occmundial/atomic/compare/v2.1.0-beta.1...v2.1.0-beta.2) (2024-04-05)
 
 
