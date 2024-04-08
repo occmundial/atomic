@@ -1,16 +1,11 @@
 import { createUseStyles } from 'react-jss'
 
-import colors from '@/tokens/colors'
-import fonts from '@/tokens/fonts'
-import spacing from '@/tokens/spacing'
-import { base } from '@/tokens/icons'
-import spinner from '@/tokens/icons/spinner'
-import { ButtonProps } from './'
+import legacyColors from '@/tokens/colors'
 
-import newColors from '@/tokens/future/colors.json'
-import newSpacing from '@/tokens/future/spacing.json'
+import colors from '@/tokens/future/colors.json'
+import spacing from '@/tokens/future/spacing.json'
 import borderRadius from '@/tokens/future/borderRadius.json'
-import newFonts from '@/tokens/future/fonts.json'
+import fonts from '@/tokens/future/fonts.json'
 import shadows from '@/tokens/future/shadows.json'
 
 export default createUseStyles({
@@ -20,10 +15,10 @@ export default createUseStyles({
     position: 'relative', //*
     maxWidth: '100%', //*
     marginBottom: 0, //*
-    padding: [newSpacing['size-3'], newSpacing['size-4']], //*
+    padding: [spacing['size-3'], spacing['size-4']], //*
     borderRadius: borderRadius['br-xs'], //*
     border: 0,
-    font: newFonts['button-small'], //*
+    font: fonts['button-small'], //*
     textAlign: 'center', //*
     textDecoration: 'none', //*
     whiteSpace: 'nowrap', //*
@@ -59,176 +54,176 @@ export default createUseStyles({
   },
   // Themes
   primary: {
-    background: newColors.button.primary.bg.default, //*
-    color: newColors.text.white.primary, //*
-    outline: `2px solid ${newColors.button.primary.border.default}`, //*
+    background: colors.button.primary.bg.default, //*
+    color: colors.text.white.primary, //*
+    outline: `2px solid ${colors.button.primary.border.default}`, //*
     outlineOffset: '-2px', //*
     '&:hover': {
-      background: newColors.button.primary.bg.hover //*
+      background: colors.button.primary.bg.hover //*
     },
     '&:active': {
-      background: newColors.button.primary.bg.active //*
+      background: colors.button.primary.bg.active //*
     },
     '&:focus': {
-      outline: `2px solid ${newColors.button.primary.border.default}` //*
+      outline: `2px solid ${colors.button.primary.border.default}` //*
     },
     '&:not(:active):focus-visible': {
       boxShadow: shadows['focus-pink'] //*
     },
     '&$disabled': {
-      background: newColors.button.primary.bg.disabled, //*
-      color: newColors.text.white.secondary, //*
+      background: colors.button.primary.bg.disabled, //*
+      color: colors.text.white.secondary, //*
       cursor: 'not-allowed' //*
     },
     '& $icon': {
-      fill: newColors.icon.inverse.default
+      fill: colors.icon.inverse.default
     },
     '&$disabled $icon': {
-      fill: newColors.icon.inverse.disabled
+      fill: colors.icon.inverse.disabled
     }
   },
   secondary: {
-    background: newColors.button.secondary.bg.default, //*
-    color: newColors.text.indigo.primary, //*
+    background: colors.button.secondary.bg.default, //*
+    color: colors.text.indigo.primary, //*
     '&:hover': {
-      background: newColors.button.secondary.bg.hover //*
+      background: colors.button.secondary.bg.hover //*
     },
     '&:active': {
-      background: newColors.button.secondary.bg.active //*
+      background: colors.button.secondary.bg.active //*
     },
     '&:not(:active):focus-visible': {
       boxShadow: shadows['focus-indigo'] //*
     },
     '&$disabled': {
-      background: newColors.button.secondary.bg.disabled, //*
-      color: newColors.text.indigo.secondary //*
+      background: colors.button.secondary.bg.disabled, //*
+      color: colors.text.indigo.secondary //*
     },
     '& $icon': {
-      fill: newColors.icon.brand.default
+      fill: colors.icon.brand.default
     },
     '&$disabled $icon': {
-      fill: newColors.icon.brand.disabled
+      fill: colors.icon.brand.disabled
     }
   },
   tertiary: {
     background: 'transparent', //*
-    color: newColors.text.indigo.primary, //*
-    outline: `2px solid ${newColors.button.tertiary.border.default}`, //*
+    color: colors.text.indigo.primary, //*
+    outline: `2px solid ${colors.button.tertiary.border.default}`, //*
     outlineOffset: '-2px', //*
     '&:hover': {
-      background: newColors.button.tertiary.bg.hover //*
+      background: colors.button.tertiary.bg.hover //*
     },
     '&:active': {
-      background: newColors.button.tertiary.bg.active //*
+      background: colors.button.tertiary.bg.active //*
     },
     '&:focus': {
-      outline: `2px solid ${newColors.button.tertiary.border.default}` //*
+      outline: `2px solid ${colors.button.tertiary.border.default}` //*
     },
     '&:not(:active):focus-visible': {
       boxShadow: shadows['focus-indigo'] //*
     },
     '&$disabled': {
       background: 'transparent', //*
-      color: newColors.text.indigo.secondary, //*
-      outline: `2px solid ${newColors.button.tertiary.border.disabled}` //*
+      color: colors.text.indigo.secondary, //*
+      outline: `2px solid ${colors.button.tertiary.border.disabled}` //*
     },
     '& $icon': {
-      fill: newColors.icon.brand.default
+      fill: colors.icon.brand.default
     },
     '&$disabled $icon': {
-      fill: newColors.icon.brand.disabled
+      fill: colors.icon.brand.disabled
     }
   },
   tertiaryWhite: {
     background: 'transparent',
-    color: newColors.text.white.primary,
-    outline: `2px solid ${newColors.button.tertiary.border.inverse.default}`,
+    color: colors.text.white.primary,
+    outline: `2px solid ${colors.button.tertiary.border.inverse.default}`,
     outlineOffset: '-2px',
     '&:hover': {
-      background: newColors.button.tertiary.bg.inverse.hover
+      background: colors.button.tertiary.bg.inverse.hover
     },
     '&:active': {
-      background: newColors.button.tertiary.bg.inverse.active
+      background: colors.button.tertiary.bg.inverse.active
     },
     '&:focus': {
-      outline: `2px solid ${newColors.button.tertiary.border.inverse.default}`
+      outline: `2px solid ${colors.button.tertiary.border.inverse.default}`
     },
     '&:not(:active):focus-visible': {
       boxShadow: shadows['focus-white']
     },
     '&$disabled': {
       background: 'transparent',
-      color: newColors.text.white.secondary
+      color: colors.text.white.secondary
     },
     '& $icon': {
-      fill: newColors.icon.inverse.default
+      fill: colors.icon.inverse.default
     },
     '&$disabled $icon': {
-      fill: newColors.icon.inverse.disabled
+      fill: colors.icon.inverse.disabled
     }
   },
   ghostPink: {
     background: 'transparent',
-    color: colors.sec,
+    color: legacyColors.sec,
     border: 'none',
     paddingLeft: 0,
     paddingRight: 0,
     '&:hover, &:active': {
-      color: colors.secDark
+      color: legacyColors.secDark
     },
     '&$disabled': {
       background: `transparent !important`,
-      color: `${colors.sec} !important`,
+      color: `${legacyColors.sec} !important`,
       border: `none !important`
     },
     '& $icon': {
-      fill: colors.sec
+      fill: legacyColors.sec
     }
   },
   ghostGrey: {
     background: 'transparent',
-    color: newColors.text.corp.secondary,
+    color: colors.text.corp.secondary,
     '&:hover': {
-      background: newColors.button.ghost.bg.hover
+      background: colors.button.ghost.bg.hover
     },
     '&:active': {
-      background: newColors.button.ghost.bg.active
+      background: colors.button.ghost.bg.active
     },
     '&:not(:active):focus-visible': {
       boxShadow: shadows['focus-corp']
     },
     '&$disabled': {
       background: 'transparent',
-      color: newColors.text.corp.disabled
+      color: colors.text.corp.disabled
     },
     '& $icon': {
-      fill: newColors.icon.default.default
+      fill: colors.icon.default.default
     },
     '&$disabled $icon': {
-      fill: newColors.icon.default.disabled
+      fill: colors.icon.default.disabled
     }
   },
   ghostWhite: {
     background: 'transparent',
-    color: newColors.text.white.primary,
+    color: colors.text.white.primary,
     '&:hover': {
-      background: newColors.button.ghost.bg.inverse.hover
+      background: colors.button.ghost.bg.inverse.hover
     },
     '&:active': {
-      background: newColors.button.ghost.bg.inverse.active
+      background: colors.button.ghost.bg.inverse.active
     },
     '&:not(:active):focus-visible': {
       boxShadow: shadows['focus-white']
     },
     '&$disabled': {
       background: 'transparent',
-      color: newColors.text.white.secondary
+      color: colors.text.white.secondary
     },
     '& $icon': {
-      fill: newColors.icon.inverse.default
+      fill: colors.icon.inverse.default
     },
     '&$disabled $icon': {
-      fill: newColors.icon.inverse.disabled
+      fill: colors.icon.inverse.disabled
     }
   },
   loading: {
@@ -243,17 +238,17 @@ export default createUseStyles({
   },
   // Sizes
   md: {
-    font: newFonts['button-medium'], //*
-    padding: [newSpacing['size-3'], newSpacing['size-5']], //*
+    font: fonts['button-medium'], //*
+    padding: [spacing['size-3'], spacing['size-5']], //*
     '&$iconOnly': {
-      padding: [newSpacing['size-2'], newSpacing['size-2']]
+      padding: [spacing['size-2'], spacing['size-2']]
     }
   },
   lg: {
-    font: newFonts['button-large'], //*
-    padding: [newSpacing['size-4'], newSpacing['size-6']], //*
+    font: fonts['button-large'], //*
+    padding: [spacing['size-4'], spacing['size-6']], //*
     '&$iconOnly': {
-      padding: [newSpacing['size-3'], newSpacing['size-3']]
+      padding: [spacing['size-3'], spacing['size-3']]
     }
   },
   // Block
@@ -264,13 +259,13 @@ export default createUseStyles({
   // Icon
   icon: {},
   iconLeft: {
-    marginRight: newSpacing['size-2']
+    marginRight: spacing['size-2']
   },
   iconRight: {
-    marginLeft: newSpacing['size-2']
+    marginLeft: spacing['size-2']
   },
   iconOnly: {
-    padding: [newSpacing['size-2'], newSpacing['size-2']]
+    padding: [spacing['size-2'], spacing['size-2']]
   },
   round: {
     borderRadius: '50%'
