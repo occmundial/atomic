@@ -20,7 +20,7 @@ export type ButtonTheme =
 
 export interface ButtonProps {
   children?: ReactNode
-  theme: ButtonTheme
+  theme?: ButtonTheme
   size?: 'sm' | 'md' | 'lg'
   block?: boolean
   disabled?: boolean
