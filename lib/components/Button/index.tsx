@@ -15,6 +15,7 @@ export type ButtonTheme =
   | 'ghostPink'
   | 'ghostGrey'
   | 'ghostWhite'
+  | 'ghost'
   | null
 
 export interface ButtonProps {
@@ -39,6 +40,7 @@ export interface ButtonProps {
   ariaLabel?: string
   name?: string
   value?: any | null
+  darkMode?: boolean
 }
 const Button = (props: ButtonProps) => {
   const {
@@ -62,12 +64,19 @@ const Button = (props: ButtonProps) => {
     testId,
     ariaLabel,
     name,
-    value
+    value,
+    darkMode
   } = props
   const classes = useStyles(props)
+  const getTheme = (): ButtonTheme => {
+    if (theme === 'tertiary' && darkMode) return 'tertiaryWhite'
+    if (theme === 'ghost' && darkMode) return 'ghostWhite'
+    if (theme === 'ghost') return 'ghostGrey'
+    return theme
+  }
   const buttonClassName = classnames(
     classes.btn,
-    { [classes[theme]]: theme },
+    { [classes[getTheme()]]: theme },
     { [classes.loading]: loading },
     { [classes.disabled]: disabled },
     { [classes[size]]: ['md', 'lg'].includes(size) },
