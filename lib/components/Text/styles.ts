@@ -3,7 +3,10 @@ import { createUseStyles } from 'react-jss'
 import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
 import grid from '@/tokens/grid'
-import spacing from '@/tokens/spacing'
+
+import newFonts from '@/tokens/future/fonts.json'
+import newColors from '@/tokens/future/colors.json'
+import newSpacing from '@/tokens/future/spacing.json'
 
 export default createUseStyles({
   text: {
@@ -14,73 +17,92 @@ export default createUseStyles({
     margin: 0
   },
   // Sizes
-  hero: {
-    fontSize: 32,
-    lineHeight: 1.1,
-    fontWeight: 400,
-    letterSpacing: -0.64,
+  display: {
+    font: newFonts['mobile-display-clean-m'],
+    letterSpacing: -0.98,
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      fontSize: 48,
-      letterSpacing: -0.96
+      letterSpacing: -0.98,
+      font: newFonts['display-display-clean']
     }
   },
-  headline: {
-    fontSize: 28,
-    lineHeight: 1.1,
-    fontWeight: 400,
+  h1: {
+    font: newFonts['mobile-h1-m'],
+    letterSpacing: -0.98,
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      fontSize: 40
+      letterSpacing: -0.98,
+      font: newFonts['heading-h1']
     }
   },
-  heading: {
-    fontSize: 24,
-    lineHeight: 1.1,
-    fontWeight: 400
+  h2: {
+    font: newFonts['mobile-h2-m'],
+    [`@media screen and (min-width:${grid.sm}px)`]: {
+      font: newFonts['heading-h2']
+    }
   },
-  subheading: {
-    fontSize: 18,
-    lineHeight: 1.1,
-    fontWeight: 400
+  h3: {
+    font: newFonts['mobile-h3-m'],
+    [`@media screen and (min-width:${grid.sm}px)`]: {
+      font: newFonts['heading-h3']
+    }
   },
-  extraLarge: {
-    fontSize: 20,
-    lineHeight: 1.5
+  h4: {
+    font: newFonts['mobile-h4-m'],
+    [`@media screen and (min-width:${grid.sm}px)`]: {
+      font: newFonts['heading-h4']
+    }
   },
-  large: {
-    fontSize: 18,
-    lineHeight: 1.5
+  h5: {
+    font: newFonts['heading-h5']
   },
-  standard: {
-    fontSize: 16,
-    lineHeight: 1.5
+  tag: {
+    font: newFonts['heading-tag']
   },
-  small: {
-    fontSize: 14,
-    lineHeight: 1.5
+  bodyXLarge: {
+    font: newFonts['body-x-large']
   },
-  micro: {
-    fontSize: 12,
-    lineHeight: 1.5
+  bodyLargeStrong: {
+    font: newFonts['body-large-strong']
+  },
+  bodyLarge: {
+    font: newFonts['body-large']
+  },
+  bodyRegularStrong: {
+    font: newFonts['body-regular-strong']
+  },
+  bodyRegular: {
+    font: newFonts['body-regular']
+  },
+  bodySmallStrong: {
+    font: newFonts['body-small-strong']
+  },
+  bodySmall: {
+    font: newFonts['body-small']
+  },
+  bodyXSmall: {
+    font: newFonts['body-x-small']
   },
   // Weight
   strong: {
     fontWeight: 400
   },
   // Colors
-  primary: {
-    color: colors.prim
+  indigoPrimary: {
+    color: newColors.text.indigo.primary
   },
-  secondary: {
-    color: colors.sec
+  indigoSecondary: {
+    color: newColors.text.indigo.secondary
+  },
+  pinkPrimary: {
+    color: newColors.text.pink.primary
   },
   success: {
-    color: colors.successText
-  },
-  error: {
-    color: colors.errorText
+    color: newColors.text.success
   },
   warning: {
-    color: colors.warningText
+    color: newColors.text.warning
+  },
+  error: {
+    color: newColors.text.error
   },
   info: {
     color: colors.infoText
@@ -88,8 +110,11 @@ export default createUseStyles({
   disabled: {
     color: colors.inkLightest
   },
-  white: {
-    color: colors.white
+  whiteSecondary: {
+    color: newColors.text.white.secondary
+  },
+  whitePrimary: {
+    color: newColors.text.white.primary
   },
   link: {
     color: colors.textLink
@@ -98,14 +123,14 @@ export default createUseStyles({
     color: 'currentcolor'
   },
   // Emphasis
-  highEmphasis: {
-    color: colors.ink
+  corpPrimary: {
+    color: newColors.text.corp.primary
   },
-  midEmphasis: {
-    color: colors.inkLight
+  corpSecondary: {
+    color: newColors.text.corp.secondary
   },
-  lowEmphasis: {
-    color: colors.inkLighter
+  corpDisabled: {
+    color: newColors.text.corp.disabled
   },
   // Align
   left: {
@@ -118,46 +143,82 @@ export default createUseStyles({
     textAlign: 'right'
   },
   // Spacing
-  topXTiny: {
-    marginTop: spacing.xTiny
+  top0: {
+    marginTop: newSpacing['size-0']
   },
-  topTiny: {
-    marginTop: spacing.tiny
+  top1: {
+    marginTop: newSpacing['size-1']
   },
-  topSmall: {
-    marginTop: spacing.small
+  top2: {
+    marginTop: newSpacing['size-2']
   },
-  topBase: {
-    marginTop: spacing.base
+  top3: {
+    marginTop: newSpacing['size-3']
   },
-  topMedium: {
-    marginTop: spacing.medium
+  top4: {
+    marginTop: newSpacing['size-4']
   },
-  topLarge: {
-    marginTop: spacing.large
+  top5: {
+    marginTop: newSpacing['size-5']
   },
-  topXLarge: {
-    marginTop: spacing.xLarge
+  top6: {
+    marginTop: newSpacing['size-6']
   },
-  bottomXTiny: {
-    marginBottom: spacing.xTiny
+  top7: {
+    marginTop: newSpacing['size-7']
   },
-  bottomTiny: {
-    marginBottom: spacing.tiny
+  top8: {
+    marginTop: newSpacing['size-8']
   },
-  bottomSmall: {
-    marginBottom: spacing.small
+  top9: {
+    marginTop: newSpacing['size-9']
   },
-  bottomBase: {
-    marginBottom: spacing.base
+  top10: {
+    marginTop: newSpacing['size-10']
   },
-  bottomMedium: {
-    marginBottom: spacing.medium
+  top11: {
+    marginTop: newSpacing['size-11']
   },
-  bottomLarge: {
-    marginBottom: spacing.large
+  top12: {
+    marginTop: newSpacing['size-12']
   },
-  bottomXLarge: {
-    marginBottom: spacing.xLarge
+  bottom0: {
+    marginBottom: newSpacing['size-0']
+  },
+  bottom1: {
+    marginBottom: newSpacing['size-1']
+  },
+  bottom2: {
+    marginBottom: newSpacing['size-2']
+  },
+  bottom3: {
+    marginBottom: newSpacing['size-3']
+  },
+  bottom4: {
+    marginBottom: newSpacing['size-4']
+  },
+  bottom5: {
+    marginBottom: newSpacing['size-5']
+  },
+  bottom6: {
+    marginBottom: newSpacing['size-6']
+  },
+  bottom7: {
+    marginBottom: newSpacing['size-7']
+  },
+  bottom8: {
+    marginBottom: newSpacing['size-8']
+  },
+  bottom9: {
+    marginBottom: newSpacing['size-9']
+  },
+  bottom10: {
+    marginBottom: newSpacing['size-10']
+  },
+  bottom11: {
+    marginBottom: newSpacing['size-11']
+  },
+  bottom12: {
+    marginBottom: newSpacing['size-12']
   }
 })
