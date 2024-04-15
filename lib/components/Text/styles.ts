@@ -19,17 +19,17 @@ export default createUseStyles({
   // Sizes
   display: {
     font: newFonts['mobile-display-clean-m'],
-    letterSpacing: -0.98,
+    letterSpacing: '0.02em',
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      letterSpacing: -0.98,
+      letterSpacing: '0.02em',
       font: newFonts['display-display-clean']
     }
   },
   h1: {
     font: newFonts['mobile-h1-m'],
-    letterSpacing: -0.98,
+    letterSpacing: '0.02em',
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      letterSpacing: -0.98,
+      letterSpacing: '0.02em',
       font: newFonts['heading-h1']
     }
   },
