@@ -78,7 +78,8 @@ const mdxComponents = {
       tag: 'li',
       children: props.children
     }),
-  a: Anchor
+  a: Anchor,
+  blockquote: Alert
 }
 
 export default mdxComponents
