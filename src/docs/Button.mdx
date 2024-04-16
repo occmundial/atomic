@@ -54,7 +54,7 @@ The button can behave like any button with onClick event, or like an anchor with
 
 ### Theme
 
-You can choose any of the 7 predefined themes:
+You can choose any of the 7 predefined themes.
 
 <Demo title="Button themes">
   <Flexbox
@@ -106,6 +106,9 @@ function Component() {
   )
 }
 ```
+
+> <Text info>The ghostPink theme is deprecated, since it doesn't match with any of the new themes.</Text>
+
 
 ### Size
 
@@ -208,6 +211,34 @@ function Component() {
 }
 ```
 
+### Icon-only
+
+<Demo title="Button with only an icon">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="lg" iconLeft="search" style={{ margin: spacing.tiny }} />
+    <Button size="md" iconLeft="search" style={{ margin: spacing.tiny }} />
+    <Button iconLeft="search" style={{ margin: spacing.tiny }} />
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to set an icon-only button
+function Component() {
+  return (
+    <>
+      <Button size="lg" iconLeft="search" />
+      <Button size="md" iconLeft="search" />
+      <Button iconLeft="search" />
+    </>
+  )
+}
+```
+
 ### Loading
 
 <Demo title="Button loading">
@@ -273,7 +304,7 @@ function Component() {
     alignItems="center"
     wrap="wrap"
   >
-    <Button round iconLeft="search" />
+    <Button size="md" round iconLeft="search" />
   </Flexbox>
 </Demo>
 
