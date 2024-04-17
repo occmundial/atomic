@@ -48,10 +48,14 @@ type OldTextProps = {
   standard?: boolean
   small?: boolean
   micro?: boolean
+  mid?: boolean
+  low?: boolean
   primary?: boolean
   secondary?: boolean
+  info?: boolean
   disabled?: boolean
   white?: boolean
+  link?: boolean
   topXTiny?: boolean
   topTiny?: boolean
   topSmall?: boolean
@@ -123,13 +127,9 @@ type NewTextProps = {
 type TextProps = {
   children: ReactNode
   strong?: boolean
-  mid?: boolean
-  low?: boolean
   success?: boolean
   error?: boolean
   warning?: boolean
-  info?: boolean
-  link?: boolean
   current?: boolean
   left?: boolean
   center?: boolean
@@ -169,7 +169,6 @@ const Text = ({
   pinkPrimary,
   whiteSecondary,
   whitePrimary,
-  corpPrimary,
   corpSecondary,
   corpDisabled,
   top0,

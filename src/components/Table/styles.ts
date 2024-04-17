@@ -10,5 +10,8 @@ export default createUseStyles({
     borderCollapse: 'collapse',
     border: `1px solid ${colors.bgGrey}`,
     overflow: 'auto'
+  },
+  fullWidth: {
+    width: '100%'
   }
 })

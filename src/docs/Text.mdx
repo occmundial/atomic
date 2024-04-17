@@ -70,17 +70,77 @@ import Text from '@/components/Text'
 You can choose any of the 9 sizes:
 
 <Demo title="Text sizes" background={colors.white}>
-  <Flexbox display="flex" justifyContent="start" direction="col" wrap="wrap">
-    <Text hero>Hero text</Text>
-    <Text headline>Headline text</Text>
-    <Text heading>Heading text</Text>
-    <Text subheading>Subheading text</Text>
-    <Text extraLarge>Extra-large</Text>
-    <Text large>Large body</Text>
-    <Text standard>Standard body</Text>
-    <Text small>Small Caption</Text>
-    <Text micro>Micro</Text>
-  </Flexbox>
+    <table fullWidth>
+      <thead>
+        <tr>
+          <th>Prop</th>
+          <th>Prop (Legacy)</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td><Text display>Display text</Text></td>
+          <td/>
+        </tr>
+        <tr>
+            <td><Text h1>H1 text</Text></td>
+            <td><Text hero>Hero text</Text></td>
+        </tr>
+        <tr>
+            <td><Text h2>H2 text</Text></td>
+            <td><Text headline>Headline text</Text></td>
+        </tr>
+        <tr>
+            <td><Text h3>H3 text</Text></td>
+            <td/>
+        </tr>
+        <tr>
+            <td><Text h4>H4 text</Text></td>
+            <td><Text heading>Heading text</Text></td>
+        </tr>
+        <tr>
+            <td><Text h5>H5 text</Text></td>
+            <td><Text subheading>Subheading text</Text></td>
+        </tr>
+        <tr>
+            <td><Text tagText>Tag text</Text></td>
+            <td/>
+        </tr>
+        <tr>
+            <td><Text bodyXLarge>BodyXLarge body</Text></td>
+            <td><Text extraLarge>Extra-large</Text></td>
+        </tr>
+        <tr>
+            <td><Text bodyLargeStrong>BodyLargeStrong body</Text></td>
+            <td/>
+        </tr>
+        <tr>
+            <td><Text bodyLarge>BodyLarge body</Text></td>
+            <td><Text large>Large body</Text></td>
+        </tr>
+        <tr>
+            <td><Text bodyRegularStrong>BodyRegularStrong body</Text></td>
+            <td/>
+        </tr>
+        <tr>
+            <td><Text bodyRegular>BodyRegular body</Text></td>
+            <td><Text standard>Standard body</Text></td>
+        </tr>
+        <tr>
+            <td><Text bodySmallStrong>BodySmallStrong body</Text></td>
+            <td/>
+        </tr>
+        <tr>
+            <td><Text bodySmall>BodySmall body</Text></td>
+            <td><Text small>Small Caption</Text></td>
+        </tr>
+        <tr>
+            <td><Text bodyXSmall>BodyXSmall body</Text></td>
+            <td><Text micro>Micro</Text></td>
+        </tr>
+      </tbody>
+    </table>
 </Demo>
 
 ```jsx
@@ -108,22 +168,89 @@ function Component() {
 You can choose from 11 colors
 
 <Demo title="Text colors" background={colors.white}>
-  <Flexbox display="flex" justifyContent="start" direction="col" wrap="wrap">
-    <Text>High emphasis</Text>
-    <Text mid>Medium emphasis</Text>
-    <Text low>Low emphasis</Text>
-    <Text primary>Primary</Text>
-    <Text secondary>Secondary</Text>
-    <Text success>Success</Text>
-    <Text error>Error</Text>
-    <Text warning>Warning</Text>
-    <Text info>Info</Text>
-    <Text disabled>Disabled</Text>
-    <Text link>Link</Text>
-    <div style={{ background: colors.prim }}>
-      <Text white>White</Text>
-    </div>
-  </Flexbox>
+    <table fullWidth>
+      <thead>
+        <tr>
+          <th>Prop</th>
+          <th>Prop (Legacy)</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td><Text>CorpPrimary </Text></td>
+          <td><Text>High emphasis</Text></td>
+        </tr>
+        <tr>
+          <td><Text corpSecondary>CorpSecondary</Text></td>
+          <td><Text mid>Medium emphasis</Text></td>
+        </tr>
+        <tr>
+          <td><Text corpDisabled>CorpDisabled</Text></td>
+          <td><Text low>Low emphasis</Text></td>
+        </tr>
+        <tr>
+          <td><Text indigoPrimary>IndigoPrimary</Text></td>
+          <td><Text primary>Primary</Text></td>
+        </tr>
+        <tr>
+          <td><Text indigoSecondary>IndigoSecondary</Text></td>
+          <td><Text indigoSecondary>IndigoSecondary</Text></td>
+        </tr>
+        <tr>
+          <td><Text pinkPrimary>PinkPrimary</Text></td>
+          <td><Text secondary>Secondary</Text></td>
+        </tr>
+        <tr>
+          <td><Text success>Success</Text></td>
+          <td><Text success>Success</Text></td>
+        </tr>
+        <tr>
+          <td><Text warning>Warning</Text></td>
+          <td><Text warning>Warning</Text></td>
+        </tr>
+        <tr>
+          <td><Text error>Error</Text></td>
+          <td><Text error>Error</Text></td>
+        </tr>
+        <tr>
+          <td><Text info>Info</Text></td>
+          <td><Text info>Info</Text></td>
+        </tr>
+        <tr>
+          <td><Text disabled>Disabled</Text></td>
+          <td><Text disabled>Disabled</Text></td>
+        </tr>
+        <tr>
+          <td>
+            <div style={{ background: "black" }}>
+              <Text whitePrimary>WhitePrimary</Text>
+            </div>
+          </td>
+          <td>
+            <div style={{ background: "black" }}>
+              <Text white>White</Text>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div style={{ background: "black" }}>
+              <Text whiteSecondary>WhiteSecondary</Text>
+            </div>
+          </td>
+          <td>
+            <div style={{ background: "black" }}>
+              <Text whiteSecondary>WhiteSecondary</Text>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td> <Text link>Link</Text></td>
+          <td> <Text link>Link</Text></td>
+        </tr>
+      </tbody>
+    </table>
 </Demo>
 
 ```jsx
@@ -178,15 +305,69 @@ function Component() {
 You can choose spacing for top and bottom
 
 <Demo title="Text spacing" background={colors.white}>
-  <Flexbox display="flex" justifyContent="start" direction="col" wrap="wrap">
-    <Text bottomXTiny>X-Tiny</Text>
-    <Text bottomTiny>Tiny</Text>
-    <Text bottomSmall>Small</Text>
-    <Text bottomBase>Base</Text>
-    <Text bottomMedium>Medium</Text>
-    <Text bottomLarge>Large</Text>
-    <Text bottomXLarge>XLarge</Text>
-  </Flexbox>
+    <table fullWidth>
+      <thead>
+        <tr>
+          <th>Prop</th>
+          <th>Prop (Legacy)</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td><Text bottom0>Bottom0</Text></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><Text bottom1>Bottom1</Text></td>
+          <td><Text bottomXTiny>X-Tiny</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom2>Bottom2</Text></td>
+          <td><Text bottomTiny>Tiny</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom3>Bottom3</Text></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><Text bottom4>Bottom4</Text></td>
+          <td><Text bottomSmall>Small</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom5>Bottom5</Text></td>
+          <td><Text bottomBase>Base</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom6>Bottom6</Text></td>
+          <td><Text bottomMedium>Medium</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom7>Bottom7</Text></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><Text bottom8>Bottom8</Text></td>
+          <td><Text bottomLarge>Large</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom9>Bottom9</Text></td>
+          <td><Text bottomXLarge>XLarge</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom10>Bottom10</Text></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><Text bottom11>Bottom11</Text></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><Text bottom12>Bottom12</Text></td>
+          <td/>
+        </tr>
+      </tbody>
+    </table>
 </Demo>
 
 ```jsx
