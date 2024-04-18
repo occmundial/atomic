@@ -16,6 +16,8 @@ import Tag from '@/components/Tag'
 import Flexbox from '@/components/Flexbox'
 import Icon from '@/components/Icon'
 import Text from '@/components/Text'
+import colorsNew from '@/tokens/future/colors.json'
+
 import Anchor from './Anchor'
 import Tooltip from '@/components/Tooltip'
 
@@ -29,6 +31,7 @@ const mdxComponents = {
   Card,
   Flexbox,
   Tooltip,
+  colorsNew,
   // Docs components
   Demo,
   code: Code,
