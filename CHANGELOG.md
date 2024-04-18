@@ -1,3 +1,18 @@
+# [3.0.0-beta.4](https://github.com/occmundial/atomic/compare/v3.0.0-beta.3...v3.0.0-beta.4) (2024-04-18)
+
+
+### Bug Fixes
+
+* Wrong letterSpácing ([a116ca3](https://github.com/occmundial/atomic/commit/a116ca31433fffb473dbcd0dc31079466c9644ac))
+
+
+### Features
+
+* Improve Text documentation with tables ([b412e27](https://github.com/occmundial/atomic/commit/b412e273d48487d43ea77fd8544c5239954eb460))
+* Update font tokens ([759e4cb](https://github.com/occmundial/atomic/commit/759e4cb31370196195944d7b0273d96b799241ed))
+* Updated Text component documentation ([09aa18d](https://github.com/occmundial/atomic/commit/09aa18dba88bdcd4f43f96542f964503d4499f64))
+* Updated text component with new tokens ([8844569](https://github.com/occmundial/atomic/commit/88445690126ecbdf987f2dd321be702b57ad479a))
+
 # [3.0.0-beta.3](https://github.com/occmundial/atomic/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2024-04-17)
 
 
