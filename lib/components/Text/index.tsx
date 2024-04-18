@@ -253,7 +253,7 @@ const Text = ({
         { h3 },
         { h4 },
         { h5 },
-        { tagText },
+        { tag: tagText },
         { bodyXLarge },
         { bodyLargeStrong },
         { bodyLarge },

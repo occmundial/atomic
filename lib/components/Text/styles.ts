@@ -8,6 +8,30 @@ import newFonts from '@/tokens/future/fonts.json'
 import newColors from '@/tokens/future/colors.json'
 import newSpacing from '@/tokens/future/spacing.json'
 
+const display = newFonts['display-display-clean']
+const displayM = newFonts['mobile-display-clean-m']
+const h1 = newFonts['heading-h1']
+const h1M = newFonts['mobile-h1-m']
+const h2 = newFonts['heading-h2']
+const h2M = newFonts['mobile-h2-m']
+const h3 = newFonts['heading-h3']
+const h3M = newFonts['mobile-h3-m']
+const h4 = newFonts['heading-h4']
+const h4M = newFonts['mobile-h4-m']
+const h5 = newFonts['heading-h5']
+const tag = newFonts['heading-tag']
+const bodyXLarge = newFonts['body-x-large']
+const bodyLargeStrong = newFonts['body-large-strong']
+const bodyLarge = newFonts['body-large']
+const bodyRegularStrong = newFonts['body-regular-strong']
+const bodyRegular = newFonts['body-regular']
+const bodySmallStrong = newFonts['body-small-strong']
+const bodySmall = newFonts['body-small']
+const bodyXSmall = newFonts['body-x-small']
+
+const parseFontValue = (font: typeof h2M) =>
+  `${font.fontWeight} ${font.fontSize}/${font.lineHeight} ${font.fontFamily}`
+
 export default createUseStyles({
   text: {
     letterSpacing: 0,
@@ -18,68 +42,68 @@ export default createUseStyles({
   },
   // Sizes
   display: {
-    font: newFonts['mobile-display-clean-m'],
-    letterSpacing: '0.02em',
+    font: parseFontValue(displayM),
+    letterSpacing: displayM.letterSpacing,
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      letterSpacing: '0.02em',
-      font: newFonts['display-display-clean']
+      letterSpacing: display.letterSpacing,
+      font: parseFontValue(display)
     }
   },
   h1: {
-    font: newFonts['mobile-h1-m'],
-    letterSpacing: '0.02em',
+    font: parseFontValue(h1M),
+    letterSpacing: h1M.letterSpacing,
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      letterSpacing: '0.02em',
-      font: newFonts['heading-h1']
+      font: parseFontValue(h1),
+      letterSpacing: h1.letterSpacing
     }
   },
   h2: {
-    font: newFonts['mobile-h2-m'],
+    font: parseFontValue(h2M),
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      font: newFonts['heading-h2']
+      font: parseFontValue(h2)
     }
   },
   h3: {
-    font: newFonts['mobile-h3-m'],
+    font: parseFontValue(h3M),
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      font: newFonts['heading-h3']
+      font: parseFontValue(h3)
     }
   },
   h4: {
-    font: newFonts['mobile-h4-m'],
+    font: parseFontValue(h4M),
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      font: newFonts['heading-h4']
+      font: parseFontValue(h4)
     }
   },
   h5: {
-    font: newFonts['heading-h5']
+    font: parseFontValue(h5)
   },
   tag: {
-    font: newFonts['heading-tag']
+    font: parseFontValue(tag)
   },
   bodyXLarge: {
-    font: newFonts['body-x-large']
+    font: parseFontValue(bodyXLarge)
   },
   bodyLargeStrong: {
-    font: newFonts['body-large-strong']
+    font: parseFontValue(bodyLargeStrong)
   },
   bodyLarge: {
-    font: newFonts['body-large']
+    font: parseFontValue(bodyLarge)
   },
   bodyRegularStrong: {
-    font: newFonts['body-regular-strong']
+    font: parseFontValue(bodyRegularStrong)
   },
   bodyRegular: {
-    font: newFonts['body-regular']
+    font: parseFontValue(bodyRegular)
   },
   bodySmallStrong: {
-    font: newFonts['body-small-strong']
+    font: parseFontValue(bodySmallStrong)
   },
   bodySmall: {
-    font: newFonts['body-small']
+    font: parseFontValue(bodySmall)
   },
   bodyXSmall: {
-    font: newFonts['body-x-small']
+    font: parseFontValue(bodyXSmall)
   },
   // Weight
   strong: {
