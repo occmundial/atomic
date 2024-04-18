@@ -14,7 +14,7 @@ import Icon from '@/components/Icon'
 import useStyles from './styles'
 import colors from '@/tokens/colors'
 
-const ICON_SIZE = 20
+const ICON_SIZE = 14
 
 interface ToggleProps {
   value?: boolean
@@ -73,7 +73,7 @@ const Toggle = ({
       >
         <span className={classes.slider}>
           <Icon
-            iconName={_value ? 'check-o' : 'x-micro-o'}
+            iconName={_value ? 'check' : 'x'}
             size={ICON_SIZE}
             color={_value ? colors.prim : colors.grey400}
           />

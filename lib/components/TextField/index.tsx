@@ -416,7 +416,7 @@ const TextField = forwardRef(
           type !== 'select' ? (
             <div className={classes.passIcon}>
               <Icon
-                iconName="eye-o"
+                iconName="eye"
                 size={iconSizes.small}
                 color={colors.grey200}
               />
@@ -430,7 +430,7 @@ const TextField = forwardRef(
             className={classes.passIcon}
           >
             <Icon
-              iconName={showPass ? 'eye-o' : 'eye-close-o'}
+              iconName={showPass ? 'eye' : 'eye-slash'}
               size={iconSizes.small}
               color={showPass ? colors.grey900 : colors.grey400}
             />
@@ -475,7 +475,7 @@ const TextField = forwardRef(
           {type == 'select' && (
             <div className={classes.selectIcon}>
               <Icon
-                iconName="arrow-down"
+                iconName="chevron-down"
                 size={iconSizes.small}
                 color={disabled ? colors.grey200 : colors.grey900}
               />
@@ -512,7 +512,7 @@ const TextField = forwardRef(
               >
                 {realStatus == 'error' ? (
                   <Icon
-                    iconName="warning"
+                    iconName="alert"
                     size={iconSizes.tiny}
                     className={classes.errorIcon}
                   />

@@ -49,11 +49,11 @@ const Toast = ({
       case 'success':
         return { icon: 'check', color: colors.bgWhite }
       case 'error':
-        return { icon: 'warning', color: colors.bgWhite }
+        return { icon: 'alert', color: colors.bgWhite }
       case 'info':
         return { icon: 'info', color: colors.bgWhite }
       case 'warning':
-        return { icon: 'warning', color: colors.grey900 }
+        return { icon: 'alert', color: colors.grey900 }
     }
   }
   const textColor = theme === 'warning' ? {} : { white: true }

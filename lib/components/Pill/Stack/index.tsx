@@ -60,7 +60,7 @@ const Stack = ({
         <span className={classes.closeCont} onClick={e => handleOnClose(e, id)}>
           <Icon
             className={classes.close}
-            iconName="c-micro"
+            iconName="x"
             color={colors.grey300}
             size={iconSizes.small}
           />

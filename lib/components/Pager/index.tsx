@@ -174,7 +174,7 @@ const Pager = ({
         onClick={handlePrevPage}
       >
         <Icon
-          iconName="arrow-left"
+          iconName="chevron-left"
           color={colors.inkLight}
           size={iconSizes.tiny}
           className={classes.icon}
@@ -192,7 +192,7 @@ const Pager = ({
       >
         {nextLabel}{' '}
         <Icon
-          iconName="arrow-right"
+          iconName="chevron-right"
           color={colors.inkLight}
           size={iconSizes.tiny}
           className={classes.icon}

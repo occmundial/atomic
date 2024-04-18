@@ -161,7 +161,7 @@ const NavTab = ({
         >
           {item.text}{' '}
           <Icon
-            iconName="arrow-down-o"
+            iconName="chevron-down"
             size={iconSizes.small}
             className={classnames(classes.arrow, {
               [classes.arrowUp]: item.selected

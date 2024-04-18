@@ -83,7 +83,7 @@ const Checkbox = ({
     >
       <div className={classes.check} id={trk}>
         <Icon
-          iconName={_undetermined ? 'minus' : 'success'}
+          iconName={_undetermined ? 'dash' : 'check'}
           className={classes.icon}
           size={iconSizes.tiny}
         />

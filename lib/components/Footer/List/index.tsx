@@ -121,7 +121,7 @@ const List = ({
         </Text>
         {isCollapsible && (
           <Icon
-            iconName="arrow-down"
+            iconName="chevron-down"
             size={spacing.small}
             className={classnames(classes.arrow, { [classes.arrowUp]: toggle })}
           />

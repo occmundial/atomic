@@ -31,6 +31,9 @@ export default createUseStyles({
   slider: {
     position: 'absolute',
     cursor: 'pointer',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     top: 2,
     left: 2,
     width: 20,
