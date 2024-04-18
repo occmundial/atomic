@@ -2,7 +2,6 @@ import { CSSProperties, EventHandler, ReactNode, SyntheticEvent } from 'react'
 import classnames from 'classnames'
 
 import Icon from '@/components/Icon'
-import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 import Loading from './Loading'

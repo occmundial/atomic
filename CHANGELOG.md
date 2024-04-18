@@ -1,3 +1,17 @@
+# [3.0.0-beta.3](https://github.com/occmundial/atomic/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2024-04-17)
+
+
+### Bug Fixes
+
+* Update design tokens ([e2170e4](https://github.com/occmundial/atomic/commit/e2170e41657dd8f17db1bffc058057d27cf82774))
+
+# [3.0.0-beta.2](https://github.com/occmundial/atomic/compare/v3.0.0-beta.1...v3.0.0-beta.2) (2024-04-17)
+
+
+### Bug Fixes
+
+* Change font tokens in button ([c220da2](https://github.com/occmundial/atomic/commit/c220da2a6b7b32944f82c0c792922c4d48c75cd4))
+
 # [3.0.0-beta.1](https://github.com/occmundial/atomic/compare/v2.1.0-beta.2...v3.0.0-beta.1) (2024-04-08)
 
 
