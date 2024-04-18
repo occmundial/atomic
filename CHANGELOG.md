@@ -1,3 +1,10 @@
+# [3.0.0-beta.5](https://github.com/occmundial/atomic/compare/v3.0.0-beta.4...v3.0.0-beta.5) (2024-04-18)
+
+
+### Bug Fixes
+
+* Removed not intended whitespaces ([ed8bfe0](https://github.com/occmundial/atomic/commit/ed8bfe09a27e927a9a98d73c2e0ad6206c3ed3a5))
+
 # [3.0.0-beta.4](https://github.com/occmundial/atomic/compare/v3.0.0-beta.3...v3.0.0-beta.4) (2024-04-18)
 
 
