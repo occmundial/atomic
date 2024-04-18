@@ -58,12 +58,7 @@ const Stack = ({
       )}
       {onClose && (
         <span className={classes.closeCont} onClick={e => handleOnClose(e, id)}>
-          <Icon
-            className={classes.close}
-            iconName="x"
-            color={colors.grey300}
-            size={iconSizes.small}
-          />
+          <Icon iconName="x" color={colors.grey300} size={16} />
         </span>
       )}
     </button>
