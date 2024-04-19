@@ -30,7 +30,7 @@ const bodySmall = newFonts['body-small']
 const bodyXSmall = newFonts['body-x-small']
 
 const parseFontValue = (font: typeof h2M) =>
-  `${font.fontWeight} ${font.fontSize}/${font.lineHeight} ${font.fontFamily}`
+  `${font.fontWeight} ${font.fontSize}/${font.lineHeight} ${fonts.body}`
 
 export default createUseStyles({
   text: {
