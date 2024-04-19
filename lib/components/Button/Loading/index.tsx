@@ -1,18 +1,8 @@
 import { SVGProps } from 'react'
 
-import newColors from '@/tokens/future/colors.json'
-import newSpacing from '@/tokens/future/spacing.json'
-
 export default function Loading(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill={props.fill || newColors['blue-corp'][1000]}
-      width={props.width || newSpacing['size-5']}
-      height={props.height || newSpacing['size-5']}
-      viewBox={`0 0 ${newSpacing['size-5']} ${newSpacing['size-5']}`}
-      {...props}
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
       <circle cx="4" cy="13" r="3">
         <animate
           attributeName="r"
