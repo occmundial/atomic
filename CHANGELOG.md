@@ -1,3 +1,10 @@
+# [3.0.0-beta.7](https://github.com/occmundial/atomic/compare/v3.0.0-beta.6...v3.0.0-beta.7) (2024-04-19)
+
+
+### Bug Fixes
+
+* Fix loading icon size ([e869110](https://github.com/occmundial/atomic/commit/e869110ca254d375020d40956bf94963bb636934))
+
 # [3.0.0-beta.6](https://github.com/occmundial/atomic/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2024-04-19)
 
 
