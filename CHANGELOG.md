@@ -1,3 +1,10 @@
+# [3.0.0-beta.6](https://github.com/occmundial/atomic/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2024-04-19)
+
+
+### Bug Fixes
+
+* Replaced new font family var with old one ([8e56089](https://github.com/occmundial/atomic/commit/8e56089b22af06e89f8a019ad41c014b6095acd5))
+
 # [3.0.0-beta.5](https://github.com/occmundial/atomic/compare/v3.0.0-beta.4...v3.0.0-beta.5) (2024-04-18)
 
 
