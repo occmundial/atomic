@@ -170,8 +170,8 @@ export default createUseStyles({
     background: 'transparent',
     color: legacyColors.sec,
     border: 'none',
-    paddingLeft: 0,
-    paddingRight: 0,
+    paddingLeft: [0, '!important'],
+    paddingRight: [0, '!important'],
     '&:hover, &:active': {
       color: legacyColors.secDark
     },
