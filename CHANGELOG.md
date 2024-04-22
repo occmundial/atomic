@@ -1,3 +1,10 @@
+# [3.0.0-beta.8](https://github.com/occmundial/atomic/compare/v3.0.0-beta.7...v3.0.0-beta.8) (2024-04-22)
+
+
+### Bug Fixes
+
+* Force padding of 0 in ghostPink button ([296c877](https://github.com/occmundial/atomic/commit/296c8774299af5d0619e89f72bbf0726a33a1790))
+
 # [3.0.0-beta.7](https://github.com/occmundial/atomic/compare/v3.0.0-beta.6...v3.0.0-beta.7) (2024-04-19)
 
 
