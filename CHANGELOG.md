@@ -1,3 +1,15 @@
+# [3.0.0-beta.9](https://github.com/occmundial/atomic/compare/v3.0.0-beta.8...v3.0.0-beta.9) (2024-04-24)
+
+
+### Bug Fixes
+
+* Fix icon translation ([2227da9](https://github.com/occmundial/atomic/commit/2227da953389a7d431266a18b4003263a3f752fe))
+
+
+### Features
+
+* Add a property to the Provider to translate icons ([1bc683d](https://github.com/occmundial/atomic/commit/1bc683dbd8fa8b7a40ac4b1f1c11433143bc0dac))
+
 # [3.0.0-beta.8](https://github.com/occmundial/atomic/compare/v3.0.0-beta.7...v3.0.0-beta.8) (2024-04-22)
 
 
