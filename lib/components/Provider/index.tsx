@@ -19,6 +19,8 @@ export interface AtomicData {
   iconsPath: string
   /** A prefix for the icon name in the svg sprite */
   iconsPrefix: string
+  /** Use the new icons and the icon name translation */
+  translateIconsV2: boolean
 }
 
 interface AtomicProviderProps {
@@ -33,6 +35,7 @@ const AtomicProvider = ({ data, children }: AtomicProviderProps) => {
   const [value, setValue] = useState<Partial<AtomicData>>({
     iconsUrl: '',
     iconsPath: '',
+    translateIconsV2: false,
     iconsPrefix: 'atomic',
     ...data
   })
