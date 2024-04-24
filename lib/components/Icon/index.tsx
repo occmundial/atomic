@@ -42,12 +42,12 @@ const Icon = ({
     return 'currentcolor'
   }, [color, hoverColor, hover])
   const _iconName = useMemo(() => {
-    if (!atomic.iconsV2) return iconName
+    if (!atomic.translateIconsV2) return iconName
     const iconBaseName = iconName.replace(/-o$/, '')
     const translation = iconTranslation[iconBaseName]
     if (translation === '*' || !translation) return iconBaseName
     return translation
-  }, [iconName, atomic.iconsV2])
+  }, [iconName, atomic.translateIconsV2])
   return (
     <svg
       className={classnames(
