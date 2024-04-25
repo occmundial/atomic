@@ -1,3 +1,11 @@
+# [3.0.0-beta.11](https://github.com/occmundial/atomic/compare/v3.0.0-beta.10...v3.0.0-beta.11) (2024-04-25)
+
+
+### Bug Fixes
+
+* Added utils alias ([d50fccf](https://github.com/occmundial/atomic/commit/d50fccffb1e0e1fc563719d66dc1f825334890c6))
+* Button incorrect font ([c1df8f0](https://github.com/occmundial/atomic/commit/c1df8f04cbc63047707c1db3773ba6dfc51b2a94))
+
 # [3.0.0-beta.10](https://github.com/occmundial/atomic/compare/v3.0.0-beta.9...v3.0.0-beta.10) (2024-04-25)
 
 
