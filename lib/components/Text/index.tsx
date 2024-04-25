@@ -2,41 +2,7 @@ import { ReactNode, useMemo, createElement, CSSProperties } from 'react'
 import classnames from 'classnames'
 
 import useStyles from './styles'
-
-const oldToNewClassMapper = new Map([
-  // Text
-  ['hero', 'h1'],
-  ['headline', 'h2'],
-  ['heading', 'h4'],
-  ['subheading', 'h5'],
-  ['extraLarge', 'bodyXLarge'],
-  ['large', 'bodyLarge'],
-  ['standard', 'bodyRegular'],
-  ['small', 'bodySmall'],
-  ['micro', 'bodyXSmall'],
-  // Color
-  ['primary', 'indigoPrimary'],
-  ['secondary', 'pinkPrimary'],
-  ['white', 'whitePrimary'],
-  ['highEmphasis', 'corpPrimary'],
-  ['midEmphasis', 'corpSecondary'],
-  ['lowEmphasis', 'corpDisabled'],
-  // Spacing
-  ['topXTiny', 'top1'],
-  ['topTiny', 'top2'],
-  ['topSmall', 'top4'],
-  ['topBase', 'top5'],
-  ['topMedium', 'top6'],
-  ['topLarge', 'top8'],
-  ['topXLarge', 'top9'],
-  ['bottomXTiny', 'bottom1'],
-  ['bottomTiny', 'bottom2'],
-  ['bottomSmall', 'bottom4'],
-  ['bottomBase', 'bottom5'],
-  ['bottomMedium', 'bottom6'],
-  ['bottomLarge', 'bottom8'],
-  ['bottomXLarge', 'bottom9']
-])
+import { classTranslation } from './helper'
 
 type OldTextProps = {
   hero?: boolean
@@ -302,7 +268,7 @@ const Text = ({
 
   const size = useMemo(() => {
     if (!sizeActive) return classes.bodyRegular
-    const activeSizeParsed = oldToNewClassMapper.get(sizeActive)
+    const activeSizeParsed = classTranslation.get(sizeActive)
     return classes[activeSizeParsed ?? sizeActive]
   }, [sizeActive, classes])
 
@@ -352,7 +318,7 @@ const Text = ({
 
   const color = useMemo(() => {
     if (!colorActive) return null
-    const colorActiveParsed = oldToNewClassMapper.get(colorActive)
+    const colorActiveParsed = classTranslation.get(colorActive)
     return classes[colorActiveParsed ?? colorActive]
   }, [classes, colorActive])
 
@@ -412,7 +378,7 @@ const Text = ({
 
   const topSpacing = useMemo(() => {
     if (!topSpacingActive) return null
-    const topSpacingActiveParsed = oldToNewClassMapper.get(topSpacingActive)
+    const topSpacingActiveParsed = classTranslation.get(topSpacingActive)
     return classes[topSpacingActiveParsed ?? topSpacingActive]
   }, [classes, topSpacingActive])
 
@@ -466,8 +432,7 @@ const Text = ({
 
   const bottomSpacing = useMemo(() => {
     if (!bottomSpacingActive) return null
-    const bottomSpacingActiveParsed =
-      oldToNewClassMapper.get(bottomSpacingActive)
+    const bottomSpacingActiveParsed = classTranslation.get(bottomSpacingActive)
     return classes[bottomSpacingActiveParsed ?? bottomSpacingActive]
   }, [classes, bottomSpacingActive])
 

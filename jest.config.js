@@ -14,6 +14,7 @@ module.exports = {
   moduleNameMapper: {
     '^@/components/(.*)$': '<rootDir>/lib/components/$1',
     '^@/tokens/(.*)$': '<rootDir>/lib/tokens/$1',
+    '^@/utils/(.*)$': '<rootDir>/lib/utils/$1',
     '^@/hooks/(.*)$': '<rootDir>/lib/hooks/$1',
     '^@/styles/(.*)$': '<rootDir>/styles/$1'
   }

@@ -7,6 +7,7 @@ import grid from '@/tokens/grid'
 import newFonts from '@/tokens/future/fonts.json'
 import newColors from '@/tokens/future/colors.json'
 import newSpacing from '@/tokens/future/spacing.json'
+import { objectToFontValue } from '@/utils/font'
 
 const display = newFonts['display-display-clean']
 const displayM = newFonts['mobile-display-clean-m']
@@ -29,9 +30,6 @@ const bodySmallStrong = newFonts['body-small-strong']
 const bodySmall = newFonts['body-small']
 const bodyXSmall = newFonts['body-x-small']
 
-const parseFontValue = (font: typeof h2M) =>
-  `${font.fontWeight} ${font.fontSize}/${font.lineHeight} ${fonts.body}`
-
 export default createUseStyles({
   text: {
     letterSpacing: 0,
@@ -42,68 +40,68 @@ export default createUseStyles({
   },
   // Sizes
   display: {
-    font: parseFontValue(displayM),
+    font: objectToFontValue(displayM),
     letterSpacing: displayM.letterSpacing,
     [`@media screen and (min-width:${grid.sm}px)`]: {
       letterSpacing: display.letterSpacing,
-      font: parseFontValue(display)
+      font: objectToFontValue(display)
     }
   },
   h1: {
-    font: parseFontValue(h1M),
+    font: objectToFontValue(h1M),
     letterSpacing: h1M.letterSpacing,
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      font: parseFontValue(h1),
+      font: objectToFontValue(h1),
       letterSpacing: h1.letterSpacing
     }
   },
   h2: {
-    font: parseFontValue(h2M),
+    font: objectToFontValue(h2M),
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      font: parseFontValue(h2)
+      font: objectToFontValue(h2)
     }
   },
   h3: {
-    font: parseFontValue(h3M),
+    font: objectToFontValue(h3M),
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      font: parseFontValue(h3)
+      font: objectToFontValue(h3)
     }
   },
   h4: {
-    font: parseFontValue(h4M),
+    font: objectToFontValue(h4M),
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      font: parseFontValue(h4)
+      font: objectToFontValue(h4)
     }
   },
   h5: {
-    font: parseFontValue(h5)
+    font: objectToFontValue(h5)
   },
   tag: {
-    font: parseFontValue(tag)
+    font: objectToFontValue(tag)
   },
   bodyXLarge: {
-    font: parseFontValue(bodyXLarge)
+    font: objectToFontValue(bodyXLarge)
   },
   bodyLargeStrong: {
-    font: parseFontValue(bodyLargeStrong)
+    font: objectToFontValue(bodyLargeStrong)
   },
   bodyLarge: {
-    font: parseFontValue(bodyLarge)
+    font: objectToFontValue(bodyLarge)
   },
   bodyRegularStrong: {
-    font: parseFontValue(bodyRegularStrong)
+    font: objectToFontValue(bodyRegularStrong)
   },
   bodyRegular: {
-    font: parseFontValue(bodyRegular)
+    font: objectToFontValue(bodyRegular)
   },
   bodySmallStrong: {
-    font: parseFontValue(bodySmallStrong)
+    font: objectToFontValue(bodySmallStrong)
   },
   bodySmall: {
-    font: parseFontValue(bodySmall)
+    font: objectToFontValue(bodySmall)
   },
   bodyXSmall: {
-    font: parseFontValue(bodyXSmall)
+    font: objectToFontValue(bodyXSmall)
   },
   // Weight
   strong: {
