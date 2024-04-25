@@ -175,6 +175,9 @@ export default createUseStyles({
     '&:hover, &:active': {
       color: legacyColors.secDark
     },
+    '&:hover $icon, &:active $icon': {
+      fill: legacyColors.secDark
+    },
     '&$disabled': {
       background: `transparent !important`,
       color: `${legacyColors.sec} !important`,
