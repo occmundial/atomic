@@ -1,3 +1,10 @@
+# [3.0.0-beta.10](https://github.com/occmundial/atomic/compare/v3.0.0-beta.9...v3.0.0-beta.10) (2024-04-25)
+
+
+### Bug Fixes
+
+* Change icon color on Button's ghostPink hover ([4237892](https://github.com/occmundial/atomic/commit/423789271b9897cb2ecd7814763fd2ca7f12f1a8))
+
 # [3.0.0-beta.9](https://github.com/occmundial/atomic/compare/v3.0.0-beta.8...v3.0.0-beta.9) (2024-04-24)
 
 
