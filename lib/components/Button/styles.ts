@@ -6,7 +6,7 @@ import spacing from '@/tokens/future/spacing.json'
 import borderRadius from '@/tokens/future/borderRadius.json'
 import fonts from '@/tokens/future/fonts.json'
 import shadows from '@/tokens/future/shadows.json'
-import { objectToFontValue } from 'lib/utils/font'
+import { objectToFontValue } from '@/utils/font'
 
 const sm = fonts['button-small']
 const md = fonts['button-medium']

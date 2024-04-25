@@ -7,7 +7,7 @@ import grid from '@/tokens/grid'
 import newFonts from '@/tokens/future/fonts.json'
 import newColors from '@/tokens/future/colors.json'
 import newSpacing from '@/tokens/future/spacing.json'
-import { objectToFontValue } from 'lib/utils/font'
+import { objectToFontValue } from '@/utils/font'
 
 const display = newFonts['display-display-clean']
 const displayM = newFonts['mobile-display-clean-m']
