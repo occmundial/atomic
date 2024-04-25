@@ -1,5 +1,12 @@
 import fontsOld from '@/tokens/fonts'
-import fonts from '@/tokens/future/fonts.json'
 
-export const objectToFontValue = (font: typeof fonts['body-large']) =>
+type FontToken = {
+  fontFamily: string
+  fontWeight: number
+  lineHeight: number
+  fontSize: string
+  letterSpacing?: string
+}
+
+export const objectToFontValue = (font: FontToken) =>
   `${font.fontWeight} ${font.fontSize}/${font.lineHeight} ${fontsOld.body}`
