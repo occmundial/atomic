@@ -7,6 +7,7 @@ import colors from '@/tokens/colors'
 import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
+import useAtomic from '@/hooks/useAtomic'
 
 interface PillStackProps {
   children: string
@@ -28,6 +29,12 @@ const Stack = ({
   testId
 }: PillStackProps) => {
   const classes = useStyles()
+
+  const atomic = useAtomic()
+  const getIcon = (oldIcon: string, newIcon: string): string => {
+    if (atomic.translateIconsV2) return newIcon
+    return oldIcon
+  }
 
   const handleOnClick = useCallback(
     (id: string | number) => {
@@ -58,7 +65,11 @@ const Stack = ({
       )}
       {onClose && (
         <span className={classes.closeCont} onClick={e => handleOnClose(e, id)}>
-          <Icon iconName="x" color={colors.grey300} size={16} />
+          <Icon
+            iconName={getIcon('x-micro', 'x')}
+            color={colors.grey300}
+            size={16}
+          />
         </span>
       )}
     </button>

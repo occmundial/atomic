@@ -13,6 +13,7 @@ import spacing from '@/tokens/spacing'
 import colors from '@/tokens/colors'
 
 import useStyles from './styles'
+import useAtomic from '@/hooks/useAtomic'
 
 const itemTypes = {
   link: 'link',
@@ -52,6 +53,12 @@ const List = ({
 }: ListProps) => {
   const classes = useStyles()
   const [toggle, setToggle] = useState(false)
+
+  const atomic = useAtomic()
+  const getIcon = (oldIcon: string, newIcon: string): string => {
+    if (atomic.translateIconsV2) return newIcon
+    return oldIcon
+  }
 
   const toggleList = useCallback(() => setToggle(!toggle), [toggle])
 
@@ -121,7 +128,7 @@ const List = ({
         </Text>
         {isCollapsible && (
           <Icon
-            iconName="chevron-down"
+            iconName={getIcon('arrow-down', 'chevron-down')}
             size={spacing.small}
             className={classnames(classes.arrow, { [classes.arrowUp]: toggle })}
           />

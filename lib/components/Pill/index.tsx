@@ -16,6 +16,7 @@ import GroupItem from './Group'
 import StackItem from './Stack'
 import ChoiceItem from './Choice'
 import useStyles from './styles'
+import useAtomic from '@/hooks/useAtomic'
 
 export interface PillType {
   id: string | number
@@ -71,6 +72,12 @@ const Pill = ({
   style
 }: PillProps) => {
   const classes = useStyles()
+
+  const atomic = useAtomic()
+  const getIcon = (oldIcon: string, newIcon: string): string => {
+    if (atomic.translateIconsV2) return newIcon
+    return oldIcon
+  }
 
   const [status, setStatus] = useState('default')
   const [touched, setTouched] = useState(false)
@@ -185,7 +192,7 @@ const Pill = ({
             <>
               {realStatus == 'error' && (
                 <Icon
-                  iconName="alert"
+                  iconName={getIcon('warning', 'alert')}
                   size={iconSizes.small}
                   className={classes.errorIcon}
                 />

@@ -9,6 +9,7 @@ import colors from '@/tokens/colors'
 import usePrevious from '@/hooks/usePrevious'
 
 import useStyles from './styles'
+import useAtomic from '@/hooks/useAtomic'
 
 interface SlideDownProps {
   children: ReactNode
@@ -37,6 +38,12 @@ const SlideDown = ({
   const [_expanded, setExpanded] = useState(expanded)
   const [toggled, setToggled] = useState(expanded)
   const prevExpanded = usePrevious(expanded)
+
+  const atomic = useAtomic()
+  const getIcon = (oldIcon: string, newIcon: string): string => {
+    if (atomic.translateIconsV2) return newIcon
+    return oldIcon
+  }
 
   const toggleContent = useCallback(
     (value: boolean) => {
@@ -127,7 +134,7 @@ const SlideDown = ({
           </Flexbox>
           <Flexbox flex="0 0 auto">
             <Icon
-              iconName="chevron-down"
+              iconName={getIcon('arrow-down', 'chevron-down')}
               color={iconColor}
               className={classes.icon}
               style={{ transform: toggled ? 'rotate(180deg)' : '' }}

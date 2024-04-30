@@ -19,6 +19,7 @@ import spacing from '@/tokens/spacing'
 import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
+import useAtomic from '@/hooks/useAtomic'
 
 export interface LinkElement {
   key: string | number
@@ -121,6 +122,12 @@ const NavTab = ({
   const [show, setShow] = useState(true)
   const [currentScroll, setCurrentScroll] = useState(0)
 
+  const atomic = useAtomic()
+  const getIcon = (oldIcon: string, newIcon: string): string => {
+    if (atomic.translateIconsV2) return newIcon
+    return oldIcon
+  }
+
   const determineVisibility = useCallback(() => {
     setShow(
       window.pageYOffset <= spacing.xLarge ||
@@ -161,7 +168,7 @@ const NavTab = ({
         >
           {item.text}{' '}
           <Icon
-            iconName="chevron-down"
+            iconName={getIcon('arrow-down', 'chevron-down')}
             size={iconSizes.small}
             className={classnames(classes.arrow, {
               [classes.arrowUp]: item.selected

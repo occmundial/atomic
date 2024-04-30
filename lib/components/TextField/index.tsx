@@ -21,6 +21,7 @@ import iconSizes from '@/tokens/iconSizes'
 import usePrevious from '@/hooks/usePrevious'
 
 import useStyles from './styles'
+import useAtomic from '@/hooks/useAtomic'
 
 export interface TextFieldProps {
   type?: string
@@ -120,6 +121,12 @@ const TextField = forwardRef(
     const prevDisabled = usePrevious(disabled)
     const inputRef = useRef<HTMLInputElement>(null)
     const valueRef = useRef<string>()
+
+    const atomic = useAtomic()
+    const getIcon = (oldIcon: string, newIcon: string): string => {
+      if (atomic.translateIconsV2) return newIcon
+      return oldIcon
+    }
 
     useEffect(() => {
       valueRef.current = _value
@@ -416,7 +423,7 @@ const TextField = forwardRef(
           type !== 'select' ? (
             <div className={classes.passIcon}>
               <Icon
-                iconName="eye"
+                iconName={getIcon('eye-o', 'eye')}
                 size={iconSizes.small}
                 color={colors.grey200}
               />
@@ -430,7 +437,11 @@ const TextField = forwardRef(
             className={classes.passIcon}
           >
             <Icon
-              iconName={showPass ? 'eye' : 'eye-slash'}
+              iconName={
+                showPass
+                  ? getIcon('eye-o', 'eye')
+                  : getIcon('eye-close-o', 'eye-slash')
+              }
               size={iconSizes.small}
               color={showPass ? colors.grey900 : colors.grey400}
             />
@@ -443,7 +454,8 @@ const TextField = forwardRef(
         outOfPassIcon,
         showPass,
         togglePass,
-        type
+        type,
+        getIcon
       ]
     )
 
@@ -475,7 +487,7 @@ const TextField = forwardRef(
           {type == 'select' && (
             <div className={classes.selectIcon}>
               <Icon
-                iconName="chevron-down"
+                iconName={getIcon('arrow-down', 'chevron-down')}
                 size={iconSizes.small}
                 color={disabled ? colors.grey200 : colors.grey900}
               />
@@ -512,7 +524,7 @@ const TextField = forwardRef(
               >
                 {realStatus == 'error' ? (
                   <Icon
-                    iconName="alert"
+                    iconName={getIcon('warning', 'alert')}
                     size={iconSizes.tiny}
                     className={classes.errorIcon}
                   />

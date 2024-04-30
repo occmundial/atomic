@@ -13,6 +13,7 @@ import Icon from '@/components/Icon'
 
 import useStyles from './styles'
 import colors from '@/tokens/colors'
+import useAtomic from '@/hooks/useAtomic'
 
 const ICON_SIZE = 16
 
@@ -40,6 +41,12 @@ const Toggle = ({
   const classes = useStyles()
   const [_value, setValue] = useState(value)
   const valueRef = useRef<boolean>()
+
+  const atomic = useAtomic()
+  const getIcon = (oldIcon: string, newIcon: string): string => {
+    if (atomic.translateIconsV2) return newIcon
+    return oldIcon
+  }
 
   useEffect(() => {
     valueRef.current = _value
@@ -73,7 +80,9 @@ const Toggle = ({
       >
         <span className={classes.slider}>
           <Icon
-            iconName={_value ? 'check' : 'x'}
+            iconName={
+              _value ? getIcon('check-o', 'check') : getIcon('x-micro-o', 'x')
+            }
             size={ICON_SIZE}
             color={_value ? colors.prim : colors.grey400}
           />
