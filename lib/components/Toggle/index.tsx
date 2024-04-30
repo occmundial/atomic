@@ -14,7 +14,7 @@ import Icon from '@/components/Icon'
 import useStyles from './styles'
 import colors from '@/tokens/colors'
 
-const ICON_SIZE = 20
+const ICON_SIZE = 16
 
 interface ToggleProps {
   value?: boolean
