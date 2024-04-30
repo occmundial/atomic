@@ -41,7 +41,8 @@ const iconTranslation = {
   verified: 'security-check',
   warning: 'alert',
   website: 'globe',
-  public: 'globe'
+  public: 'globe',
+  'x-micro': 'x'
 }
 
 export { iconTranslation }
