@@ -1,3 +1,10 @@
+# [3.0.0-beta.12](https://github.com/occmundial/atomic/compare/v3.0.0-beta.11...v3.0.0-beta.12) (2024-04-30)
+
+
+### Bug Fixes
+
+* Fix toggle icon size ([e239a71](https://github.com/occmundial/atomic/commit/e239a71090d90fca5829bb8c09348a045e8ae4b3))
+
 # [3.0.0-beta.11](https://github.com/occmundial/atomic/compare/v3.0.0-beta.10...v3.0.0-beta.11) (2024-04-25)
 
 
