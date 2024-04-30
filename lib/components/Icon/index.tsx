@@ -5,6 +5,7 @@ import useAtomic from '@/hooks/useAtomic'
 
 import useStyles from './styles'
 import iconSizes from '@/tokens/iconSizes'
+import { iconTranslation } from './helper'
 
 export interface IconProps {
   iconName: string
@@ -40,11 +41,18 @@ const Icon = ({
     if (color) return color
     return 'currentcolor'
   }, [color, hoverColor, hover])
+  const _iconName = useMemo(() => {
+    if (!atomic.translateIconsV2) return iconName
+    const iconBaseName = iconName.replace(/-o$/, '')
+    const translation = iconTranslation[iconBaseName]
+    if (translation === '*' || !translation) return iconBaseName
+    return translation
+  }, [iconName, atomic.translateIconsV2])
   return (
     <svg
       className={classnames(
         classes.icon,
-        `${atomic.iconsPrefix}__${iconName}`,
+        `${atomic.iconsPrefix}__${_iconName}`,
         {
           [classes.click]: onClick
         },
@@ -64,7 +72,7 @@ const Icon = ({
       data-testid={testId}
     >
       <use
-        xlinkHref={`${atomic.iconsPath}#${atomic.iconsPrefix}__${iconName}`}
+        xlinkHref={`${atomic.iconsPath}#${atomic.iconsPrefix}__${_iconName}`}
       />
     </svg>
   )

@@ -1,3 +1,87 @@
+# [3.0.0-beta.12](https://github.com/occmundial/atomic/compare/v3.0.0-beta.11...v3.0.0-beta.12) (2024-04-30)
+
+
+### Bug Fixes
+
+* Fix toggle icon size ([e239a71](https://github.com/occmundial/atomic/commit/e239a71090d90fca5829bb8c09348a045e8ae4b3))
+
+# [3.0.0-beta.11](https://github.com/occmundial/atomic/compare/v3.0.0-beta.10...v3.0.0-beta.11) (2024-04-25)
+
+
+### Bug Fixes
+
+* Added utils alias ([d50fccf](https://github.com/occmundial/atomic/commit/d50fccffb1e0e1fc563719d66dc1f825334890c6))
+* Button incorrect font ([c1df8f0](https://github.com/occmundial/atomic/commit/c1df8f04cbc63047707c1db3773ba6dfc51b2a94))
+
+# [3.0.0-beta.10](https://github.com/occmundial/atomic/compare/v3.0.0-beta.9...v3.0.0-beta.10) (2024-04-25)
+
+
+### Bug Fixes
+
+* Change icon color on Button's ghostPink hover ([4237892](https://github.com/occmundial/atomic/commit/423789271b9897cb2ecd7814763fd2ca7f12f1a8))
+
+# [3.0.0-beta.9](https://github.com/occmundial/atomic/compare/v3.0.0-beta.8...v3.0.0-beta.9) (2024-04-24)
+
+
+### Bug Fixes
+
+* Fix icon translation ([2227da9](https://github.com/occmundial/atomic/commit/2227da953389a7d431266a18b4003263a3f752fe))
+
+
+### Features
+
+* Add a property to the Provider to translate icons ([1bc683d](https://github.com/occmundial/atomic/commit/1bc683dbd8fa8b7a40ac4b1f1c11433143bc0dac))
+
+# [3.0.0-beta.8](https://github.com/occmundial/atomic/compare/v3.0.0-beta.7...v3.0.0-beta.8) (2024-04-22)
+
+
+### Bug Fixes
+
+* Force padding of 0 in ghostPink button ([296c877](https://github.com/occmundial/atomic/commit/296c8774299af5d0619e89f72bbf0726a33a1790))
+
+# [3.0.0-beta.7](https://github.com/occmundial/atomic/compare/v3.0.0-beta.6...v3.0.0-beta.7) (2024-04-19)
+
+
+### Bug Fixes
+
+* Fix loading icon size ([e869110](https://github.com/occmundial/atomic/commit/e869110ca254d375020d40956bf94963bb636934))
+
+# [3.0.0-beta.6](https://github.com/occmundial/atomic/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2024-04-19)
+
+
+### Bug Fixes
+
+* Replaced new font family var with old one ([8e56089](https://github.com/occmundial/atomic/commit/8e56089b22af06e89f8a019ad41c014b6095acd5))
+
+# [3.0.0-beta.5](https://github.com/occmundial/atomic/compare/v3.0.0-beta.4...v3.0.0-beta.5) (2024-04-18)
+
+
+### Bug Fixes
+
+* Removed not intended whitespaces ([ed8bfe0](https://github.com/occmundial/atomic/commit/ed8bfe09a27e927a9a98d73c2e0ad6206c3ed3a5))
+
+# [3.0.0-beta.4](https://github.com/occmundial/atomic/compare/v3.0.0-beta.3...v3.0.0-beta.4) (2024-04-18)
+
+
+### Bug Fixes
+
+* Wrong letterSpácing ([a116ca3](https://github.com/occmundial/atomic/commit/a116ca31433fffb473dbcd0dc31079466c9644ac))
+
+
+### Features
+
+* Improve Text documentation with tables ([b412e27](https://github.com/occmundial/atomic/commit/b412e273d48487d43ea77fd8544c5239954eb460))
+* Update font tokens ([759e4cb](https://github.com/occmundial/atomic/commit/759e4cb31370196195944d7b0273d96b799241ed))
+* Updated Text component documentation ([09aa18d](https://github.com/occmundial/atomic/commit/09aa18dba88bdcd4f43f96542f964503d4499f64))
+* Updated text component with new tokens ([8844569](https://github.com/occmundial/atomic/commit/88445690126ecbdf987f2dd321be702b57ad479a))
+
+# [3.0.0-beta.3](https://github.com/occmundial/atomic/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2024-04-17)
+
+
+### Bug Fixes
+
+* Update design tokens ([e2170e4](https://github.com/occmundial/atomic/commit/e2170e41657dd8f17db1bffc058057d27cf82774))
+
 # [3.0.0-beta.2](https://github.com/occmundial/atomic/compare/v3.0.0-beta.1...v3.0.0-beta.2) (2024-04-17)
 
 

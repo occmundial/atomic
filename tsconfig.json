@@ -25,6 +25,9 @@
       "@/tokens/*": [
         "lib/tokens/*"
       ],
+      "@/utils/*": [
+        "lib/utils/*"
+      ],
       "@/hooks/*": [
         "lib/hooks/*"
       ],

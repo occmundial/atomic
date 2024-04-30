@@ -3,7 +3,32 @@ import { createUseStyles } from 'react-jss'
 import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
 import grid from '@/tokens/grid'
-import spacing from '@/tokens/spacing'
+
+import newFonts from '@/tokens/future/fonts.json'
+import newColors from '@/tokens/future/colors.json'
+import newSpacing from '@/tokens/future/spacing.json'
+import { objectToFontValue } from '@/utils/font'
+
+const display = newFonts['display-display-clean']
+const displayM = newFonts['mobile-display-clean-m']
+const h1 = newFonts['heading-h1']
+const h1M = newFonts['mobile-h1-m']
+const h2 = newFonts['heading-h2']
+const h2M = newFonts['mobile-h2-m']
+const h3 = newFonts['heading-h3']
+const h3M = newFonts['mobile-h3-m']
+const h4 = newFonts['heading-h4']
+const h4M = newFonts['mobile-h4-m']
+const h5 = newFonts['heading-h5']
+const tag = newFonts['heading-tag']
+const bodyXLarge = newFonts['body-x-large']
+const bodyLargeStrong = newFonts['body-large-strong']
+const bodyLarge = newFonts['body-large']
+const bodyRegularStrong = newFonts['body-regular-strong']
+const bodyRegular = newFonts['body-regular']
+const bodySmallStrong = newFonts['body-small-strong']
+const bodySmall = newFonts['body-small']
+const bodyXSmall = newFonts['body-x-small']
 
 export default createUseStyles({
   text: {
@@ -14,73 +39,92 @@ export default createUseStyles({
     margin: 0
   },
   // Sizes
-  hero: {
-    fontSize: 32,
-    lineHeight: 1.1,
-    fontWeight: 400,
-    letterSpacing: -0.64,
+  display: {
+    font: objectToFontValue(displayM),
+    letterSpacing: displayM.letterSpacing,
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      fontSize: 48,
-      letterSpacing: -0.96
+      letterSpacing: display.letterSpacing,
+      font: objectToFontValue(display)
     }
   },
-  headline: {
-    fontSize: 28,
-    lineHeight: 1.1,
-    fontWeight: 400,
+  h1: {
+    font: objectToFontValue(h1M),
+    letterSpacing: h1M.letterSpacing,
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      fontSize: 40
+      font: objectToFontValue(h1),
+      letterSpacing: h1.letterSpacing
     }
   },
-  heading: {
-    fontSize: 24,
-    lineHeight: 1.1,
-    fontWeight: 400
+  h2: {
+    font: objectToFontValue(h2M),
+    [`@media screen and (min-width:${grid.sm}px)`]: {
+      font: objectToFontValue(h2)
+    }
   },
-  subheading: {
-    fontSize: 18,
-    lineHeight: 1.1,
-    fontWeight: 400
+  h3: {
+    font: objectToFontValue(h3M),
+    [`@media screen and (min-width:${grid.sm}px)`]: {
+      font: objectToFontValue(h3)
+    }
   },
-  extraLarge: {
-    fontSize: 20,
-    lineHeight: 1.5
+  h4: {
+    font: objectToFontValue(h4M),
+    [`@media screen and (min-width:${grid.sm}px)`]: {
+      font: objectToFontValue(h4)
+    }
   },
-  large: {
-    fontSize: 18,
-    lineHeight: 1.5
+  h5: {
+    font: objectToFontValue(h5)
   },
-  standard: {
-    fontSize: 16,
-    lineHeight: 1.5
+  tag: {
+    font: objectToFontValue(tag)
   },
-  small: {
-    fontSize: 14,
-    lineHeight: 1.5
+  bodyXLarge: {
+    font: objectToFontValue(bodyXLarge)
   },
-  micro: {
-    fontSize: 12,
-    lineHeight: 1.5
+  bodyLargeStrong: {
+    font: objectToFontValue(bodyLargeStrong)
+  },
+  bodyLarge: {
+    font: objectToFontValue(bodyLarge)
+  },
+  bodyRegularStrong: {
+    font: objectToFontValue(bodyRegularStrong)
+  },
+  bodyRegular: {
+    font: objectToFontValue(bodyRegular)
+  },
+  bodySmallStrong: {
+    font: objectToFontValue(bodySmallStrong)
+  },
+  bodySmall: {
+    font: objectToFontValue(bodySmall)
+  },
+  bodyXSmall: {
+    font: objectToFontValue(bodyXSmall)
   },
   // Weight
   strong: {
     fontWeight: 400
   },
   // Colors
-  primary: {
-    color: colors.prim
+  indigoPrimary: {
+    color: newColors.text.indigo.primary
   },
-  secondary: {
-    color: colors.sec
+  indigoSecondary: {
+    color: newColors.text.indigo.secondary
+  },
+  pinkPrimary: {
+    color: newColors.text.pink.primary
   },
   success: {
-    color: colors.successText
-  },
-  error: {
-    color: colors.errorText
+    color: newColors.text.success
   },
   warning: {
-    color: colors.warningText
+    color: newColors.text.warning
+  },
+  error: {
+    color: newColors.text.error
   },
   info: {
     color: colors.infoText
@@ -88,8 +132,11 @@ export default createUseStyles({
   disabled: {
     color: colors.inkLightest
   },
-  white: {
-    color: colors.white
+  whiteSecondary: {
+    color: newColors.text.white.secondary
+  },
+  whitePrimary: {
+    color: newColors.text.white.primary
   },
   link: {
     color: colors.textLink
@@ -98,14 +145,14 @@ export default createUseStyles({
     color: 'currentcolor'
   },
   // Emphasis
-  highEmphasis: {
-    color: colors.ink
+  corpPrimary: {
+    color: newColors.text.corp.primary
   },
-  midEmphasis: {
-    color: colors.inkLight
+  corpSecondary: {
+    color: newColors.text.corp.secondary
   },
-  lowEmphasis: {
-    color: colors.inkLighter
+  corpDisabled: {
+    color: newColors.text.corp.disabled
   },
   // Align
   left: {
@@ -118,46 +165,82 @@ export default createUseStyles({
     textAlign: 'right'
   },
   // Spacing
-  topXTiny: {
-    marginTop: spacing.xTiny
+  top0: {
+    marginTop: newSpacing['size-0']
   },
-  topTiny: {
-    marginTop: spacing.tiny
+  top1: {
+    marginTop: newSpacing['size-1']
   },
-  topSmall: {
-    marginTop: spacing.small
+  top2: {
+    marginTop: newSpacing['size-2']
   },
-  topBase: {
-    marginTop: spacing.base
+  top3: {
+    marginTop: newSpacing['size-3']
   },
-  topMedium: {
-    marginTop: spacing.medium
+  top4: {
+    marginTop: newSpacing['size-4']
   },
-  topLarge: {
-    marginTop: spacing.large
+  top5: {
+    marginTop: newSpacing['size-5']
   },
-  topXLarge: {
-    marginTop: spacing.xLarge
+  top6: {
+    marginTop: newSpacing['size-6']
   },
-  bottomXTiny: {
-    marginBottom: spacing.xTiny
+  top7: {
+    marginTop: newSpacing['size-7']
   },
-  bottomTiny: {
-    marginBottom: spacing.tiny
+  top8: {
+    marginTop: newSpacing['size-8']
   },
-  bottomSmall: {
-    marginBottom: spacing.small
+  top9: {
+    marginTop: newSpacing['size-9']
   },
-  bottomBase: {
-    marginBottom: spacing.base
+  top10: {
+    marginTop: newSpacing['size-10']
   },
-  bottomMedium: {
-    marginBottom: spacing.medium
+  top11: {
+    marginTop: newSpacing['size-11']
   },
-  bottomLarge: {
-    marginBottom: spacing.large
+  top12: {
+    marginTop: newSpacing['size-12']
   },
-  bottomXLarge: {
-    marginBottom: spacing.xLarge
+  bottom0: {
+    marginBottom: newSpacing['size-0']
+  },
+  bottom1: {
+    marginBottom: newSpacing['size-1']
+  },
+  bottom2: {
+    marginBottom: newSpacing['size-2']
+  },
+  bottom3: {
+    marginBottom: newSpacing['size-3']
+  },
+  bottom4: {
+    marginBottom: newSpacing['size-4']
+  },
+  bottom5: {
+    marginBottom: newSpacing['size-5']
+  },
+  bottom6: {
+    marginBottom: newSpacing['size-6']
+  },
+  bottom7: {
+    marginBottom: newSpacing['size-7']
+  },
+  bottom8: {
+    marginBottom: newSpacing['size-8']
+  },
+  bottom9: {
+    marginBottom: newSpacing['size-9']
+  },
+  bottom10: {
+    marginBottom: newSpacing['size-10']
+  },
+  bottom11: {
+    marginBottom: newSpacing['size-11']
+  },
+  bottom12: {
+    marginBottom: newSpacing['size-12']
   }
 })

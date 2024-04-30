@@ -17,7 +17,7 @@ export default function Code({ children, className }: CodeProps) {
   const classes = useStyles()
 
   const language = useMemo(
-    () => className.replace(/language-/, ''),
+    () => className?.replace(/language-/, ''),
     [className]
   ) as Language
 

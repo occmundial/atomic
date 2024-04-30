@@ -84,11 +84,12 @@ const Button = (props: ButtonProps) => {
     { [classes.iconOnly]: !children && iconLeft },
     { [classes.round]: !children && iconLeft && round }
   )
+  const iconSize = size === 'sm' ? 16 : 24
   const content = (
     <span className={classes.cont}>
       {iconLeft ? (
         <Icon
-          size={size === 'sm' ? 16 : 24}
+          size={iconSize}
           iconName={iconLeft}
           className={classnames(classes.icon, { [classes.iconLeft]: children })}
           transition="none"
@@ -99,7 +100,7 @@ const Button = (props: ButtonProps) => {
       {children}
       {iconRight ? (
         <Icon
-          size={size === 'sm' ? 16 : 24}
+          size={iconSize}
           iconName={iconRight}
           className={classnames(classes.icon, classes.iconRight)}
           transition="none"
@@ -111,7 +112,7 @@ const Button = (props: ButtonProps) => {
   )
   const loadingLayer = loading ? (
     <span className={classes.loadCont}>
-      <Loading className={classes.icon} />
+      <Loading className={classes.icon} width={iconSize} height={iconSize} />
     </span>
   ) : null
   if (href) {

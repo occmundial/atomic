@@ -1,12 +1,12 @@
 import { createUseStyles } from 'react-jss'
 
 import legacyColors from '@/tokens/colors'
-
 import colors from '@/tokens/future/colors.json'
 import spacing from '@/tokens/future/spacing.json'
 import borderRadius from '@/tokens/future/borderRadius.json'
 import fonts from '@/tokens/future/fonts.json'
 import shadows from '@/tokens/future/shadows.json'
+import { objectToFontValue } from '@/utils/font'
 
 const sm = fonts['button-small']
 const md = fonts['button-medium']
@@ -22,7 +22,7 @@ export default createUseStyles({
     padding: [spacing['size-3'], spacing['size-4']],
     borderRadius: borderRadius['br-xs'],
     border: 0,
-    font: `${sm.fontWeight} ${sm.fontSize}/${sm.lineHeight} ${sm.fontFamily}`,
+    font: objectToFontValue(sm),
     textAlign: 'center',
     textDecoration: 'none',
     whiteSpace: 'nowrap',
@@ -170,10 +170,13 @@ export default createUseStyles({
     background: 'transparent',
     color: legacyColors.sec,
     border: 'none',
-    paddingLeft: 0,
-    paddingRight: 0,
+    paddingLeft: [0, '!important'],
+    paddingRight: [0, '!important'],
     '&:hover, &:active': {
       color: legacyColors.secDark
+    },
+    '&:hover $icon, &:active $icon': {
+      fill: legacyColors.secDark
     },
     '&$disabled': {
       background: `transparent !important`,
@@ -242,14 +245,14 @@ export default createUseStyles({
   },
   // Sizes
   md: {
-    font: `${md.fontWeight} ${md.fontSize}/${md.lineHeight} ${md.fontFamily}`,
+    font: objectToFontValue(md),
     padding: [spacing['size-3'], spacing['size-5']],
     '&$iconOnly': {
       padding: [spacing['size-2'], spacing['size-2']]
     }
   },
   lg: {
-    font: `${lg.fontWeight} ${lg.fontSize}/${lg.lineHeight} ${lg.fontFamily}`,
+    font: objectToFontValue(lg),
     padding: [spacing['size-4'], spacing['size-6']],
     '&$iconOnly': {
       padding: [spacing['size-3'], spacing['size-3']]
