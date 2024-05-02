@@ -1,3 +1,22 @@
+# [3.0.0-beta.14](https://github.com/occmundial/atomic/compare/v3.0.0-beta.13...v3.0.0-beta.14) (2024-05-02)
+
+
+### Bug Fixes
+
+* Change icon size in Pill stack ([a657a0c](https://github.com/occmundial/atomic/commit/a657a0c950f54a8b38290d5f940b6cfd30e5e56c))
+* Change icons in the components ([6c6c657](https://github.com/occmundial/atomic/commit/6c6c6576c3667bffb8233b3090921171e94dc28e))
+* Change toggle icon size ([b3eaf0e](https://github.com/occmundial/atomic/commit/b3eaf0e654b200de9092dc5b7c89274388baf1d9))
+
+
+### Features
+
+* Condition the new icons int he components ([be7330d](https://github.com/occmundial/atomic/commit/be7330db8ff49a86cebaa332da5eb337d82d7c39))
+
+
+### BREAKING CHANGES
+
+* The library now requires to use atomic-icons version 1.7.0-beta.5 or greater.
+
 # [3.0.0-beta.13](https://github.com/occmundial/atomic/compare/v3.0.0-beta.12...v3.0.0-beta.13) (2024-05-02)
 
 
