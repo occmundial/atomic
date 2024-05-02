@@ -4,9 +4,9 @@ import classnames from 'classnames'
 import Text from '@/components/Text'
 import Icon from '@/components/Icon'
 import colors from '@/tokens/colors'
-import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
+import useIcon from '@/hooks/useIcon'
 
 interface PillStackProps {
   children: string
@@ -28,6 +28,8 @@ const Stack = ({
   testId
 }: PillStackProps) => {
   const classes = useStyles()
+
+  const getIcon = useIcon()
 
   const handleOnClick = useCallback(
     (id: string | number) => {
@@ -59,10 +61,9 @@ const Stack = ({
       {onClose && (
         <span className={classes.closeCont} onClick={e => handleOnClose(e, id)}>
           <Icon
-            className={classes.close}
-            iconName="c-micro"
+            iconName={getIcon('x-micro', 'x')}
             color={colors.grey300}
-            size={iconSizes.small}
+            size={16}
           />
         </span>
       )}

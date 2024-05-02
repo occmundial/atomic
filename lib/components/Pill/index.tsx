@@ -16,6 +16,7 @@ import GroupItem from './Group'
 import StackItem from './Stack'
 import ChoiceItem from './Choice'
 import useStyles from './styles'
+import useIcon from '@/hooks/useIcon'
 
 export interface PillType {
   id: string | number
@@ -71,6 +72,8 @@ const Pill = ({
   style
 }: PillProps) => {
   const classes = useStyles()
+
+  const getIcon = useIcon()
 
   const [status, setStatus] = useState('default')
   const [touched, setTouched] = useState(false)
@@ -185,7 +188,7 @@ const Pill = ({
             <>
               {realStatus == 'error' && (
                 <Icon
-                  iconName="warning"
+                  iconName={getIcon('warning', 'alert')}
                   size={iconSizes.small}
                   className={classes.errorIcon}
                 />
