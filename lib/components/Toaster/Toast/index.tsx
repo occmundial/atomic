@@ -7,6 +7,7 @@ import Flexbox from '@/components/Flexbox'
 import colors from '@/tokens/colors'
 
 import useStyles from './styles'
+import useIcon from '@/hooks/useIcon'
 
 interface ToastAction {
   onClick: EventHandler<SyntheticEvent>
@@ -44,16 +45,17 @@ const Toast = ({
   resumeTimer
 }: ToastProps) => {
   const classes = useStyles()
+  const getIcon = useIcon()
   const getIconData = () => {
     switch (theme) {
       case 'success':
         return { icon: 'check', color: colors.bgWhite }
       case 'error':
-        return { icon: 'alert', color: colors.bgWhite }
+        return { icon: getIcon('warning', 'alert'), color: colors.bgWhite }
       case 'info':
         return { icon: 'info', color: colors.bgWhite }
       case 'warning':
-        return { icon: 'alert', color: colors.grey900 }
+        return { icon: getIcon('warning', 'alert'), color: colors.grey900 }
     }
   }
   const textColor = theme === 'warning' ? {} : { white: true }

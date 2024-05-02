@@ -13,6 +13,7 @@ import spacing from '@/tokens/spacing'
 import colors from '@/tokens/colors'
 
 import useStyles from './styles'
+import useIcon from '@/hooks/useIcon'
 
 const itemTypes = {
   link: 'link',
@@ -52,6 +53,8 @@ const List = ({
 }: ListProps) => {
   const classes = useStyles()
   const [toggle, setToggle] = useState(false)
+
+  const getIcon = useIcon()
 
   const toggleList = useCallback(() => setToggle(!toggle), [toggle])
 
@@ -121,7 +124,7 @@ const List = ({
         </Text>
         {isCollapsible && (
           <Icon
-            iconName="chevron-down"
+            iconName={getIcon('arrow-down', 'chevron-down')}
             size={spacing.small}
             className={classnames(classes.arrow, { [classes.arrowUp]: toggle })}
           />
