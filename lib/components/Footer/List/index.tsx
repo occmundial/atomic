@@ -13,7 +13,7 @@ import spacing from '@/tokens/spacing'
 import colors from '@/tokens/colors'
 
 import useStyles from './styles'
-import useAtomic from '@/hooks/useAtomic'
+import useIcon from '@/hooks/useIcon'
 
 const itemTypes = {
   link: 'link',
@@ -54,11 +54,7 @@ const List = ({
   const classes = useStyles()
   const [toggle, setToggle] = useState(false)
 
-  const atomic = useAtomic()
-  const getIcon = (oldIcon: string, newIcon: string): string => {
-    if (atomic.translateIconsV2) return newIcon
-    return oldIcon
-  }
+  const getIcon = useIcon()
 
   const toggleList = useCallback(() => setToggle(!toggle), [toggle])
 

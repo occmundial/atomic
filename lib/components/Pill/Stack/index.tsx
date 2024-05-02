@@ -4,10 +4,9 @@ import classnames from 'classnames'
 import Text from '@/components/Text'
 import Icon from '@/components/Icon'
 import colors from '@/tokens/colors'
-import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
-import useAtomic from '@/hooks/useAtomic'
+import useIcon from '@/hooks/useIcon'
 
 interface PillStackProps {
   children: string
@@ -30,11 +29,7 @@ const Stack = ({
 }: PillStackProps) => {
   const classes = useStyles()
 
-  const atomic = useAtomic()
-  const getIcon = (oldIcon: string, newIcon: string): string => {
-    if (atomic.translateIconsV2) return newIcon
-    return oldIcon
-  }
+  const getIcon = useIcon()
 
   const handleOnClick = useCallback(
     (id: string | number) => {

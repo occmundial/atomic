@@ -19,7 +19,7 @@ import spacing from '@/tokens/spacing'
 import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
-import useAtomic from '@/hooks/useAtomic'
+import useIcon from '@/hooks/useIcon'
 
 export interface LinkElement {
   key: string | number
@@ -122,11 +122,7 @@ const NavTab = ({
   const [show, setShow] = useState(true)
   const [currentScroll, setCurrentScroll] = useState(0)
 
-  const atomic = useAtomic()
-  const getIcon = (oldIcon: string, newIcon: string): string => {
-    if (atomic.translateIconsV2) return newIcon
-    return oldIcon
-  }
+  const getIcon = useIcon()
 
   const determineVisibility = useCallback(() => {
     setShow(

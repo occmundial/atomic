@@ -13,7 +13,7 @@ import Icon from '@/components/Icon'
 import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
-import useAtomic from '@/hooks/useAtomic'
+import useIcon from '@/hooks/useIcon'
 
 interface CheckboxProps {
   value?: boolean
@@ -49,11 +49,7 @@ const Checkbox = ({
   const [_undetermined, setUndetermined] = useState(undetermined)
   const valueRef = useRef<boolean>()
 
-  const atomic = useAtomic()
-  const getIcon = (oldIcon: string, newIcon: string): string => {
-    if (atomic.translateIconsV2) return newIcon
-    return oldIcon
-  }
+  const getIcon = useIcon()
 
   useEffect(() => {
     valueRef.current = _value

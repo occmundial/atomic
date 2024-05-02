@@ -15,7 +15,7 @@ import Page from './Page'
 import Break from './Break'
 import useStyles from './styles'
 import iconSizes from '@/tokens/iconSizes'
-import useAtomic from '@/hooks/useAtomic'
+import useIcon from '@/hooks/useIcon'
 
 interface PagerProps {
   pageCount?: number
@@ -50,11 +50,7 @@ const Pager = ({
   const [selected, setSelected] = useState(initialPage || forcePage || 1)
   const prevForcePage = usePrevious(forcePage)
 
-  const atomic = useAtomic()
-  const getIcon = (oldIcon: string, newIcon: string): string => {
-    if (atomic.translateIconsV2) return newIcon
-    return oldIcon
-  }
+  const getIcon = useIcon()
 
   const callCallback = useCallback(
     (selectedItem: number) => {

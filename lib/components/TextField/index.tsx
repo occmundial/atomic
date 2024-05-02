@@ -21,7 +21,7 @@ import iconSizes from '@/tokens/iconSizes'
 import usePrevious from '@/hooks/usePrevious'
 
 import useStyles from './styles'
-import useAtomic from '@/hooks/useAtomic'
+import useIcon from '@/hooks/useIcon'
 
 export interface TextFieldProps {
   type?: string
@@ -122,11 +122,7 @@ const TextField = forwardRef(
     const inputRef = useRef<HTMLInputElement>(null)
     const valueRef = useRef<string>()
 
-    const atomic = useAtomic()
-    const getIcon = (oldIcon: string, newIcon: string): string => {
-      if (atomic.translateIconsV2) return newIcon
-      return oldIcon
-    }
+    const getIcon = useIcon()
 
     useEffect(() => {
       valueRef.current = _value

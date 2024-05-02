@@ -14,6 +14,7 @@ import Icon from '@/components/Icon'
 import useStyles from './styles'
 import colors from '@/tokens/colors'
 import useAtomic from '@/hooks/useAtomic'
+import useIcon from '@/hooks/useIcon'
 
 const ICON_SIZE = 16
 
@@ -42,11 +43,7 @@ const Toggle = ({
   const [_value, setValue] = useState(value)
   const valueRef = useRef<boolean>()
 
-  const atomic = useAtomic()
-  const getIcon = (oldIcon: string, newIcon: string): string => {
-    if (atomic.translateIconsV2) return newIcon
-    return oldIcon
-  }
+  const getIcon = useIcon()
 
   useEffect(() => {
     valueRef.current = _value

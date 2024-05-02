@@ -9,7 +9,7 @@ import colors from '@/tokens/colors'
 import usePrevious from '@/hooks/usePrevious'
 
 import useStyles from './styles'
-import useAtomic from '@/hooks/useAtomic'
+import useIcon from '@/hooks/useIcon'
 
 interface SlideDownProps {
   children: ReactNode
@@ -39,11 +39,7 @@ const SlideDown = ({
   const [toggled, setToggled] = useState(expanded)
   const prevExpanded = usePrevious(expanded)
 
-  const atomic = useAtomic()
-  const getIcon = (oldIcon: string, newIcon: string): string => {
-    if (atomic.translateIconsV2) return newIcon
-    return oldIcon
-  }
+  const getIcon = useIcon()
 
   const toggleContent = useCallback(
     (value: boolean) => {
