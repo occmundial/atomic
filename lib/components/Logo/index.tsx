@@ -8,7 +8,7 @@ import occLogo from '@/tokens/icons/occLogo'
 import { base } from '@/tokens/icons'
 
 import useStyles from './styles'
-import colors from '@/tokens/colors'
+import colors from '@/tokens/future/colors.json'
 
 type LogoVariant = 'horizontal' | 'vertical' | 'icon' | 'occLogo'
 type LogoTheme = 'blue' | 'white' | 'black' | 'grey'
@@ -21,10 +21,10 @@ const variants = {
 }
 
 const logoColors = {
-  black: colors.ink,
-  grey: colors.inkLight,
-  white: colors.white,
-  blue: colors.prim
+  black: colors.icon.default.bold,
+  grey: colors.icon.default.default,
+  white: colors.icon.inverse.default,
+  blue: colors.icon.brand.default
 }
 
 export interface LogoProps {
