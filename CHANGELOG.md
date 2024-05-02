@@ -1,3 +1,10 @@
+# [3.0.0-beta.13](https://github.com/occmundial/atomic/compare/v3.0.0-beta.12...v3.0.0-beta.13) (2024-05-02)
+
+
+### Bug Fixes
+
+* Change logo colors ([c63890e](https://github.com/occmundial/atomic/commit/c63890e45360a99dddf3dfcbb9fc02234ff7ba34))
+
 # [3.0.0-beta.12](https://github.com/occmundial/atomic/compare/v3.0.0-beta.11...v3.0.0-beta.12) (2024-04-30)
 
 
