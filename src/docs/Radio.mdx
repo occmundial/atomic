@@ -1,0 +1,120 @@
+---
+title: Radio
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Radio from '@/components/Radio'
+import { colors } from '@/components/tokens'
+
+# Radio
+
+---
+
+A simple Radio Button component that allows users to select one option from several.
+
+## Props
+
+| Name           | Type                    | Default value    | Description                                                                                                                  |
+| -----------    | ----------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `selected`     | **string**, **boolean** | -                | Value of the current selected option                                                                                         |
+| `onChange`     | **function**            | -                | Callback function called when the component needs to change the selected element. (value) => void                            |
+| `options`      | **RadioOption[]**       | -                | Array of objects with value, label, right (optional), testId and disable (optional) props.                                   |
+| `textOverflow` | **boolean**             | `false`          | If true this prop to overflows the text of the label, adding '...' and the end.                                              |
+| `id`           | **string**              | -                | Id of the component                                                                                                          |
+| `className`    | **string**              | -                | Adds class(es) to each option container                                                                                      |
+| `style`        | **CSSProperties**       | -                | Adds style(s) to each option container                                                                                       |
+
+## Examples
+
+### Selected
+
+<Demo title="Icon" background={colors.bgWhite}>
+  <Radio options={[
+    { value: 1, label: 'Option 1' },
+    { value: 2, label: 'Option 2' },
+    { value: 3, label: 'Option 3' }
+  ]} selected={2}/>
+</Demo>
+
+```jsx
+// How to use selected value
+function Component() {
+  return (
+    <Radio options={[
+      { value: 1, label: 'Option 1' },
+      { value: 2, label: 'Option 2' },
+      { value: 3, label: 'Option 3' }
+    ]} selected={2}/>
+  )
+}
+```
+
+### Disabled
+
+<Demo title="Icon" background={colors.bgWhite}>
+  <Radio options={[
+    { value: 1, label: 'Option 1' },
+    { value: 2, label: 'Option 2' },
+    { value: 3, label: 'Option 3', disabled: true }
+  ]} selected={3} />
+</Demo>
+
+```jsx
+// How to use disabled option
+function Component() {
+  return (
+    <Radio options={[
+      { value: 1, label: 'Option 1' },
+      { value: 2, label: 'Option 2' },
+      { value: 3, label: 'Option 3', disabled: true }
+    ]} selected={2}/>
+  )
+}
+```
+
+### Text on the right
+
+<Demo title="Icon" background={colors.bgWhite}>
+  <Radio options={[
+    { value: 1, label: 'Option 1', right: '(548)', testId: 'test' },
+    { value: 2, label: 'Bacon ipsum dolor amet landjaeger kevin tri-tip strip steak tenderloin, jerky brisket boudin fatback corned beef ball tip buffalo. Meatball rump boudin flank doner pancetta. Venison turkey capicola fatback alcatra. Jowl pork belly brisket pastrami turkey bresaola. Doner pork chicken biltong tail.', right: '(548)' },
+    { value: 3, label: 'Option 3', right: '(67)', disabled: true }
+  ]} />
+</Demo>
+
+```jsx
+// How to use right option
+function Component() {
+  return (
+    <Radio options={[
+      { value: 1, label: 'Option 1', right: '(548)', testId: 'test' },
+      { value: 2, label: 'Bacon ipsum dolor amet landjaeger kevin tri-tip strip steak tenderloin, jerky brisket boudin fatback corned beef ball tip buffalo. Meatball rump boudin flank doner pancetta. Venison turkey capicola fatback alcatra. Jowl pork belly brisket pastrami turkey bresaola. Doner pork chicken biltong tail.', right: '(548)' },
+      { value: 3, label: 'Option 3', right: '(67)', disabled: true }
+    ]} />
+  )
+}
+```
+
+### Text overflow
+
+<Demo title="Icon" background={colors.bgWhite}>
+  <Radio options={[
+    { value: 1, label: 'Bacon ipsum dolor amet landjaeger kevin tri-tip strip steak tenderloin, jerky brisket boudin fatback corned beef ball tip buffalo. Meatball rump boudin flank doner pancetta. Venison turkey capicola fatback alcatra. Jowl pork belly brisket pastrami turkey bresaola. Doner pork chicken biltong tail.' },
+    { value: 2, label: 'Bacon ipsum dolor amet landjaeger kevin tri-tip strip steak tenderloin, jerky brisket boudin fatback corned beef ball tip buffalo. Meatball rump boudin flank doner pancetta. Venison turkey capicola fatback alcatra. Jowl pork belly brisket pastrami turkey bresaola. Doner pork chicken biltong tail.', right: '(548)' },
+    { value: 3, label: 'Bacon ipsum dolor amet landjaeger kevin tri-tip strip steak tenderloin, jerky brisket boudin fatback corned beef ball tip buffalo. Meatball rump boudin flank doner pancetta. Venison turkey capicola fatback alcatra. Jowl pork belly brisket pastrami turkey bresaola. Doner pork chicken biltong tail.' },
+  ]} textOverflow={true} />
+</Demo>
+
+```jsx
+// How to use text overflow prop
+function Component() {
+  return (
+    <Radio options={[
+      { value: 1, label: 'Bacon ipsum dolor amet landjaeger kevin tri-tip strip steak tenderloin, jerky brisket boudin fatback corned beef ball tip buffalo. Meatball rump boudin flank doner pancetta. Venison turkey capicola fatback alcatra. Jowl pork belly brisket pastrami turkey bresaola. Doner pork chicken biltong tail.' },
+      { value: 2, label: 'Bacon ipsum dolor amet landjaeger kevin tri-tip strip steak tenderloin, jerky brisket boudin fatback corned beef ball tip buffalo. Meatball rump boudin flank doner pancetta. Venison turkey capicola fatback alcatra. Jowl pork belly brisket pastrami turkey bresaola. Doner pork chicken biltong tail.', right: '(548)' },
+      { value: 3, label: 'Bacon ipsum dolor amet landjaeger kevin tri-tip strip steak tenderloin, jerky brisket boudin fatback corned beef ball tip buffalo. Meatball rump boudin flank doner pancetta. Venison turkey capicola fatback alcatra. Jowl pork belly brisket pastrami turkey bresaola. Doner pork chicken biltong tail.' },
+   ]} textOverflow={true} />
+  )
+}
+```

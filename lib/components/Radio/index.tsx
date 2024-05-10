@@ -62,6 +62,7 @@ const Radio = ({
       {options.map(option => (
         <div
           id={option.trk}
+          tabIndex={-1}
           data-testid={option.testId}
           key={option.value}
           className={classnames(
@@ -85,7 +86,7 @@ const Radio = ({
             </Text>
           )}
           {option.right && (
-            <Text tag="label" mid className={classes.right}>
+            <Text tag="label" corpSecondary className={classes.right}>
               {option.right}
             </Text>
           )}

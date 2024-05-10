@@ -1,72 +1,132 @@
 import { createUseStyles } from 'react-jss'
 
-import colors from '@/tokens/colors'
-import spacing from '@/tokens/spacing'
+import spacing from '@/tokens/future/spacing.json'
+import colors from '@/tokens/future/colors.json'
+import shadows from '@/tokens/future/shadows.json'
+
+const { radio } = colors
 
 export default createUseStyles({
   cont: {
-    paddingTop: spacing.tiny,
-    paddingBottom: spacing.tiny,
+    paddingTop: spacing['size-2'],
+    paddingBottom: spacing['size-2'],
     boxSizing: 'border-box',
     display: 'flex',
     alignItems: 'start',
     cursor: 'pointer',
     outline: '0',
-    '&:after': {
-      content: '""',
-      display: 'table',
-      clear: 'both'
+    '&$active': {
+      '&:focus $radio:before': {
+        borderColor: radio['selected']['border']['default'],
+        boxShadow: shadows['focus-bright-blue']
+      },
+      '&:hover': {
+        '& $radio:before': {
+          borderColor: radio['selected']['border']['hover'],
+          boxShadow: 'initial'
+        },
+        '& $radio:after': {
+          background: radio['selected']['bg']['hover']
+        }
+      },
+      '&:active': {
+        '& $radio:before': {
+          borderColor: radio['selected']['border']['hover'],
+          borderWidth: '3px',
+          boxShadow: 'initial'
+        },
+        '& $radio:after': {
+          background: radio['selected']['bg']['hover']
+        }
+      }
     },
-    '&:hover $radio:after': {
-      background: colors.grey200
+    '&:not($active)': {
+      '&:focus $radio:before': {
+        borderColor: radio['unselected']['border']['default'],
+        boxShadow: shadows['focus-bright-blue']
+      },
+      '&:hover $radio:before': {
+        borderColor: radio['unselected']['border']['hover'],
+        boxShadow: 'initial'
+      },
+      '&:active $radio:before': {
+        borderColor: radio['unselected']['border']['hover'],
+        borderWidth: '2px',
+        boxShadow: 'initial'
+      }
     }
   },
   radio: {
-    width: spacing.base,
-    height: spacing.base,
+    width: spacing['size-5'],
+    height: spacing['size-5'],
     position: 'relative',
     '&:before': {
       content: '""',
-      width: spacing.small,
-      height: spacing.small,
+      boxSizing: 'border-box',
+      width: 20,
+      height: 20,
       borderRadius: '50%',
       position: 'absolute',
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      border: `1px solid ${colors.grey200}`,
-      background: colors.bgWhite
+      border: `1px solid ${radio['unselected']['border']['default']}`,
+      background: radio['bg']['default']
     },
     '&:after': {
       content: '""',
-      width: 6,
-      height: 6,
+      boxSizing: 'border-box',
+      width: 10,
+      height: 10,
       borderRadius: '50%',
       position: 'absolute',
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
       transition: '0.3s all',
-      background: 'transparent'
+      background: radio['bg']['default']
     }
   },
   active: {
-    '& $radio:after': {
-      background: [colors.prim, '!important']
+    '& $radio': {
+      '&:before': {
+        borderWidth: 2,
+        borderColor: radio['selected']['border']['default']
+      },
+      '&:after': {
+        background: radio['selected']['bg']['default']
+      }
     }
   },
   disabled: {
-    opacity: 0.4,
-    pointerEvents: 'none'
+    pointerEvents: 'none',
+    '& :not($radio)': {
+      opacity: 0.4
+    },
+    '&$active': {
+      '& $radio:before': {
+        borderColor: radio['selected']['border']['disabled']
+      },
+      '& $radio:after': {
+        background: radio['selected']['bg']['disabled']
+      }
+    },
+    '&:not($active)': {
+      '& $radio:before': {
+        background: radio['bg']['disabled']
+      },
+      '& $radio:after': {
+        background: radio['bg']['disabled']
+      }
+    }
   },
   label: {
-    marginLeft: spacing.tiny,
+    marginLeft: spacing['size-2'],
     cursor: 'pointer',
-    float: 'left',
     flex: '1'
   },
   right: {
-    marginLeft: spacing.tiny,
+    marginLeft: spacing['size-2'],
     float: 'right'
   },
   overflow: {
