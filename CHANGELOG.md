@@ -1,3 +1,11 @@
+# [3.0.0-beta.15](https://github.com/occmundial/atomic/compare/v3.0.0-beta.14...v3.0.0-beta.15) (2024-05-10)
+
+
+### Features
+
+* Created radio documentation ([b56677b](https://github.com/occmundial/atomic/commit/b56677b495be71f1785ed883db6023d337756fce))
+* Updated radio styles ([6e6b8bb](https://github.com/occmundial/atomic/commit/6e6b8bbe9fb5bf5dab987df3d1e9c64aa61e5258))
+
 # [3.0.0-beta.14](https://github.com/occmundial/atomic/compare/v3.0.0-beta.13...v3.0.0-beta.14) (2024-05-02)
 
 
