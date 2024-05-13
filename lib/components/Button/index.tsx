@@ -30,7 +30,6 @@ export interface ButtonProps {
   onClick?: EventHandler<SyntheticEvent>
   onMouseDown?: EventHandler<SyntheticEvent>
   onMouseUp?: EventHandler<SyntheticEvent>
-  onMouseIn?: EventHandler<SyntheticEvent>
   onMouseOut?: EventHandler<SyntheticEvent>
   type?: 'button' | 'submit' | 'reset' | null
   href?: string
@@ -59,7 +58,6 @@ const Button = (props: ButtonProps) => {
     onClick,
     onMouseDown,
     onMouseUp,
-    onMouseIn,
     onMouseOut,
     type,
     href,
@@ -125,7 +123,7 @@ const Button = (props: ButtonProps) => {
   ) : null
 
   const eventProps = !disabled
-    ? { onClick, onMouseDown, onMouseUp, onMouseIn, onMouseOut }
+    ? { onClick, onMouseDown, onMouseUp, onMouseOut }
     : {}
   if (href) {
     return (
