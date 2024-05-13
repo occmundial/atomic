@@ -1,0 +1,227 @@
+---
+title: TextField
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import TextField from '@/components/TextField'
+import { spacing } from '@/components/tokens'
+
+# TextField
+
+---
+
+- [Props](#props)
+- [Examples](#examples)
+
+The TextField component is used to get user input. It can be used to get text, numbers, dates, etc. It can also be used to get user input from a list of options.
+It supports the following types:
+- any text or number input type (text, number, tel, url, etc.)
+- select
+- textarea
+- password
+
+You can also use custom patterns for validation.
+The TextField can handle default, focus, error and disabled states.
+
+## Props
+
+| Name                | Type                      | Default | Description                                                                 |
+| ------------------- | ------------------------- | ------- | --------------------------------------------------------------------------- |
+| `type`              | **string**                | `text`  | The type of input field.                                                    |
+| `maxLength`         | **number**                |         | The maximum length of the input value.                                      |
+| `label`             | **string**                |         | The label for the input field.                                              |
+| `placeholder`       | **string**                |         | The placeholder text for the input field.                                   |
+| `assistiveText`     | **ReactNode**             |         | An assistive text shown below the input field.                              |
+| `name`              | **string**                | `false` | The name attribute of the input field.                                      |
+| `disabled`          | **boolean**               | `false` | Determines if the input field is disabled.                                  |
+| `counter`           | **boolean**               | `false` | Determines if a character counter is displayed.                             |
+| `autoFocus`         | **boolean**               | `false` | Determines if the input field should be focused automatically.              |
+| `clear`             | **boolean**               | `false` | Determines if a clear button is displayed.                                  |
+| `error`             | **boolean**               | `false` | Determines if the input field has an error state.                           |
+| `allowError`        | **boolean**               | `false` | Determines if the error state is allowed without touching the button.       |
+| `value`             | **string**                | ``      | The value of the input field.                                               |
+| `selectOnFocus`     | **boolean**               | `false` | Determines if the input value should be selected by the cursor on focus.    |
+| `mask`              | **any**                   |         | The mask pattern for the input field.                                       |
+| `guide`             | **boolean**               | `false` | Determines if the mask guide should be displayed.                           |
+| `pattern`           | **string**                |         | The custom pattern for validation.                                          |
+| `inputMode`         | **'text'** &#124; **'none'** &#124; **'search'** &#124; **'tel'** &#124; **'url'** &#124; **'email'** &#124; **'numeric'** &#124; **'decimal'** |         | The input mode for the input field. It affects the keyboard layout.         |
+| `disableAutoComplete` | **boolean**             | `false` | Determines if autocomplete is disabled for the input field.                  |
+| `onFocus`           | **function**             |         | Event handler for when the input field is focused.                          |
+| `onBlur`            | **function**             |         | Event handler for when the input field loses focus.                         |
+| `onChange`          | **function**             |         | Event handler for when the input value changes.                             |
+| `onKeyUp`           | **function**             |         | Event handler for key up events in the input field.                         |
+| `onClear`           | **function**             |         | Event handler for when the clear button is clicked.                         |
+| `options`           | **OptionProps[]**        | []      | The list of options for a select input field.                               |
+| `iconName`          | **string**                |         | The name of the icon to display in the input field.                         |
+| `inputClassName`    | **string**                |         | The class name for the input field.                                         |
+| `regex`             | **string** &#124; **RegExp** |         | The regular expression pattern for validation.                              |
+| `required`          | **boolean**               | `false` | Determines if the input field is required.                                  |
+| `alignRight`        | **boolean**               | `false` | Determines if the input field's value should be aligned to the right.       |
+| `id`                | **string**                |         | The id attribute of the input field.                                        |
+| `className`         | **string**                |         | The class name for the input field container.                               |
+| `style`             | **CSSProperties**         |         | The inline style for the input field container.                             |
+| `testId`            | **string**                |         | The test id attribute for testing purposes.                                 |
+
+## Examples
+
+<Demo title="Simple TextField">
+  <div style={{ maxWidth: 320 }}>
+    <TextField label="Label" assistiveText="Assistive text" placeholder="Placeholder" />
+  </div>
+</Demo>
+
+```jsx
+// How to implement a TextField
+function Component() {
+  return (
+    <TextField label="Label" assistiveText="Assistive text" placeholder="Placeholder" />
+  )
+}
+```
+
+<Demo title="TextField with a counter">
+  <div style={{ maxWidth: 320 }}>
+    <TextField label="Label" assistiveText="Assistive text" placeholder="Placeholder" value="Hello" counter maxLength={10} />
+  </div>
+</Demo>
+
+```jsx
+// How to implement a TextField with a counter
+function Component() {
+  return (
+    <TextField
+      label="Label"
+      assistiveText="Assistive text"
+      placeholder="Placeholder"
+      value="Hello"
+      counter
+      maxLength={10}
+    />
+  )
+}
+```
+
+<Demo title="TextField for password">
+  <div style={{ maxWidth: 320 }}>
+    <TextField label="Password" type="password" />
+  </div>
+</Demo>
+
+```jsx
+// How to implement a TextField for password
+function Component() {
+  return (
+    <TextField label="Password" type="password" />
+  )
+}
+```
+
+<Demo title="Select">
+  <div style={{ maxWidth: 320 }}>
+    <TextField label="Select" value="1" type="select" options={[{ value: '1', label: 'Option 1' }, { value: '2', label: 'Option 2' }]} />
+  </div>
+</Demo>
+
+```jsx
+// How to implement a Select
+function Component() {
+  return (
+    <TextField
+      label="Select"
+      value="1"
+      type="select"
+      options={[
+        { value: '1', label: 'Option 1' },
+        { value: '2', label: 'Option 2' }
+      ]}
+    />
+  )
+}
+```
+
+<Demo title="Textarea">
+  <div style={{ maxWidth: 320 }}>
+    <TextField label="Textarea" type="textarea" />
+  </div>
+</Demo>
+
+```jsx
+// How to implement a Textarea
+function Component() {
+  return (
+    <TextField label="Textarea" type="textarea" />
+  )
+}
+```
+
+<Demo title="TextField with a pattern, mask and guide">
+  <div style={{ maxWidth: 320 }}>
+    <TextField label="Pattern" pattern="\d{3}-\d{3}-\d{4}" mask={[/\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]} guide />
+  </div>
+</Demo>
+
+```jsx
+// How to implement a TextField with a pattern, mask and guide
+function Component() {
+  return (
+    <TextField
+      label="Pattern"
+      pattern="\d{3}-\d{3}-\d{4}"
+      mask={[/\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+      guide
+    />
+  )
+}
+```
+
+<Demo title="TextField with an icon">
+  <div style={{ maxWidth: 320 }}>
+    <TextField label="Icon" iconName="search" />
+  </div>
+</Demo>
+
+```jsx
+// How to implement a TextField with an icon
+function Component() {
+  return (
+    <TextField label="Icon" iconName="search" />
+  )
+}
+```
+
+<Demo title="TextField with an error">
+  <div style={{ maxWidth: 320 }}>
+    <TextField label="Error" error allowError assistiveText="An error ocurred" iconName="search" />
+  </div>
+</Demo>
+
+```jsx
+// How to implement a TextField with an error
+function Component() {
+  return (
+    <TextField label="Error" error allowError assistiveText="An error ocurred" iconName="search" />
+  )
+}
+```
+
+<Demo title="A disabled TextField">
+  <div style={{ maxWidth: 320 }}>
+    <TextField label="Disabled" placeholder="Placeholder" assistiveText="This field is disabled" iconName="search" disabled />
+  </div>
+</Demo>
+
+```jsx
+// How to implement a disabled TextField
+function Component() {
+  return (
+    <TextField
+      label="Disabled"
+      placeholder="Placeholder"
+      assistiveText="This field is disabled"
+      iconName="search"
+      disabled
+    />
+  )
+}
+```
