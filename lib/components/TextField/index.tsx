@@ -17,7 +17,6 @@ import classnames from 'classnames'
 import Text from '@/components/Text'
 import Icon from '@/components/Icon'
 import Button from '@/components/Button'
-import colors from '@/tokens/colors'
 import iconSizes from '@/tokens/iconSizes'
 import usePrevious from '@/hooks/usePrevious'
 
@@ -25,6 +24,15 @@ import newColors from '@/tokens/future/colors.json'
 
 import useStyles from './styles'
 import useIcon from '@/hooks/useIcon'
+
+export interface OptionProps {
+  key: string | number
+  label: string
+  value: string
+  disabled?: boolean
+  grouped?: boolean
+  options?: OptionProps[]
+}
 
 export interface TextFieldProps {
   type?: string
@@ -39,7 +47,6 @@ export interface TextFieldProps {
   clear?: boolean
   error?: boolean
   allowError?: boolean
-  lockHeight?: boolean
   value?: string
   selectOnFocus?: boolean
   mask?: any
@@ -60,7 +67,7 @@ export interface TextFieldProps {
   onChange?: (value: string) => void
   onKeyUp?: (code: string) => void
   onClear?: () => void
-  options?: any[]
+  options?: OptionProps[]
   iconName?: string
   inputClassName?: string
   regex?: string | RegExp
@@ -102,7 +109,6 @@ const TextField = forwardRef(
       error,
       assistiveText,
       allowError,
-      lockHeight,
       required,
       mask,
       guide,
@@ -342,7 +348,7 @@ const TextField = forwardRef(
                         value={option.value}
                         disabled={option.disabled}
                         {...(testId && {
-                          'data-testid': `${testId}__item-${item.value}`
+                          'data-testid': `${testId}__item-${option.value}`
                         })}
                       >
                         {option.label}
@@ -451,7 +457,7 @@ const TextField = forwardRef(
 
     return (
       <div className={_className} style={style}>
-        {(label || lockHeight) && (
+        {label && (
           <div className={classes.top}>
             {label && (
               <Text bodySmallStrong corpPrimary tag="label">
@@ -496,7 +502,7 @@ const TextField = forwardRef(
             />
           )}
         </div>
-        {(assistiveText || (counter && maxLength) || lockHeight) && (
+        {(assistiveText || (counter && maxLength)) && (
           <div className={classes.bottom}>
             <span className={classes.assistiveText}>
               {assistiveText && (
