@@ -155,6 +155,7 @@ export default createUseStyles({
   },
   textarea: {
     resize: 'none',
+    padding: [newSpacing['size-3'], newSpacing['size-4']],
     height: 120,
     alignItems: 'flex-start'
   },
@@ -205,12 +206,5 @@ export default createUseStyles({
     display: 'flex',
     justifyContent: 'space-between',
     marginTop: newSpacing['size-2']
-  },
-  searchField: {
-    height: spacing.large,
-    borderRadius: spacing.base,
-    borderColor: colors.grey600,
-    background: [colors.bgWhite, '!important']
-  },
-  searchFieldHasIcon: {}
+  }
 })

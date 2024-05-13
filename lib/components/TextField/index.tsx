@@ -62,7 +62,6 @@ export interface TextFieldProps {
   onClear?: () => void
   options?: any[]
   iconName?: string
-  searchField?: boolean
   inputClassName?: string
   regex?: string | RegExp
   required?: boolean
@@ -108,7 +107,6 @@ const TextField = forwardRef(
       mask,
       guide,
       pattern,
-      searchField,
       inputMode,
       disableAutoComplete,
       testId
@@ -211,10 +209,10 @@ const TextField = forwardRef(
           ? 'disabled'
           : status !== 'focus' && errorStatus
           ? 'error'
-          : status !== 'focus' && searchField && value
+          : status !== 'focus' && value
           ? 'filled'
           : status,
-      [status, disabled, errorStatus, searchField, value]
+      [status, disabled, errorStatus, value]
     )
 
     const inputType = useMemo(
@@ -235,14 +233,12 @@ const TextField = forwardRef(
           { [classes.hasIcon]: iconName },
           { [classes.hasClear]: clear },
           { [classes.alignRight]: alignRight },
-          { [classes.searchField]: searchField },
-          { [classes.searchFieldHasIcon]: searchField && iconName },
           { [classes.select]: type === 'select' },
           { [classes.textarea]: type === 'textarea' },
           { [classes.hasPass]: type === 'password' },
           inputClassName
         ),
-      [alignRight, classes, clear, iconName, inputClassName, type, searchField]
+      [alignRight, classes, clear, iconName, inputClassName, type]
     )
 
     const setIconColor = useMemo(() => {
