@@ -470,13 +470,16 @@ const TextField = forwardRef(
             />
           )}
           {type == 'select' && (
-            <div className={classes.selectIcon}>
-              <Icon
-                iconName={getIcon('arrow-down', 'chevron-down')}
-                size={iconSizes.small}
-                color={disabled ? colors.grey200 : colors.grey900}
-              />
-            </div>
+            <Icon
+              iconName={getIcon('arrow-down', 'chevron-down')}
+              size={24}
+              className={classes.selectIcon}
+              color={
+                disabled
+                  ? newColors.icon.default.disabled
+                  : newColors.icon.default.default
+              }
+            />
           )}
           {element}
           {type == 'password' && passIcon}

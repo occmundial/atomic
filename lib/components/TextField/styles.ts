@@ -179,17 +179,10 @@ export default createUseStyles({
     zIndex: 1
   },
   selectIcon: {
-    width: 18,
-    height: spacing.base,
-    background: 'none',
-    border: 0,
-    padding: '3px 0',
-    margin: 0,
     position: 'absolute',
-    right: 12,
-    top: spacing.tiny,
-    zIndex: 1,
-    outline: 0,
+    right: newSpacing['size-4'],
+    top: '50%',
+    transform: 'translateY(-50%)',
     pointerEvents: 'none'
   },
   hasClear: {
