@@ -40,32 +40,12 @@ export default createUseStyles({
       outline: `2px solid ${newColors['text-field'].border.focus} !important`,
       outlineOffset: '-2px',
       boxShadow: shadows['focus-bright-blue']
-    },
-    '& $searchField': {
-      borderWidth: 2,
-      paddingLeft: spacing.tiny - 1
-    },
-    '& $searchFieldHasIcon': {
-      paddingLeft: 41
     }
   },
   error: {
     '& $input': {
       outline: `1px solid ${newColors['text-field'].border.error} !important`,
       outlineOffset: '-1px'
-    },
-    '& $searchField': {
-      borderWidth: 2,
-      color: colors.ink,
-      paddingLeft: spacing.tiny - 1
-    },
-    '& $searchFieldHasIcon': {
-      paddingLeft: newSpacing['size-8']
-    }
-  },
-  filled: {
-    '& $searchFieldHasIcon': {
-      paddingLeft: newSpacing['size-8']
     }
   },
   assistiveText: {

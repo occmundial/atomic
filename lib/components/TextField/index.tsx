@@ -215,10 +215,8 @@ const TextField = forwardRef(
           ? 'disabled'
           : status !== 'focus' && errorStatus
           ? 'error'
-          : status !== 'focus' && value
-          ? 'filled'
           : status,
-      [status, disabled, errorStatus, value]
+      [status, disabled, errorStatus]
     )
 
     const inputType = useMemo(
