@@ -16,9 +16,12 @@ import classnames from 'classnames'
 
 import Text from '@/components/Text'
 import Icon from '@/components/Icon'
+import Button from '@/components/Button'
 import colors from '@/tokens/colors'
 import iconSizes from '@/tokens/iconSizes'
 import usePrevious from '@/hooks/usePrevious'
+
+import newColors from '@/tokens/future/colors.json'
 
 import useStyles from './styles'
 import useIcon from '@/hooks/useIcon'
@@ -243,12 +246,10 @@ const TextField = forwardRef(
     )
 
     const setIconColor = useMemo(() => {
-      if (disabled) return colors.grey500
-      if (status === 'focus' && searchField) return colors.prim
-      if (error && (allowError || touched)) return colors.error
-      if (status !== 'focus' && searchField && value) return colors.grey900
-      return colors.grey500
-    }, [disabled, searchField, allowError, error, touched, status, value])
+      if (disabled) return newColors.icon.default.disabled
+      if (status === 'focus') return newColors.icon.brand.bold
+      return newColors.icon.default.default
+    }, [disabled, status])
 
     const commonProps = useMemo(
       () => ({
@@ -417,39 +418,36 @@ const TextField = forwardRef(
       () =>
         disabled ? (
           type !== 'select' ? (
-            <div className={classes.passIcon}>
-              <Icon
-                iconName={getIcon('eye-o', 'eye')}
-                size={iconSizes.small}
-                color={colors.grey200}
-              />
-            </div>
+            <Button
+              theme="ghost"
+              iconLeft={getIcon('eye-o', 'eye')}
+              size="md"
+              disabled
+              className={classes.rightButton}
+            />
           ) : null
         ) : type !== 'select' ? (
-          <div
-            onMouseDown={togglePass}
+          <Button
+            onClick={togglePass}
             onMouseUp={focusInput}
             onMouseOut={outOfPassIcon}
-            className={classes.passIcon}
-          >
-            <Icon
-              iconName={
-                showPass
-                  ? getIcon('eye-o', 'eye')
-                  : getIcon('eye-close-o', 'eye-slash')
-              }
-              size={iconSizes.small}
-              color={showPass ? colors.grey900 : colors.grey400}
-            />
-          </div>
+            iconLeft={
+              showPass
+                ? getIcon('eye-o', 'eye')
+                : getIcon('eye-close-o', 'eye-slash')
+            }
+            theme="ghost"
+            size="md"
+            className={classes.rightButton}
+          />
         ) : null,
       [
-        classes.passIcon,
+        classes.rightButton,
         disabled,
-        focusInput,
-        outOfPassIcon,
         showPass,
         togglePass,
+        focusInput,
+        outOfPassIcon,
         type,
         getIcon
       ]
@@ -460,12 +458,7 @@ const TextField = forwardRef(
         {(label || lockHeight) && (
           <div className={classes.top}>
             {label && (
-              <Text
-                small
-                tag="label"
-                disabled={disabled}
-                className={classnames(classes.label, classes.left)}
-              >
+              <Text bodySmallStrong corpPrimary tag="label">
                 {label}
               </Text>
             )}
@@ -475,7 +468,7 @@ const TextField = forwardRef(
           {iconName && (
             <Icon
               iconName={iconName}
-              size={iconSizes.small}
+              size={24}
               className={classes.icon}
               color={setIconColor}
             />
@@ -489,52 +482,48 @@ const TextField = forwardRef(
               />
             </div>
           )}
+          {element}
           {type == 'password' && passIcon}
           {_value && clear && (
-            <div
+            <Button
+              iconLeft="x"
+              theme="ghost"
               onClick={_onClear}
-              className={classes.clear}
+              size="md"
+              className={classes.rightButton}
               {...(testId && {
-                'data-testid': `${testId}__container-close-icon`
+                testId: `${testId}__container-close-icon`
               })}
-            >
-              <Icon
-                iconName="x"
-                color={colors.grey400}
-                size={iconSizes.small}
-              />
-            </div>
+            />
           )}
-          {element}
         </div>
         {(assistiveText || (counter && maxLength) || lockHeight) && (
           <div className={classes.bottom}>
-            {assistiveText && (
-              <Text
-                micro
-                tag="label"
-                disabled={disabled && realStatus !== 'error'}
-                low={!disabled && realStatus !== 'error'}
-                error={!disabled && realStatus === 'error'}
-                className={classnames(classes.label, classes.left)}
-              >
-                {realStatus == 'error' ? (
-                  <Icon
-                    iconName={getIcon('warning', 'alert')}
-                    size={iconSizes.tiny}
-                    className={classes.errorIcon}
-                  />
-                ) : null}{' '}
-                {assistiveText}
-              </Text>
-            )}
+            <span className={classes.assistiveText}>
+              {assistiveText && (
+                <Text
+                  bodySmallStrong
+                  tag="label"
+                  corpSecondary={realStatus !== 'error'}
+                  error={realStatus === 'error'}
+                >
+                  {realStatus == 'error' ? (
+                    <Icon
+                      iconName={getIcon('warning', 'alert')}
+                      size={iconSizes.tiny}
+                      className={classes.errorIcon}
+                    />
+                  ) : null}{' '}
+                  {assistiveText}
+                </Text>
+              )}
+            </span>
             {counter && maxLength && (
               <Text
-                small
+                bodySmallStrong
                 tag="label"
-                disabled={disabled}
-                low={!disabled}
-                className={classnames(classes.label, classes.right)}
+                corpSecondary
+                className={classes.label}
               >
                 {_value.length} / {maxLength}
               </Text>
