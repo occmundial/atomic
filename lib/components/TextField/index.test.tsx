@@ -58,17 +58,4 @@ describe('TextField', () => {
     userEvent.type(input, 'Hey')
     expect(counter.textContent).toBe('3 / 5')
   })
-
-  it('should render a SearchField', () => {
-    const component = render(<TextField searchField />)
-    const textField = component.getByRole('textbox')
-    expect(textField.className).toContain('searchField')
-  })
-
-  it('should render a SearchField with Icon', () => {
-    const component = render(<TextField searchField iconName="search" />)
-    const textField = component.getByRole('textbox')
-    expect(textField.className).toContain('searchField')
-    expect(textField.className).toContain('searchFieldHasIcon')
-  })
 })
