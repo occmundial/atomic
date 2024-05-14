@@ -33,7 +33,7 @@ describe('TextField', () => {
     const wrapper = container.firstChild as HTMLInputElement
     expect(wrapper.className).toContain('error')
     const error = getByText('Error') as HTMLElement
-    expect(error.className).toContain('error')
+    expect(error.className).toContain('assistiveError')
   })
 
   it('should change the value', () => {
