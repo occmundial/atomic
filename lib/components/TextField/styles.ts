@@ -30,9 +30,6 @@ export default createUseStyles({
     '& $input': {
       background: newColors['text-field'].bg.disabled,
       color: newColors.text.corp.disabled
-    },
-    '& $passIcon': {
-      cursor: 'auto'
     }
   },
   focus: {
