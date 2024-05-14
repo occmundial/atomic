@@ -14,7 +14,6 @@ import {
 import MaskedInput from 'react-text-mask'
 import classnames from 'classnames'
 
-import Text from '@/components/Text'
 import Icon from '@/components/Icon'
 import Button from '@/components/Button'
 import iconSizes from '@/tokens/iconSizes'
@@ -457,11 +456,7 @@ const TextField = forwardRef(
       <div className={_className} style={style}>
         {label && (
           <div className={classes.top}>
-            {label && (
-              <Text bodySmallStrong corpPrimary tag="label">
-                {label}
-              </Text>
-            )}
+            {label && <label className={classes.label}>{label}</label>}
           </div>
         )}
         <div className={classes.inputWrap}>
@@ -504,32 +499,19 @@ const TextField = forwardRef(
           <div className={classes.bottom}>
             <span className={classes.assistiveText}>
               {assistiveText && (
-                <Text
-                  bodySmallStrong
-                  tag="label"
-                  corpSecondary={realStatus !== 'error'}
-                  error={realStatus === 'error'}
+                <label
+                  className={classnames(classes.assistiveText, {
+                    [classes.assistiveError]: realStatus === 'error'
+                  })}
                 >
-                  {realStatus == 'error' ? (
-                    <Icon
-                      iconName={getIcon('warning', 'alert')}
-                      size={iconSizes.tiny}
-                      className={classes.errorIcon}
-                    />
-                  ) : null}{' '}
                   {assistiveText}
-                </Text>
+                </label>
               )}
             </span>
             {counter && maxLength && (
-              <Text
-                bodySmallStrong
-                tag="label"
-                corpSecondary
-                className={classes.label}
-              >
+              <label className={classes.counter}>
                 {_value.length} / {maxLength}
-              </Text>
+              </label>
             )}
           </div>
         )}

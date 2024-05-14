@@ -1,8 +1,6 @@
 import { createUseStyles } from 'react-jss'
 
-import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
-import spacing from '@/tokens/spacing'
 
 import newColors from '@/tokens/future/colors.json'
 import newFonts from '@/tokens/future/fonts.json'
@@ -12,7 +10,9 @@ import shadows from '@/tokens/future/shadows.json'
 
 import { objectToFontValue } from '@/utils/font'
 
-const font = newFonts['text-field-placeholder']
+const placeholder = newFonts['text-field-placeholder']
+const label = newFonts['text-field-label']
+const assistiveText = newFonts['text-field-assistive-text']
 
 export default createUseStyles({
   container: {
@@ -49,10 +49,20 @@ export default createUseStyles({
     }
   },
   assistiveText: {
-    display: 'flex'
+    display: 'flex',
+    font: objectToFontValue(assistiveText),
+    color: newColors.text.corp.secondary
+  },
+  assistiveError: {
+    color: newColors.text.error
   },
   label: {
-    transition: '0.3s all'
+    font: objectToFontValue(label),
+    color: newColors.text.corp.primary
+  },
+  counter: {
+    font: objectToFontValue(assistiveText),
+    color: newColors.text.corp.secondary
   },
   left: {
     float: 'left'
@@ -72,7 +82,7 @@ export default createUseStyles({
     height: 48,
     color: newColors.text.corp.primary,
     fontFamily: fonts.body,
-    font: objectToFontValue(font),
+    font: objectToFontValue(placeholder),
     background: newColors['text-field'].bg.default,
     outline: `1px solid ${newColors['text-field'].border.default}`,
     outlineOffset: -1,
@@ -108,29 +118,26 @@ export default createUseStyles({
     whiteSpace: 'nowrap'
   },
   hasRightIcon: {
-    marginRight: spacing.small
+    marginRight: newSpacing['size-8']
   },
   select: {
     '&::-ms-expand': {
       display: 'none'
     },
-    paddingRight: spacing.medium,
+    paddingRight: newSpacing['size-8'],
     '& optgroup': {
-      fontSize: 14,
-      fontWeight: 'normal',
-      lineHeight: 1.5,
-      color: colors.inkLight
+      font: objectToFontValue(label),
+      color: newColors.text.corp.secondary
     },
     '& option': {
-      fontSize: 16,
-      lineHeight: 1.5,
-      color: colors.ink,
+      font: objectToFontValue(placeholder),
+      color: newColors.text.corp.primary,
       '&:disabled': {
-        color: colors.inkLighter
+        color: newColors.text.corp.disabled
       }
     },
     '&:invalid, & option[value=""]': {
-      color: colors.inkLighter
+      color: newColors.text.corp.disabled
     }
   },
   textarea: {
