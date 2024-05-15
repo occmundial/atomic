@@ -1,5 +1,4 @@
 import {
-  Fragment,
   useState,
   useEffect,
   useCallback,
@@ -12,9 +11,9 @@ import classnames from 'classnames'
 
 import Text from '@/components/Text'
 import Icon from '@/components/Icon'
-import Colors from '@/tokens/colors'
 import iconSizes from '@/tokens/iconSizes'
 import usePrevious from '@/hooks/usePrevious'
+import colors from '@/tokens/future/colors.json'
 
 import { compareText, separateText } from './helper'
 import useStyles from './styles'
@@ -22,7 +21,6 @@ import useStyles from './styles'
 const ARROW_DOWN = 'ArrowDown'
 const ARROW_UP = 'ArrowUp'
 const ENTER = 'Enter'
-const { inkLighter } = Colors
 const { small: iconSmall } = iconSizes
 
 export interface Item {
@@ -31,6 +29,7 @@ export interface Item {
   textRight?: string
   iconName?: string
   extraText?: string
+  disabled?: boolean
 }
 
 export interface Group {
@@ -274,16 +273,31 @@ const Droplist = ({
         })
         let content
         const extraText = item.extraText && (
-          <Text tag="span" strong className={classes.extraText}>
+          <Text
+            tag="span"
+            tagText
+            indigoPrimary={!item.disabled}
+            low={item.disabled}
+            className={`${classes.extraText}`}
+          >
             {item.extraText}
           </Text>
         )
         if (index >= 0) {
           let text = separateText(item.text, index, term)
           content = (
-            <Text className={item.iconName ? classes.iconText : ''}>
+            <Text
+              className={item.iconName ? classes.iconText : ''}
+              bodyRegularStrong
+              low={item.disabled}
+            >
               {text[0].length ? text[0] : ''}
-              <Text tag="b" strong>
+              <Text
+                tag="b"
+                className={classes.highlighted}
+                bodyRegularStrong
+                low={item.disabled}
+              >
                 {text[1].length ? text[1] : ''}
               </Text>
               {text[2].length ? text[2] : ''}
@@ -308,24 +322,26 @@ const Droplist = ({
               'data-testid': `${testId}__droplist-item-${i}`
             })}
           >
-            <Fragment>
+            <div className={classes.itemContainer}>
               {item.iconName && (
                 <Icon
                   iconName={item.iconName}
                   size={iconSmall}
                   className={classes.icon}
-                  color={inkLighter}
+                  color={
+                    item.disabled
+                      ? colors.icon.default.disabled
+                      : colors.icon.default.default
+                  }
                 />
               )}
               {content}
-              {item.textRight && (
-                <span className={classes.right}>
-                  <Text tag="span" low>
-                    {item.textRight}
-                  </Text>
-                </span>
-              )}
-            </Fragment>
+            </div>
+            {item.textRight && (
+              <Text tag="span" low className={classes.right}>
+                {item.textRight}
+              </Text>
+            )}
           </div>
         )
       })
@@ -339,8 +355,8 @@ const Droplist = ({
       {groups
         ? (_items as Group[]).map((group, i) => (
             <div key={group.id}>
-              <Text small mid className={classes.group}>
-                {group.text.toUpperCase()}
+              <Text bodySmallStrong className={classes.group}>
+                {group.text}
               </Text>
               {renderList(group.items, currentGroup === i)}
             </div>

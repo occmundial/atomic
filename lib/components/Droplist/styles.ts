@@ -1,54 +1,63 @@
 import { createUseStyles } from 'react-jss'
 
-import colors from '@/tokens/colors'
-import spacing from '@/tokens/spacing'
-
-const { gutter, tiny, small, base, xTiny } = spacing
-const { primLighter, grey50, grey200, bgWhite, textLink } = colors
+import colors from '@/tokens/future/colors.json'
+import spacing from '@/tokens/future/spacing.json'
+import borderRadius from '@/tokens/future/borderRadius.json'
+import shadows from '@/tokens/future/shadows.json'
 
 export default createUseStyles({
   block: {
-    background: bgWhite,
-    border: `1px solid ${grey200}`,
-    borderRadius: xTiny,
+    background: colors['text-field'].bg.default,
+    border: `1px solid ${colors['text-field'].border.default}`,
+    borderRadius: borderRadius['br-xs'],
+    padding: [spacing['size-2']],
+    boxShadow: shadows['elevation-elevation-4'],
     overflow: 'hidden'
   },
   group: {
-    padding: [small, small, xTiny]
+    padding: [spacing['size-2'], spacing['size-4'], 0]
   },
   item: {
     position: 'relative',
     display: 'flex',
     justifyContent: 'space-between',
-    padding: [tiny, small],
+    padding: [spacing['size-3'], spacing['size-4']],
+    borderRadius: borderRadius['br-xs'],
     transition: '0.1s all',
     cursor: 'pointer',
     '&:hover': {
-      background: grey50
+      background: colors.dropdown.bg.hover
+    },
+    '&:active, &:focus': {
+      background: colors.dropdown.bg.active,
+      '& > $right': {
+        color: colors.text.corp.primary
+      }
     }
   },
   right: {
-    float: 'right',
-    transition: '0.1s all',
-    marginLeft: small
+    marginLeft: spacing['size-4']
   },
   onFocus: {
-    background: primLighter,
+    background: colors.dropdown.bg.active,
     '&:hover': {
-      background: primLighter
+      background: colors.dropdown.bg.active
     }
   },
   icon: {
-    marginRight: tiny,
-    position: 'absolute',
-    top: gutter
+    marginRight: spacing['size-2']
   },
   iconText: {
-    display: 'inline-block',
-    marginLeft: base
+    display: 'inline-block'
   },
   extraText: {
-    marginLeft: tiny,
-    color: textLink
+    marginLeft: spacing['size-1']
+  },
+  highlighted: {
+    background: colors.bg.action.secondary.default
+  },
+  itemContainer: {
+    display: 'flex',
+    alignItems: 'center'
   }
 })
