@@ -497,7 +497,7 @@ const TextField = forwardRef(
         </div>
         {(assistiveText || (counter && maxLength)) && (
           <div className={classes.bottom}>
-            <span className={classes.assistiveText}>
+            <span className={classes.assistiveTextWrap}>
               {assistiveText && (
                 <label
                   className={classnames(classes.assistiveText, {

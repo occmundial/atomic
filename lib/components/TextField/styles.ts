@@ -49,8 +49,10 @@ export default createUseStyles({
       boxShadow: border.ERROR
     }
   },
+  assistiveTextWrap: {
+    display: 'flex'
+  },
   assistiveText: {
-    display: 'flex',
     font: objectToFontValue(assistiveText),
     color: newColors.text.corp.secondary
   },
@@ -65,12 +67,6 @@ export default createUseStyles({
     font: objectToFontValue(assistiveText),
     color: newColors.text.corp.secondary
   },
-  left: {
-    float: 'left'
-  },
-  right: {
-    float: 'right'
-  },
   inputWrap: {
     boxSizing: 'border-box',
     position: 'relative'
@@ -83,7 +79,6 @@ export default createUseStyles({
     width: '100%',
     height: 48,
     color: newColors.text.corp.primary,
-    fontFamily: fonts.body,
     font: objectToFontValue(placeholder),
     background: newColors['text-field'].bg.default,
     borderRadius: borderRadius['br-xs'],
@@ -95,8 +90,7 @@ export default createUseStyles({
     '-webkit-appearance': 'none',
     caretColor: newColors.border.brand.default,
     '&::placeholder': {
-      color: newColors.text.corp.secondary,
-      transition: TRANSITION
+      color: newColors.text.corp.secondary
     },
     '&::-webkit-outer-spin-button': {
       '-webkit-appearance': 'none',
