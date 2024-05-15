@@ -13,6 +13,13 @@ import { objectToFontValue } from '@/utils/font'
 const placeholder = newFonts['text-field-placeholder']
 const label = newFonts['text-field-label']
 const assistiveText = newFonts['text-field-assistive-text']
+const TRANSITION = 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s'
+const border = {
+  DEFAULT: `inset 0 0 0 1px ${newColors['text-field'].border.default}`,
+  HOVER: `inset 0 0 0 1px ${newColors['text-field'].border.hover}`,
+  FOCUS: `inset 0 0 0 2px ${newColors['text-field'].border.focus}`,
+  ERROR: `inset 0 0 0 1px ${newColors['text-field'].border.error}`
+}
 
 export default createUseStyles({
   container: {
@@ -34,15 +41,12 @@ export default createUseStyles({
   },
   focus: {
     '& $input': {
-      outline: `2px solid ${newColors['text-field'].border.focus} !important`,
-      outlineOffset: '-2px',
-      boxShadow: shadows['focus-bright-blue']
+      boxShadow: `${border.FOCUS}, ${shadows['focus-bright-blue']} !important`
     }
   },
   error: {
     '& $input': {
-      outline: `1px solid ${newColors['text-field'].border.error} !important`,
-      outlineOffset: '-1px'
+      boxShadow: border.ERROR
     }
   },
   assistiveText: {
@@ -73,6 +77,7 @@ export default createUseStyles({
   },
   input: {
     boxSizing: 'border-box',
+    outline: 'none',
     display: 'flex',
     alignItems: 'center',
     width: '100%',
@@ -81,19 +86,17 @@ export default createUseStyles({
     fontFamily: fonts.body,
     font: objectToFontValue(placeholder),
     background: newColors['text-field'].bg.default,
-    outline: `1px solid ${newColors['text-field'].border.default}`,
-    outlineOffset: -1,
     borderRadius: borderRadius['br-xs'],
     padding: [newSpacing['size-1'], newSpacing['size-4']],
-    boxShadow: 'none',
+    boxShadow: border.DEFAULT,
     border: 'none',
-    transition: '0.3s all, 0s outline, 0s outline-offset',
+    transition: TRANSITION,
     appearance: 'none',
     '-webkit-appearance': 'none',
     caretColor: newColors.border.brand.default,
     '&::placeholder': {
       color: newColors.text.corp.secondary,
-      transition: '0.3s all'
+      transition: TRANSITION
     },
     '&::-webkit-outer-spin-button': {
       '-webkit-appearance': 'none',
@@ -107,7 +110,7 @@ export default createUseStyles({
       '-moz-appearance': 'textfield'
     },
     '&:hover': {
-      borderColor: newColors['text-field'].border.hover
+      boxShadow: border.HOVER
     }
   },
   inputDisabled: {
@@ -174,10 +177,6 @@ export default createUseStyles({
   },
   alignRight: {
     textAlign: 'right'
-  },
-  errorIcon: {
-    marginBottom: -2,
-    transition: 0
   },
   bottom: {
     display: 'flex',
