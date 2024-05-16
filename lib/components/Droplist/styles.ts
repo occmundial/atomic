@@ -4,6 +4,8 @@ import colors from '@/tokens/future/colors.json'
 import spacing from '@/tokens/future/spacing.json'
 import borderRadius from '@/tokens/future/borderRadius.json'
 import shadows from '@/tokens/future/shadows.json'
+import fonts from '@/tokens/future/fonts.json'
+import { objectToFontValue } from '@/utils/font'
 
 export default createUseStyles({
   block: {
@@ -14,8 +16,15 @@ export default createUseStyles({
     boxShadow: shadows['elevation-elevation-4'],
     overflow: 'hidden'
   },
+  text: {
+    margin: 0
+  },
   group: {
-    padding: [spacing['size-2'], spacing['size-4'], 0]
+    padding: [spacing['size-2'], spacing['size-4'], 0],
+    display: 'inline-block'
+  },
+  groupText: {
+    font: objectToFontValue(fonts['text-field-label'])
   },
   item: {
     position: 'relative',
@@ -30,13 +39,17 @@ export default createUseStyles({
     },
     '&:active, &:focus': {
       background: colors.dropdown.bg.active,
-      '& > $right': {
+      '& > $rightText': {
         color: colors.text.corp.primary
       }
     }
   },
-  right: {
-    marginLeft: spacing['size-4']
+  disabled: {
+    pointerEvents: 'none'
+  },
+  rightText: {
+    font: objectToFontValue(fonts['text-field-label']),
+    color: colors.text.corp.secondary
   },
   onFocus: {
     background: colors.dropdown.bg.active,
@@ -47,14 +60,26 @@ export default createUseStyles({
   icon: {
     marginRight: spacing['size-2']
   },
+  mainText: {
+    display: 'inline-block',
+    font: objectToFontValue(fonts['text-field-placeholder']),
+    color: colors.text.corp.primary
+  },
   iconText: {
     display: 'inline-block'
   },
+  corpDisabled: {
+    color: colors.text.corp.disabled
+  },
   extraText: {
-    marginLeft: spacing['size-1']
+    marginLeft: spacing['size-1'],
+    display: 'inline-block',
+    font: objectToFontValue(fonts['heading-tag']),
+    color: colors.text.indigo.primary
   },
   highlighted: {
-    background: colors.bg.action.secondary.default
+    background: colors.bg.action.secondary.default,
+    font: objectToFontValue(fonts['text-field-placeholder'])
   },
   itemContainer: {
     display: 'flex',

@@ -9,9 +9,7 @@ import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
 import classnames from 'classnames'
 
-import Text from '@/components/Text'
 import Icon from '@/components/Icon'
-import iconSizes from '@/tokens/iconSizes'
 import usePrevious from '@/hooks/usePrevious'
 import colors from '@/tokens/future/colors.json'
 
@@ -21,7 +19,6 @@ import useStyles from './styles'
 const ARROW_DOWN = 'ArrowDown'
 const ARROW_UP = 'ArrowUp'
 const ENTER = 'Enter'
-const { small: iconSmall } = iconSizes
 
 export interface Item {
   id: string | number
@@ -269,47 +266,53 @@ const Droplist = ({
       const itemsDOM = items.map((item, i) => {
         let index = compareText(item.text, term)
         const itemClassName = classnames(classes.item, {
-          [classes.onFocus]: selectedGroup && currentItem === i
+          [classes.onFocus]: selectedGroup && currentItem === i,
+          [classes.disabled]: item.disabled
         })
         let content
         const extraText = item.extraText && (
-          <Text
-            tag="span"
-            tagText
-            indigoPrimary={!item.disabled}
-            low={item.disabled}
-            className={`${classes.extraText}`}
+          <span
+            className={`${classes.text} ${classes.extraText}${
+              item.disabled ? ` ${classes.corpDisabled}` : ''
+            }`}
           >
             {item.extraText}
-          </Text>
+          </span>
         )
         if (index >= 0) {
           let text = separateText(item.text, index, term)
           content = (
-            <Text
-              className={item.iconName ? classes.iconText : ''}
-              bodyRegularStrong
-              low={item.disabled}
+            <p
+              className={`${classes.text} ${classes.mainText}${
+                item.disabled ? ` ${classes.corpDisabled}` : ''
+              }`}
             >
               {text[0].length ? text[0] : ''}
-              <Text
-                tag="b"
-                className={classes.highlighted}
-                bodyRegularStrong
-                low={item.disabled}
+              <b
+                className={`${classes.highlighted}${
+                  item.disabled ? ` ${classes.corpDisabled}` : ''
+                }`}
               >
                 {text[1].length ? text[1] : ''}
-              </Text>
+              </b>
               {text[2].length ? text[2] : ''}
               {extraText}
-            </Text>
+            </p>
           )
         } else
           content = (
-            <Text className={item.iconName ? classes.iconText : ''}>
+            <p
+              className={`${classes.text} ${classes.mainText}${
+                item.disabled ? ` ${classes.corpDisabled}` : ''
+              }`}
+            >
               {item.text}
-              {extraText}
-            </Text>
+              {item.extraText && (
+                <span className={`${classes.text} ${classes.extraText}`}>
+                  {extraText}
+                </span>
+              )}
+            </p>
           )
         return (
           <div
@@ -326,7 +329,7 @@ const Droplist = ({
               {item.iconName && (
                 <Icon
                   iconName={item.iconName}
-                  size={iconSmall}
+                  size={24}
                   className={classes.icon}
                   color={
                     item.disabled
@@ -338,9 +341,13 @@ const Droplist = ({
               {content}
             </div>
             {item.textRight && (
-              <Text tag="span" low className={classes.right}>
+              <span
+                className={`${classes.text} ${classes.rightText}${
+                  item.disabled ? ` ${classes.corpDisabled}` : ''
+                }`}
+              >
                 {item.textRight}
-              </Text>
+              </span>
             )}
           </div>
         )
@@ -355,9 +362,11 @@ const Droplist = ({
       {groups
         ? (_items as Group[]).map((group, i) => (
             <div key={group.id}>
-              <Text bodySmallStrong className={classes.group}>
-                {group.text}
-              </Text>
+              <span className={classes.group}>
+                <p className={`${classes.text} ${classes.groupText}`}>
+                  {group.text}
+                </p>
+              </span>
               {renderList(group.items, currentGroup === i)}
             </div>
           ))
