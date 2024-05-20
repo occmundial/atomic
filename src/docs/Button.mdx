@@ -54,9 +54,9 @@ The button can behave like any button with onClick event, or like an anchor with
 
 ### Theme
 
-You can choose any of the 7 predefined themes:
+You can choose any of the 7 predefined themes.
 
-<Demo title="Button themes" background={colors.grey400}>
+<Demo title="Button themes">
   <Flexbox
     display="flex"
     justifyContent="center"
@@ -70,18 +70,22 @@ You can choose any of the 7 predefined themes:
     <Button theme="tertiary" style={{ margin: spacing.tiny }}>
       Tertiary
     </Button>
-    <Button theme="tertiaryWhite" style={{ margin: spacing.tiny }}>
-      Tertiary White
-    </Button>
+    <div style={{ background: 'rgba(0,43,153,.9)', padding: 12 }}>
+      <Button theme="tertiary" darkMode style={{ margin: spacing.tiny }}>
+        Tertiary
+      </Button>
+    </div>
     <Button theme="ghostPink" style={{ margin: spacing.tiny }}>
       Ghost Pink
     </Button>
-    <Button theme="ghostGrey" style={{ margin: spacing.tiny }}>
-      Ghost Grey
+    <Button theme="ghost" style={{ margin: spacing.tiny }}>
+      Ghost
     </Button>
-    <Button theme="ghostWhite" style={{ margin: spacing.tiny }}>
-      Ghost White
-    </Button>
+    <div style={{ background: 'rgba(0,43,153,.9)', padding: 12 }}>
+      <Button theme="ghost" darkMode style={{ margin: spacing.tiny }}>
+        Ghost
+      </Button>
+    </div>
   </Flexbox>
 </Demo>
 
@@ -102,6 +106,9 @@ function Component() {
   )
 }
 ```
+
+> <Text info>The ghostPink theme is deprecated, since it doesn't match with any of the new themes.</Text>
+
 
 ### Size
 
@@ -204,6 +211,34 @@ function Component() {
 }
 ```
 
+### Icon-only
+
+<Demo title="Button with only an icon">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="lg" iconLeft="search" style={{ margin: spacing.tiny }} />
+    <Button size="md" iconLeft="search" style={{ margin: spacing.tiny }} />
+    <Button iconLeft="search" style={{ margin: spacing.tiny }} />
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to set an icon-only button
+function Component() {
+  return (
+    <>
+      <Button size="lg" iconLeft="search" />
+      <Button size="md" iconLeft="search" />
+      <Button iconLeft="search" />
+    </>
+  )
+}
+```
+
 ### Loading
 
 <Demo title="Button loading">
@@ -269,7 +304,7 @@ function Component() {
     alignItems="center"
     wrap="wrap"
   >
-    <Button size="md" round iconLeft="search" round />
+    <Button size="md" round iconLeft="search" />
   </Flexbox>
 </Demo>
 
@@ -279,7 +314,7 @@ function Component() {
   return (
     <>
       {/* The button can be round only when it has no child and has an iconLeft, round properties. */}
-      <Button size="md" round iconLeft="search" round />
+      <Button size="md" round iconLeft="search" />
     </>
   )
 }
@@ -326,7 +361,7 @@ The button can recive the href, target, and rel properties of an anchor, to rend
   >
     <Button
       size="md"
-      href="https://www.google.com"
+      href="https://github.com/occmundial/atomic"
       target="_blank"
       rel="nofollow"
     >
@@ -342,7 +377,7 @@ function Component() {
     <>
       <Button
         size="md"
-        href="https://www.google.com"
+        href="https://github.com/occmundial/atomic"
         target="_blank"
         rel="nofollow"
       >

@@ -47,9 +47,6 @@ export default createUseStyles({
     marginRight: -spacing.xTiny,
     marginLeft: -spacing.xTiny
   },
-  close: {
-    marginBottom: -2
-  },
   text: {
     overflow: 'hidden',
     textOverflow: 'ellipsis',

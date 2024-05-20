@@ -13,6 +13,7 @@ import Icon from '@/components/Icon'
 import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
+import useIcon from '@/hooks/useIcon'
 
 interface CheckboxProps {
   value?: boolean
@@ -47,6 +48,8 @@ const Checkbox = ({
   const [_value, setValue] = useState(value)
   const [_undetermined, setUndetermined] = useState(undetermined)
   const valueRef = useRef<boolean>()
+
+  const getIcon = useIcon()
 
   useEffect(() => {
     valueRef.current = _value
@@ -83,7 +86,11 @@ const Checkbox = ({
     >
       <div className={classes.check} id={trk}>
         <Icon
-          iconName={_undetermined ? 'minus' : 'success'}
+          iconName={
+            _undetermined
+              ? getIcon('minus', 'dash')
+              : getIcon('success', 'check')
+          }
           className={classes.icon}
           size={iconSizes.tiny}
         />

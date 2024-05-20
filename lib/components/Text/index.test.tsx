@@ -22,13 +22,13 @@ describe('Text', () => {
   it('should render with a specified size', () => {
     const { container } = render(<Text hero>Test</Text>)
     const text = container.firstChild as HTMLElement
-    expect(text.className).toContain('hero')
+    expect(text.className).toContain('h1')
   })
 
   it('should render with a specified color', () => {
     const { container } = render(<Text primary>Test</Text>)
     const text = container.firstChild as HTMLElement
-    expect(text.className).toContain('primary')
+    expect(text.className).toContain('indigoPrimary')
   })
 
   it('should render with a specified alignment', () => {
@@ -44,7 +44,7 @@ describe('Text', () => {
       </Text>
     )
     const text = container.firstChild as HTMLElement
-    expect(text.className).toContain('topSmall')
-    expect(text.className).toContain('bottomLarge')
+    expect(text.className).toContain('top4')
+    expect(text.className).toContain('bottom8')
   })
 })

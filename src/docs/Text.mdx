@@ -20,49 +20,70 @@ import Text from '@/components/Text'
 
 ## Props
 
-| Name           | Type       | Default value | Description                                                           |
-| -------------- | ---------- | ------------- | --------------------------------------------------------------------- |
-| `hero`         | **bool**   | -             | Hero size style.                                                      |
-| `headline`     | **bool**   | -             | Headline size style.                                                  |
-| `heading`      | **bool**   | -             | Heading size style.                                                   |
-| `subheading`   | **bool**   | -             | Subheading size style.                                                |
-| `extraLarge`   | **bool**   | -             | Extra-Large size style.                                               |
-| `large`        | **bool**   | -             | Large size style.                                                     |
-| `standard`     | **bool**   | -             | Standard size style.                                                  |
-| `small`        | **bool**   | -             | Small size style.                                                     |
-| `micro`        | **bool**   | -             | Micro size style.                                                     |
-| `strong`       | **bool**   | -             | Strong style. Only applies in large, standard, small and micro sizes. |
-| `mid`          | **bool**   | -             | Medium emphasis color style.                                          |
-| `primary`      | **bool**   | -             | Primary emphasis color style.                                         |
-| `secondary`    | **bool**   | -             | Secondary emphasis color style.                                       |
-| `success`      | **bool**   | -             | Success emphasis color style.                                         |
-| `error`        | **bool**   | -             | Error emphasis color style.                                           |
-| `warning`      | **bool**   | -             | Warning emphasis color style.                                         |
-| `info`         | **bool**   | -             | Info emphasis color style.                                            |
-| `disabled`     | **bool**   | -             | Disabled emphasis color style.                                        |
-| `white`        | **bool**   | -             | White emphasis color style.                                           |
-| `link`         | **bool**   | -             | Link emphasis color style.                                            |
-| `left`         | **bool**   | -             | Left align style.                                                     |
-| `center`       | **bool**   | -             | Center align style.                                                   |
-| `right`        | **bool**   | -             | Right align style.                                                    |
-| `topXTiny`     | **bool**   | -             | X-Tiny top spacing style.                                             |
-| `topTiny`      | **bool**   | -             | Tiny top spacing style.                                               |
-| `topSmall`     | **bool**   | -             | Small top spacing style.                                              |
-| `topBase`      | **bool**   | -             | Base top spacing style.                                               |
-| `topMedium`    | **bool**   | -             | Medium top spacing style.                                             |
-| `topLarge`     | **bool**   | -             | Large top spacing style.                                              |
-| `topXLarge`    | **bool**   | -             | X-Large top spacing style.                                            |
-| `bottomXTiny`  | **bool**   | -             | X-Tiny bottom spacing style.                                          |
-| `bottomTiny`   | **bool**   | -             | Tiny bottom spacing style.                                            |
-| `bottomSmall`  | **bool**   | -             | Small bottom spacing style.                                           |
-| `bottomBase`   | **bool**   | -             | Base bottom spacing style.                                            |
-| `bottomMedium` | **bool**   | -             | Medium bottom spacing style.                                          |
-| `bottomLarge`  | **bool**   | -             | Large bottom spacing style.                                           |
-| `bottomXLarge` | **bool**   | -             | X-Large bottom spacing style.                                         |
-| `tag`          | **string** | `'p'`         | HTML tag.                                                             |
-| `className`    | **string** | -             | The className of the text.                                            |
-| `id`           | **string** | -             | The id of the text.                                                   |
 
+| Name                | Name (Legacy)  | Type       | Default value | Description                                                           |
+| ------------------- | -------------- | ---------- | ------------- | --------------------------------------------------------------------- |
+| `display`           | `-`            | **bool**   | -             | display typography style.                                             |
+| `h1`                | `hero`         | **bool**   | -             | h1 typography style.                                                  |
+| `h2`                | `headline`     | **bool**   | -             | h2 typography style.                                                  |
+| `h3`                | `-`            | **bool**   | -             | h3 typography style.                                                  |
+| `h4`                | `heading`      | **bool**   | -             | h4 typography style.                                                  |
+| `h5`                | `subheading`   | **bool**   | -             | h5 typography style.                                                  |
+| `tagText`           | `-`            | **bool**   | -             | tagText typography style.                                             |
+| `bodyXLarge`        | `extraLarge`   | **bool**   | -             | bodyXLarge typography style.                                          |
+| `bodyLargeStrong`   | `-`            | **bool**   | -             | bodyLargeStrong typography style.                                     |
+| `bodyLarge`         | `large`        | **bool**   | -             | bodyLarge typography style.                                           |
+| `bodyRegularStrong` | `-`            | **bool**   | -             | bodyRegularStrong typography style.                                   |
+| `bodyRegular`       | `standard`     | **bool**   | -             | bodyRegular typography style.                                         |
+| `bodySmallStrong`   | `-`            | **bool**   |               | bodySmallStrong typography style.                                     |
+| `bodySmall`         | `small`        | **bool**   | -             | bodySmall typography style.                                           |
+| `bodyXSmall`        | `micro`        | **bool**   | -             | bodyXSmall typography style.                                          |
+| `-`                 | `strong`       | **bool**   | -             | Strong style. Only applies in large, standard, small and micro sizes. |
+| `indigoPrimary`     | `primary`      | **bool**   | -             | <Text tag="span" indigoPrimary> Indigo primary </Text> emphasis color style.                                  |
+| `indigoSecondary`   | `-`            | **bool**   | -             | <Text tag="span" indigoSecondary> Indigo secondary </Text> emphasis color style.                                |
+| `pinkPrimary`       | `secondary`    | **bool**   | -             | <Text tag="span" pinkPrimary> Pink primary </Text> emphasis color style.                                    |
+| `-`                 | `success`      | **bool**   | -             | <Text tag="span" success> Success </Text> emphasis color style.                                         |
+| `-`                 | `error`        | **bool**   | -             | <Text tag="span" error> Error </Text> emphasis color style.                                           |
+| `-`                 | `warning`      | **bool**   | -             | <Text tag="span" warning> Warning </Text> emphasis color style.                                         |
+| `-`                 | `info`         | **bool**   | -             | <Text tag="span" info> Info </Text> emphasis color style.                                            |
+| `-`                 | `disabled`     | **bool**   | -             | <Text tag="span" disabled> Disabled </Text> emphasis color style.                                        |
+| `whitePrimary`      | `white`        | **bool**   | -             | <Text tag="span" style={{ background: "black"}} whitePrimary> White </Text>&nbsp;emphasis color style.                                           |
+| `whiteSecondary`    | `-`            | **bool**   | -             | <Text tag="span" style={{ background: "black"}} whiteSecondary> White secondary </Text>&nbsp;emphasis color style.                                 |
+| `-`                 | `link`         | **bool**   | -             | <Text tag="span" link> Link </Text> emphasis color style.                                            |
+| `corpDisabled`      | `low`          | **bool**   |               | <Text tag="span" corpDisabled> Corp disabled </Text> emphasis color style.                                   |
+| `corpSecondary`     | `mid`          | **bool**   | -             | <Text tag="span" corpSecondary> Corp secondary </Text> emphasis color style.                                  |
+| `-`                 | `left`         | **bool**   | -             | Left align style.                                                     |
+| `-`                 | `center`       | **bool**   | -             | Center align style.                                                   |
+| `-`                 | `right`        | **bool**   | -             | Right align style.                                                    |
+| `top0`              | `-`            | **bool**   | -             | Top0 spacing style (2px).                                             |
+| `top1`              | `topXTiny`     | **bool**   | -             | Top1 spacing style (4px).                                             |
+| `top2`              | `topTiny`      | **bool**   | -             | Top2 spacing style (8px).                                             |
+| `top3`              | `-`            | **bool**   | -             | Top3 spacing style (12px).                                            |
+| `top4`              | `topSmall`     | **bool**   | -             | Top4 spacing style (16px).                                            |
+| `top5`              | `topBase`      | **bool**   | -             | Top5 spacing style (24px).                                            |
+| `top6`              | `topMedium`    | **bool**   | -             | Top6 spacing style (32px).                                            |
+| `top7`              | `-`            | **bool**   | -             | Top7 spacing style (40px).                                            |
+| `top8`              | `topLarge`     | **bool**   | -             | Top8 spacing style (48px).                                            |
+| `top9`              | `topXLarge`    | **bool**   | -             | Top9 spacing style (64px).                                            |
+| `top10`             | `-`            | **bool**   | -             | Top10 spacing style (80px).                                           |
+| `top11`             | `-`            | **bool**   | -             | Top11 spacing style (120px).                                          |
+| `top12`             | `-`            | **bool**   | -             | Top12 spacing style (160px).                                          |
+| `bottom0`           | `-`            | **bool**   | -             | Bottom0 spacing style (2px).                                          |
+| `bottom1`           | `bottomXTiny`  | **bool**   | -             | Bottom1 spacing style (4px).                                          |
+| `bottom2`           | `bottomTiny`   | **bool**   | -             | Bottom2 spacing style (8px).                                          |
+| `bottom3`           | `-`            | **bool**   | -             | Bottom3 spacing style (12px).                                         |
+| `bottom4`           | `bottomSmall`  | **bool**   | -             | Bottom4 spacing style (16px).                                         |
+| `bottom5`           | `bottomBase`   | **bool**   | -             | Bottom5 spacing style (24px).                                         |
+| `bottom6`           | `bottomMedium` | **bool**   | -             | Bottom6 spacing style (32px).                                         |
+| `bottom7`           | `-`            | **bool**   | -             | Bottom7 spacing style (40px).                                         |
+| `bottom8`           | `bottomLarge`  | **bool**   | -             | Bottom8 spacing style (48px).                                         |
+| `bottom9`           | `bottomXLarge` | **bool**   | -             | Bottom9 spacing style (64px).                                         |
+| `bottom10`          | `-`            | **bool**   | -             | Bottom10 spacing style (80px).                                        |
+| `bottom11`          | `-`            | **bool**   | -             | Bottom11 spacing style (120px).                                       |
+| `bottom12`          | `-`            | **bool**   | -             | Bottom12 spacing style (160px).                                       |
+| `-`                 | `tag`          | **string** | `'p'`         | HTML tag.                                                             |
+| `-`                 | `className`    | **string** | -             | The className of the text.                                            |
+| `-`                 | `id`           | **string** | -             | The id of the text.                                                   |
 ## Examples
 
 ### Sizes
@@ -70,17 +91,77 @@ import Text from '@/components/Text'
 You can choose any of the 9 sizes:
 
 <Demo title="Text sizes" background={colors.white}>
-  <Flexbox display="flex" justifyContent="start" direction="col" wrap="wrap">
-    <Text hero>Hero text</Text>
-    <Text headline>Headline text</Text>
-    <Text heading>Heading text</Text>
-    <Text subheading>Subheading text</Text>
-    <Text extraLarge>Extra-large</Text>
-    <Text large>Large body</Text>
-    <Text standard>Standard body</Text>
-    <Text small>Small Caption</Text>
-    <Text micro>Micro</Text>
-  </Flexbox>
+    <table fullWidth>
+      <thead>
+        <tr>
+          <th>Prop</th>
+          <th>Prop (Legacy)</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td><Text display>Display text</Text></td>
+          <td/>
+        </tr>
+        <tr>
+            <td><Text h1>H1 text</Text></td>
+            <td><Text hero>Hero text</Text></td>
+        </tr>
+        <tr>
+            <td><Text h2>H2 text</Text></td>
+            <td><Text headline>Headline text</Text></td>
+        </tr>
+        <tr>
+            <td><Text h3>H3 text</Text></td>
+            <td/>
+        </tr>
+        <tr>
+            <td><Text h4>H4 text</Text></td>
+            <td><Text heading>Heading text</Text></td>
+        </tr>
+        <tr>
+            <td><Text h5>H5 text</Text></td>
+            <td><Text subheading>Subheading text</Text></td>
+        </tr>
+        <tr>
+            <td><Text tagText>Tag text</Text></td>
+            <td/>
+        </tr>
+        <tr>
+            <td><Text bodyXLarge>BodyXLarge body</Text></td>
+            <td><Text extraLarge>Extra-large</Text></td>
+        </tr>
+        <tr>
+            <td><Text bodyLargeStrong>BodyLargeStrong body</Text></td>
+            <td/>
+        </tr>
+        <tr>
+            <td><Text bodyLarge>BodyLarge body</Text></td>
+            <td><Text large>Large body</Text></td>
+        </tr>
+        <tr>
+            <td><Text bodyRegularStrong>BodyRegularStrong body</Text></td>
+            <td/>
+        </tr>
+        <tr>
+            <td><Text bodyRegular>BodyRegular body</Text></td>
+            <td><Text standard>Standard body</Text></td>
+        </tr>
+        <tr>
+            <td><Text bodySmallStrong>BodySmallStrong body</Text></td>
+            <td/>
+        </tr>
+        <tr>
+            <td><Text bodySmall>BodySmall body</Text></td>
+            <td><Text small>Small Caption</Text></td>
+        </tr>
+        <tr>
+            <td><Text bodyXSmall>BodyXSmall body</Text></td>
+            <td><Text micro>Micro</Text></td>
+        </tr>
+      </tbody>
+    </table>
 </Demo>
 
 ```jsx
@@ -88,7 +169,24 @@ You can choose any of the 9 sizes:
 function Component() {
   return (
     <>
-      {/* `standard` is the default value. */}
+      {/* `bodyRegular` is the default value. */}
+      <Text display>Display text</Text>
+      <Text h1>H1 text</Text>
+      <Text h2>H2 text</Text>
+      <Text h3>H3 text</Text>
+      <Text h4>H4 text</Text>
+      <Text h5>H5 text</Text>
+      <Text tagText>Tag text</Text>
+      <Text bodyXLarge>BodyXLarge body</Text>
+      <Text bodyLargeStrong>BodyLargeStrong body</Text>
+      <Text bodyLarge>BodyLarge body</Text>
+      <Text bodyRegularStrong>BodyRegularStrong body</Text>
+      <Text bodyRegular>BodyRegular body</Text>
+      <Text bodySmallStrong>BodySmallStrong body</Text>
+      <Text bodySmall>BodySmall body</Text>
+      <Text bodyXSmall>BodyXSmall body</Text>
+
+      {/* Legacy props */}
       <Text hero>Hero text</Text>
       <Text headline>Headline text</Text>
       <Text heading>Heading text</Text>
@@ -108,22 +206,89 @@ function Component() {
 You can choose from 11 colors
 
 <Demo title="Text colors" background={colors.white}>
-  <Flexbox display="flex" justifyContent="start" direction="col" wrap="wrap">
-    <Text>High emphasis</Text>
-    <Text mid>Medium emphasis</Text>
-    <Text low>Low emphasis</Text>
-    <Text primary>Primary</Text>
-    <Text secondary>Secondary</Text>
-    <Text success>Success</Text>
-    <Text error>Error</Text>
-    <Text warning>Warning</Text>
-    <Text info>Info</Text>
-    <Text disabled>Disabled</Text>
-    <Text link>Link</Text>
-    <div style={{ background: colors.prim }}>
-      <Text white>White</Text>
-    </div>
-  </Flexbox>
+    <table fullWidth>
+      <thead>
+        <tr>
+          <th>Prop</th>
+          <th>Prop (Legacy)</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td><Text>CorpPrimary </Text></td>
+          <td><Text>High emphasis</Text></td>
+        </tr>
+        <tr>
+          <td><Text corpSecondary>CorpSecondary</Text></td>
+          <td><Text mid>Medium emphasis</Text></td>
+        </tr>
+        <tr>
+          <td><Text corpDisabled>CorpDisabled</Text></td>
+          <td><Text low>Low emphasis</Text></td>
+        </tr>
+        <tr>
+          <td><Text indigoPrimary>IndigoPrimary</Text></td>
+          <td><Text primary>Primary</Text></td>
+        </tr>
+        <tr>
+          <td><Text indigoSecondary>IndigoSecondary</Text></td>
+          <td><Text indigoSecondary>IndigoSecondary</Text></td>
+        </tr>
+        <tr>
+          <td><Text pinkPrimary>PinkPrimary</Text></td>
+          <td><Text secondary>Secondary</Text></td>
+        </tr>
+        <tr>
+          <td><Text success>Success</Text></td>
+          <td><Text success>Success</Text></td>
+        </tr>
+        <tr>
+          <td><Text warning>Warning</Text></td>
+          <td><Text warning>Warning</Text></td>
+        </tr>
+        <tr>
+          <td><Text error>Error</Text></td>
+          <td><Text error>Error</Text></td>
+        </tr>
+        <tr>
+          <td><Text info>Info</Text></td>
+          <td><Text info>Info</Text></td>
+        </tr>
+        <tr>
+          <td><Text disabled>Disabled</Text></td>
+          <td><Text disabled>Disabled</Text></td>
+        </tr>
+        <tr>
+          <td>
+            <div style={{ background: "black" }}>
+              <Text whitePrimary>WhitePrimary</Text>
+            </div>
+          </td>
+          <td>
+            <div style={{ background: "black" }}>
+              <Text white>White</Text>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div style={{ background: "black" }}>
+              <Text whiteSecondary>WhiteSecondary</Text>
+            </div>
+          </td>
+          <td>
+            <div style={{ background: "black" }}>
+              <Text whiteSecondary>WhiteSecondary</Text>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td> <Text link>Link</Text></td>
+          <td> <Text link>Link</Text></td>
+        </tr>
+      </tbody>
+    </table>
 </Demo>
 
 ```jsx
@@ -131,6 +296,22 @@ You can choose from 11 colors
 function Component() {
   return (
     <>
+     <Text>CorpPrimary </Text>
+      <Text corpSecondary>CorpSecondary</Text>
+      <Text corpDisabled>CorpDisabled</Text>
+      <Text indigoPrimary>indigoPrimary</Text>
+      <Text indigoSecondary>indigoSecondary</Text>
+      <Text pinkPrimary>PinkPrimary</Text>
+      <Text success>Success</Text>
+      <Text warning>Warning</Text>
+      <Text error>Error</Text>
+      <Text info>Info</Text>
+      <Text disabled>Disabled</Text>
+      <Text link>Link</Text>
+      <Text whitePrimary>WhitePrimary</Text>
+      <Text whiteSecondary>WhiteSecondary</Text>
+
+      {/* Legacy props */}
       <Text>High emphasis</Text>
       <Text mid>Medium emphasis</Text>
       <Text low>Low emphasis</Text>
@@ -178,15 +359,69 @@ function Component() {
 You can choose spacing for top and bottom
 
 <Demo title="Text spacing" background={colors.white}>
-  <Flexbox display="flex" justifyContent="start" direction="col" wrap="wrap">
-    <Text bottomXTiny>X-Tiny</Text>
-    <Text bottomTiny>Tiny</Text>
-    <Text bottomSmall>Small</Text>
-    <Text bottomBase>Base</Text>
-    <Text bottomMedium>Medium</Text>
-    <Text bottomLarge>Large</Text>
-    <Text bottomXLarge>XLarge</Text>
-  </Flexbox>
+    <table fullWidth>
+      <thead>
+        <tr>
+          <th>Prop</th>
+          <th>Prop (Legacy)</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td><Text bottom0>Bottom0</Text></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><Text bottom1>Bottom1</Text></td>
+          <td><Text bottomXTiny>X-Tiny</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom2>Bottom2</Text></td>
+          <td><Text bottomTiny>Tiny</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom3>Bottom3</Text></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><Text bottom4>Bottom4</Text></td>
+          <td><Text bottomSmall>Small</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom5>Bottom5</Text></td>
+          <td><Text bottomBase>Base</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom6>Bottom6</Text></td>
+          <td><Text bottomMedium>Medium</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom7>Bottom7</Text></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><Text bottom8>Bottom8</Text></td>
+          <td><Text bottomLarge>Large</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom9>Bottom9</Text></td>
+          <td><Text bottomXLarge>XLarge</Text></td>
+        </tr>
+        <tr>
+          <td><Text bottom10>Bottom10</Text></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><Text bottom11>Bottom11</Text></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><Text bottom12>Bottom12</Text></td>
+          <td/>
+        </tr>
+      </tbody>
+    </table>
 </Demo>
 
 ```jsx
@@ -194,7 +429,21 @@ You can choose spacing for top and bottom
 function Component() {
   return (
     <>
-      {/* These can be applied for top values, such as topXTiny */}
+      <Text bottom0>Bottom0</Text>
+      <Text bottom1>Bottom1</Text>
+      <Text bottom2>Bottom2</Text>
+      <Text bottom3>Bottom3</Text>
+      <Text bottom4>Bottom4</Text>
+      <Text bottom5>Bottom5</Text>
+      <Text bottom6>Bottom6</Text>
+      <Text bottom7>Bottom7</Text>
+      <Text bottom8>Bottom8</Text>
+      <Text bottom9>Bottom9</Text>
+      <Text bottom10>Bottom10</Text>
+      <Text bottom11>Bottom11</Text>
+      <Text bottom12>Bottom12</Text>
+
+      {/* Legacy props */}
       <Text bottomXTiny>X-Tiny</Text>
       <Text bottomTiny>Tiny</Text>
       <Text bottomSmall>Small</Text>

@@ -2,9 +2,9 @@ import { CSSProperties, EventHandler, ReactNode, SyntheticEvent } from 'react'
 import classnames from 'classnames'
 
 import Icon from '@/components/Icon'
-import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
+import Loading from './Loading'
 
 export type ButtonTheme =
   | 'primary'
@@ -14,11 +14,12 @@ export type ButtonTheme =
   | 'ghostPink'
   | 'ghostGrey'
   | 'ghostWhite'
+  | 'ghost'
   | null
 
 export interface ButtonProps {
   children?: ReactNode
-  theme: ButtonTheme
+  theme?: ButtonTheme
   size?: 'sm' | 'md' | 'lg'
   block?: boolean
   disabled?: boolean
@@ -38,12 +39,13 @@ export interface ButtonProps {
   ariaLabel?: string
   name?: string
   value?: any | null
+  darkMode?: boolean
 }
 const Button = (props: ButtonProps) => {
   const {
     children,
-    theme,
-    size,
+    theme = 'primary',
+    size = 'sm',
     block,
     disabled,
     iconLeft,
@@ -61,12 +63,19 @@ const Button = (props: ButtonProps) => {
     testId,
     ariaLabel,
     name,
-    value
+    value,
+    darkMode
   } = props
   const classes = useStyles(props)
+  const getTheme = (): ButtonTheme => {
+    if (theme === 'tertiary' && darkMode) return 'tertiaryWhite'
+    if (theme === 'ghost' && darkMode) return 'ghostWhite'
+    if (theme === 'ghost') return 'ghostGrey'
+    return theme
+  }
   const buttonClassName = classnames(
     classes.btn,
-    { [classes[theme]]: theme },
+    { [classes[getTheme()]]: theme },
     { [classes.loading]: loading },
     { [classes.disabled]: disabled },
     { [classes[size]]: ['md', 'lg'].includes(size) },
@@ -75,13 +84,14 @@ const Button = (props: ButtonProps) => {
     { [classes.iconOnly]: !children && iconLeft },
     { [classes.round]: !children && iconLeft && round }
   )
+  const iconSize = size === 'sm' ? 16 : 24
   const content = (
     <span className={classes.cont}>
       {iconLeft ? (
         <Icon
-          size={size === 'sm' ? iconSizes.tiny : iconSizes.small}
+          size={iconSize}
           iconName={iconLeft}
-          className={classnames({ [classes.iconLeft]: children })}
+          className={classnames(classes.icon, { [classes.iconLeft]: children })}
           transition="none"
         />
       ) : (
@@ -90,9 +100,9 @@ const Button = (props: ButtonProps) => {
       {children}
       {iconRight ? (
         <Icon
-          size={size === 'sm' ? iconSizes.tiny : iconSizes.small}
+          size={iconSize}
           iconName={iconRight}
-          className={classes.iconRight}
+          className={classnames(classes.icon, classes.iconRight)}
           transition="none"
         />
       ) : (
@@ -102,7 +112,7 @@ const Button = (props: ButtonProps) => {
   )
   const loadingLayer = loading ? (
     <span className={classes.loadCont}>
-      <i className={classes.loadIcon} />
+      <Loading className={classes.icon} width={iconSize} height={iconSize} />
     </span>
   ) : null
   if (href) {
@@ -140,11 +150,6 @@ const Button = (props: ButtonProps) => {
       </button>
     )
   }
-}
-
-Button.defaultProps = {
-  theme: 'primary',
-  size: 'sm'
 }
 
 export default Button

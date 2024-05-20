@@ -15,6 +15,7 @@ import Page from './Page'
 import Break from './Break'
 import useStyles from './styles'
 import iconSizes from '@/tokens/iconSizes'
+import useIcon from '@/hooks/useIcon'
 
 interface PagerProps {
   pageCount?: number
@@ -48,6 +49,8 @@ const Pager = ({
   const classes = useStyles()
   const [selected, setSelected] = useState(initialPage || forcePage || 1)
   const prevForcePage = usePrevious(forcePage)
+
+  const getIcon = useIcon()
 
   const callCallback = useCallback(
     (selectedItem: number) => {
@@ -174,7 +177,7 @@ const Pager = ({
         onClick={handlePrevPage}
       >
         <Icon
-          iconName="arrow-left"
+          iconName={getIcon('arrow-left', 'chevron-left')}
           color={colors.inkLight}
           size={iconSizes.tiny}
           className={classes.icon}
@@ -192,7 +195,7 @@ const Pager = ({
       >
         {nextLabel}{' '}
         <Icon
-          iconName="arrow-right"
+          iconName={getIcon('arrow-right', 'chevron-right')}
           color={colors.inkLight}
           size={iconSizes.tiny}
           className={classes.icon}
