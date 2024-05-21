@@ -1,17 +1,33 @@
 import { createUseStyles } from 'react-jss'
-import hexToRgba from 'hex-rgba'
 
-import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
-import spacing from '@/tokens/spacing'
+
+import newColors from '@/tokens/future/colors.json'
+import newFonts from '@/tokens/future/fonts.json'
+import borderRadius from '@/tokens/future/borderRadius.json'
+import newSpacing from '@/tokens/future/spacing.json'
+import shadows from '@/tokens/future/shadows.json'
+
+import { objectToFontValue } from '@/utils/font'
+
+const placeholder = newFonts['text-field-placeholder']
+const label = newFonts['text-field-label']
+const assistiveText = newFonts['text-field-assistive-text']
+const TRANSITION = 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s'
+const border = {
+  DEFAULT: `inset 0 0 0 1px ${newColors['text-field'].border.default}`,
+  HOVER: `inset 0 0 0 1px ${newColors['text-field'].border.hover}`,
+  FOCUS: `inset 0 0 0 2px ${newColors['text-field'].border.focus}`,
+  ERROR: `inset 0 0 0 1px ${newColors['text-field'].border.error}`
+}
 
 export default createUseStyles({
   container: {
-    position: 'relative',
-    marginBottom: spacing.tiny
+    position: 'relative'
   },
   top: {
-    height: spacing.base,
+    display: 'flex',
+    marginBottom: newSpacing['size-2'],
     '&:after': {
       content: '""',
       clear: 'both'
@@ -19,67 +35,37 @@ export default createUseStyles({
   },
   disabled: {
     '& $input': {
-      borderColor: colors.inkLightest,
-      color: colors.inkLightest,
-      paddingTop: 9
-    },
-    '& $passIcon': {
-      cursor: 'auto'
+      background: newColors['text-field'].bg.disabled,
+      color: newColors.text.corp.disabled
     }
   },
   focus: {
     '& $input': {
-      borderColor: colors.prim
-    },
-    '& $searchField': {
-      borderWidth: 2,
-      paddingLeft: spacing.tiny - 1
-    },
-    '& $searchFieldHasIcon': {
-      paddingLeft: 41
+      boxShadow: `${border.FOCUS}, ${shadows['focus-bright-blue']} !important`
     }
   },
   error: {
     '& $input': {
-      borderColor: colors.error,
-      color: colors.errorText,
-      background: hexToRgba(colors.errorText, 4)
-    },
-    '& $input::placeholder': {
-      color: colors.error
-    },
-    '& $searchField': {
-      borderWidth: 2,
-      color: colors.ink,
-      paddingLeft: spacing.tiny - 1
-    },
-    '& $searchFieldHasIcon': {
-      paddingLeft: 41
+      boxShadow: border.ERROR
     }
   },
-  filled: {
-    '& $input': {
-      borderColor: colors.grey900,
-      borderWidth: 2,
-      paddingLeft: spacing.tiny - 1
-    },
-    '& $searchFieldHasIcon': {
-      paddingLeft: 41
-    }
+  assistiveTextWrap: {
+    display: 'flex'
+  },
+  assistiveText: {
+    font: objectToFontValue(assistiveText),
+    color: newColors.text.corp.secondary
+  },
+  assistiveError: {
+    color: newColors.text.error
   },
   label: {
-    transition: '0.3s all',
-    '& a': {
-      color: colors.textLink,
-      textDecoration: 'none',
-      outline: 'none'
-    }
+    font: objectToFontValue(label),
+    color: newColors.text.corp.primary
   },
-  left: {
-    float: 'left'
-  },
-  right: {
-    float: 'right'
+  counter: {
+    font: objectToFontValue(assistiveText),
+    color: newColors.text.corp.secondary
   },
   inputWrap: {
     boxSizing: 'border-box',
@@ -87,28 +73,24 @@ export default createUseStyles({
   },
   input: {
     boxSizing: 'border-box',
+    outline: 'none',
     display: 'flex',
     alignItems: 'center',
     width: '100%',
-    height: 40,
-    color: colors.ink,
-    fontFamily: fonts.body,
-    fontWeight: 300,
-    fontSize: 16,
-    lineHeight: 1.5,
-    background: colors.bgWhite,
-    border: `1px solid ${colors.grey200}`,
-    borderRadius: 4,
-    padding: [spacing.tiny, spacing.small],
-    boxShadow: 'none',
-    outline: 'none',
-    transition: '0.3s all',
+    height: 48,
+    color: newColors.text.corp.primary,
+    font: objectToFontValue(placeholder),
+    background: newColors['text-field'].bg.default,
+    borderRadius: borderRadius['br-xs'],
+    padding: [newSpacing['size-1'], newSpacing['size-4']],
+    boxShadow: border.DEFAULT,
+    border: 'none',
+    transition: TRANSITION,
     appearance: 'none',
     '-webkit-appearance': 'none',
-    caretColor: colors.prim,
+    caretColor: newColors.border.brand.default,
     '&::placeholder': {
-      color: colors.inkLighter,
-      transition: '0.3s all'
+      color: newColors.text.corp.secondary
     },
     '&::-webkit-outer-spin-button': {
       '-webkit-appearance': 'none',
@@ -120,6 +102,9 @@ export default createUseStyles({
     },
     '&[type=number]': {
       '-moz-appearance': 'textfield'
+    },
+    '&:hover': {
+      boxShadow: border.HOVER
     }
   },
   inputDisabled: {
@@ -127,109 +112,69 @@ export default createUseStyles({
     whiteSpace: 'nowrap'
   },
   hasRightIcon: {
-    marginRight: spacing.small
+    marginRight: newSpacing['size-8']
   },
   select: {
     '&::-ms-expand': {
       display: 'none'
     },
-    paddingRight: spacing.medium,
+    paddingRight: newSpacing['size-8'],
     '& optgroup': {
-      fontSize: 14,
-      fontWeight: 'normal',
-      lineHeight: 1.5,
-      color: colors.inkLight
+      font: objectToFontValue(label),
+      color: newColors.text.corp.secondary
     },
     '& option': {
-      fontSize: 16,
-      lineHeight: 1.5,
-      color: colors.ink,
+      font: objectToFontValue(placeholder),
+      color: newColors.text.corp.primary,
       '&:disabled': {
-        color: colors.inkLighter
+        color: newColors.text.corp.disabled
       }
     },
     '&:invalid, & option[value=""]': {
-      color: colors.inkLighter
+      color: newColors.text.corp.disabled
     }
   },
   textarea: {
     resize: 'none',
+    padding: [newSpacing['size-3'], newSpacing['size-4']],
     height: 120,
     alignItems: 'flex-start'
   },
   hasIcon: {
-    paddingLeft: 42
+    paddingLeft: newSpacing['size-8']
   },
   hasPass: {
-    paddingRight: 42
+    paddingRight: newSpacing['size-8']
   },
   icon: {
     position: 'absolute',
-    left: spacing.small,
+    left: newSpacing['size-4'],
     top: '50%',
     transform: 'translateY(-50%)'
   },
-  passIcon: {
-    width: spacing.base,
-    height: spacing.base,
-    background: 'none',
-    border: 0,
-    padding: 3,
-    margin: 0,
+  rightButton: {
     position: 'absolute',
-    right: 12,
-    top: spacing.tiny,
-    zIndex: 1,
-    outline: 0,
-    cursor: 'pointer'
+    right: newSpacing['size-1'],
+    top: '50%',
+    transform: 'translateY(-50%)',
+    zIndex: 1
   },
   selectIcon: {
-    width: 18,
-    height: spacing.base,
-    background: 'none',
-    border: 0,
-    padding: '3px 0',
-    margin: 0,
     position: 'absolute',
-    right: 12,
-    top: spacing.tiny,
-    zIndex: 1,
-    outline: 0,
+    right: newSpacing['size-4'],
+    top: '50%',
+    transform: 'translateY(-50%)',
     pointerEvents: 'none'
   },
   hasClear: {
-    paddingRight: 42
-  },
-  clear: {
-    width: spacing.base,
-    height: spacing.base,
-    background: 'none',
-    border: 0,
-    padding: 3,
-    margin: 0,
-    position: 'absolute',
-    right: 12,
-    top: '50%',
-    transform: 'translateY(-50%)',
-    zIndex: 1,
-    outline: 0,
-    cursor: 'pointer'
+    paddingRight: newSpacing['size-8']
   },
   alignRight: {
     textAlign: 'right'
   },
-  errorIcon: {
-    marginBottom: -2
-  },
   bottom: {
-    height: 20,
-    marginTop: spacing.xTiny
-  },
-  searchField: {
-    height: spacing.large,
-    borderRadius: spacing.base,
-    borderColor: colors.grey600,
-    background: [colors.bgWhite, '!important']
-  },
-  searchFieldHasIcon: {}
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginTop: newSpacing['size-2']
+  }
 })

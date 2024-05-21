@@ -28,6 +28,9 @@ export interface ButtonProps {
   loading?: boolean
   round?: boolean
   onClick?: EventHandler<SyntheticEvent>
+  onMouseDown?: EventHandler<SyntheticEvent>
+  onMouseUp?: EventHandler<SyntheticEvent>
+  onMouseOut?: EventHandler<SyntheticEvent>
   type?: 'button' | 'submit' | 'reset' | null
   href?: string
   target?: string
@@ -53,6 +56,9 @@ const Button = (props: ButtonProps) => {
     loading,
     round,
     onClick,
+    onMouseDown,
+    onMouseUp,
+    onMouseOut,
     type,
     href,
     target,
@@ -115,6 +121,10 @@ const Button = (props: ButtonProps) => {
       <Loading className={classes.icon} width={iconSize} height={iconSize} />
     </span>
   ) : null
+
+  const eventProps = !disabled
+    ? { onClick, onMouseDown, onMouseUp, onMouseOut }
+    : {}
   if (href) {
     return (
       <a
@@ -122,7 +132,7 @@ const Button = (props: ButtonProps) => {
         href={!disabled ? href : ''}
         target={target}
         rel={rel}
-        onClick={!disabled ? onClick : null}
+        {...eventProps}
         id={id}
         style={style}
         data-testid={testId}
@@ -136,7 +146,7 @@ const Button = (props: ButtonProps) => {
     return (
       <button
         className={buttonClassName}
-        onClick={!disabled ? onClick : null}
+        {...eventProps}
         id={id}
         style={style}
         data-testid={testId}
@@ -144,6 +154,7 @@ const Button = (props: ButtonProps) => {
         type={type}
         value={value}
         name={name}
+        disabled={disabled}
       >
         {content}
         {loadingLayer}

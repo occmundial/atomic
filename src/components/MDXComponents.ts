@@ -16,6 +16,7 @@ import Tag from '@/components/Tag'
 import Flexbox from '@/components/Flexbox'
 import Icon from '@/components/Icon'
 import Text from '@/components/Text'
+import TextField from '@/components/TextField'
 import colorsNew from '@/tokens/future/colors.json'
 
 import Anchor from './Anchor'
@@ -26,6 +27,7 @@ const mdxComponents = {
   // Library components
   Button,
   Text,
+  TextField,
   Alert,
   Tag,
   Icon,

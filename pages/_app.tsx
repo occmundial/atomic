@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           data={{
             translateIconsV2: true,
             iconsUrl:
-              'https://cdn-icons.occ.com.mx/atomic-icons-1.7.0-beta.7.svg'
+              'https://cdn-icons.occ.com.mx/atomic-icons-1.7.0-beta.8.svg'
           }}
         >
           <Component key={isClient} {...pageProps} />
