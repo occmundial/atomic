@@ -1,7 +1,14 @@
-import { useRef, useMemo } from 'react'
+import {
+  useRef,
+  useMemo,
+  JSXElementConstructor,
+  ReactNode,
+  createElement,
+  ComponentProps
+} from 'react'
 import {
   useFloating,
-  autoUpdate,
+  autoUpdate as autoUpdateFloating,
   offset,
   useHover,
   useRole,
@@ -10,7 +17,10 @@ import {
   arrow,
   FloatingArrow,
   size,
-  FloatingPortal
+  FloatingPortal,
+  flip as flipMiddleware,
+  FlipOptions,
+  AutoUpdateOptions
 } from '@floating-ui/react'
 import useStyles from './styles'
 import classNames from 'classnames'
@@ -35,27 +45,35 @@ const colorsArrow = {
 
 type TooltipThemes = `${Themes}`
 
-export interface TooltipProps {
+type JSXTags = keyof JSX.IntrinsicElements | JSXElementConstructor<any>
+
+export interface TooltipProps<T extends JSXTags> {
+  tag?: T
   open?: boolean
-  children?: React.ReactNode
-  text: string
+  children?: ReactNode
+  text: ReactNode
   theme?: TooltipThemes
   openOnHover?: boolean
   closeDelay?: number
   zIndex?: number
   placement?: Placement
   showArrow?: boolean
+  activatorProps?: ComponentProps<T>
+  tooltipProps?: ComponentProps<'div'>
   className?: {
     activator?: string
     tooltip?: string
   }
   fit?: boolean
   strategy?: 'absolute' | 'fixed'
+  autoUpdate?: AutoUpdateOptions | boolean
+  flip: FlipOptions | boolean
   width?: number | string
   onChange?: (open: boolean) => void
 }
 
-export default function Tooltip({
+export default function Tooltip<T extends JSXTags = 'div'>({
+  tag = 'div' as T,
   open: openProp,
   children,
   text,
@@ -64,13 +82,17 @@ export default function Tooltip({
   closeDelay = 4000,
   zIndex = 10,
   placement = 'top',
+  flip = false,
   showArrow = true,
   className,
   fit = false,
   width = 220,
   strategy = 'absolute',
+  autoUpdate = true,
+  activatorProps = {} as ComponentProps<T>,
+  tooltipProps = {},
   onChange
-}: TooltipProps) {
+}: TooltipProps<T>) {
   const classes = useStyles()
   const arrowRef = useRef(null)
 
@@ -79,6 +101,8 @@ export default function Tooltip({
   const getMiddlewares = useMemo(() => {
     const middlewares = [offset(16)]
     showArrow && middlewares.push(arrow({ element: arrowRef, padding: 16 }))
+    flip &&
+      middlewares.push(flipMiddleware(typeof flip === 'boolean' ? {} : flip))
     const sizeMiddleware = size({
       apply({ elements, rects, availableWidth }) {
         const styles: Record<string, string> = {}
@@ -95,14 +119,22 @@ export default function Tooltip({
     sizeMiddleware.name = `size-${fit}-${width}`
     middlewares.push(sizeMiddleware)
     return middlewares
-  }, [showArrow, fit, width])
+  }, [showArrow, fit, width, flip])
 
   const { refs, floatingStyles, context } = useFloating({
     open: open,
     onOpenChange: setOpen,
     placement,
     strategy,
-    whileElementsMounted: autoUpdate,
+    whileElementsMounted: (reference, floating, update) => {
+      if (autoUpdate)
+        return autoUpdateFloating(
+          reference,
+          floating,
+          update,
+          typeof autoUpdate === 'boolean' ? {} : autoUpdate
+        )
+    },
     middleware: getMiddlewares
   })
 
@@ -115,17 +147,21 @@ export default function Tooltip({
 
   return (
     <>
-      <div
-        ref={refs.setReference}
-        {...getReferenceProps()}
-        className={classNames(classes.activator, className?.activator)}
-      >
-        {children}
-      </div>
+      {createElement(
+        tag,
+        {
+          ...activatorProps,
+          ref: refs.setReference,
+          ...getReferenceProps(),
+          className: classNames(className?.activator)
+        },
+        children
+      )}
 
       {open && (
         <FloatingPortal>
           <div
+            {...tooltipProps}
             className={classNames(
               classes.tooltip,
               className?.tooltip,
