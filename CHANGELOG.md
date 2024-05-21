@@ -1,3 +1,15 @@
+# [3.0.0-beta.17](https://github.com/occmundial/atomic/compare/v3.0.0-beta.16...v3.0.0-beta.17) (2024-05-21)
+
+
+### Bug Fixes
+
+* Change text component to p tag ([8853a7a](https://github.com/occmundial/atomic/commit/8853a7a96a3877fac45c1245b74f349ba0ad773f))
+
+
+### Features
+
+* Update droplist styles with new design tokens ([f85aebe](https://github.com/occmundial/atomic/commit/f85aebe727da48f9da108a63eb0234f3034a9d62))
+
 # [3.0.0](https://github.com/occmundial/atomic/compare/v2.0.0...v3.0.0) (2024-05-20)
 
 
