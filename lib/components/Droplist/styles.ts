@@ -1,54 +1,88 @@
 import { createUseStyles } from 'react-jss'
 
-import colors from '@/tokens/colors'
-import spacing from '@/tokens/spacing'
-
-const { gutter, tiny, small, base, xTiny } = spacing
-const { primLighter, grey50, grey200, bgWhite, textLink } = colors
+import colors from '@/tokens/future/colors.json'
+import spacing from '@/tokens/future/spacing.json'
+import borderRadius from '@/tokens/future/borderRadius.json'
+import shadows from '@/tokens/future/shadows.json'
+import fonts from '@/tokens/future/fonts.json'
+import { objectToFontValue } from '@/utils/font'
 
 export default createUseStyles({
   block: {
-    background: bgWhite,
-    border: `1px solid ${grey200}`,
-    borderRadius: xTiny,
+    background: colors['text-field'].bg.default,
+    border: `1px solid ${colors['text-field'].border.default}`,
+    borderRadius: borderRadius['br-xs'],
+    padding: [spacing['size-2']],
+    boxShadow: shadows['elevation-elevation-4'],
     overflow: 'hidden'
   },
+  text: {
+    margin: 0
+  },
   group: {
-    padding: [small, small, xTiny]
+    padding: [spacing['size-2'], spacing['size-4'], 0],
+    display: 'inline-block'
+  },
+  groupText: {
+    font: objectToFontValue(fonts['text-field-label'])
   },
   item: {
     position: 'relative',
     display: 'flex',
     justifyContent: 'space-between',
-    padding: [tiny, small],
+    padding: [spacing['size-3'], spacing['size-4']],
+    borderRadius: borderRadius['br-xs'],
     transition: '0.1s all',
     cursor: 'pointer',
     '&:hover': {
-      background: grey50
+      background: colors.dropdown.bg.hover
+    },
+    '&:active, &:focus': {
+      background: colors.dropdown.bg.active,
+      '& > $rightText': {
+        color: colors.text.corp.primary
+      }
     }
   },
-  right: {
-    float: 'right',
-    transition: '0.1s all',
-    marginLeft: small
+  disabled: {
+    pointerEvents: 'none'
+  },
+  rightText: {
+    font: objectToFontValue(fonts['text-field-label']),
+    color: colors.text.corp.secondary
   },
   onFocus: {
-    background: primLighter,
+    background: colors.dropdown.bg.active,
     '&:hover': {
-      background: primLighter
+      background: colors.dropdown.bg.active
     }
   },
   icon: {
-    marginRight: tiny,
-    position: 'absolute',
-    top: gutter
+    marginRight: spacing['size-2']
+  },
+  mainText: {
+    display: 'inline-block',
+    font: objectToFontValue(fonts['text-field-placeholder']),
+    color: colors.text.corp.primary
   },
   iconText: {
-    display: 'inline-block',
-    marginLeft: base
+    display: 'inline-block'
+  },
+  corpDisabled: {
+    color: colors.text.corp.disabled
   },
   extraText: {
-    marginLeft: tiny,
-    color: textLink
+    marginLeft: spacing['size-1'],
+    display: 'inline-block',
+    font: objectToFontValue(fonts['heading-tag']),
+    color: colors.text.indigo.primary
+  },
+  highlighted: {
+    background: colors.bg.action.secondary.default,
+    font: objectToFontValue(fonts['text-field-placeholder'])
+  },
+  itemContainer: {
+    display: 'flex',
+    alignItems: 'center'
   }
 })

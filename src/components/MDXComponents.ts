@@ -22,6 +22,7 @@ import colorsNew from '@/tokens/future/colors.json'
 import Anchor from './Anchor'
 import Tooltip from '@/components/Tooltip'
 import Radio from '@/components/Radio'
+import Droplist from '@/components/Droplist'
 
 const mdxComponents = {
   // Library components
@@ -35,6 +36,7 @@ const mdxComponents = {
   Flexbox,
   Tooltip,
   Radio,
+  Droplist,
   colorsNew,
   // Docs components
   Demo,
