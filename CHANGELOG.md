@@ -1,3 +1,30 @@
+# [3.0.0-beta.16](https://github.com/occmundial/atomic/compare/v3.0.0-beta.15...v3.0.0-beta.16) (2024-05-21)
+
+
+### Bug Fixes
+
+* Add event props to the Button component ([753255f](https://github.com/occmundial/atomic/commit/753255f8301a501722a5d71cd8b456b514f250f8))
+* Change outline for box shadow ([f9240bb](https://github.com/occmundial/atomic/commit/f9240bbb9a10a014ec417ad8bcc2266c744ebcf0))
+* Change textarea padding and remove searchField prop ([f0b23a9](https://github.com/occmundial/atomic/commit/f0b23a927ba58443e474ef52a9afa97062e2e5bc))
+* Fix TextField styles ([b356d95](https://github.com/occmundial/atomic/commit/b356d952999eef8738380041d69ea55b16e1ebfd))
+* Fix the styles for the TextField's select type ([7117a14](https://github.com/occmundial/atomic/commit/7117a140d2df2c2b7eb5000d14286b54045b3dd5))
+* Remove lockHeight prop from Autocomplete ([de316d2](https://github.com/occmundial/atomic/commit/de316d2c9aa633ad2d192b5935abee71d0be2dac))
+* Remove the lockHeight prop and set the options type ([c6c05d6](https://github.com/occmundial/atomic/commit/c6c05d6efa387ba96abe044569dfc471702f0f11))
+* Remove unused style ([e665eea](https://github.com/occmundial/atomic/commit/e665eeabdff20793a62e69b152afac7ef957e9a6))
+* Remove unused styles ([cf7a6c9](https://github.com/occmundial/atomic/commit/cf7a6c9caf62f9cc1ef6ef0a9269a27f6da598b9))
+* Remove wrong Button prop ([df45b7d](https://github.com/occmundial/atomic/commit/df45b7da8d1170f226b0012377dbd50f3e271460))
+* Replace Text elements for custom labels ([71bc708](https://github.com/occmundial/atomic/commit/71bc7083852f92661c57472e231e03a00f4cd055))
+
+
+### Features
+
+* Update the TextField component to use the new tokens ([2721761](https://github.com/occmundial/atomic/commit/2721761b178f3d69b151076345ec9272488dc559))
+
+
+### BREAKING CHANGES
+
+* Remove the searchField prop from the TextField component
+
 # [3.0.0-beta.15](https://github.com/occmundial/atomic/compare/v3.0.0-beta.14...v3.0.0-beta.15) (2024-05-10)
 
 
