@@ -17,6 +17,7 @@ import Flexbox from '@/components/Flexbox'
 import Icon from '@/components/Icon'
 import Text from '@/components/Text'
 import TextField from '@/components/TextField'
+import Autocomplete from '@/components/Autocomplete'
 import colorsNew from '@/tokens/future/colors.json'
 
 import Anchor from './Anchor'
@@ -29,6 +30,7 @@ const mdxComponents = {
   Button,
   Text,
   TextField,
+  Autocomplete,
   Alert,
   Tag,
   Icon,
