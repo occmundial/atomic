@@ -33,7 +33,6 @@ export interface AutocompleteProps {
     | 'className'
     | 'inputClassName'
     | 'disabled'
-    | 'lockHeight'
     | 'testId'
   >
   droplistProps: Optional<
@@ -174,8 +173,7 @@ const Autocomplete = forwardRef(
             className={classnames(
               classes.droplist,
               {
-                [classes.pushDroplist]:
-                  textfieldProps?.label || textfieldProps?.lockHeight
+                [classes.pushDroplist]: textfieldProps?.label
               },
               droplistProps.className
             )}
