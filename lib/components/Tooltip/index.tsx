@@ -46,8 +46,8 @@ export interface TooltipProps<T extends JSXTags> {
   }
   fit?: boolean
   strategy?: Strategies
-  autoUpdate?: AutoUpdateOptions | boolean
-  flip: FlipOptions | boolean
+  autoUpdate?: Partial<AutoUpdateOptions> | boolean
+  flip?: Partial<FlipOptions> | boolean
   width?: number | string
   onChange?: (open: boolean) => void
 }
@@ -79,9 +79,10 @@ export default function Tooltip<T extends JSXTags = 'div'>({
 
   const getMiddlewares = useMemo(() => {
     const middlewares = [offset(16)]
-    showArrow && middlewares.push(arrow({ element: refArrow, padding: 16 }))
     flip &&
       middlewares.push(flipMiddleware(typeof flip === 'boolean' ? {} : flip))
+    showArrow && middlewares.push(arrow({ element: refArrow, padding: 16 }))
+
     const sizeMiddleware = size({
       apply({ elements, rects, availableWidth }) {
         const styles: Record<string, string> = {}
