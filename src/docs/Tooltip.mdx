@@ -14,21 +14,26 @@ Alert component to display messages within a container.
 
 ## Props
 
-| Name          | Type                   | Default value | Description                                                                                                                                                      |
-| ------------- | ---------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `children`    | **ReactNode**          | -             | It accepts any type of the followings `boolean`,`null`,`undefined`,`ReactFragment`,`ReactPortal`,`ReactChild`                                                    |
-| `theme`       | **string**             | `purple`      | This property can be used to set the theme of the component. The possible values for the theme property are `info`, `light`, `dark`, and `purple`.               |
-| `open`        | **boolean**            | -             | This property can be used to control whether or not the component is displayed.                                                                                  |
-| `text`        | **string**             | -             | This property can be used to set the text that is displayed by the component.                                                                                    |
-| `openOnHover` | **boolean**            | `false`       | Designates whether the tooltip should open on activator hover.                                                                                                   |
-| `closeDelay`  | **number**             | `4000`        | Time on millisecond that it will take to close the tooltip.                                                                                                      |
-| `zIndex`      | **number**             | `10`          | Sets the Tooltip stack order.                                                                                                                                    |
-| `placement`   | **Placement**          | `top`         | Allows to specify the placement of Tooltip. Available options are `top`, `top-start`, `top-end`, `bottom`, `bottom-start`, `bottom-end`, `left`, `right`.        |
-| `className`   | **object**             | -             | Allows to specify classes to activador and tooltip. Object has the next properties: `activator(string)`, `tooltip(string)`.                                      |
-| `showArrow`   | **boolean**            | `true`        | This property can be used to control whether or not an arrow is displayed.                                                                                       |
-| `fit`         | **boolean**            | `false`       | This property allows the Tooltip to be adjusted to the length of the associated component.                                                                       |
-| `width`       | **number/string/null** | `220`         | The "Width" property of the Tooltip enables modification of its width and accepts a number (e.g., 220), a string (e.g., '220px' or 'auto') or null as its value. |
-| `onChange`    | **function**           | ``            | Callback fired when the Tooltip show state changes. The function signature is (open: boolean) => void.                                                            |
+| Name              | Type                   | Default value | Description                                                                                                                                                                                                       |
+| -------------     | ---------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------                                                  |
+| `tag`             | **string**             | `div`         | This function accepts any HTMLElement or JSXElementConstructor as its parameter. Examples of valid inputs include 'div', 'span', and 'section'.                                                                   |
+| `activatorProps`  | **object**             | `{}`          | This prop facilitates passing props to the Tooltip activator by accepting an object with tag-prop-compatible properties.                                                                                           |
+| `tooltipProps`    | **object**             | `{}`          | This prop facilitates passing props to the Tooltip container by accepting an object with div-compatible properties like 'styles', 'onClick', 'className', and more.                                               |
+| `autoUpdate`      | **object** **boolean** | `true`        | Automatically updates the position of the floating element when necessary to ensure it stays anchored. For further details on available options, visit [here](https://floating-ui.com/docs/autoUpdate#options)."  |
+| `flip`            | **object** **boolean** | -             | "Adjusts the positioning of the floating element to ensure it remains visible. For further details on available options, visit [here](https://floating-ui.com/docs/flip#options)."                                |
+| `children`        | **ReactNode**          | -             | It accepts any type of the followings `boolean`,`null`,`undefined`,`ReactFragment`,`ReactPortal`,`ReactChild`                                                                                                     |
+| `theme`           | **string**             | `purple`      | This property can be used to set the theme of the component. The possible values for the theme property are `info`, `light`, `dark`, and `purple`.                                                                |
+| `open`            | **boolean**            | -             | This property can be used to control whether or not the component is displayed.                                                                                                                                   |
+| `text`            | **ReactNode**          | -             | This property can be used to set the text that is displayed by the component.                                                                                                                                     |
+| `openOnHover`     | **boolean**            | `false`       | Designates whether the tooltip should open on activator hover.                                                                                                                                                    |
+| `closeDelay`      | **number**             | `4000`        | Time on millisecond that it will take to close the tooltip.                                                                                                                                                       |
+| `zIndex`          | **number**             | `10`          | Sets the Tooltip stack order.                                                                                                                                                                                     |
+| `placement`       | **Placement**          | `top`         | Allows to specify the placement of Tooltip. Available options are `top`, `top-start`, `top-end`, `bottom`, `bottom-start`, `bottom-end`, `left`, `right`.                                                         |
+| `className`       | **object**             | -             | Allows to specify classes to activador and tooltip. Object has the next properties: `activator(string)`, `tooltip(string)`.                                                                                       |
+| `showArrow`       | **boolean**            | `true`        | This property can be used to control whether or not an arrow is displayed.                                                                                                                                        |
+| `fit`             | **boolean**            | `false`       | This property allows the Tooltip to be adjusted to the length of the associated component.                                                                                                                        |
+| `width`           | **number/string/null** | `220`         | The "Width" property of the Tooltip enables modification of its width and accepts a number (e.g., 220), a string (e.g., '220px' or 'auto') or null as its value.                                                  |
+| `onChange`        | **function**           | ``            | Callback fired when the Tooltip show state changes. The function signature is (open: boolean) => void.                                                                                                            |
 
 ## Examples
 
@@ -232,7 +237,7 @@ function Component() {
             <Button size="md">Button</Button>
           </Tooltip>
         </div>
-        <Tooltip text="This is another large text" fit={true} open>
+        <Tooltip text="This is another large text" fit open>
           <Button size="md">Button</Button>
         </Tooltip>
       </div>
@@ -249,8 +254,49 @@ function Component() {
       <Tooltip text="This is a large text" open>
         <Button>Button</Button>
       </Tooltip>
-      <Tooltip text="This is another large text" fit={true} open>
+      <Tooltip text="This is another large text" fit open>
         <Button>Button</Button>
+      </Tooltip>
+    </>
+  )
+}
+```
+
+### Flip
+
+<Demo title="Fit property" background={colors.bgGrey}>
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Flexbox flex-direction="column">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '110px' }}>
+        <div style={{ marginTop: '70px' }}>
+          <Tooltip text="This is a large text" open flip placement="bottom" activatorProps={{ "data-test": "tooltip-flip" }}>
+            <Button size="md">Button</Button>
+          </Tooltip>
+        </div>
+        <Tooltip text={<span>This is another large text</span>} flip open placement="left">
+          <Button size="md">Button</Button>
+        </Tooltip>
+      </div>
+    </Flexbox>
+  </Flexbox>
+</Demo>
+
+```jsx
+// Examples of Sides Placement
+function Component() {
+  return (
+    <>
+      {/* `false` is the default value. */}
+      <Tooltip text="This is a large text" open flip placement="bottom" activatorProps={{ "data-test": "tooltip-flip" }}>
+        <Button size="md">Button</Button>
+      </Tooltip>
+      <Tooltip text={<span>This is another large text</span>} flip open placement="left">
+        <Button size="md">Button</Button>
       </Tooltip>
     </>
   )
