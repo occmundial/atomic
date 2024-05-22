@@ -34,6 +34,7 @@ export interface AutocompleteProps {
     | 'inputClassName'
     | 'disabled'
     | 'testId'
+    | 'disableAutoComplete'
   >
   droplistProps: Optional<
     DroplistProps,
