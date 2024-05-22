@@ -15,35 +15,15 @@ import {
   useInteractions,
   Placement,
   arrow,
-  FloatingArrow,
   size,
-  FloatingPortal,
   flip as flipMiddleware,
   FlipOptions,
   AutoUpdateOptions
 } from '@floating-ui/react'
-import useStyles from './styles'
 import classNames from 'classnames'
-import colors from '@/tokens/colors'
 import { useOpenTooltipState } from './hooks'
-
-const { infoLight, white, grey900, info } = colors
-
-enum Themes {
-  DARK = 'dark',
-  LIGHT = 'light',
-  INFO = 'info',
-  PURPLE = 'purple'
-}
-
-const colorsArrow = {
-  [Themes.DARK]: grey900,
-  [Themes.LIGHT]: white,
-  [Themes.INFO]: infoLight,
-  [Themes.PURPLE]: info
-}
-
-type TooltipThemes = `${Themes}`
+import { Strategies, TooltipThemes } from './helper'
+import { Tip } from './Tip'
 
 type JSXTags = keyof JSX.IntrinsicElements | JSXElementConstructor<any>
 
@@ -65,7 +45,7 @@ export interface TooltipProps<T extends JSXTags> {
     tooltip?: string
   }
   fit?: boolean
-  strategy?: 'absolute' | 'fixed'
+  strategy?: Strategies
   autoUpdate?: AutoUpdateOptions | boolean
   flip: FlipOptions | boolean
   width?: number | string
@@ -93,14 +73,13 @@ export default function Tooltip<T extends JSXTags = 'div'>({
   tooltipProps = {},
   onChange
 }: TooltipProps<T>) {
-  const classes = useStyles()
-  const arrowRef = useRef(null)
+  const refArrow = useRef(null)
 
   const [open, setOpen] = useOpenTooltipState(openProp, onChange, closeDelay)
 
   const getMiddlewares = useMemo(() => {
     const middlewares = [offset(16)]
-    showArrow && middlewares.push(arrow({ element: arrowRef, padding: 16 }))
+    showArrow && middlewares.push(arrow({ element: refArrow, padding: 16 }))
     flip &&
       middlewares.push(flipMiddleware(typeof flip === 'boolean' ? {} : flip))
     const sizeMiddleware = size({
@@ -141,6 +120,7 @@ export default function Tooltip<T extends JSXTags = 'div'>({
   const hover = useHover(context, {
     enabled: openOnHover
   })
+
   const role = useRole(context, { role: 'tooltip' })
 
   const { getReferenceProps, getFloatingProps } = useInteractions([hover, role])
@@ -159,30 +139,21 @@ export default function Tooltip<T extends JSXTags = 'div'>({
       )}
 
       {open && (
-        <FloatingPortal>
-          <div
-            {...tooltipProps}
-            className={classNames(
-              classes.tooltip,
-              className?.tooltip,
-              classes[theme] || classes.purple
-            )}
-            ref={refs.setFloating}
-            style={{ ...floatingStyles, zIndex, position: strategy }}
-            {...getFloatingProps()}
-          >
-            {text}
-            {showArrow && (
-              <FloatingArrow
-                ref={arrowRef}
-                context={context}
-                fill={colorsArrow[theme] || colorsArrow[Themes.PURPLE]}
-                width={14}
-                height={10}
-              />
-            )}
-          </div>
-        </FloatingPortal>
+        <Tip
+          classNameTip={className?.tooltip}
+          context={context}
+          propsFloating={getFloatingProps()}
+          propsTip={tooltipProps}
+          refArrow={refArrow}
+          refFloating={refs.setFloating}
+          showArrow={showArrow}
+          strategy={strategy}
+          styleTip={floatingStyles}
+          theme={theme}
+          zIndex={zIndex}
+        >
+          {text}
+        </Tip>
       )}
     </>
   )
