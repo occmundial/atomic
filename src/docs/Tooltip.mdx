@@ -278,7 +278,7 @@ function Component() {
             <Button size="md">Button</Button>
           </Tooltip>
         </div>
-        <Tooltip text={<span>This is another large text</span>} flip open placement="left">
+        <Tooltip text={<span>This is another large text</span>} flip={{ fallbackPlacements: ['bottom'] }} open placement="left">
           <Button size="md">Button</Button>
         </Tooltip>
       </div>
@@ -295,7 +295,7 @@ function Component() {
       <Tooltip text="This is a large text" open flip placement="bottom" activatorProps={{ "data-test": "tooltip-flip" }}>
         <Button size="md">Button</Button>
       </Tooltip>
-      <Tooltip text={<span>This is another large text</span>} flip open placement="left">
+      <Tooltip text={<span>This is another large text</span>} flip={{ fallbackPlacements: ['bottom'] }} open placement="left">
         <Button size="md">Button</Button>
       </Tooltip>
     </>
