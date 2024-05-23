@@ -1,3 +1,10 @@
+## [3.1.2](https://github.com/occmundial/atomic/compare/v3.1.1...v3.1.2) (2024-05-23)
+
+
+### Bug Fixes
+
+* Remove unecessary blank spaces ([e102415](https://github.com/occmundial/atomic/commit/e1024156b5399f9a32fa6d07a72926b07f8a4d11))
+
 ## [3.1.1](https://github.com/occmundial/atomic/compare/v3.1.0...v3.1.1) (2024-05-23)
 
 
