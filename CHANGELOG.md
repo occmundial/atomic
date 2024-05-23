@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/occmundial/atomic/compare/v3.1.0...v3.1.1) (2024-05-23)
+
+
+### Bug Fixes
+
+* Type issues ([a085df8](https://github.com/occmundial/atomic/commit/a085df8a44456fbe30dbe2b7862d9444d6118431))
+
 # [3.1.0](https://github.com/occmundial/atomic/compare/v3.0.0...v3.1.0) (2024-05-22)
 
 
