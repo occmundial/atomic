@@ -3,7 +3,7 @@ import spacing from '@/tokens/future/spacing.json'
 import colors from '@/tokens/future/colors.json'
 import shadows from '@/tokens/future/shadows.json'
 
-const { switch: Toggle } = colors
+const { switch: toggle } = colors
 
 export default createUseStyles({
   cont: {
@@ -15,17 +15,17 @@ export default createUseStyles({
     cursor: 'pointer',
     outline: 0,
     '&:hover $switch$checked, &:active $switch$checked': {
-      background: Toggle['selected']['bg']['hover']
+      background: toggle['selected']['bg']['hover']
     },
     '&:focus $switch$checked': {
       boxShadow: shadows['focus-bright-blue'],
-      background: Toggle['selected']['bg']['default']
+      background: toggle['selected']['bg']['default']
     },
     '&:hover $switch:not($checked), &:active $switch:not($checked)': {
-      background: Toggle['unselected']['bg']['hover']
+      background: toggle['unselected']['bg']['hover']
     },
     '&:focus $switch:not($checked)': {
-      background: Toggle['unselected']['bg']['default'],
+      background: toggle['unselected']['bg']['default'],
       boxShadow: shadows['focus-indigo']
     }
   },
@@ -34,12 +34,12 @@ export default createUseStyles({
     display: 'inline-block',
     width: 38,
     height: spacing['size-5'],
-    background: Toggle['unselected']['bg']['default'],
+    background: toggle['unselected']['bg']['default'],
     borderRadius: 34,
     transition: '0.3s all'
   },
   checked: {
-    background: Toggle['selected']['bg']['default'],
+    background: toggle['selected']['bg']['default'],
     '& $slider': {
       left: 16
     }
@@ -55,19 +55,12 @@ export default createUseStyles({
     width: 20,
     height: 20,
     borderRadius: '50%',
-    background: Toggle['bg']['default'],
+    background: toggle['bg']['default'],
     transition: '0.3s all'
   },
-  // $disabled$switch: {
-  //   opacity: 0.4
-  // },
-  // '$disabled:not($switch)': {
-
-  // },
   disabled: {
-    // opacity: 0.4,
     '& $switch': {
-      background: Toggle['bg']['disabled']
+      background: toggle['bg']['disabled']
     },
     pointerEvents: 'none'
   },

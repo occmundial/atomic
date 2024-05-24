@@ -70,7 +70,7 @@ const Toggle = ({
   return (
     <div
       id={id}
-      tabIndex={1}
+      tabIndex={-1}
       className={classnames(
         classes.cont,
         { [classes.disabled]: disabled },
