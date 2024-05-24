@@ -23,6 +23,7 @@ import Anchor from './Anchor'
 import Tooltip from '@/components/Tooltip'
 import Radio from '@/components/Radio'
 import Droplist from '@/components/Droplist'
+import Toggle from '@/components/Toggle'
 
 const mdxComponents = {
   // Library components
@@ -35,6 +36,7 @@ const mdxComponents = {
   Card,
   Flexbox,
   Tooltip,
+  Toggle,
   Radio,
   Droplist,
   colorsNew,
