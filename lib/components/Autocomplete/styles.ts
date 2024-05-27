@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
 
-import spacing from '@/tokens/spacing'
+import spacing from '@/tokens/future/spacing.json'
 
 export default createUseStyles({
   autoComplete: {
@@ -9,11 +9,11 @@ export default createUseStyles({
   droplist: {
     position: 'absolute',
     zIndex: 2,
-    top: 40,
+    top: `calc(100% + ${spacing['size-2']})`,
     left: 0,
     width: '100%'
   },
   pushDroplist: {
-    top: spacing.xLarge
+    top: `calc(100% - 21px)`
   }
 })

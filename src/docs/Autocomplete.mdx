@@ -1,0 +1,97 @@
+---
+title: Autocomplete
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Autocomplete from '@/components/Autocomplete'
+import { spacing } from '@/components/tokens'
+
+# Autocomplete
+
+---
+
+- [Props](#Props)
+- [Examples](#Examples)
+
+The Autocomplete component is...
+
+## Props
+
+| Name              | Type                                                                 | Default | Description       |
+| ----------------- | -------------------------------------------------------------------- | ------- | ----------------- |
+| textfieldProps    | **[TextField](/TextField) props:**<br /> `id`<br />`type`<br />`name`<br />`label`<br />`placeholder`<br />`selectOnFocus`<br />`clear`<br />`iconName`<br />`value`<br />`className`<br />`inputClassName`<br />`disabled`<br />`testId`<br />`disableAutoComplete`          |         | Props for the textfield |
+| droplistProps     | **[Droplist](/Droplist) props:**<br /> `groups`<br />`className`<br />`filter`<br />`term`<br />`testId`            |         | Props for the droplist |
+| onChange          | `function`                                            |         | onChange event for the textfield |
+| onKeyUp           | `function`                                             |         | onKeyUp event for the textfield |
+| onEnter           | `function`                                                |         | onEnter event for the droplist |
+| onMouseDown       | `function`                                                |         | onMouseDown event for the droplist |
+| onFocus           | `function`                                                         |         | onFocus event for the textfield |
+| onBlur            | `function`                                                         |         | onBlur event for the textfield |
+| onClear           | `function`                                                         |         | onClear event for the textfield |
+| showInitialData   | `boolean`                                                            |         | Show initial data in droplist without typing |
+| id                | `string`                                                             |         | The id of the component |
+| className         | `string`                                                             |         | Additional className for the component |
+| style             | `CSSProperties`                                                      |         | Custom styles for the component |
+
+
+## Examples
+
+<Demo title="Simple Autocomplete">
+  <div style={{ maxWidth: 320 }}>
+    <Autocomplete
+      textfieldProps={{
+        label: 'Label',
+        placeholder: 'Placeholder',
+        assistiveText: 'Assistive text'
+      }}
+      droplistProps={{
+        items: [
+          {
+            id: '1',
+            text: 'Option 1'
+          },
+          {
+            id: '2',
+            text: 'Option 2'
+          },
+          {
+            id: '3',
+            text: 'Option 3'
+          }
+        ]
+      }}
+      />
+  </div>
+</Demo>
+
+```jsx
+// How to implement an Autocomplete
+function Component() {
+  return (
+    <Autocomplete
+      textfieldProps={{
+        label: 'Label',
+        placeholder: 'Placeholder',
+        assistiveText: 'Assistive text'
+      }}
+      droplistProps={{
+        items: [
+          {
+            id: '1',
+            text: 'Option 1'
+          },
+          {
+            id: '2',
+            text: 'Option 2'
+          },
+          {
+            id: '3',
+            text: 'Option 3'
+          }
+        ]
+      }}
+    />
+  )
+}
+```
