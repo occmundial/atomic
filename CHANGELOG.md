@@ -1,3 +1,11 @@
+# [3.0.0-beta.18](https://github.com/occmundial/atomic/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2024-05-27)
+
+
+### Bug Fixes
+
+* Fix styles of Autocomplete ([36f3437](https://github.com/occmundial/atomic/commit/36f3437bee55a9549af9c67546f80cf911fb9288))
+* Fix the Autocomplete props ([465d88e](https://github.com/occmundial/atomic/commit/465d88eb26d5bcd096b7319406421f78171ce996))
+
 # [3.0.0-beta.17](https://github.com/occmundial/atomic/compare/v3.0.0-beta.16...v3.0.0-beta.17) (2024-05-21)
 
 
