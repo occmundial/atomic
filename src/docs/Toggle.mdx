@@ -1,0 +1,62 @@
+---
+title: Toggle
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Toggle from '@/components/Toggle'
+import { colors } from '@/components/tokens'
+
+# Toggle
+
+---
+
+A simple Radio Button component that allows users to select one option from several.
+
+## Props
+
+| Name        | Type                    | Default value    | Description                                                                                    |
+| ----------- | ----------------------- | ---------------- | ---------------------------------------------------------------------------------------------- |
+| `value`     | **boolean**             | -                | Default value for the toggle.                                                                  |
+| `label`     | **ReactNode**           | -                | Text to display next to the toggle.                                                            |
+| `disabled`  | **RadioOption[]**       | -                | Disable the toggle.                                                                            |
+| `trk`       | **boolean**             | -                | Id for catching selected element for tracking.                                                 |
+| `onChange`  | **function**            | -                | Callback function called when the component needs to change the element state. (value) => void |
+| `id`        | **string**              | -                | Id of the component                                                                            |
+| `className` | **string**              | -                | Adds class(es) to the togglecontainer                                                          |
+| `style`     | **CSSProperties**       | -                | Adds style(s) to the toggle container                                                          |
+
+## Examples
+
+### Active
+
+<Demo title="Icon" background={colors.bgWhite}>
+  <Toggle id="1" value={true} label="Detalles" trk="Test" />
+  <Toggle id="1" value={false} label="Detalles" trk="Test" />
+</Demo>
+
+```jsx
+// How to use selected value
+function Component() {
+  return (
+    <Toggle id="1" value={true} label="Detalles" trk="Test" />
+    <Toggle id="1" value={false} label="Detalles" trk="Test" />
+  )
+}
+```
+### Disabled
+
+<Demo title="Icon" background={colors.bgWhite}>
+  <Toggle id="1" value={true} label="Detalles" disabled trk="Test" />
+  <Toggle id="1" value={false} label="Detalles" disabled trk="Test" />
+</Demo>
+
+```jsx
+// How to use selected value
+function Component() {
+  return (
+    <Toggle id="1" value={true} label="Detalles" disabled trk="Test" />
+    <Toggle id="1" value={false} label="Detalles" disabled trk="Test" />
+  )
+}
+```
