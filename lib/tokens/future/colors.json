@@ -257,7 +257,7 @@
     "selected": {
       "bg": {
         "default": "#0059CD",
-        "hover": "#0047A5"
+        "hover": "#083CAE"
       }
     },
     "bg": {
@@ -279,7 +279,7 @@
     "selected": {
       "bg": {
         "default": "#0059CD",
-        "hover": "#0047A5",
+        "hover": "#083CAE",
         "disabled": "#8DA5DA"
       },
       "border": {
@@ -310,7 +310,7 @@
     "selected": {
       "bg": {
         "default": "#0059CD",
-        "hover": "#0047A5",
+        "hover": "#083CAE",
         "disabled": "hsl(221 91.2% 35.7% / 0.1)"
       },
       "border": {
@@ -354,7 +354,7 @@
     "track": {
       "bg": {
         "default": "#0059CD",
-        "hover": "#0047A5",
+        "hover": "#083CAE",
         "disabled": "#8DA5DA"
       }
     },
@@ -379,7 +379,7 @@
     "selected": {
       "bg": {
         "default": "#0059CD",
-        "hover": "#0047A5",
+        "hover": "#083CAE",
         "disabled": "#8DA5DA"
       },
       "border": {
@@ -439,6 +439,30 @@
       }
     }
   },
+  "nav": {
+    "bg": {
+      "inverse": "#083CAE",
+      "default": "#fff"
+    }
+  },
+  "pill": {
+    "selected": {
+      "bg": {
+        "default": "#0059CD",
+        "hover": "#083CAE",
+        "active": "#06308A",
+        "disabled": "#8DA5DA"
+      }
+    },
+    "unselected": {
+      "bg": {
+        "default": "hsl(221 91.2% 35.7% / 0.05)",
+        "hover": "hsl(221 91.2% 35.7% / 0.1)",
+        "active": "hsl(221 91.2% 35.7% / 0.2)",
+        "disabled": "hsl(221 91.2% 35.7% / 0.1)"
+      }
+    }
+  },
   "bg": {
     "action": {
       "primary": {
@@ -469,11 +493,13 @@
       },
       "brand": {
         "default": "#0059CD",
-        "hover": "#0047A5",
+        "hover": "#083CAE",
+        "active": "#06308A",
         "disabled": "#8DA5DA",
         "subtle": {
           "default": "#E9EEF8",
-          "hover": "#CAD5EE"
+          "hover": "#CAD5EE",
+          "active": "#ABBDE4"
         }
       },
       "ghost": {
@@ -515,7 +541,8 @@
   },
   "border": {
     "inverse": {
-      "default": "#fff",
+      "bold": "#fff",
+      "default": "rgba(255,255,255,0.5)",
       "subtle": "rgba(255,255,255,0.2)"
     },
     "default": {
