@@ -27,6 +27,7 @@ import Droplist from '@/components/Droplist'
 import PillGroup from './Pill/Group'
 import PillChoice from './Pill/Choice'
 import PillStack from './Pill/Stack'
+import Toggle from '@/components/Toggle'
 
 const mdxComponents = {
   // Library components
@@ -40,6 +41,7 @@ const mdxComponents = {
   Card,
   Flexbox,
   Tooltip,
+  Toggle,
   Radio,
   Droplist,
   PillGroup,

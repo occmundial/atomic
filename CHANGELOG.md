@@ -1,3 +1,10 @@
+# [3.0.0-beta.19](https://github.com/occmundial/atomic/compare/v3.0.0-beta.18...v3.0.0-beta.19) (2024-05-28)
+
+
+### Features
+
+* Updated toogle component and documentation ([81f6f24](https://github.com/occmundial/atomic/commit/81f6f24345857c6e946ffdb811fd372202a7faa9))
+
 # [3.0.0-beta.18](https://github.com/occmundial/atomic/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2024-05-27)
 
 

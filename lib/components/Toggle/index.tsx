@@ -4,7 +4,8 @@ import React, {
   CSSProperties,
   ReactNode,
   useRef,
-  useCallback
+  useCallback,
+  useMemo
 } from 'react'
 import classnames from 'classnames'
 
@@ -12,8 +13,7 @@ import Text from '@/components/Text'
 import Icon from '@/components/Icon'
 
 import useStyles from './styles'
-import colors from '@/tokens/colors'
-import useAtomic from '@/hooks/useAtomic'
+import colors from '@/tokens/future/colors.json'
 import useIcon from '@/hooks/useIcon'
 
 const ICON_SIZE = 16
@@ -28,6 +28,8 @@ interface ToggleProps {
   className?: string
   style?: CSSProperties
 }
+
+const { icon } = colors
 
 const Toggle = ({
   value,
@@ -60,9 +62,15 @@ const Toggle = ({
     }
   }, [onChange, disabled, _value])
 
+  const iconColor = useMemo(() => {
+    if (disabled) return icon.default.disabled
+    return _value ? icon.brand.bold : icon.brand.disabled
+  }, [disabled, _value])
+
   return (
     <div
       id={id}
+      tabIndex={-1}
       className={classnames(
         classes.cont,
         { [classes.disabled]: disabled },
@@ -81,7 +89,7 @@ const Toggle = ({
               _value ? getIcon('check-o', 'check') : getIcon('x-micro-o', 'x')
             }
             size={ICON_SIZE}
-            color={_value ? colors.prim : colors.grey400}
+            color={iconColor}
           />
         </span>
       </div>
