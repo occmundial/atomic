@@ -9,29 +9,34 @@ import PillChoice from "@/src/components/Pill/Choice"
 import PillStack from "@/src/components/Pill/Stack"
 import { colors } from '@/components/tokens'
 
-# Droplist
+# Pill
 
 ---
 
-The Droplist component displays a list and filters it with the prop 'term'.
+Group of buttons to toggle.
 
 ## Props
 
-| Name           | Type                    | Default value    | Description                                                                                                                  |
-| -----------    | ----------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `items`        | **Item[]**, **Group[]** | -                | Array of Item[] or Group[] to render Droplist items                                                                          |
-| `term`         | **string**              | -                | Term to filter the items of the Droplist.                                                                                    |
-| `groups`       | **boolean**             | false            | If true Droplist will render as a grouped list (Group[])                                                                     |
-| `onClick`      | **function**            | -                | Callback function that is called when an item is clicked.                                                                    |
-| `onMouseDown`  | **function**            | -                | Callback function that is called when is pressed down on an item.                                                            |
-| `onMouseUp`    | **function**            | -                | Callback function that is called when is pressed up on an item.                                                              |
-| `onEnter`      | **function**            | -                | Callback function that is called when the Enter key is pressed down.                                                         |
-| `filter`       | **boolean**             | true             | Filters given items if they match with the term                                                                              |
-| `isOnFocus`    | **boolean**             | -                | With this parameter the Droplist will have navigation with up and down keys.                                                 |
-| `id`           | **string**              | -                | Id of the component                                                                                                          |
-| `className`    | **string**              | -                | Adds class(es) to each option container                                                                                      |
-| `style`        | **CSSProperties**       | -                | Adds style(s) to each option container                                                                                       |
-| `testId`       | **string**              | -                | The testId property adds the data attribute data-testid to the main element and should be used for testing only.             |
+| Name             | Type                    | Default value    | Description                                                                                                                                                                 |
+| ---------------- | ----------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `label`          | **string**              | -                | Label text to show above the button's group.                                                                                                                                |
+| `assistiveText`  | **string**              | -                | Assistive text to show below the button's group. This text turns into an error message when the component receives the error prop.                                          |
+| `group`          | **Pill[]**              | -                | Array of items to render a bar of buttons. There just can be one selected item at a time. Each item must have an id (unique) and a label.                                   |
+| `stack`          | **Pill[]**              | -                | Array of items to render a list of closable pills. Each item must have an id (unique) and a label.                                                                          |
+| `choice`         | **Pill[]**              | -                | Array of items to render as a block of independent pills. Each of these pills is toggable. Each item must have an id (unique) and a label.                                  |
+| `selected`       | **string, number**      | -                | Value to specify the selected item for group pills.                                                                                                                         |
+| `onChange`       | **function**            | -                | Function to call when selecting an option in a group or a choice array.                                                                                                     |
+| `onClick`        | **function**            | -                | Function to call when clicking on a stack item.                                                                                                                             |
+| `onClose`        | **function**            | -                | Function to call when clicking on the close icon of a stack item.                                                                                                           |
+| `error`          | **boolean**             | false            | Determines if the pill has an error state.                                                                                                                                  |
+| `allowError`     | **boolean**             | false            | Determines if the error state is allowed without touching the pill.                                                                                                         |
+| `disabled`       | **boolean**             | false            | Disable all group pills.                                                                                                                                                    |
+| `lockHeight`     | **boolean**             | false            | By default the Pill container would be smaller without a label or an assistive text. lockHeight will maintain the same height as if it had both, label and assistive text.  |
+| `idPrefix`       | **string**              | -                | Prefix for the id of every pill. If you don't specify a prefix they will not have an id.                                                                                    |
+| `id`             | **string**              | -                | Id of the component                                                                                                                                                         |
+| `className`      | **string**              | -                | Adds class(es) to each option container                                                                                                                                     |
+| `style`          | **CSSProperties**       | -                | Adds style(s) to each option container                                                                                                                                      |
+| `testId`         | **string**              | -                | The testId property adds the data attribute data-testid to the main element and should be used for testing only.                                                            |
 
 ## Examples
 
@@ -171,7 +176,7 @@ const PillExample = () => {
 </Demo>
 
 ```jsx
-// How to use Pill Choice
+// How to use Pill Stack
 import React, { useState } from 'react'
 import Pill from '@/components/Pill'
 
