@@ -1,0 +1,239 @@
+---
+title: Pill
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import PillGroup from "@/src/components/Pill/Group"
+import PillChoice from "@/src/components/Pill/Choice"
+import PillStack from "@/src/components/Pill/Stack"
+import { colors } from '@/components/tokens'
+
+# Droplist
+
+---
+
+The Droplist component displays a list and filters it with the prop 'term'.
+
+## Props
+
+| Name           | Type                    | Default value    | Description                                                                                                                  |
+| -----------    | ----------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `items`        | **Item[]**, **Group[]** | -                | Array of Item[] or Group[] to render Droplist items                                                                          |
+| `term`         | **string**              | -                | Term to filter the items of the Droplist.                                                                                    |
+| `groups`       | **boolean**             | false            | If true Droplist will render as a grouped list (Group[])                                                                     |
+| `onClick`      | **function**            | -                | Callback function that is called when an item is clicked.                                                                    |
+| `onMouseDown`  | **function**            | -                | Callback function that is called when is pressed down on an item.                                                            |
+| `onMouseUp`    | **function**            | -                | Callback function that is called when is pressed up on an item.                                                              |
+| `onEnter`      | **function**            | -                | Callback function that is called when the Enter key is pressed down.                                                         |
+| `filter`       | **boolean**             | true             | Filters given items if they match with the term                                                                              |
+| `isOnFocus`    | **boolean**             | -                | With this parameter the Droplist will have navigation with up and down keys.                                                 |
+| `id`           | **string**              | -                | Id of the component                                                                                                          |
+| `className`    | **string**              | -                | Adds class(es) to each option container                                                                                      |
+| `style`        | **CSSProperties**       | -                | Adds style(s) to each option container                                                                                       |
+| `testId`       | **string**              | -                | The testId property adds the data attribute data-testid to the main element and should be used for testing only.             |
+
+## Examples
+
+### Pill Group
+
+<Demo title="Pill" background={colors.bgWhite}>
+  <PillGroup />
+</Demo>
+
+```jsx
+// How to use Pill Group
+import React, { useState } from 'react'
+import Pill from '@/components/Pill'
+
+const pillsData = [
+  {
+    id: 1,
+    value: '10',
+    label: 'Element 1'
+  },
+  {
+    id: 2,
+    value: '20',
+    label: 'Element 2'
+  },
+  {
+    id: 3,
+    value: '30',
+    label: 'Element 3',
+    disabled: true
+  },
+  {
+    id: 4,
+    value: '40',
+    label: 'Element 4'
+  }
+]
+
+const PillExample = () => {
+  const [pills, _] = useState(pillsData)
+  const [selected, setSelected] = useState(0)
+
+  const onChange = (selected: number) => {
+    setSelected(selected)
+  }
+
+  return (
+    <Pill
+      label="Label"
+      group={pills}
+      assistiveText="Assistive Text"
+      onChange={onChange}
+      selected={selected}
+    />
+  )
+}
+```
+
+### Pill Choice
+
+<Demo title="Pill" background={colors.bgWhite}>
+  <PillChoice />
+</Demo>
+
+```jsx
+// How to use Pill Choice
+import React, { useState } from 'react'
+import Pill from '@/components/Pill'
+
+const PILLS_DUMMY = [
+  {
+    id: 1,
+    value: 10,
+    label: 'Label',
+    leftIcon: 'person',
+    rightIcon: 'x'
+  },
+  {
+    id: 2,
+    value: 20,
+    label: 'Label',
+    selected: true,
+    leftIcon: 'person',
+    rightIcon: 'x'
+  },
+  {
+    id: 3,
+    value: 30,
+    label: 'Label',
+    selected: true,
+    disabled: true,
+    leftIcon: 'person',
+    rightIcon: 'x'
+  },
+  {
+    id: 4,
+    value: 40,
+    label: 'Label',
+    disabled: true,
+    leftIcon: 'person',
+    rightIcon: 'x'
+  },
+  {
+    id: 5,
+    value: 50,
+    label: 'Label',
+    leftIcon: 'person',
+    rightIcon: 'x'
+  }
+]
+
+const PillExample = () => {
+  const [pills, setPills] = useState(PILLS_DUMMY)
+
+  const onChange = (id: number) => {
+    const updatedPills = pills.map(pill =>
+      pill.id === id ? { ...pill, selected: !pill.selected } : pill
+    )
+    setPills(updatedPills)
+  }
+
+  return (
+    <Pill
+      label="Label"
+      choice={pills}
+      assistiveText="Assistive Text"
+      onChange={onChange}
+    />
+  )
+}
+```
+
+### Pill Stack
+
+<Demo title="Pill" background={colors.bgWhite}>
+  <PillStack />
+</Demo>
+
+```jsx
+// How to use Pill Choice
+import React, { useState } from 'react'
+import Pill from '@/components/Pill'
+
+const PILLS_DUMMY = [
+  {
+    id: 1,
+    value: 10,
+    label: 'Label',
+    leftIcon: 'person',
+    rightIcon: 'x'
+  },
+  {
+    id: 2,
+    value: 20,
+    label: 'Label',
+    selected: true,
+    leftIcon: 'person',
+    rightIcon: 'x'
+  },
+  {
+    id: 3,
+    value: 30,
+    label: 'Label',
+    selected: true,
+    disabled: true,
+    leftIcon: 'person',
+    rightIcon: 'x'
+  },
+  {
+    id: 4,
+    value: 40,
+    label: 'Label',
+    disabled: true,
+    leftIcon: 'person',
+    rightIcon: 'x'
+  },
+  {
+    id: 5,
+    value: 50,
+    label: 'Label',
+    leftIcon: 'person',
+    rightIcon: 'x'
+  }
+]
+
+const PillExample = () => {
+  const [pills, setPills] = useState(PILLS_DUMMY)
+
+  const onChange = (id: number) => {
+    const updatedPills = pills.map(pill =>
+      pill.id === id ? { ...pill, selected: !pill.selected } : pill
+    )
+    setPills(updatedPills)
+  }
+
+  return (
+    <Pill
+      label="Label"
+      choice={pills}
+      assistiveText="Assistive Text"
+      onChange={onChange}
+    />
+  )
+}
+```

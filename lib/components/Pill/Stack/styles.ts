@@ -1,21 +1,24 @@
 import { createUseStyles } from 'react-jss'
-
-import colors from '@/tokens/colors'
-import spacing from '@/tokens/spacing'
+import colors from '@/tokens/future/colors.json'
+import fonts from '@/tokens/future/fonts.json'
+import spacing from '@/tokens/future/spacing.json'
+import shadows from '@/tokens/future/shadows.json'
+import borderRadius from '@/tokens/future/borderRadius.json'
+import { objectToFontValue } from '@/utils/font'
 
 export default createUseStyles({
   pill: {
-    background: colors.bgWhite,
-    border: `1px solid ${colors.grey200}`,
-    height: spacing.medium,
-    padding: `0 ${spacing.gutter}px`,
-    marginBottom: spacing.tiny,
+    background: colors.pill.unselected.bg.default,
+    border: 0,
+    height: spacing['size-6'],
+    padding: [spacing['size-1'], spacing['size-2']],
+    marginBottom: spacing['size-2'],
     position: 'relative',
     zIndex: 0,
     outline: 0,
     transition: '0.3s all',
     cursor: 'pointer',
-    borderRadius: spacing.small,
+    borderRadius: borderRadius['br-md'],
     maxWidth: '100%',
     display: 'inline-flex',
     alignItems: 'center',
@@ -23,35 +26,43 @@ export default createUseStyles({
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     '&:not(:last-child)': {
-      marginRight: spacing.tiny
-    },
-    '&:not(:first-child)': {
-      marginLeft: -1
+      marginRight: spacing['size-2']
     },
     '&:hover': {
-      background: colors.grey50
+      background: colors.pill.unselected.bg.hover
+    },
+    '&:active, &:focus': {
+      background: colors.pill.unselected.bg.active
+    },
+    '&:not(:active):focus-visible': {
+      boxShadow: shadows['focus-indigo'],
+      background: colors.pill.unselected.bg.default
     }
   },
   disabled: {
-    background: colors.white,
-    borderColor: colors.grey100,
-    color: colors.grey200,
+    background: colors.pill.unselected.bg.disabled,
     pointerEvents: 'none'
   },
+  text: {
+    flex: 1,
+    overflow: 'hidden',
+    font: objectToFontValue(fonts['body-regular']),
+    color: colors.text.indigo.primary,
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    padding: [0, spacing['size-1']],
+    marginRight: spacing['size-1']
+  },
+  textDisabled: {
+    color: colors.text.indigo.secondary
+  },
   closeCont: {
-    width: spacing.base,
-    height: spacing.base,
+    width: spacing['size-5'],
+    height: spacing['size-5'],
     display: 'inline-flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: -spacing.xTiny,
-    marginLeft: -spacing.xTiny
-  },
-  text: {
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-    marginLeft: spacing.xTiny,
-    marginRight: spacing.xTiny
+    marginRight: -spacing['size-1'],
+    marginLeft: -spacing['size-1']
   }
 })
