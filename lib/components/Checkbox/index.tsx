@@ -10,8 +10,6 @@ import classnames from 'classnames'
 
 import Text from '@/components/Text'
 import Icon from '@/components/Icon'
-import iconSizes from '@/tokens/iconSizes'
-
 import useStyles from './styles'
 import useIcon from '@/hooks/useIcon'
 
@@ -70,6 +68,7 @@ const Checkbox = ({
   return (
     <div
       id={id}
+      tabIndex={-1}
       className={classnames(
         classes.cont,
         { [classes.undetermined]: _undetermined },
@@ -92,7 +91,7 @@ const Checkbox = ({
               : getIcon('success', 'check')
           }
           className={classes.icon}
-          size={iconSizes.tiny}
+          size={16}
         />
       </div>
       {label && (

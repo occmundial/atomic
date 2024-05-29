@@ -25,6 +25,7 @@ import Tooltip from '@/components/Tooltip'
 import Radio from '@/components/Radio'
 import Droplist from '@/components/Droplist'
 import Toggle from '@/components/Toggle'
+import Checkbox from '@/components/Checkbox'
 
 const mdxComponents = {
   // Library components
@@ -41,6 +42,7 @@ const mdxComponents = {
   Toggle,
   Radio,
   Droplist,
+  Checkbox,
   colorsNew,
   // Docs components
   Demo,
