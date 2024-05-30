@@ -24,6 +24,9 @@ import Anchor from './Anchor'
 import Tooltip from '@/components/Tooltip'
 import Radio from '@/components/Radio'
 import Droplist from '@/components/Droplist'
+import PillGroup from './Pill/Group'
+import PillChoice from './Pill/Choice'
+import PillStack from './Pill/Stack'
 import Toggle from '@/components/Toggle'
 
 const mdxComponents = {
@@ -41,6 +44,9 @@ const mdxComponents = {
   Toggle,
   Radio,
   Droplist,
+  PillGroup,
+  PillChoice,
+  PillStack,
   colorsNew,
   // Docs components
   Demo,

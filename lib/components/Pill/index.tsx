@@ -128,16 +128,14 @@ const Pill = ({
 
   return (
     <div
-      className={classnames(
-        classes.container,
-        { [classes.disabled]: realStatus === 'disabled' },
-        className
-      )}
+      className={classnames(classes.container, className)}
       id={id}
       style={style}
     >
       {(label || lockHeight) && (
-        <div className={classes.top}>{label && <Text small>{label}</Text>}</div>
+        <div className={classes.top}>
+          {label && <label className={classes.label}>{label}</label>}
+        </div>
       )}
       {group ? (
         <GroupItem
