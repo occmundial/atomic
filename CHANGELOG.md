@@ -1,3 +1,15 @@
+# [3.0.0-beta.20](https://github.com/occmundial/atomic/compare/v3.0.0-beta.19...v3.0.0-beta.20) (2024-05-30)
+
+
+### Bug Fixes
+
+* Resolve conflicts ([1f2e0fe](https://github.com/occmundial/atomic/commit/1f2e0fe3346eb9a7f6ec8f3518abb76102a9cfeb))
+
+
+### Features
+
+* Update pill styles with design tokens ([e2cb3b6](https://github.com/occmundial/atomic/commit/e2cb3b6942837cd50fd262044b387ad9e5f2194f))
+
 # [3.0.0-beta.19](https://github.com/occmundial/atomic/compare/v3.0.0-beta.18...v3.0.0-beta.19) (2024-05-28)
 
 
