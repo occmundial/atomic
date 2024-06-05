@@ -1,3 +1,10 @@
+# [3.0.0-beta.21](https://github.com/occmundial/atomic/compare/v3.0.0-beta.20...v3.0.0-beta.21) (2024-06-05)
+
+
+### Bug Fixes
+
+* Text translations ([664d634](https://github.com/occmundial/atomic/commit/664d63454b31f2eb4715cf3740fa4c17b1819bf3))
+
 # [3.0.0-beta.20](https://github.com/occmundial/atomic/compare/v3.0.0-beta.19...v3.0.0-beta.20) (2024-05-30)
 
 
