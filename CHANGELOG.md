@@ -1,3 +1,10 @@
+# [3.0.0-beta.22](https://github.com/occmundial/atomic/compare/v3.0.0-beta.21...v3.0.0-beta.22) (2024-06-05)
+
+
+### Features
+
+* Checkbox redesigned and documentation created ([4a90723](https://github.com/occmundial/atomic/commit/4a9072387f583d6601b305d8f3c5a321949bad3d))
+
 # [3.0.0-beta.21](https://github.com/occmundial/atomic/compare/v3.0.0-beta.20...v3.0.0-beta.21) (2024-06-05)
 
 
