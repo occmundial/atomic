@@ -29,6 +29,7 @@ import PillChoice from './Pill/Choice'
 import PillStack from './Pill/Stack'
 import Toggle from '@/components/Toggle'
 import AlertSmall from './Alert/Small'
+import Checkbox from '@/components/Checkbox'
 
 const mdxComponents = {
   // Library components
@@ -45,6 +46,7 @@ const mdxComponents = {
   Toggle,
   Radio,
   Droplist,
+  Checkbox,
   colorsNew,
   // Docs components
   Demo,
