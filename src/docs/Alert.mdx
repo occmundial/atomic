@@ -184,35 +184,90 @@ function Component() {
 There is some other properties that can be used with Alert component.
 
 <Demo title="Other Alert properties" background={colors.bgGrey}>
-  <Alert
-    theme="info"
-    icon
-    onClose={() => alert('Closing Alert')}
-    banner
-    cta={{
+  <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
+    <Alert
+      theme="info"
+      icon
+      banner
+      onClose={() => alert('Closing Alert')}
+      cta={{
         href: 'https://www.google.com',
         target: '_blank',
         text: 'Click here.',
         onClick: () => alert('CTA Clicked')
       }}
-  >
-    Lorem ipsum dolor sit amet
-  </Alert>
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    </Alert>
+    <Alert
+      theme="warning"
+      icon
+      banner
+      onClose={() => alert('Closing Alert')}
+      cta={{
+        href: 'https://www.google.com',
+        target: '_blank',
+        text: 'Click here.',
+        onClick: () => alert('CTA Clicked')
+      }}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    </Alert>
+    <Alert
+      theme="success"
+      icon
+      banner
+      onClose={() => alert('Closing Alert')}
+      cta={{
+        href: 'https://www.google.com',
+        target: '_blank',
+        text: 'Click here.',
+        onClick: () => alert('CTA Clicked')
+      }}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    </Alert>
+    <Alert
+      theme="error"
+      icon
+      banner
+      onClose={() => alert('Closing Alert')}
+      cta={{
+        href: 'https://www.google.com',
+        target: '_blank',
+        text: 'Click here.',
+        onClick: () => alert('CTA Clicked')
+      }}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    </Alert>
+    <Alert
+      theme="promote"
+      icon
+      banner
+      onClose={() => alert('Closing Alert')}
+      cta={{
+        href: 'https://www.google.com',
+        target: '_blank',
+        text: 'Click here.',
+        onClick: () => alert('CTA Clicked')
+      }}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    </Alert>
+  </div>
 </Demo>
 
 ```jsx
-// How to use other props
+// Set banner prop
 function Component() {
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
       <Alert
         theme="info"
         icon
-        // Other props
-        center
-        noBorderRadius
+        banner
         onClose={() => alert('Closing Alert')}
-        type="banner"
         cta={{
           href: 'https://www.google.com',
           target: '_blank',
@@ -222,43 +277,63 @@ function Component() {
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
       </Alert>
-    </>
-  )
-}
-```
-
-### Others
-
-There is some other properties that can be used with Alert component.
-
-<Demo title="Other Alert properties" background={colors.bgGrey}>
-  <Alert
-    theme="info"
-    icon
-    center
-    noBorderRadius
-    onClose={() => alert('Closing Alert')}
-  >
-    Alert message.
-  </Alert>
-</Demo>
-
-```jsx
-// How to use other props
-function Component() {
-  return (
-    <>
       <Alert
-        theme="info"
+        theme="warning"
         icon
-        // Other props
-        center
-        noBorderRadius
+        banner
         onClose={() => alert('Closing Alert')}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
       >
-        Alert message.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
       </Alert>
-    </>
+      <Alert
+        theme="success"
+        icon
+        banner
+        onClose={() => alert('Closing Alert')}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+      </Alert>
+      <Alert
+        theme="error"
+        icon
+        banner
+        onClose={() => alert('Closing Alert')}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+      </Alert>
+      <Alert
+        theme="promote"
+        icon
+        banner
+        onClose={() => alert('Closing Alert')}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+      </Alert>
+    </div>
   )
 }
 ```
