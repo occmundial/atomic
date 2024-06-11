@@ -42,24 +42,19 @@ export default createUseStyles({
     outline: `1px solid ${colors.alert.neutral.border}`
   },
   textInfo: {
-    color: colors.text.indigo.primary,
-    textDecorationColor: colors.text.indigo.primary
+    color: colors.text.indigo.primary
   },
   textWarning: {
-    color: colors.text.warning,
-    textDecorationColor: colors.text.warning
+    color: colors.text.warning
   },
   textSuccess: {
-    color: colors.text.success,
-    textDecorationColor: colors.text.success
+    color: colors.text.success
   },
   textError: {
-    color: colors.text.error,
-    textDecorationColor: colors.text.error
+    color: colors.text.error
   },
   textPromote: {
-    color: colors.text.white.primary,
-    textDecorationColor: colors.text.white.primary
+    color: colors.text.white.primary
   },
   icon: {
     marginRight: spacing['size-2'],
