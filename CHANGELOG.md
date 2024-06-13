@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/occmundial/atomic/compare/v3.1.2...v3.2.0) (2024-06-13)
+
+
+### Features
+
+* Update tooltip styles and dummy ([f473e25](https://github.com/occmundial/atomic/commit/f473e2564c635f309a990fcbf1c863ce5c01ab4f))
+
 ## [3.1.2](https://github.com/occmundial/atomic/compare/v3.1.1...v3.1.2) (2024-05-23)
 
 
