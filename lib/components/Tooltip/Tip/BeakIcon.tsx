@@ -43,7 +43,6 @@ const BeakIcon = forwardRef<SVGSVGElement, BeakIconProps>(
   ) => {
     const computedStyles = useMemo<CSSProperties>(() => {
       const positionMain = placement.split('-')[0]
-      console.log(positionMain)
       return arrowPosition[positionMain](arrow?.x, arrow?.y)
     }, [arrow, placement])
 
