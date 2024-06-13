@@ -1,5 +1,5 @@
 import colors from '@/tokens/colors'
-
+import colorsNew from '@/tokens/future/colors.json'
 const { infoLight, white, grey900, info } = colors
 
 export enum Themes {
@@ -10,10 +10,22 @@ export enum Themes {
 }
 
 export const colorsArrow = {
-  [Themes.DARK]: grey900,
-  [Themes.LIGHT]: white,
-  [Themes.INFO]: infoLight,
-  [Themes.PURPLE]: info
+  [Themes.DARK]: {
+    fill: colorsNew['alpha']['black']['100'],
+    outline: white
+  },
+  [Themes.LIGHT]: {
+    fill: white,
+    outline: 'transparent'
+  },
+  [Themes.INFO]: {
+    fill: infoLight,
+    outline: 'transparent'
+  },
+  [Themes.PURPLE]: {
+    fill: info,
+    outline: white
+  }
 }
 
 export type TooltipThemes = `${Themes}`

@@ -81,7 +81,7 @@ export default function Tooltip<T extends JSXTags = 'div'>({
     const middlewares = [offset(16)]
     flip &&
       middlewares.push(flipMiddleware(typeof flip === 'boolean' ? {} : flip))
-    showArrow && middlewares.push(arrow({ element: refArrow, padding: 16 }))
+    showArrow && middlewares.push(arrow({ element: refArrow }))
 
     const sizeMiddleware = size({
       apply({ elements, rects, availableWidth }) {
