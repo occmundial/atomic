@@ -7,6 +7,7 @@ import classNames from 'classnames'
 import { CSSProperties, ComponentProps, LegacyRef, ReactNode, Ref } from 'react'
 import { Strategies, Themes, TooltipThemes, colorsArrow } from '../helper'
 import useStyles from './styles'
+import BeakIcon from './BeakIcon'
 
 type TipProps = {
   children: ReactNode
@@ -54,12 +55,13 @@ export function Tip({
       >
         {children}
         {showArrow && (
-          <FloatingArrow
+          <BeakIcon
             ref={refArrow}
             context={context}
-            fill={colorsArrow[theme] || colorsArrow[Themes.PURPLE]}
-            width={14}
-            height={10}
+            fill={colorsArrow[theme]?.fill || colorsArrow[Themes.PURPLE].fill}
+            outline={
+              colorsArrow[theme]?.outline || colorsArrow[Themes.PURPLE].outline
+            }
           />
         )}
       </div>
