@@ -1,3 +1,10 @@
+# [3.0.0-beta.23](https://github.com/occmundial/atomic/compare/v3.0.0-beta.22...v3.0.0-beta.23) (2024-06-19)
+
+
+### Bug Fixes
+
+* Change icon size and adjust margins ([b3027f4](https://github.com/occmundial/atomic/commit/b3027f4cd12581530532f4513006d709e9c0ef9d))
+
 # [3.0.0-beta.22](https://github.com/occmundial/atomic/compare/v3.0.0-beta.21...v3.0.0-beta.22) (2024-06-05)
 
 
