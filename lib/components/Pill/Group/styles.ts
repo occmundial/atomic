@@ -31,15 +31,15 @@ export default createUseStyles({
     whiteSpace: 'nowrap',
     transition: '0.3s all',
     cursor: 'pointer',
-    '&:not(:active):focus-visible': {
-      boxShadow: shadows['focus-indigo'],
-      background: 'none'
-    },
     '&:hover': {
       background: colors.pill.unselected.bg.hover
     },
-    '&:active, &:focus': {
+    '&:active': {
       background: colors.pill.unselected.bg.active
+    },
+    '&:focus-visible': {
+      boxShadow: shadows['focus-indigo'],
+      background: 'none'
     }
   },
   text: {
