@@ -79,7 +79,8 @@ const Choice = ({
         <Icon
           iconName={leftIcon}
           color={conditionedStyles.iconColor}
-          size={18}
+          className={classes.leftIcon}
+          size={16}
         />
       )}
       {children && (
@@ -91,7 +92,8 @@ const Choice = ({
         <Icon
           iconName={rightIcon}
           color={conditionedStyles.iconColor}
-          size={18}
+          className={classes.rightIcon}
+          size={16}
         />
       )}
     </button>

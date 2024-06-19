@@ -31,12 +31,11 @@ export default createUseStyles({
     '&:hover': {
       background: colors.pill.unselected.bg.hover
     },
-    '&:active, &:focus': {
+    '&:active': {
       background: colors.pill.unselected.bg.active
     },
-    '&:not(:active):focus-visible': {
-      boxShadow: shadows['focus-indigo'],
-      background: colors.pill.unselected.bg.default
+    '&:focus-visible': {
+      boxShadow: shadows['focus-indigo']
     }
   },
   disabled: {
@@ -50,8 +49,7 @@ export default createUseStyles({
     color: colors.text.indigo.primary,
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-    padding: [0, spacing['size-1']],
-    marginRight: spacing['size-1']
+    padding: [0, spacing['size-1']]
   },
   textDisabled: {
     color: colors.text.indigo.secondary
@@ -62,7 +60,6 @@ export default createUseStyles({
     display: 'inline-flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: -spacing['size-1'],
-    marginLeft: -spacing['size-1']
+    marginLeft: spacing['size-1']
   }
 })
