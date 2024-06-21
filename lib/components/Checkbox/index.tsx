@@ -22,6 +22,7 @@ interface CheckboxProps {
   label?: ReactNode
   right?: string | number
   textOverflow?: boolean
+  alignLeft?: boolean
   trk?: string
   id?: string
   className?: string
@@ -37,6 +38,7 @@ const Checkbox = ({
   right,
   disabled,
   textOverflow,
+  alignLeft,
   id,
   className,
   style,
@@ -128,7 +130,8 @@ const Checkbox = ({
             <Text
               tag="label"
               className={classnames(classes.label, {
-                [classes.overflow]: textOverflow
+                [classes.overflow]: textOverflow,
+                [classes.alignLeft]: !alignLeft
               })}
             >
               {label}

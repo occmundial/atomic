@@ -123,5 +123,8 @@ export default createUseStyles({
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap'
+  },
+  alignLeft: {
+    flex: 'none'
   }
 })
