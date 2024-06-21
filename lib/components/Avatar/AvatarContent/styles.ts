@@ -1,10 +1,11 @@
 import { createUseStyles } from 'react-jss'
 
-import fonts from '@/tokens/fonts'
-import { base } from '@/tokens/icons'
-import male from '@/tokens/icons/male'
-import female from '@/tokens/icons/female'
-import colors from '@/tokens/colors'
+import colors from '@/tokens/future/colors.json'
+import fonts from '@/tokens/future/fonts.json'
+import { objectToFontValue } from '@/utils/font'
+
+const { avatar, text, border } = colors
+const transition = 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s'
 
 export default createUseStyles({
   wrap: {
@@ -19,21 +20,83 @@ export default createUseStyles({
     width: '100%',
     height: '100%',
     borderRadius: '50%',
-    overflow: 'hidden'
-  },
-  m: {
-    background: base(male.icon())
-  },
-  f: {
-    background: base(female.icon())
+    overflow: 'hidden',
+    background: avatar.bg.default,
+    display: 'grid',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   capital: {
-    fontFamily: fonts.body,
-    fontSize: 70 * 0.4,
-    lineHeight: '70px',
-    fontWeight: '600',
-    background: colors.grey200,
-    color: colors.grey400,
+    display: 'inline-block',
+    font: objectToFontValue(fonts['body-regular-strong']),
+    color: text.indigo.primary,
+    gridRowStart: 1,
+    gridColumnStart: 1,
     textAlign: 'center'
+  },
+  disabled: {
+    pointerEvents: 'none',
+    background: avatar.bg.disabled,
+    '& $camera': {
+      opacity: 1
+    }
+  },
+  disabledCapital: {
+    color: text.corp.disabled
+  },
+  clickable: {
+    transition,
+    '&:hover': {
+      background: avatar.bg.hover
+    },
+    '&:active': {
+      background: avatar.bg.active
+    }
+  },
+  editable: {
+    '&:hover $camera': {
+      opacity: 1
+    },
+    '&:hover $overlay': {
+      background: avatar.bg.overlay.hover
+    },
+    '&:active $overlay': {
+      background: avatar.bg.overlay.active
+    }
+  },
+  person: {
+    gridRowStart: 1,
+    gridColumnStart: 1,
+    transition
+  },
+  photo: {
+    border: `1px solid ${border.default.subtle}`
+  },
+  hoverPhoto: {
+    '&:hover $overlay': {
+      background: avatar.bg.overlay.hover
+    },
+    '&:active $overlay': {
+      background: avatar.bg.overlay.active
+    }
+  },
+  camera: {
+    gridRowStart: 1,
+    gridColumnStart: 1,
+    opacity: 0,
+    transition
+  },
+  overlay: {
+    borderRadius: '50%',
+    position: 'absolute',
+    top: '0',
+    left: '0',
+    width: '100%',
+    height: '100%',
+    display: 'grid',
+    alignItems: 'center',
+    justifyContent: 'center',
+    transition,
+    border: `1px solid transparent`
   }
 })

@@ -29,6 +29,7 @@ import PillChoice from './Pill/Choice'
 import PillStack from './Pill/Stack'
 import Toggle from '@/components/Toggle'
 import Checkbox from '@/components/Checkbox'
+import Avatar from '@/components/Avatar'
 
 const mdxComponents = {
   // Library components
@@ -49,6 +50,7 @@ const mdxComponents = {
   PillGroup,
   PillChoice,
   PillStack,
+  Avatar,
   colorsNew,
   // Docs components
   Demo,
