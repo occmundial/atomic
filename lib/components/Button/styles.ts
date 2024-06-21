@@ -71,7 +71,7 @@ export default createUseStyles({
     '&:focus': {
       outline: `2px solid ${colors.button.primary.border.default}`
     },
-    '&:not(:active):focus-visible': {
+    '&:focus-visible': {
       boxShadow: shadows['focus-pink']
     },
     '&$disabled': {
@@ -95,7 +95,7 @@ export default createUseStyles({
     '&:active': {
       background: colors.button.secondary.bg.active
     },
-    '&:not(:active):focus-visible': {
+    '&:focus-visible': {
       boxShadow: shadows['focus-indigo']
     },
     '&$disabled': {
@@ -123,7 +123,7 @@ export default createUseStyles({
     '&:focus': {
       outline: `2px solid ${colors.button.tertiary.border.default}`
     },
-    '&:not(:active):focus-visible': {
+    '&:focus-visible': {
       boxShadow: shadows['focus-indigo']
     },
     '&$disabled': {
@@ -152,7 +152,7 @@ export default createUseStyles({
     '&:focus': {
       outline: `2px solid ${colors.button.tertiary.border.inverse.default}`
     },
-    '&:not(:active):focus-visible': {
+    '&:focus-visible': {
       boxShadow: shadows['focus-white']
     },
     '&$disabled': {
@@ -196,7 +196,7 @@ export default createUseStyles({
     '&:active': {
       background: colors.button.ghost.bg.active
     },
-    '&:not(:active):focus-visible': {
+    '&:focus-visible': {
       boxShadow: shadows['focus-corp']
     },
     '&$disabled': {
@@ -219,7 +219,7 @@ export default createUseStyles({
     '&:active': {
       background: colors.button.ghost.bg.inverse.active
     },
-    '&:not(:active):focus-visible': {
+    '&:focus-visible': {
       boxShadow: shadows['focus-white']
     },
     '&$disabled': {
