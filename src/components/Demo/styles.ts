@@ -33,7 +33,8 @@ export default createUseStyles({
     background: colors.success
   },
   title: {
-    marginLeft: spacing.tiny
+    marginLeft: spacing.tiny,
+    flex: 1
   },
   screen: {
     padding: spacing.small,

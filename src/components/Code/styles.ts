@@ -37,6 +37,12 @@ export default createUseStyles({
     background: colors.success
   },
   title: {
-    marginLeft: spacing.tiny
+    marginLeft: spacing.tiny,
+    flex: 1
+  },
+  hide: {
+    borderBottom: 0,
+    marginBottom: 0,
+    paddingBottom: 0
   }
 })

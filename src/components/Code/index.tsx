@@ -1,10 +1,11 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/vsDark'
 import classnames from 'classnames'
 
 import Flexbox from '@/components/Flexbox'
 import Text from '@/components/Text'
+import Button from '@/components/Button'
 
 import useStyles from './styles'
 
@@ -15,6 +16,7 @@ interface CodeProps {
 
 export default function Code({ children, className }: CodeProps) {
   const classes = useStyles()
+  const [show, setShow] = useState(true)
 
   const language = useMemo(
     () => className?.replace(/language-/, ''),
@@ -41,7 +43,7 @@ export default function Code({ children, className }: CodeProps) {
             display="flex"
             justifyContent="start"
             alignItems="center"
-            className={classes.header}
+            className={classnames(classes.header, { [classes.hide]: !show })}
           >
             <span className={classnames(classes.button, classes.red)} />
             <span className={classnames(classes.button, classes.yellow)} />
@@ -51,14 +53,21 @@ export default function Code({ children, className }: CodeProps) {
                 {title}
               </Text>
             )}
+            <Button
+              iconLeft={show ? 'chevron-up' : 'chevron-down'}
+              theme="ghost"
+              darkMode
+              onClick={() => setShow(!show)}
+            />
           </Flexbox>
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
+          {show &&
+            tokens.map((line, i) => (
+              <div key={i} {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
         </pre>
       )}
     </Highlight>
