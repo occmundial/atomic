@@ -5,6 +5,10 @@ import borderRadius from '@/tokens/future/borderRadius.json'
 import shadows from '@/tokens/future/shadows.json'
 
 const { checkbox, icon } = colors
+const transition = 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s'
+const contentHeight = 48
+const checkboxWidth = 52
+const checkSize = 20
 
 export default createUseStyles({
   cont: {
@@ -12,7 +16,7 @@ export default createUseStyles({
     paddingBottom: spacing['size-2'],
     boxSizing: 'border-box',
     display: 'flex',
-    alignItems: 'start',
+    alignItems: 'flex-start',
     cursor: 'pointer',
     outline: '0',
     '&:after': {
@@ -20,98 +24,100 @@ export default createUseStyles({
       display: 'table',
       clear: 'both'
     },
-    '&:focus $check:before': {
-      boxShadow: shadows['focus-bright-blue'],
-      borderWidth: 1
+    '&:focus-visible $check': {
+      boxShadow: shadows['focus-bright-blue']
+    },
+    '&:hover $check $box': {
+      boxShadow: `inset 0 0 0 1px ${checkbox.unselected.border.hover}`
+    },
+    '&:active $check $box': {
+      boxShadow: `inset 0 0 0 2px ${checkbox.unselected.border.hover}`
     },
     '&$active, &$undetermined': {
-      '&:hover $check:before, &:active $check:before': {
-        background: checkbox['selected']['bg']['hover']
-      }
-    },
-    '&:not($active), &:not($undetermined)': {
-      '&:hover $check:before, &:active $check:before': {
-        borderColor: checkbox['unselected']['border']['hover']
+      '&:hover $check $box': {
+        boxShadow: `inset 0 0 0 1px ${checkbox.selected.border.default}`,
+        background: checkbox.selected.bg.hover
       },
-      '&:active $check:before': {
-        borderWidth: 2
+      '&:active $check $box': {
+        boxShadow: `inset 0 0 0 2px ${checkbox.selected.border.default}`,
+        background: checkbox.selected.bg.hover
       }
     }
+  },
+  checkWrap: {
+    width: checkboxWidth,
+    height: contentHeight,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0
   },
   check: {
-    width: spacing['size-5'],
-    height: spacing['size-5'],
-    position: 'relative',
-    '&:before': {
-      content: '""',
-      boxSizing: 'border-box',
-      width: 20,
-      height: 20,
-      borderRadius: borderRadius['br-xs'],
-      position: 'absolute',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      border: `1px solid ${checkbox['unselected']['border']['default']}`,
-      background: checkbox['unselected']['bg']['default']
-    }
+    width: checkSize,
+    height: checkSize,
+    borderRadius: borderRadius['br-xs'],
+    transition,
+    display: 'grid',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  box: {
+    width: checkSize,
+    height: checkSize,
+    borderRadius: borderRadius['br-xs'],
+    boxShadow: `inset 0 0 0 1px ${checkbox.unselected.border.default}`,
+    background: checkbox.unselected.bg.default,
+    transition,
+    gridRowStart: 1,
+    gridColumnStart: 1
   },
   icon: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    marginTop: -1,
-    fill: 'none',
-    transition: '0.3s fill',
-    zIndex: 1
+    gridRowStart: 1,
+    gridColumnStart: 1,
+    margin: 2
   },
   active: {
-    '& $icon': {
-      fill: icon['inverse']['default']
-    },
-    '& $check:before': {
-      borderColor: checkbox['selected']['border']['default'],
-      background: checkbox['selected']['bg']['default']
+    '& $check $box': {
+      boxShadow: `inset 0 0 0 1px ${checkbox.selected.border.default}`,
+      background: checkbox.selected.bg.default
     }
   },
   undetermined: {
-    '& $icon': {
-      fill: icon['inverse']['default'],
-      marginTop: 0
-    },
-    '& $check:before': {
-      borderColor: checkbox['selected']['border']['default'],
-      background: checkbox['selected']['bg']['default']
+    '& $check $box': {
+      boxShadow: `inset 0 0 0 1px ${checkbox.selected.border.default}`,
+      background: checkbox.selected.bg.default
     }
   },
   disabled: {
     pointerEvents: 'none',
-    '&$active, &$undetermined': {
-      '& $icon': {
-        fill: icon['brand']['disabled']
-      },
-      '& $check:before': {
-        borderColor: checkbox['selected']['border']['default'],
-        background: checkbox['selected']['bg']['disabled']
-      }
+    '& $check $box': {
+      boxShadow: `inset 0 0 0 1px ${checkbox.unselected.border.default}`,
+      background: checkbox.unselected.bg.disabled
     },
-    '&:not($active), &:not($undetermined)': {
-      '& $check:before': {
-        borderColor: checkbox['unselected']['border']['default'],
-        background: checkbox['unselected']['bg']['disabled']
+    '&$active, &$undetermined': {
+      '& $check $box': {
+        boxShadow: `inset 0 0 0 1px ${checkbox.selected.border.default}`,
+        background: checkbox.selected.bg.disabled
       }
     }
   },
+  labelWrap: {
+    minHeight: contentHeight,
+    display: 'flex',
+    alignItems: 'center',
+    paddingTop: spacing['size-1'],
+    paddingBottom: spacing['size-1'],
+    overflow: 'hidden',
+    flex: 1
+  },
   label: {
-    marginLeft: spacing['size-2'],
+    marginLeft: spacing['size-3'],
     cursor: 'pointer',
-    float: 'left',
-    flex: '1'
+    flex: 1
   },
   right: {
     marginLeft: spacing['size-2'],
-    float: 'right'
+    pointerEvents: 'none'
   },
   overflow: {
     overflow: 'hidden',
