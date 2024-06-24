@@ -12,6 +12,7 @@ import Text from '@/components/Text'
 import Icon from '@/components/Icon'
 import useStyles from './styles'
 import useIcon from '@/hooks/useIcon'
+import colors from '@/tokens/future/colors.json'
 
 interface CheckboxProps {
   value?: boolean
@@ -21,6 +22,7 @@ interface CheckboxProps {
   label?: ReactNode
   right?: string | number
   textOverflow?: boolean
+  alignLeft?: boolean
   trk?: string
   id?: string
   className?: string
@@ -36,6 +38,7 @@ const Checkbox = ({
   right,
   disabled,
   textOverflow,
+  alignLeft,
   id,
   className,
   style,
@@ -47,6 +50,9 @@ const Checkbox = ({
   const [_undetermined, setUndetermined] = useState(undetermined)
   const valueRef = useRef<boolean>()
 
+  const iconColor = disabled
+    ? colors.icon.brand.disabled
+    : colors.icon.inverse.default
   const getIcon = useIcon()
 
   useEffect(() => {
@@ -65,10 +71,22 @@ const Checkbox = ({
     }
   }, [_value, disabled, onChange])
 
+  const handleKeyDown = e => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      e.preventDefault()
+    }
+  }
+
+  const handleKeyUp = e => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      toggle()
+    }
+  }
+
   return (
     <div
       id={id}
-      tabIndex={-1}
+      tabIndex={disabled ? -1 : 0}
       className={classnames(
         classes.cont,
         { [classes.undetermined]: _undetermined },
@@ -77,37 +95,54 @@ const Checkbox = ({
         className
       )}
       onClick={toggle}
+      onKeyDown={handleKeyDown}
+      onKeyUp={handleKeyUp}
       style={style}
       data-testid={testId}
       {...(testId && {
         'data-value': value ? 1 : 0
       })}
     >
-      <div className={classes.check} id={trk}>
-        <Icon
-          iconName={
-            _undetermined
-              ? getIcon('minus', 'dash')
-              : getIcon('success', 'check')
-          }
-          className={classes.icon}
-          size={16}
-        />
+      <div className={classes.checkWrap}>
+        <div className={classes.check} id={trk}>
+          <div className={classes.box} />
+          {_undetermined && (
+            <Icon
+              iconName={getIcon('minus', 'dash')}
+              size={16}
+              color={iconColor}
+              className={classes.icon}
+            />
+          )}
+          {!_undetermined && _value && (
+            <Icon
+              iconName={getIcon('success', 'check')}
+              size={16}
+              color={iconColor}
+              className={classes.icon}
+            />
+          )}
+        </div>
       </div>
-      {label && (
-        <Text
-          tag="label"
-          className={classnames(classes.label, {
-            [classes.overflow]: textOverflow
-          })}
-        >
-          {label}
-        </Text>
-      )}
-      {right && (
-        <Text tag="label" mid className={classes.right}>
-          {right}
-        </Text>
+      {!!(label || right) && (
+        <div className={classes.labelWrap}>
+          {label && (
+            <Text
+              tag="label"
+              className={classnames(classes.label, {
+                [classes.overflow]: textOverflow,
+                [classes.alignLeft]: !alignLeft
+              })}
+            >
+              {label}
+            </Text>
+          )}
+          {right && (
+            <Text tag="label" mid className={classes.right}>
+              {right}
+            </Text>
+          )}
+        </div>
       )}
     </div>
   )

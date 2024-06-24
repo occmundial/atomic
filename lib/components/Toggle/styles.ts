@@ -2,69 +2,101 @@ import { createUseStyles } from 'react-jss'
 import spacing from '@/tokens/future/spacing.json'
 import colors from '@/tokens/future/colors.json'
 import shadows from '@/tokens/future/shadows.json'
+import borderRadius from '@/tokens/future/borderRadius.json'
 
 const { switch: toggle } = colors
+const transition = 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s'
+const contentHeight = 48
+const toggleWidth = 52
+const toggleHeight = 32
+const sliderSize = 24
 
 export default createUseStyles({
   cont: {
-    paddingTop: spacing['size-2'],
-    paddingBottom: spacing['size-2'],
     boxSizing: 'border-box',
     display: 'flex',
-    alignItems: 'start',
+    alignItems: 'flex-start',
     cursor: 'pointer',
     outline: 0,
-    '&:hover $switch$checked, &:active $switch$checked': {
-      background: toggle['selected']['bg']['hover']
+    '&:hover $switch $switchBg, &:active $switch $switchBg': {
+      background: toggle.unselected.bg.hover
     },
-    '&:focus $switch$checked': {
-      boxShadow: shadows['focus-bright-blue'],
-      background: toggle['selected']['bg']['default']
-    },
-    '&:hover $switch:not($checked), &:active $switch:not($checked)': {
-      background: toggle['unselected']['bg']['hover']
-    },
-    '&:focus $switch:not($checked)': {
-      background: toggle['unselected']['bg']['default'],
+    '&:focus-visible $switch': {
       boxShadow: shadows['focus-indigo']
+    },
+    '&:hover $switch$checked $switchBg, &:active $switch$checked $switchBg': {
+      background: toggle.selected.bg.hover
+    },
+    '&:active $switch $switchBg': {
+      boxShadow: `inset 0 0 0 2px ${toggle.border.default}`
+    },
+    '&:focus-visible $switch$checked': {
+      boxShadow: shadows['focus-bright-blue']
     }
+  },
+  switchWrap: {
+    width: toggleWidth,
+    height: contentHeight,
+    display: 'flex',
+    alignItems: 'center',
+    flexShrink: 0
   },
   switch: {
     position: 'relative',
     display: 'inline-block',
-    width: 38,
-    height: spacing['size-5'],
-    background: toggle['unselected']['bg']['default'],
-    borderRadius: 34,
-    transition: '0.3s all'
+    width: toggleWidth,
+    height: toggleHeight,
+    flexShrink: 0,
+    borderRadius: borderRadius['br-full'],
+    transition
+  },
+  switchBg: {
+    width: toggleWidth,
+    height: toggleHeight,
+    background: toggle.unselected.bg.default,
+    boxShadow: `inset 0 0 0 1px ${colors.switch.border.default}`,
+    borderRadius: borderRadius['br-full'],
+    transition
   },
   checked: {
-    background: toggle['selected']['bg']['default'],
+    '& $switchBg': {
+      background: toggle.selected.bg.default
+    },
     '& $slider': {
-      left: 16
+      left: `calc(100% - 28px)`
     }
   },
   slider: {
     position: 'absolute',
-    cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    top: 2,
-    left: 2,
-    width: 20,
-    height: 20,
-    borderRadius: '50%',
-    background: toggle['bg']['default'],
-    transition: '0.3s all'
+    top: '50%',
+    transform: 'translateY(-50%)',
+    left: 4,
+    width: sliderSize,
+    height: sliderSize,
+    borderRadius: borderRadius['br-full'],
+    background: toggle.bg.default,
+    transition
+  },
+  icon: {
+    margin: 4
   },
   disabled: {
-    '& $switch': {
-      background: toggle['bg']['disabled']
+    '& $switch $switchBg': {
+      boxShadow: `inset 0 0 0 1px ${toggle.border.disabled}`,
+      background: toggle.bg.disabled
     },
     pointerEvents: 'none'
   },
+  labelWrap: {
+    minHeight: contentHeight,
+    display: 'flex',
+    alignItems: 'center',
+    paddingTop: spacing['size-1'],
+    paddingBottom: spacing['size-1'],
+    overflow: 'hidden'
+  },
   label: {
-    marginLeft: spacing['size-2']
+    marginLeft: spacing['size-3'],
+    cursor: 'pointer'
   }
 })

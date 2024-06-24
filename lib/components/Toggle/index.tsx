@@ -67,10 +67,25 @@ const Toggle = ({
     return _value ? icon.brand.bold : icon.brand.disabled
   }, [disabled, _value])
 
+  const handleKeyDown = e => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      e.preventDefault()
+    }
+  }
+
+  const handleKeyUp = e => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      toggle()
+    }
+  }
+
   return (
     <div
       id={id}
-      tabIndex={-1}
+      tabIndex={disabled ? -1 : 0}
+      onClick={toggle}
+      onKeyDown={handleKeyDown}
+      onKeyUp={handleKeyUp}
       className={classnames(
         classes.cont,
         { [classes.disabled]: disabled },
@@ -78,25 +93,33 @@ const Toggle = ({
       )}
       style={style}
     >
-      <div
-        id={trk}
-        className={classnames(classes.switch, { [classes.checked]: _value })}
-        onClick={toggle}
-      >
-        <span className={classes.slider}>
-          <Icon
-            iconName={
-              _value ? getIcon('check-o', 'check') : getIcon('x-micro-o', 'x')
-            }
-            size={ICON_SIZE}
-            color={iconColor}
-          />
-        </span>
+      <div className={classes.switchWrap}>
+        <div
+          id={trk}
+          className={classnames(classes.switch, { [classes.checked]: _value })}
+        >
+          <div className={classes.switchBg}>
+            <span className={classes.slider}>
+              <Icon
+                iconName={
+                  _value
+                    ? getIcon('check-o', 'check')
+                    : getIcon('x-micro-o', 'x')
+                }
+                className={classes.icon}
+                size={ICON_SIZE}
+                color={iconColor}
+              />
+            </span>
+          </div>
+        </div>
       </div>
       {label && (
-        <Text tag="label" className={classes.label}>
-          {label}
-        </Text>
+        <div className={classes.labelWrap}>
+          <Text tag="label" className={classes.label}>
+            {label}
+          </Text>
+        </div>
       )}
     </div>
   )
