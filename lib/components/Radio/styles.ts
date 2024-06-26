@@ -130,6 +130,10 @@ export default createUseStyles({
     marginLeft: spacing['size-2'],
     pointerEvents: 'none'
   },
+  tag: {
+    marginLeft: spacing['size-2'],
+    pointerEvents: 'none'
+  },
   overflow: {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
