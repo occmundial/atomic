@@ -33,11 +33,25 @@ const Avatar = ({
     className
   )
 
+  const handleKeyDown = e => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      e.preventDefault()
+    }
+  }
+
+  const handleKeyUp = e => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      handleClick()
+    }
+  }
+
   return (
     <div
       id={id}
       className={combinedClasses}
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      onKeyUp={handleKeyUp}
       tabIndex={tabIndexValue}
       style={{
         ...style,
