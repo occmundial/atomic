@@ -3,11 +3,7 @@ import classnames from 'classnames'
 
 import Flexbox from '@/components/Flexbox'
 import Icon from '@/components/Icon'
-import spacing from '@/tokens/spacing'
-import iconSizes from '@/tokens/iconSizes'
-
-const { gutter, xTiny } = spacing
-
+import spacing from '@/tokens/future/spacing.json'
 import useStyles from './styles'
 
 export interface TagProps {
@@ -21,6 +17,8 @@ export interface TagProps {
     | 'error'
     | 'basic'
     | 'link'
+    | 'featured'
+    | 'promo'
   iconName?: string
   className?: string
   style?: CSSProperties
@@ -36,27 +34,22 @@ const Tag = ({
   size
 }: TagProps) => {
   const classes = useStyles()
-  const iconSize = useMemo(
-    () => (size === 'small' ? gutter : iconSizes.small),
-    [size]
-  )
+
+  const themeClass = useMemo(() => {
+    if (theme === 'primary') return classes['featured']
+    return classes[theme]
+  }, [theme, classes])
+
   return (
     <label
-      className={classnames(
-        classes.tag,
-        classes[size],
-        classes[theme],
-        className
-      )}
+      className={classnames(classes.tag, classes[size], themeClass, className)}
       style={style}
     >
       <Flexbox display="flex" alignItems="center" wrap="noWrap">
-        {iconName && (
-          <Icon iconName={iconName} className={classes.icon} size={iconSize} />
-        )}
+        {iconName && <Icon iconName={iconName} className={classes.icon} />}
         <span
-          className={classnames(classes.tagText, classes[`${size}TagText`])}
-          style={{ paddingRight: iconName ? xTiny : 0 }}
+          className={classes.tagText}
+          style={{ paddingRight: iconName ? spacing['size-1'] : 0 }}
         >
           {children}
         </span>

@@ -19,14 +19,14 @@ Tag component with different themes.
 
 ## Props
 
-| Name        | Type          | Default value | Description                                                   |
-| ----------- | ------------- | ------------- | ------------------------------------------------------------- |
-| `children`  | **ReactNode** | -             | Children component passed to this container.                  |
-| `theme`     | **string**    | `'default'`   | The theme of the Tag component.                               |
-| `iconName`  | **string**    | -             | Name of the icon to render inside the Tag.                    |
-| `size`      | **string**    | `'small'`     | The size of the Tag. Chose from `small`, `medium` and `large` |
-| `className` | **string**    | -             | className of the Tag component.                               |
-| `style`     | **object**    | -             | Object with direct style properties.                          |
+| Name        | Type          | Default value | Description                                                                                                         |
+| ----------- | ------------- | ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `children`  | **ReactNode** | -             | Children component passed to this container.                                                                        |
+| `theme`     | **string**    | `'default'`   | The theme of the Tag component. Chose from 'primary', 'featured', 'promo', 'success', 'warning', 'error' and 'info' |
+| `iconName`  | **string**    | -             | Name of the icon to render inside the Tag.                                                                          |
+| `size`      | **string**    | `'small'`     | The size of the Tag. Chose from `small`, `medium` and `large`                                                       |
+| `className` | **string**    | -             | className of the Tag component.                                                                                     |
+| `style`     | **object**    | -             | Object with direct style properties.                                                                                |
 
 ## Examples
 
@@ -139,9 +139,61 @@ function Component() {
 ### Icon
 
 <Demo title="Tag Icon" background={colors.bgGrey}>
-  <Tag theme="primary" size="medium" iconName="search">
-    Tag Icon
-  </Tag>
+  <Flexbox display="flex" direction="row" justifyContent="between" wrap="wrap" alignItems="center" style={{padding: "8px"}}>
+    <Tag theme="primary" size="small" iconName="search">
+      Tag Icon
+    </Tag>
+    <Tag theme="primary" size="medium" iconName="search">
+      Tag Icon
+    </Tag>
+    <Tag theme="primary" size="large" iconName="search">
+      Tag Icon
+    </Tag>
+  </Flexbox>
+  <Flexbox display="flex" direction="row" justifyContent="between" wrap="wrap" alignItems="center" style={{padding: "8px"}}>
+    <Tag theme="success" size="small" iconName="search">
+      Tag Icon
+    </Tag>
+    <Tag theme="success" size="medium" iconName="search">
+      Tag Icon
+    </Tag>
+    <Tag theme="success" size="large" iconName="search">
+      Tag Icon
+    </Tag>
+  </Flexbox>
+  <Flexbox display="flex" direction="row" justifyContent="between" wrap="wrap" alignItems="center" style={{padding: "8px"}}>
+    <Tag theme="warning" size="small" iconName="search">
+      Tag Icon
+    </Tag>
+    <Tag theme="warning" size="medium" iconName="search">
+      Tag Icon
+    </Tag>
+    <Tag theme="warning" size="large" iconName="search">
+      Tag Icon
+    </Tag>
+  </Flexbox>
+  <Flexbox display="flex" direction="row" justifyContent="between" wrap="wrap" alignItems="center" style={{padding: "8px"}}>
+    <Tag theme="error" size="small" iconName="search">
+      Tag Icon
+    </Tag>
+    <Tag theme="error" size="medium" iconName="search">
+      Tag Icon
+    </Tag>
+    <Tag theme="error" size="large" iconName="search">
+      Tag Icon
+    </Tag>
+  </Flexbox>
+  <Flexbox display="flex" direction="row" justifyContent="between" wrap="wrap" alignItems="center" style={{padding: "8px"}}>
+    <Tag theme="info" size="small" iconName="search">
+      Tag Icon
+    </Tag>
+    <Tag theme="info" size="medium" iconName="search">
+      Tag Icon
+    </Tag>
+    <Tag theme="info" size="large" iconName="search">
+      Tag Icon
+    </Tag>
+  </Flexbox>
 </Demo>
 
 ```jsx
@@ -150,7 +202,43 @@ function Component() {
   return (
     <>
       // The icon should match name with one in atomic-icons library
+      <Tag theme="primary" size="small" iconName="search">
+        Tag Icon
+      </Tag>
       <Tag theme="primary" size="medium" iconName="search">
+        Tag Icon
+      </Tag>
+      <Tag theme="primary" size="large" iconName="search">
+        Tag Icon
+      </Tag>
+
+      <Tag theme="success" size="small" iconName="search">
+        Tag Icon
+      </Tag>
+      <Tag theme="success" size="medium" iconName="search">
+        Tag Icon
+      </Tag>
+      <Tag theme="success" size="large" iconName="search">
+        Tag Icon
+      </Tag>
+
+      <Tag theme="warning" size="small" iconName="search">
+        Tag Icon
+      </Tag>
+      <Tag theme="warning" size="medium" iconName="search">
+        Tag Icon
+      </Tag>
+      <Tag theme="warning" size="large" iconName="search">
+        Tag Icon
+      </Tag>
+
+      <Tag theme="info" size="small" iconName="search">
+        Tag Icon
+      </Tag>
+      <Tag theme="info" size="medium" iconName="search">
+        Tag Icon
+      </Tag>
+      <Tag theme="info" size="large" iconName="search">
         Tag Icon
       </Tag>
     </>

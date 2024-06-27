@@ -1,3 +1,20 @@
+# [3.0.0-beta.24](https://github.com/occmundial/atomic/compare/v3.0.0-beta.23...v3.0.0-beta.24) (2024-06-26)
+
+
+### Bug Fixes
+
+* Add alignLeft prop to Checkbox ([27c6994](https://github.com/occmundial/atomic/commit/27c699473476ac758f55eefaccacf961b12f5953))
+* Add tag style for Radio ([5d26373](https://github.com/occmundial/atomic/commit/5d26373e98789b8f5ce1347a6ab055a60949e190))
+* Change focus behavior of Button ([da0200b](https://github.com/occmundial/atomic/commit/da0200b5e43b70a52195ec788c3ab84cd9e38aba))
+* Change structure and styles of Radio ([bdff7db](https://github.com/occmundial/atomic/commit/bdff7db4e3e194aa70dcbaafac524616218bcf43))
+* Change structure and styles of Toggle ([2ddf660](https://github.com/occmundial/atomic/commit/2ddf6603d1520ea3f3ffc1ff35c36aa26cf440d5))
+* Fix styles and structure of Checkbox ([8369fbc](https://github.com/occmundial/atomic/commit/8369fbc2500bb496e624450438cbb4b3e33b185f))
+
+
+### Features
+
+* Tag design and dcumentation updated ([681cd9c](https://github.com/occmundial/atomic/commit/681cd9c67442862f980c67aa8f19e9ff6b207b38))
+
 # [3.0.0-beta.23](https://github.com/occmundial/atomic/compare/v3.0.0-beta.22...v3.0.0-beta.23) (2024-06-19)
 
 
