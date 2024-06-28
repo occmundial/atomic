@@ -13,12 +13,16 @@ export interface AvatarContentProps {
   disabled?: boolean
 }
 
-const getInitials = name => {
-  if (name) {
-    const [firstName, lastName] = name.toUpperCase().split(' ')
-    return `${firstName?.charAt(0) || 'N'}${lastName?.charAt(0) || 'O'}`
+const getInitials = (name: string): string | null => {
+  if (name && name.trim()) {
+    const [firstName, lastName] = name
+      .trim()
+      .replace(/\s+/g, ' ')
+      .toUpperCase()
+      .split(' ')
+    return `${firstName?.charAt(0)}${lastName?.charAt(0)}`
   }
-  return ''
+  return null
 }
 
 const AvatarContent = ({
@@ -30,6 +34,9 @@ const AvatarContent = ({
   disabled
 }: AvatarContentProps) => {
   const classes = useStyles()
+
+  const initials = getInitials(name)
+
   return (
     <div className={classes.wrap}>
       <div
@@ -48,7 +55,7 @@ const AvatarContent = ({
             : null
         }
       >
-        {!photo && !name && (
+        {!photo && !initials && (
           <Icon
             iconName="person"
             className={classes.person}
@@ -61,14 +68,14 @@ const AvatarContent = ({
             style={size ? { transform: `scale(${size / 40})` } : {}}
           />
         )}
-        {name && (
+        {initials && (
           <span
             className={classnames(classes.initials, {
               [classes.disabledInitials]: disabled
             })}
             style={size ? { transform: `scale(${size / 40})` } : {}}
           >
-            {getInitials(name)}
+            {initials}
           </span>
         )}
         <div className={classes.overlay}>
