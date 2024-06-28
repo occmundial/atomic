@@ -1,3 +1,17 @@
+# [3.0.0-beta.25](https://github.com/occmundial/atomic/compare/v3.0.0-beta.24...v3.0.0-beta.25) (2024-06-28)
+
+
+### Bug Fixes
+
+* Handle key press on Avatar ([eb38c23](https://github.com/occmundial/atomic/commit/eb38c238c07c205998d0558687afe85dcc115a29))
+* Modify structure, styles,behavior and props of Avatar ([79f3d9f](https://github.com/occmundial/atomic/commit/79f3d9fdb3430dbb474cafb867f99ceda5fb9d12))
+* Resolve conflicts with beta ([f749ea6](https://github.com/occmundial/atomic/commit/f749ea6d9752bc6a3023069cc56cdacfe96118c3))
+
+
+### Features
+
+* Update alert with new design tokens and add new props ([36cc3de](https://github.com/occmundial/atomic/commit/36cc3de4c0ecafd9d4516d11f27d9bb21b4bb4a4))
+
 # [3.0.0-beta.24](https://github.com/occmundial/atomic/compare/v3.0.0-beta.23...v3.0.0-beta.24) (2024-06-26)
 
 
