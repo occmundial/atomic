@@ -28,6 +28,7 @@ import PillGroup from './Pill/Group'
 import PillChoice from './Pill/Choice'
 import PillStack from './Pill/Stack'
 import Toggle from '@/components/Toggle'
+import AlertSmall from './Alert/Small'
 import Checkbox from '@/components/Checkbox'
 
 const mdxComponents = {
@@ -46,9 +47,6 @@ const mdxComponents = {
   Radio,
   Droplist,
   Checkbox,
-  PillGroup,
-  PillChoice,
-  PillStack,
   colorsNew,
   // Docs components
   Demo,
@@ -100,7 +98,11 @@ const mdxComponents = {
       children: props.children
     }),
   a: Anchor,
-  blockquote: Alert
+  blockquote: Alert,
+  PillGroup,
+  PillChoice,
+  PillStack,
+  AlertSmall
 }
 
 export default mdxComponents
