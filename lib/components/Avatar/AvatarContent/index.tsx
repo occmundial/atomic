@@ -13,13 +13,10 @@ export interface AvatarContentProps {
   disabled?: boolean
 }
 
-const capitalLetter = name => {
+const getInitials = name => {
   if (name) {
-    let capitals = name.toUpperCase().split(' ')
-    capitals = capitals.filter(Boolean)
-    return `${capitals[0] ? capitals[0].charAt(0) : 'N'}${
-      capitals[1] ? capitals[1].charAt(0) : 'O'
-    }`
+    const [firstName, lastName] = name.toUpperCase().split(' ')
+    return `${firstName?.charAt(0) || 'N'}${lastName?.charAt(0) || 'O'}`
   }
   return ''
 }
@@ -33,19 +30,6 @@ const AvatarContent = ({
   disabled
 }: AvatarContentProps) => {
   const classes = useStyles()
-  const edit = (
-    <Icon
-      iconName="camera"
-      className={classes.camera}
-      color={
-        disabled
-          ? newColors.icon.default.disabled
-          : newColors.icon.brand.default
-      }
-      size={24}
-      style={size ? { transform: `scale(${size / 40})` } : {}}
-    />
-  )
   return (
     <div className={classes.wrap}>
       <div
@@ -79,12 +63,12 @@ const AvatarContent = ({
         )}
         {name && (
           <span
-            className={classnames(classes.capital, {
-              [classes.disabledCapital]: disabled
+            className={classnames(classes.initials, {
+              [classes.disabledInitials]: disabled
             })}
             style={size ? { transform: `scale(${size / 40})` } : {}}
           >
-            {capitalLetter(name)}
+            {getInitials(name)}
           </span>
         )}
         <div className={classes.overlay}>

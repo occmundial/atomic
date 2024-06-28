@@ -26,7 +26,7 @@ export default createUseStyles({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  capital: {
+  initials: {
     display: 'inline-block',
     font: objectToFontValue(fonts['body-regular-strong']),
     color: text.indigo.primary,
@@ -41,7 +41,7 @@ export default createUseStyles({
       opacity: 1
     }
   },
-  disabledCapital: {
+  disabledInitials: {
     color: text.corp.disabled
   },
   clickable: {
