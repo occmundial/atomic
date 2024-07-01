@@ -1,20 +1,18 @@
 import React, { EventHandler, SyntheticEvent } from 'react'
 import classnames from 'classnames'
 
-import Text from '@/components/Text'
 import Icon from '@/components/Icon'
+import Button from '@/components/Button'
 import Flexbox from '@/components/Flexbox'
-import colors from '@/tokens/colors'
+import colors from '@/tokens/future/colors.json'
 
 import useStyles from './styles'
-import useIcon from '@/hooks/useIcon'
-
 interface ToastAction {
   onClick: EventHandler<SyntheticEvent>
   label: string
 }
 
-type ToastTheme = 'success' | 'error' | 'info' | 'warning'
+type ToastTheme = 'success' | 'error' | 'info' | 'warning' | 'promote'
 
 export interface ToastType {
   type?: ToastTheme
@@ -22,8 +20,10 @@ export interface ToastType {
   description?: string
   action?: ToastAction
   hasIcon?: boolean
+  closeIcon?: boolean
   closing?: boolean
   timer?: 'normal' | 'longer'
+  testId?: string
 }
 
 interface ToastProps extends Omit<ToastType, 'type'> {
@@ -33,33 +33,35 @@ interface ToastProps extends Omit<ToastType, 'type'> {
   resumeTimer: EventHandler<SyntheticEvent>
 }
 
+const icons = {
+  info: 'info-circle',
+  warning: 'alert',
+  success: 'check-circle',
+  error: 'x-circle'
+}
+
+const colorTextClasses = {
+  info: 'textInfo',
+  promote: 'textPromote',
+  warning: 'textWarning',
+  success: 'textSuccess',
+  error: 'textError'
+}
+
 const Toast = ({
   theme,
   title,
   description,
   action,
-  hasIcon,
+  closeIcon,
   closing,
   onClose,
   pauseTimer,
-  resumeTimer
+  resumeTimer,
+  testId
 }: ToastProps) => {
   const classes = useStyles()
-  const getIcon = useIcon()
-  const getIconData = () => {
-    switch (theme) {
-      case 'success':
-        return { icon: 'check', color: colors.bgWhite }
-      case 'error':
-        return { icon: getIcon('warning', 'alert'), color: colors.bgWhite }
-      case 'info':
-        return { icon: 'info', color: colors.bgWhite }
-      case 'warning':
-        return { icon: getIcon('warning', 'alert'), color: colors.grey900 }
-    }
-  }
-  const textColor = theme === 'warning' ? {} : { white: true }
-  const iconData = hasIcon ? getIconData() : null
+
   const onActionClick = action => {
     action.onClick()
     onClose()
@@ -69,43 +71,74 @@ const Toast = ({
       className={classnames(classes.toast, classes[theme], {
         [classes.closing]: closing
       })}
-      onMouseEnter={pauseTimer}
-      onMouseLeave={resumeTimer}
+      {...(!closeIcon && { onMouseEnter: pauseTimer })}
+      {...(!closeIcon && { onMouseLeave: resumeTimer })}
     >
-      <Flexbox display="flex" className={classes.content}>
-        <Flexbox display="flex" alignItems="center">
-          {hasIcon && (
+      <Flexbox display="flex" justifyContent="between">
+        <Flexbox display="flex" alignItems="center" alignSelf="center" flex="1">
+          {theme !== 'promote' && (
             <Icon
-              iconName={iconData.icon}
-              color={iconData.color}
+              iconName={icons[theme]}
+              color={
+                theme === 'info'
+                  ? colors.icon.brand.default
+                  : colors.icon[theme]
+              }
               className={classes.icon}
             />
           )}
-          <Flexbox flex="1">
-            {title && (
-              <Text subheading {...textColor}>
+          <Flexbox
+            display="flex"
+            flex="1"
+            className={classes.content}
+            alignSelf="start"
+            justifyContent="between"
+          >
+            <Flexbox display="flex" direction="col">
+              <p
+                className={`${classes.title} ${
+                  classes[colorTextClasses[theme]]
+                }`}
+              >
                 {title}
-              </Text>
-            )}
-            {description && <Text {...textColor}>{description}</Text>}
+              </p>
+              {description && (
+                <p
+                  className={`${classes.description} ${
+                    classes[colorTextClasses[theme]]
+                  }`}
+                >
+                  {description}
+                </p>
+              )}
+            </Flexbox>
+            {action ? (
+              <a
+                className={`${classes.actionText} ${
+                  classes[colorTextClasses[theme]]
+                }`}
+                onClick={() => onActionClick(action)}
+                {...(testId && {
+                  'data-testid': `${testId}__link`
+                })}
+              >
+                {action.label}
+              </a>
+            ) : null}
           </Flexbox>
         </Flexbox>
-        {action && (
-          <button
-            className={classes.action}
-            onClick={() => onActionClick(action)}
-          >
-            <Flexbox
-              display="flex"
-              alignItems="center"
-              className={classes.actionWrap}
-            >
-              <Text {...textColor} strong className={classes.actionText}>
-                {action.label}
-              </Text>
-            </Flexbox>
-          </button>
-        )}
+        {!action && closeIcon ? (
+          <Button
+            onClick={onClose}
+            className={classes.closeIcon}
+            iconLeft="x"
+            size="md"
+            theme={theme === 'promote' ? 'ghostWhite' : 'ghostGrey'}
+            {...(testId && {
+              testId: `${testId}__close-icon`
+            })}
+          />
+        ) : null}
       </Flexbox>
     </div>
   )

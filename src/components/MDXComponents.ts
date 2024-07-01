@@ -29,6 +29,8 @@ import PillChoice from './Pill/Choice'
 import PillStack from './Pill/Stack'
 import Toggle from '@/components/Toggle'
 import Checkbox from '@/components/Checkbox'
+import Toaster from '@/components/Toaster'
+import SimpleToaster from './Toaster/Simple'
 
 const mdxComponents = {
   // Library components
@@ -50,6 +52,7 @@ const mdxComponents = {
   PillChoice,
   PillStack,
   colorsNew,
+  Toaster,
   // Docs components
   Demo,
   code: Code,
@@ -60,6 +63,7 @@ const mdxComponents = {
   td: Td,
   hr: Hr,
   p: Text,
+  SimpleToaster,
   h1: props =>
     createElement(Text, {
       tag: 'h1',
