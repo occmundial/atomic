@@ -24,6 +24,14 @@ const colorTextClasses = {
   error: 'textError'
 }
 
+const colorLinkClasses = {
+  info: 'linkInfo',
+  promote: 'linkPromote',
+  warning: 'linkWarning',
+  success: 'linkSuccess',
+  error: 'linkError'
+}
+
 interface AlertAction {
   href?: string
   target?: string
@@ -97,7 +105,7 @@ const Alert = ({
             />
             {cta && (
               <a
-                className={`${classes.cta} ${classes[colorTextClasses[theme]]}${
+                className={`${classes.cta} ${classes[colorLinkClasses[theme]]}${
                   size === 'large' && banner
                     ? ` ${classes.ctaBanner}`
                     : size === 'large'

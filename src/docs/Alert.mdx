@@ -111,7 +111,13 @@ function Component() {
 You can pass size small prop when on mobile devices.
 
 <Demo title="Alert with bold text" background={colors.bgGrey}>
-  <AlertSmall />
+  <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
+    <AlertSmall theme="info" />
+    <AlertSmall theme="warning" />
+    <AlertSmall theme="success" />
+    <AlertSmall theme="error" />
+    <AlertSmall theme="promote" />
+  </div>
 </Demo>
 
 ```jsx
@@ -119,23 +125,93 @@ You can pass size small prop when on mobile devices.
 function Component() {
   const windowSize = useWindowSize()
   return (
-    <Alert
-      icon
-      theme="info"
-      onClose={() => alert('Closing Alert')}
-      size={windowSize.width < grid.xs ? 'small' : 'large'}
-      cta={{
-        href: 'https://www.google.com',
-        target: '_blank',
-        text: 'Click here.',
-        onClick: () => alert('CTA Clicked')
-      }}
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat
-    </Alert>
+    <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
+      <Alert
+        icon
+        theme="info"
+        onClose={() => alert('Closing Alert')}
+        size={windowSize.width < grid.xs ? 'small' : 'large'}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat
+      </Alert>
+      <Alert
+        icon
+        theme="warning"
+        onClose={() => alert('Closing Alert')}
+        size={windowSize.width < grid.xs ? 'small' : 'large'}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat
+      </Alert>
+      <Alert
+        icon
+        theme="success"
+        onClose={() => alert('Closing Alert')}
+        size={windowSize.width < grid.xs ? 'small' : 'large'}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat
+      </Alert>
+      <Alert
+        icon
+        theme="error"
+        onClose={() => alert('Closing Alert')}
+        size={windowSize.width < grid.xs ? 'small' : 'large'}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat
+      </Alert>
+      <Alert
+        icon
+        theme="promote"
+        onClose={() => alert('Closing Alert')}
+        size={windowSize.width < grid.xs ? 'small' : 'large'}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat
+      </Alert>
+    </div>
   )
 }
 ```
