@@ -1,3 +1,10 @@
+# [3.0.0-beta.26](https://github.com/occmundial/atomic/compare/v3.0.0-beta.25...v3.0.0-beta.26) (2024-07-05)
+
+
+### Bug Fixes
+
+* Add hover styles to alert link action ([42f74a4](https://github.com/occmundial/atomic/commit/42f74a479b201dae6ecc445ef8af0bfbd36b550f))
+
 # [3.0.0-beta.25](https://github.com/occmundial/atomic/compare/v3.0.0-beta.24...v3.0.0-beta.25) (2024-06-28)
 
 
