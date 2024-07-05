@@ -69,6 +69,11 @@ export class ToastLauncher {
     toast.type = 'info'
     this.addToast(toast)
   }
+
+  promote(toast: ToastType) {
+    toast.type = 'promote'
+    this.addToast(toast)
+  }
 }
 
 export const toastLauncher = new ToastLauncher()

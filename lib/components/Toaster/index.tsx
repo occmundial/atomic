@@ -89,6 +89,7 @@ const Toaster = ({ container }: ToasterProps) => {
             title={toast.title}
             theme={toast.type}
             action={toast.action}
+            closeIcon={toast.closeIcon}
             hasIcon={toast.hasIcon}
             closing={toast.closing}
             onClose={() => onClose(toast)}
