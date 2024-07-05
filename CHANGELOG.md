@@ -1,3 +1,15 @@
+# [3.0.0-beta.27](https://github.com/occmundial/atomic/compare/v3.0.0-beta.26...v3.0.0-beta.27) (2024-07-05)
+
+
+### Bug Fixes
+
+* Align title if not description ([3b5120b](https://github.com/occmundial/atomic/commit/3b5120b31f9980945d7050074e552ad27bf74ecd))
+
+
+### Features
+
+* Update toaster with new design tokens ([9cd59f7](https://github.com/occmundial/atomic/commit/9cd59f72f1c08d6a6e35ad12c2db439a2ce7c777))
+
 # [3.0.0-beta.26](https://github.com/occmundial/atomic/compare/v3.0.0-beta.25...v3.0.0-beta.26) (2024-07-05)
 
 
