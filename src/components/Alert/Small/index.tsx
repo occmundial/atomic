@@ -2,12 +2,16 @@ import Alert from '@/components/Alert'
 import useWindowSize from '@/hooks/useWindowSize'
 import grid from '@/tokens/grid'
 
-const AlertSmall = () => {
+interface AlertSmallProps {
+  theme: 'info' | 'warning' | 'success' | 'error' | 'promote'
+}
+
+const AlertSmall = ({ theme }: AlertSmallProps) => {
   const windowSize = useWindowSize()
   return (
     <Alert
       icon
-      theme="info"
+      theme={theme}
       onClose={() => alert('Closing Alert')}
       size={windowSize.width < grid.xs ? 'small' : 'large'}
       cta={{
