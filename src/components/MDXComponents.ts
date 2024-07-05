@@ -28,9 +28,11 @@ import PillGroup from './Pill/Group'
 import PillChoice from './Pill/Choice'
 import PillStack from './Pill/Stack'
 import Toggle from '@/components/Toggle'
+import AlertSmall from './Alert/Small'
 import Checkbox from '@/components/Checkbox'
 import Toaster from '@/components/Toaster'
 import SimpleToaster from './Toaster/Simple'
+import Avatar from '@/components/Avatar'
 
 const mdxComponents = {
   // Library components
@@ -48,9 +50,7 @@ const mdxComponents = {
   Radio,
   Droplist,
   Checkbox,
-  PillGroup,
-  PillChoice,
-  PillStack,
+  Avatar,
   colorsNew,
   Toaster,
   // Docs components
@@ -104,7 +104,11 @@ const mdxComponents = {
       children: props.children
     }),
   a: Anchor,
-  blockquote: Alert
+  blockquote: Alert,
+  PillGroup,
+  PillChoice,
+  PillStack,
+  AlertSmall
 }
 
 export default mdxComponents

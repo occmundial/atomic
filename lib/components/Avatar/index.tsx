@@ -10,35 +10,65 @@ export interface AvatarProps extends AvatarContentProps {
   style?: CSSProperties
 }
 
-const DEFAULT_SIZE = 70
-
 const Avatar = ({
   photo,
-  gender,
   name,
-  size,
+  size = 40,
   id,
   className,
-  style
+  style,
+  onEdit,
+  onClick,
+  disabled
 }: AvatarProps) => {
   const classes = useStyles()
+  const isEditable = onEdit || onClick
+  const handleClick = isEditable ? onClick || onEdit : undefined
+  const tabIndexValue = isEditable && !disabled ? 0 : undefined
+
+  const combinedClasses = classnames(
+    classes.circle,
+    { [classes.editable]: isEditable },
+    { [classes.disabled]: disabled },
+    className
+  )
+
+  const handleKeyDown = e => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      e.preventDefault()
+    }
+  }
+
+  const handleKeyUp = e => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      handleClick()
+    }
+  }
+
   return (
     <div
       id={id}
-      className={classnames(classes.circle, className)}
+      className={combinedClasses}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      onKeyUp={handleKeyUp}
+      tabIndex={tabIndexValue}
       style={{
         ...style,
-        width: size || DEFAULT_SIZE,
-        height: size || DEFAULT_SIZE
+        width: size,
+        height: size
       }}
     >
-      <AvatarContent photo={photo} gender={gender} name={name} size={size} />
+      <AvatarContent
+        photo={photo}
+        name={name}
+        size={size}
+        onEdit={onEdit}
+        onClick={onClick}
+        disabled={disabled}
+      />
     </div>
   )
-}
-
-Avatar.defaultProps = {
-  size: 70
 }
 
 export default Avatar

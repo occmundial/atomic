@@ -1,10 +1,11 @@
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
 import classnames from 'classnames'
 
 import Text from '@/components/Text'
 import Flexbox from '@/components/Flexbox'
 
 import useStyles from './styles'
+import Button from '@/components/Button'
 
 interface DemoProps {
   children: ReactNode
@@ -14,6 +15,7 @@ interface DemoProps {
 
 export default function Demo({ children, background, title }: DemoProps) {
   const classes = useStyles()
+  const [show, setShow] = useState(true)
 
   return (
     <div className={classes.container}>
@@ -31,10 +33,17 @@ export default function Demo({ children, background, title }: DemoProps) {
             {title}
           </Text>
         )}
+        <Button
+          iconLeft={show ? 'chevron-up' : 'chevron-down'}
+          theme="ghost"
+          onClick={() => setShow(!show)}
+        />
       </Flexbox>
-      <div className={classes.screen} style={{ background }}>
-        {children}
-      </div>
+      {show && (
+        <div className={classes.screen} style={{ background }}>
+          {children}
+        </div>
+      )}
     </div>
   )
 }

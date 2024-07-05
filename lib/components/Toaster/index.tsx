@@ -46,7 +46,7 @@ const Toaster = ({ container }: ToasterProps) => {
         : defaultTime
       timer.current = new Timer(() => {
         onClose(toast)
-      }, 20000000)
+      }, time)
     },
     [timer, onClose]
   )
