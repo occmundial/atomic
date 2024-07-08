@@ -133,9 +133,6 @@ export default createUseStyles({
     display: 'inline-block',
     margin: 0
   },
-  textContainer: {
-    flex: 1
-  },
   growText: {
     flexGrow: 1
   },

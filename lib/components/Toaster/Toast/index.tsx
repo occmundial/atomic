@@ -48,6 +48,14 @@ const colorTextClasses = {
   error: 'textError'
 }
 
+const colorLinkClasses = {
+  info: 'linkInfo',
+  promote: 'linkPromote',
+  warning: 'linkWarning',
+  success: 'linkSuccess',
+  error: 'linkError'
+}
+
 const Toast = ({
   theme,
   title,
@@ -115,7 +123,7 @@ const Toast = ({
             {action ? (
               <a
                 className={`${classes.actionText} ${
-                  classes[colorTextClasses[theme]]
+                  classes[colorLinkClasses[theme]]
                 }`}
                 onClick={() => onActionClick(action)}
                 {...(testId && {

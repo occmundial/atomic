@@ -40,7 +40,28 @@ The Toaster component allows you to trigger any of the predefined types of alert
 <Toaster />
 
 <Demo title='Success' background={colors.white}>
-  <SimpleToaster theme='success' />
+  <div style={{ display: 'flex', gap: '8px', flexDirection: 'row'}}>
+    <SimpleToaster
+      btnText='Success'
+      theme='success'
+    />
+    <SimpleToaster
+      btnText='Warning'
+      theme='warning'
+    />
+    <SimpleToaster
+      btnText='Info'
+      theme='info'
+    />
+    <SimpleToaster
+      btnText='Error'
+      theme='error'
+    />
+    <SimpleToaster
+      btnText='Promote'
+      theme='promote'
+    />
+  </div>
 </Demo>
 
 ```jsx
@@ -57,51 +78,8 @@ function Component() {
           })
         }
       >
-        Launch toast
+        Success
       </Button>
-      <Toaster container={document.body} />
-    </Fragment>
-  );
-}
-```
-
-<Demo title='Info' background={colors.white}>
-  <SimpleToaster theme='info' />
-</Demo>
-
-```jsx
-import { Toaster, toastLauncher } from "@occmundial/atomic/components";
-
-// Info
-function Component() {
-  return (
-    <Fragment>
-      <Button
-        onClick={() =>
-          toastLauncher.info({
-            title: "Simple toast",
-          })
-        }
-      >
-        Launch toast
-      </Button>
-      <Toaster container={document.body} />
-    </Fragment>
-  );
-}
-```
-
-<Demo title='Warning' background={colors.white}>
-  <SimpleToaster theme='warning' />
-</Demo>
-
-```jsx
-import { Toaster, toastLauncher } from "@occmundial/atomic/components";
-
-// Warning
-function Component() {
-  return (
-    <Fragment>
       <Button
         onClick={() =>
           toastLauncher.warning({
@@ -109,25 +87,17 @@ function Component() {
           })
         }
       >
-        Launch toast
+        Warning
       </Button>
-      <Toaster container={document.body} />
-    </Fragment>
-  );
-}
-```
-
-<Demo title='Error' background={colors.white}>
-  <SimpleToaster theme='error' />
-</Demo>
-
-```jsx
-import { Toaster, toastLauncher } from "@occmundial/atomic/components";
-
-// Error
-function Component() {
-  return (
-    <Fragment>
+      <Button
+        onClick={() =>
+          toastLauncher.info({
+            title: "Simple toast",
+          })
+        }
+      >
+        Info
+      </Button>
       <Button
         onClick={() =>
           toastLauncher.error({
@@ -135,25 +105,8 @@ function Component() {
           })
         }
       >
-        Launch toast
+        Error
       </Button>
-      <Toaster container={document.body} />
-    </Fragment>
-  );
-}
-```
-
-<Demo title='Promote' background={colors.white}>
-  <SimpleToaster theme='promote' />
-</Demo>
-
-```jsx
-import { Toaster, toastLauncher } from "@occmundial/atomic/components";
-
-// Promote
-function Component() {
-  return (
-    <Fragment>
       <Button
         onClick={() =>
           toastLauncher.promote({
@@ -161,7 +114,7 @@ function Component() {
           })
         }
       >
-        Launch toast
+        Promote
       </Button>
       <Toaster container={document.body} />
     </Fragment>
@@ -169,16 +122,42 @@ function Component() {
 }
 ```
 
-### Other
+### Others
 
 <Demo title='Toast with description' background={colors.white}>
-  <SimpleToaster theme='success' description='This is a description text' />
+  <div style={{ display: 'flex', gap: '8px', flexDirection: 'row'}}>
+    <SimpleToaster
+      btnText='Success'
+      theme='success'
+      description='This is a description text'
+    />
+    <SimpleToaster
+      btnText='Warning'
+      theme='warning'
+      description='This is a description text'
+    />
+    <SimpleToaster
+      btnText='Info'
+      theme='info'
+      description='This is a description text'
+    />
+    <SimpleToaster
+      btnText='Error'
+      theme='error'
+      description='This is a description text'
+    />
+    <SimpleToaster
+      btnText='Promote'
+      theme='promote'
+      description='This is a description text'
+    />
+  </div>
 </Demo>
 
 ```jsx
 import { Toaster, toastLauncher } from "@occmundial/atomic/components";
 
-// Promote
+// Description
 function Component() {
   return (
     <Fragment>
@@ -199,11 +178,38 @@ function Component() {
 ```
 
 <Demo title='Toast with close icon' background={colors.white}>
-  <SimpleToaster
-    theme='success'
-    description='This is a description text'
-    closeIcon
-  />
+  <div style={{ display: 'flex', gap: '8px', flexDirection: 'row'}}>
+    <SimpleToaster
+      btnText='Success'
+      theme='success'
+      description='This is a description text'
+      closeIcon
+    />
+    <SimpleToaster
+      btnText='Warning'
+      theme='warning'
+      description='This is a description text'
+      closeIcon
+    />
+    <SimpleToaster
+      btnText='Info'
+      theme='info'
+      description='This is a description text'
+      closeIcon
+    />
+    <SimpleToaster
+      btnText='Error'
+      theme='error'
+      description='This is a description text'
+      closeIcon
+    />
+    <SimpleToaster
+      btnText='Promote'
+      theme='promote'
+      description='This is a description text'
+      closeIcon
+    />
+  </div>
 </Demo>
 
 ```jsx
@@ -231,17 +237,44 @@ function Component() {
 ```
 
 <Demo title='Toast with an action' background={colors.white}>
-  <SimpleToaster
-    theme='success'
-    description='This is a description text'
-    action
-  />
+  <div style={{ display: 'flex', gap: '8px', flexDirection: 'row'}}>
+    <SimpleToaster
+      btnText='Success'
+      theme='success'
+      description='This is a description text'
+      action
+    />
+    <SimpleToaster
+      btnText='Warning'
+      theme='warning'
+      description='This is a description text'
+      action
+    />
+    <SimpleToaster
+      btnText='Info'
+      theme='info'
+      description='This is a description text'
+      action
+    />
+    <SimpleToaster
+      btnText='Error'
+      theme='error'
+      description='This is a description text'
+      action
+    />
+    <SimpleToaster
+      btnText='Promote'
+      theme='promote'
+      description='This is a description text'
+      action
+    />
+  </div>
 </Demo>
 
 ```jsx
 import { Toaster, toastLauncher } from "@occmundial/atomic/components";
 
-// Close icon
+// Action link
 function Component() {
   return (
     <Fragment>
