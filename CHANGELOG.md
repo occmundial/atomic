@@ -1,3 +1,10 @@
+# [3.0.0-beta.29](https://github.com/occmundial/atomic/compare/v3.0.0-beta.28...v3.0.0-beta.29) (2024-07-08)
+
+
+### Bug Fixes
+
+* Add hover styles for link in toaster ([3f85bde](https://github.com/occmundial/atomic/commit/3f85bde1e3e9788e3827fd2ca9cec1a0cf43383a))
+
 # [3.0.0-beta.28](https://github.com/occmundial/atomic/compare/v3.0.0-beta.27...v3.0.0-beta.28) (2024-07-08)
 
 
