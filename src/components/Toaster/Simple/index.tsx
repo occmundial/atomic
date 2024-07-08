@@ -3,7 +3,13 @@ import React, { Fragment } from 'react'
 import Button from '@/components/Button'
 import { toastLauncher } from '@/components/Toaster/helper'
 
-const SimpleToaster = ({ theme, description, closeIcon, action }) => {
+const SimpleToaster = ({
+  btnText = '',
+  theme,
+  description,
+  closeIcon,
+  action
+}) => {
   const toast = {
     title: 'Simple toast',
     description,
@@ -38,7 +44,7 @@ const SimpleToaster = ({ theme, description, closeIcon, action }) => {
 
   return (
     <Fragment>
-      <Button onClick={onClick}>Launch toast</Button>
+      <Button onClick={onClick}>{btnText || 'Launch toast'}</Button>
     </Fragment>
   )
 }

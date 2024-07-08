@@ -93,9 +93,9 @@ const Alert = ({
             display="flex"
             direction={size === 'small' ? 'col' : 'row'}
             justifyContent={banner ? 'center' : 'start'}
-            className={`${classes.textContainer}${
-              banner ? ` ${classes.maxWidth}` : ''
-            }`}
+            alignSelf="center"
+            flex="1"
+            className={banner ? ` ${classes.maxWidth}` : ''}
           >
             <AlertText
               classes={`${classes.normalText} ${
