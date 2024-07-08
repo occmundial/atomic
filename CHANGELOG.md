@@ -1,3 +1,11 @@
+# [3.0.0-beta.28](https://github.com/occmundial/atomic/compare/v3.0.0-beta.27...v3.0.0-beta.28) (2024-07-08)
+
+
+### Bug Fixes
+
+* Changed outline with shadow ([8700b64](https://github.com/occmundial/atomic/commit/8700b646b1b2781db8147b0fb026c79497656534))
+* Changed tag border to outline ([ccc66c3](https://github.com/occmundial/atomic/commit/ccc66c31625d98e81d4c290c8c5aab00257926b7))
+
 # [3.0.0-beta.27](https://github.com/occmundial/atomic/compare/v3.0.0-beta.26...v3.0.0-beta.27) (2024-07-05)
 
 
