@@ -61,7 +61,7 @@ export default createUseStyles({
   featured: {
     color: text.white.primary,
     background: tag.featured.bg,
-    border: `1px solid ${tag.featured.border}`,
+    boxShadow: `inset 0px 0px 0px 1px ${tag.featured.border}`,
     '& $icon': {
       color: icon.inverse.default
     }
@@ -69,7 +69,7 @@ export default createUseStyles({
   promo: {
     color: text.white.primary,
     background: tag.promo.bg,
-    border: `1px solid ${tag.promo.border}`,
+    boxShadow: `inset 0px 0px 0px 1px ${tag.promo.border}`,
     '& $icon': {
       color: icon.inverse.default
     }
@@ -77,7 +77,7 @@ export default createUseStyles({
   success: {
     color: text.success,
     background: tag.success.bg,
-    border: `1px solid ${tag.success.border}`,
+    boxShadow: `inset 0px 0px 0px 1px ${tag.success.border}`,
     '& $icon': {
       color: icon.success
     }
@@ -85,7 +85,7 @@ export default createUseStyles({
   info: {
     color: text.indigo.primary,
     background: tag.info.bg,
-    border: `1px solid ${tag.info.border}`,
+    boxShadow: `inset 0px 0px 0px 1px ${tag.info.border}`,
     '& $icon': {
       color: icon.brand.bold
     }
@@ -93,7 +93,7 @@ export default createUseStyles({
   warning: {
     color: text.warning,
     background: tag.warning.bg,
-    border: `1px solid ${tag.warning.border}`,
+    boxShadow: `inset 0px 0px 0px 1px ${tag.warning.border}`,
     '& $icon': {
       color: icon.warning
     }
@@ -101,7 +101,7 @@ export default createUseStyles({
   error: {
     color: text.error,
     background: tag.error.bg,
-    border: `1px solid ${tag.error.border}`,
+    boxShadow: `inset 0px 0px 0px 1px ${tag.error.border}`,
     '& $icon': {
       color: icon.error
     }
