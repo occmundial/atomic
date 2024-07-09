@@ -108,7 +108,7 @@ export default createUseStyles({
   },
   icon: {
     display: 'inline-block',
-    paddingRight: spacing['size-1'],
+    marginRight: spacing['size-1'],
     content: '""',
     paddingBottom: 0,
     left: 0,
