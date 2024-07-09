@@ -1,3 +1,11 @@
+# [3.0.0-beta.30](https://github.com/occmundial/atomic/compare/v3.0.0-beta.29...v3.0.0-beta.30) (2024-07-09)
+
+
+### Bug Fixes
+
+* Remove extra padding in label ([03f17af](https://github.com/occmundial/atomic/commit/03f17afb904f9e129dbd6eca4db4653b7eaa17ef))
+* Undo padding change ([d3c2b56](https://github.com/occmundial/atomic/commit/d3c2b567eb8746bb7528c40b916223f41ff9a107))
+
 # [3.0.0-beta.29](https://github.com/occmundial/atomic/compare/v3.0.0-beta.28...v3.0.0-beta.29) (2024-07-08)
 
 
