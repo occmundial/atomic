@@ -3,7 +3,6 @@ import classnames from 'classnames'
 
 import Flexbox from '@/components/Flexbox'
 import Icon from '@/components/Icon'
-import spacing from '@/tokens/future/spacing.json'
 import useStyles from './styles'
 
 export interface TagProps {
@@ -47,12 +46,7 @@ const Tag = ({
     >
       <Flexbox display="flex" alignItems="center" wrap="noWrap">
         {iconName && <Icon iconName={iconName} className={classes.icon} />}
-        <span
-          className={classes.tagText}
-          style={{ paddingRight: iconName ? spacing['size-1'] : 0 }}
-        >
-          {children}
-        </span>
+        <span className={classes.tagText}>{children}</span>
       </Flexbox>
     </label>
   )
