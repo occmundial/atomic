@@ -1,3 +1,10 @@
+# [3.0.0-beta.31](https://github.com/occmundial/atomic/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2024-07-10)
+
+
+### Bug Fixes
+
+* Change icon close size to md ([225802b](https://github.com/occmundial/atomic/commit/225802b31c4b361371cf556e3412dbc1b7ca0729))
+
 # [3.0.0-beta.30](https://github.com/occmundial/atomic/compare/v3.0.0-beta.29...v3.0.0-beta.30) (2024-07-09)
 
 
