@@ -127,6 +127,7 @@ const Alert = ({
         {onClose && (
           <Button
             onClick={onClose}
+            size="md"
             className={
               size === 'small'
                 ? classes.closeIconSmallMargin
