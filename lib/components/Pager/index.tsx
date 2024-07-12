@@ -21,18 +21,18 @@ interface PagerProps {
   nextLabel?: string
   onPageChange?: (selected: number) => void
   hideNumbers?: boolean
-  breakLabel?: string
+  breakSymbol?: string
   className?: string
 }
 
 const Pager = ({
   currentPage,
-  pageCount,
-  centerPages,
-  marginPages,
-  breakLabel,
-  previousLabel,
-  nextLabel,
+  pageCount = 10,
+  centerPages = 2,
+  marginPages = 3,
+  breakSymbol = '...',
+  previousLabel = 'Previous',
+  nextLabel = 'Next',
   hideNumbers,
   className,
   onPageChange
@@ -144,7 +144,7 @@ const Pager = ({
               />
             )
           }
-          return <Page key={key} page={breakLabel} />
+          return <Page key={key} page={breakSymbol} />
         })}
       <Button
         className={classes.next}
@@ -158,15 +158,6 @@ const Pager = ({
       </Button>
     </div>
   )
-}
-
-Pager.defaultProps = {
-  pageCount: 10,
-  centerPages: 2,
-  marginPages: 3,
-  previousLabel: 'Previous',
-  nextLabel: 'Next',
-  breakLabel: '...'
 }
 
 export default Pager
