@@ -28,8 +28,8 @@ interface PagerProps {
 const Pager = ({
   currentPage,
   pageCount = 10,
-  centerPages = 2,
-  marginPages = 3,
+  centerPages = 3,
+  marginPages = 2,
   breakSymbol = '...',
   previousLabel = 'Previous',
   nextLabel = 'Next',
