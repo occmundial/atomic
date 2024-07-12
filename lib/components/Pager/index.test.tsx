@@ -22,7 +22,7 @@ describe('Button', () => {
         currentPage={1}
         previousLabel="Older"
         nextLabel="Newer"
-        breakLabel="-"
+        breakSymbol="-"
       />
     )
     expect(getByText('Older')).toBeInTheDocument()
