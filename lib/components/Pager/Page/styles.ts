@@ -1,22 +1,43 @@
 import { createUseStyles } from 'react-jss'
 
-import colors from '@/tokens/colors'
+import colors from '@/tokens/future/colors.json'
+import fonts from '@/tokens/future/fonts.json'
+import spacing from '@/tokens/future/spacing.json'
+import borderRadius from '@/tokens/future/borderRadius.json'
+import { objectToFontValue } from '@/utils/font'
 
 export default createUseStyles({
-  li: {
-    display: 'inline-block',
+  page: {
+    display: 'flex',
     cursor: 'pointer',
-    padding: '4px 12px',
-    margin: '0px 16px',
-    transition: '0.3s all',
-    outline: '0',
-    borderRadius: '12px',
+    minWidth: 45,
+    padding: [spacing['size-3'], spacing['size-2']],
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: spacing['size-2'],
+    borderRadius: borderRadius['br-xs'],
+    background: 'transparent',
+    font: objectToFontValue(fonts['button-small']),
+    color: colors.text.corp.secondary,
+    outline: 'none',
+    border: 'none',
     '&:hover': {
-      background: colors.grey100
+      background: colors.bg.action.ghost.hover
+    },
+    '&:active': {
+      background: colors.bg.action.ghost.active
     }
   },
+  static: {
+    pointerEvents: 'none'
+  },
   active: {
-    background: `${colors.prim} !important`,
-    color: colors.white
+    background: `${colors.bg.action.brand.default} !important`,
+    color: `${colors.text.white.primary} !important`
+  },
+  disabled: {
+    pointerEvents: 'none',
+    background: 'transparent',
+    color: colors.text.corp.disabled
   }
 })
