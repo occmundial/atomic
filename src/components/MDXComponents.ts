@@ -33,6 +33,8 @@ import Checkbox from '@/components/Checkbox'
 import Toaster from '@/components/Toaster'
 import SimpleToaster from './Toaster/Simple'
 import Avatar from '@/components/Avatar'
+import Pager from '@/components/Pager'
+import { Function } from './Function'
 
 const mdxComponents = {
   // Library components
@@ -51,6 +53,8 @@ const mdxComponents = {
   Droplist,
   Checkbox,
   Avatar,
+  Pager,
+  Function,
   colorsNew,
   Toaster,
   // Docs components

@@ -1,0 +1,131 @@
+---
+title: Pager
+section: components
+---
+import { useState } from 'react';
+import Demo from '@/utils/components/Demo'
+import { Function } from '@/utils/components/Function'
+import Pager from '@/components/Pager'
+import Button from '@/components/Button'
+
+# Pager
+
+---
+
+- [Props](#Props)
+- [Examples](#Examples)
+  - [Default Pager](#Default-Pager)
+  - [Pager without numbers](#Pager-without-numbers)
+  - [Pager with custom labels](#Pager-with-custom-labels)
+
+A flexible component button, with six pre-stablished themes.
+The button can behave like any button with onClick event, or like an anchor with href and target.
+
+## Props
+
+| Name           | Type                       | Default Value | Description                                       |
+|----------------|----------------------------|---------------|---------------------------------------------------|
+| currentPage    | number                     |               | The current active page number                    |
+| pageCount      | number                     | 10            | The total number of pages                         |
+| centerPages    | number                     |               | The number of pages to display ont he center      |
+| marginPages    | number                     |               | The number of pages to display on the sides       |
+| previousLabel  | string                     |               | The label for the previous button                 |
+| nextLabel      | string                     |               | The label for the next button                     |
+| onPageChange   | (selected: number) => void |               | Callback function triggered when a page is clicked|
+| hideNumbers    | boolean                    |               | Whether to hide the page numbers                  |
+| breakSymbol    | string                     |               | The symbol for the break between page numbers     |
+| className      | string                     |               | Additional CSS class for styling                  |
+
+## Examples
+
+### Default Pager
+<Demo title="Pager">
+  <Function>
+    {() => {
+      const [page, setPage] = useState(1)
+      return (
+        <Pager
+          currentPage={page}
+          onPageChange={setPage}
+        />
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// Simple usage
+function Component() {
+  const [page, setPage] = useState(1)
+  return (
+    <Pager
+      currentPage={page}
+      onPageChange={setPage}
+    />
+  )
+}
+```
+
+### Pager without numbers
+<Demo title="Pager">
+  <Function>
+    {() => {
+      const [page, setPage] = useState(1)
+      return (
+        <Pager
+          currentPage={page}
+          onPageChange={setPage}
+          hideNumbers
+        />
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// Hide numbers
+function Component() {
+  const [page, setPage] = useState(1)
+  return (
+    <Pager
+      currentPage={page}
+      onPageChange={setPage}
+      hideNumbers
+    />
+  )
+}
+```
+
+### Pager with custom labels
+<Demo title="Pager">
+  <Function>
+    {() => {
+      const [page, setPage] = useState(1)
+      return (
+        <Pager
+          currentPage={page}
+          onPageChange={setPage}
+          previousLabel=""
+          nextLabel=""
+          breakSymbol="-"
+        />
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// Custom labels
+function Component() {
+  const [page, setPage] = useState(1)
+  return (
+    <Pager
+      currentPage={page}
+      onPageChange={setPage}
+      previousLabel=""
+      nextLabel=""
+      breakSymbol="-"
+    />
+  )
+}
+```
