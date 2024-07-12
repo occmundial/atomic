@@ -87,7 +87,7 @@ const Button = (props: ButtonProps) => {
     { [classes[size]]: ['md', 'lg'].includes(size) },
     { [classes.block]: block },
     className,
-    { [classes.iconOnly]: !children && iconLeft },
+    { [classes.iconOnly]: !children && (iconLeft || iconRight) },
     { [classes.round]: !children && iconLeft && round }
   )
   const iconSize = size === 'sm' ? 16 : 24
@@ -108,7 +108,9 @@ const Button = (props: ButtonProps) => {
         <Icon
           size={iconSize}
           iconName={iconRight}
-          className={classnames(classes.icon, classes.iconRight)}
+          className={classnames(classes.icon, {
+            [classes.iconRight]: children
+          })}
           transition="none"
         />
       ) : (
