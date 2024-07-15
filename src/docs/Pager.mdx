@@ -67,7 +67,7 @@ function Component() {
 ```
 
 ### Pager without numbers
-<Demo title="Pager">
+<Demo title="Pager without numbers">
   <Function>
     {() => {
       const [page, setPage] = useState(1)
@@ -97,7 +97,7 @@ function Component() {
 ```
 
 ### Pager with custom labels
-<Demo title="Pager">
+<Demo title="Pager with custom labels">
   <Function>
     {() => {
       const [page, setPage] = useState(1)
@@ -125,6 +125,36 @@ function Component() {
       previousLabel=""
       nextLabel=""
       breakSymbol="-"
+    />
+  )
+}
+```
+
+### Disabled pager
+<Demo title="Disabled pager">
+  <Function>
+    {() => {
+      const [page, setPage] = useState(1)
+      return (
+        <Pager
+          currentPage={page}
+          onPageChange={setPage}
+          disabled
+        />
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// Disabled pager
+function Component() {
+  const [page, setPage] = useState(1)
+  return (
+    <Pager
+      currentPage={page}
+      onPageChange={setPage}
+      disabled
     />
   )
 }
