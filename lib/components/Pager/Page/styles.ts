@@ -4,6 +4,7 @@ import colors from '@/tokens/future/colors.json'
 import fonts from '@/tokens/future/fonts.json'
 import spacing from '@/tokens/future/spacing.json'
 import borderRadius from '@/tokens/future/borderRadius.json'
+import shadows from '@/tokens/future/shadows.json'
 import { objectToFontValue } from '@/utils/font'
 
 export default createUseStyles({
@@ -19,6 +20,10 @@ export default createUseStyles({
     background: 'transparent',
     font: objectToFontValue(fonts['button-small']),
     color: colors.text.corp.secondary,
+    transition: '0.3s all',
+    '&:focus-visible': {
+      boxShadow: shadows['focus-corp']
+    },
     outline: 'none',
     border: 'none',
     '&:hover': {
@@ -33,7 +38,8 @@ export default createUseStyles({
   },
   active: {
     background: `${colors.bg.action.brand.default} !important`,
-    color: `${colors.text.white.primary} !important`
+    color: `${colors.text.white.primary} !important`,
+    zIndex: 1
   },
   disabled: {
     pointerEvents: 'none',

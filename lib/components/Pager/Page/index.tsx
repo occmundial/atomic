@@ -20,6 +20,7 @@ const Page = ({ onClick, selected, page }: PageProps) => {
         [classes.static]: !onClick
       })}
       onClick={onClick}
+      tabIndex={onClick ? 0 : -1}
     >
       {page}
     </button>
