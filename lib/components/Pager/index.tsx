@@ -98,11 +98,11 @@ const Pager = ({
         elements.push(addPage(i))
       }
 
-      if (currentPage > marginPages + 1) {
+      const { startPage, endPage } = getStartAndEndPages()
+
+      if (currentPage > marginPages + 1 && startPage > marginPages + 1) {
         elements.push({ key: 'left-break', type: 'break' })
       }
-
-      const { startPage, endPage } = getStartAndEndPages()
 
       for (let i = startPage; i <= endPage; i++) {
         elements.push(addPage(i))
