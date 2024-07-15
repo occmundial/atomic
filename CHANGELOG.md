@@ -1,3 +1,25 @@
+# [3.0.0-beta.32](https://github.com/occmundial/atomic/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2024-07-15)
+
+
+### Bug Fixes
+
+* Add shadow on focus to pagination ([f4fa37e](https://github.com/occmundial/atomic/commit/f4fa37ed022c7d96caaff5eaf619a8ec7249463d))
+* Change default margin and center pages values ([80f900b](https://github.com/occmundial/atomic/commit/80f900b3df7e167860ef943fabd958affa60d2aa))
+* Change iconRight styles in Button ([364aba5](https://github.com/occmundial/atomic/commit/364aba5e363fa2aa802b4ff4eac8e7539d5272e7))
+* Change the break symbol prop name ([96e4742](https://github.com/occmundial/atomic/commit/96e4742fb742c8f9fc609c4ad252bb634fb37080))
+* Insert break in Pager only when there's a page gap ([1296a45](https://github.com/occmundial/atomic/commit/1296a45d4ce990ebfd188ed8b75a68027a8262ce))
+
+
+### Features
+
+* Change styles and behavior of the Pager ([510cadc](https://github.com/occmundial/atomic/commit/510cadc4654e24516c3d13c4375f7a216dc9c7d7))
+
+
+### BREAKING CHANGES
+
+* Rename Pager's prop names.
+The logic and behavior of the Pager has changed too, now is the parent component the responsible for handling the page number, the Pager is only a modifier and no longer has an internal state and management of the current page.
+
 # [3.0.0-beta.31](https://github.com/occmundial/atomic/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2024-07-10)
 
 
