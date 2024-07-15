@@ -10,6 +10,7 @@ type PaginatorElement = {
   key: string
   type: 'page' | 'break'
   selected?: boolean
+  disabled?: boolean
 }
 
 interface PagerProps {
@@ -22,6 +23,7 @@ interface PagerProps {
   onPageChange?: (selected: number) => void
   hideNumbers?: boolean
   breakSymbol?: string
+  disabled?: boolean
   className?: string
 }
 
@@ -34,6 +36,7 @@ const Pager = ({
   previousLabel = 'Previous',
   nextLabel = 'Next',
   hideNumbers,
+  disabled,
   className,
   onPageChange
 }: PagerProps) => {
@@ -124,7 +127,7 @@ const Pager = ({
     <div className={classnames(classes.pager, className)}>
       <Button
         className={classes.prev}
-        disabled={currentPage === 1}
+        disabled={currentPage === 1 || disabled}
         theme="secondary"
         onClick={handlePrevPage}
         iconLeft={getIcon('arrow-left', 'chevron-left')}
@@ -141,14 +144,15 @@ const Pager = ({
                 onClick={() => handlePageSelected(Number(key))}
                 selected={selected}
                 page={Number(key)}
+                disabled={disabled}
               />
             )
           }
-          return <Page key={key} page={breakSymbol} />
+          return <Page key={key} page={breakSymbol} disabled={disabled} />
         })}
       <Button
         className={classes.next}
-        disabled={currentPage === pageCount}
+        disabled={currentPage === pageCount || disabled}
         theme="secondary"
         onClick={handleNextPage}
         iconRight={getIcon('arrow-right', 'chevron-right')}
