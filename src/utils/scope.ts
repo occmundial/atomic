@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
 import * as icons from '@/tokens/icons'
@@ -9,7 +10,8 @@ const scope = {
   spacing,
   icons,
   iconSizes,
-  shadows
+  shadows,
+  useState
 }
 
 export default scope
