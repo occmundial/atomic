@@ -1,3 +1,10 @@
+# [3.0.0-beta.33](https://github.com/occmundial/atomic/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2024-07-15)
+
+
+### Bug Fixes
+
+* Add the disabled property to Pager ([a7a6d4c](https://github.com/occmundial/atomic/commit/a7a6d4c06c0ff995a1cd6c8325f8bac5eaf4f5fa))
+
 # [3.0.0-beta.32](https://github.com/occmundial/atomic/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2024-07-15)
 
 
