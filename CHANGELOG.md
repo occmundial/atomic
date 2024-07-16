@@ -1,3 +1,10 @@
+# [3.0.0-beta.34](https://github.com/occmundial/atomic/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2024-07-16)
+
+
+### Bug Fixes
+
+* Change Pager icons ([1ddf50c](https://github.com/occmundial/atomic/commit/1ddf50cee4ef9783dfdd0c5d74c81f101d0f72fc))
+
 # [3.0.0-beta.33](https://github.com/occmundial/atomic/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2024-07-15)
 
 
