@@ -130,7 +130,7 @@ const Pager = ({
         disabled={currentPage === 1 || disabled}
         theme="secondary"
         onClick={handlePrevPage}
-        iconLeft={getIcon('arrow-left', 'chevron-left')}
+        iconLeft="arrow-left"
         size={!previousLabel ? 'lg' : 'sm'}
       >
         {previousLabel}
@@ -155,7 +155,7 @@ const Pager = ({
         disabled={currentPage === pageCount || disabled}
         theme="secondary"
         onClick={handleNextPage}
-        iconRight={getIcon('arrow-right', 'chevron-right')}
+        iconRight="arrow-right"
         size={!nextLabel ? 'lg' : 'sm'}
       >
         {nextLabel}
