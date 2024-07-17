@@ -1,15 +1,29 @@
 import { createUseStyles } from 'react-jss'
 
 import grid from '@/tokens/grid'
-import spacing from '@/tokens/spacing'
+import spacing from '@/tokens/future/spacing.json'
 
 const styles = {
   col: {
     boxSizing: 'border-box',
     position: 'relative',
     minHeight: '1px',
-    paddingRight: spacing.gutter,
-    paddingLeft: spacing.gutter
+    padding: [0, 6],
+    [`@media (min-width: ${grid.xs}px)`]: {
+      padding: [0, spacing['size-2']]
+    },
+    [`@media (min-width: ${grid.sm}px)`]: {
+      padding: [0, spacing['size-3']]
+    },
+    [`@media (min-width: ${grid.md}px)`]: {
+      padding: [0, spacing['size-3']]
+    },
+    [`@media (min-width: ${grid.lg}px)`]: {
+      padding: [0, spacing['size-3']]
+    },
+    [`@media (min-width: ${grid.xl}px)`]: {
+      padding: [0, spacing['size-3']]
+    }
   }
 }
 

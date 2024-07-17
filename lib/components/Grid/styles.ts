@@ -1,13 +1,13 @@
 import { createUseStyles } from 'react-jss'
 
 import grid from '@/tokens/grid'
-import spacing from '@/tokens/spacing'
+import spacing from '@/tokens/future/spacing.json'
 
 export default createUseStyles({
   conFluid: {
     boxSizing: 'border-box',
-    paddingRight: spacing.gutter,
-    paddingLeft: spacing.gutter,
+    paddingRight: spacing['size-3'],
+    paddingLeft: spacing['size-3'],
     marginRight: 'auto',
     marginLeft: 'auto',
     '&:before, &:after': {
@@ -19,22 +19,22 @@ export default createUseStyles({
     }
   },
   con: {
-    extend: 'conFluid',
-    margin: '0 auto'
+    width: `calc(${grid.full} - ${spacing['size-5']})`,
+    margin: 'auto'
   },
   [`@media (min-width: ${grid.xs}px)`]: {
     con: {
-      width: grid.xsGrid
+      width: `calc(${grid.full} - ${spacing['size-6']})`
     }
   },
   [`@media (min-width: ${grid.sm}px)`]: {
     con: {
-      width: grid.smGrid
+      width: `calc(${grid.full} - ${spacing['size-8']})`
     }
   },
   [`@media (min-width: ${grid.md}px)`]: {
     con: {
-      width: grid.mdGrid
+      width: `calc(${grid.full} - ${spacing['size-10']})`
     }
   },
   [`@media (min-width: ${grid.lg}px)`]: {

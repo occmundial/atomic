@@ -35,6 +35,7 @@ import SimpleToaster from './Toaster/Simple'
 import Avatar from '@/components/Avatar'
 import Pager from '@/components/Pager'
 import { Function } from './Function'
+import { default as Grid } from './Grid'
 
 const mdxComponents = {
   // Library components
@@ -57,6 +58,7 @@ const mdxComponents = {
   Function,
   colorsNew,
   Toaster,
+  Grid,
   // Docs components
   Demo,
   code: Code,

@@ -20,8 +20,6 @@ export default createUseStyles({
     }
   },
   column: {
-    paddingLeft: spacing.gutter,
-    paddingRight: spacing.gutter,
     paddingBottom: spacing.small
   },
   list: {
@@ -57,10 +55,6 @@ export default createUseStyles({
     paddingLeft: 0,
     display: 'block',
     paddingBottom: spacing.tiny
-  },
-  footerBottom: {
-    paddingLeft: spacing.gutter,
-    paddingRight: spacing.gutter
   },
   bottomWrap: {
     paddingTop: spacing.base,

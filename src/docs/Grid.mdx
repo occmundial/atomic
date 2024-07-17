@@ -1,0 +1,98 @@
+---
+title: Grid
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Grid from '@/components/Grid'
+import { spacing } from '@/components/tokens'
+
+# Card
+
+---
+
+Container with a card style.
+
+- [Props](#Props)
+  - [Elevations](#Elevations)
+  - [Raisable](#Raisable)
+  - [NoPadding](#NoPadding)
+
+## Props
+
+| Name        | Type          | Default value | Description                                                      |
+| ----------- | ------------- | ------------- | ---------------------------------------------------------------- |
+| `children`  | **ReactNode** | -             | Children component passed to this container.                     |
+| `rest`      | **boolean**   | -             | The rest prop cancels the elevation of the card.                 |
+| `raised`    | **boolean**   | -             | The raised prop gives a higher elevation to the card.            |
+| `raisable`  | **boolean**   | -             | The raisable prop gives a higher elevation to the card on hover. |
+| `noPadding` | **boolean**   | -             | The card has a default padding, use this prop to remove it.      |
+| `id`        | **string**    | -             | The card component id.                                           |
+| `className` | **string**    | -             | The card component className.                                    |
+| `style`     | **object**    | -             | Object with direct style properties.                             |
+
+## Examples
+
+### Elevations
+
+You can choose from 3 elevation types
+
+<Demo title="Elevations of card" background={colors.bgGrey}>
+  <Grid />
+</Demo>
+
+```jsx
+// How to use elevation
+function Component() {
+  return (
+    Grid style={{ background: colors["bright-blue"][200] }}>
+      <Grid.Row>
+        <Grid.Col
+          xxs={{ col: 3 }}
+        >
+          <Card
+            noPadding={windowSize.width < grid.xs}
+            style={{ textAlign: 'center', borderRadius: 0 }}
+          >
+            {' '}
+            1{' '}
+          </Card>
+        </Grid.Col>
+        <Grid.Col
+          xxs={{ col: 3 }}
+        >
+          <Card
+            noPadding={windowSize.width < grid.xs}
+            style={{ textAlign: 'center', borderRadius: 0 }}
+          >
+            {' '}
+            2{' '}
+          </Card>
+        </Grid.Col>
+        <Grid.Col
+          xxs={{ col: 3 }}
+        >
+          <Card
+            noPadding={windowSize.width < grid.xs}
+            style={{ textAlign: 'center', borderRadius: 0 }}
+          >
+            {' '}
+            3{' '}
+          </Card>
+        </Grid.Col>
+        <Grid.Col
+          xxs={{ col: 3 }}
+        >
+          <Card
+            noPadding={windowSize.width < grid.xs}
+            style={{ textAlign: 'center', borderRadius: 0 }}
+          >
+            {' '}
+            4
+          </Card>
+        </Grid.Col>
+      </Grid.Row>
+    </Grid>
+  )
+}
+```
