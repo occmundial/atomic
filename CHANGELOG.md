@@ -1,3 +1,10 @@
+# [3.0.0-beta.35](https://github.com/occmundial/atomic/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2024-07-19)
+
+
+### Features
+
+* Add testId prop to Pager ([d55079d](https://github.com/occmundial/atomic/commit/d55079dc292c826b58f32a3bc0e1e7ba0a0341fd))
+
 # [3.0.0-beta.34](https://github.com/occmundial/atomic/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2024-07-16)
 
 
