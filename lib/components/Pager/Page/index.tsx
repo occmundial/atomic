@@ -8,9 +8,10 @@ interface PageProps {
   selected?: boolean
   page: number | string
   disabled?: boolean
+  testId?: string
 }
 
-const Page = ({ onClick, selected, page, disabled }: PageProps) => {
+const Page = ({ onClick, selected, page, disabled, testId }: PageProps) => {
   const classes = useStyles()
   return (
     <button
@@ -22,6 +23,7 @@ const Page = ({ onClick, selected, page, disabled }: PageProps) => {
       disabled={disabled}
       onClick={onClick}
       tabIndex={onClick ? 0 : -1}
+      data-testid={testId}
     >
       {page}
     </button>
