@@ -25,6 +25,7 @@ interface PagerProps {
   breakSymbol?: string
   disabled?: boolean
   className?: string
+  testId?: string
 }
 
 const Pager = ({
@@ -38,7 +39,8 @@ const Pager = ({
   hideNumbers,
   disabled,
   className,
-  onPageChange
+  onPageChange,
+  testId
 }: PagerProps) => {
   const classes = useStyles()
 
@@ -124,7 +126,7 @@ const Pager = ({
   }
 
   return (
-    <div className={classnames(classes.pager, className)}>
+    <div className={classnames(classes.pager, className)} data-testid={testId}>
       <Button
         className={classes.prev}
         disabled={currentPage === 1 || disabled}
@@ -132,6 +134,7 @@ const Pager = ({
         onClick={handlePrevPage}
         iconLeft="arrow-left"
         size={!previousLabel ? 'lg' : 'sm'}
+        testId={testId ? `${testId}-prev-button` : undefined}
       >
         {previousLabel}
       </Button>
@@ -145,6 +148,7 @@ const Pager = ({
                 selected={selected}
                 page={Number(key)}
                 disabled={disabled}
+                testId={testId ? `${testId}-page-${key}` : undefined}
               />
             )
           }
@@ -157,6 +161,7 @@ const Pager = ({
         onClick={handleNextPage}
         iconRight="arrow-right"
         size={!nextLabel ? 'lg' : 'sm'}
+        testId={testId ? `${testId}-next-button` : undefined}
       >
         {nextLabel}
       </Button>
