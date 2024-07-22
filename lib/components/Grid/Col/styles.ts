@@ -7,23 +7,7 @@ const styles = {
   col: {
     boxSizing: 'border-box',
     position: 'relative',
-    minHeight: '1px',
-    padding: [0, 6],
-    [`@media (min-width: ${grid.xs}px)`]: {
-      padding: [0, spacing['size-2']]
-    },
-    [`@media (min-width: ${grid.sm}px)`]: {
-      padding: [0, spacing['size-3']]
-    },
-    [`@media (min-width: ${grid.md}px)`]: {
-      padding: [0, spacing['size-3']]
-    },
-    [`@media (min-width: ${grid.lg}px)`]: {
-      padding: [0, spacing['size-3']]
-    },
-    [`@media (min-width: ${grid.xl}px)`]: {
-      padding: [0, spacing['size-3']]
-    }
+    minHeight: '1px'
   }
 }
 
@@ -35,7 +19,8 @@ const xl = `@media (min-width: ${grid.xl}px)`
 for (let i = 1; i <= 12; i++) {
   styles[`xxs${i}`] = {
     float: 'left',
-    width: `${(100 / 12) * i}%`
+    width: `${(100 / 12) * i}%`,
+    padding: [0, 6]
   }
   styles[`offset-xxs${i}`] = {
     marginLeft: `${(100 / 12) * i}%`
@@ -75,7 +60,8 @@ styles[xl] = {}
 for (let i = 1; i <= 12; i++) {
   styles[xs][`xs${i}`] = {
     float: 'left',
-    width: `${(100 / 12) * i}%`
+    width: `${(100 / 12) * i}%`,
+    padding: [0, spacing['size-2']]
   }
   styles[xs][`offset-xs${i}`] = {
     marginLeft: `${(100 / 12) * i}%`
@@ -88,7 +74,8 @@ for (let i = 1; i <= 12; i++) {
   }
   styles[sm][`sm${i}`] = {
     float: 'left',
-    width: `${(100 / 12) * i}%`
+    width: `${(100 / 12) * i}%`,
+    padding: [0, spacing['size-3']]
   }
   styles[sm][`offset-sm${i}`] = {
     marginLeft: `${(100 / 12) * i}%`

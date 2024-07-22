@@ -4,10 +4,10 @@ import grid from '@/tokens/grid'
 import { colors } from '@/tokens/future'
 import useWindowSize from '@/hooks/useWindowSize'
 
-export default function GridExample() {
+export default function GridExample({ fluid }) {
   const windowSize = useWindowSize()
   return (
-    <Grid style={{ background: colors['bright-blue'][200] }}>
+    <Grid style={{ background: colors['bright-blue'][200] }} fluid={fluid}>
       <Grid.Row>
         <Grid.Col xxs={{ col: 3 }}>
           <Card
