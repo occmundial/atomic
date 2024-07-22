@@ -1,0 +1,154 @@
+---
+title: Grid
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Grid from '@/components/Grid'
+import { spacing } from '@/components/tokens'
+
+# Grid
+
+---
+
+The Grid should be used as the main content container. You can't use a Grid inside of another Grid, it will brake your layout.
+
+- [Props](#Props)
+- [Examples](#Examples)
+- [Fluid](#Fluid)
+
+## Props
+
+| Name        | Type          | Default value | Description                                                                                                                             |
+| ----------- | ------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `fluid`     | **boolean**   | -             | By default, the Grid component has a specified width for any screen size. The fluid property allows the Grid to extend to a 100% width.	|
+| `onClick`   | **function**  | -             | Function to call on click. This is not the best practice, but is an option if you need to use it.	                                      |
+| `id`        | **string**    | -             | The Grid component id.                                                                                                                  |
+| `className` | **string**    | -             | The Grid component className.                                                                                                           |
+| `style`     | **object**    | -             | Object with direct style properties.                                                                                                    |
+
+## Examples
+
+Normal Grid
+
+<Demo title="Grid" background={colors.bgGrey}>
+  <Grid />
+</Demo>
+
+```jsx
+function Component() {
+  return (
+    <Grid>
+      <Grid.Row>
+        <Grid.Col
+          xxs={{ col: 3 }}
+        >
+          <Card
+            noPadding={windowSize.width < grid.xs}
+            style={{ textAlign: 'center', borderRadius: 0 }}
+          >
+            {' '}
+            1{' '}
+          </Card>
+        </Grid.Col>
+        <Grid.Col
+          xxs={{ col: 3 }}
+        >
+          <Card
+            noPadding={windowSize.width < grid.xs}
+            style={{ textAlign: 'center', borderRadius: 0 }}
+          >
+            {' '}
+            2{' '}
+          </Card>
+        </Grid.Col>
+        <Grid.Col
+          xxs={{ col: 3 }}
+        >
+          <Card
+            noPadding={windowSize.width < grid.xs}
+            style={{ textAlign: 'center', borderRadius: 0 }}
+          >
+            {' '}
+            3{' '}
+          </Card>
+        </Grid.Col>
+        <Grid.Col
+          xxs={{ col: 3 }}
+        >
+          <Card
+            noPadding={windowSize.width < grid.xs}
+            style={{ textAlign: 'center', borderRadius: 0 }}
+          >
+            {' '}
+            4
+          </Card>
+        </Grid.Col>
+      </Grid.Row>
+    </Grid>
+  )
+}
+```
+
+## Fluid
+
+Fluid Grid
+
+<Demo title="Fluid Grid" background={colors.bgGrey}>
+  <Grid fluid/>
+</Demo>
+
+```jsx
+function Component() {
+  return (
+    <Grid>
+      <Grid.Row>
+        <Grid.Col
+          xxs={{ col: 3 }}
+        >
+          <Card
+            noPadding={windowSize.width < grid.xs}
+            style={{ textAlign: 'center', borderRadius: 0 }}
+          >
+            {' '}
+            1{' '}
+          </Card>
+        </Grid.Col>
+        <Grid.Col
+          xxs={{ col: 3 }}
+        >
+          <Card
+            noPadding={windowSize.width < grid.xs}
+            style={{ textAlign: 'center', borderRadius: 0 }}
+          >
+            {' '}
+            2{' '}
+          </Card>
+        </Grid.Col>
+        <Grid.Col
+          xxs={{ col: 3 }}
+        >
+          <Card
+            noPadding={windowSize.width < grid.xs}
+            style={{ textAlign: 'center', borderRadius: 0 }}
+          >
+            {' '}
+            3{' '}
+          </Card>
+        </Grid.Col>
+        <Grid.Col
+          xxs={{ col: 3 }}
+        >
+          <Card
+            noPadding={windowSize.width < grid.xs}
+            style={{ textAlign: 'center', borderRadius: 0 }}
+          >
+            {' '}
+            4
+          </Card>
+        </Grid.Col>
+      </Grid.Row>
+    </Grid>
+  )
+}
+```

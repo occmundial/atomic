@@ -69,83 +69,77 @@ const Footer = ({
       }
     >
       <Grid fluid={isFluid}>
-        <Grid.Row>
-          <Flexbox
-            display="flex"
-            direction={isMobile ? 'col' : 'row'}
-            className={classes.column}
-          >
-            {columns.map((column, index) => (
-              <Flexbox
-                key={index}
-                flex="1"
-                className={classnames({ [classes.list]: !isMobile })}
-              >
-                {column.map(list => (
-                  <List
-                    key={list.key}
-                    list={list}
-                    isMobile={isMobile}
-                    listClassName={listClassName}
-                  />
-                ))}
-              </Flexbox>
-            ))}
-          </Flexbox>
-          <div className={classes.footerBottom}>
+        <Flexbox
+          display="flex"
+          direction={isMobile ? 'col' : 'row'}
+          className={classes.column}
+        >
+          {columns.map((column, index) => (
             <Flexbox
-              display="flex"
-              alignItems={isMobile ? 'start' : 'end'}
-              className={classes.bottomWrap}
-              direction={isMobile ? 'col' : 'row'}
+              key={index}
+              flex="1"
+              className={classnames({ [classes.list]: !isMobile })}
             >
-              <Flexbox flex="1">
-                {aux && (
-                  <Button
-                    href={aux.href}
-                    target={aux.target}
-                    iconLeft={aux.iconLeft}
-                    iconRight={aux.iconRight}
-                    size="md"
-                    theme="ghostPink"
-                    className={classnames(
-                      { [classes.buttonMobile]: isMobile },
-                      aux.className
-                    )}
-                  >
-                    {aux.text}
-                  </Button>
-                )}
-                <Text small mid bottomTiny tag="div">
-                  {bottomLinks.map(item => (
-                    <div
-                      className={
-                        isMobile
-                          ? classes.mobileListElement
-                          : classes.listElement
-                      }
-                      key={item.key}
-                    >
-                      <Text tag="label" small mid id={item.id}>
-                        <a
-                          className={classes.link}
-                          href={item.href}
-                          target={item.target}
-                          rel={item.rel}
-                          onClick={item.onClick}
-                        >
-                          {item.text}
-                        </a>
-                      </Text>
-                    </div>
-                  ))}
-                </Text>
-                {copyText && <Text small>{copyText}</Text>}
-              </Flexbox>
-              {bottomItem}
+              {column.map(list => (
+                <List
+                  key={list.key}
+                  list={list}
+                  isMobile={isMobile}
+                  listClassName={listClassName}
+                />
+              ))}
             </Flexbox>
-          </div>
-        </Grid.Row>
+          ))}
+        </Flexbox>
+        <Flexbox
+          display="flex"
+          alignItems={isMobile ? 'start' : 'end'}
+          className={classes.bottomWrap}
+          direction={isMobile ? 'col' : 'row'}
+        >
+          <Flexbox flex="1">
+            {aux && (
+              <Button
+                href={aux.href}
+                target={aux.target}
+                iconLeft={aux.iconLeft}
+                iconRight={aux.iconRight}
+                size="md"
+                theme="ghostPink"
+                className={classnames(
+                  { [classes.buttonMobile]: isMobile },
+                  aux.className
+                )}
+              >
+                {aux.text}
+              </Button>
+            )}
+            <Text small mid bottomTiny tag="div">
+              {bottomLinks.map(item => (
+                <div
+                  className={
+                    isMobile ? classes.mobileListElement : classes.listElement
+                  }
+                  key={item.key}
+                >
+                  <Text tag="label" small mid id={item.id}>
+                    <a
+                      className={classes.link}
+                      href={item.href}
+                      target={item.target}
+                      rel={item.rel}
+                      onClick={item.onClick}
+                    >
+                      {item.text}
+                    </a>
+                  </Text>
+                </div>
+              ))}
+            </Text>
+            {copyText && <Text small>{copyText}</Text>}
+          </Flexbox>
+          {bottomItem}
+        </Flexbox>
       </Grid>
     </div>
   )
