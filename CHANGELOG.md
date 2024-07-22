@@ -1,3 +1,16 @@
+# [3.0.0-beta.36](https://github.com/occmundial/atomic/compare/v3.0.0-beta.35...v3.0.0-beta.36) (2024-07-22)
+
+
+### Bug Fixes
+
+* Add bp styles to fluid grid and reuse col bp ([fc36520](https://github.com/occmundial/atomic/commit/fc36520f14a3759ad0c33cad6d817660c2edd8a1))
+* Revert some changes, remove unnecesary bp and add padding to grid ([0f275d7](https://github.com/occmundial/atomic/commit/0f275d7ab55db6ec848fbd7d5f9654f0b0d6b276))
+
+
+### Features
+
+* Update grid with new design tokens ([fdfee4e](https://github.com/occmundial/atomic/commit/fdfee4e8992cf5d845eb6c2bb2d2f357c05c0588))
+
 # [3.0.0-beta.35](https://github.com/occmundial/atomic/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2024-07-19)
 
 
