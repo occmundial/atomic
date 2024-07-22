@@ -21,15 +21,6 @@ export default createUseStyles({
     },
     [`@media (min-width: ${grid.sm}px)`]: {
       margin: [0, `-${spacing['size-3']}`]
-    },
-    [`@media (min-width: ${grid.md}px)`]: {
-      margin: [0, `-${spacing['size-3']}`]
-    },
-    [`@media (min-width: ${grid.lg}px)`]: {
-      margin: [0, `-${spacing['size-3']}`]
-    },
-    [`@media (min-width: ${grid.xl}px)`]: {
-      margin: [0, `-${spacing['size-3']}`]
     }
   }
 })

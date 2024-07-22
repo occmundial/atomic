@@ -55,7 +55,8 @@ export default createUseStyles({
   },
   [`@media (min-width: ${grid.lg}px)`]: {
     con: {
-      width: grid.lgGrid
+      width: grid.lgGrid,
+      padding: 0
     }
   },
   [`@media (min-width: ${grid.xl}px)`]: {
