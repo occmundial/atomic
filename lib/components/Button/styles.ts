@@ -253,7 +253,7 @@ export default createUseStyles({
   },
   lg: {
     font: objectToFontValue(lg),
-    padding: [spacing['size-4'], spacing['size-6']],
+    padding: [spacing['size-3'], spacing['size-6']],
     '&$iconOnly': {
       padding: [spacing['size-3'], spacing['size-3']]
     }
