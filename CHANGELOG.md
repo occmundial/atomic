@@ -1,3 +1,10 @@
+# [3.0.0-beta.37](https://github.com/occmundial/atomic/compare/v3.0.0-beta.36...v3.0.0-beta.37) (2024-07-24)
+
+
+### Features
+
+* Update tooltip with new design tokens ([e9bf5f4](https://github.com/occmundial/atomic/commit/e9bf5f4e9717821b2f81f9ac879f7a7ed5bbcbb5))
+
 # [3.0.0-beta.36](https://github.com/occmundial/atomic/compare/v3.0.0-beta.35...v3.0.0-beta.36) (2024-07-22)
 
 
