@@ -28,7 +28,8 @@ Alert component to display messages within a container.
 | `showArrow`   | **boolean**            | `true`        | This property can be used to control whether or not an arrow is displayed.                                                                                       |
 | `fit`         | **boolean**            | `false`       | This property allows the Tooltip to be adjusted to the length of the associated component.                                                                       |
 | `width`       | **number/string/null** | `220`         | The "Width" property of the Tooltip enables modification of its width and accepts a number (e.g., 220), a string (e.g., '220px' or 'auto') or null as its value. |
-| `onChange`    | **function**           | ``            | Callback fired when the Tooltip show state changes. The function signature is (open: boolean) => void.                                                            |
+| `onChange`    | **function**           | ``            | Callback fired when the Tooltip show state changes. The function signature is (open: boolean) => void.                                                           |
+| `icon`        | **string**             | -             | Displays an icon on the left side of the button.                                                                                                                 |
 
 ## Examples
 
@@ -143,14 +144,14 @@ function Component() {
   >
     <Flexbox flex-direction="column">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '70px' }}>
-        <Tooltip placement="bottom" text="Bottom" open>
+        <Tooltip placement="bottom" text="Bottom" open theme="dark">
           <Button size="md">Button</Button>
         </Tooltip>
-        <Tooltip placement="bottom-start" text="Bottom-start" open>
+        <Tooltip placement="bottom-start" text="Bottom-start" open theme="light">
           <Button size="md">Button</Button>
         </Tooltip>
         <div style={{ marginBottom: '70px' }}>
-          <Tooltip placement="bottom-end" text="Botton-end" open>
+          <Tooltip placement="bottom-end" text="Botton-end" open theme="dark">
             <Button size="md">Button</Button>
           </Tooltip>
         </div>
@@ -233,6 +234,47 @@ function Component() {
           </Tooltip>
         </div>
         <Tooltip text="This is another large text" fit={true} open>
+          <Button size="md">Button</Button>
+        </Tooltip>
+      </div>
+    </Flexbox>
+  </Flexbox>
+</Demo>
+
+```jsx
+// Examples of Sides Placement
+function Component() {
+  return (
+    <>
+      {/* `false` is the default value. */}
+      <Tooltip text="This is a large text" open>
+        <Button>Button</Button>
+      </Tooltip>
+      <Tooltip text="This is another large text" fit={true} open>
+        <Button>Button</Button>
+      </Tooltip>
+    </>
+  )
+}
+```
+
+### Icon
+
+<Demo title="Icon property" background={colors.bgGrey}>
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Flexbox flex-direction="column">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '110px' }}>
+        <div style={{ marginTop: '70px' }}>
+          <Tooltip text="This is a large text" icon="check-circle" open theme="dark">
+            <Button size="md">Button</Button>
+          </Tooltip>
+        </div>
+        <Tooltip text="This is another large text" icon="check-circle" open theme="light">
           <Button size="md">Button</Button>
         </Tooltip>
       </div>

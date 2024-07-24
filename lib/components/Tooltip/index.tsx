@@ -15,9 +15,11 @@ import {
 import useStyles from './styles'
 import classNames from 'classnames'
 import colors from '@/tokens/colors'
+import newColors from '@/tokens/future/colors.json'
+import Icon from '../Icon'
 import { useOpenTooltipState } from './hooks'
 
-const { infoLight, white, grey900, info } = colors
+const { infoLight, info } = colors
 
 enum Themes {
   DARK = 'dark',
@@ -27,10 +29,29 @@ enum Themes {
 }
 
 const colorsArrow = {
-  [Themes.DARK]: grey900,
-  [Themes.LIGHT]: white,
+  [Themes.DARK]: newColors.bg.neutral,
   [Themes.INFO]: infoLight,
+  [Themes.LIGHT]: newColors.bg.surface.default,
   [Themes.PURPLE]: info
+}
+
+const borderColors = {
+  [Themes.DARK]: {
+    bg: 'black',
+    border: 'rgba(0, 0, 0, 0.8)'
+  },
+  [Themes.LIGHT]: {
+    bg: newColors.border.default.subtle,
+    border: newColors.border.default.subtle
+  },
+  [Themes.INFO]: {
+    bg: infoLight,
+    border: infoLight
+  },
+  [Themes.PURPLE]: {
+    bg: info,
+    border: info
+  }
 }
 
 type TooltipThemes = `${Themes}`
@@ -53,13 +74,14 @@ export interface TooltipProps {
   strategy?: 'absolute' | 'fixed'
   width?: number | string
   onChange?: (open: boolean) => void
+  icon?: string
 }
 
 export default function Tooltip({
   open: openProp,
   children,
   text,
-  theme,
+  theme = 'purple',
   openOnHover = false,
   closeDelay = 4000,
   zIndex = 10,
@@ -67,9 +89,10 @@ export default function Tooltip({
   showArrow = true,
   className,
   fit = false,
-  width = 220,
+  width = 'auto',
   strategy = 'absolute',
-  onChange
+  onChange,
+  icon
 }: TooltipProps) {
   const classes = useStyles()
   const arrowRef = useRef(null)
@@ -77,8 +100,31 @@ export default function Tooltip({
   const [open, setOpen] = useOpenTooltipState(openProp, onChange, closeDelay)
 
   const getMiddlewares = useMemo(() => {
-    const middlewares = [offset(16)]
-    showArrow && middlewares.push(arrow({ element: arrowRef, padding: 16 }))
+    const middlewares = [
+      offset(({ rects }) => {
+        if (placement === 'top-start' || placement === 'bottom-start') {
+          return {
+            crossAxis: rects.reference.width / 2 - 18,
+            mainAxis: 16
+          }
+        } else if (placement === 'top-end' || placement === 'bottom-end') {
+          return {
+            crossAxis: -(rects.reference.width / 2) + 18,
+            mainAxis: 16
+          }
+        }
+
+        return {
+          mainAxis: 16
+        }
+      })
+    ]
+    showArrow &&
+      middlewares.push(
+        arrow({
+          element: arrowRef
+        })
+      )
     const sizeMiddleware = size({
       apply({ elements, rects, availableWidth }) {
         const styles: Record<string, string> = {}
@@ -86,8 +132,9 @@ export default function Tooltip({
           styles.width = `${rects.reference.width}px`
         } else {
           styles.maxWidth = `${availableWidth}px`
-          if (width)
+          if (width) {
             styles.width = typeof width === 'string' ? width : `${width}px`
+          } else styles.width = ''
         }
         Object.assign(elements.floating.style, styles)
       }
@@ -95,7 +142,7 @@ export default function Tooltip({
     sizeMiddleware.name = `size-${fit}-${width}`
     middlewares.push(sizeMiddleware)
     return middlewares
-  }, [showArrow, fit, width])
+  }, [showArrow, fit, width, placement])
 
   const { refs, floatingStyles, context } = useFloating({
     open: open,
@@ -126,23 +173,30 @@ export default function Tooltip({
       {open && (
         <FloatingPortal>
           <div
-            className={classNames(
-              classes.tooltip,
-              className?.tooltip,
-              classes[theme] || classes.purple
-            )}
             ref={refs.setFloating}
             style={{ ...floatingStyles, zIndex, position: strategy }}
             {...getFloatingProps()}
           >
-            {text}
+            <div
+              className={classNames(
+                classes.tooltip,
+                className?.tooltip,
+                classes[theme] || classes.purple
+              )}
+            >
+              {icon && <Icon iconName={icon} size={12} />}
+              <p className={classes.text}>{text}</p>
+            </div>
             {showArrow && (
               <FloatingArrow
+                style={{ transform: 'translateY(1px)' }}
                 ref={arrowRef}
                 context={context}
                 fill={colorsArrow[theme] || colorsArrow[Themes.PURPLE]}
-                width={14}
-                height={10}
+                strokeWidth={1}
+                stroke={borderColors[theme].border}
+                width={20}
+                d="M0 20C0 20 2.06906 19.9829 5.91817 15.4092C7.49986 13.5236 8.97939 12.3809 10.0002 12.3809C11.0202 12.3809 12.481 13.6451 14.0814 15.5472C17.952 20.1437 20 20 20 20H0Z"
               />
             )}
           </div>
