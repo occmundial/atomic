@@ -46,7 +46,6 @@ interface ImageLeft extends ModalImage {
 }
 
 export interface ModalProps {
-  classes?: { [key: string]: string }
   children: ReactNode
   show?: boolean
   onClose?: () => void
