@@ -19,9 +19,26 @@ import { spacing } from '@/components/tokens'
 Modal.
 
 - [Props](#Props)
+- [Examples](#Examples)
+  - [Different sizes](#Different-sizes)
+  - [Modals with images](#Modals-with-images)
+  - [Fullscreen modal](#Fullscreen-modal)
 
 ## Props
----
+
+| Name              | Type            | Default Value | Description                                        |
+|-------------------|-----------------|---------------|----------------------------------------------------|
+| `children`        | **ReactNode**   | -             | The content of the modal                           |
+| `show`            | **boolean**     | `false`       | Controls whether the modal is visible or hidden     |
+| `onClose`         | **function**    | `md`          | Callback function to be called when the modal is closed |
+| `size`            | **string**      | -             | The size of the modal                              |
+| `title`           | **string**      | -             | The title of the modal                             |
+| `mainBtn`         | **ButtonType**  | -             | The main button configuration                      |
+| `secBtn`          | **ButtonType**  | -             | The secondary button configuration                 |
+| `imgTop`          | **ModalImage**  | -             | The image configuration for the top position of the modal |
+| `imgLeft`         | **ModalImage**  | -             | The image configuration for the left position of the modal |
+| `fullSize`        | **boolean**     | `false`       | Controls whether the modal should take up the full screen on mobile |
+| `testId`          | **string**      | -             | The test ID for the modal element                   |
 
 ## Examples
 
