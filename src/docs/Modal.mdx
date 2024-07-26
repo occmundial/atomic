@@ -1,0 +1,338 @@
+---
+title: Modal
+section: components
+---
+
+import { useState } from 'react'
+import Demo from '@/utils/components/Demo'
+import Modal from '@/components/Modal'
+import Button from '@/components/Button'
+import Portal from '@/components/Portal'
+import Text from '@/components/Text'
+import { Function } from '@/utils/components/Function'
+import { spacing } from '@/components/tokens'
+
+# Modal
+
+---
+
+Modal.
+
+- [Props](#Props)
+
+## Props
+---
+
+## Examples
+
+### Different sizes
+
+You can choose from 4 different sizes
+
+<Demo title="Modal sizes" background={colors.bgGrey}>
+  <Function>
+    {() => {
+      const [size, setSize] = useState(undefined)
+      return (
+        <>
+          <Button onClick={() => setSize('sm')}>
+            Small modal
+          </Button>
+          <Button onClick={() => setSize('md')}>
+            Medium modal
+          </Button>
+          <Button onClick={() => setSize('lg')}>
+            Large modal
+          </Button>
+          <Button onClick={() => setSize('xl')}>
+            Extra large modal
+          </Button>
+          <Portal
+            show={size !== undefined}
+            container={typeof window !== 'undefined' ? document.body : null}
+          >
+            <Modal
+              title="Modal Title"
+              size={size}
+              onClose={() => setSize(undefined)}
+              mainBtn={{
+                text: 'Confirm',
+                onClick: () => console.log('Clicked')
+              }}
+              secBtn={{
+                text: 'Cancel',
+                onClick: () => setSize(undefined)
+              }}
+            >
+              Lorem ipsum dolor sit amet consectetur. At sit turpis eu adipiscing mauris pharetra diam nunc. Rhoncus quis sollicitudin vulputate arcu ac potenti tortor. Aliquam et id est egestas placerat. Quisque non suspendisse nulla morbi lorem et lacus.
+            </Modal>
+          </Portal>
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// Set the size of the modal
+function Component() {
+  const [show, setShow] = useState(false)
+  return (
+    <Portal
+      show={show}
+      container={typeof window !== 'undefined' ? document.body : null}
+    >
+      <Modal
+        title="Modal Title"
+        size="md"
+        onClose={() => setShow(false)}
+        mainBtn={{
+          text: 'Confirm',
+          onClick: () => console.log('Clicked')
+        }}
+        secBtn={{
+          text: 'Cancel',
+          onClick: () => setShow(false)
+        }}
+      >
+        Lorem ipsum dolor sit amet consectetur. At sit turpis eu adipiscing mauris pharetra diam nunc. Rhoncus quis sollicitudin vulputate arcu ac potenti tortor. Aliquam et id est egestas placerat. Quisque non suspendisse nulla morbi lorem et lacus.
+      </Modal>
+    </Portal>
+  )
+}
+```
+
+### Modals with images
+
+<Demo title="Image on top" background={colors.bgGrey}>
+  <Function>
+    {() => {
+      const [show, setShow] = useState(false)
+      return (
+        <>
+          <Button onClick={() => setShow(true)}>
+            Open Modal
+          </Button>
+          <Portal
+            show={show}
+            container={typeof window !== 'undefined' ? document.body : null}
+          >
+            <Modal
+              title="Modal Title"
+              onClose={() => setShow(false)}
+              mainBtn={{
+                text: 'Confirm',
+                onClick: () => console.log('Clicked')
+              }}
+              secBtn={{
+                text: 'Cancel',
+                onClick: () => setShow(false)
+              }}
+              imgTop={{
+                img: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              }}
+            >
+              <>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum ipsum at arcu dapibus, ac volutpat neque vehicula. Nam id orci tellus. Maecenas bibendum, tellus ut semper fringilla, nisi metus elementum nibh, non aliquam nunc dolor molestie nisl. Sed finibus urna urna, nec fringilla tellus fringilla in. Mauris efficitur, ante vel efficitur mattis, magna nunc facilisis tellus, a tincidunt metus lectus eget elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                <p>Aenean eget volutpat est. Donec fringilla augue felis, consequat tristique elit pellentesque ac. Maecenas dictum, turpis eu fringilla faucibus, risus mi gravida eros, finibus luctus purus tortor vel ligula. Sed lobortis orci eget quam convallis, vitae maximus urna fermentum. Praesent gravida dolor et quam porttitor, a tempus ipsum dignissim. Sed ullamcorper tortor quam, eget porta ex maximus vitae. Phasellus vehicula turpis a erat semper laoreet. Maecenas in elit pellentesque justo vestibulum convallis vitae a dolor. Pellentesque vitae cursus est. Donec sollicitudin ligula eget auctor pharetra. Maecenas mollis id elit ac tincidunt.</p>
+              </>
+            </Modal>
+          </Portal>
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// Set the image on top of the modal
+function Component() {
+  const [show, setShow] = useState(false)
+  return (
+    <>
+      <Button onClick={() => setShow(true)}>
+        Open Modal
+      </Button>
+      <Portal
+        show={show}
+        container={typeof window !== 'undefined' ? document.body : null}
+      >
+        <Modal
+          title="Modal Title"
+          onClose={() => setShow(false)}
+          mainBtn={{
+            text: 'Confirm',
+            onClick: () => console.log('Clicked')
+          }}
+          secBtn={{
+            text: 'Cancel',
+            onClick: () => setShow(false)
+          }}
+          imgTop={{
+            img: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          }}
+        >
+          <>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum ipsum at arcu dapibus, ac volutpat neque vehicula. Nam id orci tellus. Maecenas bibendum, tellus ut semper fringilla, nisi metus elementum nibh, non aliquam nunc dolor molestie nisl. Sed finibus urna urna, nec fringilla tellus fringilla in. Mauris efficitur, ante vel efficitur mattis, magna nunc facilisis tellus, a tincidunt metus lectus eget elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+          </>
+        </Modal>
+      </Portal>
+    </>
+  )
+}
+```
+
+<Demo title="Image on the left" background={colors.bgGrey}>
+  <Function>
+    {() => {
+      const [show, setShow] = useState(false)
+      return (
+        <>
+          <Button onClick={() => setShow(true)}>
+            Open Modal
+          </Button>
+          <Portal
+            show={show}
+            container={typeof window !== 'undefined' ? document.body : null}
+          >
+            <Modal
+              title="Modal Title"
+              onClose={() => setShow(false)}
+              mainBtn={{
+                text: 'Confirm',
+                onClick: () => console.log('Clicked')
+              }}
+              secBtn={{
+                text: 'Cancel',
+                onClick: () => setShow(false)
+              }}
+              imgLeft={{
+                img: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              }}
+              fullSize
+            >
+              <>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum ipsum at arcu dapibus, ac volutpat neque vehicula. Nam id orci tellus. Maecenas bibendum, tellus ut semper fringilla, nisi metus elementum nibh, non aliquam nunc dolor molestie nisl. Sed finibus urna urna, nec fringilla tellus fringilla in. Mauris efficitur, ante vel efficitur mattis, magna nunc facilisis tellus, a tincidunt metus lectus eget elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+              </>
+            </Modal>
+          </Portal>
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// Set the image on the left of the modal
+function Component() {
+  const [show, setShow] = useState(false)
+  return (
+    <>
+      <Button onClick={() => setShow(true)}>
+        Open Modal
+      </Button>
+      <Portal
+        show={show}
+        container={typeof window !== 'undefined' ? document.body : null}
+      >
+        <Modal
+          title="Modal Title"
+          onClose={() => setShow(false)}
+          mainBtn={{
+            text: 'Confirm',
+            onClick: () => console.log('Clicked')
+          }}
+          secBtn={{
+            text: 'Cancel',
+            onClick: () => setShow(false)
+          }}
+          imgLeft={{
+            img: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          }}
+        >
+          <>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum ipsum at arcu dapibus, ac volutpat neque vehicula. Nam id orci tellus. Maecenas bibendum, tellus ut semper fringilla, nisi metus elementum nibh, non aliquam nunc dolor molestie nisl. Sed finibus urna urna, nec fringilla tellus fringilla in. Mauris efficitur, ante vel efficitur mattis, magna nunc facilisis tellus, a tincidunt metus lectus eget elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+          </>
+        </Modal>
+      </Portal>
+    </>
+  )
+}
+```
+
+### Fullscreen modal
+
+<Demo title="Fullscreen modal" background={colors.bgGrey}>
+  <Function>
+    {() => {
+      const [show, setShow] = useState(false)
+      return (
+        <>
+          <Button onClick={() => setShow(true)}>
+            Open Modal
+          </Button>
+          <Portal
+            show={show}
+            container={typeof window !== 'undefined' ? document.body : null}
+          >
+            <Modal
+              title="Modal Title"
+              onClose={() => setShow(false)}
+              mainBtn={{
+                text: 'Confirm',
+                onClick: () => console.log('Clicked')
+              }}
+              secBtn={{
+                text: 'Cancel',
+                onClick: () => setShow(false)
+              }}
+              fullSize
+            >
+              <>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum ipsum at arcu dapibus, ac volutpat neque vehicula. Nam id orci tellus. Maecenas bibendum, tellus ut semper fringilla, nisi metus elementum nibh, non aliquam nunc dolor molestie nisl. Sed finibus urna urna, nec fringilla tellus fringilla in. Mauris efficitur, ante vel efficitur mattis, magna nunc facilisis tellus, a tincidunt metus lectus eget elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+              </>
+            </Modal>
+          </Portal>
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// Set the modal to fullscreen
+function Component() {
+  const [show, setShow] = useState(false)
+  return (
+    <>
+      <Button onClick={() => setShow(true)}>
+        Open Modal
+      </Button>
+      <Portal
+        show={show}
+        container={typeof window !== 'undefined' ? document.body : null}
+      >
+        <Modal
+          title="Modal Title"
+          onClose={() => setShow(false)}
+          mainBtn={{
+            text: 'Confirm',
+            onClick: () => console.log('Clicked')
+          }}
+          secBtn={{
+            text: 'Cancel',
+            onClick: () => setShow(false)
+          }}
+          // fullscreen mode only works in mobile size screens
+          fullSize
+        >
+          <>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum ipsum at arcu dapibus, ac volutpat neque vehicula. Nam id orci tellus. Maecenas bibendum, tellus ut semper fringilla, nisi metus elementum nibh, non aliquam nunc dolor molestie nisl. Sed finibus urna urna, nec fringilla tellus fringilla in. Mauris efficitur, ante vel efficitur mattis, magna nunc facilisis tellus, a tincidunt metus lectus eget elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+          </>
+        </Modal>
+      </Portal>
+    </>
+  )
+}
+```
+
