@@ -55,29 +55,30 @@ const AvatarContent = ({
             : null
         }
       >
-        {!photo && !initials && (
-          <Icon
-            iconName="person"
-            className={classes.person}
-            color={
-              disabled
-                ? newColors.icon.default.disabled
-                : newColors.icon.brand.default
-            }
-            size={24}
-            style={size ? { transform: `scale(${size / 40})` } : {}}
-          />
-        )}
-        {initials && (
-          <span
-            className={classnames(classes.initials, {
-              [classes.disabledInitials]: disabled
-            })}
-            style={size ? { transform: `scale(${size / 40})` } : {}}
-          >
-            {initials}
-          </span>
-        )}
+        {!photo ? (
+          initials ? (
+            <span
+              className={classnames(classes.initials, {
+                [classes.disabledInitials]: disabled
+              })}
+              style={size ? { transform: `scale(${size / 40})` } : {}}
+            >
+              {initials}
+            </span>
+          ) : (
+            <Icon
+              iconName="person"
+              className={classes.person}
+              color={
+                disabled
+                  ? newColors.icon.default.disabled
+                  : newColors.icon.brand.default
+              }
+              size={24}
+              style={size ? { transform: `scale(${size / 40})` } : {}}
+            />
+          )
+        ) : null}
         <div className={classes.overlay}>
           {onEdit && !disabled && (
             <Icon
