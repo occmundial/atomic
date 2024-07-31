@@ -1,3 +1,10 @@
+# [3.0.0-beta.38](https://github.com/occmundial/atomic/compare/v3.0.0-beta.37...v3.0.0-beta.38) (2024-07-31)
+
+
+### Bug Fixes
+
+* Render initials only if there's no photo prop ([d3251da](https://github.com/occmundial/atomic/commit/d3251da405f6ad68cd14b53a71ac137f4936cfe2))
+
 # [3.0.0-beta.37](https://github.com/occmundial/atomic/compare/v3.0.0-beta.36...v3.0.0-beta.37) (2024-07-24)
 
 
