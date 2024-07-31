@@ -112,6 +112,7 @@ export default createUseStyles({
       border: 0,
       '& $contentWrapper': {
         height: '100vh',
+        maxHeight: '100vh',
         overflow: 'auto',
         [`@media screen and (min-width:${grid.xs}px)`]: {
           height: 'auto'
@@ -121,10 +122,8 @@ export default createUseStyles({
   },
   contentWrapper: {
     flex: 1,
-    [`@media screen and (min-width:${grid.xs}px)`]: {
-      height: 'auto',
-      maxHeight: '85vh'
-    }
+    height: 'auto',
+    maxHeight: '85vh'
   },
   header: {
     height: 56,
