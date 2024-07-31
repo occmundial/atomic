@@ -3,9 +3,7 @@ import React, {
   ReactNode,
   TransitionEventHandler,
   useCallback,
-  useEffect,
-  useMemo,
-  useRef
+  useMemo
 } from 'react'
 import classnames from 'classnames'
 
@@ -77,31 +75,27 @@ const Modal = (props: ModalProps) => {
   } = props
   useLockBodyScroll()
   const classes = useStyles(props)
-  const contentRef = useRef<HTMLDivElement>(null)
-  const [contentScroll, setContentScroll] = React.useState(0)
   const [headerBorder, setHeaderBorder] = React.useState(false)
   const [footerBorder, setFooterBorder] = React.useState(false)
 
-  useEffect(() => {
-    if (contentRef.current) {
-      const { scrollTop, scrollHeight, clientHeight } = contentRef.current
-      if (scrollHeight > clientHeight) {
-        if (scrollTop > 0) {
-          setHeaderBorder(true)
-        } else {
-          setHeaderBorder(false)
-        }
-        if (scrollTop + clientHeight + 1 < scrollHeight) {
-          setFooterBorder(true)
-        } else {
-          setFooterBorder(false)
-        }
+  const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const { scrollTop, scrollHeight, clientHeight } = e.currentTarget
+    if (scrollHeight > clientHeight) {
+      if (scrollTop > 0) {
+        setHeaderBorder(true)
       } else {
         setHeaderBorder(false)
+      }
+      if (scrollTop + clientHeight + 1 < scrollHeight) {
+        setFooterBorder(true)
+      } else {
         setFooterBorder(false)
       }
+    } else {
+      setHeaderBorder(false)
+      setFooterBorder(false)
     }
-  }, [contentScroll])
+  }
 
   const onKeyDown = useCallback(
     ({ code }: KeyboardEvent) => {
@@ -187,8 +181,7 @@ const Modal = (props: ModalProps) => {
                   </Flexbox>
                 ) : null}
                 <div
-                  ref={contentRef}
-                  onScroll={e => setContentScroll(e.currentTarget.scrollTop)}
+                  onScroll={onScroll}
                   className={classnames(classes.content)}
                 >
                   {imgTop?.img && (
