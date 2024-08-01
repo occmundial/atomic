@@ -1,3 +1,22 @@
+# [3.0.0-beta.39](https://github.com/occmundial/atomic/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2024-08-01)
+
+
+### Bug Fixes
+
+* Change lg Button padding ([4f77f16](https://github.com/occmundial/atomic/commit/4f77f1687fc1a4accbe9d291521f131fa1631e0f))
+* Fix the height of the Modal ([561de04](https://github.com/occmundial/atomic/commit/561de0457d3aa43fe9b95997cce587b22be9286c))
+* Remove the classes prop from the modal ([3c87eef](https://github.com/occmundial/atomic/commit/3c87eef5f529c644f079921877dfe78ed1e9a168))
+
+
+### Features
+
+* Change styles of the Modal component ([73199f9](https://github.com/occmundial/atomic/commit/73199f916b94030fdf8979df4bd73afbd6924298))
+
+
+### Performance Improvements
+
+* Create a handler for the scroll to avoid a re-render ([e98f8ca](https://github.com/occmundial/atomic/commit/e98f8ca88336477b7225959d726821795f871aa8))
+
 # [3.0.0-beta.38](https://github.com/occmundial/atomic/compare/v3.0.0-beta.37...v3.0.0-beta.38) (2024-07-31)
 
 
