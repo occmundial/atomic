@@ -5,19 +5,14 @@ import React, {
   useCallback,
   useMemo
 } from 'react'
-import withStyles from 'react-jss'
 import classnames from 'classnames'
 
-import Card from '@/components/Card'
-import Icon from '@/components/Icon'
 import Text from '@/components/Text'
 import Flexbox from '@/components/Flexbox'
 import Button from '@/components/Button'
-import colors from '@/tokens/colors'
-import iconSizes from '@/tokens/iconSizes'
 import useEventListener from '@/hooks/useEventListener'
 
-import styles from './styles'
+import useStyles from './styles'
 import useLockBodyScroll from '@/hooks/useLockBodyScroll'
 
 const ESCAPE = 'Escape'
@@ -38,7 +33,6 @@ interface ModalImage {
   color?: string
   alt?: string
   size?: 'contain' | 'cover' | string
-  height?: number
 }
 
 interface ImageTop extends ModalImage {
@@ -50,10 +44,9 @@ interface ImageLeft extends ModalImage {
 }
 
 export interface ModalProps {
-  classes?: { [key: string]: string }
   children: ReactNode
   show?: boolean
-  onClose: () => void
+  onClose?: () => void
   size?: 'sm' | 'md' | 'lg' | 'xl'
   title?: string
   mainBtn?: ButtonType
@@ -62,14 +55,11 @@ export interface ModalProps {
   imgLeft?: ImageLeft
   onTransitionEnd?: TransitionEventHandler<HTMLDivElement>
   fullSize?: boolean
-  /** The recommendation is to set the breakpoint at `grid.xs` */
-  isMobile?: boolean
   testId?: string
 }
 
 const Modal = (props: ModalProps) => {
   const {
-    classes,
     onClose,
     children,
     title,
@@ -81,14 +71,35 @@ const Modal = (props: ModalProps) => {
     imgLeft,
     onTransitionEnd,
     fullSize,
-    isMobile,
     testId
   } = props
   useLockBodyScroll()
+  const classes = useStyles(props)
+  const [headerBorder, setHeaderBorder] = React.useState(false)
+  const [footerBorder, setFooterBorder] = React.useState(false)
+
+  const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const { scrollTop, scrollHeight, clientHeight } = e.currentTarget
+    if (scrollHeight > clientHeight) {
+      if (scrollTop > 0) {
+        setHeaderBorder(true)
+      } else {
+        setHeaderBorder(false)
+      }
+      if (scrollTop + clientHeight + 1 < scrollHeight) {
+        setFooterBorder(true)
+      } else {
+        setFooterBorder(false)
+      }
+    } else {
+      setHeaderBorder(false)
+      setFooterBorder(false)
+    }
+  }
 
   const onKeyDown = useCallback(
     ({ code }: KeyboardEvent) => {
-      if (onClose && code == ESCAPE) onClose()
+      if (onClose && code === ESCAPE) onClose()
     },
     [onClose]
   )
@@ -99,19 +110,17 @@ const Modal = (props: ModalProps) => {
 
   const closeButton = useMemo(
     () => (
-      <div className={classes.closeIcon}>
-        <Icon
-          iconName="x"
-          size={iconSizes.base}
-          color={colors.grey900}
-          onClick={onClose}
-          {...(testId && {
-            testId: `${testId}__close-icon`
-          })}
-        />
-      </div>
+      <Button
+        theme="ghostGrey"
+        onClick={onClose}
+        iconLeft="x"
+        size="md"
+        {...(testId && {
+          testId: `${testId}__close-icon`
+        })}
+      />
     ),
-    [classes, onClose, testId]
+    [onClose, testId]
   )
 
   return (
@@ -119,8 +128,8 @@ const Modal = (props: ModalProps) => {
       data-testid={testId}
       className={classnames(
         classes.overlay,
-        { [classes.overlayShow]: show },
-        { [classes.overlayHide]: !show },
+        { [classes.show]: show },
+        { [classes.hide]: !show },
         { [classes.noClose]: !onClose }
       )}
       onClick={onClose}
@@ -128,65 +137,85 @@ const Modal = (props: ModalProps) => {
     >
       <div className={classes.cardWrapper}>
         <div className={classes.cardBlock} onClick={avoidClose}>
-          <Card
-            raised
+          <div
             className={classnames(
               classes.card,
               { [classes[size]]: size },
-              { [classes.cardShow]: show },
-              { [classes.cardHide]: !show }
+              { [classes.fullSize]: fullSize }
             )}
           >
-            <Flexbox display="flex" direction={imgLeft?.img ? 'row' : 'col'}>
-              {(imgLeft?.img || imgTop?.img) && (
+            <div className={classes.split}>
+              {imgLeft?.img && (
                 <div
-                  className={classnames(
-                    { [classes.imgLeft]: imgLeft?.img },
-                    { [classes.imgTop]: !imgLeft?.img }
-                  )}
-                >
-                  {imgTop?.img && onClose && (
-                    <div className={classes.closePosition}>{closeButton}</div>
-                  )}
-                </div>
+                  style={{
+                    backgroundColor: imgLeft.color || 'transparent',
+                    backgroundImage: `url(${imgLeft.img})`,
+                    backgroundSize: imgLeft.size || 'cover',
+                    backgroundPosition: imgLeft.position || 'center'
+                  }}
+                  className={classes.imgLeft}
+                />
               )}
-              <Flexbox flex={imgLeft?.img ? '1' : null}>
-                {fullSize && isMobile ? (
-                  <div className={classes.top}>
-                    <Flexbox className={classes.top}>
-                      {!imgTop?.img && onClose && closeButton}
-                    </Flexbox>
-                    {title && (
-                      <Text heading className={classes.title}>
-                        {title}
-                      </Text>
-                    )}
-                  </div>
-                ) : (
+              <Flexbox
+                display="flex"
+                direction="col"
+                className={classes.contentWrapper}
+              >
+                {title || onClose ? (
                   <Flexbox
                     display="flex"
                     justifyContent="end"
                     alignItems="start"
-                    className={classes.top}
+                    className={classnames(classes.header, {
+                      [classes.headerBorder]: headerBorder,
+                      [classes.stickyHeader]: imgTop?.img,
+                      [classes.solidHeader]: imgTop?.img && headerBorder
+                    })}
                   >
                     {title && (
                       <Flexbox flex="1">
-                        <Text heading className={classes.title}>
-                          {title}
-                        </Text>
+                        <h4 className={classes.title}>{title}</h4>
                       </Flexbox>
                     )}
-                    {!imgTop?.img && onClose && closeButton}
+                    {onClose && closeButton}
                   </Flexbox>
-                )}
-                <div className={classes.content}>{children}</div>
+                ) : null}
+                <div
+                  onScroll={onScroll}
+                  className={classnames(classes.content)}
+                >
+                  {imgTop?.img && (
+                    <div
+                      style={{
+                        backgroundColor: imgTop.color || 'transparent',
+                        backgroundImage: `url(${imgTop.img})`,
+                        backgroundSize: imgTop.size || 'cover',
+                        backgroundPosition: imgTop.position || 'center'
+                      }}
+                      className={classes.imgTop}
+                    />
+                  )}
+                  <Text
+                    tag="div"
+                    className={classnames(classes.contentChild, {
+                      [classes.noHeader]: !title && !onClose,
+                      [classes.noFooter]: !mainBtn
+                    })}
+                  >
+                    {children}
+                  </Text>
+                </div>
                 {mainBtn && (
-                  <div className={classes.bottom}>
+                  <div
+                    className={classnames(classes.footer, {
+                      [classes.footerBorder]: footerBorder
+                    })}
+                  >
                     {secBtn && (
                       <Button
                         type={secBtn.type}
+                        size="lg"
                         theme="ghostGrey"
-                        className={classes.secBtn}
                         onClick={secBtn.onClick}
                         href={secBtn.href}
                         target={secBtn.target}
@@ -201,8 +230,8 @@ const Modal = (props: ModalProps) => {
                       </Button>
                     )}
                     <Button
-                      className={classes.mainBtn}
                       type={mainBtn.type}
+                      size="lg"
                       onClick={mainBtn.onClick}
                       href={mainBtn.href}
                       target={mainBtn.target}
@@ -218,12 +247,12 @@ const Modal = (props: ModalProps) => {
                   </div>
                 )}
               </Flexbox>
-            </Flexbox>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   )
 }
 
-export default withStyles(styles)(Modal)
+export default Modal

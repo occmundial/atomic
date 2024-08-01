@@ -1,10 +1,18 @@
+import { createUseStyles } from 'react-jss'
+
 import spacing from '@/tokens/spacing'
 import grid from '@/tokens/grid'
 import colors from '@/tokens/colors'
 
-import { ModalProps } from './'
+import newColors from '@/tokens/future/colors.json'
+import newSpacing from '@/tokens/future/spacing.json'
+import borderRadius from '@/tokens/future/borderRadius.json'
+import fonts from '@/tokens/future/fonts.json'
 
-const styles = {
+import { ModalProps } from './'
+import { objectToFontValue } from '@/utils/font'
+
+export default createUseStyles({
   '@keyframes modalFadeIn': {
     from: { opacity: 0 },
     to: { opacity: 1 }
@@ -18,7 +26,6 @@ const styles = {
     width: '100%',
     height: '100%',
     background: 'rgba(0, 0, 5, 0.85)',
-    overflow: 'auto',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -28,11 +35,18 @@ const styles = {
     transition: '0.3s all',
     cursor: 'pointer'
   },
-  overlayShow: {
-    animation: '0.3s $modalFadeIn linear'
+  show: {
+    animation: '0.3s $modalFadeIn linear',
+    '& $card': {
+      animation: '0.3s $modalFadeDown ease-out'
+    }
   },
-  overlayHide: {
-    opacity: 0
+  hide: {
+    opacity: 0,
+    '& $card': {
+      opacity: 0,
+      marginTop: -spacing.xLarge
+    }
   },
   noClose: {
     cursor: 'default'
@@ -51,23 +65,15 @@ const styles = {
   card: {
     maxWidth: '100%',
     cursor: 'auto',
+    overflow: 'hidden',
     transition: '0.3s opacity, 0.3s margin-top',
-    padding: spacing.small,
-    [`@media screen and (min-width:${grid.sm}px)`]: {
-      padding: spacing.medium
-    },
+    borderRadius: borderRadius['br-sm'],
+    border: `1px solid ${newColors.border.default.default}`,
+    background: newColors.bg.surface.default,
     [`@media screen and (max-width:${grid.xs - 1}px)`]: {
-      padding: ({ fullSize }: ModalProps) => fullSize && spacing.base,
       minHeight: ({ fullSize }: ModalProps) => fullSize && '100vh',
       borderRadius: ({ fullSize }: ModalProps) => fullSize && 0
     }
-  },
-  cardShow: {
-    animation: '0.3s $modalFadeDown ease-out'
-  },
-  cardHide: {
-    opacity: 0,
-    marginTop: -spacing.xLarge
   },
   xl: {
     width: 1024
@@ -76,37 +82,89 @@ const styles = {
     width: 820
   },
   md: {
-    width: 520,
+    width: 600,
     [`@media screen and (max-width:${grid.sm - 1}px)`]: {
-      width: 322,
       maxWidth: '100%'
     }
   },
   sm: {
-    width: 322,
-    maxWidth: '100%'
+    width: 320,
+    maxWidth: '100%',
+    '& $header': {
+      height: 56,
+      padding: [newSpacing['size-2'], newSpacing['size-3']]
+    },
+    '& $title': {
+      font: objectToFontValue(fonts['mobile-h4-m'])
+    },
+    '& $contentChild': {
+      padding: newSpacing['size-3']
+    },
+    '& $footer': {
+      flexDirection: 'column-reverse',
+      gap: newSpacing['size-1'],
+      padding: newSpacing['size-3']
+    }
   },
-  top: {
-    marginBottom: spacing.small
+  fullSize: {
+    [`@media screen and (max-width:${grid.xs - 1}px)`]: {
+      width: '100% !important',
+      border: 0,
+      '& $contentWrapper': {
+        height: '100vh',
+        maxHeight: '100vh',
+        overflow: 'auto',
+        [`@media screen and (min-width:${grid.xs}px)`]: {
+          height: 'auto'
+        }
+      }
+    }
   },
-  title: {},
-  closeIcon: {
-    height: spacing.medium,
+  contentWrapper: {
+    flex: 1,
+    height: 'auto',
+    maxHeight: '85vh'
+  },
+  header: {
+    height: 56,
+    flexGrow: 0,
+    padding: [newSpacing['size-2'], newSpacing['size-3']],
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    zIndex: 1,
+    background: 'transparent',
+    border: '1px solid transparent',
+    transition: '0.2s all',
+    [`@media screen and (min-width:${grid.xs}px)`]: {
+      height: 72,
+      padding: [
+        newSpacing['size-4'],
+        newSpacing['size-4'],
+        newSpacing['size-4'],
+        newSpacing['size-7']
+      ]
+    }
+  },
+  stickyHeader: {
+    marginBottom: -56,
+    [`@media screen and (min-width:${grid.xs}px)`]: {
+      marginBottom: -72
+    }
+  },
+  solidHeader: {
+    background: newColors.bg.surface.default
+  },
+  title: {
+    margin: 0,
+    font: objectToFontValue(fonts['mobile-h4-m']),
+    [`@media screen and (min-width:${grid.xs}px)`]: {
+      font: objectToFontValue(fonts['heading-h4'])
+    }
   },
   content: {
-    marginLeft: -spacing.small,
-    marginRight: -spacing.small,
-    paddingLeft: spacing.small,
-    paddingRight: spacing.small,
     transition: '0.1s height',
-    [`@media screen and (min-width:${grid.sm}px)`]: {
-      marginLeft: -spacing.medium,
-      marginRight: -spacing.medium,
-      paddingLeft: spacing.medium,
-      paddingRight: spacing.medium
-    },
+    overflow: 'auto',
+    flex: 1,
     '&::-webkit-scrollbar': {
       width: 6
     },
@@ -115,60 +173,57 @@ const styles = {
       borderRadius: 3
     }
   },
-  bottom: {
+  contentChild: {
+    padding: newSpacing['size-3'],
+    borderBottom: '1px solid transparent',
+    [`@media screen and (min-width:${grid.xs}px)`]: {
+      padding: [newSpacing['size-3'], newSpacing['size-7']]
+    }
+  },
+  noHeader: {
+    [`@media screen and (min-width:${grid.sm}px)`]: {
+      paddingTop: newSpacing['size-7']
+    }
+  },
+  noFooter: {
+    paddingBottom: newSpacing['size-7']
+  },
+  headerBorder: {
+    borderBottom: `1px solid ${newColors.border.default.subtle}`
+  },
+  footer: {
+    flexGrow: 0,
     textAlign: 'right',
-    marginTop: spacing.tiny
+    padding: newSpacing['size-3'],
+    borderTop: '1px solid transparent',
+    display: 'flex',
+    flexDirection: 'column-reverse',
+    gap: newSpacing['size-1'],
+    [`@media screen and (min-width:${grid.xs}px)`]: {
+      padding: [newSpacing['size-4'], newSpacing['size-7']],
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      gap: newSpacing['size-2']
+    }
   },
-  secBtn: {
-    marginTop: spacing.small
+  footerBorder: {
+    borderTop: `1px solid ${newColors.border.default.subtle}`
   },
-  mainBtn: {
-    marginLeft: spacing.base,
-    marginTop: spacing.small
+  split: {
+    display: 'flex',
+    direction: 'row'
   },
   imgLeft: {
-    width: 200,
-    backgroundImage: ({ imgLeft }: ModalProps) =>
-      `url(${imgLeft?.img || null})`,
-    backgroundPosition: ({ imgLeft }: ModalProps) =>
-      `center ${imgLeft?.position || 'center'}`,
-    backgroundSize: ({ imgLeft }: ModalProps) =>
-      imgLeft?.size === 'contain' ? '100% auto' : imgLeft?.size || 'cover',
-    backgroundColor: ({ imgLeft }: ModalProps) => imgLeft?.color || null,
-    backgroundRepeat: 'no-repeat',
-    borderRadius: [spacing.radius, 0, 0, spacing.radius],
-    marginLeft: -spacing.small,
-    marginTop: -spacing.small,
-    marginBottom: -spacing.small,
-    marginRight: spacing.small,
-    [`@media screen and (min-width:${grid.sm}px)`]: {
-      marginLeft: -spacing.medium,
-      marginTop: -spacing.medium,
-      marginBottom: -spacing.medium,
-      marginRight: spacing.medium
+    display: 'none',
+    [`@media screen and (min-width:${grid.xs}px)`]: {
+      display: 'block',
+      width: 200
     }
   },
   imgTop: {
-    position: 'relative',
-    height: ({ imgTop }: ModalProps) => imgTop?.height || 128,
-    backgroundImage: ({ imgTop }: ModalProps) => `url(${imgTop?.img || null})`,
-    backgroundPosition: ({ imgTop }: ModalProps) =>
-      `${imgTop?.position || 'center'} center`,
-    backgroundSize: ({ imgTop }: ModalProps) =>
-      imgTop?.size === 'contain' ? 'auto 100%' : imgTop?.size || 'cover',
-    backgroundColor: ({ imgTop }: ModalProps) => imgTop?.color || null,
-    backgroundRepeat: 'no-repeat',
-    borderRadius: [spacing.radius, spacing.radius, 0, 0],
-    marginLeft: -spacing.small,
-    marginTop: -spacing.small,
-    marginBottom: spacing.small,
-    marginRight: -spacing.small,
-    [`@media screen and (min-width:${grid.sm}px)`]: {
-      marginLeft: -spacing.medium,
-      marginTop: -spacing.medium,
-      marginBottom: spacing.medium,
-      marginRight: -spacing.medium
-    }
+    width: '100%',
+    aspectRatio: '21 / 9',
+    objectFit: 'cover'
   },
   closePosition: {
     position: 'absolute',
@@ -179,6 +234,4 @@ const styles = {
       right: spacing.medium
     }
   }
-}
-
-export default styles
+})

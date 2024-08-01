@@ -34,6 +34,8 @@ import Toaster from '@/components/Toaster'
 import SimpleToaster from './Toaster/Simple'
 import Avatar from '@/components/Avatar'
 import Pager from '@/components/Pager'
+import Modal from '@/components/Modal'
+import Portal from '@/components/Portal'
 import { Function } from './Function'
 import { default as Grid } from './Grid'
 
@@ -55,6 +57,8 @@ const mdxComponents = {
   Checkbox,
   Avatar,
   Pager,
+  Modal,
+  Portal,
   Function,
   colorsNew,
   Toaster,
