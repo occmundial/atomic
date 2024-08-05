@@ -1,3 +1,10 @@
+# [3.0.0-beta.40](https://github.com/occmundial/atomic/compare/v3.0.0-beta.39...v3.0.0-beta.40) (2024-08-05)
+
+
+### Bug Fixes
+
+* Fix styles for fullScreen modal ([1d7f7ff](https://github.com/occmundial/atomic/commit/1d7f7ff150143f839404aa34c32b30001b134cd3))
+
 # [3.0.0-beta.39](https://github.com/occmundial/atomic/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2024-08-01)
 
 
