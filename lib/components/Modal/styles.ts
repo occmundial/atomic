@@ -109,14 +109,15 @@ export default createUseStyles({
   fullSize: {
     [`@media screen and (max-width:${grid.xs - 1}px)`]: {
       width: '100% !important',
-      border: 0,
-      '& $contentWrapper': {
-        height: '100vh',
-        maxHeight: '100vh',
-        overflow: 'auto',
-        [`@media screen and (min-width:${grid.xs}px)`]: {
-          height: 'auto'
-        }
+      border: 0
+    },
+    '& $contentWrapper': {
+      height: '100vh',
+      maxHeight: '100vh',
+      overflow: 'auto',
+      [`@media screen and (min-width:${grid.xs}px)`]: {
+        height: 'auto',
+        maxHeight: '85vh'
       }
     }
   },
@@ -211,7 +212,7 @@ export default createUseStyles({
   },
   split: {
     display: 'flex',
-    direction: 'row'
+    flexDirection: 'row'
   },
   imgLeft: {
     display: 'none',
@@ -223,6 +224,7 @@ export default createUseStyles({
   imgTop: {
     width: '100%',
     aspectRatio: '21 / 9',
+    maxHeight: 200,
     objectFit: 'cover'
   },
   closePosition: {
