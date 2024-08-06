@@ -24,7 +24,8 @@ export default createUseStyles({
   bottom: {
     height: 21,
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: spacing['size-2']
   },
   validAssistiveText: {
     color: colors.text.corp.secondary
@@ -38,11 +39,13 @@ export default createUseStyles({
   },
   stackGroup: {
     display: 'flex',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    gap: `${spacing['size-4']} ${spacing['size-2']}`
   },
   choiceGroup: {
     display: 'flex',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    gap: `${spacing['size-4']} ${spacing['size-2']}`
   },
   label: {
     font: objectToFontValue(fonts['text-field-label']),

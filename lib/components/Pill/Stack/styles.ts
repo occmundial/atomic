@@ -12,7 +12,6 @@ export default createUseStyles({
     border: 0,
     height: spacing['size-6'],
     padding: [spacing['size-1'], spacing['size-2']],
-    marginBottom: spacing['size-2'],
     position: 'relative',
     zIndex: 0,
     outline: 0,
@@ -25,9 +24,6 @@ export default createUseStyles({
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-    '&:not(:last-child)': {
-      marginRight: spacing['size-2']
-    },
     '&:hover': {
       background: colors.pill.unselected.bg.hover
     },
