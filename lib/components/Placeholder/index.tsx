@@ -4,9 +4,27 @@ import classnames from 'classnames'
 import Flexbox from '@/components/Flexbox'
 
 import useStyles from './styles'
+import { classTranslation } from '../Text/helper'
+import { parseSpacingValueClass } from './helper'
 
 export interface PlaceholderProps {
+  theme: 'light' | 'dark'
   textSize?:
+    | 'display'
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'tag'
+    | 'bodyXLarge'
+    | 'bodyLargeStrong'
+    | 'bodyLarge'
+    | 'bodyRegularStrong'
+    | 'bodyRegular'
+    | 'bodySmallStrong'
+    | 'bodySmall'
+    | 'bodyXSmall'
     | 'hero'
     | 'headline'
     | 'heading'
@@ -15,8 +33,48 @@ export interface PlaceholderProps {
     | 'standard'
     | 'small'
     | 'micro'
-  top?: 'xTiny' | 'tiny' | 'small' | 'base' | 'medium' | 'large' | 'xLarge'
-  bottom?: 'xTiny' | 'tiny' | 'small' | 'base' | 'medium' | 'large' | 'xLarge'
+  top?:
+    | '0'
+    | '1'
+    | '2'
+    | '3'
+    | '4'
+    | '5'
+    | '6'
+    | '7'
+    | '8'
+    | '9'
+    | '10'
+    | '11'
+    | '12'
+    | 'xTiny'
+    | 'tiny'
+    | 'small'
+    | 'base'
+    | 'medium'
+    | 'large'
+    | 'xLarge'
+  bottom?:
+    | '0'
+    | '1'
+    | '2'
+    | '3'
+    | '4'
+    | '5'
+    | '6'
+    | '7'
+    | '8'
+    | '9'
+    | '10'
+    | '11'
+    | '12'
+    | 'xTiny'
+    | 'tiny'
+    | 'small'
+    | 'base'
+    | 'medium'
+    | 'large'
+    | 'xLarge'
   width?: string | number
   height?: string | number
   round?: boolean
@@ -28,24 +86,33 @@ const Placeholder = ({
   top,
   bottom,
   width,
-  height
+  height,
+  theme = 'light'
 }: PlaceholderProps) => {
   const classes = useStyles()
+
+  const textSizeTranslated = classTranslation.get(textSize) ?? textSize
+  const spacingTopTranslated = parseSpacingValueClass(top, 'top')
+  const spacingBottomTranslated = parseSpacingValueClass(bottom, 'bottom')
+
   return (
     <Flexbox
       display="flex"
       alignItems="center"
       className={classnames(
-        { [classes[textSize]]: textSize },
-        { [classes[`top${top}`]]: top },
-        { [classes[`bottom${bottom}`]]: bottom }
+        classes[textSizeTranslated],
+        classes[spacingTopTranslated],
+        classes[spacingBottomTranslated],
+        classes[theme]
       )}
     >
       <div
-        className={classnames(classes.placeholder, { [classes.round]: round })}
+        className={classnames(classes.placeholder, {
+          [classes.round]: round
+        })}
         style={{
           width: width ? width : '100%',
-          height: height ? height : 14
+          height: height ? height : !textSize ? 14 : '100%'
         }}
       />
     </Flexbox>

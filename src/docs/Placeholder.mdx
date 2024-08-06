@@ -1,0 +1,398 @@
+---
+title: Placeholder
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Placeholder from '@/components/Placeholder'
+import Text from '@/components/Text'
+
+# Placeholder
+
+---
+
+Placeholder or Skeleton of common elements
+
+## Props
+
+| Name             | Type                                                                                                                                                                                                        | Default value    | Description                                                                                                                    |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `textSize`       | **display h1 h2 h3 h4 h5 tagText bodyXLarge bodyLargeStrong bodyLarge bodyRegularStrong bodyRegular bodySmallStrong bodySmall bodyXSmall hero headline heading subheading large standard small micro**      | -                | Simulates a row of text. It has the same size and line-height as the Text component.                                           |
+| `bottom`         | **0 1 2 3 4 5 6 7 8 9 10 11 12 xTiny tiny small base medium large xLarge**                                                                                                                                  | -                | Spacing in the bottom of the placeholder.                                                                                      |
+| `bottom`         | **0 1 2 3 4 5 6 7 8 9 10 11 12 xTiny tiny small base medium large xLarge**                                                                                                                                  | -                | Spacing in the bottom of the placeholder.                                                                                      |
+| `width`          | **string number**                                                                                                                                                                                           | -                | Width of the placeholder. You can use numbers or a string with a percentage.                                                   |
+| `height`         | **string number**                                                                                                                                                                                           | -                | Height of the placeholder. You can use numbers or a string with a percentage.                                                  |
+| `round`          | **boolean**                                                                                                                                                                                                 | -                | It applies a border radius of 50%. Use it with width and height to create a circle to simulate an avatar or profile picture.   |
+| `theme`          | **light dark**                                                                                                                                                                                              | **light**        | It applies dark or light themes.                                                                                               |
+
+## Examples
+
+### Text Sizes
+
+You can choose any of the 9 sizes:
+
+<Demo title="Text sizes" background={colors.white}>
+    <table fullWidth>
+      <thead>
+        <tr>
+          <th>Text size</th>
+          <th>Placeholder</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td><Text display>Display text</Text></td>
+          <td>
+            <Placeholder textSize="display" />
+          </td>
+        </tr>
+        <tr>
+            <td><Text h1>H1 text</Text></td>
+            <td>
+                <Placeholder textSize="hero" />
+            </td>
+        </tr>
+        <tr>
+            <td><Text h2>H2 text</Text></td>
+            <td>
+                <Placeholder textSize="h2" />
+            </td>
+        </tr>
+        <tr>
+            <td><Text h3>H3 text</Text></td>
+            <td>
+              <Placeholder textSize="h3" />
+            </td>
+        </tr>
+        <tr>
+            <td><Text h4>H4 text</Text></td>
+            <td>
+                <Placeholder textSize="h4" />
+            </td>
+        </tr>
+        <tr>
+            <td><Text h5>H5 text</Text></td>
+            <td>
+                <Placeholder textSize="subheading" />
+            </td>
+        </tr>
+        <tr>
+            <td><Text tagText>Tag text</Text></td>
+            <td>
+              <Placeholder textSize="tag" />
+            </td>
+        </tr>
+        <tr>
+            <td><Text bodyXLarge>BodyXLarge body</Text></td>
+            <td>
+              <Placeholder textSize="bodyXLarge" />
+            </td>
+        </tr>
+        <tr>
+            <td><Text bodyLargeStrong>BodyLargeStrong body</Text></td>
+            <td>
+              <Placeholder textSize="bodyLargeStrong" />
+            </td>
+        </tr>
+        <tr>
+            <td><Text bodyLarge>BodyLarge body</Text></td>
+            <td>
+                <Placeholder textSize="bodyLarge" />
+            </td>
+        </tr>
+        <tr>
+            <td><Text bodyRegularStrong>BodyRegularStrong body</Text></td>
+            <td>
+                <Placeholder textSize="bodyRegularStrong" />
+            </td>
+        </tr>
+        <tr>
+            <td><Text bodyRegular>BodyRegular body</Text></td>
+            <td>
+                <Placeholder textSize="standard" />
+            </td>
+        </tr>
+        <tr>
+            <td><Text bodySmallStrong>BodySmallStrong body</Text></td>
+            <td>
+                <Placeholder textSize="bodySmallStrong" />
+            </td>
+        </tr>
+        <tr>
+            <td><Text bodySmall>BodySmall body</Text></td>
+            <td>
+                <Placeholder textSize="small" />
+            </td>
+        </tr>
+        <tr>
+            <td><Text bodyXSmall>BodyXSmall body</Text></td>
+            <td>
+                <Placeholder textSize="micro" />
+            </td>
+        </tr>
+      </tbody>
+    </table>
+</Demo>
+
+```jsx
+// How to use Text sizes
+function Component() {
+  return (
+    <>
+      {/* `bodyRegular` is the default value. */}
+      <Placeholder display />
+      <Placeholder textSize="h1" />
+      <Placeholder textSize="h2" />
+      <Placeholder textSize="h3" />
+      <Placeholder textSize="h4" />
+      <Placeholder textSize="h5" />
+      <Placeholder textSize="tagPlaceholder" />
+      <Placeholder textSize="bodyXLarge" />
+      <Placeholder textSize="bodyLargeStrong" />
+      <Placeholder textSize="bodyLarge" />
+      <Placeholder textSize="bodyRegularStrong" />
+      <Placeholder textSize="bodyRegular" />
+      <Placeholder textSize="bodySmallStrong" />
+      <Placeholder textSize="bodySmall" />
+      <Placeholder textSize="bodyXSmall" />
+
+      {/* Legacy props */}
+      <Placeholder textSize="hero" />
+      <Placeholder textSize="headline" />
+      <Placeholder textSize="heading" />
+      <Placeholder textSize="subheading" />
+      <Placeholder textSize="extraLarge" />
+      <Placeholder textSize="large" />
+      <Placeholder textSize="standard" />
+      <Placeholder textSize="small" />
+      <Placeholder textSize="micro" />
+    </>
+  )
+}
+```
+
+### Round
+
+<Demo title="Text spacing" background={colors.white}>
+    <table fullWidth>
+      <thead>
+        <tr>
+          <th>Normal</th>
+          <th>Round</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td>
+            <Placeholder textSize="h1" />
+          </td>
+          <td>
+            <Placeholder textSize="h1" round />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</Demo>
+
+```jsx
+// How to use Text sizes
+function Component() {
+  return (
+    <>
+      <Placeholder round />
+    </>
+  )
+}
+```
+
+### Theme
+
+<Demo title="Text spacing" background={colors.white}>
+    <table fullWidth>
+      <thead>
+        <tr>
+          <th>Light</th>
+          <th>Dark</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td>
+            <Placeholder textSize="h1" />
+          </td>
+          <td style={{ background: 'black' }}>
+            <Placeholder textSize="h1" theme="dark" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</Demo>
+
+```jsx
+// How to use Text sizes
+function Component() {
+  return (
+    <>
+      <Placeholder textSize="h1" theme="light" />
+      <Placeholder textSize="h1" theme="dark" />
+    </>
+  )
+}
+```
+
+### Spacing
+
+You can choose spacing for bottom and bottom
+
+<Demo title="Text spacing" background={colors.white}>
+    <table fullWidth>
+      <thead>
+        <tr>
+          <th>Top</th>
+          <th>Bottom</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td>
+            <Placeholder textSize="h4" top="1" />
+          </td>
+          <td>
+            <Placeholder textSize="h4" bottom="0" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Placeholder textSize="h4" top="2" />
+          </td>
+          <td>
+            <Placeholder textSize="h4" bottom="1" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Placeholder textSize="h4" top="3" />
+          </td>
+          <td>
+            <Placeholder textSize="h4" bottom="2" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Placeholder textSize="h4" top="4" />
+          </td>
+          <td>
+            <Placeholder textSize="h4" bottom="3" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Placeholder textSize="h4" top="5" />
+          </td>
+          <td>
+            <Placeholder textSize="h4" bottom="4" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Placeholder textSize="h4" top="6" />
+          </td>
+          <td>
+            <Placeholder textSize="h4" bottom="5" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Placeholder textSize="h4" top="7" />
+          </td>
+          <td>
+            <Placeholder textSize="h4" bottom="6" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Placeholder textSize="h4" top="8" />
+          </td>
+          <td>
+            <Placeholder textSize="h4" bottom="7" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Placeholder textSize="h4" top="9" />
+          </td>
+          <td>
+            <Placeholder textSize="h4" bottom="8" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Placeholder textSize="h4" top="10" />
+          </td>
+          <td>
+            <Placeholder textSize="h4" bottom="9" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Placeholder textSize="h4" top="11" />
+          </td>
+          <td>
+            <Placeholder textSize="h4" bottom="10" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Placeholder textSize="h4" top="11" />
+          </td>
+          <td>
+            <Placeholder textSize="h4" bottom="11" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Placeholder textSize="h4" top="12" />
+          </td>
+          <td>
+            <Placeholder textSize="h4" bottom="12" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</Demo>
+
+```jsx
+// How to use spacing
+function Component() {
+  return (
+    <>
+      <Placeholder bottom="0" />
+      <Placeholder bottom="1" />
+      <Placeholder bottom="2" />
+      <Placeholder bottom="3" />
+      <Placeholder bottom="4" />
+      <Placeholder bottom="5" />
+      <Placeholder bottom="6" />
+      <Placeholder bottom="7" />
+      <Placeholder bottom="8" />
+      <Placeholder bottom="9" />
+      <Placeholder bottom="10" />
+      <Placeholder bottom="11" />
+      <Placeholder bottom="12" />
+
+      {/* Legacy props */}
+      <Placeholder bottom="bottomXTiny" />
+      <Placeholder bottom="bottomTiny" />
+      <Placeholder bottom="bottomSmall" />
+      <Placeholder bottom="bottomBase" />
+      <Placeholder bottom="bottomMedium" />
+      <Placeholder bottom="bottomLarge" />
+      <Placeholder bottom="bottomXLarge" />
+    </>
+  )
+}
+```
