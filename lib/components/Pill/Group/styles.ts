@@ -11,8 +11,7 @@ export default createUseStyles({
   pillGroup: {
     display: 'flex',
     background: colors.pill.unselected.bg.default,
-    borderRadius: borderRadius['br-full'],
-    marginBottom: spacing['size-2']
+    borderRadius: borderRadius['br-full']
   },
   pill: {
     color: colors.text.indigo.primary,
