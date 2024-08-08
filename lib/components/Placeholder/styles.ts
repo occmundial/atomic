@@ -34,125 +34,85 @@ export default createUseStyles({
     }
   },
   display: {
-    height: 52.8,
-    '& $placeholder': {
-      height: 43.63
-    },
+    height: 48,
+    margin: '2.4px 0',
+
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      height: 79.19,
-      '& $placeholder': {
-        height: 65.45
-      }
+      height: 72,
+      margin: '3.6px 0'
     }
   },
   h1: {
-    height: 35.19,
-    '& $placeholder': {
-      height: 29.09
-    },
+    height: 32,
+    margin: '1.6px 0',
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      height: 52.8,
-      '& $placeholder': {
-        height: 43.63
-      }
+      height: 48,
+      margin: '2.4px 0'
     }
   },
   h2: {
-    height: 30.8,
-    '& $placeholder': {
-      height: 25.45
-    },
+    height: 28,
+    margin: '1.4px 0',
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      height: 44,
-      '& $placeholder': {
-        height: 36.63
-      }
+      height: 40,
+      margin: '2px 0'
     }
   },
-
   h3: {
-    height: 26.39,
-    '& $placeholder': {
-      height: 21.81
-    },
+    height: 24,
+    margin: '1.2px 0',
     [`@media screen and (min-width:${grid.sm}px)`]: {
       height: 30.8,
-      '& $placeholder': {
-        height: 25.45
-      }
+      margin: '1.4px 0'
     }
   },
   h4: {
-    height: 22,
-    '& $placeholder': {
-      height: 18.18
-    },
+    height: 20,
+    margin: '1px 0',
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      height: 26.39,
-      '& $placeholder': {
-        height: 21.81
-      }
+      height: 24,
+      padding: '1.2px 0'
     }
   },
   h5: {
-    height: 19.8,
-    '& $placeholder': {
-      height: 16.36
-    }
+    height: 18,
+    margin: '0.9px 0'
   },
   tag: {
-    height: 15,
-    '& $placeholder': {
-      height: 6.66
-    }
+    height: 10,
+    margin: '2.5px 0'
   },
   bodyXLarge: {
-    height: 30,
-    '& $placeholder': {
-      height: 13.33
-    }
+    height: 20,
+    margin: '5px 0'
   },
   bodyLargeStrong: {
-    height: 27,
-    '& $placeholder': {
-      height: 12
-    }
+    height: 18,
+    margin: '4.5px 0'
   },
   bodyLarge: {
-    height: 27,
-    '& $placeholder': {
-      height: 12
-    }
+    height: 18,
+    margin: '4.5px 0'
   },
   bodyRegularStrong: {
-    height: 24,
-    '& $placeholder': {
-      height: 10.66
-    }
+    height: 16,
+    margin: '4px 0'
   },
   bodyRegular: {
-    height: 24,
-    '& $placeholder': {
-      height: 10.66
-    }
+    height: 16,
+    margin: '4px 0'
   },
   bodySmallStrong: {
-    height: 21,
-    '& $placeholder': {
-      height: 12
-    }
+    height: 14,
+    margin: '3.5px 0'
   },
   bodySmall: {
-    height: 21,
-    '& $placeholder': {
-      height: 9.33
-    }
+    height: 14,
+    margin: '3.5px 0'
   },
   bodyXSmall: {
-    height: 18,
-    '& $placeholder': {
-      height: 8
-    }
+    height: 12,
+    margin: '3px 0'
   },
   top0: {
     marginTop: spacing['size-0']
