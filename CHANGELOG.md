@@ -1,3 +1,10 @@
+# [3.0.0-beta.43](https://github.com/occmundial/atomic/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2024-08-08)
+
+
+### Bug Fixes
+
+* Change div divider for box shadow ([0b196a5](https://github.com/occmundial/atomic/commit/0b196a5a9ea9e403c14aad1ad5963034d56dc296))
+
 # [3.0.0-beta.42](https://github.com/occmundial/atomic/compare/v3.0.0-beta.41...v3.0.0-beta.42) (2024-08-08)
 
 
