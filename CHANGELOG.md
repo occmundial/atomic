@@ -1,3 +1,15 @@
+# [3.0.0-beta.41](https://github.com/occmundial/atomic/compare/v3.0.0-beta.40...v3.0.0-beta.41) (2024-08-08)
+
+
+### Bug Fixes
+
+* Change spacing between Pill elements ([491b39b](https://github.com/occmundial/atomic/commit/491b39b4b84e6481f148fb537ab8e67164af84c3))
+
+
+### Features
+
+* Update slidedown with new design tokens ([b7e7d9b](https://github.com/occmundial/atomic/commit/b7e7d9b50a3042e165ea63408b40d5610d1d55a9))
+
 # [3.0.0-beta.40](https://github.com/occmundial/atomic/compare/v3.0.0-beta.39...v3.0.0-beta.40) (2024-08-05)
 
 
