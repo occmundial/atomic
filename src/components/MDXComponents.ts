@@ -38,6 +38,7 @@ import Modal from '@/components/Modal'
 import Portal from '@/components/Portal'
 import { Function } from './Function'
 import { default as Grid } from './Grid'
+import Placeholder from '@/components/Placeholder'
 import SlideDown from './SlideDown'
 
 const mdxComponents = {
@@ -64,6 +65,7 @@ const mdxComponents = {
   colorsNew,
   Toaster,
   Grid,
+  Placeholder,
   SlideDown,
   // Docs components
   Demo,

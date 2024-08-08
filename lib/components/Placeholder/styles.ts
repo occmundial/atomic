@@ -1,116 +1,159 @@
 import { createUseStyles } from 'react-jss'
-
-import colors from '@/tokens/colors'
-import spacing from '@/tokens/spacing'
+import grid from '@/tokens/grid'
+import spacing from '@/tokens/future/spacing.json'
+import colorsNew from '@/tokens/future/colors.json'
 
 export default createUseStyles({
-  '@keyframes placeholderPulse': {
+  '@keyframes progress': {
     '0%': {
-      opacity: 0.5
-    },
-    '50%': {
-      opacity: 1
+      transform: 'translate3d(-100%, 0, 0)'
     },
     '100%': {
-      opacity: 0.5
+      transform: 'translate3d(100%, 0, 0)'
     }
   },
   placeholder: {
-    background: colors.grey100,
-    animation: '$placeholderPulse 1s infinite ease-in-out',
-    borderRadius: spacing.xTiny
+    borderRadius: spacing['size-1'],
+    animation: '$progress 2s ease-in-out infinite'
   },
   round: {
     borderRadius: '50%'
   },
-  hero: {
-    height: 72,
+  light: {
+    background: colorsNew.skeleton.bg.default.default,
+    overflow: 'hidden',
     '& $placeholder': {
-      height: 57
+      background: colorsNew.skeleton.bg.default.gradient
     }
   },
-  headline: {
+  dark: {
+    background: colorsNew.skeleton.bg.inverse.default,
+    overflow: 'hidden',
+    '& $placeholder': {
+      background: colorsNew.skeleton.bg.inverse.gradient
+    }
+  },
+  display: {
     height: 48,
-    '& $placeholder': {
-      height: 36
+    margin: '2.4px 0',
+
+    [`@media screen and (min-width:${grid.sm}px)`]: {
+      height: 72,
+      margin: '3.6px 0'
     }
   },
-  heading: {
+  h1: {
     height: 32,
-    '& $placeholder': {
-      height: 22
+    margin: '1.6px 0',
+    [`@media screen and (min-width:${grid.sm}px)`]: {
+      height: 48,
+      margin: '2.4px 0'
     }
   },
-  subheading: {
+  h2: {
+    height: 28,
+    margin: '1.4px 0',
+    [`@media screen and (min-width:${grid.sm}px)`]: {
+      height: 40,
+      margin: '2px 0'
+    }
+  },
+  h3: {
     height: 24,
-    '& $placeholder': {
-      height: 16
+    margin: '1.2px 0',
+    [`@media screen and (min-width:${grid.sm}px)`]: {
+      height: 30.8,
+      margin: '1.4px 0'
     }
   },
-  large: {
-    height: 24,
-    '& $placeholder': {
-      height: 16
+  h4: {
+    height: 20,
+    margin: '1px 0',
+    [`@media screen and (min-width:${grid.sm}px)`]: {
+      height: 24,
+      padding: '1.2px 0'
     }
   },
-  standard: {
-    height: 24,
-    '& $placeholder': {
-      height: 14
-    }
+  h5: {
+    height: 18,
+    margin: '0.9px 0'
   },
-  small: {
+  tag: {
+    height: 10,
+    margin: '2.5px 0'
+  },
+  bodyXLarge: {
+    height: 20,
+    margin: '5px 0'
+  },
+  bodyLargeStrong: {
+    height: 18,
+    margin: '4.5px 0'
+  },
+  bodyLarge: {
+    height: 18,
+    margin: '4.5px 0'
+  },
+  bodyRegularStrong: {
     height: 16,
-    '& $placeholder': {
-      height: 12
-    }
+    margin: '4px 0'
   },
-  micro: {
+  bodyRegular: {
     height: 16,
-    '& $placeholder': {
-      height: 10
-    }
+    margin: '4px 0'
+  },
+  bodySmallStrong: {
+    height: 14,
+    margin: '3.5px 0'
+  },
+  bodySmall: {
+    height: 14,
+    margin: '3.5px 0'
+  },
+  bodyXSmall: {
+    height: 12,
+    margin: '3px 0'
   },
   topxTiny: {
-    marginTop: spacing.xTiny
+    marginTop: spacing['size-1']
   },
   toptiny: {
-    marginTop: spacing.tiny
+    marginTop: spacing['size-2']
   },
   topsmall: {
-    marginTop: spacing.small
+    marginTop: spacing['size-4']
   },
   topbase: {
-    marginTop: spacing.base
+    marginTop: spacing['size-5']
   },
   topmedium: {
-    marginTop: spacing.medium
+    marginTop: spacing['size-6']
   },
   toplarge: {
-    marginTop: spacing.large
+    marginTop: spacing['size-8']
   },
   topxLarge: {
-    marginTop: spacing.xLarge
+    marginTop: spacing['size-9']
   },
   bottomxTiny: {
-    marginBottom: spacing.xTiny
+    marginBottom: spacing['size-1']
   },
   bottomtiny: {
-    marginBottom: spacing.tiny
+    marginBottom: spacing['size-2']
   },
   bottomsmall: {
-    marginBottom: spacing.small
+    marginBottom: spacing['size-4']
   },
   bottombase: {
-    marginBottom: spacing.base
+    marginBottom: spacing['size-5']
   },
   bottommedium: {
-    marginBottom: spacing.medium
+    marginBottom: spacing['size-6']
   },
   bottomlarge: {
-    marginBottom: spacing.large
+    marginBottom: spacing['size-8']
   },
   bottomxLarge: {
-    marginBottom: spacing.xLarge
+    marginBottom: spacing['size-9']
   }
 })
