@@ -15,15 +15,17 @@ Placeholder or Skeleton of common elements
 
 ## Props
 
-| Name             | Type                                                                                                                                                                                                        | Default value    | Description                                                                                                                    |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `textSize`       | **display h1 h2 h3 h4 h5 tagText bodyXLarge bodyLargeStrong bodyLarge bodyRegularStrong bodyRegular bodySmallStrong bodySmall bodyXSmall hero headline heading subheading large standard small micro**      | -                | Simulates a row of text. It has the same size and line-height as the Text component.                                           |
-| `bottom`         | **0 1 2 3 4 5 6 7 8 9 10 11 12 xTiny tiny small base medium large xLarge**                                                                                                                                  | -                | Spacing in the bottom of the placeholder.                                                                                      |
-| `bottom`         | **0 1 2 3 4 5 6 7 8 9 10 11 12 xTiny tiny small base medium large xLarge**                                                                                                                                  | -                | Spacing in the bottom of the placeholder.                                                                                      |
-| `width`          | **string number**                                                                                                                                                                                           | -                | Width of the placeholder. You can use numbers or a string with a percentage.                                                   |
-| `height`         | **string number**                                                                                                                                                                                           | -                | Height of the placeholder. You can use numbers or a string with a percentage.                                                  |
-| `round`          | **boolean**                                                                                                                                                                                                 | -                | It applies a border radius of 50%. Use it with width and height to create a circle to simulate an avatar or profile picture.   |
-| `theme`          | **light dark**                                                                                                                                                                                              | **light**        | It applies dark or light themes.                                                                                               |
+| Name                  | Type                                                                                                                                                                                                        | Default value    | Description                                                                                                                    |
+| ----------------      | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `textSize`            | **display h1 h2 h3 h4 h5 tagText bodyXLarge bodyLargeStrong bodyLarge bodyRegularStrong bodyRegular bodySmallStrong bodySmall bodyXSmall hero headline heading subheading large standard small micro**      | -                | Simulates a row of text. It has the same size and line-height as the Text component.                                           |
+| `top (deprecated)`    | **xTiny tiny small base medium large xLarge**                                                                                                                                                               | -                | Spacing in the bottom of the placeholder.                                                                                      |
+| `bottom (deprecated)` | **xTiny tiny small base medium large xLarge**                                                                                                                                                               | -                | Spacing in the bottom of the placeholder.                                                                                      |
+| `width`               | **string number**                                                                                                                                                                                           | -                | Width of the placeholder. You can use numbers or a string with a percentage.                                                   |
+| `height`              | **string number**                                                                                                                                                                                           | -                | Height of the placeholder. You can use numbers or a string with a percentage.                                                  |
+| `round`               | **boolean**                                                                                                                                                                                                 | -                | It applies a border radius of 50%. Use it with width and height to create a circle to simulate an avatar or profile picture.   |
+| `theme`               | **light dark**                                                                                                                                                                                              | **light**        | It applies dark or light themes.                                                                                               |
+| `className`           | **string**                                                                                                                                                                                                  | -                | The card component className.                                                                                                  |
+| `style`               | **CSSProperties**                                                                                                                                                                                           | -                | Object with direct style properties.                                                                                           |
 
 ## Examples
 
@@ -251,114 +253,66 @@ You can choose spacing for bottom and bottom
     <table fullWidth>
       <thead>
         <tr>
-          <th>Top</th>
-          <th>Bottom</th>
+          <th>Top (deprecated)</th>
+          <th>Bottom (deprecated)</th>
         </tr>
       </thead>
   
       <tbody>
         <tr>
           <td>
-            <Placeholder textSize="h4" top="1" />
+            <Placeholder textSize="h4" top="xTiny" />
           </td>
           <td>
-            <Placeholder textSize="h4" bottom="0" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Placeholder textSize="h4" top="2" />
-          </td>
-          <td>
-            <Placeholder textSize="h4" bottom="1" />
+            <Placeholder textSize="h4" bottom="xTiny" />
           </td>
         </tr>
         <tr>
           <td>
-            <Placeholder textSize="h4" top="3" />
+            <Placeholder textSize="h4" top="tiny" />
           </td>
           <td>
-            <Placeholder textSize="h4" bottom="2" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Placeholder textSize="h4" top="4" />
-          </td>
-          <td>
-            <Placeholder textSize="h4" bottom="3" />
+            <Placeholder textSize="h4" bottom="tiny" />
           </td>
         </tr>
         <tr>
           <td>
-            <Placeholder textSize="h4" top="5" />
+            <Placeholder textSize="h4" top="small" />
           </td>
           <td>
-            <Placeholder textSize="h4" bottom="4" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Placeholder textSize="h4" top="6" />
-          </td>
-          <td>
-            <Placeholder textSize="h4" bottom="5" />
+            <Placeholder textSize="h4" bottom="small" />
           </td>
         </tr>
         <tr>
           <td>
-            <Placeholder textSize="h4" top="7" />
+            <Placeholder textSize="h4" top="base" />
           </td>
           <td>
-            <Placeholder textSize="h4" bottom="6" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Placeholder textSize="h4" top="8" />
-          </td>
-          <td>
-            <Placeholder textSize="h4" bottom="7" />
+            <Placeholder textSize="h4" bottom="base" />
           </td>
         </tr>
         <tr>
           <td>
-            <Placeholder textSize="h4" top="9" />
+            <Placeholder textSize="h4" top="medium" />
           </td>
           <td>
-            <Placeholder textSize="h4" bottom="8" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Placeholder textSize="h4" top="10" />
-          </td>
-          <td>
-            <Placeholder textSize="h4" bottom="9" />
+            <Placeholder textSize="h4" bottom="medium" />
           </td>
         </tr>
         <tr>
           <td>
-            <Placeholder textSize="h4" top="11" />
+            <Placeholder textSize="h4" top="large" />
           </td>
           <td>
-            <Placeholder textSize="h4" bottom="10" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Placeholder textSize="h4" top="11" />
-          </td>
-          <td>
-            <Placeholder textSize="h4" bottom="11" />
+            <Placeholder textSize="h4" bottom="large" />
           </td>
         </tr>
         <tr>
           <td>
-            <Placeholder textSize="h4" top="12" />
+            <Placeholder textSize="h4" top="xLarge" />
           </td>
           <td>
-            <Placeholder textSize="h4" bottom="12" />
+            <Placeholder textSize="h4" bottom="xLarge" />
           </td>
         </tr>
       </tbody>
@@ -370,28 +324,14 @@ You can choose spacing for bottom and bottom
 function Component() {
   return (
     <>
-      <Placeholder bottom="0" />
-      <Placeholder bottom="1" />
-      <Placeholder bottom="2" />
-      <Placeholder bottom="3" />
-      <Placeholder bottom="4" />
-      <Placeholder bottom="5" />
-      <Placeholder bottom="6" />
-      <Placeholder bottom="7" />
-      <Placeholder bottom="8" />
-      <Placeholder bottom="9" />
-      <Placeholder bottom="10" />
-      <Placeholder bottom="11" />
-      <Placeholder bottom="12" />
-
       {/* Legacy props */}
-      <Placeholder bottom="bottomXTiny" />
-      <Placeholder bottom="bottomTiny" />
-      <Placeholder bottom="bottomSmall" />
-      <Placeholder bottom="bottomBase" />
-      <Placeholder bottom="bottomMedium" />
-      <Placeholder bottom="bottomLarge" />
-      <Placeholder bottom="bottomXLarge" />
+      <Placeholder bottom="xTiny" />
+      <Placeholder bottom="tiny" />
+      <Placeholder bottom="small" />
+      <Placeholder bottom="base" />
+      <Placeholder bottom="medium" />
+      <Placeholder bottom="large" />
+      <Placeholder bottom="xLarge" />
     </>
   )
 }

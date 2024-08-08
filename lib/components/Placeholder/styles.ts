@@ -114,82 +114,46 @@ export default createUseStyles({
     height: 12,
     margin: '3px 0'
   },
-  top0: {
-    marginTop: spacing['size-0']
-  },
-  top1: {
+  topxTiny: {
     marginTop: spacing['size-1']
   },
-  top2: {
+  toptiny: {
     marginTop: spacing['size-2']
   },
-  top3: {
-    marginTop: spacing['size-3']
-  },
-  top4: {
+  topsmall: {
     marginTop: spacing['size-4']
   },
-  top5: {
+  topbase: {
     marginTop: spacing['size-5']
   },
-  top6: {
+  topmedium: {
     marginTop: spacing['size-6']
   },
-  top7: {
-    marginTop: spacing['size-7']
-  },
-  top8: {
+  toplarge: {
     marginTop: spacing['size-8']
   },
-  top9: {
+  topxLarge: {
     marginTop: spacing['size-9']
   },
-  top10: {
-    marginTop: spacing['size-10']
-  },
-  top11: {
-    marginTop: spacing['size-11']
-  },
-  top12: {
-    marginTop: spacing['size-12']
-  },
-  bottom0: {
-    marginBottom: spacing['size-0']
-  },
-  bottom1: {
+  bottomxTiny: {
     marginBottom: spacing['size-1']
   },
-  bottom2: {
+  bottomtiny: {
     marginBottom: spacing['size-2']
   },
-  bottom3: {
-    marginBottom: spacing['size-3']
-  },
-  bottom4: {
+  bottomsmall: {
     marginBottom: spacing['size-4']
   },
-  bottom5: {
+  bottombase: {
     marginBottom: spacing['size-5']
   },
-  bottom6: {
+  bottommedium: {
     marginBottom: spacing['size-6']
   },
-  bottom7: {
-    marginBottom: spacing['size-7']
-  },
-  bottom8: {
+  bottomlarge: {
     marginBottom: spacing['size-8']
   },
-  bottom9: {
+  bottomxLarge: {
     marginBottom: spacing['size-9']
-  },
-  bottom10: {
-    marginBottom: spacing['size-10']
-  },
-  bottom11: {
-    marginBottom: spacing['size-11']
-  },
-  bottom12: {
-    marginBottom: spacing['size-12']
   }
 })

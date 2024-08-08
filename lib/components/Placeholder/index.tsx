@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import classnames from 'classnames'
 
 import Flexbox from '@/components/Flexbox'
 
 import useStyles from './styles'
 import { classTranslation } from '../Text/helper'
-import { parseSpacingValueClass } from './helper'
 
 export interface PlaceholderProps {
+  className: string
+  style: CSSProperties
   theme: 'light' | 'dark'
   textSize?:
     | 'display'
@@ -33,48 +34,8 @@ export interface PlaceholderProps {
     | 'standard'
     | 'small'
     | 'micro'
-  top?:
-    | '0'
-    | '1'
-    | '2'
-    | '3'
-    | '4'
-    | '5'
-    | '6'
-    | '7'
-    | '8'
-    | '9'
-    | '10'
-    | '11'
-    | '12'
-    | 'xTiny'
-    | 'tiny'
-    | 'small'
-    | 'base'
-    | 'medium'
-    | 'large'
-    | 'xLarge'
-  bottom?:
-    | '0'
-    | '1'
-    | '2'
-    | '3'
-    | '4'
-    | '5'
-    | '6'
-    | '7'
-    | '8'
-    | '9'
-    | '10'
-    | '11'
-    | '12'
-    | 'xTiny'
-    | 'tiny'
-    | 'small'
-    | 'base'
-    | 'medium'
-    | 'large'
-    | 'xLarge'
+  top?: 'xTiny' | 'tiny' | 'small' | 'base' | 'medium' | 'large' | 'xLarge'
+  bottom?: 'xTiny' | 'tiny' | 'small' | 'base' | 'medium' | 'large' | 'xLarge'
   width?: string | number
   height?: string | number
   round?: boolean
@@ -87,23 +48,24 @@ const Placeholder = ({
   bottom,
   width,
   height,
+  className,
+  style,
   theme = 'light'
 }: PlaceholderProps) => {
   const classes = useStyles()
-
   const textSizeTranslated = classTranslation.get(textSize) ?? textSize
-  const spacingTopTranslated = parseSpacingValueClass(top, 'top')
-  const spacingBottomTranslated = parseSpacingValueClass(bottom, 'bottom')
 
   return (
     <Flexbox
       display="flex"
       alignItems="center"
+      style={style}
       className={classnames(
         classes[textSizeTranslated],
-        classes[spacingTopTranslated],
-        classes[spacingBottomTranslated],
-        classes[theme]
+        top && classes[`top${top}`],
+        bottom && classes[`bottom${bottom}`],
+        classes[theme],
+        className
       )}
     >
       <div
