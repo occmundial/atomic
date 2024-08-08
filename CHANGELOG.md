@@ -1,3 +1,10 @@
+# [3.0.0-beta.44](https://github.com/occmundial/atomic/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2024-08-08)
+
+
+### Bug Fixes
+
+* Remove tag margin top ([269feaa](https://github.com/occmundial/atomic/commit/269feaab4d620c7b6975c9c3c3d36542c7cc6695))
+
 # [3.0.0-beta.43](https://github.com/occmundial/atomic/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2024-08-08)
 
 
