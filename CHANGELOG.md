@@ -1,3 +1,16 @@
+# [3.0.0-beta.42](https://github.com/occmundial/atomic/compare/v3.0.0-beta.41...v3.0.0-beta.42) (2024-08-08)
+
+
+### Bug Fixes
+
+* Placeholders font sizes and margins ([04bab15](https://github.com/occmundial/atomic/commit/04bab154d91bd50dd40463eae6efaf5c11d12f57))
+
+
+### Features
+
+* Added className and styles props ([08da9eb](https://github.com/occmundial/atomic/commit/08da9eb51a7e9feace0cc06d8f817b736b6a16d8))
+* Updaed placeholder component styles ([cdb97fa](https://github.com/occmundial/atomic/commit/cdb97fae24ec6aa0d793299021c09cdc5d6b20bc))
+
 # [3.0.0-beta.41](https://github.com/occmundial/atomic/compare/v3.0.0-beta.40...v3.0.0-beta.41) (2024-08-08)
 
 
