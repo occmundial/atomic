@@ -11,7 +11,6 @@ export default createUseStyles({
     cursor: 'pointer'
   },
   tag: {
-    marginTop: spacing['size-1'],
     marginLeft: spacing['size-2'],
     pointerEvents: 'none'
   },
