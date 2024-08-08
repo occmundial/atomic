@@ -10,7 +10,6 @@ export default createUseStyles({
   pill: {
     height: spacing['size-6'],
     padding: [spacing['size-1'], spacing['size-2']],
-    marginBottom: spacing['size-2'],
     border: 0,
     position: 'relative',
     zIndex: 0,
@@ -21,10 +20,7 @@ export default createUseStyles({
     maxWidth: '100%',
     display: 'inline-flex',
     alignItems: 'center',
-    minWidth: 'auto',
-    '&:not(:last-child)': {
-      marginRight: spacing['size-2']
-    }
+    minWidth: 'auto'
   },
   enabled: {
     background: colors.pill.unselected.bg.default,

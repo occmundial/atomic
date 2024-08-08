@@ -7,14 +7,12 @@ const PILLS_DUMMY = [
     id: 1,
     value: 10,
     label: 'Label',
-    leftIcon: 'person',
     rightIcon: 'x'
   },
   {
     id: 2,
     value: 20,
     label: 'Label',
-    leftIcon: 'person',
     rightIcon: 'x'
   },
   {
@@ -22,7 +20,6 @@ const PILLS_DUMMY = [
     value: 30,
     label: 'Label',
     disabled: true,
-    leftIcon: 'person',
     rightIcon: 'x'
   },
   {
@@ -30,14 +27,12 @@ const PILLS_DUMMY = [
     value: 40,
     label: 'Label',
     disabled: true,
-    leftIcon: 'person',
     rightIcon: 'x'
   },
   {
     id: 5,
     value: 50,
     label: 'Label',
-    leftIcon: 'person',
     rightIcon: 'x'
   }
 ]

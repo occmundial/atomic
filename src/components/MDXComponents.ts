@@ -39,6 +39,7 @@ import Portal from '@/components/Portal'
 import { Function } from './Function'
 import { default as Grid } from './Grid'
 import Placeholder from '@/components/Placeholder'
+import SlideDown from './SlideDown'
 
 const mdxComponents = {
   // Library components
@@ -65,6 +66,7 @@ const mdxComponents = {
   Toaster,
   Grid,
   Placeholder,
+  SlideDown,
   // Docs components
   Demo,
   code: Code,
