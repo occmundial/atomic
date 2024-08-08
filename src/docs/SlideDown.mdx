@@ -39,7 +39,7 @@ An accordion component.
 </Demo>
 
 ```jsx
-// How to use selected value
+// How to use SlideDown
 const initialState: SlideDownProps = {
   title: "SlideDown Title",
   expanded: false,
@@ -58,19 +58,19 @@ const initialState: SlideDownProps = {
 function Component() {
   return (
     <SlideDown 
-        title="SlideDown Title"
-        expanded={initialState.expanded}
-        tag={initialState.tag}
-        onToggle={initialState.onToggle}
-        textSize={initialState.textSize}
-        strong={initialState.strong}
-        theme={initialState.theme}
-        noJustified={initialState.noJustified}
-        divider={initialState.divider}
-        icon={initialState.icon}
-        noPadding={initialState.noPadding}
+      title="SlideDown Title"
+      expanded={initialState.expanded}
+      tag={initialState.tag}
+      onToggle={initialState.onToggle}
+      textSize={initialState.textSize}
+      strong={initialState.strong}
+      theme={initialState.theme}
+      noJustified={initialState.noJustified}
+      divider={initialState.divider}
+      icon={initialState.icon}
+      noPadding={initialState.noPadding}
     >
-        {children}
+      {children}
     </SlideDown>
   )
 }
