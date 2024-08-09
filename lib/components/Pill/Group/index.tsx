@@ -32,6 +32,7 @@ const Group = ({
             { [classes.disabled]: selected !== item.id && item.disabled }
           )}
           onClick={selected !== item.id ? () => onSelect(item.id) : null}
+          type="button"
         >
           {item.label}
         </button>
