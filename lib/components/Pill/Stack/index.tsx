@@ -52,6 +52,7 @@ const Stack = ({
       onClick={() => handleOnClick(id)}
       id={idPrefix ? `${idPrefix}${id}` : null}
       data-testid={testId ? `${testId}${id}` : null}
+      type="button"
     >
       {children && (
         <span

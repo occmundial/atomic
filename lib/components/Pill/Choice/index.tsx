@@ -74,6 +74,7 @@ const Choice = ({
       disabled={disabled}
       id={idPrefix ? `${idPrefix}${id}` : null}
       data-testid={testId ? `${testId}${id}` : null}
+      type="button"
     >
       {leftIcon && (
         <Icon
