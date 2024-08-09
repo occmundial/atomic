@@ -1,3 +1,10 @@
+# [3.0.0-beta.45](https://github.com/occmundial/atomic/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2024-08-09)
+
+
+### Features
+
+* Added attribute type button to buttons ([af411bc](https://github.com/occmundial/atomic/commit/af411bc7c42eadeb07fc5eb89dfb0dbc5ca8866c))
+
 # [3.0.0-beta.44](https://github.com/occmundial/atomic/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2024-08-08)
 
 
