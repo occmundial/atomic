@@ -65,13 +65,12 @@ const Placeholder = ({
         top && classes[`top${top}`],
         bottom && classes[`bottom${bottom}`],
         classes[theme],
+        round && classes.round,
         className
       )}
     >
       <div
-        className={classnames(classes.placeholder, {
-          [classes.round]: round
-        })}
+        className={classnames(classes.placeholder)}
         style={{
           width: width ? width : '100%',
           height: height ? height : !textSize ? 14 : '100%'
