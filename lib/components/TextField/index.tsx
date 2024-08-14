@@ -419,6 +419,7 @@ const TextField = forwardRef(
           type !== 'select' ? (
             <Button
               theme="ghost"
+              type="button"
               iconLeft={getIcon('eye-o', 'eye')}
               size="md"
               disabled
@@ -437,6 +438,7 @@ const TextField = forwardRef(
             }
             theme="ghost"
             size="md"
+            type="button"
             className={classes.rightButton}
           />
         ) : null,
