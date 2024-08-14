@@ -1,3 +1,10 @@
+# [3.0.0-beta.47](https://github.com/occmundial/atomic/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2024-08-14)
+
+
+### Features
+
+* Add type button to eye icon ([2750792](https://github.com/occmundial/atomic/commit/2750792408dcafdfcf700ca6211d07d6d42e4488))
+
 # [3.0.0-beta.46](https://github.com/occmundial/atomic/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2024-08-14)
 
 
