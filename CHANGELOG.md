@@ -1,3 +1,15 @@
+# [3.0.0-beta.46](https://github.com/occmundial/atomic/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2024-08-14)
+
+
+### Bug Fixes
+
+* Placeholder round style ([5760f7b](https://github.com/occmundial/atomic/commit/5760f7bddb51ad9c3982a72f3081a9ffeea00900))
+
+
+### Features
+
+* Added type button to Texfield Password show/hide button ([e3b9d30](https://github.com/occmundial/atomic/commit/e3b9d302b85a12efe6c23c25befa435e26dd30ea))
+
 # [3.0.0-beta.45](https://github.com/occmundial/atomic/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2024-08-09)
 
 
