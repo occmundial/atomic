@@ -488,6 +488,7 @@ const TextField = forwardRef(
               theme="ghost"
               onClick={_onClear}
               size="md"
+              type="button"
               className={classes.rightButton}
               {...(testId && {
                 testId: `${testId}__container-close-icon`
