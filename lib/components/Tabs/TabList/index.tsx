@@ -39,7 +39,7 @@ export default function TabList({ children, tabRef }) {
             )
 
             while (nextFocusElement) {
-              if (nextFocusElement.getAttribute('disabled'))
+              if (nextFocusElement.getAttribute('disabled') === '')
                 nextFocusElement = getNextFocusElement(
                   parentElement,
                   nextFocusElement
@@ -77,7 +77,7 @@ export default function TabList({ children, tabRef }) {
             )
 
             while (nextFocusElement) {
-              if (nextFocusElement.getAttribute('disabled'))
+              if (nextFocusElement.getAttribute('disabled') === '')
                 nextFocusElement = getPreviousFocusElement(
                   parentElement,
                   nextFocusElement

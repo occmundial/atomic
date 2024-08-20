@@ -26,8 +26,10 @@ export default function Tab(props: TabProps) {
   const iconSize = size === 'small' ? 16 : 24
 
   const onClickHandler = () => {
-    setCurrentValue(value)
-    if (onClick) onClick(value)
+    if (!disabled) {
+      setCurrentValue(value)
+      if (onClick) onClick(value)
+    }
   }
 
   return (

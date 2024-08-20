@@ -27,7 +27,7 @@ export default createUseStyles({
         fill: colors.icon.default.bold
       }
     },
-    '&:focus': {
+    '&:focus-visible': {
       outline: 'none',
       boxShadow: `inset ${shadows['focus-bright-blue']}`
     }
