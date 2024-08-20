@@ -13,7 +13,7 @@ import { colors } from '@/components/tokens'
 
 ---
 
-An accordion component.
+A Tabs component.
 
 ## Props
 
@@ -41,39 +41,27 @@ An accordion component.
 </Demo>
 
 ```jsx
-// How to use SlideDown
-const initialState: SlideDownProps = {
-  title: "SlideDown Title",
-  expanded: false,
-  tag: "",
-  onToggle: () => console.log("onToggle event"),
-  textSize: "md",
-  strong: false,
-  theme: "default",
-  noJustified: false,
-  divider: false,
-  icon: "",
-  noPadding: false,
-  children: "SlideDown Content",
-};
+// How to use Tabs Controlled
+function TabsMDX() {
+  const [value, setValue] = useState<string>('2')
 
-function Component() {
   return (
-    <SlideDown 
-      title="SlideDown Title"
-      expanded={initialState.expanded}
-      tag={initialState.tag}
-      onToggle={initialState.onToggle}
-      textSize={initialState.textSize}
-      strong={initialState.strong}
-      theme={initialState.theme}
-      noJustified={initialState.noJustified}
-      divider={initialState.divider}
-      icon={initialState.icon}
-      noPadding={initialState.noPadding}
-    >
-      {children}
-    </SlideDown>
+    <TabsProvider value={value}>
+      <Tabs onChange={setValue} size="large">
+        <Tab title="Title 1" icon="person" value="1" />
+        <Tab title="Title 2" icon="search" value="2" />
+        <Tab title="Title 3" icon="search" value="3" />
+        <Tab title="Title 4" icon="search" value="4" />
+        <Tab title="Title 5" icon="search" value="5" />
+        <Tab title="Title 6" icon="search" value="6" />
+      </Tabs>
+      <TabContent value="1">Contenido 1</TabContent>
+      <TabContent value="2">Contenido 2</TabContent>
+      <TabContent value="3">Contenido 3</TabContent>
+      <TabContent value="4">Contenido 4</TabContent>
+      <TabContent value="5">Contenido 5</TabContent>
+      <TabContent value="6">Contenido 6</TabContent>
+    </TabsProvider>
   )
 }
 ```
@@ -84,39 +72,19 @@ function Component() {
 </Demo>
 
 ```jsx
-// How to use SlideDown
-const initialState: SlideDownProps = {
-  title: "SlideDown Title",
-  expanded: false,
-  tag: "",
-  onToggle: () => console.log("onToggle event"),
-  textSize: "md",
-  strong: false,
-  theme: "default",
-  noJustified: false,
-  divider: false,
-  icon: "",
-  noPadding: false,
-  children: "SlideDown Content",
-};
-
-function Component() {
+// How to use Tabs Uncontrolled
+function TabsMDX() {
   return (
-    <SlideDown 
-      title="SlideDown Title"
-      expanded={initialState.expanded}
-      tag={initialState.tag}
-      onToggle={initialState.onToggle}
-      textSize={initialState.textSize}
-      strong={initialState.strong}
-      theme={initialState.theme}
-      noJustified={initialState.noJustified}
-      divider={initialState.divider}
-      icon={initialState.icon}
-      noPadding={initialState.noPadding}
-    >
-      {children}
-    </SlideDown>
+    <TabsProvider>
+      <Tabs size="large">
+        <Tab title="Titulo 1" icon="person" />
+        <Tab title="Titulo 2" icon="search" counter="123" disabled />
+        <Tab title="Titulo 3" icon="search" />
+      </Tabs>
+      <TabContent value={0}>Contenido 1</TabContent>
+      <TabContent value={1}>Contenido 2</TabContent>
+      <TabContent value={2}>Contenido 3</TabContent>
+    </TabsProvider>
   )
 }
 ```

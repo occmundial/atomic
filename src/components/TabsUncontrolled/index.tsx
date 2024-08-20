@@ -7,13 +7,13 @@ export default function TabsMDX() {
   return (
     <TabsProvider>
       <Tabs size="large">
-        <Tab title="Javi" icon="person" />
-        <Tab title="Edna" icon="search" counter="123" disabled />
-        <Tab title="Abril" icon="search" />
+        <Tab title="Titulo 1" icon="person" />
+        <Tab title="Titulo 2" icon="search" counter="50" disabled />
+        <Tab title="Titulo 3" icon="search" />
       </Tabs>
-      <TabContent value={0}>Hola Que hace Javi!</TabContent>
-      <TabContent value={1}>Hola Que hace Edna!</TabContent>
-      <TabContent value={2}>Hola Que hace Abril!</TabContent>
+      <TabContent value={0}>Contenido 1</TabContent>
+      <TabContent value={1}>Contenido 2</TabContent>
+      <TabContent value={2}>Contenido 3</TabContent>
     </TabsProvider>
   )
 }
