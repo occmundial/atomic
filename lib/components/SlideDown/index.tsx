@@ -6,7 +6,6 @@ import {
   useMemo,
   MouseEventHandler
 } from 'react'
-import classNames from 'classnames'
 
 import Text from '@/components/Text'
 import Icon from '@/components/Icon'

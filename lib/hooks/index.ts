@@ -4,6 +4,7 @@ import useIsClient from './useIsClient'
 import usePrevious from './usePrevious'
 import useWindowSize from './useWindowSize'
 import { useThrottle } from './useThrottle'
+import useIsMounted from './useIsMounted'
 
 export {
   useAtomic,
@@ -11,5 +12,6 @@ export {
   useIsClient,
   usePrevious,
   useWindowSize,
-  useThrottle
+  useThrottle,
+  useIsMounted
 }
