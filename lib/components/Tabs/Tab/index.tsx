@@ -9,7 +9,6 @@ interface TabProps {
   size?: 'large' | 'medium' | 'small'
   onClick?: (value: any) => void
   value?: any
-  index?: number
   icon?: string
   counter?: string
   disabled?: boolean

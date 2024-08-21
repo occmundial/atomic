@@ -12,11 +12,13 @@ import {
 type TabsContextProps = {
   currentValue: string | number
   setCurrentValue: Dispatch<SetStateAction<string | number>>
+  initialize: boolean
 }
 
 const initialContext: TabsContextProps = {
   currentValue: 0,
-  setCurrentValue: () => {}
+  setCurrentValue: () => {},
+  initialize: false
 }
 
 const TabsContext = createContext<TabsContextProps>(initialContext)
@@ -39,7 +41,8 @@ export default function TabsProvider(props: ProviderProps) {
     <TabsContext.Provider
       value={{
         currentValue: currentTabIndex,
-        setCurrentValue: setCurrentTabIndex
+        setCurrentValue: setCurrentTabIndex,
+        initialize: true
       }}
     >
       <div
@@ -56,7 +59,7 @@ export default function TabsProvider(props: ProviderProps) {
 
 export function useTabsContext(): TabsContextProps {
   const context = useContext(TabsContext)
-  if (context === undefined) {
+  if (context.initialize === false) {
     throw new Error('useTabsContext must be used within a TabsProvider')
   }
   return context

@@ -6,12 +6,13 @@ import useStyles from './styles'
 interface TabContentProps {
   value: any
   children: ReactNode
+  testId?: string
 }
 
 export default function TabContent(props: TabContentProps) {
   const [show, setShow] = useState(false)
   const { currentValue } = useTabsContext()
-  const { children, value } = props
+  const { children, value, testId } = props
 
   useEffect(() => {
     let timeout = setTimeout(() => setShow(currentValue === value), 150)
@@ -24,6 +25,7 @@ export default function TabContent(props: TabContentProps) {
       className={`${classes.container}${
         currentValue !== value ? ` ${classes.hide}` : ''
       }`}
+      data-testid={testId}
     >
       <div
         style={{

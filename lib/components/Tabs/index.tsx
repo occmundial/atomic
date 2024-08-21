@@ -11,8 +11,8 @@ import {
   forwardRef
 } from 'react'
 import useStyles from './styles'
-import TabIndicator, { TabIndicatorProps } from './TabIndicator'
-import TabList, { TabListProps } from './TabList'
+import TabIndicator from './TabIndicator'
+import TabList from './TabList'
 
 interface TabsProps {
   size: 'large' | 'medium' | 'small'
@@ -27,10 +27,6 @@ const TabListRef = forwardRef((props: any, ref) => {
       {props.children}
     </TabList>
   )
-})
-
-const TabIndicatorRef = forwardRef((props: any, ref) => {
-  return <TabIndicator tabRef={ref} {...props} />
 })
 
 function Tabs(props: TabsProps) {
@@ -52,7 +48,6 @@ function Tabs(props: TabsProps) {
       indexValueMap.set(childValue, index)
       return cloneElement(childTyped, {
         value: childValue,
-        index,
         size,
         onClick: onChange
       })

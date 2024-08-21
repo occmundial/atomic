@@ -45,10 +45,11 @@ export default function TabIndicator({
               children[currentIndex].clientWidth / 2
             : 0
 
-        tabRef.current.parentElement.scrollTo({
-          behavior: 'smooth',
-          left: left
-        })
+        if (tabRef.current.parentElement.scrollTo)
+          tabRef.current.parentElement.scrollTo({
+            behavior: 'smooth',
+            left: left
+          })
       }
     }
   }, [tabRef, currentValue, indexValueMap])

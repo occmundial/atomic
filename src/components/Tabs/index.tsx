@@ -4,26 +4,111 @@ import Tabs from '@/components/Tabs'
 import TabsProvider from '@/components/Tabs/context'
 import Tab from '@/components/Tabs/Tab'
 import TabContent from '@/components/Tabs/TabContent'
+import Flexbox from '@/components/Flexbox'
+import Checkbox from '@/components/Checkbox'
+import Radio from '@/components/Radio'
+
+const initialState = {
+  size: 1,
+  withIcon: false,
+  withCounter: false
+}
+
+const mappedSize = {
+  1: 'large',
+  2: 'medium',
+  3: 'small'
+}
 
 export default function TabsMDX() {
-  const [value, setValue] = useState<string>('3')
+  const [value, setValue] = useState<string>('value3')
+  const [tabsProps, setTabsProps] = useState<any>(initialState)
 
   return (
-    <TabsProvider value={value}>
-      <Tabs onChange={setValue} size="large">
-        <Tab title="Title 1" icon="person" value="1" />
-        <Tab title="Title 2" icon="search" value="2" />
-        <Tab title="Title 3" icon="search" value="3" />
-        <Tab title="Title 4" icon="search" value="4" />
-        <Tab title="Title 5" icon="search" value="5" />
-        <Tab title="Title 6" icon="search" value="6" />
-      </Tabs>
-      <TabContent value="1">Contenido 1</TabContent>
-      <TabContent value="2">Contenido 2</TabContent>
-      <TabContent value="3">Contenido 3</TabContent>
-      <TabContent value="4">Contenido 4</TabContent>
-      <TabContent value="5">Contenido 5</TabContent>
-      <TabContent value="6">Contenido 6</TabContent>
-    </TabsProvider>
+    <Flexbox
+      display="flex"
+      direction="col"
+      justifyContent="start"
+      style={{ gap: 32 }}
+    >
+      <TabsProvider value={value}>
+        <Tabs onChange={setValue} size={mappedSize[tabsProps.size]}>
+          <Tab
+            title="Title 1"
+            icon={tabsProps.withIcon ? 'search' : ''}
+            value="value"
+            counter={tabsProps.withCounter ? '1' : ''}
+          />
+          <Tab
+            title="Title 2"
+            icon={tabsProps.withIcon ? 'search' : ''}
+            value="value2"
+            counter={tabsProps.withCounter ? '10' : ''}
+          />
+          <Tab
+            title="Title 3"
+            icon={tabsProps.withIcon ? 'search' : ''}
+            value="value3"
+            counter={tabsProps.withCounter ? '20' : ''}
+          />
+          <Tab
+            title="Title 4"
+            icon={tabsProps.withIcon ? 'search' : ''}
+            value="value4"
+            counter={tabsProps.withCounter ? '30' : ''}
+          />
+          <Tab
+            title="Title 5"
+            icon={tabsProps.withIcon ? 'search' : ''}
+            value="value5"
+            counter={tabsProps.withCounter ? '40' : ''}
+          />
+          <Tab
+            title="Title 6"
+            icon={tabsProps.withIcon ? 'search' : ''}
+            value="value6"
+            counter={tabsProps.withCounter ? '50' : ''}
+          />
+        </Tabs>
+        <TabContent value="value">Contenido 1</TabContent>
+        <TabContent value="value2">Contenido 2</TabContent>
+        <TabContent value="value3">Contenido 3</TabContent>
+        <TabContent value="value4">Contenido 4</TabContent>
+        <TabContent value="value5">Contenido 5</TabContent>
+        <TabContent value="value6">Contenido 6</TabContent>
+      </TabsProvider>
+      <Flexbox
+        display="flex"
+        justifyContent="start"
+        wrap="wrap"
+        style={{ columnGap: '24px' }}
+      >
+        <Checkbox
+          label="With Icon"
+          value={tabsProps.withIcon}
+          onChange={value =>
+            setTabsProps(prevState => ({ ...prevState, withIcon: value }))
+          }
+        />
+        <Checkbox
+          label="With Counter"
+          value={tabsProps.withCounter}
+          onChange={value =>
+            setTabsProps(prevState => ({ ...prevState, withCounter: value }))
+          }
+        />
+        <Radio
+          options={[
+            { value: 1, label: 'Large' },
+            { value: 2, label: 'Medium' },
+            { value: 3, label: 'Small' }
+          ]}
+          onChange={value =>
+            setTabsProps(prevState => ({ ...prevState, size: value }))
+          }
+          selected={tabsProps.size}
+        />
+      </Flexbox>
+    </Flexbox>
   )
 }
