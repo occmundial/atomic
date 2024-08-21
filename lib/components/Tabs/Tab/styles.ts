@@ -1,9 +1,7 @@
 import { createUseStyles } from 'react-jss'
 
-import legacyColors from '@/tokens/colors'
 import colors from '@/tokens/future/colors.json'
 import spacing from '@/tokens/future/spacing.json'
-import borderRadius from '@/tokens/future/borderRadius.json'
 import fonts from '@/tokens/future/fonts.json'
 import { objectToFontValue } from '@/utils/font'
 import shadows from '@/tokens/future/shadows.json'
