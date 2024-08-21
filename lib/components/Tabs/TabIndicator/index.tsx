@@ -2,23 +2,26 @@ import { useCallback, useEffect, useState } from 'react'
 import { useTabsContext } from '../context'
 import useStyles from './styles'
 import useIsMounted from '@/hooks/useIsMounted'
+import classNames from 'classnames'
 
 export interface TabIndicatorProps {
   tabRef: any
   indexValueMap: any
+  size: 'large' | 'medium' | 'small'
 }
 
 function debouce(func) {
   let timer
   return function (...args) {
     clearTimeout(timer)
-    timer = setTimeout(() => func.apply(this, args), 150)
+    timer = setTimeout(() => func.apply(this, args), 0)
   }
 }
 
 export default function TabIndicator({
   tabRef,
-  indexValueMap
+  indexValueMap,
+  size
 }: TabIndicatorProps) {
   const isMounted = useIsMounted()
   const { currentValue } = useTabsContext()
@@ -85,5 +88,12 @@ export default function TabIndicator({
     }
   }, [tabRef, isMounted])
 
-  return <div className={classes.container} style={positionStyles} />
+  return (
+    <div
+      className={classNames(classes.container, {
+        [classes.small]: size === 'small'
+      })}
+      style={positionStyles}
+    />
+  )
 }

@@ -42,7 +42,9 @@ export default createUseStyles({
     font: objectToFontValue(fonts['button-large']),
     padding: [spacing['size-4'], spacing['size-7']]
   },
-  selected: {},
+  selected: {
+    color: colors.text.corp.primary
+  },
   disabled: {
     color: colors.text.corp.disabled
   },

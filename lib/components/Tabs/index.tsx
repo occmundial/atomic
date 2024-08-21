@@ -59,7 +59,7 @@ function Tabs(props: TabsProps) {
       <TabListRef indexValueMap={indexValueMap} ref={ref}>
         {renderTab()}
       </TabListRef>
-      <TabIndicator tabRef={ref} indexValueMap={indexValueMap} />
+      <TabIndicator size={size} tabRef={ref} indexValueMap={indexValueMap} />
     </div>
   )
 }
