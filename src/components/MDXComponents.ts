@@ -40,6 +40,8 @@ import { Function } from './Function'
 import { default as Grid } from './Grid'
 import Placeholder from '@/components/Placeholder'
 import SlideDown from './SlideDown'
+import Tabs from './Tabs'
+import TabsUncontrolled from './TabsUncontrolled'
 
 const mdxComponents = {
   // Library components
@@ -67,6 +69,8 @@ const mdxComponents = {
   Grid,
   Placeholder,
   SlideDown,
+  Tabs,
+  TabsUncontrolled,
   // Docs components
   Demo,
   code: Code,
