@@ -1,11 +1,9 @@
 import {
   createContext,
   Dispatch,
-  MutableRefObject,
   ReactNode,
   SetStateAction,
   useContext,
-  useEffect,
   useState
 } from 'react'
 
