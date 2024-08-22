@@ -14,7 +14,7 @@ describe('Tab', () => {
 
   it('should throw an error', () => {
     expect(() => render(<Tabs size="large">Pruebas</Tabs>)).toThrow(
-      'useTabsContext must be used within a TabsProviderUncontrolled'
+      'useTabsContext must be used within a TabsProvider'
     )
   })
   it('should not render text child', () => {
@@ -35,9 +35,9 @@ describe('Tab', () => {
     )
     expect(queryByText('Tab prueba')).toBeInTheDocument()
   })
-  it('should be selected the second child', () => {
+  it('should be selected the first child', () => {
     const { getByTestId } = render(
-      <TabsProviderUncontrolled value={1}>
+      <TabsProviderUncontrolled>
         <Tabs size="large">
           <Tab title="child 1" testId="tab-child-1" />
           <Tab title="child 2" testId="tab-child-2" />
@@ -45,13 +45,13 @@ describe('Tab', () => {
         </Tabs>
       </TabsProviderUncontrolled>
     )
-    expect(getByTestId('tab-child-2').getAttribute('class')).toContain(
+    expect(getByTestId('tab-child-1').getAttribute('class')).toContain(
       'selected'
     )
   })
-  it('should be displayed the second child content', () => {
+  it('should be displayed the first child content', () => {
     const { getByTestId } = render(
-      <TabsProviderUncontrolled value={1}>
+      <TabsProviderUncontrolled>
         <Tabs size="large">
           <Tab title="child 1" testId="tab-child-1" />
           <Tab title="child 2" testId="tab-child-2" />
@@ -68,25 +68,25 @@ describe('Tab', () => {
         </TabContent>
       </TabsProviderUncontrolled>
     )
-    expect(getByTestId('tab-child-2').getAttribute('class')).toContain(
+    expect(getByTestId('tab-child-1').getAttribute('class')).toContain(
       'selected'
     )
-    expect(getByTestId('tab-child-1').getAttribute('class')).not.toContain(
+    expect(getByTestId('tab-child-2').getAttribute('class')).not.toContain(
       'selected'
     )
     expect(getByTestId('tab-child-3').getAttribute('class')).not.toContain(
       'selected'
     )
 
-    expect(getByTestId('tab-content-2').getAttribute('class')).not.toContain(
+    expect(getByTestId('tab-content-1').getAttribute('class')).not.toContain(
       'hide'
     )
-    expect(getByTestId('tab-content-1').getAttribute('class')).toContain('hide')
+    expect(getByTestId('tab-content-2').getAttribute('class')).toContain('hide')
     expect(getByTestId('tab-content-3').getAttribute('class')).toContain('hide')
   })
   it('should display content on click', () => {
     const { getByTestId } = render(
-      <TabsProviderUncontrolled value={1}>
+      <TabsProviderUncontrolled>
         <Tabs size="large">
           <Tab title="child 1" testId="tab-child-1" />
           <Tab title="child 2" testId="tab-child-2" />
@@ -103,10 +103,10 @@ describe('Tab', () => {
         </TabContent>
       </TabsProviderUncontrolled>
     )
-    expect(getByTestId('tab-child-2').getAttribute('class')).toContain(
+    expect(getByTestId('tab-child-1').getAttribute('class')).toContain(
       'selected'
     )
-    expect(getByTestId('tab-content-2').getAttribute('class')).not.toContain(
+    expect(getByTestId('tab-content-1').getAttribute('class')).not.toContain(
       'hide'
     )
 

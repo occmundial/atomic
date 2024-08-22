@@ -7,16 +7,16 @@ describe('Tab', () => {
   it('should throw an error', () => {
     expect(() =>
       render(
-        <TabContent value="1" testId="tab-content-1">
+        <TabContent value={1} testId="tab-content-1">
           Tab Content
         </TabContent>
       )
-    ).toThrow('useTabsContext must be used within a TabsProviderUncontrolled')
+    ).toThrow('useTabsContext must be used within a TabsProvider')
   })
   it('should render', () => {
     const { getByTestId } = render(
-      <TabsProviderUncontrolled value="1">
-        <TabContent value="1" testId="tab-content-1">
+      <TabsProviderUncontrolled>
+        <TabContent value={0} testId="tab-content-1">
           Tab Content
         </TabContent>
       </TabsProviderUncontrolled>
@@ -27,8 +27,8 @@ describe('Tab', () => {
   })
   it('should be visible', () => {
     const { getByTestId } = render(
-      <TabsProviderUncontrolled value="1">
-        <TabContent value="1" testId="tab-content-1">
+      <TabsProviderUncontrolled>
+        <TabContent value={0} testId="tab-content-1">
           Tab Content
         </TabContent>
       </TabsProviderUncontrolled>
@@ -39,8 +39,8 @@ describe('Tab', () => {
   })
   it('should be hide', () => {
     const { getByTestId } = render(
-      <TabsProviderUncontrolled value="1">
-        <TabContent value="2" testId="tab-content-1">
+      <TabsProviderUncontrolled>
+        <TabContent value={1} testId="tab-content-1">
           Tab Content
         </TabContent>
       </TabsProviderUncontrolled>

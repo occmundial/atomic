@@ -6,7 +6,7 @@ import { TabsProviderUncontrolled } from '../context'
 describe('Tab', () => {
   it('should throw an error', () => {
     expect(() => render(<Tab title="Tab title" testId="tab-test" />)).toThrow(
-      'useTabsContext must be used within a TabsProviderUncontrolled'
+      'useTabsContext must be used within a TabsProvider'
     )
   })
   it('should render', () => {
