@@ -27,7 +27,6 @@ export default function Tab(props: TabProps) {
   const onClickHandler = () => {
     if (!disabled) {
       setCurrentValue(value)
-      if (onClick) onClick(value)
     }
   }
 

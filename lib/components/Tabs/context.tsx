@@ -25,23 +25,43 @@ const TabsContext = createContext<TabsContextProps>(initialContext)
 
 interface ProviderProps {
   children: ReactNode
-  value?: string | number
 }
 
-export default function TabsProvider(props: ProviderProps) {
-  const [currentTabIndex, setCurrentTabIndex] = useState<string | number>(
-    props.value || 0
-  )
+interface ProviderControlledProps {
+  children: ReactNode
+  value: string | number
+  setCurrentValue: Dispatch<SetStateAction<any>>
+}
 
-  useEffect(() => {
-    setCurrentTabIndex(props.value)
-  }, [props.value, setCurrentTabIndex])
+export function TabsProviderUncontrolled(props: ProviderProps) {
+  const [currentTabIndex, setCurrentTabIndex] = useState<string | number>(0)
 
   return (
     <TabsContext.Provider
       value={{
         currentValue: currentTabIndex,
         setCurrentValue: setCurrentTabIndex,
+        initialize: true
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+      >
+        {props.children}
+      </div>
+    </TabsContext.Provider>
+  )
+}
+
+export function TabsProviderControlled(props: ProviderControlledProps) {
+  return (
+    <TabsContext.Provider
+      value={{
+        currentValue: props.value,
+        setCurrentValue: props.setCurrentValue,
         initialize: true
       }}
     >

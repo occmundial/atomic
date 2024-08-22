@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import Tabs from '@/components/Tabs'
-import TabsProvider from '@/components/Tabs/context'
+import { TabsProviderControlled } from '@/components/Tabs/context'
 import Tab from '@/components/Tabs/Tab'
 import TabContent from '@/components/Tabs/TabContent'
 import Flexbox from '@/components/Flexbox'
@@ -31,8 +31,8 @@ export default function TabsMDX() {
       justifyContent="start"
       style={{ gap: 32 }}
     >
-      <TabsProvider value={value}>
-        <Tabs onChange={setValue} size={mappedSize[tabsProps.size]}>
+      <TabsProviderControlled value={value} setCurrentValue={setValue}>
+        <Tabs size={mappedSize[tabsProps.size]}>
           <Tab
             title="Title 1"
             icon={tabsProps.withIcon ? 'search' : ''}
@@ -76,7 +76,7 @@ export default function TabsMDX() {
         <TabContent value="value4">Contenido 4</TabContent>
         <TabContent value="value5">Contenido 5</TabContent>
         <TabContent value="value6">Contenido 6</TabContent>
-      </TabsProvider>
+      </TabsProviderControlled>
       <Flexbox
         display="flex"
         justifyContent="start"

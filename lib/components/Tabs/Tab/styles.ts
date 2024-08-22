@@ -46,7 +46,8 @@ export default createUseStyles({
     color: colors.text.corp.primary
   },
   disabled: {
-    color: colors.text.corp.disabled
+    color: colors.text.corp.disabled,
+    cursor: 'default'
   },
   icon: {
     fill: colors.icon.default.default

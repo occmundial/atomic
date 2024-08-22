@@ -15,19 +15,26 @@ import { colors } from '@/components/tokens'
 
 A Tabs component.
 
-## TabsProvider Props
+## TabsProviderUncontrolled Props
 
-| Name           | Type          | Default value    | Description                                                                                                                        |
-| -------------- | ------------- | ---------------- | ------------------------------------------ |
-| `value`        | **any**       | 0                | Initial value of the tab to be selected.   |
+| Name           | Type            | Default value    | Description                                                                                                                        |
+| -------------- | ----------------| ---------------- | ------------------------------------------ |
+| `children`     | **ReactNode**   | -                | Children content to be render.             |
 
+## TabsProviderControlled Props
+
+| Name                | Type            | Default value    | Description                                                                                                                        |
+| ------------------- | --------------- | ---------------- | ------------------------------------------------ |
+| `children`          | **ReactNode**   | -                | Children content to be render.                   |
+| `value`             | **any**         | -                | Initial value of the tab to be selected.         |
+| `setCurrentValue`   | **any**         | -                | Function to update current tab value selected.   |
 
 ## Tabs Props
 
 | Name           | Type                     | Default value    | Description                                                                                                                        |
 | -------------- | ------------------------ | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `children`     | **ReactNode**            | -                | Content to display on open.                                                                                                        |
-| `size`         | **'large'** &#124; **'medium'** &#124; **'small'**    | -                | Text to show as a label right next to the Title.                                                                                   |
+| `children`     | **ReactNode**            | -                | A list of tab components or custom react components                                                                        |
+| `size`         | **'large'** &#124; **'medium'** &#124; **'small'**    | -                | Text to show as a label right next to the Title.                                                      |
 | `onChange`     | **function**             | -                | Function to call when the SlideDown expands or collapses. It returns true if it is expanded and false if it is collapsed.          |
 
 ## Tab Props

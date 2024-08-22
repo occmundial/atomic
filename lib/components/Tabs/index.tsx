@@ -31,7 +31,7 @@ const TabListRef = forwardRef((props: any, ref) => {
 
 function Tabs(props: TabsProps) {
   const ref = useRef(null)
-  const { children, size, onChange } = props
+  const { children, size } = props
   const indexValueMap = new Map()
   const classes = useStyles()
 
@@ -48,8 +48,7 @@ function Tabs(props: TabsProps) {
       indexValueMap.set(childValue, index)
       return cloneElement(childTyped, {
         value: childValue,
-        size,
-        onClick: onChange
+        size
       })
     })
   }

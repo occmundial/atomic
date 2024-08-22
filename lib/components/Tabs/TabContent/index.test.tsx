@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 
 import TabContent from './'
-import TabsProvider from '../context'
+import { TabsProviderUncontrolled } from '../context'
 
 describe('Tab', () => {
   it('should throw an error', () => {
@@ -11,15 +11,15 @@ describe('Tab', () => {
           Tab Content
         </TabContent>
       )
-    ).toThrow('useTabsContext must be used within a TabsProvider')
+    ).toThrow('useTabsContext must be used within a TabsProviderUncontrolled')
   })
   it('should render', () => {
     const { getByTestId } = render(
-      <TabsProvider value="1">
+      <TabsProviderUncontrolled value="1">
         <TabContent value="1" testId="tab-content-1">
           Tab Content
         </TabContent>
-      </TabsProvider>
+      </TabsProviderUncontrolled>
     )
     const tabContent = getByTestId('tab-content-1')
     expect(tabContent).toBeInTheDocument()
@@ -27,11 +27,11 @@ describe('Tab', () => {
   })
   it('should be visible', () => {
     const { getByTestId } = render(
-      <TabsProvider value="1">
+      <TabsProviderUncontrolled value="1">
         <TabContent value="1" testId="tab-content-1">
           Tab Content
         </TabContent>
-      </TabsProvider>
+      </TabsProviderUncontrolled>
     )
     const tabContent = getByTestId('tab-content-1')
     expect(tabContent).toBeInTheDocument()
@@ -39,11 +39,11 @@ describe('Tab', () => {
   })
   it('should be hide', () => {
     const { getByTestId } = render(
-      <TabsProvider value="1">
+      <TabsProviderUncontrolled value="1">
         <TabContent value="2" testId="tab-content-1">
           Tab Content
         </TabContent>
-      </TabsProvider>
+      </TabsProviderUncontrolled>
     )
     const tabContent = getByTestId('tab-content-1')
     expect(tabContent).toBeInTheDocument()

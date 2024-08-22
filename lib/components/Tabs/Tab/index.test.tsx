@@ -1,71 +1,71 @@
 import { render } from '@testing-library/react'
 
 import Tab from './'
-import TabsProvider from '../context'
+import { TabsProviderUncontrolled } from '../context'
 
 describe('Tab', () => {
   it('should throw an error', () => {
     expect(() => render(<Tab title="Tab title" testId="tab-test" />)).toThrow(
-      'useTabsContext must be used within a TabsProvider'
+      'useTabsContext must be used within a TabsProviderUncontrolled'
     )
   })
   it('should render', () => {
     const { getByTestId } = render(
-      <TabsProvider>
+      <TabsProviderUncontrolled>
         <Tab title="Tab title" testId="tab-test" />
-      </TabsProvider>
+      </TabsProviderUncontrolled>
     )
     expect(getByTestId('tab-test')).toBeInTheDocument()
     expect(getByTestId('tab-test')).toHaveTextContent('Tab title')
   })
   it('should render large size', () => {
     const { getByTestId } = render(
-      <TabsProvider>
+      <TabsProviderUncontrolled>
         <Tab title="Tab title" testId="tab-test" size="large" />
-      </TabsProvider>
+      </TabsProviderUncontrolled>
     )
     expect(getByTestId('tab-test')).toBeInTheDocument()
     expect(getByTestId('tab-test').getAttribute('class')).toContain('large')
   })
   it('should render medium size', () => {
     const { getByTestId } = render(
-      <TabsProvider>
+      <TabsProviderUncontrolled>
         <Tab title="Tab title" testId="tab-test" size="medium" />
-      </TabsProvider>
+      </TabsProviderUncontrolled>
     )
     expect(getByTestId('tab-test')).toBeInTheDocument()
     expect(getByTestId('tab-test').getAttribute('class')).toContain('medium')
   })
   it('should render small size', () => {
     const { getByTestId } = render(
-      <TabsProvider>
+      <TabsProviderUncontrolled>
         <Tab title="Tab title" testId="tab-test" size="small" />
-      </TabsProvider>
+      </TabsProviderUncontrolled>
     )
     expect(getByTestId('tab-test')).toBeInTheDocument()
     expect(getByTestId('tab-test').getAttribute('class')).toContain('small')
   })
   it('should render with icon', () => {
     const { getByTestId } = render(
-      <TabsProvider>
+      <TabsProviderUncontrolled>
         <Tab title="Tab title" testId="tab-test" icon="search" />
-      </TabsProvider>
+      </TabsProviderUncontrolled>
     )
     expect(getByTestId('tab-test')).toBeInTheDocument()
     expect(getByTestId('tab-test').firstChild.nodeName).toBe('svg')
   })
   it('should render with counter', () => {
     const { getByTestId } = render(
-      <TabsProvider>
+      <TabsProviderUncontrolled>
         <Tab title="Tab title" testId="tab-test" counter="12" />
-      </TabsProvider>
+      </TabsProviderUncontrolled>
     )
     expect(getByTestId('tab-test')).toBeInTheDocument()
     expect(getByTestId('tab-test').lastChild.textContent).toBe('12')
   })
   it('should be disabled', () => {
     const { getByTestId } = render(
-      <TabsProvider>
+      <TabsProviderUncontrolled>
         <Tab
           title="Tab title"
           testId="tab-test"
@@ -73,7 +73,7 @@ describe('Tab', () => {
           counter="12"
           disabled
         />
-      </TabsProvider>
+      </TabsProviderUncontrolled>
     )
     const tab = getByTestId('tab-test')
     expect(tab).toBeInTheDocument()
