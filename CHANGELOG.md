@@ -1,3 +1,20 @@
+# [3.0.0-beta.48](https://github.com/occmundial/atomic/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2024-08-22)
+
+
+### Bug Fixes
+
+* Change tab label color when selected and adjust indicator height ([20893ca](https://github.com/occmundial/atomic/commit/20893ca2b7858e2dd3be90e233a527f0aa33ca9b))
+* Remove unused imports ([0dea2ec](https://github.com/occmundial/atomic/commit/0dea2ec209da84e175035146cb8e11c739f0f67d))
+
+
+### Features
+
+* Add unit test ([5ff0220](https://github.com/occmundial/atomic/commit/5ff022027262f036685ffb1f9756516522dd18ce))
+* Create a context provider for tabs controlled ([acbda68](https://github.com/occmundial/atomic/commit/acbda681b7364b8cd331a6a0e7014887d02493ce))
+* Create a context provider for tabs controlled ([cbc84e4](https://github.com/occmundial/atomic/commit/cbc84e4b29b6520a781941539ec55dd76013e405))
+* First version of tabs ([2133b55](https://github.com/occmundial/atomic/commit/2133b551c0ef7569c60b65a45310d77685fcfde4))
+* Validate disabled next component and change focus selector ([b56a8fe](https://github.com/occmundial/atomic/commit/b56a8fe5f68f497847b89f157bafb94a658a037a))
+
 # [3.0.0-beta.47](https://github.com/occmundial/atomic/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2024-08-14)
 
 
