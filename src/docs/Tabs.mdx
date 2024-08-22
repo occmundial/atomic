@@ -63,7 +63,7 @@ function TabsMDX() {
   const [value, setValue] = useState<string>('2')
 
   return (
-    <TabsProvider value={value}>
+    <TabsProviderControlled value={value}>
       <Tabs onChange={setValue} size="large">
         <Tab title="Title 1" icon="person" value="1" />
         <Tab title="Title 2" icon="search" value="2" />
@@ -78,7 +78,7 @@ function TabsMDX() {
       <TabContent value="4">Contenido 4</TabContent>
       <TabContent value="5">Contenido 5</TabContent>
       <TabContent value="6">Contenido 6</TabContent>
-    </TabsProvider>
+    </TabsProviderControlled>
   )
 }
 ```
@@ -91,7 +91,7 @@ function TabsMDX() {
 // How to use Tabs Uncontrolled
 function TabsMDX() {
   return (
-    <TabsProvider>
+    <TabsProviderUncontrolled>
       <Tabs size="large">
         <Tab title="Titulo 1" icon="person" />
         <Tab title="Titulo 2" icon="search" counter="123" disabled />
@@ -100,7 +100,7 @@ function TabsMDX() {
       <TabContent value={0}>Contenido 1</TabContent>
       <TabContent value={1}>Contenido 2</TabContent>
       <TabContent value={2}>Contenido 3</TabContent>
-    </TabsProvider>
+    </TabsProviderUncontrolled>
   )
 }
 ```
