@@ -32,6 +32,14 @@ import Toaster from './Toaster'
 import { toastLauncher } from './Toaster/helper'
 import Toggle from './Toggle'
 import Tooltip from './Tooltip'
+import {
+  TabsProviderControlled,
+  TabsProviderUncontrolled,
+  useTabsContext
+} from './Tabs/context'
+import Tabs from './Tabs'
+import Tab from './Tabs/Tab'
+import TabContent from './Tabs/TabContent'
 
 export {
   Alert,
@@ -69,5 +77,11 @@ export {
   Toaster,
   toastLauncher,
   Toggle,
-  Tooltip
+  Tooltip,
+  TabsProviderControlled,
+  TabsProviderUncontrolled,
+  useTabsContext,
+  Tabs,
+  Tab,
+  TabContent
 }

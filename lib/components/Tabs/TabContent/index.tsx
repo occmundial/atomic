@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react'
+import { memo, ReactNode, useEffect, useState } from 'react'
 import { useTabsContext } from '../context'
 
 import useStyles from './styles'
@@ -26,6 +26,9 @@ export default function TabContent(props: TabContentProps) {
         currentValue !== value ? ` ${classes.hide}` : ''
       }`}
       data-testid={testId}
+      role="tabpanel"
+      id={`tabpanel-${value}`}
+      aria-labelledby={`tab-${value}`}
     >
       <div
         style={{

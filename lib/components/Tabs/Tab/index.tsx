@@ -12,7 +12,6 @@ interface TabProps {
   icon?: string
   counter?: string
   disabled?: boolean
-  id?: string
   testId?: string
 }
 
@@ -20,8 +19,7 @@ export default function Tab(props: TabProps) {
   const { currentValue, setCurrentValue } = useTabsContext()
   const classes = useStyles()
 
-  const { title, size, counter, icon, id, testId, value, onClick, disabled } =
-    props
+  const { title, size, counter, icon, testId, value, disabled } = props
   const iconSize = size === 'small' ? 16 : 24
 
   const onClickHandler = () => {
@@ -40,9 +38,11 @@ export default function Tab(props: TabProps) {
         [classes.enabled]: !disabled,
         [classes.disabled]: disabled
       })}
-      id={id}
+      type="button"
+      id={`tab-${value}`}
       tabIndex={value === currentValue ? 0 : -1}
       data-testid={testId}
+      aria-controls={`tabpanel-${value}`}
     >
       {icon ? (
         <Icon
