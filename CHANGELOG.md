@@ -1,3 +1,17 @@
+# [3.0.0-beta.49](https://github.com/occmundial/atomic/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2024-08-23)
+
+
+### Bug Fixes
+
+* Export tabs components ([4b671bc](https://github.com/occmundial/atomic/commit/4b671bcc6787c844d39536342628c59420deccfc))
+* Move tab list border to parent ([46b3dc9](https://github.com/occmundial/atomic/commit/46b3dc9c209f94a9db02974437bcaf6ceed26ea6))
+* Revert conditional render tab content ([3d2ed15](https://github.com/occmundial/atomic/commit/3d2ed150f3187968df4d3605b5ef8fc34378a270))
+
+
+### Features
+
+* Conditional render tabcontent and add aria attributes ([0f98bf5](https://github.com/occmundial/atomic/commit/0f98bf599e0dbbfed360c7f721eca1f9b46669c3))
+
 # [3.0.0-beta.48](https://github.com/occmundial/atomic/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2024-08-22)
 
 
