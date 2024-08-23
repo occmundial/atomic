@@ -1,3 +1,11 @@
+# [3.0.0-beta.50](https://github.com/occmundial/atomic/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2024-08-23)
+
+
+### Features
+
+* Hide scrollbar ([3af67bc](https://github.com/occmundial/atomic/commit/3af67bc056565677b1162820c4cc0b93481b93d3))
+* Hide scrollbar ([8201d6c](https://github.com/occmundial/atomic/commit/8201d6c1b49973b9bcf25ce7c64bf4fd45032cbd))
+
 # [3.0.0-beta.49](https://github.com/occmundial/atomic/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2024-08-23)
 
 
