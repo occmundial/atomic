@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react'
+import { memo, ReactNode, useEffect, useState } from 'react'
 import { useTabsContext } from '../context'
 
 import useStyles from './styles'
@@ -30,18 +30,14 @@ export default function TabContent(props: TabContentProps) {
       id={`tabpanel-${value}`}
       aria-labelledby={`tab-${value}`}
     >
-      {currentValue === value ? (
-        <div
-          style={{
-            opacity: show ? 1 : 0,
-            transition: 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s'
-          }}
-        >
-          {children}
-        </div>
-      ) : (
-        ''
-      )}
+      <div
+        style={{
+          opacity: show ? 1 : 0,
+          transition: 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s'
+        }}
+      >
+        {children}
+      </div>
     </div>
   )
 }
