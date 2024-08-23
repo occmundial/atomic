@@ -111,6 +111,7 @@ export default function TabList({ children, tabRef }) {
       className={classes.container}
       ref={tabRef}
       onKeyDown={onKeyDownHandler}
+      role="tablist"
     >
       {children}
     </div>
