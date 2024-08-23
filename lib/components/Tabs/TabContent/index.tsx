@@ -1,4 +1,4 @@
-import { memo, ReactNode, useEffect, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { useTabsContext } from '../context'
 
 import useStyles from './styles'
