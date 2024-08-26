@@ -14,7 +14,8 @@ export default createUseStyles({
     background: 'transparent',
     border: 0,
     transition: 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s',
-    whiteSpace: 'nowrap'
+    whiteSpace: 'nowrap',
+    alignItems: 'center'
   },
   enabled: {
     color: colors.text.corp.secondary,
@@ -54,5 +55,8 @@ export default createUseStyles({
   },
   iconDisabled: {
     fill: colors.icon.default.disabled
+  },
+  iconSelected: {
+    fill: colors.icon.default.bold
   }
 })

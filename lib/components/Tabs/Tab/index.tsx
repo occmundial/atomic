@@ -34,7 +34,7 @@ export default function Tab(props: TabProps) {
       onClick={onClickHandler}
       disabled={disabled}
       className={classNames(classes.button, classes[size], {
-        [classes.selected]: value === currentValue,
+        [classes.selected]: value === currentValue && !disabled,
         [classes.enabled]: !disabled,
         [classes.disabled]: disabled
       })}
@@ -49,6 +49,7 @@ export default function Tab(props: TabProps) {
           size={iconSize}
           iconName={icon}
           className={classNames(classes.icon, {
+            [classes.iconSelected]: value === currentValue && !disabled,
             [classes.iconDisabled]: disabled
           })}
           transition="all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s"
