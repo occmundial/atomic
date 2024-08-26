@@ -1,3 +1,10 @@
+# [3.0.0-beta.51](https://github.com/occmundial/atomic/compare/v3.0.0-beta.50...v3.0.0-beta.51) (2024-08-26)
+
+
+### Bug Fixes
+
+* Set correct icon color when selected ([219604f](https://github.com/occmundial/atomic/commit/219604f26639d4119eaad60155d4639da89e8ade))
+
 # [3.0.0-beta.50](https://github.com/occmundial/atomic/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2024-08-23)
 
 
