@@ -1,0 +1,1059 @@
+---
+title: NavTab
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import NavTab from '@/components/NavTab'
+import Icon from '@/components/Icon'
+
+# NavTab
+---
+
+The NavTop component is a versatile navigation bar designed for use at the top of web pages or applications.
+
+
+## Props
+
+| Name           | Type                                                                                                                                                                                                           | Default value    | Description                             |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | --------------------------------------- |
+| `left`         | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Anchor href attribute                   |
+| `right`        | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Anchor children                         |
+| `center`       | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Anchor link attribute                   |
+| `flexCenter`   | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Highlights the anchor                   |
+| `top`          | **[TopProp](#TopProp)[]**                                                                                                                                                                                      | -                | Anchor onCLick event                    |
+| `blue`         | **boolean**                                                                                                                                                                                                    | -                | Anchor className attribute              |
+| `fixed`        | **boolean**                                                                                                                                                                                                    | -                | Anchor test id                          |
+| `hideOnScroll` | **boolean**                                                                                                                                                                                                    | -                | Anchor test id                          |
+| `bottom`       | **boolean**                                                                                                                                                                                                    | -                | Anchor test id                          |
+| `zIndex`       | **number**                                                                                                                                                                                                     | -                | Anchor test id                          |
+| `className`    | **string**                                                                                                                                                                                                     | -                | Anchor test id                          |
+| `isFluid`      | **boolean**                                                                                                                                                                                                    | -                | Anchor test id                          |
+
+
+### LinkElement
+
+An object with the `type` property set to 'link', where you can use all **[NavItem props](/NavItem)** except for `children`, which should be replaced with `text`. 
+Additional Button props are detailed in the table below.
+
+| Name           | Type                                        | Default value    | Description                             |
+| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
+| `type`         | **link**                                    | -                | Anchor href attribute                   |
+| `key`          | **string \| number**                        | -                | Anchor children                         |
+| `text`         | **string \| ReactNode**                     | -                | Anchor link attribute                   |
+
+### ButtonElement
+
+An object with the `type` property set to 'Button', where you can use all **[Button props](/Button)** except for `children`, which should be replaced with `text` and white. 
+Additional Button props are detailed in the table below.
+
+| Name           | Type                                        | Default value    | Description                             |
+| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
+| `type`         | **button**                                  | -                | Anchor href attribute                   |
+| `key`          | **string \| number**                        | -                | Anchor children                         |
+| `text`         | **string \| ReactNode**                     | -                | Anchor link attribute                   |
+
+
+### DropdownElement
+
+An object with the `type` property set to 'link', where you can use all **[NavItem props](/NavItem)** except for `children`, which should be replaced with `text` and `selected`.
+Additional Button props are detailed in the table below.
+
+| Name           | Type                                        | Default value    | Description                             |
+| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
+| `type`         | **dropdownLink**                            | -                | Anchor href attribute                   |
+| `key`          | **string \| number**                        | -                | Anchor children                         |
+| `text`         | **string \| ReactNode**                     | -                | Anchor link attribute                   |
+
+### IconElement
+
+An object with the `type` property set to 'icon', where you can use all **[NavIcon props](/NavIcon)**.
+Additional NavIcon props are detailed in the table below.
+
+| Name           | Type                                        | Default value    | Description                             |
+| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
+| `type`         | **icon**                                    | -                | Anchor href attribute                   |
+| `key`          | **string \| number**                        | -                | Anchor children                         |
+
+
+### CustomElement
+
+An object with the `type` property set to 'custom'.
+
+| Name           | Type                                        | Default value    | Description                             |
+| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
+| `type`         | **custom**                                  | -                | Anchor href attribute                   |
+| `key`          | **string \| number**                        | -                | Anchor children                         |
+| `custom`       | **ReactNode**                               | -                | Anchor link attribute                   |
+| `testId`       | **string**                                  | -                | Anchor test id                          |
+
+### LogoElement 
+
+An object with the `type` property set to 'logo'.
+
+| Name           | Type                                        | Default value    | Description                             |
+| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
+| `type`         | **logo**                                    | -                | Anchor href attribute                   |
+| `key`          | **string \| number**                        | -                | Anchor children                         |
+| `logo`         | **ReactNode**                               | -                | Anchor link attribute                   |
+| `testId`       | **string**                                  | -                | Anchor test id                          |
+
+### TopProp
+An object where you can use all **[NavItem props](/NavItem)** except for `white`, `small` and `className`.
+
+## Examples
+
+### NavTab with NavTop
+
+<Demo title="NavTab with NavTop" background={colors.white}>
+  <NavTab
+    isFluid
+    blue
+    top={[
+          {
+              key:1,
+              children:'First link',
+              link:'#NavTab'
+          },
+          {
+              key:2,
+              children:'Current link',
+              link:'#NavTab',
+              selected: true
+          },
+          {
+              key:3,
+              children:'onClick item',
+              onClick:() => { console.log('whatever'); }
+          }
+        ]}
+      left={[
+        {
+            key:0,
+            type: 'logo',
+            logo: (
+                <a href="#NavTab">
+                    <Icon iconName="twitter" color={colors.white} />
+                </a>
+            )
+        },
+        {
+            key: 1,
+            type: 'dropdownLink',
+            text: 'Dropdown link',
+            onClick: () => console.log("click"),
+            selected: true
+        },
+        {
+            key: 2,
+            type: 'link',
+            text: 'Standard link',
+            link: '#NavTab'
+        }
+      ]}
+      right={[
+          {
+              key:1,
+              type:'button',
+              text:'Primary CTA',
+              theme:'primary'
+          },
+          {
+              key:2,
+              type:'button',  
+              text:'Secondary CTA',
+              theme:'ghostWhite'
+          }
+      ]}
+  />
+
+  <NavTab
+    isFluid
+    top={[
+          {
+              key:1,
+              children:'First link',
+              link:'#NavTab'
+          },
+          {
+              key:2,
+              children:'Current link',
+              link:'#NavTab',
+              selected: true
+          },
+          {
+              key:3,
+              children:'onClick item',
+              onClick:() => { console.log('whatever'); }
+          }
+        ]}
+      left={[
+        {
+            key:0,
+            type: 'logo',
+            logo: (
+                <a href="#NavTab">
+                    <Icon iconName="twitter" />
+                </a>
+            )
+        },
+        {
+            key: 1,
+            type: 'dropdownLink',
+            text: 'Dropdown link',
+            onClick: () => console.log("click"),
+            selected: true
+        },
+        {
+            key: 2,
+            type: 'link',
+            text: 'Standard link',
+            link: '#NavTab'
+        }
+      ]}
+      right={[
+        {
+            key:1,
+            type:'button',
+            text:'Primary CTA',
+            theme:'ghostPink'
+        },
+        {
+            key:2,
+            type:'button',
+            text:'Secondary CTA',
+            theme:'ghostGrey'
+        }
+      ]}
+  />
+</Demo>
+
+```jsx
+// How to use NavTab with NavTop
+function Component() {
+  return (
+    <NavTab
+      isFluid
+      blue
+      top={[
+            {
+                key:1,
+                children:'First link',
+                link:'#NavTab'
+            },
+            {
+                key:2,
+                children:'Current link',
+                link:'#NavTab',
+                selected: true
+            },
+            {
+                key:3,
+                children:'onClick item',
+                onClick:() => { console.log('whatever'); }
+            }
+          ]}
+        left={[
+          {
+              key:0,
+              type: 'logo',
+              logo: (
+                  <a href="#NavTab">
+                      <Icon iconName="twitter" color={colors.white} />
+                  </a>
+              )
+          },
+          {
+              key: 1,
+              type: 'dropdownLink',
+              text: 'Dropdown link',
+              onClick: () => console.log("click"),
+              selected: true
+          },
+          {
+              key: 2,
+              type: 'link',
+              text: 'Standard link',
+              link: '#NavTab'
+          }
+        ]}
+        right={[
+            {
+                key:1,
+                type:'button',
+                text:'Primary CTA',
+                theme:'primary'
+            },
+            {
+                key:2,
+                type:'button',  
+                text:'Secondary CTA',
+                theme:'ghostWhite'
+            }
+        ]}
+    />
+
+    <NavTab
+      isFluid
+      top={[
+            {
+                key:1,
+                children:'First link',
+                link:'#NavTab'
+            },
+            {
+                key:2,
+                children:'Current link',
+                link:'#NavTab',
+                selected: true
+            },
+            {
+                key:3,
+                children:'onClick item',
+                onClick:() => { console.log('whatever'); }
+            }
+          ]}
+        left={[
+          {
+              key:0,
+              type: 'logo',
+              logo: (
+                  <a href="#NavTab">
+                      <Icon iconName="twitter" />
+                  </a>
+              )
+          },
+          {
+              key: 1,
+              type: 'dropdownLink',
+              text: 'Dropdown link',
+              onClick: () => console.log("click"),
+              selected: true
+          },
+          {
+              key: 2,
+              type: 'link',
+              text: 'Standard link',
+              link: '#NavTab'
+          }
+        ]}
+        right={[
+          {
+              key:1,
+              type:'button',
+              text:'Primary CTA',
+              theme:'ghostPink'
+          },
+          {
+              key:2,
+              type:'button',
+              text:'Secondary CTA',
+              theme:'ghostGrey'
+          }
+        ]}
+    />
+  )
+}
+```
+
+### NavTab with center
+
+<Demo title="NavTab with center" background={colors.white}>
+  <NavTab
+    isFluid 
+    blue
+    left={[
+      {
+        key:1,
+        type: 'icon',
+        iconName: 'menu'
+      }      
+    ]} 
+    center={[
+      {
+        key:1,
+        type:'icon',
+        iconName:'columns-gap'
+      },
+      {
+        key:2,
+        type:'icon',
+        iconName:'search'
+      },
+      {
+        key:3,
+        type:'icon',
+        iconName:'person'
+      }
+    ]} 
+    right={[
+      {
+        key:1,
+        type:'icon',
+        iconName:'chat'
+      }
+    ]} 
+  />
+  <NavTab
+    isFluid
+    left={[
+      {
+        key:1,
+        type: 'icon',
+        iconName: 'menu'
+      }            
+    ]} 
+    center={[
+      {
+        key:1,
+        type:'icon',
+        iconName:'columns-gap'
+      },
+      {
+        key:2,
+        type:'icon',
+        iconName:'search'
+      },
+      {
+        key:3,
+        type:'icon',
+        iconName:'person'
+      }      
+    ]} 
+    right={[
+      {
+        key:1,
+        type:'icon',
+        iconName:'chat'
+      }
+    ]} 
+  />
+</Demo>
+
+```jsx
+// How to use NavTab with center
+function Component() {
+  return (
+    <>
+      <NavTab
+        isFluid 
+        blue
+        left={[
+          {
+            key:1,
+            type: 'icon',
+            iconName: 'menu'
+          }      
+        ]} 
+        center={[
+          {
+            key:1,
+            type:'icon',
+            iconName:'columns-gap'
+          },
+          {
+            key:2,
+            type:'icon',
+            iconName:'search'
+          },
+          {
+            key:3,
+            type:'icon',
+            iconName:'person'
+          }
+        ]} 
+        right={[
+          {
+            key:1,
+            type:'icon',
+            iconName:'chat'
+          }
+        ]} 
+      />
+      <NavTab
+        isFluid
+        left={[
+          {
+            key:1,
+            type: 'icon',
+            iconName: 'menu'
+          }            
+        ]} 
+        center={[
+          {
+            key:1,
+            type:'icon',
+            iconName:'columns-gap'
+          },
+          {
+            key:2,
+            type:'icon',
+            iconName:'search'
+          },
+          {
+            key:3,
+            type:'icon',
+            iconName:'person'
+          }      
+        ]} 
+        right={[
+          {
+            key:1,
+            type:'icon',
+            iconName:'chat'
+          }
+        ]} 
+      />
+    </>
+  )
+}
+```
+
+### NavTab with NavIcons switching
+
+<Demo title="NavTab with NavIcons switching" background={colors.white}>
+  <NavTab 
+    blue
+    isFluid
+    left={[
+      {
+        key:1,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab">
+            <Icon iconName="twitter" color={colors.white} /> 
+          </a>
+        )
+      }
+    ]} 
+    center={[
+      {
+        key:1,
+        type:'icon',
+        iconName: 'columns-gap',
+        label: 'Dashboard',
+        selected: false,
+        onClick: () => { console.log('dashboard') },
+        showBar: false
+      },
+      {
+        key:2,
+        type:'icon',
+        iconName:'search',
+        label: 'Search',
+        selected: false,
+        onClick: () => { console.log('search') },
+        showBar: false
+      },
+      {
+        key:3,
+        type:'icon',
+        iconName:'person',
+        label: 'Profile',
+        selected: true,
+        onClick: () => { console.log('profile') },
+        showBar: true
+      }      
+    ]} 
+    right={[
+      {
+        key:1,
+        type:'icon',
+        iconName:'cart',
+        selected: false,
+        onClick: () => { console.log('cart') },
+        showBar: false
+      },
+      {
+        key:2,
+        type:'icon',
+        iconName:'chat',
+        selected: false,
+        onClick: () => { console.log('messages') },
+        showBar: true
+      },
+      {
+        key: 3,
+        type: 'button',
+        text: 'Juan Alvez',
+        size: 'md',
+        theme: 'tertiaryWhite'
+      }      
+    ]} 
+  />
+
+  <NavTab 
+    isFluid
+    left={[
+      {
+        key:1,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab">
+            <Icon iconName="twitter" /> 
+          </a>
+        )
+      }
+    ]} 
+    center={[
+      {
+        key:1,
+        type:'icon',
+        iconName: 'columns-gap',
+        label: 'Dashboard',
+        selected: false,
+        onClick: () => { console.log('dashboard') },
+        showBar: false
+      },
+      {
+        key:2,
+        type:'icon',
+        iconName:'search',
+        label: 'Search',
+        selected: false,
+        onClick: () => { console.log('search') },
+        showBar: false
+      },
+      {
+        key:3,
+        type:'icon',
+        iconName:'person',
+        label: 'Profile',
+        selected: true,
+        onClick: () => { console.log('profile') },
+        showBar: true
+      }      
+    ]} 
+    right={[
+      {
+        key:1,
+        type:'icon',
+        iconName:'cart',
+        selected: false,
+        onClick: () => { console.log('cart') },
+        showBar: false
+      },
+      {
+        key:2,
+        type:'icon',
+        iconName:'chat',
+        selected: false,
+        onClick: () => { console.log('messages') },
+        showBar: true
+      },
+      {
+        key: 3,
+        type: 'button',
+        text: 'Juan Alvez',
+        size: 'md',
+        theme: 'ghostGrey'
+      }      
+    ]} 
+  />
+</Demo>
+
+```jsx
+// How to use NavTab with NavIcons switching
+function Component() {
+  return (
+    <>
+      <NavTab 
+        blue
+        isFluid
+        left={[
+          {
+            key:1,
+            type: 'logo',
+            logo: (
+              <a href="#NavTab">
+                <Icon iconName="twitter" color={colors.white} /> 
+              </a>
+            )
+          }
+        ]} 
+        center={[
+          {
+            key:1,
+            type:'icon',
+            iconName: 'columns-gap',
+            label: 'Dashboard',
+            selected: false,
+            onClick: () => { console.log('dashboard') },
+            showBar: false
+          },
+          {
+            key:2,
+            type:'icon',
+            iconName:'search',
+            label: 'Search',
+            selected: false,
+            onClick: () => { console.log('search') },
+            showBar: false
+          },
+          {
+            key:3,
+            type:'icon',
+            iconName:'person',
+            label: 'Profile',
+            selected: true,
+            onClick: () => { console.log('profile') },
+            showBar: true
+          }      
+        ]} 
+        right={[
+          {
+            key:1,
+            type:'icon',
+            iconName:'cart',
+            selected: false,
+            onClick: () => { console.log('cart') },
+            showBar: false
+          },
+          {
+            key:2,
+            type:'icon',
+            iconName:'chat',
+            selected: false,
+            onClick: () => { console.log('messages') },
+            showBar: true
+          },
+          {
+            key: 3,
+            type: 'button',
+            text: 'Juan Alvez',
+            size: 'md',
+            theme: 'tertiaryWhite'
+          }      
+        ]} 
+      />
+
+      <NavTab 
+        isFluid
+        left={[
+          {
+            key:1,
+            type: 'logo',
+            logo: (
+              <a href="#NavTab">
+                <Icon iconName="twitter" /> 
+              </a>
+            )
+          }
+        ]} 
+        center={[
+          {
+            key:1,
+            type:'icon',
+            iconName: 'columns-gap',
+            label: 'Dashboard',
+            selected: false,
+            onClick: () => { console.log('dashboard') },
+            showBar: false
+          },
+          {
+            key:2,
+            type:'icon',
+            iconName:'search',
+            label: 'Search',
+            selected: false,
+            onClick: () => { console.log('search') },
+            showBar: false
+          },
+          {
+            key:3,
+            type:'icon',
+            iconName:'person',
+            label: 'Profile',
+            selected: true,
+            onClick: () => { console.log('profile') },
+            showBar: true
+          }      
+        ]} 
+        right={[
+          {
+            key:1,
+            type:'icon',
+            iconName:'cart',
+            selected: false,
+            onClick: () => { console.log('cart') },
+            showBar: false
+          },
+          {
+            key:2,
+            type:'icon',
+            iconName:'chat',
+            selected: false,
+            onClick: () => { console.log('messages') },
+            showBar: true
+          },
+          {
+            key: 3,
+            type: 'button',
+            text: 'Juan Alvez',
+            size: 'md',
+            theme: 'ghostGrey'
+          }      
+        ]} 
+      />
+    </>
+  )
+}
+```
+
+### NavTab with menu button
+
+<Demo title="NavTab with menu button" background={colors.white}>
+  <NavTab 
+    blue
+    isFluid
+    left={[
+      {
+        key:1,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab">
+            <Icon iconName="twitter" color={colors.white} />
+          </a>
+        )
+      }
+    ]} 
+    right={[
+      {
+        key: 0,
+        type: 'icon',
+        iconName: 'menu'
+      }      
+    ]} 
+  />
+  <NavTab
+    isFluid
+    left={[
+      {
+        key:1,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab">
+            <Icon iconName="twitter" />
+          </a>
+        )
+      }
+    ]} 
+    right={[
+      {
+        key: 0,
+        type: 'icon',
+        iconName: 'menu'
+      }      
+    ]} 
+  />
+</Demo>
+
+```jsx
+// How to use NavTab with menu button
+function Component() {
+  return (
+    <>
+      <NavTab 
+        blue
+        isFluid
+        left={[
+          {
+            key:1,
+            type: 'logo',
+            logo: (
+              <a href="#NavTab">
+                <Icon iconName="twitter" color={colors.white} />
+              </a>
+            )
+          }
+        ]} 
+        right={[
+          {
+            key: 0,
+            type: 'icon',
+            iconName: 'menu'
+          }      
+        ]} 
+      />
+      <NavTab
+        isFluid
+        left={[
+          {
+            key:1,
+            type: 'logo',
+            logo: (
+              <a href="#NavTab">
+                <Icon iconName="twitter" />
+              </a>
+            )
+          }
+        ]} 
+        right={[
+          {
+            key: 0,
+            type: 'icon',
+            iconName: 'menu'
+          }      
+        ]} 
+      />
+    </>
+  )
+}
+```
+
+### NavTab with icons
+
+<Demo title="NavTab with icons" background={colors.white}>
+  <NavTab 
+    blue
+    isFluid
+    flexCenter={[
+      {
+        key:1,
+        type:'icon',
+        iconName:'columns-gap',
+        label: 'Dashboard',
+        selected: false,
+        onClick: () => { console.log('dashboard') },
+        direction: 'col',
+        width: 96
+      },
+      {
+        key:2,
+        type:'icon',
+        iconName:'search',
+        label: 'Search',
+        selected: false,
+        onClick: () => { console.log('search') },
+        direction: 'col',
+        width: 96
+      },
+      {
+        key:3,
+        type:'icon',
+        iconName:'person',
+        label: 'Profile',
+        selected: true,
+        onClick: () => { console.log('profile') },
+        direction: 'col',
+        width: 96
+      }
+    ]}
+  />
+  <NavTab
+    isFluid
+    flexCenter={[
+      {
+        key:1,
+        type:'icon',
+        iconName:'columns-gap',
+        label: 'Dashboard',
+        selected: false,
+        onClick: () => { console.log('dashboard') },
+        direction: 'col',
+        width: 96
+      },
+      {
+        key:2,
+        type:'icon',
+        iconName:'search',
+        label: 'Search',
+        selected: false,
+        onClick: () => { console.log('search') },
+        direction: 'col',
+        width: 96
+      },
+      {
+        key:3,
+        type:'icon',
+        iconName:'person',
+        label: 'Profile',
+        selected: true,
+        onClick: () => { console.log('profile') },
+        direction: 'col',
+        width: 96
+      }
+    ]}
+  />
+</Demo>
+
+```jsx
+// How to use NavTab with icons
+function Component() {
+  return (
+    <>
+      <NavTab 
+        blue
+        isFluid
+        flexCenter={[
+          {
+            key:1,
+            type:'icon',
+            iconName:'columns-gap',
+            label: 'Dashboard',
+            selected: false,
+            onClick: () => { console.log('dashboard') },
+            direction: 'col',
+            width: 96
+          },
+          {
+            key:2,
+            type:'icon',
+            iconName:'search',
+            label: 'Search',
+            selected: false,
+            onClick: () => { console.log('search') },
+            direction: 'col',
+            width: 96
+          },
+          {
+            key:3,
+            type:'icon',
+            iconName:'person',
+            label: 'Profile',
+            selected: true,
+            onClick: () => { console.log('profile') },
+            direction: 'col',
+            width: 96
+          }
+        ]}
+      />
+      <NavTab
+        isFluid
+        flexCenter={[
+          {
+            key:1,
+            type:'icon',
+            iconName:'columns-gap',
+            label: 'Dashboard',
+            selected: false,
+            onClick: () => { console.log('dashboard') },
+            direction: 'col',
+            width: 96
+          },
+          {
+            key:2,
+            type:'icon',
+            iconName:'search',
+            label: 'Search',
+            selected: false,
+            onClick: () => { console.log('search') },
+            direction: 'col',
+            width: 96
+          },
+          {
+            key:3,
+            type:'icon',
+            iconName:'person',
+            label: 'Profile',
+            selected: true,
+            onClick: () => { console.log('profile') },
+            direction: 'col',
+            width: 96
+          }
+        ]}
+      />
+    </>
+  )
+}
+```

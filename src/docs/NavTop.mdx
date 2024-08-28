@@ -1,0 +1,92 @@
+---
+title: NavTop
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import NavTop from '@/components/NavTop'
+
+# NavTop
+
+---
+
+The NavTop component is a versatile navigation bar designed for use at the top of web pages or applications.
+
+## Props
+
+| Name         | Type                                                                                                                                                                             | Default value    | Description                                                                                                                    |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `top`        | **{children: string \| ReactNode; link: string; notification: boolean; onClick: EventHandler<MouseEvent\>; selected: boolean; target: string; testId: string; key: string }[]**  | -                | Width of the placeholder. You can use numbers or a string with a percentage.                                                   |
+| `blue`       | **boolean**                                                                                                                                                                      | -                | Height of the placeholder. You can use numbers or a string with a percentage.                                                  |
+| `isFluid`    | **boolean**                                                                                                                                                                      | -                | It applies a border radius of 50%. Use it with width and height to create a circle to simulate an avatar or profile picture.   |
+
+## Examples
+
+### Themes
+
+You can choose between two themes: Default and Blue.
+
+<Demo title="Themes" background={colors.white}>
+  <div style={{ "margin-bottom": "30px" }}>
+    <NavTop top={[
+      { children: 'Test 1', link: '#', key: '1' },
+      { children: 'Test 2', link: '#', key: '2', selected: true },
+      { children: 'Test 3', link: '#', key: '3', notification: true }
+    ]} />
+  </div>
+
+  <NavTop top={[
+    { children: 'Test 1', link: '#', key: '1' },
+    { children: 'Test 2', link: '#', key: '2', selected: true },
+    { children: 'Test 3', link: '#', key: '3', notification: true }
+  ]} blue />
+</Demo>
+
+```jsx
+// How to use Themes
+function Component() {
+  return (
+    <>
+      <div style={{ "margin-bottom": "30px" }}>
+        <NavTop top={[
+          { children: 'Test 1', link: '#', key: '1' },
+          { children: 'Test 2', link: '#', key: '2', selected: true },
+          { children: 'Test 3', link: '#', key: '3', notification: true }
+        ]} />
+      </div>
+
+      <NavTop top={[
+        { children: 'Test 1', link: '#', key: '1' },
+        { children: 'Test 2', link: '#', key: '2', selected: true },
+        { children: 'Test 3', link: '#', key: '3', notification: true }
+      ]} blue />
+    </>
+  )
+}
+```
+### Fluid
+
+Adds a responsive padding.
+
+<Demo title="Fluid" background={colors.white}>
+  <NavTop top={[
+    { children: 'Test 1', link: '#', key: '1' },
+    { children: 'Test 2', link: '#', key: '2', selected: true },
+    { children: 'Test 3', link: '#', key: '3', notification: true }
+  ]} blue isFluid />
+</Demo>
+
+```jsx
+// How to use Fluid prop.
+function Component() {
+  return (
+    <>
+      <NavTop top={[
+        { children: 'Test 1', link: '#', key: '1' },
+        { children: 'Test 2', link: '#', key: '2', selected: true },
+        { children: 'Test 3', link: '#', key: '3', notification: true }
+      ]} blue isFluid />
+    </>
+  )
+}
+```

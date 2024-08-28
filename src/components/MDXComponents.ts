@@ -42,6 +42,10 @@ import Placeholder from '@/components/Placeholder'
 import SlideDown from './SlideDown'
 import Tabs from './Tabs'
 import TabsUncontrolled from './TabsUncontrolled'
+import NavTop from '@/components/NavTop'
+import NavItem from '@/components/NavItem'
+import NavTab from '@/components/NavTab'
+import NavIcon from '@/components/NavIcon'
 
 const mdxComponents = {
   // Library components
@@ -71,6 +75,10 @@ const mdxComponents = {
   SlideDown,
   Tabs,
   TabsUncontrolled,
+  NavTop,
+  NavItem,
+  NavTab,
+  NavIcon,
   // Docs components
   Demo,
   code: Code,
