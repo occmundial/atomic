@@ -6,6 +6,9 @@ section: components
 import Demo from '@/utils/components/Demo'
 import NavTab from '@/components/NavTab'
 import Icon from '@/components/Icon'
+import OccLogoIcon from '../components/Icons/OccLogoIcon'
+import OccLogoWhiteIcon from '../components/Icons/OccLogoWhiteIcon'
+
 
 # NavTab
 ---
@@ -15,20 +18,20 @@ The NavTop component is a versatile navigation bar designed for use at the top o
 
 ## Props
 
-| Name           | Type                                                                                                                                                                                                           | Default value    | Description                             |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | --------------------------------------- |
-| `left`         | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Anchor href attribute                   |
-| `right`        | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Anchor children                         |
-| `center`       | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Anchor link attribute                   |
-| `flexCenter`   | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Highlights the anchor                   |
-| `top`          | **[TopProp](#TopProp)[]**                                                                                                                                                                                      | -                | Anchor onCLick event                    |
-| `blue`         | **boolean**                                                                                                                                                                                                    | -                | Anchor className attribute              |
-| `fixed`        | **boolean**                                                                                                                                                                                                    | -                | Anchor test id                          |
-| `hideOnScroll` | **boolean**                                                                                                                                                                                                    | -                | Anchor test id                          |
-| `bottom`       | **boolean**                                                                                                                                                                                                    | -                | Anchor test id                          |
-| `zIndex`       | **number**                                                                                                                                                                                                     | -                | Anchor test id                          |
-| `className`    | **string**                                                                                                                                                                                                     | -                | Anchor test id                          |
-| `isFluid`      | **boolean**                                                                                                                                                                                                    | -                | Anchor test id                          |
+| Name           | Type                                                                                                                                                                                                           | Default value    | Description                                                    |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | -------------------------------------------------------------- |
+| `left`         | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the left side of the navigation bar  |
+| `right`        | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the right side of the navigation bar |
+| `center`       | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the center of the navigation bar     |
+| `flexCenter`   | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components of the navigation bar                   |
+| `top`          | **[TopProp](#TopProp)[]**                                                                                                                                                                                      | -                | Defines the Nav Top links                                      |
+| `blue`         | **boolean**                                                                                                                                                                                                    | -                | Sets blue theme                                                |
+| `fixed`        | **boolean**                                                                                                                                                                                                    | -                | Sets fixed position                                            |
+| `hideOnScroll` | **boolean**                                                                                                                                                                                                    | -                | Hides the nav on scroll                                        |
+| `bottom`       | **boolean**                                                                                                                                                                                                    | -                | Adds bottom padding                                            |
+| `zIndex`       | **number**                                                                                                                                                                                                     | -                | Specifies the nav z-index                                      |
+| `className`    | **string**                                                                                                                                                                                                     | -                | Adds classes to nav container                                  |
+| `isFluid`      | **boolean**                                                                                                                                                                                                    | -                | Adds a responsive padding                                      |
 
 
 ### LinkElement
@@ -38,9 +41,9 @@ Additional Button props are detailed in the table below.
 
 | Name           | Type                                        | Default value    | Description                             |
 | -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
-| `type`         | **link**                                    | -                | Anchor href attribute                   |
-| `key`          | **string \| number**                        | -                | Anchor children                         |
-| `text`         | **string \| ReactNode**                     | -                | Anchor link attribute                   |
+| `type`         | **link**                                    | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                        | -                | Key of the component                    |
+| `text`         | **string \| ReactNode**                     | -                | Defines the child component             |
 
 ### ButtonElement
 
@@ -49,9 +52,9 @@ Additional Button props are detailed in the table below.
 
 | Name           | Type                                        | Default value    | Description                             |
 | -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
-| `type`         | **button**                                  | -                | Anchor href attribute                   |
-| `key`          | **string \| number**                        | -                | Anchor children                         |
-| `text`         | **string \| ReactNode**                     | -                | Anchor link attribute                   |
+| `type`         | **button**                                  | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                        | -                | Key of the component                    |
+| `text`         | **string \| ReactNode**                     | -                | Defines the child component             |
 
 
 ### DropdownElement
@@ -61,9 +64,9 @@ Additional Button props are detailed in the table below.
 
 | Name           | Type                                        | Default value    | Description                             |
 | -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
-| `type`         | **dropdownLink**                            | -                | Anchor href attribute                   |
-| `key`          | **string \| number**                        | -                | Anchor children                         |
-| `text`         | **string \| ReactNode**                     | -                | Anchor link attribute                   |
+| `type`         | **dropdownLink**                            | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                        | -                | Key of the component                    |
+| `text`         | **string \| ReactNode**                     | -                | Defines the child component             |
 
 ### IconElement
 
@@ -72,8 +75,8 @@ Additional NavIcon props are detailed in the table below.
 
 | Name           | Type                                        | Default value    | Description                             |
 | -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
-| `type`         | **icon**                                    | -                | Anchor href attribute                   |
-| `key`          | **string \| number**                        | -                | Anchor children                         |
+| `type`         | **icon**                                    | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                        | -                | Key of the component                    |
 
 
 ### CustomElement
@@ -82,9 +85,9 @@ An object with the `type` property set to 'custom'.
 
 | Name           | Type                                        | Default value    | Description                             |
 | -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
-| `type`         | **custom**                                  | -                | Anchor href attribute                   |
-| `key`          | **string \| number**                        | -                | Anchor children                         |
-| `custom`       | **ReactNode**                               | -                | Anchor link attribute                   |
+| `type`         | **custom**                                  | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                        | -                | Key of the component                    |
+| `custom`       | **ReactNode**                               | -                | Defines the child component             |
 | `testId`       | **string**                                  | -                | Anchor test id                          |
 
 ### LogoElement 
@@ -93,9 +96,9 @@ An object with the `type` property set to 'logo'.
 
 | Name           | Type                                        | Default value    | Description                             |
 | -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
-| `type`         | **logo**                                    | -                | Anchor href attribute                   |
-| `key`          | **string \| number**                        | -                | Anchor children                         |
-| `logo`         | **ReactNode**                               | -                | Anchor link attribute                   |
+| `type`         | **logo**                                    | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                        | -                | Key of the component                    |
+| `logo`         | **ReactNode**                               | -                | Defines the child component             |
 | `testId`       | **string**                                  | -                | Anchor test id                          |
 
 ### TopProp
@@ -132,37 +135,37 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
             key:0,
             type: 'logo',
             logo: (
-                <a href="#NavTab">
-                    <Icon iconName="twitter" color={colors.white} />
-                </a>
+              <a href="#NavTab">
+                <OccLogoWhiteIcon />
+              </a>
             )
         },
         {
-            key: 1,
-            type: 'dropdownLink',
-            text: 'Dropdown link',
-            onClick: () => console.log("click"),
-            selected: true
+          key: 1,
+          type: 'dropdownLink',
+          text: 'Dropdown link',
+          onClick: () => console.log("click"),
+          selected: true
         },
         {
-            key: 2,
-            type: 'link',
-            text: 'Standard link',
-            link: '#NavTab'
+          key: 2,
+          type: 'link',
+          text: 'Standard link',
+          link: '#NavTab'
         }
       ]}
       right={[
           {
-              key:1,
-              type:'button',
-              text:'Primary CTA',
-              theme:'primary'
+            key:1,
+            type:'button',
+            text:'Primary CTA',
+            theme:'primary'
           },
           {
-              key:2,
-              type:'button',  
-              text:'Secondary CTA',
-              theme:'ghostWhite'
+            key:2,
+            type:'button',  
+            text:'Secondary CTA',
+            theme:'ghostWhite'
           }
       ]}
   />
@@ -171,58 +174,58 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
     isFluid
     top={[
           {
-              key:1,
-              children:'First link',
-              link:'#NavTab'
+            key:1,
+            children:'First link',
+            link:'#NavTab'
           },
           {
-              key:2,
-              children:'Current link',
-              link:'#NavTab',
-              selected: true
+            key:2,
+            children:'Current link',
+            link:'#NavTab',
+            selected: true
           },
           {
-              key:3,
-              children:'onClick item',
-              onClick:() => { console.log('whatever'); }
+            key:3,
+            children:'onClick item',
+            onClick:() => { console.log('whatever'); }
           }
         ]}
       left={[
         {
-            key:0,
-            type: 'logo',
-            logo: (
-                <a href="#NavTab">
-                    <Icon iconName="twitter" />
-                </a>
-            )
+          key:0,
+          type: 'logo',
+          logo: (
+            <a href="#NavTab">
+              <OccLogoIcon />
+            </a>
+          )
         },
         {
-            key: 1,
-            type: 'dropdownLink',
-            text: 'Dropdown link',
-            onClick: () => console.log("click"),
-            selected: true
+          key: 1,
+          type: 'dropdownLink',
+          text: 'Dropdown link',
+          onClick: () => console.log("click"),
+          selected: true
         },
         {
-            key: 2,
-            type: 'link',
-            text: 'Standard link',
-            link: '#NavTab'
+          key: 2,
+          type: 'link',
+          text: 'Standard link',
+          link: '#NavTab'
         }
       ]}
       right={[
         {
-            key:1,
-            type:'button',
-            text:'Primary CTA',
-            theme:'ghostPink'
+          key:1,
+          type:'button',
+          text:'Primary CTA',
+          theme:'ghostPink'
         },
         {
-            key:2,
-            type:'button',
-            text:'Secondary CTA',
-            theme:'ghostGrey'
+          key:2,
+          type:'button',
+          text:'Secondary CTA',
+          theme:'ghostGrey'
         }
       ]}
   />
@@ -259,7 +262,7 @@ function Component() {
               type: 'logo',
               logo: (
                   <a href="#NavTab">
-                      <Icon iconName="twitter" color={colors.white} />
+                      <OccLogoWhiteIcon />
                   </a>
               )
           },
@@ -319,7 +322,7 @@ function Component() {
               type: 'logo',
               logo: (
                   <a href="#NavTab">
-                      <Icon iconName="twitter" />
+                      <OccLogoIcon />
                   </a>
               )
           },
@@ -521,7 +524,7 @@ function Component() {
         type: 'logo',
         logo: (
           <a href="#NavTab">
-            <Icon iconName="twitter" color={colors.white} /> 
+            <OccLogoWhiteIcon />
           </a>
         )
       }
@@ -590,7 +593,7 @@ function Component() {
         type: 'logo',
         logo: (
           <a href="#NavTab">
-            <Icon iconName="twitter" /> 
+            <OccLogoIcon />
           </a>
         )
       }
@@ -666,7 +669,7 @@ function Component() {
             type: 'logo',
             logo: (
               <a href="#NavTab">
-                <Icon iconName="twitter" color={colors.white} /> 
+                <OccLogoWhiteIcon />
               </a>
             )
           }
@@ -735,7 +738,7 @@ function Component() {
             type: 'logo',
             logo: (
               <a href="#NavTab">
-                <Icon iconName="twitter" /> 
+                <OccLogoIcon /> 
               </a>
             )
           }
@@ -812,7 +815,7 @@ function Component() {
         type: 'logo',
         logo: (
           <a href="#NavTab">
-            <Icon iconName="twitter" color={colors.white} />
+            <OccLogoWhiteIcon />
           </a>
         )
       }
@@ -833,7 +836,7 @@ function Component() {
         type: 'logo',
         logo: (
           <a href="#NavTab">
-            <Icon iconName="twitter" />
+            <OccLogoIcon />
           </a>
         )
       }
@@ -862,7 +865,7 @@ function Component() {
             type: 'logo',
             logo: (
               <a href="#NavTab">
-                <Icon iconName="twitter" color={colors.white} />
+                <OccLogoWhiteIcon />
               </a>
             )
           }
@@ -883,7 +886,7 @@ function Component() {
             type: 'logo',
             logo: (
               <a href="#NavTab">
-                <Icon iconName="twitter" />
+                <OccLogoIcon />
               </a>
             )
           }
