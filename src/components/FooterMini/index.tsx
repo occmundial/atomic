@@ -19,7 +19,7 @@ const TopElement = ({ classes }) => (
       href="https://www.facebook.com/occoficial"
       target="_blank"
       theme="secondary"
-      size="lg"
+      size="sm"
       iconRight="info-circle"
     >
       Centro de ayuda
