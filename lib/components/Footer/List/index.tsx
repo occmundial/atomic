@@ -1,13 +1,12 @@
 import React, {
   useState,
   useCallback,
-  useMemo,
   MouseEvent,
-  ReactNode
+  ReactNode,
+  Fragment
 } from 'react'
 import classnames from 'classnames'
 
-import Text from '@/components/Text'
 import Icon from '@/components/Icon'
 import spacing from '@/tokens/spacing'
 import colors from '@/tokens/colors'
@@ -35,22 +34,16 @@ export interface ListItem {
 }
 
 interface List {
-  collapse?: boolean
   title?: string
   items?: ListItem[]
 }
 
 interface ListProps {
   list: List
-  isMobile?: boolean
   listClassName?: string
 }
 
-const List = ({
-  list: { collapse, title, items },
-  isMobile,
-  listClassName
-}: ListProps) => {
+const List = ({ list: { title, items }, listClassName }: ListProps) => {
   const classes = useStyles()
   const [toggle, setToggle] = useState(false)
 
@@ -61,17 +54,16 @@ const List = ({
   const renderLink = useCallback(
     item => {
       return (
-        <Text key={item.key} small bottomTiny>
-          <a
-            href={item.href}
-            target={item.target}
-            rel={item.rel}
-            className={classes.link}
-            title={item.title}
-          >
-            {item.text}
-          </a>
-        </Text>
+        <a
+          key={item.key}
+          href={item.href}
+          target={item.target}
+          rel={item.rel}
+          className={classes.link}
+          title={item.title}
+        >
+          {item.text}
+        </a>
       )
     },
     [classes]
@@ -106,42 +98,40 @@ const List = ({
     [renderLink, renderIcon, renderCustom]
   )
 
-  const isCollapsible = useMemo(
-    () => collapse || isMobile,
-    [collapse, isMobile]
-  )
-
   return (
-    <div>
+    <Fragment>
       <div
-        onClick={isCollapsible ? toggleList : null}
-        className={classnames(classes.title, {
-          [classes.collapsible]: isCollapsible
-        })}
+        onClick={toggleList}
+        className={classnames(classes.title, classes.collapsible)}
       >
-        <Text tag="span" strong className={classes.titleColor}>
-          {title}
-        </Text>
-        {isCollapsible && (
-          <Icon
-            iconName={getIcon('arrow-down', 'chevron-down')}
-            size={spacing.small}
-            className={classnames(classes.arrow, { [classes.arrowUp]: toggle })}
-          />
-        )}
+        <h5 className={classes.titleColor}>{title}</h5>
+        <Icon
+          iconName={getIcon('arrow-down', 'chevron-down')}
+          size={spacing.small}
+          className={classnames(classes.arrow, { [classes.arrowUp]: toggle })}
+        />
+      </div>
+      <div className={classes.titleDesktop}>
+        <h5 className={classes.titleColor}>{title}</h5>
       </div>
       <div
         className={classnames(
           classes.list,
           {
-            [classes.toggle]: toggle || !isCollapsible
+            [classes.toggle]: toggle
           },
           listClassName
         )}
       >
-        {items.map(item => renderItem(item))}
+        <div
+          className={`${classes.content}${
+            toggle ? ` ${classes.showContent}` : ''
+          }`}
+        >
+          {items.map(item => renderItem(item))}
+        </div>
       </div>
-    </div>
+    </Fragment>
   )
 }
 

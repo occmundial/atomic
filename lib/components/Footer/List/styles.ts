@@ -1,38 +1,82 @@
 import { createUseStyles } from 'react-jss'
 
 import spacing from '@/tokens/spacing'
-import colors from '@/tokens/colors'
+import colors from '@/tokens/future/colors.json'
+import newSpacing from '@/tokens/future/spacing.json'
+import shadows from '@/tokens/future/shadows.json'
+import borderRadius from '@/tokens/future/borderRadius.json'
+import grid from '@/tokens/grid'
+import fonts from '@/tokens/future/fonts.json'
+import { objectToFontValue } from '@/utils/font'
 
 export default createUseStyles({
   list: {
-    transition: '0.3s all',
-    pointerEvents: 'none',
-    overflow: 'hidden',
-    height: 0,
-    transform: `translateY(${-spacing.small}px)`,
-    opacity: 0
+    display: 'grid',
+    gridTemplateRows: '0fr',
+    transition:
+      'grid-template-rows cubic-bezier(0.25,0.46,0.45,0.94) 0.2s 0.05s, opacity cubic-bezier(0.25,0.46,0.45,0.94) 0.2s',
+    opacity: 0,
+    [`@media (min-width: ${grid.xs}px)`]: {
+      opacity: 1,
+      gridTemplateRows: '1fr'
+    }
   },
   toggle: {
-    height: 'auto',
-    transform: 'translateY(0)',
     opacity: 1,
-    pointerEvents: 'all'
+    gridTemplateRows: '1fr',
+    transition:
+      'grid-template-rows cubic-bezier(0.25,0.46,0.45,0.94) 0.2s, opacity cubic-bezier(0.25,0.46,0.45,0.94) 0.2s 0.05s'
+  },
+  content: {
+    overflow: 'hidden',
+    transform: 'translateY(-10px)',
+    transition: 'transform cubic-bezier(0.25,0.46,0.45,0.94) 0.2s',
+    display: 'flex',
+    flexDirection: 'column',
+    rowGap: newSpacing['size-4'],
+    [`@media (min-width: ${grid.xs}px)`]: {
+      transform: 'translateY(0px)',
+      overflow: 'visible'
+    }
+  },
+  showContent: {
+    transform: 'translateY(0px)',
+    transition: 'transform cubic-bezier(0.25,0.46,0.45,0.94) 0.2s 0.05s',
+    marginBottom: spacing['size-3'],
+    overflow: 'visible'
   },
   collapsible: {
-    cursor: 'pointer'
+    cursor: 'pointer',
+    display: 'flex',
+    justifyContent: 'space-between',
+    [`@media (min-width: ${grid.xs}px)`]: {
+      cursor: 'default'
+    }
   },
   arrow: {
     marginLeft: spacing.tiny,
-    marginBottom: -spacing.xTiny
+    marginBottom: -spacing.xTiny,
+    display: 'inline-block',
+    [`@media (min-width: ${grid.xs}px)`]: {
+      display: 'none'
+    }
   },
   arrowUp: {
     transform: 'rotate(-180deg)'
   },
   link: {
-    color: colors.grey800,
+    font: objectToFontValue(fonts['body-regular']),
+    color: colors.text.corp.secondary,
     textDecoration: 'none',
-    '&:hover, &:focus, &:active': {
-      color: colors.grey600
+    transition: 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s',
+    '&:hover': {
+      color: colors.text.corp.primary
+    },
+    '&:focus-visible': {
+      color: colors.text.corp.primary,
+      boxShadow: shadows['focus-corp'],
+      borderRadius: borderRadius['br-xs'],
+      outline: 0
     }
   },
   iconWrapper: {
@@ -41,9 +85,22 @@ export default createUseStyles({
     display: 'inline-block'
   },
   title: {
-    marginBottom: spacing.tiny
+    padding: [newSpacing['size-4'], 0],
+    [`@media (min-width: ${grid.xs}px)`]: {
+      display: 'none',
+      padding: 0,
+      marginBottom: newSpacing['size-5']
+    }
   },
   titleColor: {
-    color: colors.grey800
+    font: objectToFontValue(fonts['heading-h5']),
+    margin: 0
+  },
+  titleDesktop: {
+    display: 'none',
+    [`@media (min-width: ${grid.xs}px)`]: {
+      marginBottom: newSpacing['size-5'],
+      display: 'block'
+    }
   }
 })

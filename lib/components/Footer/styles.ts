@@ -1,66 +1,118 @@
 import { createUseStyles } from 'react-jss'
 
-import spacing from '@/tokens/spacing'
-import colors from '@/tokens/colors'
+import newSpacing from '@/tokens/future/spacing.json'
+import colors from '@/tokens/future/colors.json'
+import fonts from '@/tokens/future/fonts.json'
+import shadows from '@/tokens/future/shadows.json'
+import borderRadius from '@/tokens/future/borderRadius.json'
 import grid from '@/tokens/grid'
+import { objectToFontValue } from '@/utils/font'
 
 export default createUseStyles({
   footer: {
-    backgroundColor: colors.bgGrey,
-    padding: [spacing.base, 0, spacing.medium],
-    [`@media (min-width: ${grid.md}px)`]: {
-      padding: [spacing.medium, 0, spacing.medium]
-    }
+    backgroundColor: colors.bg.surface.default,
+    borderTop: `1px solid ${colors.border.default.subtle}`,
+    padding: [newSpacing['size-7'], 0]
   },
-  footerWithoutColumns: {
-    backgroundColor: colors.bgGrey,
-    padding: [0, 0, spacing.medium],
+  footerContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    rowGap: newSpacing['size-5'],
+    [`@media (min-width: ${grid.xs}px)`]: {
+      rowGap: newSpacing['size-7']
+    },
     [`@media (min-width: ${grid.md}px)`]: {
-      padding: [0, 0, spacing.medium]
+      rowGap: newSpacing['size-8']
     }
   },
   column: {
-    paddingBottom: spacing.small
-  },
-  list: {
-    '&:not(:first-child)': {
-      marginLeft: spacing.small
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    [`@media (min-width: ${grid.xs}px)`]: {
+      flexDirection: 'row',
+      columnGap: newSpacing['size-4'],
+      rowGap: newSpacing['size-7']
+    },
+    [`@media (min-width: ${grid.md}px)`]: {
+      columnGap: newSpacing['size-5'],
+      rowGap: 0
     }
   },
   link: {
-    color: colors.grey800,
+    font: objectToFontValue(fonts['body-regular']),
+    color: colors.text.corp.secondary,
     textDecoration: 'none',
-    cursor: 'pointer',
-    '&:hover, &:focus, &:active': {
-      color: colors.grey600
+    transition: 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s',
+    '&:hover': {
+      color: colors.text.corp.primary
+    },
+    '&:focus-visible': {
+      color: colors.text.corp.primary,
+      boxShadow: shadows['focus-corp'],
+      borderRadius: borderRadius['br-xs'],
+      outline: 0
     }
   },
   listElement: {
-    paddingLeft: spacing.small,
-    paddingRight: spacing.small,
-    position: 'relative',
-    display: 'inline-block',
-    '&:first-child': {
-      paddingLeft: 0
-    },
-    '&:not(:last-child)': {
-      '&::after': {
-        content: '"|"',
-        position: 'absolute',
-        right: -2
-      }
+    display: 'block',
+    textAlign: 'center',
+    [`@media (min-width: ${grid.sm}px)`]: {
+      position: 'relative',
+      display: 'inline-block'
     }
   },
-  mobileListElement: {
-    paddingLeft: 0,
-    display: 'block',
-    paddingBottom: spacing.tiny
+  listContainer: {
+    flexBasis: '100%',
+    [`@media (min-width: ${grid.xs}px)`]: {
+      flexBasis: `calc(50% - ${newSpacing['size-4']})`
+    },
+    [`@media (min-width: ${grid.md}px)`]: {
+      flexBasis: `calc(25% - ${newSpacing['size-5']})`
+    }
   },
-  bottomWrap: {
-    paddingTop: spacing.base,
-    borderTop: `1px solid ${colors.grey200}`
+  bottomSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    rowGap: newSpacing['size-7']
   },
-  buttonMobile: {
-    marginTop: spacing.small
+  bottomLinksContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    columnGap: newSpacing['size-5'],
+    rowGap: newSpacing['size-4'],
+    [`@media (min-width: ${grid.sm}px)`]: {
+      flexDirection: 'row',
+      alignItems: 'stretch'
+    }
+  },
+  linkDivider: {
+    width: 1,
+    margin: [newSpacing['size-0'], 0],
+    backgroundColor: colors.border.default.bold,
+    alignSelf: 'stretch',
+    display: 'none',
+    [`@media (min-width: ${grid.sm}px)`]: {
+      display: 'block'
+    }
+  },
+  copyright: {
+    font: objectToFontValue(fonts['body-regular']),
+    color: colors.text.corp.secondary,
+    '& > p': {
+      margin: 0
+    }
+  },
+  bottomContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    rowGap: newSpacing['size-4'],
+    [`@media (min-width: ${grid.sm}px)`]: {
+      rowGap: newSpacing['size-5']
+    }
+  },
+  divider: {
+    borderTop: `1px solid ${colors.border.default.subtle}`
   }
 })
