@@ -109,33 +109,33 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
 ### NavTab with NavTop
 
 <Demo title="NavTab with NavTop" background={colors.white}>
-  <NavTab
-    isFluid
-    blue
-    top={[
-          {
-              key:1,
-              children:'First link',
-              link:'#NavTab'
-          },
-          {
-              key:2,
-              children:'Current link',
-              link:'#NavTab',
-              selected: true
-          },
-          {
-              key:3,
-              children:'onClick item',
-              onClick:() => { console.log('whatever'); }
-          }
-        ]}
-      left={[
+  <Function>
+    { () => {
+      const [dropdown, setDropdown] = useState(false)
+      const top = [
+        {
+          key:1,
+          children:'First link',
+          link:'#NavTab'
+        },
+        {
+          key:2,
+          children:'Current link',
+          link:'#NavTab',
+          selected: true
+        },
+        {
+          key:3,
+          children:'onClick item',
+          onClick:() => { console.log("onClick item") }
+        }
+      ]
+      const left = [
         {
             key:0,
             type: 'logo',
             logo: (
-              <a href="#NavTab">
+              <a href="#NavTab" style={{ display: 'flex' }}>
                 <OccLogoWhiteIcon />
               </a>
             )
@@ -144,8 +144,8 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
           key: 1,
           type: 'dropdownLink',
           text: 'Dropdown link',
-          onClick: () => console.log("click"),
-          selected: true
+          onClick: () => setDropdown(!dropdown),
+          selected: dropdown
         },
         {
           key: 2,
@@ -153,208 +153,116 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
           text: 'Standard link',
           link: '#NavTab'
         }
-      ]}
-      right={[
-          {
-            key:1,
-            type:'button',
-            text:'Primary CTA',
-            theme:'primary'
-          },
-          {
-            key:2,
-            type:'button',  
-            text:'Secondary CTA',
-            theme:'ghostWhite'
-          }
-      ]}
-  />
-
-  <NavTab
-    isFluid
-    top={[
-          {
-            key:1,
-            children:'First link',
-            link:'#NavTab'
-          },
-          {
-            key:2,
-            children:'Current link',
-            link:'#NavTab',
-            selected: true
-          },
-          {
-            key:3,
-            children:'onClick item',
-            onClick:() => { console.log('whatever'); }
-          }
-        ]}
-      left={[
-        {
-          key:0,
-          type: 'logo',
-          logo: (
-            <a href="#NavTab">
-              <OccLogoIcon />
-            </a>
-          )
-        },
-        {
-          key: 1,
-          type: 'dropdownLink',
-          text: 'Dropdown link',
-          onClick: () => console.log("click"),
-          selected: true
-        },
-        {
-          key: 2,
-          type: 'link',
-          text: 'Standard link',
-          link: '#NavTab'
-        }
-      ]}
-      right={[
+      ]
+      const left2 = [...left]
+      left2[0] = {
+        key:0,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab">
+            <OccLogoIcon />
+          </a>
+        )
+      }
+      const right = [
         {
           key:1,
           type:'button',
           text:'Primary CTA',
-          theme:'ghostPink'
+          theme:'primary'
         },
         {
           key:2,
-          type:'button',
+          type:'button',  
           text:'Secondary CTA',
-          theme:'ghostGrey'
+          theme:'ghostWhite'
         }
-      ]}
-  />
+      ]
+      return (
+        <>
+          <NavTab isFluid blue top={top} left={left} right={right} />
+          <NavTab isFluid top={top} left={left2} right={right} />
+        </>
+      )
+    }}
+  </Function>
 </Demo>
 
 ```jsx
 // How to use NavTab with NavTop
 function Component() {
+  const [dropdown, setDropdown] = useState(false)
+  const top = [
+    {
+      key:1,
+      children:'First link',
+      link:'#NavTab'
+    },
+    {
+      key:2,
+      children:'Current link',
+      link:'#NavTab',
+      selected: true
+    },
+    {
+      key:3,
+      children:'onClick item',
+      onClick:() => { console.log("onClick item") }
+    }
+  ]
+  const left = [
+    {
+        key:0,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <OccLogoWhiteIcon />
+          </a>
+        )
+    },
+    {
+      key: 1,
+      type: 'dropdownLink',
+      text: 'Dropdown link',
+      onClick: () => setDropdown(!dropdown),
+      selected: dropdown
+    },
+    {
+      key: 2,
+      type: 'link',
+      text: 'Standard link',
+      link: '#NavTab'
+    }
+  ]
+  const left2 = [...left]
+  left2[0] = {
+    key:0,
+    type: 'logo',
+    logo: (
+      <a href="#NavTab">
+        <OccLogoIcon />
+      </a>
+    )
+  }
+  const right = [
+    {
+      key:1,
+      type:'button',
+      text:'Primary CTA',
+      theme:'primary'
+    },
+    {
+      key:2,
+      type:'button',  
+      text:'Secondary CTA',
+      theme:'ghostWhite'
+    }
+  ]
   return (
-    <NavTab
-      isFluid
-      blue
-      top={[
-            {
-                key:1,
-                children:'First link',
-                link:'#NavTab'
-            },
-            {
-                key:2,
-                children:'Current link',
-                link:'#NavTab',
-                selected: true
-            },
-            {
-                key:3,
-                children:'onClick item',
-                onClick:() => { console.log('whatever'); }
-            }
-          ]}
-        left={[
-          {
-              key:0,
-              type: 'logo',
-              logo: (
-                  <a href="#NavTab">
-                      <OccLogoWhiteIcon />
-                  </a>
-              )
-          },
-          {
-              key: 1,
-              type: 'dropdownLink',
-              text: 'Dropdown link',
-              onClick: () => console.log("click"),
-              selected: true
-          },
-          {
-              key: 2,
-              type: 'link',
-              text: 'Standard link',
-              link: '#NavTab'
-          }
-        ]}
-        right={[
-            {
-                key:1,
-                type:'button',
-                text:'Primary CTA',
-                theme:'primary'
-            },
-            {
-                key:2,
-                type:'button',  
-                text:'Secondary CTA',
-                theme:'ghostWhite'
-            }
-        ]}
-    />
-
-    <NavTab
-      isFluid
-      top={[
-            {
-                key:1,
-                children:'First link',
-                link:'#NavTab'
-            },
-            {
-                key:2,
-                children:'Current link',
-                link:'#NavTab',
-                selected: true
-            },
-            {
-                key:3,
-                children:'onClick item',
-                onClick:() => { console.log('whatever'); }
-            }
-          ]}
-        left={[
-          {
-              key:0,
-              type: 'logo',
-              logo: (
-                  <a href="#NavTab">
-                      <OccLogoIcon />
-                  </a>
-              )
-          },
-          {
-              key: 1,
-              type: 'dropdownLink',
-              text: 'Dropdown link',
-              onClick: () => console.log("click"),
-              selected: true
-          },
-          {
-              key: 2,
-              type: 'link',
-              text: 'Standard link',
-              link: '#NavTab'
-          }
-        ]}
-        right={[
-          {
-              key:1,
-              type:'button',
-              text:'Primary CTA',
-              theme:'ghostPink'
-          },
-          {
-              key:2,
-              type:'button',
-              text:'Secondary CTA',
-              theme:'ghostGrey'
-          }
-        ]}
-    />
+    <>
+      <NavTab isFluid blue top={top} left={left} right={right} />
+      <NavTab isFluid top={top} left={left2} right={right} />
+    </>
   )
 }
 ```
@@ -362,18 +270,10 @@ function Component() {
 ### NavTab with center
 
 <Demo title="NavTab with center" background={colors.white}>
-  <NavTab
-    isFluid 
-    blue
-    left={[
-      {
-        key:1,
-        type: 'icon',
-        iconName: 'menu'
-      }      
-    ]} 
-    center={[
-      {
+  <Function>
+    { () => {
+      const [dropdown, setDropdown] = useState(false)
+      const center = [{
         key:1,
         type:'icon',
         iconName:'columns-gap'
@@ -387,126 +287,60 @@ function Component() {
         key:3,
         type:'icon',
         iconName:'person'
-      }
-    ]} 
-    right={[
-      {
-        key:1,
-        type:'icon',
-        iconName:'chat'
-      }
-    ]} 
-  />
-  <NavTab
-    isFluid
-    left={[
-      {
+      }]
+      const left = [{
         key:1,
         type: 'icon',
         iconName: 'menu'
-      }            
-    ]} 
-    center={[
-      {
-        key:1,
-        type:'icon',
-        iconName:'columns-gap'
-      },
-      {
-        key:2,
-        type:'icon',
-        iconName:'search'
-      },
-      {
-        key:3,
-        type:'icon',
-        iconName:'person'
-      }      
-    ]} 
-    right={[
-      {
+      }]
+      const right = [{
         key:1,
         type:'icon',
         iconName:'chat'
-      }
-    ]} 
-  />
+      }]
+      return (
+        <>
+          <NavTab isFluid blue center={center} left={left} right={right} />
+          <NavTab isFluid center={center} left={left} right={right} />
+        </>
+      )
+    }}
+  </Function>
 </Demo>
 
 ```jsx
 // How to use NavTab with center
 function Component() {
+  const [dropdown, setDropdown] = useState(false)
+  const center = [{
+    key:1,
+    type:'icon',
+    iconName:'columns-gap'
+  },
+  {
+    key:2,
+    type:'icon',
+    iconName:'search'
+  },
+  {
+    key:3,
+    type:'icon',
+    iconName:'person'
+  }]
+  const left = [{
+    key:1,
+    type: 'icon',
+    iconName: 'menu'
+  }]
+  const right = [{
+    key:1,
+    type:'icon',
+    iconName:'chat'
+  }]
   return (
     <>
-      <NavTab
-        isFluid 
-        blue
-        left={[
-          {
-            key:1,
-            type: 'icon',
-            iconName: 'menu'
-          }      
-        ]} 
-        center={[
-          {
-            key:1,
-            type:'icon',
-            iconName:'columns-gap'
-          },
-          {
-            key:2,
-            type:'icon',
-            iconName:'search'
-          },
-          {
-            key:3,
-            type:'icon',
-            iconName:'person'
-          }
-        ]} 
-        right={[
-          {
-            key:1,
-            type:'icon',
-            iconName:'chat'
-          }
-        ]} 
-      />
-      <NavTab
-        isFluid
-        left={[
-          {
-            key:1,
-            type: 'icon',
-            iconName: 'menu'
-          }            
-        ]} 
-        center={[
-          {
-            key:1,
-            type:'icon',
-            iconName:'columns-gap'
-          },
-          {
-            key:2,
-            type:'icon',
-            iconName:'search'
-          },
-          {
-            key:3,
-            type:'icon',
-            iconName:'person'
-          }      
-        ]} 
-        right={[
-          {
-            key:1,
-            type:'icon',
-            iconName:'chat'
-          }
-        ]} 
-      />
+      <NavTab isFluid blue center={center} left={left} right={right} />
+      <NavTab isFluid center={center} left={left} right={right} />
     </>
   )
 }
@@ -515,65 +349,69 @@ function Component() {
 ### NavTab with NavIcons switching
 
 <Demo title="NavTab with NavIcons switching" background={colors.white}>
-  <NavTab 
-    blue
-    isFluid
-    left={[
-      {
-        key:1,
-        type: 'logo',
-        logo: (
-          <a href="#NavTab">
-            <OccLogoWhiteIcon />
-          </a>
-        )
-      }
-    ]} 
-    center={[
-      {
+  <Function>
+    { () => {
+      const [selected, setSelected] = useState('')
+      const center = [{
         key:1,
         type:'icon',
         iconName: 'columns-gap',
         label: 'Dashboard',
-        selected: false,
-        onClick: () => { console.log('dashboard') },
-        showBar: false
+        selected: selected === 'icon',
+        showBar: selected === 'icon',
+        onClick: () => setSelected('icon')
       },
       {
         key:2,
         type:'icon',
         iconName:'search',
         label: 'Search',
-        selected: false,
-        onClick: () => { console.log('search') },
-        showBar: false
+        selected: selected === 'search',
+        showBar: selected === 'search',
+        onClick: () => setSelected('search')
       },
       {
         key:3,
         type:'icon',
         iconName:'person',
         label: 'Profile',
-        selected: true,
-        onClick: () => { console.log('profile') },
-        showBar: true
-      }      
-    ]} 
-    right={[
-      {
+        selected: selected === 'person',
+        showBar: selected === 'person',
+        onClick: () => setSelected('person')
+      }]
+      const left = [{
+        key:1,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <OccLogoWhiteIcon />
+          </a>
+        )
+      }]
+      const left2 = [{
+        key:1,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <OccLogoIcon />
+          </a>
+        )
+      }]
+      const right = [{
         key:1,
         type:'icon',
         iconName:'cart',
-        selected: false,
-        onClick: () => { console.log('cart') },
-        showBar: false
+        selected: selected === 'cart',
+        showBar: selected === 'cart',
+        onClick: () => setSelected('cart')
       },
       {
         key:2,
         type:'icon',
         iconName:'chat',
-        selected: false,
-        onClick: () => { console.log('messages') },
-        showBar: true
+        selected: selected === 'chat',
+        showBar: selected === 'chat',
+        onClick: () => setSelected('chat')
       },
       {
         key: 3,
@@ -581,223 +419,93 @@ function Component() {
         text: 'Juan Alvez',
         size: 'md',
         theme: 'tertiaryWhite'
-      }      
-    ]} 
-  />
-
-  <NavTab 
-    isFluid
-    left={[
-      {
-        key:1,
-        type: 'logo',
-        logo: (
-          <a href="#NavTab">
-            <OccLogoIcon />
-          </a>
-        )
-      }
-    ]} 
-    center={[
-      {
-        key:1,
-        type:'icon',
-        iconName: 'columns-gap',
-        label: 'Dashboard',
-        selected: false,
-        onClick: () => { console.log('dashboard') },
-        showBar: false
-      },
-      {
-        key:2,
-        type:'icon',
-        iconName:'search',
-        label: 'Search',
-        selected: false,
-        onClick: () => { console.log('search') },
-        showBar: false
-      },
-      {
-        key:3,
-        type:'icon',
-        iconName:'person',
-        label: 'Profile',
-        selected: true,
-        onClick: () => { console.log('profile') },
-        showBar: true
-      }      
-    ]} 
-    right={[
-      {
-        key:1,
-        type:'icon',
-        iconName:'cart',
-        selected: false,
-        onClick: () => { console.log('cart') },
-        showBar: false
-      },
-      {
-        key:2,
-        type:'icon',
-        iconName:'chat',
-        selected: false,
-        onClick: () => { console.log('messages') },
-        showBar: true
-      },
-      {
-        key: 3,
-        type: 'button',
-        text: 'Juan Alvez',
-        size: 'md',
-        theme: 'ghostGrey'
-      }      
-    ]} 
-  />
+      }]
+      return (
+        <>
+          <NavTab isFluid blue center={center} left={left} right={right} />
+          <NavTab isFluid center={center} left={left2} right={right} />
+        </>
+      )
+    }}
+  </Function>
 </Demo>
 
 ```jsx
 // How to use NavTab with NavIcons switching
 function Component() {
+  const [selected, setSelected] = useState('')
+  const center = [{
+    key:1,
+    type:'icon',
+    iconName: 'columns-gap',
+    label: 'Dashboard',
+    selected: selected === 'icon',
+    showBar: selected === 'icon',
+    onClick: () => setSelected('icon')
+  },
+  {
+    key:2,
+    type:'icon',
+    iconName:'search',
+    label: 'Search',
+    selected: selected === 'search',
+    showBar: selected === 'search',
+    onClick: () => setSelected('search')
+  },
+  {
+    key:3,
+    type:'icon',
+    iconName:'person',
+    label: 'Profile',
+    selected: selected === 'person',
+    showBar: selected === 'person',
+    onClick: () => setSelected('person')
+  }]
+  const left = [{
+    key:1,
+    type: 'logo',
+    logo: (
+      <a href="#NavTab" style={{ display: 'flex' }}>
+        <OccLogoWhiteIcon />
+      </a>
+    )
+  }]
+  const left2 = [{
+    key:1,
+    type: 'logo',
+    logo: (
+      <a href="#NavTab" style={{ display: 'flex' }}>
+        <OccLogoIcon />
+      </a>
+    )
+  }]
+  const right = [{
+    key:1,
+    type:'icon',
+    iconName:'cart',
+    selected: selected === 'cart',
+    showBar: selected === 'cart',
+    onClick: () => setSelected('cart')
+  },
+  {
+    key:2,
+    type:'icon',
+    iconName:'chat',
+    selected: selected === 'chat',
+    showBar: selected === 'chat',
+    onClick: () => setSelected('chat')
+  },
+  {
+    key: 3,
+    type: 'button',
+    text: 'Juan Alvez',
+    size: 'md',
+    theme: 'tertiaryWhite'
+  }]
   return (
     <>
-      <NavTab 
-        blue
-        isFluid
-        left={[
-          {
-            key:1,
-            type: 'logo',
-            logo: (
-              <a href="#NavTab">
-                <OccLogoWhiteIcon />
-              </a>
-            )
-          }
-        ]} 
-        center={[
-          {
-            key:1,
-            type:'icon',
-            iconName: 'columns-gap',
-            label: 'Dashboard',
-            selected: false,
-            onClick: () => { console.log('dashboard') },
-            showBar: false
-          },
-          {
-            key:2,
-            type:'icon',
-            iconName:'search',
-            label: 'Search',
-            selected: false,
-            onClick: () => { console.log('search') },
-            showBar: false
-          },
-          {
-            key:3,
-            type:'icon',
-            iconName:'person',
-            label: 'Profile',
-            selected: true,
-            onClick: () => { console.log('profile') },
-            showBar: true
-          }      
-        ]} 
-        right={[
-          {
-            key:1,
-            type:'icon',
-            iconName:'cart',
-            selected: false,
-            onClick: () => { console.log('cart') },
-            showBar: false
-          },
-          {
-            key:2,
-            type:'icon',
-            iconName:'chat',
-            selected: false,
-            onClick: () => { console.log('messages') },
-            showBar: true
-          },
-          {
-            key: 3,
-            type: 'button',
-            text: 'Juan Alvez',
-            size: 'md',
-            theme: 'tertiaryWhite'
-          }      
-        ]} 
-      />
-
-      <NavTab 
-        isFluid
-        left={[
-          {
-            key:1,
-            type: 'logo',
-            logo: (
-              <a href="#NavTab">
-                <OccLogoIcon /> 
-              </a>
-            )
-          }
-        ]} 
-        center={[
-          {
-            key:1,
-            type:'icon',
-            iconName: 'columns-gap',
-            label: 'Dashboard',
-            selected: false,
-            onClick: () => { console.log('dashboard') },
-            showBar: false
-          },
-          {
-            key:2,
-            type:'icon',
-            iconName:'search',
-            label: 'Search',
-            selected: false,
-            onClick: () => { console.log('search') },
-            showBar: false
-          },
-          {
-            key:3,
-            type:'icon',
-            iconName:'person',
-            label: 'Profile',
-            selected: true,
-            onClick: () => { console.log('profile') },
-            showBar: true
-          }      
-        ]} 
-        right={[
-          {
-            key:1,
-            type:'icon',
-            iconName:'cart',
-            selected: false,
-            onClick: () => { console.log('cart') },
-            showBar: false
-          },
-          {
-            key:2,
-            type:'icon',
-            iconName:'chat',
-            selected: false,
-            onClick: () => { console.log('messages') },
-            showBar: true
-          },
-          {
-            key: 3,
-            type: 'button',
-            text: 'Juan Alvez',
-            size: 'md',
-            theme: 'ghostGrey'
-          }      
-        ]} 
-      />
+      <NavTab isFluid blue center={center} left={left} right={right} />
+      <NavTab isFluid center={center} left={left2} right={right} />
     </>
   )
 }
@@ -806,99 +514,53 @@ function Component() {
 ### NavTab with menu button
 
 <Demo title="NavTab with menu button" background={colors.white}>
-  <NavTab 
-    blue
-    isFluid
-    left={[
-      {
+  <Function>
+    {() => {
+      const left = [{
         key:1,
         type: 'logo',
         logo: (
-          <a href="#NavTab">
+          <a href="#NavTab" style={{ display: 'flex' }}>
             <OccLogoWhiteIcon />
           </a>
         )
-      }
-    ]} 
-    right={[
-      {
+      }]
+      const right = [{
         key: 0,
         type: 'icon',
         iconName: 'menu'
-      }      
-    ]} 
-  />
-  <NavTab
-    isFluid
-    left={[
-      {
-        key:1,
-        type: 'logo',
-        logo: (
-          <a href="#NavTab">
-            <OccLogoIcon />
-          </a>
-        )
-      }
-    ]} 
-    right={[
-      {
-        key: 0,
-        type: 'icon',
-        iconName: 'menu'
-      }      
-    ]} 
-  />
+      }]
+      return (
+        <>
+          <NavTab isFluid blue left={left} right={right} />
+          <NavTab isFluid left={left} right={right} />
+        </>
+      )
+    }}
+  </Function>
 </Demo>
 
 ```jsx
 // How to use NavTab with menu button
 function Component() {
+  const left = [{
+    key:1,
+    type: 'logo',
+    logo: (
+      <a href="#NavTab" style={{ display: 'flex' }}>
+        <OccLogoWhiteIcon />
+      </a>
+    )
+  }]
+  const right = [{
+    key: 0,
+    type: 'icon',
+    iconName: 'menu'
+  }]
   return (
     <>
-      <NavTab 
-        blue
-        isFluid
-        left={[
-          {
-            key:1,
-            type: 'logo',
-            logo: (
-              <a href="#NavTab">
-                <OccLogoWhiteIcon />
-              </a>
-            )
-          }
-        ]} 
-        right={[
-          {
-            key: 0,
-            type: 'icon',
-            iconName: 'menu'
-          }      
-        ]} 
-      />
-      <NavTab
-        isFluid
-        left={[
-          {
-            key:1,
-            type: 'logo',
-            logo: (
-              <a href="#NavTab">
-                <OccLogoIcon />
-              </a>
-            )
-          }
-        ]} 
-        right={[
-          {
-            key: 0,
-            type: 'icon',
-            iconName: 'menu'
-          }      
-        ]} 
-      />
+      <NavTab isFluid blue left={left} right={right} />
+      <NavTab isFluid left={left} right={right} />
     </>
   )
 }
@@ -907,11 +569,9 @@ function Component() {
 ### NavTab with icons
 
 <Demo title="NavTab with icons" background={colors.white}>
-  <NavTab 
-    blue
-    isFluid
-    flexCenter={[
-      {
+  <Function>
+    {() => {
+      const flexCenter = [{
         key:1,
         type:'icon',
         iconName:'columns-gap',
@@ -940,122 +600,54 @@ function Component() {
         onClick: () => { console.log('profile') },
         direction: 'col',
         width: 96
-      }
-    ]}
-  />
-  <NavTab
-    isFluid
-    flexCenter={[
-      {
-        key:1,
-        type:'icon',
-        iconName:'columns-gap',
-        label: 'Dashboard',
-        selected: false,
-        onClick: () => { console.log('dashboard') },
-        direction: 'col',
-        width: 96
-      },
-      {
-        key:2,
-        type:'icon',
-        iconName:'search',
-        label: 'Search',
-        selected: false,
-        onClick: () => { console.log('search') },
-        direction: 'col',
-        width: 96
-      },
-      {
-        key:3,
-        type:'icon',
-        iconName:'person',
-        label: 'Profile',
-        selected: true,
-        onClick: () => { console.log('profile') },
-        direction: 'col',
-        width: 96
-      }
-    ]}
-  />
+      }]
+      return (
+        <>
+          <NavTab isFluid blue flexCenter={flexCenter} />
+          <NavTab isFluid flexCenter={flexCenter} />
+        </>
+      )
+    }}
+  </Function>
 </Demo>
 
 ```jsx
 // How to use NavTab with icons
 function Component() {
+  const flexCenter = [{
+    key:1,
+    type:'icon',
+    iconName:'columns-gap',
+    label: 'Dashboard',
+    selected: false,
+    onClick: () => { console.log('dashboard') },
+    direction: 'col',
+    width: 96
+  },
+  {
+    key:2,
+    type:'icon',
+    iconName:'search',
+    label: 'Search',
+    selected: false,
+    onClick: () => { console.log('search') },
+    direction: 'col',
+    width: 96
+  },
+  {
+    key:3,
+    type:'icon',
+    iconName:'person',
+    label: 'Profile',
+    selected: true,
+    onClick: () => { console.log('profile') },
+    direction: 'col',
+    width: 96
+  }]
   return (
     <>
-      <NavTab 
-        blue
-        isFluid
-        flexCenter={[
-          {
-            key:1,
-            type:'icon',
-            iconName:'columns-gap',
-            label: 'Dashboard',
-            selected: false,
-            onClick: () => { console.log('dashboard') },
-            direction: 'col',
-            width: 96
-          },
-          {
-            key:2,
-            type:'icon',
-            iconName:'search',
-            label: 'Search',
-            selected: false,
-            onClick: () => { console.log('search') },
-            direction: 'col',
-            width: 96
-          },
-          {
-            key:3,
-            type:'icon',
-            iconName:'person',
-            label: 'Profile',
-            selected: true,
-            onClick: () => { console.log('profile') },
-            direction: 'col',
-            width: 96
-          }
-        ]}
-      />
-      <NavTab
-        isFluid
-        flexCenter={[
-          {
-            key:1,
-            type:'icon',
-            iconName:'columns-gap',
-            label: 'Dashboard',
-            selected: false,
-            onClick: () => { console.log('dashboard') },
-            direction: 'col',
-            width: 96
-          },
-          {
-            key:2,
-            type:'icon',
-            iconName:'search',
-            label: 'Search',
-            selected: false,
-            onClick: () => { console.log('search') },
-            direction: 'col',
-            width: 96
-          },
-          {
-            key:3,
-            type:'icon',
-            iconName:'person',
-            label: 'Profile',
-            selected: true,
-            onClick: () => { console.log('profile') },
-            direction: 'col',
-            width: 96
-          }
-        ]}
-      />
+      <NavTab isFluid blue flexCenter={flexCenter} />
+      <NavTab isFluid flexCenter={flexCenter} />
     </>
   )
 }

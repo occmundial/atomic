@@ -48,6 +48,7 @@ import NavTab from '@/components/NavTab'
 import NavIcon from '@/components/NavIcon'
 import OccLogoIcon from './Icons/OccLogoIcon'
 import OccLogoWhiteIcon from './Icons/OccLogoWhiteIcon'
+import NavAside from '@/components/NavAside'
 
 const mdxComponents = {
   // Library components
@@ -81,6 +82,7 @@ const mdxComponents = {
   NavItem,
   NavTab,
   NavIcon,
+  NavAside,
   // Docs components
   Demo,
   code: Code,

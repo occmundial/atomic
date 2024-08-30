@@ -1,0 +1,211 @@
+---
+title: NavAside
+section: components
+---
+
+import { useState } from 'react'
+
+
+# NavAside
+
+---
+
+NavAside is a sidebar navigation component that provides a convenient space for links or controls, which can be shown or hidden based on user interactions. It helps organize navigation in a clean and accessible manner.
+
+## Props
+
+| Name              | Type                          | Default value    | Description                                                                                  |
+| ----------------- | ----------------------------- | ---------------- | -------------------------------------------------------------------------------------------- |
+| `children`        | **string \| ReactNode**       | -                | Adds content to the body of NavAside.                                                        |
+| `top`             | **string \| ReactNode**       | -                | Adds content to the top part of NavAside.                                                    |
+| `show`            | **boolean**                   | -                | Toggles the visibility of NavAside.                                                          |
+| `right`           | **boolean**                   | -                | Controls whether the Aside component appears on the right side.                              |
+| `onClose`         | **() => void**                | -                | Specifies a callback function that is invoked when the NavAside is closed.                   |
+| `onTransitionEnd` | **boolean**                   | -                | Specifies a callback function that is triggered when the NavAside close animation completes. |
+
+## Examples
+
+### NavAside
+
+<Demo title="NavAside" background={colors.white}>
+  <Function>
+    { () => {
+      const [show, setShow] = useState(false)
+      const openModal = () => setShow(true)
+      const closeModal = () => setShow(false)
+      return (
+        <>
+          <Button onClick={openModal}>Show Aside</Button>
+          <Portal
+            show={show}
+            container={typeof window !== 'undefined' ? document.body : null}
+          >
+            <NavAside onClose={closeModal}>
+              <div>
+                <NavItem link="#NavItem" notification>Link With Notification</NavItem>
+                <br />
+                <NavItem link="#NavItem" selected>Link Selected</NavItem>
+                <br />
+                <hr />
+                <NavItem link="#NavItem">Another Link</NavItem>
+              </div>
+            </NavAside> 
+          </Portal>
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// How to use NavAside
+function Component() {
+  return (
+    const [show, setShow] = useState(false)
+    const openModal = () => setShow(true)
+    const closeModal = () => setShow(false)
+    return (
+      <>
+        <Button onClick={openModal}>Show Aside</Button>
+        <Portal
+          show={show}
+          container={typeof window !== 'undefined' ? document.body : null}
+        >
+          <NavAside onClose={closeModal}>
+            <div>
+              <NavItem link="#NavItem" notification>Link With Notification</NavItem>
+              <br />
+              <NavItem link="#NavItem" selected>Link Selected</NavItem>
+              <br />
+              <hr />
+              <NavItem link="#NavItem">Another Link</NavItem>
+            </div>
+          </NavAside> 
+        </Portal>
+      </>
+    )
+  )
+}
+```
+
+### Top
+
+<Demo title="NavAside" background={colors.white}>
+  <Function>
+    { () => {
+      const [show, setShow] = useState(false)
+      const openModal = () => setShow(true)
+      const closeModal = () => setShow(false)
+      return (
+        <>
+          <Button onClick={openModal}>Show Aside</Button>
+          <Portal
+            show={show}
+            container={typeof window !== 'undefined' ? document.body : null}
+          >
+            <NavAside
+              onClose={closeModal}
+              top={
+                <Flexbox display="flex" justifyContent="start" alignItems="start">
+                  <Icon iconName="user" />
+                  <Text small>Recludator de Prueba</Text>
+                </Flexbox>
+              }
+            >
+              <div>
+                <NavItem link="#NavItem" notification>Link With Notification</NavItem>
+                <br />
+                <NavItem link="#NavItem" selected>Link Selected</NavItem>
+                <br />
+                <hr />
+                <NavItem link="#NavItem">Another Link</NavItem>
+              </div>
+            </NavAside>
+          </Portal>
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+
+### Right
+
+<Demo title="Right" background={colors.white}>
+  <Function>
+    { () => {
+      const [show, setShow] = useState(false)
+      const openModal = () => setShow(true)
+      const closeModal = () => setShow(false)
+      return (
+        <>
+          <Button onClick={openModal}>Show Aside</Button>
+          <Portal
+            show={show}
+            container={typeof window !== 'undefined' ? document.body : null}
+          >
+            <NavAside
+              onClose={closeModal}
+              right
+              top={
+                <Flexbox display="flex" justifyContent="start" alignItems="start">
+                  <Icon iconName="user" />
+                  <Text small>Recludator de Prueba</Text>
+                </Flexbox>
+              }
+            >
+              <div>
+                <NavItem link="#NavItem" notification>Link With Notification</NavItem>
+                <br />
+                <NavItem link="#NavItem" selected>Link Selected</NavItem>
+                <br />
+                <hr />
+                <NavItem link="#NavItem">Another Link</NavItem>
+              </div>
+            </NavAside>
+          </Portal>
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// How to use Right prop
+function Component() {
+  return (
+    const [show, setShow] = useState(false)
+    const openModal = () => setShow(true)
+    const closeModal = () => setShow(false)
+    return (
+      <>
+        <Button onClick={openModal}>Show Aside</Button>
+        <Portal
+          show={show}
+          container={typeof window !== 'undefined' ? document.body : null}
+        >
+          <NavAside
+            onClose={closeModal}
+            right
+            top={
+              <Flexbox display="flex" justifyContent="start" alignItems="start">
+                <Icon iconName="user" />
+                <Text small>Recludator de Prueba</Text>
+              </Flexbox>
+            }
+          >
+            <div>
+              <NavItem link="#NavItem" notification>Link With Notification</NavItem>
+              <br />
+              <NavItem link="#NavItem" selected>Link Selected</NavItem>
+              <br />
+              <hr />
+              <NavItem link="#NavItem">Another Link</NavItem>
+            </div>
+          </NavAside>
+        </Portal>
+      </>
+    )
+  )
+}
+```
