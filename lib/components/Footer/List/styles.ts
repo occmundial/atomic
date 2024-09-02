@@ -1,8 +1,7 @@
 import { createUseStyles } from 'react-jss'
 
-import spacing from '@/tokens/spacing'
 import colors from '@/tokens/future/colors.json'
-import newSpacing from '@/tokens/future/spacing.json'
+import spacing from '@/tokens/future/spacing.json'
 import shadows from '@/tokens/future/shadows.json'
 import borderRadius from '@/tokens/future/borderRadius.json'
 import grid from '@/tokens/grid'
@@ -33,7 +32,7 @@ export default createUseStyles({
     transition: 'transform cubic-bezier(0.25,0.46,0.45,0.94) 0.2s',
     display: 'flex',
     flexDirection: 'column',
-    rowGap: newSpacing['size-4'],
+    rowGap: spacing['size-4'],
     [`@media (min-width: ${grid.xs}px)`]: {
       transform: 'translateY(0px)',
       overflow: 'visible'
@@ -43,7 +42,7 @@ export default createUseStyles({
     [`@media (max-width: ${grid.xs - 1}px)`]: {
       transform: 'translateY(0px)',
       transition: 'transform cubic-bezier(0.25,0.46,0.45,0.94) 0.2s 0.05s',
-      marginBottom: newSpacing['size-3']
+      marginBottom: spacing['size-3']
     }
   },
   collapsible: {
@@ -55,8 +54,6 @@ export default createUseStyles({
     }
   },
   arrow: {
-    marginLeft: spacing.tiny,
-    marginBottom: -spacing.xTiny,
     display: 'inline-block',
     [`@media (min-width: ${grid.xs}px)`]: {
       display: 'none'
@@ -81,16 +78,16 @@ export default createUseStyles({
     }
   },
   iconWrapper: {
-    marginBottom: spacing.tiny,
-    marginRight: spacing.tiny,
+    marginBottom: spacing['size-2'],
+    marginRight: spacing['size-2'],
     display: 'inline-block'
   },
   title: {
-    padding: [newSpacing['size-4'], 0],
+    padding: [spacing['size-4'], 0],
     [`@media (min-width: ${grid.xs}px)`]: {
       display: 'none',
       padding: 0,
-      marginBottom: newSpacing['size-5']
+      marginBottom: spacing['size-5']
     }
   },
   titleColor: {
@@ -100,7 +97,7 @@ export default createUseStyles({
   titleDesktop: {
     display: 'none',
     [`@media (min-width: ${grid.xs}px)`]: {
-      marginBottom: newSpacing['size-5'],
+      marginBottom: spacing['size-5'],
       display: 'block'
     }
   }
