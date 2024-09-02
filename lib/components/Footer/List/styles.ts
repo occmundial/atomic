@@ -45,6 +45,9 @@ export default createUseStyles({
       marginBottom: spacing['size-3']
     }
   },
+  overflowVisible: {
+    overflow: 'visible'
+  },
   collapsible: {
     cursor: 'pointer',
     display: 'flex',

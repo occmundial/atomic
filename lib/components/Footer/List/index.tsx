@@ -47,10 +47,17 @@ interface ListProps {
 const List = ({ list: { title, items }, listClassName }: ListProps) => {
   const classes = useStyles()
   const [toggle, setToggle] = useState(false)
+  const [overflowVisible, setOverflowVisible] = useState(false)
 
   const getIcon = useIcon()
 
-  const toggleList = useCallback(() => setToggle(!toggle), [toggle])
+  const toggleList = useCallback(() => {
+    setToggle(!toggle)
+    setTimeout(
+      () => setOverflowVisible(!overflowVisible),
+      overflowVisible ? 0 : 200
+    )
+  }, [overflowVisible, toggle])
 
   const renderLink = useCallback(
     item => {
@@ -130,7 +137,7 @@ const List = ({ list: { title, items }, listClassName }: ListProps) => {
         <div
           className={`${classes.content}${
             toggle ? ` ${classes.showContent}` : ''
-          }`}
+          }${overflowVisible ? ` ${classes.overflowVisible}` : ''}`}
         >
           {items.map(item => renderItem(item))}
         </div>

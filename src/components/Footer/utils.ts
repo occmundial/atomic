@@ -1,5 +1,4 @@
 import { Column } from '@/components/Footer'
-import { ReactNode } from 'react'
 
 const rel = 'noopener noreferrer'
 const occDomain = 'https://www.occ.com.mx/'
