@@ -3,7 +3,8 @@ import React, {
   useCallback,
   MouseEvent,
   ReactNode,
-  Fragment
+  Fragment,
+  useEffect
 } from 'react'
 import classnames from 'classnames'
 
@@ -51,13 +52,15 @@ const List = ({ list: { title, items }, listClassName }: ListProps) => {
 
   const getIcon = useIcon()
 
-  const toggleList = useCallback(() => {
-    setToggle(!toggle)
-    setTimeout(
-      () => setOverflowVisible(!overflowVisible),
-      overflowVisible ? 0 : 200
+  const toggleList = useCallback(() => setToggle(!toggle), [toggle])
+
+  useEffect(() => {
+    const timeout = setTimeout(
+      () => setOverflowVisible(toggle),
+      toggle ? 200 : 0
     )
-  }, [overflowVisible, toggle])
+    return () => clearTimeout(timeout)
+  }, [toggle])
 
   const renderLink = useCallback(
     item => {
