@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 
 import Button from '@/components/Button'
 import Flexbox from '@/components/Flexbox'
-import AtomicFooter from '@/components/Footer'
+import AtomicFooter, { AuxProps } from '@/components/Footer'
 import useStyles from './styles'
 import { bottomLinks, columns } from './utils'
 import { AndroidApp, AppGallery, Certificate, IOSApp } from './Badges'
@@ -13,19 +13,16 @@ const copyText = (
   </p>
 )
 
-const Aux = ({ classes }) => (
-  <Flexbox
-    display="flex"
-    className={classes.bottomSection}
-    alignItems="center"
-    justifyContent="center"
-  >
-    <div className={classes.socialMediaContainer}>
+const Aux: AuxProps = {
+  badges: (
+    <Fragment>
       <IOSApp show />
       <AndroidApp show />
       <AppGallery />
-    </div>
-    <Flexbox display="flex" direction="row" style={{ columnGap: 4 }}>
+    </Fragment>
+  ),
+  socialMedia: (
+    <Fragment>
       <Button
         iconLeft="facebook"
         href="https://www.facebook.com/occoficial"
@@ -54,10 +51,10 @@ const Aux = ({ classes }) => (
         theme="ghostGrey"
         size="lg"
       />
-    </Flexbox>
-    <Certificate />
-  </Flexbox>
-)
+    </Fragment>
+  ),
+  extraContent: <Certificate />
+}
 
 const TopElement = () => (
   <Flexbox display="flex">
@@ -83,7 +80,7 @@ export default function FooterMDX() {
         topElement={<TopElement />}
         columns={columns()}
         bottomLinks={bottomLinks(true)}
-        aux={<Aux classes={classes} />}
+        aux={Aux}
         copyText={copyText}
         listClassName=""
         sectionDivider

@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
 
-import newSpacing from '@/tokens/future/spacing.json'
+import spacing from '@/tokens/future/spacing.json'
 import colors from '@/tokens/future/colors.json'
 import fonts from '@/tokens/future/fonts.json'
 import shadows from '@/tokens/future/shadows.json'
@@ -12,17 +12,17 @@ export default createUseStyles({
   footer: {
     backgroundColor: colors.bg.surface.default,
     borderTop: `1px solid ${colors.border.default.subtle}`,
-    padding: [newSpacing['size-7'], 0]
+    padding: [spacing['size-7'], 0]
   },
   footerContainer: {
     display: 'flex',
     flexDirection: 'column',
-    rowGap: newSpacing['size-5'],
+    rowGap: spacing['size-5'],
     [`@media (min-width: ${grid.xs}px)`]: {
-      rowGap: newSpacing['size-7']
+      rowGap: spacing['size-7']
     },
     [`@media (min-width: ${grid.md}px)`]: {
-      rowGap: newSpacing['size-8']
+      rowGap: spacing['size-8']
     }
   },
   column: {
@@ -31,11 +31,11 @@ export default createUseStyles({
     flexWrap: 'wrap',
     [`@media (min-width: ${grid.xs}px)`]: {
       flexDirection: 'row',
-      columnGap: newSpacing['size-4'],
-      rowGap: newSpacing['size-7']
+      columnGap: spacing['size-4'],
+      rowGap: spacing['size-7']
     },
     [`@media (min-width: ${grid.md}px)`]: {
-      columnGap: newSpacing['size-5'],
+      columnGap: spacing['size-5'],
       rowGap: 0
     }
   },
@@ -65,23 +65,23 @@ export default createUseStyles({
   listContainer: {
     flexBasis: '100%',
     [`@media (min-width: ${grid.xs}px)`]: {
-      flexBasis: `calc(50% - ${newSpacing['size-4']})`
+      flexBasis: `calc(50% - ${spacing['size-4']})`
     },
     [`@media (min-width: ${grid.md}px)`]: {
-      flexBasis: `calc(25% - ${newSpacing['size-5']})`
+      flexBasis: `calc(25% - ${spacing['size-5']})`
     }
   },
   bottomSection: {
     display: 'flex',
     flexDirection: 'column',
-    rowGap: newSpacing['size-7']
+    rowGap: spacing['size-7']
   },
   bottomLinksContainer: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    columnGap: newSpacing['size-5'],
-    rowGap: newSpacing['size-4'],
+    columnGap: spacing['size-5'],
+    rowGap: spacing['size-4'],
     [`@media (min-width: ${grid.sm}px)`]: {
       flexDirection: 'row',
       alignItems: 'stretch'
@@ -89,7 +89,7 @@ export default createUseStyles({
   },
   linkDivider: {
     width: 1,
-    margin: [newSpacing['size-0'], 0],
+    margin: [spacing['size-0'], 0],
     backgroundColor: colors.border.default.bold,
     alignSelf: 'stretch',
     display: 'none',
@@ -107,12 +107,36 @@ export default createUseStyles({
   bottomContainer: {
     display: 'flex',
     flexDirection: 'column',
-    rowGap: newSpacing['size-4'],
+    rowGap: spacing['size-4'],
     [`@media (min-width: ${grid.sm}px)`]: {
-      rowGap: newSpacing['size-5']
+      rowGap: spacing['size-5']
     }
   },
   divider: {
     borderTop: `1px solid ${colors.border.default.subtle}`
+  },
+  auxContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    gap: spacing['size-5'],
+    [`@media (min-width: ${grid.md}px)`]: {
+      flexDirection: 'row',
+      gap: spacing['size-9']
+    }
+  },
+  badgesContainer: {
+    display: 'flex',
+    gap: spacing['size-4'],
+    flexDirection: 'column',
+    [`@media (min-width: ${grid.xs}px)`]: {
+      flexDirection: 'row'
+    }
+  },
+  socialMediaContainer: {
+    display: 'flex',
+    direction: 'row',
+    columnGap: spacing['size-1']
   }
 })

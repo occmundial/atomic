@@ -40,10 +40,11 @@ export default createUseStyles({
     }
   },
   showContent: {
-    transform: 'translateY(0px)',
-    transition: 'transform cubic-bezier(0.25,0.46,0.45,0.94) 0.2s 0.05s',
-    marginBottom: spacing['size-3'],
-    overflow: 'visible'
+    [`@media (max-width: ${grid.xs - 1}px)`]: {
+      transform: 'translateY(0px)',
+      transition: 'transform cubic-bezier(0.25,0.46,0.45,0.94) 0.2s 0.05s',
+      marginBottom: newSpacing['size-3']
+    }
   },
   collapsible: {
     cursor: 'pointer',

@@ -40,11 +40,16 @@ export interface Aux {
   className?: string
 }
 
+export interface AuxProps {
+  badges: ReactNode
+  socialMedia: ReactNode
+  extraContent: ReactNode
+}
 export interface FooterProps {
   columns?: Column[]
   bottomLinks?: BottomLink[]
   copyText?: string | ReactElement
-  aux?: ReactNode
+  aux?: AuxProps
   bottomItem?: ReactElement
   listClassName?: string
   /** The recommendation is to set the breakpoint at `grid.xl` */
@@ -91,7 +96,25 @@ const Footer = ({
         )}
         {sectionDivider ? <div className={classes.divider} /> : ''}
         <section className={classes.bottomSection}>
-          {isValidElement(aux) ? aux : ''}
+          {aux ? (
+            <div className={classes.auxContainer}>
+              {aux.badges ? (
+                <div className={classes.badgesContainer}>{aux.badges}</div>
+              ) : (
+                ''
+              )}
+              {aux.socialMedia ? (
+                <div className={classes.socialMediaContainer}>
+                  {aux.socialMedia}
+                </div>
+              ) : (
+                ''
+              )}
+              {aux.extraContent}
+            </div>
+          ) : (
+            ''
+          )}
           <div className={classes.bottomContainer}>
             <div
               className={classNames(
