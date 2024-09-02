@@ -31,6 +31,7 @@ export interface ListItem {
   iconName?: string
   onClick?: (e: MouseEvent) => void
   custom?: ReactNode
+  testId?: string
 }
 
 interface List {
@@ -61,6 +62,7 @@ const List = ({ list: { title, items }, listClassName }: ListProps) => {
           rel={item.rel}
           className={classes.link}
           title={item.title}
+          data-testid={item.testId}
         >
           {item.text}
         </a>
@@ -77,6 +79,7 @@ const List = ({ list: { title, items }, listClassName }: ListProps) => {
             iconName={item.iconName}
             onClick={item.onClick}
             color={colors.grey600}
+            testId={item.testId}
           />
         </div>
       )
@@ -103,6 +106,7 @@ const List = ({ list: { title, items }, listClassName }: ListProps) => {
       <div
         onClick={toggleList}
         className={classnames(classes.title, classes.collapsible)}
+        data-testid={`footer-list__title-${title}`}
       >
         <h5 className={classes.titleColor}>{title}</h5>
         <Icon

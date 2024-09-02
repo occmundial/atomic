@@ -3,7 +3,6 @@ import { Fragment } from 'react'
 import Button from '@/components/Button'
 import Flexbox from '@/components/Flexbox'
 import AtomicFooter, { AuxProps } from '@/components/Footer'
-import useStyles from './styles'
 import { bottomLinks, columns } from './utils'
 import { AndroidApp, AppGallery, Certificate, IOSApp } from './Badges'
 
@@ -72,8 +71,6 @@ const TopElement = () => (
 )
 
 export default function FooterMDX() {
-  const classes = useStyles()
-
   return (
     <Fragment>
       <AtomicFooter

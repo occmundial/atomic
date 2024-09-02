@@ -31,15 +31,6 @@ export interface BottomLink {
   id?: string
 }
 
-export interface Aux {
-  text: string
-  href?: string
-  target?: string
-  iconLeft?: string
-  iconRight?: string
-  className?: string
-}
-
 export interface AuxProps {
   badges: ReactNode
   socialMedia: ReactNode
@@ -50,7 +41,6 @@ export interface FooterProps {
   bottomLinks?: BottomLink[]
   copyText?: string | ReactElement
   aux?: AuxProps
-  bottomItem?: ReactElement
   listClassName?: string
   /** The recommendation is to set the breakpoint at `grid.xl` */
   isFluid?: boolean
@@ -64,7 +54,6 @@ const Footer = ({
   bottomLinks = [],
   copyText,
   aux,
-  bottomItem,
   listClassName,
   isFluid,
   topElement,
@@ -76,7 +65,7 @@ const Footer = ({
   return (
     <footer className={classes.footer}>
       <Grid fluid={isFluid} className={classes.footerContainer}>
-        {isValidElement(topElement) ? <div>{topElement}</div> : ''}
+        {isValidElement(topElement) ? topElement : ''}
         {columns.length ? (
           <section className={classes.column}>
             {columns.map((column, index) => (
@@ -145,7 +134,6 @@ const Footer = ({
             </div>
             {copyText && <div className={classes.copyright}>{copyText}</div>}
           </div>
-          {bottomItem}
         </section>
       </Grid>
     </footer>

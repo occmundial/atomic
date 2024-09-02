@@ -8,13 +8,8 @@ import { bottomLinks } from './utils'
 
 const copyText = <>Derechos reservados. Versión del sitio candy-home@1.44.0</>
 
-const TopElement = ({ classes }) => (
-  <Flexbox
-    display="flex"
-    // className={classes.bottomSection}
-    alignItems="start"
-    justifyContent="start"
-  >
+const TopElement = () => (
+  <Flexbox display="flex" alignItems="start" justifyContent="start">
     <Button
       href="https://www.facebook.com/occoficial"
       target="_blank"
@@ -34,7 +29,7 @@ export default function FooterMDX() {
     <Fragment>
       <AtomicFooter
         bottomLinks={bottomLinks(true)}
-        topElement={<TopElement classes={classes} />}
+        topElement={<TopElement />}
         copyText={copyText}
         listClassName=""
         bottomLinksClassName={classes.bottomContainer}
