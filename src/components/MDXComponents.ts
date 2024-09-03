@@ -46,9 +46,8 @@ import NavTop from '@/components/NavTop'
 import NavItem from '@/components/NavItem'
 import NavTab from '@/components/NavTab'
 import NavIcon from '@/components/NavIcon'
-import OccLogoIcon from './Icons/OccLogoIcon'
-import OccLogoWhiteIcon from './Icons/OccLogoWhiteIcon'
 import NavAside from '@/components/NavAside'
+import Logo from '@/components/Logo'
 
 const mdxComponents = {
   // Library components
@@ -83,6 +82,7 @@ const mdxComponents = {
   NavTab,
   NavIcon,
   NavAside,
+  Logo,
   // Docs components
   Demo,
   code: Code,
@@ -138,9 +138,7 @@ const mdxComponents = {
   PillGroup,
   PillChoice,
   PillStack,
-  AlertSmall,
-  OccLogoIcon,
-  OccLogoWhiteIcon
+  AlertSmall
 }
 
 export default mdxComponents

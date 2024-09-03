@@ -106,15 +106,13 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
   <Function>
     { () => {
       const [selected, setSelected] = useState('Vacantes')
-      console.log(colorsNew)
-      console.log(colors)
       const left = [
         {
           key:0,
           type: 'logo',
           logo: (
             <a href="#NavTab" style={{ display: 'flex' }}>
-              <OccLogoWhiteIcon />
+              <Logo variant="occLogo" theme="white" />
             </a>
           )
         },
@@ -149,7 +147,7 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
         type: 'logo',
         logo: (
           <a href="#NavTab" style={{ display: 'flex' }}>
-            <OccLogoIcon />
+            <Logo variant="occLogo" theme="blue" />
           </a>
         )
       }
@@ -205,7 +203,7 @@ function Component() {
           type: 'logo',
           logo: (
             <a href="#NavTab" style={{ display: 'flex' }}>
-              <OccLogoWhiteIcon />
+              <Logo variant="occLogo" theme="white" />
             </a>
           )
         },
@@ -240,7 +238,7 @@ function Component() {
         type: 'logo',
         logo: (
           <a href="#NavTab" style={{ display: 'flex' }}>
-            <OccLogoIcon />
+            <Logo variant="occLogo" theme="blue" />
           </a>
         )
       }
@@ -314,7 +312,7 @@ function Component() {
             type: 'logo',
             logo: (
               <a href="#NavTab" style={{ display: 'flex' }}>
-                <OccLogoWhiteIcon />
+                <Logo variant="occLogo" theme="white" />
               </a>
             )
         },
@@ -338,7 +336,7 @@ function Component() {
         type: 'logo',
         logo: (
           <a href="#NavTab">
-            <OccLogoIcon />
+            <Logo variant="occLogo" theme="blue" />
           </a>
         )
       }
@@ -394,7 +392,7 @@ function Component() {
         type: 'logo',
         logo: (
           <a href="#NavTab" style={{ display: 'flex' }}>
-            <OccLogoWhiteIcon />
+            <Logo variant="occLogo" theme="white" />
           </a>
         )
     },
@@ -418,7 +416,7 @@ function Component() {
     type: 'logo',
     logo: (
       <a href="#NavTab">
-        <OccLogoIcon />
+        <Logo variant="occLogo" theme="blue" />
       </a>
     )
   }
@@ -561,7 +559,7 @@ function Component() {
         type: 'logo',
         logo: (
           <a href="#NavTab" style={{ display: 'flex' }}>
-            <OccLogoWhiteIcon />
+            <Logo variant="occLogo" theme="white" />
           </a>
         )
       }]
@@ -570,7 +568,7 @@ function Component() {
         type: 'logo',
         logo: (
           <a href="#NavTab" style={{ display: 'flex' }}>
-            <OccLogoIcon />
+            <Logo variant="occLogo" theme="blue" />
           </a>
         )
       }]
@@ -637,7 +635,7 @@ function Component() {
     type: 'logo',
     logo: (
       <a href="#NavTab" style={{ display: 'flex' }}>
-        <OccLogoWhiteIcon />
+        <Logo variant="occLogo" theme="white" />
       </a>
     )
   }]
@@ -646,7 +644,7 @@ function Component() {
     type: 'logo',
     logo: (
       <a href="#NavTab" style={{ display: 'flex' }}>
-        <OccLogoIcon />
+        <Logo variant="occLogo" theme="blue" />
       </a>
     )
   }]
