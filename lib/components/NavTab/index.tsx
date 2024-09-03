@@ -251,7 +251,7 @@ const NavTab = ({
   )
 
   return (
-    <div
+    <nav
       className={classnames(
         classes.container,
         { [classes.fixed]: fixed },
@@ -331,7 +331,7 @@ const NavTab = ({
           </Flexbox>
         </Grid>
       </div>
-    </div>
+    </nav>
   )
 }
 
