@@ -3,12 +3,6 @@ title: NavTab
 section: components
 ---
 
-import Demo from '@/utils/components/Demo'
-import NavTab from '@/components/NavTab'
-import Icon from '@/components/Icon'
-import OccLogoIcon from '../components/Icons/OccLogoIcon'
-import OccLogoWhiteIcon from '../components/Icons/OccLogoWhiteIcon'
-
 
 # NavTab
 ---
@@ -106,6 +100,190 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
 
 ## Examples
 
+### NavTab
+
+<Demo title="NavTab" background={colors.white}>
+  <Function>
+    { () => {
+      const [selected, setSelected] = useState('Vacantes')
+      console.log(colorsNew)
+      console.log(colors)
+      const left = [
+        {
+          key:0,
+          type: 'logo',
+          logo: (
+            <a href="#NavTab" style={{ display: 'flex' }}>
+              <OccLogoWhiteIcon />
+            </a>
+          )
+        },
+        {
+          key:1,
+          type:'icon',
+          label: 'Vacantes',
+          selected: selected === 'Vacantes',
+          showBar: selected === 'Vacantes',
+          onClick: () => setSelected('Vacantes')
+        },
+        {
+          key:2,
+          type:'icon',
+          label: 'Talento',
+          selected: selected === 'Talento',
+          showBar: selected === 'Talento',
+          onClick: () => setSelected('Talento')
+        },
+        {
+          key:3,
+          type:'icon',
+          label: 'Ayuda',
+          selected: selected === 'Ayuda',
+          showBar: selected === 'Ayuda',
+          onClick: () => setSelected('Ayuda')
+        }
+      ]
+      const left2 = [...left]
+      left2[0] = {
+        key:0,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <OccLogoIcon />
+          </a>
+        )
+      }
+      const right = [
+        {
+          key: 1,
+          type: 'button',
+          iconLeft: 'cart'
+        },
+        {
+          key: 2,
+          type: 'button',
+          style: { padding: '4px' },
+          text: (
+            <Flexbox display="inline-flex" alignItems="center" >
+              <Avatar photo="https://i.pravatar.cc/300" />
+              <Icon iconName="chevron-down" size="16" style={{ marginLeft: "4px" }} color={colorsNew.icon.inverse.default} />
+          </Flexbox>
+          )
+        },
+      ]
+      const right2 = [...right]
+      right2[1] =  {
+          key: 2,
+          type: 'button',
+          style: { padding: '4px' },
+          text: (
+            <Flexbox display="inline-flex" alignItems="center" >
+              <Avatar photo="https://i.pravatar.cc/300" />
+              <Icon iconName="chevron-down" size="16" style={{ marginLeft: "4px" }} color={colorsNew.icon.default.default} />
+          </Flexbox>
+          )
+      }
+      return (  
+        <>
+          <NavTab isFluid blue left={left} right={right} />
+          <NavTab isFluid left={left2} right={right2} />
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// How to use NavTab
+function Component() {
+      const [selected, setSelected] = useState('Vacantes')
+      console.log(colorsNew)
+      console.log(colors)
+      const left = [
+        {
+          key:0,
+          type: 'logo',
+          logo: (
+            <a href="#NavTab" style={{ display: 'flex' }}>
+              <OccLogoWhiteIcon />
+            </a>
+          )
+        },
+        {
+          key:1,
+          type:'icon',
+          label: 'Vacantes',
+          selected: selected === 'Vacantes',
+          showBar: selected === 'Vacantes',
+          onClick: () => setSelected('Vacantes')
+        },
+        {
+          key:2,
+          type:'icon',
+          label: 'Talento',
+          selected: selected === 'Talento',
+          showBar: selected === 'Talento',
+          onClick: () => setSelected('Talento')
+        },
+        {
+          key:3,
+          type:'icon',
+          label: 'Ayuda',
+          selected: selected === 'Ayuda',
+          showBar: selected === 'Ayuda',
+          onClick: () => setSelected('Ayuda')
+        }
+      ]
+      const left2 = [...left]
+      left2[0] = {
+        key:0,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <OccLogoIcon />
+          </a>
+        )
+      }
+      const right = [
+        {
+          key: 1,
+          type: 'button',
+          iconLeft: 'cart'
+        },
+        {
+          key: 2,
+          type: 'button',
+          style: { padding: '4px' },
+          text: (
+            <Flexbox display="inline-flex" alignItems="center" >
+              <Avatar photo="https://i.pravatar.cc/300" />
+              <Icon iconName="chevron-down" size="16" style={{ marginLeft: "4px" }} color={colorsNew.icon.inverse.default} />
+          </Flexbox>
+          )
+        },
+      ]
+      const right2 = [...right]
+      right2[1] =  {
+          key: 2,
+          type: 'button',
+          style: { padding: '4px' },
+          text: (
+            <Flexbox display="inline-flex" alignItems="center" >
+              <Avatar photo="https://i.pravatar.cc/300" />
+              <Icon iconName="chevron-down" size="16" style={{ marginLeft: "4px" }} color={colorsNew.icon.default.default} />
+          </Flexbox>
+          )
+      }
+      return (  
+        <>
+          <NavTab isFluid blue left={left} right={right} />
+          <NavTab isFluid left={left2} right={right2} />
+        </>
+      )
+}
+```
+
+
 ### NavTab with NavTop
 
 <Demo title="NavTab with NavTop" background={colors.white}>
@@ -194,13 +372,13 @@ function Component() {
   const [dropdown, setDropdown] = useState(false)
   const top = [
     {
-      key:1,
-      children:'First link',
+      key: 1,
+      children: 'First link',
       link:'#NavTab'
     },
     {
-      key:2,
-      children:'Current link',
+      key: 2,
+      children: 'Current link',
       link:'#NavTab',
       selected: true
     },
@@ -236,7 +414,7 @@ function Component() {
   ]
   const left2 = [...left]
   left2[0] = {
-    key:0,
+    key: 0,
     type: 'logo',
     logo: (
       <a href="#NavTab">
@@ -246,16 +424,15 @@ function Component() {
   }
   const right = [
     {
-      key:1,
-      type:'button',
-      text:'Primary CTA',
-      theme:'primary'
+      key: 1,
+      type: 'button',
+      text: 'Primary CTA',
+      theme: 'primary'
     },
     {
-      key:2,
-      type:'button',  
-      text:'Secondary CTA',
-      theme:'ghostWhite'
+      key: 2,
+      type: 'button',  
+      text: 'Secondary CTA'
     }
   ]
   return (
@@ -274,29 +451,29 @@ function Component() {
     { () => {
       const [dropdown, setDropdown] = useState(false)
       const center = [{
-        key:1,
-        type:'icon',
-        iconName:'columns-gap'
+        key: 1,
+        type: 'icon',
+        iconName: 'columns-gap'
       },
       {
-        key:2,
-        type:'icon',
-        iconName:'search'
+        key: 2,
+        type: 'icon',
+        iconName: 'search'
       },
       {
-        key:3,
-        type:'icon',
-        iconName:'person'
+        key: 3,
+        type: 'icon',
+        iconName: 'person'
       }]
       const left = [{
-        key:1,
-        type: 'icon',
-        iconName: 'menu'
+        key: 1,
+        type: 'button',
+        iconLeft: 'menu'
       }]
       const right = [{
-        key:1,
-        type:'icon',
-        iconName:'chat'
+        key: 1,
+        type: 'button',
+        iconLeft: 'chat'
       }]
       return (
         <>
@@ -399,19 +576,13 @@ function Component() {
       }]
       const right = [{
         key:1,
-        type:'icon',
-        iconName:'cart',
-        selected: selected === 'cart',
-        showBar: selected === 'cart',
-        onClick: () => setSelected('cart')
+        type:'button',
+        iconLeft:'cart'
       },
       {
         key:2,
-        type:'icon',
-        iconName:'chat',
-        selected: selected === 'chat',
-        showBar: selected === 'chat',
-        onClick: () => setSelected('chat')
+        type:'button',
+        iconLeft:'chat'
       },
       {
         key: 3,
@@ -506,61 +677,6 @@ function Component() {
     <>
       <NavTab isFluid blue center={center} left={left} right={right} />
       <NavTab isFluid center={center} left={left2} right={right} />
-    </>
-  )
-}
-```
-
-### NavTab with menu button
-
-<Demo title="NavTab with menu button" background={colors.white}>
-  <Function>
-    {() => {
-      const left = [{
-        key:1,
-        type: 'logo',
-        logo: (
-          <a href="#NavTab" style={{ display: 'flex' }}>
-            <OccLogoWhiteIcon />
-          </a>
-        )
-      }]
-      const right = [{
-        key: 0,
-        type: 'icon',
-        iconName: 'menu'
-      }]
-      return (
-        <>
-          <NavTab isFluid blue left={left} right={right} />
-          <NavTab isFluid left={left} right={right} />
-        </>
-      )
-    }}
-  </Function>
-</Demo>
-
-```jsx
-// How to use NavTab with menu button
-function Component() {
-  const left = [{
-    key:1,
-    type: 'logo',
-    logo: (
-      <a href="#NavTab" style={{ display: 'flex' }}>
-        <OccLogoWhiteIcon />
-      </a>
-    )
-  }]
-  const right = [{
-    key: 0,
-    type: 'icon',
-    iconName: 'menu'
-  }]
-  return (
-    <>
-      <NavTab isFluid blue left={left} right={right} />
-      <NavTab isFluid left={left} right={right} />
     </>
   )
 }
