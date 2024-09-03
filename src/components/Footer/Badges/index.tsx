@@ -1,4 +1,4 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
 import AppButton from '../AppButton'
 
 const utmSources = {
@@ -36,26 +36,22 @@ export const Certificate = () => (
     title="AMIPICI"
     rel="noopener noreferrer"
   >
-    <Image
+    <img
       src={`https://cdn-h4.occ.com.mx/images/common/sello_de_confianza.svg`}
       alt="cert"
       width={99}
       height={40}
-      priority={false}
-      {...{ fetchpriority: 'low' }}
-      unoptimized
+      loading="lazy"
     />
   </a>
 )
 
 export const AppGallery = () => (
-  <Image
+  <img
     src="https://cdn-h4.occ.com.mx/images/common/app-gallery.svg"
     width="134"
     height="40"
     alt="app-gallery"
-    priority={false}
-    {...{ fetchpriority: 'low' }}
-    unoptimized
+    loading="lazy"
   />
 )

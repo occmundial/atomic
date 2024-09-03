@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import Flexbox from '@/components/Flexbox'
-import Image from 'next/image'
 import classnames from 'classnames'
 
 import useStyles from './styles'
@@ -39,13 +39,7 @@ export default function AppButton({
         id={id}
         className={classes.appImage}
       >
-        <Image
-          src={img}
-          alt={imgAlt}
-          layout="fill"
-          unoptimized
-          {...{ fetchpriority: 'low' }}
-        />
+        <img src={img} alt={imgAlt} loading="lazy" />
       </a>
     </Flexbox>
   )
