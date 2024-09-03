@@ -32,9 +32,9 @@ export interface BottomLink {
 }
 
 export interface AuxProps {
-  badges: ReactNode
-  socialMedia: ReactNode
-  extraContent: ReactNode
+  badges?: ReactNode
+  socialMedia?: ReactNode
+  extraContent?: ReactNode
 }
 export interface FooterProps {
   columns?: Column[]

@@ -22,9 +22,16 @@ A footer component.
 | `bottomLinks`           | **BottomLink[]**                       | -                | Array of links to display at the bottom of the footer.                                                                                    |
 | `copyText`              | **string** &#124; **ReactElement**     | -                | Element to render above bottom links                                                                 |
 | `aux`                   | **AuxProps**                           | -                | Elements to render between columns and bottom links, used for social media info.                                                                    |
-| `topElement`            | **ReactNode**                          | -                | First element in footer, commonly used for brand logo.                                                            |
+| `topElement`            | **ReactNode**                          | -                | Custom component to render at the top of the footer, commonly used for brand logo.                                                            |
 | `bottomLinksClassName`  | **string**                             | -                | Custom classname for bottomLinks container.                                                              |
 | `sectionDivider`        | **boolean**                            | -                | Flag to display an horizontal line between sections.                                                         |
+
+## aux Props
+| Name              | Type            | Default value    | Description                                                                                                                  |
+| ----------------- | --------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `badges`          | **ReactNode**   | -                | Custom element to render apps store badges.                                                                          |
+| `socialMedia`     | **ReactNode**   | -                | Custom element to render social media button icons.                                                                                    |
+| `extraContent`    | **ReactNode**   | -                | Custom element to render aditional content align at the end of the flex container                                                                 |
 
 ## Examples
 
