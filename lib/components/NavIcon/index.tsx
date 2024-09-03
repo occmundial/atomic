@@ -34,7 +34,6 @@ const NavIcon = ({
   showBar
 }: NavIconProps) => {
   const classes = useStyles()
-  const [hover, setHover] = useState(false)
   return (
     <div
       className={classnames(
@@ -43,14 +42,11 @@ const NavIcon = ({
         { [classes.black]: !white },
         { [classes.selectedWhite]: selected && white },
         { [classes.selected]: selected && !white },
-        { [classes.showBarSec]: showBar && white },
-        { [classes.showBar]: showBar && !white },
+        { [classes.showBar]: showBar },
         className
       )}
       onClick={onClick}
       style={{ width }}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
       data-testid={testId}
     >
       <Flexbox
@@ -60,21 +56,13 @@ const NavIcon = ({
         alignItems="center"
         className={classes.flex}
       >
-        <Icon
-          iconName={iconName}
-          size={iconSizes.base}
-          className={classnames(classes.icon, {
-            [classes.withOpacity]: hover && white
-          })}
-        />
+        {iconName && <Icon iconName={iconName} size={iconSizes.base} />}
         {label && (
-          <Text micro current>
+          <Text bodyRegularStrong current>
             <span
-              className={classnames(
-                classes.text,
-                { [classes.withOpacity]: hover && white },
-                { [classes.pushText]: direction !== 'col' }
-              )}
+              className={classnames(classes.text, {
+                [classes.pushText]: direction !== 'col'
+              })}
             >
               {label}
             </span>

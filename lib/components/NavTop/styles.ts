@@ -1,11 +1,11 @@
 import { createUseStyles } from 'react-jss'
 
 import colors from '@/tokens/colors'
-import spacing from '@/tokens/spacing'
+import spacing from '@/tokens/future/spacing.json'
 
 export default createUseStyles({
   top: {
-    height: spacing.medium
+    height: spacing['size-6']
   },
   blue: {
     background: colors.prim
@@ -18,8 +18,8 @@ export default createUseStyles({
   },
   navItem: {
     position: 'relative',
-    marginRight: spacing.small,
-    marginLeft: spacing.small,
+    marginRight: spacing['size-4'],
+    marginLeft: spacing['size-4'],
     '&:first-child': {
       marginLeft: 0
     },
@@ -30,10 +30,10 @@ export default createUseStyles({
       content: '""',
       display: 'block',
       width: 1,
-      height: spacing.small,
+      height: spacing['size-4'],
       background: colors.grey400,
       position: 'absolute',
-      right: -spacing.small,
+      right: -spacing['size-4'],
       top: '50%',
       transform: 'translateY(-50%)'
     },
