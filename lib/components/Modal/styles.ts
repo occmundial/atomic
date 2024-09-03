@@ -235,5 +235,8 @@ export default createUseStyles({
       top: spacing.medium,
       right: spacing.medium
     }
+  },
+  imgTopPadding: {
+    paddingTop: newSpacing['size-5']
   }
 })
