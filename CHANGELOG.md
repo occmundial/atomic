@@ -1,3 +1,27 @@
+# [3.0.0-beta.55](https://github.com/occmundial/atomic/compare/v3.0.0-beta.54...v3.0.0-beta.55) (2024-09-04)
+
+
+### Bug Fixes
+
+* Navtem notification error ([271cb32](https://github.com/occmundial/atomic/commit/271cb32f2910b16297e7d31acbddf6eef8285192))
+
+
+### Features
+
+* Added Nav Item related documentation ([2fa1387](https://github.com/occmundial/atomic/commit/2fa13878a8d55be5d4c7a85f258f98f457886476))
+* Added Navtab example and remove NavTab menu example ([cb6b88a](https://github.com/occmundial/atomic/commit/cb6b88a0f5ebc02c1d565d1c9fd0ae7b7368bb6a))
+* Added NavTab props description and occ logo to examples ([337a994](https://github.com/occmundial/atomic/commit/337a994352648cede7790a2a8b867ffd74332526))
+* Improved nav components documentation ([3c11c6a](https://github.com/occmundial/atomic/commit/3c11c6a2886cebaa567658dee912d68117f0ecbf))
+* Replaced the <div> tag with a <nav> tag ([c1b69e9](https://github.com/occmundial/atomic/commit/c1b69e9c2c9f3a74df677ca8cd019412bc8a81a0))
+* Updated header styles ([09144e4](https://github.com/occmundial/atomic/commit/09144e4abeaa9c311748d94f59308d112932f34c))
+
+# [3.0.0-beta.54](https://github.com/occmundial/atomic/compare/v3.0.0-beta.53...v3.0.0-beta.54) (2024-09-04)
+
+
+### Bug Fixes
+
+* Change display flex for grid in columns links ([9884077](https://github.com/occmundial/atomic/commit/9884077cde3c14e7b17abf6ab82ff0afe932571d))
+
 # [3.0.0-beta.53](https://github.com/occmundial/atomic/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2024-09-04)
 
 

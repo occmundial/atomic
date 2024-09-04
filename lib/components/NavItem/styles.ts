@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss'
 
-import colors from '@/tokens/colors'
-import spacing from '@/tokens/spacing'
+import colors from '@/tokens/future/colors.json'
+import spacing from '@/tokens/future/spacing.json'
 
 export default createUseStyles({
   link: {
@@ -24,10 +24,10 @@ export default createUseStyles({
   notification: {
     display: 'inline-block',
     borderRadius: '50%',
-    width: spacing.tiny,
-    height: spacing.tiny,
-    backgroundColor: colors.error,
+    width: spacing['size-2'],
+    height: spacing['size-2'],
+    backgroundColor: colors.icon.error,
     marginBottom: 1,
-    marginLeft: spacing.xTiny
+    marginLeft: spacing['size-1']
   }
 })
