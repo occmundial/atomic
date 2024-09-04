@@ -23,7 +23,7 @@ const variants = {
 const logoColors = {
   black: colors.icon.default.bold,
   grey: colors.icon.default.default,
-  white: colors.icon.inverse.default,
+  white: colors.icon.inverse.bold,
   blue: colors.icon.brand.default
 }
 
@@ -50,6 +50,7 @@ export default function Logo({
 }: LogoProps) {
   const classes = useStyles()
   const Tag = onClick ? 'button' : 'span'
+  const variantInfo = variants[variant]
   return (
     <Tag
       onClick={onClick}
@@ -58,9 +59,9 @@ export default function Logo({
       })}
       style={{
         ...style,
-        background: base(variants[variant].icon(logoColors[theme])),
-        width: width ? width : variants[variant].width,
-        height: height ? height : variants[variant].height
+        background: base(variantInfo.icon(logoColors[theme])),
+        width: width ?? variantInfo.width,
+        height: height ?? variantInfo.height
       }}
       id={id}
     />

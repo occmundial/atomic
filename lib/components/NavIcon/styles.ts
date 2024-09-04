@@ -1,12 +1,11 @@
 import { createUseStyles } from 'react-jss'
-
-import spacing from '@/tokens/spacing'
-import colors from '@/tokens/colors'
+import colors from '@/tokens/future/colors.json'
+import spacing from '@/tokens/future/spacing.json'
 
 export default createUseStyles({
   cont: {
     display: 'inline-block',
-    height: spacing.xLarge,
+    height: spacing['size-9'],
     cursor: 'pointer',
     position: 'relative',
     '&:after': {
@@ -21,48 +20,35 @@ export default createUseStyles({
     }
   },
   white: {
-    color: colors.white
+    color: colors.text.white.secondary,
+    '&:hover, &:focus, &:active': {
+      color: colors.text.white.primary
+    }
   },
   black: {
-    color: colors.inkLight,
-    '&:hover': {
-      color: colors.ink
+    color: colors.text.corp.secondary,
+    '&:hover, &:focus, &:active': {
+      color: colors.text.corp.primary
     }
   },
   flex: {
-    height: spacing.xLarge
+    height: spacing['size-9']
   },
   selected: {
-    color: colors.prim,
-    '&:hover': {
-      color: colors.prim
-    }
+    color: colors.text.corp.primary
   },
   selectedWhite: {
-    color: colors.white,
-    '&:hover': {
-      color: colors.white
-    }
+    color: colors.text.white.primary
   },
   showBar: {
     '&:after': {
-      background: colors.prim
+      background: colors.border.accent
     }
   },
-  showBarSec: {
-    '&:after': {
-      background: colors.sec
-    }
-  },
-  icon: {},
   text: {
-    textTransform: 'uppercase',
     transition: '0.3s all'
   },
   pushText: {
-    marginLeft: spacing.xTiny
-  },
-  withOpacity: {
-    opacity: 0.6
+    marginLeft: spacing['size-2']
   }
 })
