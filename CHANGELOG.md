@@ -1,3 +1,10 @@
+# [3.0.0-beta.54](https://github.com/occmundial/atomic/compare/v3.0.0-beta.53...v3.0.0-beta.54) (2024-09-04)
+
+
+### Bug Fixes
+
+* Change display flex for grid in columns links ([9884077](https://github.com/occmundial/atomic/commit/9884077cde3c14e7b17abf6ab82ff0afe932571d))
+
 # [3.0.0-beta.53](https://github.com/occmundial/atomic/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2024-09-04)
 
 
