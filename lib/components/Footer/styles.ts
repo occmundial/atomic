@@ -40,7 +40,7 @@ export default createUseStyles({
     }
   },
   link: {
-    font: objectToFontValue(fonts['body-regular']),
+    font: objectToFontValue(fonts['body-small']),
     color: colors.text.corp.secondary,
     textDecoration: 'none',
     cursor: 'pointer',
@@ -99,7 +99,7 @@ export default createUseStyles({
     }
   },
   copyright: {
-    font: objectToFontValue(fonts['body-regular']),
+    font: objectToFontValue(fonts['body-small']),
     color: colors.text.corp.secondary,
     '& > p': {
       margin: 0
