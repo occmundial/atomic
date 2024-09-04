@@ -199,7 +199,8 @@ const Modal = (props: ModalProps) => {
                     tag="div"
                     className={classnames(classes.contentChild, {
                       [classes.noHeader]: !title && !onClose,
-                      [classes.noFooter]: !mainBtn
+                      [classes.noFooter]: !mainBtn,
+                      [classes.imgTopPadding]: imgTop?.img
                     })}
                   >
                     {children}
