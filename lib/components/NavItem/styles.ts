@@ -26,7 +26,7 @@ export default createUseStyles({
     borderRadius: '50%',
     width: spacing['size-2'],
     height: spacing['size-2'],
-    backgroundColor: colors.alert.error.bg,
+    backgroundColor: colors.icon.error,
     marginBottom: 1,
     marginLeft: spacing['size-1']
   }
