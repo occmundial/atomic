@@ -1,9 +1,12 @@
 import { createUseStyles } from 'react-jss'
 import hexToRgba from 'hex-rgba'
 
-import colors from '@/tokens/colors'
-import spacing from '@/tokens/spacing'
+import spacing from '@/tokens/future/spacing.json'
 import shadows from '@/tokens/shadows'
+import colors from '@/tokens/future/colors.json'
+import grid from '@/tokens/grid'
+
+const { nav } = colors
 
 export default createUseStyles({
   container: {
@@ -25,7 +28,7 @@ export default createUseStyles({
     marginTop: 0
   },
   hide: {
-    marginTop: -spacing.xLarge,
+    marginTop: -spacing['size-9'],
     '& $nav': {
       boxShadow: 'none !important'
     }
@@ -35,14 +38,14 @@ export default createUseStyles({
       boxShadow: shadows.lvl3
     },
     '& $blue': {
-      background: hexToRgba(colors.primDark, 95)
+      background: hexToRgba(nav.bg.inverse, 95)
     },
     '& $white': {
-      background: hexToRgba(colors.bgWhite, 95)
+      background: hexToRgba(nav.bg.default, 95)
     }
   },
   nav: {
-    height: spacing.xLarge,
+    height: spacing['size-9'],
     transition: '0.3s all',
     boxShadow: shadows.lvl1
   },
@@ -51,47 +54,67 @@ export default createUseStyles({
     height: '100%',
     position: 'relative'
   },
+  gridFluid: {
+    [`@media screen and (min-width:${grid.lg}px)`]: {
+      margin: '0 auto',
+      maxWidth: grid.lg - 60
+    },
+    [`@media screen and (min-width:${grid.xl}px)`]: {
+      margin: '0 auto',
+      maxWidth: grid.xl - 60
+    }
+  },
   tab: {
     height: '100%'
   },
   blue: {
-    background: colors.primDark
+    background: nav.bg.inverse
   },
   white: {
-    background: colors.bgWhite
+    background: nav.bg.default
   },
   left: {
-    '& $button, & $iconWrap': {
-      marginRight: spacing.base
+    '& $button': {
+      marginRight: spacing['size-5']
+    },
+    '& $iconWrap': {
+      marginRight: spacing['size-2']
     },
     '& $button:first-child, & $iconWrap:first-child': {
       marginLeft: 0
     },
     '& $navItem': {
-      marginRight: spacing.small
+      marginRight: spacing['size-4']
     },
     '& $navItem:first-child': {
       marginLeft: 0
     },
     '& $logo': {
-      marginRight: spacing.medium
+      [`@media screen and (min-width:${grid.sm}px)`]: {
+        marginRight: spacing['size-7']
+      }
     }
   },
   right: {
-    '& $button, & $iconWrap': {
-      marginLeft: spacing.base
+    '& $button': {
+      marginLeft: spacing['size-1']
+    },
+    '& $iconWrap': {
+      marginLeft: spacing['size-2']
     },
     '& $button:first-child, & $iconWrap:first-child': {
       marginRight: 0
     },
     '& $navItem': {
-      marginLeft: spacing.small
+      marginLeft: spacing['size-4']
     },
     '& $navItem:first-child': {
       marginRight: 0
     },
     '& $logo': {
-      marginLeft: spacing.medium
+      [`@media screen and (min-width:${grid.sm}px)`]: {
+        marginRight: spacing['size-7']
+      }
     }
   },
   center: {
@@ -99,9 +122,13 @@ export default createUseStyles({
     left: '50%',
     top: '50%',
     transform: 'translate(-50%, -50%)',
-    '& $button, & $iconWrap, & $logo': {
-      marginLeft: spacing.gutter,
-      marginRight: spacing.gutter
+    '& $button, & $logo': {
+      marginLeft: spacing['size-1'],
+      marginRight: spacing['size-1']
+    },
+    '& $iconWrap': {
+      marginLeft: spacing['size-2'],
+      marginRight: spacing['size-2']
     },
     '& $button:first-child, & $iconWrap:first-child': {
       marginLeft: 0
@@ -110,8 +137,8 @@ export default createUseStyles({
       marginRight: 0
     },
     '& $navItem': {
-      marginLeft: spacing.tiny,
-      marginRight: spacing.tiny
+      marginLeft: spacing['size-2'],
+      marginRight: spacing['size-2']
     },
     '& $navItem:first-child': {
       marginRight: 0
@@ -124,7 +151,7 @@ export default createUseStyles({
   },
   icon: {},
   arrow: {
-    marginBottom: -spacing.xTiny,
+    marginBottom: -spacing['size-1'],
     transition: '0.3s all'
   },
   arrowUp: {

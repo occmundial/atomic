@@ -180,7 +180,13 @@ const NavTab = ({
   const renderButton = useCallback(
     (item: ButtonElement) => {
       return (
-        <Button className={classes.button} {...item}>
+        <Button
+          theme="ghost"
+          darkMode={blue}
+          size="md"
+          className={classes.button}
+          {...item}
+        >
           {item.text}
         </Button>
       )
@@ -246,7 +252,7 @@ const NavTab = ({
   )
 
   return (
-    <div
+    <nav
       className={classnames(
         classes.container,
         { [classes.fixed]: fixed },
@@ -266,7 +272,10 @@ const NavTab = ({
           { [classes.white]: !blue }
         )}
       >
-        <Grid className={classes.grid} fluid={isFluid}>
+        <Grid
+          className={classnames(classes.grid, isFluid && classes.gridFluid)}
+          fluid={isFluid}
+        >
           <Flexbox
             display="flex"
             justifyContent="between"
@@ -323,7 +332,7 @@ const NavTab = ({
           </Flexbox>
         </Grid>
       </div>
-    </div>
+    </nav>
   )
 }
 

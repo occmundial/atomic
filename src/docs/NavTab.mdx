@@ -1,0 +1,768 @@
+---
+title: NavTab
+section: components
+---
+
+
+# NavTab
+---
+
+The NavTop component is a versatile navigation bar designed for use at the top of web pages or applications.
+
+
+## Props
+
+| Name           | Type                                                                                                                                                                                                           | Default value    | Description                                                    |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | -------------------------------------------------------------- |
+| `left`         | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the left side of the navigation bar  |
+| `right`        | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the right side of the navigation bar |
+| `center`       | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the center of the navigation bar     |
+| `flexCenter`   | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components of the navigation bar                   |
+| `top`          | **[TopProp](#TopProp)[]**                                                                                                                                                                                      | -                | Defines the Nav Top links                                      |
+| `blue`         | **boolean**                                                                                                                                                                                                    | -                | Sets blue theme                                                |
+| `fixed`        | **boolean**                                                                                                                                                                                                    | -                | Sets fixed position                                            |
+| `hideOnScroll` | **boolean**                                                                                                                                                                                                    | -                | Hides the nav on scroll                                        |
+| `bottom`       | **boolean**                                                                                                                                                                                                    | -                | Adds bottom padding                                            |
+| `zIndex`       | **number**                                                                                                                                                                                                     | -                | Specifies the nav z-index                                      |
+| `className`    | **string**                                                                                                                                                                                                     | -                | Adds classes to nav container                                  |
+| `isFluid`      | **boolean**                                                                                                                                                                                                    | -                | Adds a responsive padding                                      |
+
+
+### LinkElement
+
+An object with the `type` property set to 'link', where you can use all **[NavItem props](/NavItem)** except for `children`, which should be replaced with `text`. 
+Additional Button props are detailed in the table below.
+
+| Name           | Type                                        | Default value    | Description                             |
+| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
+| `type`         | **link**                                    | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                        | -                | Key of the component                    |
+| `text`         | **string \| ReactNode**                     | -                | Defines the child component             |
+
+### ButtonElement
+
+An object with the `type` property set to 'Button', where you can use all **[Button props](/Button)** except for `children`, which should be replaced with `text` and white. 
+Additional Button props are detailed in the table below.
+
+| Name           | Type                                        | Default value    | Description                             |
+| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
+| `type`         | **button**                                  | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                        | -                | Key of the component                    |
+| `text`         | **string \| ReactNode**                     | -                | Defines the child component             |
+
+
+### DropdownElement
+
+An object with the `type` property set to 'link', where you can use all **[NavItem props](/NavItem)** except for `children`, which should be replaced with `text` and `selected`.
+Additional Button props are detailed in the table below.
+
+| Name           | Type                                        | Default value    | Description                             |
+| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
+| `type`         | **dropdownLink**                            | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                        | -                | Key of the component                    |
+| `text`         | **string \| ReactNode**                     | -                | Defines the child component             |
+
+### IconElement
+
+An object with the `type` property set to 'icon', where you can use all **[NavIcon props](/NavIcon)**.
+Additional NavIcon props are detailed in the table below.
+
+| Name           | Type                                        | Default value    | Description                             |
+| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
+| `type`         | **icon**                                    | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                        | -                | Key of the component                    |
+
+
+### CustomElement
+
+An object with the `type` property set to 'custom'.
+
+| Name           | Type                                        | Default value    | Description                             |
+| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
+| `type`         | **custom**                                  | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                        | -                | Key of the component                    |
+| `custom`       | **ReactNode**                               | -                | Defines the child component             |
+| `testId`       | **string**                                  | -                | Anchor test id                          |
+
+### LogoElement 
+
+An object with the `type` property set to 'logo'.
+
+| Name           | Type                                        | Default value    | Description                             |
+| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
+| `type`         | **logo**                                    | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                        | -                | Key of the component                    |
+| `logo`         | **ReactNode**                               | -                | Defines the child component             |
+| `testId`       | **string**                                  | -                | Anchor test id                          |
+
+### TopProp
+An object where you can use all **[NavItem props](/NavItem)** except for `white`, `small` and `className`.
+
+## Examples
+
+### NavTab
+
+<Demo title="NavTab" background={colors.white}>
+  <Function>
+    { () => {
+      const [selected, setSelected] = useState('Vacantes')
+      const left = [
+        {
+          key:0,
+          type: 'logo',
+          logo: (
+            <a href="#NavTab" style={{ display: 'flex' }}>
+              <Logo variant="occLogo" theme="white" />
+            </a>
+          )
+        },
+        {
+          key:1,
+          type:'icon',
+          label: 'Vacantes',
+          selected: selected === 'Vacantes',
+          showBar: selected === 'Vacantes',
+          onClick: () => setSelected('Vacantes')
+        },
+        {
+          key:2,
+          type:'icon',
+          label: 'Talento',
+          selected: selected === 'Talento',
+          showBar: selected === 'Talento',
+          onClick: () => setSelected('Talento')
+        },
+        {
+          key:3,
+          type:'icon',
+          label: 'Ayuda',
+          selected: selected === 'Ayuda',
+          showBar: selected === 'Ayuda',
+          onClick: () => setSelected('Ayuda')
+        }
+      ]
+      const left2 = [...left]
+      left2[0] = {
+        key:0,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <Logo variant="occLogo" theme="blue" />
+          </a>
+        )
+      }
+      const right = [
+        {
+          key: 1,
+          type: 'button',
+          iconLeft: 'cart'
+        },
+        {
+          key: 2,
+          type: 'button',
+          style: { padding: '4px' },
+          text: (
+            <Flexbox display="inline-flex" alignItems="center" >
+              <Avatar photo="https://i.pravatar.cc/300" />
+              <Icon iconName="chevron-down" size="16" style={{ marginLeft: "4px" }} color={colorsNew.icon.inverse.default} />
+          </Flexbox>
+          )
+        },
+      ]
+      const right2 = [...right]
+      right2[1] =  {
+          key: 2,
+          type: 'button',
+          style: { padding: '4px' },
+          text: (
+            <Flexbox display="inline-flex" alignItems="center" >
+              <Avatar photo="https://i.pravatar.cc/300" />
+              <Icon iconName="chevron-down" size="16" style={{ marginLeft: "4px" }} color={colorsNew.icon.default.default} />
+          </Flexbox>
+          )
+      }
+      return (  
+        <>
+          <NavTab isFluid blue left={left} right={right} />
+          <NavTab isFluid left={left2} right={right2} />
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// How to use NavTab
+function Component() {
+      const [selected, setSelected] = useState('Vacantes')
+      console.log(colorsNew)
+      console.log(colors)
+      const left = [
+        {
+          key:0,
+          type: 'logo',
+          logo: (
+            <a href="#NavTab" style={{ display: 'flex' }}>
+              <Logo variant="occLogo" theme="white" />
+            </a>
+          )
+        },
+        {
+          key:1,
+          type:'icon',
+          label: 'Vacantes',
+          selected: selected === 'Vacantes',
+          showBar: selected === 'Vacantes',
+          onClick: () => setSelected('Vacantes')
+        },
+        {
+          key:2,
+          type:'icon',
+          label: 'Talento',
+          selected: selected === 'Talento',
+          showBar: selected === 'Talento',
+          onClick: () => setSelected('Talento')
+        },
+        {
+          key:3,
+          type:'icon',
+          label: 'Ayuda',
+          selected: selected === 'Ayuda',
+          showBar: selected === 'Ayuda',
+          onClick: () => setSelected('Ayuda')
+        }
+      ]
+      const left2 = [...left]
+      left2[0] = {
+        key:0,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <Logo variant="occLogo" theme="blue" />
+          </a>
+        )
+      }
+      const right = [
+        {
+          key: 1,
+          type: 'button',
+          iconLeft: 'cart'
+        },
+        {
+          key: 2,
+          type: 'button',
+          style: { padding: '4px' },
+          text: (
+            <Flexbox display="inline-flex" alignItems="center" >
+              <Avatar photo="https://i.pravatar.cc/300" />
+              <Icon iconName="chevron-down" size="16" style={{ marginLeft: "4px" }} color={colorsNew.icon.inverse.default} />
+          </Flexbox>
+          )
+        },
+      ]
+      const right2 = [...right]
+      right2[1] =  {
+          key: 2,
+          type: 'button',
+          style: { padding: '4px' },
+          text: (
+            <Flexbox display="inline-flex" alignItems="center" >
+              <Avatar photo="https://i.pravatar.cc/300" />
+              <Icon iconName="chevron-down" size="16" style={{ marginLeft: "4px" }} color={colorsNew.icon.default.default} />
+          </Flexbox>
+          )
+      }
+      return (  
+        <>
+          <NavTab isFluid blue left={left} right={right} />
+          <NavTab isFluid left={left2} right={right2} />
+        </>
+      )
+}
+```
+
+
+### NavTab with NavTop
+
+<Demo title="NavTab with NavTop" background={colors.white}>
+  <Function>
+    { () => {
+      const [dropdown, setDropdown] = useState(false)
+      const top = [
+        {
+          key:1,
+          children:'First link',
+          link:'#NavTab'
+        },
+        {
+          key:2,
+          children:'Current link',
+          link:'#NavTab',
+          selected: true
+        },
+        {
+          key:3,
+          children:'onClick item',
+          onClick:() => { console.log("onClick item") }
+        }
+      ]
+      const left = [
+        {
+            key:0,
+            type: 'logo',
+            logo: (
+              <a href="#NavTab" style={{ display: 'flex' }}>
+                <Logo variant="occLogo" theme="white" />
+              </a>
+            )
+        },
+        {
+          key: 1,
+          type: 'dropdownLink',
+          text: 'Dropdown link',
+          onClick: () => setDropdown(!dropdown),
+          selected: dropdown
+        },
+        {
+          key: 2,
+          type: 'link',
+          text: 'Standard link',
+          link: '#NavTab'
+        }
+      ]
+      const left2 = [...left]
+      left2[0] = {
+        key:0,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab">
+            <Logo variant="occLogo" theme="blue" />
+          </a>
+        )
+      }
+      const right = [
+        {
+          key:1,
+          type:'button',
+          text:'Primary CTA',
+          theme:'primary'
+        },
+        {
+          key:2,
+          type:'button',  
+          text:'Secondary CTA',
+          theme:'ghostWhite'
+        }
+      ]
+      return (
+        <>
+          <NavTab isFluid blue top={top} left={left} right={right} />
+          <NavTab isFluid top={top} left={left2} right={right} />
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// How to use NavTab with NavTop
+function Component() {
+  const [dropdown, setDropdown] = useState(false)
+  const top = [
+    {
+      key: 1,
+      children: 'First link',
+      link:'#NavTab'
+    },
+    {
+      key: 2,
+      children: 'Current link',
+      link:'#NavTab',
+      selected: true
+    },
+    {
+      key:3,
+      children:'onClick item',
+      onClick:() => { console.log("onClick item") }
+    }
+  ]
+  const left = [
+    {
+        key:0,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <Logo variant="occLogo" theme="white" />
+          </a>
+        )
+    },
+    {
+      key: 1,
+      type: 'dropdownLink',
+      text: 'Dropdown link',
+      onClick: () => setDropdown(!dropdown),
+      selected: dropdown
+    },
+    {
+      key: 2,
+      type: 'link',
+      text: 'Standard link',
+      link: '#NavTab'
+    }
+  ]
+  const left2 = [...left]
+  left2[0] = {
+    key: 0,
+    type: 'logo',
+    logo: (
+      <a href="#NavTab">
+        <Logo variant="occLogo" theme="blue" />
+      </a>
+    )
+  }
+  const right = [
+    {
+      key: 1,
+      type: 'button',
+      text: 'Primary CTA',
+      theme: 'primary'
+    },
+    {
+      key: 2,
+      type: 'button',  
+      text: 'Secondary CTA'
+    }
+  ]
+  return (
+    <>
+      <NavTab isFluid blue top={top} left={left} right={right} />
+      <NavTab isFluid top={top} left={left2} right={right} />
+    </>
+  )
+}
+```
+
+### NavTab with center
+
+<Demo title="NavTab with center" background={colors.white}>
+  <Function>
+    { () => {
+      const [dropdown, setDropdown] = useState(false)
+      const center = [{
+        key: 1,
+        type: 'icon',
+        iconName: 'columns-gap'
+      },
+      {
+        key: 2,
+        type: 'icon',
+        iconName: 'search'
+      },
+      {
+        key: 3,
+        type: 'icon',
+        iconName: 'person'
+      }]
+      const left = [{
+        key: 1,
+        type: 'button',
+        iconLeft: 'menu'
+      }]
+      const right = [{
+        key: 1,
+        type: 'button',
+        iconLeft: 'chat'
+      }]
+      return (
+        <>
+          <NavTab isFluid blue center={center} left={left} right={right} />
+          <NavTab isFluid center={center} left={left} right={right} />
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// How to use NavTab with center
+function Component() {
+  const [dropdown, setDropdown] = useState(false)
+  const center = [{
+    key:1,
+    type:'icon',
+    iconName:'columns-gap'
+  },
+  {
+    key:2,
+    type:'icon',
+    iconName:'search'
+  },
+  {
+    key:3,
+    type:'icon',
+    iconName:'person'
+  }]
+  const left = [{
+    key:1,
+    type: 'icon',
+    iconName: 'menu'
+  }]
+  const right = [{
+    key:1,
+    type:'icon',
+    iconName:'chat'
+  }]
+  return (
+    <>
+      <NavTab isFluid blue center={center} left={left} right={right} />
+      <NavTab isFluid center={center} left={left} right={right} />
+    </>
+  )
+}
+```
+
+### NavTab with NavIcons switching
+
+<Demo title="NavTab with NavIcons switching" background={colors.white}>
+  <Function>
+    { () => {
+      const [selected, setSelected] = useState('')
+      const center = [{
+        key:1,
+        type:'icon',
+        iconName: 'columns-gap',
+        label: 'Dashboard',
+        selected: selected === 'icon',
+        showBar: selected === 'icon',
+        onClick: () => setSelected('icon')
+      },
+      {
+        key:2,
+        type:'icon',
+        iconName:'search',
+        label: 'Search',
+        selected: selected === 'search',
+        showBar: selected === 'search',
+        onClick: () => setSelected('search')
+      },
+      {
+        key:3,
+        type:'icon',
+        iconName:'person',
+        label: 'Profile',
+        selected: selected === 'person',
+        showBar: selected === 'person',
+        onClick: () => setSelected('person')
+      }]
+      const left = [{
+        key:1,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <Logo variant="occLogo" theme="white" />
+          </a>
+        )
+      }]
+      const left2 = [{
+        key:1,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <Logo variant="occLogo" theme="blue" />
+          </a>
+        )
+      }]
+      const right = [{
+        key:1,
+        type:'button',
+        iconLeft:'cart'
+      },
+      {
+        key:2,
+        type:'button',
+        iconLeft:'chat'
+      },
+      {
+        key: 3,
+        type: 'button',
+        text: 'Juan Alvez',
+        size: 'md',
+        theme: 'tertiaryWhite'
+      }]
+      return (
+        <>
+          <NavTab isFluid blue center={center} left={left} right={right} />
+          <NavTab isFluid center={center} left={left2} right={right} />
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// How to use NavTab with NavIcons switching
+function Component() {
+  const [selected, setSelected] = useState('')
+  const center = [{
+    key:1,
+    type:'icon',
+    iconName: 'columns-gap',
+    label: 'Dashboard',
+    selected: selected === 'icon',
+    showBar: selected === 'icon',
+    onClick: () => setSelected('icon')
+  },
+  {
+    key:2,
+    type:'icon',
+    iconName:'search',
+    label: 'Search',
+    selected: selected === 'search',
+    showBar: selected === 'search',
+    onClick: () => setSelected('search')
+  },
+  {
+    key:3,
+    type:'icon',
+    iconName:'person',
+    label: 'Profile',
+    selected: selected === 'person',
+    showBar: selected === 'person',
+    onClick: () => setSelected('person')
+  }]
+  const left = [{
+    key:1,
+    type: 'logo',
+    logo: (
+      <a href="#NavTab" style={{ display: 'flex' }}>
+        <Logo variant="occLogo" theme="white" />
+      </a>
+    )
+  }]
+  const left2 = [{
+    key:1,
+    type: 'logo',
+    logo: (
+      <a href="#NavTab" style={{ display: 'flex' }}>
+        <Logo variant="occLogo" theme="blue" />
+      </a>
+    )
+  }]
+  const right = [{
+    key:1,
+    type:'icon',
+    iconName:'cart',
+    selected: selected === 'cart',
+    showBar: selected === 'cart',
+    onClick: () => setSelected('cart')
+  },
+  {
+    key:2,
+    type:'icon',
+    iconName:'chat',
+    selected: selected === 'chat',
+    showBar: selected === 'chat',
+    onClick: () => setSelected('chat')
+  },
+  {
+    key: 3,
+    type: 'button',
+    text: 'Juan Alvez',
+    size: 'md',
+    theme: 'tertiaryWhite'
+  }]
+  return (
+    <>
+      <NavTab isFluid blue center={center} left={left} right={right} />
+      <NavTab isFluid center={center} left={left2} right={right} />
+    </>
+  )
+}
+```
+
+### NavTab with icons
+
+<Demo title="NavTab with icons" background={colors.white}>
+  <Function>
+    {() => {
+      const flexCenter = [{
+        key:1,
+        type:'icon',
+        iconName:'columns-gap',
+        label: 'Dashboard',
+        selected: false,
+        onClick: () => { console.log('dashboard') },
+        direction: 'col',
+        width: 96
+      },
+      {
+        key:2,
+        type:'icon',
+        iconName:'search',
+        label: 'Search',
+        selected: false,
+        onClick: () => { console.log('search') },
+        direction: 'col',
+        width: 96
+      },
+      {
+        key:3,
+        type:'icon',
+        iconName:'person',
+        label: 'Profile',
+        selected: true,
+        onClick: () => { console.log('profile') },
+        direction: 'col',
+        width: 96
+      }]
+      return (
+        <>
+          <NavTab isFluid blue flexCenter={flexCenter} />
+          <NavTab isFluid flexCenter={flexCenter} />
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// How to use NavTab with icons
+function Component() {
+  const flexCenter = [{
+    key:1,
+    type:'icon',
+    iconName:'columns-gap',
+    label: 'Dashboard',
+    selected: false,
+    onClick: () => { console.log('dashboard') },
+    direction: 'col',
+    width: 96
+  },
+  {
+    key:2,
+    type:'icon',
+    iconName:'search',
+    label: 'Search',
+    selected: false,
+    onClick: () => { console.log('search') },
+    direction: 'col',
+    width: 96
+  },
+  {
+    key:3,
+    type:'icon',
+    iconName:'person',
+    label: 'Profile',
+    selected: true,
+    onClick: () => { console.log('profile') },
+    direction: 'col',
+    width: 96
+  }]
+  return (
+    <>
+      <NavTab isFluid blue flexCenter={flexCenter} />
+      <NavTab isFluid flexCenter={flexCenter} />
+    </>
+  )
+}
+```

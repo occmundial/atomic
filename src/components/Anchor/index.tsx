@@ -1,18 +1,21 @@
-import { ReactNode } from 'react'
+import { ComponentProps } from 'react'
 import Link from 'next/link'
 
 import useStyles from './styles'
 
-interface AnchorProps {
-  children: ReactNode
-  href: string
-}
+type AnchorProps = ComponentProps<'a'>
 
-export default function Anchor({ children, href }: AnchorProps) {
+export default function Anchor({
+  children,
+  href,
+  ...anchorProps
+}: AnchorProps) {
   const classes = useStyles()
   return (
     <Link href={href}>
-      <a className={classes.anchor}>{children}</a>
+      <a className={classes.anchor} {...anchorProps}>
+        {children}
+      </a>
     </Link>
   )
 }
