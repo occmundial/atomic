@@ -21,7 +21,8 @@ export default createUseStyles({
   footerContainer: {
     display: 'flex',
     flexDirection: 'column',
-    padding: [spacing['size-7'], 0],
+    paddingTop: spacing['size-7'],
+    paddingBottom: spacing['size-7'],
     rowGap: spacing['size-5'],
     [`@media (min-width: ${grid.xs}px)`]: {
       rowGap: spacing['size-7']
