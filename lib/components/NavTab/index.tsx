@@ -181,7 +181,8 @@ const NavTab = ({
     (item: ButtonElement) => {
       return (
         <Button
-          theme={blue ? 'ghostWhite' : 'ghostGrey'}
+          theme="ghost"
+          darkMode={blue}
           size="md"
           className={classes.button}
           {...item}
