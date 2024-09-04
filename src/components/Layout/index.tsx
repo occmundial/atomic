@@ -13,13 +13,14 @@ export interface Doc {
 interface LayoutProps {
   children: ReactNode
   docs: Doc[]
+  doc?: Doc
 }
 
-export default function Layout({ children, docs }: LayoutProps) {
+export default function Layout({ children, docs, doc }: LayoutProps) {
   return (
     <div>
       <Header docs={docs} />
-      <Content>{children}</Content>
+      {doc && doc.slug === 'Footer' ? children : <Content>{children}</Content>}
     </div>
   )
 }

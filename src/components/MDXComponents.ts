@@ -42,6 +42,8 @@ import Placeholder from '@/components/Placeholder'
 import SlideDown from './SlideDown'
 import Tabs from './Tabs'
 import TabsUncontrolled from './TabsUncontrolled'
+import Footer from './Footer'
+import FooterMini from './FooterMini'
 
 const mdxComponents = {
   // Library components
@@ -71,6 +73,8 @@ const mdxComponents = {
   SlideDown,
   Tabs,
   TabsUncontrolled,
+  Footer,
+  FooterMini,
   // Docs components
   Demo,
   code: Code,
