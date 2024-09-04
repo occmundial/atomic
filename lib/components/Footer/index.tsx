@@ -125,6 +125,7 @@ const Footer = ({
                       target={item.target}
                       rel={item.rel}
                       onClick={item.onClick}
+                      tabIndex={0}
                     >
                       {item.text}
                     </a>
