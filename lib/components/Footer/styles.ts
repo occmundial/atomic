@@ -10,13 +10,18 @@ import { objectToFontValue } from '@/utils/font'
 
 export default createUseStyles({
   footer: {
-    backgroundColor: colors.bg.surface.default,
-    borderTop: `1px solid ${colors.border.default.subtle}`,
-    padding: [spacing['size-7'], 0]
+    backgroundColor: colors.bg.surface.default
+  },
+  footerTransparent: {
+    backgroundColor: 'transparent'
+  },
+  borderTop: {
+    borderTop: `1px solid ${colors.border.default.subtle}`
   },
   footerContainer: {
     display: 'flex',
     flexDirection: 'column',
+    padding: [spacing['size-7'], 0],
     rowGap: spacing['size-5'],
     [`@media (min-width: ${grid.xs}px)`]: {
       rowGap: spacing['size-7']

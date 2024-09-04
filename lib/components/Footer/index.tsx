@@ -47,6 +47,9 @@ export interface FooterProps {
   topElement?: ReactNode
   bottomLinksClassName?: string
   sectionDivider?: boolean
+  footerDivider?: boolean
+  containerDivider?: boolean
+  transparent?: boolean
 }
 
 const Footer = ({
@@ -58,13 +61,25 @@ const Footer = ({
   isFluid,
   topElement,
   bottomLinksClassName,
-  sectionDivider
+  sectionDivider,
+  containerDivider,
+  footerDivider,
+  transparent
 }: FooterProps) => {
   const classes = useStyles()
 
   return (
-    <footer className={classes.footer}>
-      <Grid fluid={isFluid} className={classes.footerContainer}>
+    <footer
+      className={`${transparent ? classes.footerTransparent : classes.footer}${
+        footerDivider ? ` ${classes.borderTop}` : ''
+      }`}
+    >
+      <Grid
+        fluid={isFluid}
+        className={`${classes.footerContainer}${
+          containerDivider ? ` ${classes.borderTop}` : ''
+        }`}
+      >
         {isValidElement(topElement) ? topElement : ''}
         {columns.length ? (
           <section className={classes.column}>

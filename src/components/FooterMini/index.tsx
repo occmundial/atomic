@@ -33,6 +33,8 @@ export default function FooterMDX() {
         copyText={copyText}
         listClassName=""
         bottomLinksClassName={classes.bottomContainer}
+        containerDivider
+        transparent
       />
     </Fragment>
   )
