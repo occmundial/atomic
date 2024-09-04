@@ -20,7 +20,7 @@ export default createUseStyles({
   },
   con: {
     width: grid.full,
-    margin: 'auto',
+    margin: '0 auto',
     padding: [0, spacing['size-3']]
   },
   [`@media (min-width: ${grid.xs}px)`]: {

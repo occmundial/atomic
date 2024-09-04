@@ -1,3 +1,31 @@
+# [3.0.0-beta.53](https://github.com/occmundial/atomic/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2024-09-04)
+
+
+### Bug Fixes
+
+* Add cursor pointer to bottom links ([4762c4a](https://github.com/occmundial/atomic/commit/4762c4a437f845b71da572b6b9cd17ff22e459e8))
+* Add state to set programatically set overflow for animation purpuse ([9821a72](https://github.com/occmundial/atomic/commit/9821a72e206f483bafd9fe1b82188a5547cb5458))
+* Add state to set programatically set overflow for animation purpuse ([582f335](https://github.com/occmundial/atomic/commit/582f3358aa502cf2ace4896a03a741f1672f334c))
+* Add tabindex zero to bottom links ([e7d0bd5](https://github.com/occmundial/atomic/commit/e7d0bd5088478a2fe95e552bf4105371b66c7d0a))
+* Adjust gap in social content and use app gallery cdn img ([c836bfc](https://github.com/occmundial/atomic/commit/c836bfcab9d8323625a405b9de64907ea3debf65))
+* Change font size of bottom links and coypright ([0f173e5](https://github.com/occmundial/atomic/commit/0f173e52c32b0f6d4b1661fad37a6d83289ac166))
+* Change next image for native img in docs examples ([eb1ff97](https://github.com/occmundial/atomic/commit/eb1ff97249250477ca9cfe1bf34286a13dddf506))
+* Remove footerV2 files and update docs ([38ec124](https://github.com/occmundial/atomic/commit/38ec124b5d231340e28bb9f060553bacd27b02e2))
+* Remove old spacing in list styles ([9470eb2](https://github.com/occmundial/atomic/commit/9470eb28e879f7d53942070fe49ed3e1218a4abb))
+* Set aux props optional and update docs ([629787f](https://github.com/occmundial/atomic/commit/629787fb29e60ad035926f70abf947e732a05762))
+
+
+### Features
+
+* New footer styles version 1 ([8af31ac](https://github.com/occmundial/atomic/commit/8af31acce65ffd022d00b3b2e440fdd03432bf13))
+
+# [3.0.0-beta.52](https://github.com/occmundial/atomic/compare/v3.0.0-beta.51...v3.0.0-beta.52) (2024-09-03)
+
+
+### Bug Fixes
+
+* Add margin zero to grid and add padding top for modal when img top ([89d031a](https://github.com/occmundial/atomic/commit/89d031a6a7e2c736f05b5466ed7698df87c3dcab))
+
 # [3.0.0-beta.51](https://github.com/occmundial/atomic/compare/v3.0.0-beta.50...v3.0.0-beta.51) (2024-08-26)
 
 

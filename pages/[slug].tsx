@@ -7,7 +7,7 @@ import scope from '@/src/utils/scope'
 
 export default function DocsPage({ docs, doc }) {
   return (
-    <Layout docs={docs}>
+    <Layout docs={docs} doc={doc}>
       <MDXRemote {...doc.mdx} components={components} scope={scope} />
     </Layout>
   )

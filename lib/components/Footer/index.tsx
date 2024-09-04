@@ -1,13 +1,16 @@
-import React, { MouseEvent, ReactElement } from 'react'
-import classnames from 'classnames'
+import React, {
+  Fragment,
+  isValidElement,
+  MouseEvent,
+  ReactElement,
+  ReactNode
+} from 'react'
 
 import Grid from '@/components/Grid'
-import Flexbox from '@/components/Flexbox'
-import Text from '@/components/Text'
-import Button from '@/components/Button'
 
 import List, { ListItem } from './List'
 import useStyles from './styles'
+import classNames from 'classnames'
 
 export interface ColumnItem {
   key: string | number
@@ -28,26 +31,22 @@ export interface BottomLink {
   id?: string
 }
 
-export interface Aux {
-  text: string
-  href?: string
-  target?: string
-  iconLeft?: string
-  iconRight?: string
-  className?: string
+export interface AuxProps {
+  badges?: ReactNode
+  socialMedia?: ReactNode
+  extraContent?: ReactNode
 }
-
 export interface FooterProps {
   columns?: Column[]
   bottomLinks?: BottomLink[]
   copyText?: string | ReactElement
-  aux?: Aux
-  bottomItem?: ReactElement
+  aux?: AuxProps
   listClassName?: string
-  /** The recommendation is to set the breakpoint at `grid.sm` */
-  isMobile?: boolean
   /** The recommendation is to set the breakpoint at `grid.xl` */
   isFluid?: boolean
+  topElement?: ReactNode
+  bottomLinksClassName?: string
+  sectionDivider?: boolean
 }
 
 const Footer = ({
@@ -55,93 +54,90 @@ const Footer = ({
   bottomLinks = [],
   copyText,
   aux,
-  bottomItem,
   listClassName,
-  isMobile,
-  isFluid
+  isFluid,
+  topElement,
+  bottomLinksClassName,
+  sectionDivider
 }: FooterProps) => {
   const classes = useStyles()
 
   return (
-    <div
-      className={
-        columns.length > 0 ? classes.footer : classes.footerWithoutColumns
-      }
-    >
-      <Grid fluid={isFluid}>
-        <Flexbox
-          display="flex"
-          direction={isMobile ? 'col' : 'row'}
-          className={classes.column}
-        >
-          {columns.map((column, index) => (
-            <Flexbox
-              key={index}
-              flex="1"
-              className={classnames({ [classes.list]: !isMobile })}
+    <footer className={classes.footer}>
+      <Grid fluid={isFluid} className={classes.footerContainer}>
+        {isValidElement(topElement) ? topElement : ''}
+        {columns.length ? (
+          <section className={classes.column}>
+            {columns.map((column, index) => (
+              <div key={index}>
+                {column.map(list => (
+                  <List
+                    key={list.key}
+                    list={list}
+                    listClassName={listClassName}
+                  />
+                ))}
+              </div>
+            ))}
+          </section>
+        ) : (
+          ''
+        )}
+        {sectionDivider ? <div className={classes.divider} /> : ''}
+        <section className={classes.bottomSection}>
+          {aux ? (
+            <div className={classes.auxContainer}>
+              {aux.badges ? (
+                <div className={classes.badgesContainer}>{aux.badges}</div>
+              ) : (
+                ''
+              )}
+              {aux.socialMedia ? (
+                <div className={classes.socialMediaContainer}>
+                  {aux.socialMedia}
+                </div>
+              ) : (
+                ''
+              )}
+              {aux.extraContent}
+            </div>
+          ) : (
+            ''
+          )}
+          <div className={classes.bottomContainer}>
+            <div
+              className={classNames(
+                classes.bottomLinksContainer,
+                bottomLinksClassName
+              )}
             >
-              {column.map(list => (
-                <List
-                  key={list.key}
-                  list={list}
-                  isMobile={isMobile}
-                  listClassName={listClassName}
-                />
-              ))}
-            </Flexbox>
-          ))}
-        </Flexbox>
-        <Flexbox
-          display="flex"
-          alignItems={isMobile ? 'start' : 'end'}
-          className={classes.bottomWrap}
-          direction={isMobile ? 'col' : 'row'}
-        >
-          <Flexbox flex="1">
-            {aux && (
-              <Button
-                href={aux.href}
-                target={aux.target}
-                iconLeft={aux.iconLeft}
-                iconRight={aux.iconRight}
-                size="md"
-                theme="ghostPink"
-                className={classnames(
-                  { [classes.buttonMobile]: isMobile },
-                  aux.className
-                )}
-              >
-                {aux.text}
-              </Button>
-            )}
-            <Text small mid bottomTiny tag="div">
-              {bottomLinks.map(item => (
-                <div
-                  className={
-                    isMobile ? classes.mobileListElement : classes.listElement
-                  }
-                  key={item.key}
-                >
-                  <Text tag="label" small mid id={item.id}>
+              {bottomLinks.map((item, index) => (
+                <Fragment key={item.key}>
+                  {index === 0 || index === bottomLinks.length ? (
+                    ''
+                  ) : (
+                    <div className={classes.linkDivider} />
+                  )}
+                  <div className={classes.listElement}>
                     <a
                       className={classes.link}
                       href={item.href}
                       target={item.target}
                       rel={item.rel}
                       onClick={item.onClick}
+                      tabIndex={0}
                     >
                       {item.text}
                     </a>
-                  </Text>
-                </div>
+                  </div>
+                </Fragment>
               ))}
-            </Text>
-            {copyText && <Text small>{copyText}</Text>}
-          </Flexbox>
-          {bottomItem}
-        </Flexbox>
+            </div>
+            {copyText && <div className={classes.copyright}>{copyText}</div>}
+          </div>
+        </section>
       </Grid>
-    </div>
+    </footer>
   )
 }
 

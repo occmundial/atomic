@@ -48,6 +48,8 @@ import NavTab from '@/components/NavTab'
 import NavIcon from '@/components/NavIcon'
 import NavAside from '@/components/NavAside'
 import Logo from '@/components/Logo'
+import Footer from './Footer'
+import FooterMini from './FooterMini'
 
 const mdxComponents = {
   // Library components
@@ -83,6 +85,8 @@ const mdxComponents = {
   NavIcon,
   NavAside,
   Logo,
+  Footer,
+  FooterMini,
   // Docs components
   Demo,
   code: Code,
