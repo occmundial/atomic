@@ -1,3 +1,11 @@
+# [3.0.0-beta.56](https://github.com/occmundial/atomic/compare/v3.0.0-beta.55...v3.0.0-beta.56) (2024-09-05)
+
+
+### Bug Fixes
+
+* Add new props to set bg transparent and borders ([477fdf7](https://github.com/occmundial/atomic/commit/477fdf7f9fbaba40f3d9b3d251c927e7b2eae1e3))
+* Set only padding vertical for footer container ([282c0bd](https://github.com/occmundial/atomic/commit/282c0bd3bf634a37a2ad2a8e59869bcad8925b4b))
+
 # [3.0.0-beta.55](https://github.com/occmundial/atomic/compare/v3.0.0-beta.54...v3.0.0-beta.55) (2024-09-04)
 
 
