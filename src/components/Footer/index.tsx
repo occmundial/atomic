@@ -81,6 +81,7 @@ export default function FooterMDX() {
         copyText={copyText}
         listClassName=""
         sectionDivider
+        footerDivider
       />
     </Fragment>
   )
