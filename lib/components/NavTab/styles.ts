@@ -147,7 +147,10 @@ export default createUseStyles({
   button: {},
   navItem: {},
   iconWrap: {
-    display: 'inline-block'
+    display: 'inline-block',
+    '& > div': {
+      padding: '0 8px'
+    }
   },
   icon: {},
   arrow: {

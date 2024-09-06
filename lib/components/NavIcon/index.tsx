@@ -26,7 +26,7 @@ const NavIcon = ({
   selected,
   label,
   onClick,
-  direction,
+  direction = 'row',
   className,
   testId,
   width,
@@ -61,7 +61,7 @@ const NavIcon = ({
           <Text bodyRegularStrong current>
             <span
               className={classnames(classes.text, {
-                [classes.pushText]: direction !== 'col'
+                [classes.pushText]: direction === 'row' && iconName
               })}
             >
               {label}
