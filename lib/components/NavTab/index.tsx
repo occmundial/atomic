@@ -12,7 +12,7 @@ import Flexbox from '@/components/Flexbox'
 import NavItem from '@/components/NavItem'
 import NavIcon from '@/components/NavIcon'
 import NavTop, { TopProps } from '@/components/NavTop'
-import Button, { ButtonTheme } from '@/components/Button'
+import Button, { ButtonProps } from '@/components/Button'
 import Icon from '@/components/Icon'
 import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
@@ -20,6 +20,13 @@ import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 import useIcon from '@/hooks/useIcon'
+import NavAvatarButton, { NavAvatarButtonProps } from '../NavAvatarButton'
+
+export type AvatarButtonElement = {
+  key: string | number
+  type: 'avatarButton'
+  props: Omit<NavAvatarButtonProps, 'type'>
+}
 
 export interface LinkElement {
   key: string | number
@@ -31,15 +38,11 @@ export interface LinkElement {
   testId?: string
 }
 
-export interface ButtonElement {
+export type ButtonElement = {
   key: string | number
   type: 'button'
-  text?: string
-  onClick?: (e: SyntheticEvent) => void
-  theme?: ButtonTheme
-  iconName?: string
-  testId?: string
-}
+  text?: ReactNode
+} & Omit<ButtonProps, 'children'>
 
 export interface DropdownElement {
   key: string | number
@@ -85,6 +88,7 @@ export type NavElement =
   | IconElement
   | CustomElement
   | LogoElement
+  | AvatarButtonElement
 
 export interface NavPosition extends Array<NavElement> {}
 
@@ -183,7 +187,7 @@ const NavTab = ({
         <Button
           theme="ghost"
           darkMode={blue}
-          size="md"
+          size={item.iconLeft || item.iconRight ? 'lg' : 'md'}
           className={classes.button}
           {...item}
         >
@@ -192,6 +196,20 @@ const NavTab = ({
       )
     },
     [classes]
+  )
+
+  const renderAvatarButton = useCallback(
+    ({ props, key }: AvatarButtonElement) => (
+      <NavAvatarButton
+        theme="ghost"
+        key={key}
+        mini
+        darkMode={blue}
+        {...props}
+        className={classnames(classes.button, props.className)}
+      />
+    ),
+    []
   )
 
   const renderIcon = useCallback(
@@ -239,6 +257,8 @@ const NavTab = ({
           return renderLogo(item)
         case 'custom':
           return renderCustom(item)
+        case 'avatarButton':
+          return renderAvatarButton(item)
       }
     },
     [
@@ -247,7 +267,8 @@ const NavTab = ({
       renderButton,
       renderIcon,
       renderLogo,
-      renderCustom
+      renderCustom,
+      renderAvatarButton
     ]
   )
 

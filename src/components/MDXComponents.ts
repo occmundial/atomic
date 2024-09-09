@@ -50,6 +50,7 @@ import NavAside from '@/components/NavAside'
 import Logo from '@/components/Logo'
 import Footer from './Footer'
 import FooterMini from './FooterMini'
+import NavAvatarButton from '@/components/NavAvatarButton'
 
 const mdxComponents = {
   // Library components
@@ -87,6 +88,7 @@ const mdxComponents = {
   Logo,
   Footer,
   FooterMini,
+  NavAvatarButton,
   // Docs components
   Demo,
   code: Code,

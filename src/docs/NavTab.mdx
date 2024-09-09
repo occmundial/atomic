@@ -120,6 +120,7 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
           key:1,
           type:'icon',
           label: 'Vacantes',
+          className: 'only-desktop',
           selected: selected === 'Vacantes',
           showBar: selected === 'Vacantes',
           onClick: () => setSelected('Vacantes')
@@ -128,6 +129,7 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
           key:2,
           type:'icon',
           label: 'Talento',
+          className: 'only-desktop',
           selected: selected === 'Talento',
           showBar: selected === 'Talento',
           onClick: () => setSelected('Talento')
@@ -136,6 +138,7 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
           key:3,
           type:'icon',
           label: 'Ayuda',
+          className: 'only-desktop',
           selected: selected === 'Ayuda',
           showBar: selected === 'Ayuda',
           onClick: () => setSelected('Ayuda')
@@ -159,32 +162,37 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
         },
         {
           key: 2,
+          type: 'avatarButton',
+          props: {
+            className: 'only-desktop',
+            photo:'https://i.pravatar.cc/300'
+          }
+        },
+        {
+          key: 1,
           type: 'button',
-          style: { padding: '4px' },
-          text: (
-            <Flexbox display="inline-flex" alignItems="center" >
-              <Avatar photo="https://i.pravatar.cc/300" />
-              <Icon iconName="chevron-down" size="16" style={{ marginLeft: "4px" }} color={colorsNew.icon.inverse.default} />
-          </Flexbox>
-          )
+          className: 'only-mobile',
+          iconLeft: 'menu'
         },
       ]
-      const right2 = [...right]
-      right2[1] =  {
-          key: 2,
-          type: 'button',
-          style: { padding: '4px' },
-          text: (
-            <Flexbox display="inline-flex" alignItems="center" >
-              <Avatar photo="https://i.pravatar.cc/300" />
-              <Icon iconName="chevron-down" size="16" style={{ marginLeft: "4px" }} color={colorsNew.icon.default.default} />
-          </Flexbox>
-          )
-      }
       return (  
         <>
+          <style>
+            {`
+              @media screen and (min-width: ${grid.sm}px) {
+                .only-mobile {
+                  display: none;
+                } 
+              }
+              @media screen and (max-width: ${grid.sm - 1}px) {
+                .only-desktop {
+                  display: none;
+                } 
+              }
+            `}
+          </style>
           <NavTab isFluid blue left={left} right={right} />
-          <NavTab isFluid left={left2} right={right2} />
+          <NavTab isFluid left={left2} right={right} />
         </>
       )
     }}
@@ -194,90 +202,96 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
 ```jsx
 // How to use NavTab
 function Component() {
-      const [selected, setSelected] = useState('Vacantes')
-      console.log(colorsNew)
-      console.log(colors)
-      const left = [
-        {
-          key:0,
-          type: 'logo',
-          logo: (
-            <a href="#NavTab" style={{ display: 'flex' }}>
-              <Logo variant="occLogo" theme="white" />
-            </a>
-          )
-        },
-        {
-          key:1,
-          type:'icon',
-          label: 'Vacantes',
-          selected: selected === 'Vacantes',
-          showBar: selected === 'Vacantes',
-          onClick: () => setSelected('Vacantes')
-        },
-        {
-          key:2,
-          type:'icon',
-          label: 'Talento',
-          selected: selected === 'Talento',
-          showBar: selected === 'Talento',
-          onClick: () => setSelected('Talento')
-        },
-        {
-          key:3,
-          type:'icon',
-          label: 'Ayuda',
-          selected: selected === 'Ayuda',
-          showBar: selected === 'Ayuda',
-          onClick: () => setSelected('Ayuda')
-        }
-      ]
-      const left2 = [...left]
-      left2[0] = {
-        key:0,
-        type: 'logo',
-        logo: (
-          <a href="#NavTab" style={{ display: 'flex' }}>
-            <Logo variant="occLogo" theme="blue" />
-          </a>
-        )
-      }
-      const right = [
-        {
-          key: 1,
-          type: 'button',
-          iconLeft: 'cart'
-        },
-        {
-          key: 2,
-          type: 'button',
-          style: { padding: '4px' },
-          text: (
-            <Flexbox display="inline-flex" alignItems="center" >
-              <Avatar photo="https://i.pravatar.cc/300" />
-              <Icon iconName="chevron-down" size="16" style={{ marginLeft: "4px" }} color={colorsNew.icon.inverse.default} />
-          </Flexbox>
-          )
-        },
-      ]
-      const right2 = [...right]
-      right2[1] =  {
-          key: 2,
-          type: 'button',
-          style: { padding: '4px' },
-          text: (
-            <Flexbox display="inline-flex" alignItems="center" >
-              <Avatar photo="https://i.pravatar.cc/300" />
-              <Icon iconName="chevron-down" size="16" style={{ marginLeft: "4px" }} color={colorsNew.icon.default.default} />
-          </Flexbox>
-          )
-      }
-      return (  
-        <>
-          <NavTab isFluid blue left={left} right={right} />
-          <NavTab isFluid left={left2} right={right2} />
-        </>
+  const [selected, setSelected] = useState('Vacantes')
+  const left = [
+    {
+      key:0,
+      type: 'logo',
+      logo: (
+        <a href="#NavTab" style={{ display: 'flex' }}>
+          <Logo variant="occLogo" theme="white" />
+        </a>
       )
+    },
+    {
+      key:1,
+      type:'icon',
+      label: 'Vacantes',
+      className: 'only-desktop',
+      selected: selected === 'Vacantes',
+      showBar: selected === 'Vacantes',
+      onClick: () => setSelected('Vacantes')
+    },
+    {
+      key:2,
+      type:'icon',
+      label: 'Talento',
+      className: 'only-desktop',
+      selected: selected === 'Talento',
+      showBar: selected === 'Talento',
+      onClick: () => setSelected('Talento')
+    },
+    {
+      key:3,
+      type:'icon',
+      label: 'Ayuda',
+      className: 'only-desktop',
+      selected: selected === 'Ayuda',
+      showBar: selected === 'Ayuda',
+      onClick: () => setSelected('Ayuda')
+    }
+  ]
+  const left2 = [...left]
+  left2[0] = {
+    key:0,
+    type: 'logo',
+    logo: (
+      <a href="#NavTab" style={{ display: 'flex' }}>
+        <Logo variant="occLogo" theme="blue" />
+      </a>
+    )
+  }
+  const right = [
+    {
+      key: 1,
+      type: 'button',
+      iconLeft: 'cart'
+    },
+    {
+      key: 2,
+      type: 'avatarButton',
+      props: {
+        className: 'only-desktop',
+        photo:'https://i.pravatar.cc/300'
+      }
+    },
+    {
+      key: 1,
+      type: 'button',
+      className: 'only-mobile',
+      iconLeft: 'menu'
+    },
+  ]
+  return (  
+    <>
+      <style>
+        {`
+          @media screen and (min-width: ${grid.sm}px) {
+            .only-mobile {
+              display: none;
+            } 
+          }
+          @media screen and (max-width: ${grid.sm - 1}px) {
+            .only-desktop {
+              display: none;
+            } 
+          }
+        `}
+      </style>
+      <NavTab isFluid blue left={left} right={right} />
+      <NavTab isFluid left={left2} right={right} />
+    </>
+  )
 }
 ```
 
