@@ -1,3 +1,11 @@
+# [3.0.0-beta.57](https://github.com/occmundial/atomic/compare/v3.0.0-beta.56...v3.0.0-beta.57) (2024-09-09)
+
+
+### Features
+
+* Added photo prop ([702ffe4](https://github.com/occmundial/atomic/commit/702ffe448db8de1da251a2d5152e700b48fd7cc1))
+* Resolve various bugs ([e0f8dcc](https://github.com/occmundial/atomic/commit/e0f8dcc876fea8bad7a7185dde21fd3a19f50ec0))
+
 # [3.0.0-beta.56](https://github.com/occmundial/atomic/compare/v3.0.0-beta.55...v3.0.0-beta.56) (2024-09-05)
 
 
