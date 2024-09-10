@@ -108,9 +108,7 @@ const SlideDown = ({
   )
 
   return (
-    <div
-      className={`${classes.wrapper}${divider ? ` ${classes.divider}` : ''}`}
-    >
+    <div className={divider ? classes.divider : ''}>
       <div
         className={`${classes.button} ${
           textSize === 'lg' ? classes.largePadding : classes.normalPadding

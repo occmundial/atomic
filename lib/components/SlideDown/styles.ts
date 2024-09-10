@@ -4,9 +4,6 @@ import spacing from '@/tokens/future/spacing.json'
 import colors from '@/tokens/future/colors.json'
 
 export default createUseStyles({
-  wrapper: {
-    marginBottom: spacing['size-4']
-  },
   text: {
     cursor: 'pointer'
   },
