@@ -1,3 +1,10 @@
+# [3.0.0-beta.58](https://github.com/occmundial/atomic/compare/v3.0.0-beta.57...v3.0.0-beta.58) (2024-09-10)
+
+
+### Bug Fixes
+
+* Remove wrapper margin bottom ([fad18f3](https://github.com/occmundial/atomic/commit/fad18f3dabd65b7edbb90cef79dfd12297000066))
+
 # [3.0.0-beta.57](https://github.com/occmundial/atomic/compare/v3.0.0-beta.56...v3.0.0-beta.57) (2024-09-09)
 
 
