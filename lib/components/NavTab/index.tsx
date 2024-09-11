@@ -129,10 +129,7 @@ const NavTab = ({
   const getIcon = useIcon()
 
   const determineVisibility = useCallback(() => {
-    setShow(
-      window.pageYOffset <= spacing.xLarge ||
-        window.pageYOffset <= currentScroll
-    )
+    setShow(window.scrollY <= spacing.xLarge || window.scrollY <= currentScroll)
     setCurrentScroll(window.pageYOffset)
   }, [currentScroll])
 
