@@ -51,6 +51,7 @@ import Logo from '@/components/Logo'
 import Footer from './Footer'
 import FooterMini from './FooterMini'
 import NavAvatarButton from '@/components/NavAvatarButton'
+import Drawer from '@/components/Drawer'
 
 const mdxComponents = {
   // Library components
@@ -89,6 +90,7 @@ const mdxComponents = {
   Footer,
   FooterMini,
   NavAvatarButton,
+  Drawer,
   // Docs components
   Demo,
   code: Code,

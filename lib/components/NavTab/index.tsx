@@ -106,6 +106,7 @@ export interface NavTabProps {
   className?: string
   /** The recommendation is to set the breakpoint at `grid.xl` */
   isFluid?: boolean
+  noShadow?: boolean
 }
 
 const NavTab = ({
@@ -120,7 +121,8 @@ const NavTab = ({
   className,
   zIndex,
   hideOnScroll,
-  isFluid
+  isFluid,
+  noShadow
 }: NavTabProps) => {
   const classes = useStyles()
   const [show, setShow] = useState(true)
@@ -281,6 +283,7 @@ const NavTab = ({
         { [classes.hide]: !show },
         { [classes.isScrolled]: currentScroll > 0 },
         { [classes.bottom]: bottom },
+        { [classes.noShadow]: noShadow },
         className
       )}
       style={zIndex ? { zIndex } : null}
