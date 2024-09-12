@@ -52,6 +52,12 @@ import Footer from './Footer'
 import FooterMini from './FooterMini'
 import NavAvatarButton from '@/components/NavAvatarButton'
 import Drawer from '@/components/Drawer'
+import List from '@/components/List'
+import ListItem from '@/components/ListItem'
+import ListItemButton from '@/components/ListItemButton'
+import ListItemText from '@/components/ListItemText'
+import ListItemAvatar from '@/components/ListItemAvatar'
+import ListItemIcon from '@/components/ListItemIcon'
 
 const mdxComponents = {
   // Library components
@@ -91,6 +97,12 @@ const mdxComponents = {
   FooterMini,
   NavAvatarButton,
   Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemAvatar,
+  ListItemButton,
+  ListItemIcon,
   // Docs components
   Demo,
   code: Code,

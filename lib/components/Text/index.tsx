@@ -90,7 +90,7 @@ type NewTextProps = {
   bottom12?: boolean
 }
 
-type TextProps = {
+export type TextProps = {
   children: ReactNode
   strong?: boolean
   success?: boolean
