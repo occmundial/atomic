@@ -1,6 +1,7 @@
-import spacing from '@/tokens/spacing'
 import grid from '@/tokens/grid'
-import colors from '@/tokens/colors'
+
+import colors from '@/tokens/future/colors.json'
+import spacing from '@/tokens/future/spacing.json'
 
 const ASIDE_SIZE = 320
 
@@ -25,7 +26,7 @@ const styles = {
     position: 'fixed',
     width: '100%',
     height: '100%',
-    background: 'rgba(0, 0, 5, 0.85)',
+    background: colors.bg.overlay,
     top: 0,
     left: 0,
     zIndex: 1000,
@@ -41,10 +42,10 @@ const styles = {
   block: {
     height: '100%',
     width: ASIDE_SIZE,
-    maxWidth: `calc(100% - ${spacing.medium}px)`,
+    maxWidth: `calc(100% - ${spacing['size-6']})`,
     position: 'fixed',
     top: 0,
-    backgroundColor: colors.bgWhite,
+    backgroundColor: colors.bg.surface.default,
     overflow: 'hidden',
     transition: '0.3s left, 0.3s right'
   },
@@ -69,24 +70,24 @@ const styles = {
     overflow: 'auto'
   },
   content: {
-    backgroundColor: colors.bgWhite,
-    padding: spacing.small,
+    backgroundColor: colors.bg.surface.default,
+    padding: spacing['size-4'],
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      padding: spacing.medium
+      padding: spacing['size-6']
     }
   },
   top: {
-    backgroundColor: colors.bgGrey,
-    padding: spacing.small,
+    backgroundColor: colors.bg.default,
+    padding: spacing['size-4'],
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      padding: spacing.medium
+      padding: spacing['size-6']
     }
   },
   topContent: {
     minWidth: 0
   },
   closeIcon: {
-    height: spacing.medium,
+    height: spacing['size-6'],
     display: 'flex',
     alignItems: 'center'
   }

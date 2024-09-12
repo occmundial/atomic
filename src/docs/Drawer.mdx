@@ -1,0 +1,116 @@
+---
+title: Drawer
+section: components
+---
+import { useState } from 'react'
+import Demo from '@/utils/components/Demo'
+import Drawer from '@/components/Drawer'
+import Button from '@/components/Button'
+import Portal from '@/components/Portal'
+import NavTab from '@/components/NavTab'
+import { Function } from '@/utils/components/Function'
+import { spacing } from '@/components/tokens'
+
+# Drawer
+
+---
+
+Container with a Drawer style.
+
+## Props
+
+| Name      | Type         | Default Value | Description              |
+|-----------|--------------|---------------|--------------------------|
+| `header`  | **ReactNode**| -             | The header component     |
+| `children`| **ReactNode**| -             | The content of the Drawer |
+| `testId`  | **string**   | -             | The test id for the Drawer |
+
+## Examples
+
+### Simple implementation
+
+Handle the state and visibility of the Drawer by wrapping it with a `Portal` component. The `Portal` component will render the Drawer in the `document.body` element and accepts a `show` prop.
+
+<Demo title="Elevations of Drawer" background={colors.bgGrey}>
+  <Function>
+    {() => {
+      const [show, setShow] = useState(false)
+      return (
+        <>
+          <Button onClick={() => setShow(true)}>Show Drawer</Button>
+          <Portal
+            show={show}
+            container={typeof window !== 'undefined' ? document.body : null}
+          >
+            <Drawer header={
+              <NavTab
+                noShadow
+                left={[
+                  {
+                    key: 'icon',
+                    type: 'icon',
+                    iconName: 'x',
+                    onClick: () => setShow(false)
+                  },
+                  {
+                    key: 'custom',
+                    type: 'custom',
+                    custom: (
+                      <span style={{
+                        fontFamily: '"Pacifico", sans-serif',
+                        color: colors.sec,
+                        textDecoration: 'none',
+                        fontSize: 28,
+                        lineHeight: '32px'
+                      }}>Atomic</span>
+                    )
+                  }
+                ]}
+              />}
+            >
+              This is a default Drawer
+            </Drawer>
+          </Portal>
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// Default
+function Component() {
+  const [show, setShow] = useState(false)
+  return (
+    <>
+      <Button onClick={() => setShow(true)}>Show Drawer</Button>
+      <Portal
+        show={show}
+        container={typeof window !== 'undefined' ? document.body : null}
+      >
+        <Drawer header={
+          <NavTab
+            left={[
+              {
+                key: 'icon',
+                type: 'icon',
+                iconName: 'x',
+                onClick: () => setShow(false)
+              },
+              {
+                key: 'custom',
+                type: 'custom',
+                custom: (
+                  <a className={classes.title}>Atomic</a>
+                )
+              }
+            ]}
+          />}
+        >
+          This is a default Drawer
+        </Drawer>
+      </Portal>
+    </>
+  )
+}
+```

@@ -51,6 +51,7 @@ import Logo from '@/components/Logo'
 import Footer from './Footer'
 import FooterMini from './FooterMini'
 import NavAvatarButton from '@/components/NavAvatarButton'
+import Drawer from '@/components/Drawer'
 import List from '@/components/List'
 import ListItem from '@/components/ListItem'
 import ListItemButton from '@/components/ListItemButton'
@@ -95,6 +96,7 @@ const mdxComponents = {
   Footer,
   FooterMini,
   NavAvatarButton,
+  Drawer,
   List,
   ListItem,
   ListItemText,
