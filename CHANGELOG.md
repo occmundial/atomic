@@ -1,3 +1,15 @@
+# [3.0.0-beta.60](https://github.com/occmundial/atomic/compare/v3.0.0-beta.59...v3.0.0-beta.60) (2024-09-12)
+
+
+### Bug Fixes
+
+* Implement new design tokens into the NavAside component ([adfee3a](https://github.com/occmundial/atomic/commit/adfee3a891745644c777ac6aeb7f2a3aca949e73))
+
+
+### Features
+
+* Add a Drawer component ([20e76ce](https://github.com/occmundial/atomic/commit/20e76ce2677292901e4cd24e3e885fba885b6a41))
+
 # [3.0.0-beta.59](https://github.com/occmundial/atomic/compare/v3.0.0-beta.58...v3.0.0-beta.59) (2024-09-12)
 
 
