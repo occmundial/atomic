@@ -1,3 +1,10 @@
+# [3.0.0-beta.59](https://github.com/occmundial/atomic/compare/v3.0.0-beta.58...v3.0.0-beta.59) (2024-09-12)
+
+
+### Features
+
+* Added list element and basic examples ([2a6c368](https://github.com/occmundial/atomic/commit/2a6c3688d87b3352faec3cdb1d19bff962a6c97b))
+
 # [3.0.0-beta.58](https://github.com/occmundial/atomic/compare/v3.0.0-beta.57...v3.0.0-beta.58) (2024-09-10)
 
 
