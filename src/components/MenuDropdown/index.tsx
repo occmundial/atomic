@@ -19,10 +19,12 @@ export default function MenuDropdown({ placement }) {
         onClick={avatarButtonHandler}
       />
       <Dropdown open={open} placement={placement}>
-        <Button>Prueba menu item 1</Button>
-        <Button>Prueba menu item 2</Button>
-        <Button>Prueba menu item 3</Button>
-        <Button>Prueba menu item 4</Button>
+        <div style={{ display: 'flex', flexDirection: 'column', rowGap: 12 }}>
+          <Button>Prueba menu item 1</Button>
+          <Button>Prueba menu item 2</Button>
+          <Button>Prueba menu item 3</Button>
+          <Button>Prueba menu item 4</Button>
+        </div>
       </Dropdown>
     </div>
   )

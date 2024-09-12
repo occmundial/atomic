@@ -15,6 +15,7 @@ export default createUseStyles({
   contentWrapper: {
     display: 'grid',
     gridTemplateRows: '0fr',
+    width: 280,
     transition:
       'grid-template-rows cubic-bezier(0.25,0.46,0.45,0.94) 0.2s 0.05s, opacity cubic-bezier(0.25,0.46,0.45,0.94) 0.2s',
     opacity: 0,
