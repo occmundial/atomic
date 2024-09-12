@@ -162,11 +162,8 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
         },
         {
           key: 2,
-          type: 'avatarButton',
-          props: {
-            className: 'only-desktop',
-            photo:'https://i.pravatar.cc/300'
-          }
+          type: 'custom',
+          custom: <MenuDropdown placement="right"/>
         },
         {
           key: 1,
