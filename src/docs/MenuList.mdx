@@ -120,10 +120,10 @@ function Component() {
         photo: "https://i.pravatar.cc/300"
       }}
     />
-    <MenuDivider />
+    <MenuDivider style={{ margin: "4px 0" }} />
     <MenuItem>Configuración</MenuItem>
     <MenuItem>Sitio de empresas</MenuItem>
-    <MenuDivider />
+    <MenuDivider style={{ margin: "4px 0" }} />
     <MenuItem>Cerrar sesión</MenuItem>
   </MenuList>
 </Demo>
@@ -140,10 +140,10 @@ function Component() {
           photo: "https://i.pravatar.cc/300"
         }}
       />
-      <MenuDivider />
+      <MenuDivider style={{ margin: "4px 0" }} />
       <MenuItem>Configuración</MenuItem>
       <MenuItem>Sitio de empresas</MenuItem>
-      <MenuDivider />
+      <MenuDivider style={{ margin: "4px 0" }} />
       <MenuItem>Cerrar sesión</MenuItem>
     </MenuList>
   )
@@ -153,7 +153,7 @@ function Component() {
 ### Menu List (dense) with MenuAvatar
 
 <Demo title="Menu List (dense) with MenuAvatar" background={colors.white}>
-  <MenuList component="nav" padding="size-3">
+  <MenuList component="nav" margin="size-3">
     <MenuUser 
       title="Nombre Apellido"
       subtitle="ejemplo@correo.com"
@@ -161,7 +161,7 @@ function Component() {
         photo: "https://i.pravatar.cc/300"
       }}
     />
-    <MenuDivider />
+    <MenuDivider style={{ margin: "4px 0" }} />
     <MenuItem component="a" href="#Test">
       Configuración
     </MenuItem>
@@ -177,7 +177,7 @@ function Component() {
     <MenuItem component="a" href="#Test">
       Estado de cuenta
     </MenuItem>
-    <MenuDivider />
+    <MenuDivider style={{ margin: "4px 0" }} />
     <MenuItem component="a" href="#Test">
       Sitio de candidatos
     </MenuItem>
@@ -191,7 +191,7 @@ function Component() {
 // Code
 function Component() {
   return (
-    <MenuList component="nav" padding="size-3">
+    <MenuList component="nav" margin="size-3">
       <MenuUser 
         title="Nombre Apellido"
         subtitle="ejemplo@correo.com"
@@ -199,7 +199,7 @@ function Component() {
           photo: "https://i.pravatar.cc/300"
         }}
       />
-      <MenuDivider />
+      <MenuDivider style={{ margin: "4px 0" }} />
       <MenuItem component="a" href="#Test">
         Configuración
       </MenuItem>
@@ -215,7 +215,7 @@ function Component() {
       <MenuItem component="a" href="#Test">
         Estado de cuenta
       </MenuItem>
-      <MenuDivider />
+      <MenuDivider style={{ margin: "4px 0" }} />
       <MenuItem component="a" href="#Test">
         Sitio de candidatos
       </MenuItem>

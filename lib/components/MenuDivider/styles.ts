@@ -8,8 +8,5 @@ export default createUseStyles({
     borderWidth: '0px 0px thin',
     borderStyle: 'solid',
     borderColor: colors.border.default.subtle
-  },
-  paddingDefault: {
-    padding: '4px 0'
   }
 })

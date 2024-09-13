@@ -15,7 +15,6 @@ A simple wrapper for applying list styles to the ht tag.
 | ---------------- | ------------------------ | -------------- | ----------------------------------- |
 | `className`      | **string**               | -              | Adds classes to the root container. |
 | `style`          | **string**               | -              | Adds styles to the root container.  |
-| `disablePadding` | **boolean**              | `false`        | If true, all padding is removed.    |
 
 
 ## Examples
@@ -31,10 +30,10 @@ A simple wrapper for applying list styles to the ht tag.
         photo: "https://i.pravatar.cc/300"
       }}
     />
-    <MenuDivider />
+    <MenuDivider style={{ margin: "4px 0" }} />
     <MenuItem>Configuración</MenuItem>
     <MenuItem>Sitio de empresas</MenuItem>
-    <MenuDivider />
+    <MenuDivider style={{ margin: "4px 0" }} />
     <MenuItem>Cerrar sesión</MenuItem>
   </MenuList>
 </Demo>
@@ -51,10 +50,10 @@ function Component() {
           photo: "https://i.pravatar.cc/300"
         }}
       />
-      <MenuDivider />
+      <MenuDivider style={{ margin: "4px 0" }} />
       <MenuItem>Configuración</MenuItem>
       <MenuItem>Sitio de empresas</MenuItem>
-      <MenuDivider />
+      <MenuDivider style={{ margin: "4px 0" }} />
       <MenuItem>Cerrar sesión</MenuItem>
     </MenuList>
   )

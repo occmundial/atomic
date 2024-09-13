@@ -4,27 +4,13 @@ import { CSSProperties } from 'react'
 
 type MenuDividerProps = {
   className: string
-  styles: CSSProperties
-  disablePadding: boolean
+  style: CSSProperties
 }
 
-const MenuDivider = ({
-  className,
-  disablePadding,
-  styles
-}: MenuDividerProps) => {
+const MenuDivider = ({ className, style }: MenuDividerProps) => {
   const classes = useStyles()
 
-  return (
-    <hr
-      className={classNames(
-        classes.root,
-        className,
-        !disablePadding && classes.paddingDefault
-      )}
-      style={styles}
-    />
-  )
+  return <hr className={classNames(classes.root, className)} style={style} />
 }
 
 export default MenuDivider
