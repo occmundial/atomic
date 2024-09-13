@@ -7,7 +7,7 @@ import Avatar, { AvatarProps } from '../Avatar'
 export type NavAvatarButtonProps = {
   mini: boolean
 } & Omit<ButtonProps, 'children'> &
-  Omit<AvatarProps, 'onEdit | onClick | disabled | size'>
+  Omit<AvatarProps, 'onEdit' | 'onClick' | 'disabled' | 'size'>
 
 const NavAvatarButton = ({
   photo,

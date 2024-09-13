@@ -58,6 +58,8 @@ import ListItemButton from '@/components/ListItemButton'
 import ListItemText from '@/components/ListItemText'
 import ListItemAvatar from '@/components/ListItemAvatar'
 import ListItemIcon from '@/components/ListItemIcon'
+import Dropdown from '@/components/Dropdown'
+import MenuDropdown from './MenuDropdown'
 
 const mdxComponents = {
   // Library components
@@ -103,6 +105,8 @@ const mdxComponents = {
   ListItemAvatar,
   ListItemButton,
   ListItemIcon,
+  Dropdown,
+  MenuDropdown,
   // Docs components
   Demo,
   code: Code,

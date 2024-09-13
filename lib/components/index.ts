@@ -40,6 +40,7 @@ import {
 import Tabs from './Tabs'
 import Tab from './Tabs/Tab'
 import TabContent from './Tabs/TabContent'
+import Dropdown from './Dropdown'
 
 export {
   Alert,
@@ -83,5 +84,6 @@ export {
   useTabsContext,
   Tabs,
   Tab,
-  TabContent
+  TabContent,
+  Dropdown
 }
