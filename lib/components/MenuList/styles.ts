@@ -5,7 +5,7 @@ type SpacingClasses = {
   [Property in keyof typeof spacing]: { padding: string }
 }
 
-function generateSpacingClases() {
+function generateSpacingClasses() {
   const spacingClasses: Record<string, object> = {}
   for (const [key, value] of Object.values(spacing)) {
     spacingClasses[key] = { padding: value }
