@@ -1,17 +1,20 @@
 import { createUseStyles } from 'react-jss'
 
 export default createUseStyles({
-  container: {
+  iconContainer: {
     flexShrink: 0,
     display: 'inline-flex'
   },
-  contentEnd: {
+  iconRight: {
     justifyContent: 'end'
   },
-  containerWidth: {
+  iconContainerSize: {
     minWidth: 28
   },
-  containerDense: {
+  iconContainerSizeDense: {
     minWidth: 24
+  },
+  textContainer: {
+    flex: '1 1 auto'
   }
 })

@@ -1,0 +1,228 @@
+---
+title: MenuList
+section: components
+---
+
+# MenuList
+
+---
+
+MenuList wrapper component.
+
+## Props
+
+Props of the native component are also available.
+
+| Name             | Type                          | Default value  | Description                                                                                                                                                                       |
+| ---------------- | ----------------------------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`       | **ReactNode**                 | -              | The content of the component.                                                                                                                                                     |                                                                                                                                      |
+| `className`      | **string**                    | -              | Adds classes to the root container.        
+| `padding`        | **false \| size-1 - size-12** | `size-2`       | Adds or removes padding to the root container.                                                                                                                                          |
+| `dense`          | **boolean**                   | `false`        | If true, compact vertical padding designed for keyboard and mouse input is used for the list and list items. The prop is available to descendant components as the dense context. |
+| `component`      | **elementType**               | `menu`         | The component used for the root node. Either a string to use a HTML element or a component.                                                                                       |
+
+## Examples
+
+### Menu List with MenuItem
+
+<Demo title="Menu List with MenuItem" background={colors.white}>
+  <MenuList>
+    { [...Array(3).keys()].map(val => (
+      <MenuItem 
+        key={val}
+        iconRightProps={{
+          iconName: 'chevron-right'
+        }}
+        iconLeftProps={{
+          iconName: 'globe'
+        }}
+      >
+        Placeholder
+      </MenuItem>
+    ))}
+  </MenuList>
+</Demo>
+
+```jsx
+// Code
+function Component() {
+  return (
+    <MenuList>
+      { [...Array(3).keys()].map(val => (
+        <MenuItem 
+          key={val}
+          iconRightProps={{
+            iconName: 'chevron-right'
+          }}
+          iconLeftProps={{
+            iconName: 'globe'
+          }}
+        >
+          Placeholder
+        </MenuItem>
+      ))}
+    </MenuList>
+  )
+}
+```
+
+### Menu List (dense) with MenuItem 
+
+<Demo title="Menu List (dense) with MenuItem" background={colors.white}>
+  <MenuList dense>
+    { [...Array(3).keys()].map(val => (
+      <MenuItem 
+        key={val}
+        iconRightProps={{
+          iconName: 'chevron-right'
+        }}
+        iconLeftProps={{
+          iconName: 'globe'
+        }}
+      >
+        Placeholder
+      </MenuItem>
+    ))}
+  </MenuList>
+</Demo>
+
+```jsx
+// Code
+function Component() {
+  return (
+    <MenuList dense>
+      { [...Array(3).keys()].map(val => (
+        <MenuItem 
+          key={val}
+          iconRightProps={{
+            iconName: 'chevron-right'
+          }}
+          iconLeftProps={{
+            iconName: 'globe'
+          }}
+        >
+          Placeholder
+        </MenuItem>
+      ))}
+    </MenuList>
+  )
+}
+```
+
+### Menu List with MenuAvatar
+
+<Demo title="Menu List with MenuAvatar" background={colors.white}>
+  <MenuList>
+    <MenuUser 
+      title="Nombre Apellido"
+      subtitle="ejemplo@correo.com"
+      avatarProps={{
+        photo: "https://i.pravatar.cc/300"
+      }}
+    />
+    <MenuDivider />
+    <MenuItem>Configuración</MenuItem>
+    <MenuItem>Sitio de empresas</MenuItem>
+    <MenuDivider />
+    <MenuItem>Cerrar sesión</MenuItem>
+  </MenuList>
+</Demo>
+
+```jsx
+// Code
+function Component() {
+  return (
+    <MenuList>
+      <MenuUser 
+        title="Nombre Apellido"
+        subtitle="ejemplo@correo.com"
+        avatarProps={{
+          photo: "https://i.pravatar.cc/300"
+        }}
+      />
+      <MenuDivider />
+      <MenuItem>Configuración</MenuItem>
+      <MenuItem>Sitio de empresas</MenuItem>
+      <MenuDivider />
+      <MenuItem>Cerrar sesión</MenuItem>
+    </MenuList>
+  )
+}
+```
+
+### Menu List (dense) with MenuAvatar
+
+<Demo title="Menu List (dense) with MenuAvatar" background={colors.white}>
+  <MenuList component="nav" padding="size-3">
+    <MenuUser 
+      title="Nombre Apellido"
+      subtitle="ejemplo@correo.com"
+      avatarProps={{
+        photo: "https://i.pravatar.cc/300"
+      }}
+    />
+    <MenuDivider />
+    <MenuItem component="a" href="#Test">
+      Configuración
+    </MenuItem>
+    <MenuItem component="a" href="#Test">
+      Administrador de cuentas
+    </MenuItem>
+    <MenuItem component="a" href="#Test">
+      Datos de facturación
+    </MenuItem>
+    <MenuItem component="a" href="#Test">
+      Reporte de uso
+    </MenuItem>
+    <MenuItem component="a" href="#Test">
+      Estado de cuenta
+    </MenuItem>
+    <MenuDivider />
+    <MenuItem component="a" href="#Test">
+      Sitio de candidatos
+    </MenuItem>
+    <MenuItem onClick={() => console.log('logged-out')}>
+      Cerrar sesión
+    </MenuItem>
+  </MenuList>
+</Demo>
+
+```jsx
+// Code
+function Component() {
+  return (
+    <MenuList component="nav" padding="size-3">
+      <MenuUser 
+        title="Nombre Apellido"
+        subtitle="ejemplo@correo.com"
+        avatarProps={{
+          photo: "https://i.pravatar.cc/300"
+        }}
+      />
+      <MenuDivider />
+      <MenuItem component="a" href="#Test">
+        Configuración
+      </MenuItem>
+      <MenuItem component="a" href="#Test">
+        Administrador de cuentas
+      </MenuItem>
+      <MenuItem component="a" href="#Test">
+        Datos de facturación
+      </MenuItem>
+      <MenuItem component="a" href="#Test">
+        Reporte de uso
+      </MenuItem>
+      <MenuItem component="a" href="#Test">
+        Estado de cuenta
+      </MenuItem>
+      <MenuDivider />
+      <MenuItem component="a" href="#Test">
+        Sitio de candidatos
+      </MenuItem>
+      <MenuItem onClick={() => console.log('logged-out')}>
+        Cerrar sesión
+      </MenuItem>
+    </MenuList>
+  )
+}
+```

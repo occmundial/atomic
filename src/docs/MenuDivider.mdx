@@ -1,0 +1,62 @@
+---
+title: MenuDivider
+section: components
+---
+
+# MenuDivider
+
+---
+
+A simple wrapper for applying list styles to the ht tag.
+
+## Props
+
+| Name             | Type                     | Default value  | Description                         |
+| ---------------- | ------------------------ | -------------- | ----------------------------------- |
+| `className`      | **string**               | -              | Adds classes to the root container. |
+| `style`          | **string**               | -              | Adds styles to the root container.  |
+| `disablePadding` | **boolean**              | `false`        | If true, all padding is removed.    |
+
+
+## Examples
+
+### Divider
+
+<Demo title="MenuList with MenuDividers" background={colors.white}>
+  <MenuList>
+    <MenuUser 
+      title="Nombre Apellido"
+      subtitle="ejemplo@correo.com"
+      avatarProps={{
+        photo: "https://i.pravatar.cc/300"
+      }}
+    />
+    <MenuDivider />
+    <MenuItem>Configuración</MenuItem>
+    <MenuItem>Sitio de empresas</MenuItem>
+    <MenuDivider />
+    <MenuItem>Cerrar sesión</MenuItem>
+  </MenuList>
+</Demo>
+
+```jsx
+// Code
+function Component() {
+  return (
+    <MenuList>
+      <MenuUser   
+        title="Nombre Apellido"
+        subtitle="ejemplo@correo.com"
+        avatarProps={{
+          photo: "https://i.pravatar.cc/300"
+        }}
+      />
+      <MenuDivider />
+      <MenuItem>Configuración</MenuItem>
+      <MenuItem>Sitio de empresas</MenuItem>
+      <MenuDivider />
+      <MenuItem>Cerrar sesión</MenuItem>
+    </MenuList>
+  )
+}
+```
