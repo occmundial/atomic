@@ -1,3 +1,16 @@
+# [3.0.0-beta.61](https://github.com/occmundial/atomic/compare/v3.0.0-beta.60...v3.0.0-beta.61) (2024-09-13)
+
+
+### Bug Fixes
+
+* Add dropdown export ([a4a4c02](https://github.com/occmundial/atomic/commit/a4a4c02bba614f940b782e61849d5e819586717d))
+* Set fixed width for root container ([bdbfd31](https://github.com/occmundial/atomic/commit/bdbfd3145978b3407c31ed3fd555ddb0aba39d48))
+
+
+### Features
+
+* Create dropdown component for header purpose ([9f8deaa](https://github.com/occmundial/atomic/commit/9f8deaa2df6c31760c08129a36cfc4a8cd0c4bdd))
+
 # [3.0.0-beta.60](https://github.com/occmundial/atomic/compare/v3.0.0-beta.59...v3.0.0-beta.60) (2024-09-12)
 
 
