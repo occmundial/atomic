@@ -7,7 +7,8 @@ import shadows from '@/tokens/future/shadows.json'
 
 export default createUseStyles({
   content: {
-    transition: 'transform cubic-bezier(0.25,0.46,0.45,0.94) 0.2s'
+    transition: 'transform cubic-bezier(0.25,0.46,0.45,0.94) 0.2s',
+    overflow: 'hidden'
   },
   showContent: {
     transition: 'transform cubic-bezier(0.25,0.46,0.45,0.94) 0.2s 0.05s'
