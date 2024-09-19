@@ -19,5 +19,5 @@ export default createUseStyles({
     paddingBlock: 0,
     paddingInline: 0
   },
-  ...generateSpacingClases()
+  ...generateSpacingClasses()
 })
