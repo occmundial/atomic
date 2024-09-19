@@ -8,38 +8,39 @@ import {
 } from 'react'
 import useStyles from './styles'
 import classNames from 'classnames'
-import { ListProvider } from '../ListProvider'
+import { MenuListProvider } from '../MenuListProvider'
+import { spacing } from '@/tokens/future'
 
-type ListProps<T extends ElementType> = {
+type MenuListProps<T extends ElementType> = {
   className?: string
-  disablePadding: boolean
   dense: boolean
   children?: ReactNode
+  padding: keyof typeof spacing | false
   component: T
 } & Omit<ComponentPropsWithRef<T>, 'children'>
 
-const List = forwardRef(
-  <T extends ElementType = 'ul'>(
+const MenuList = forwardRef(
+  <T extends ElementType = 'menu'>(
     {
       children,
       className,
-      component = 'ul' as T,
-      disablePadding = false,
+      component = 'menu' as T,
+      padding = 'size-2',
       dense,
       ...props
-    }: ListProps<T>,
+    }: MenuListProps<T>,
     ref: RefObject<T>
   ) => {
     const classes = useStyles()
 
     return (
-      <ListProvider dense={dense}>
+      <MenuListProvider dense={dense}>
         {createElement(
           component,
           {
             className: classNames(
               classes.container,
-              !disablePadding && classes.paddingVertical,
+              padding && classes[padding],
               className
             ),
             ref,
@@ -47,9 +48,9 @@ const List = forwardRef(
           },
           children
         )}
-      </ListProvider>
+      </MenuListProvider>
     )
   }
 )
 
-export default List
+export default MenuList
