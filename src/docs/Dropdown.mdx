@@ -17,13 +17,13 @@ A floating menu that should be wrapped by a relative element.
 
 ### Props
 
-| Name        | Type                     | Default value | Description                                                                                                                                                                                                                       |
-| ----------- | ------------------------ | ------------- | --------------------------------------------------- |
-| `children`  | **ReactNode**            | -            | Children component passed to this container.        |
-| `open`      | **boolean**              | -            | Controls whether the dropdown is visible or hidden. |
-| `id`        | **string**               | -             | The id of the button.                               |
-| `className` | **string**               | -             | Adds class(es) to the root container                |
-| `placement` | **left** &#124; **right  | `left`        | Controls which direction the menu should grow.      |
+| Name        | Type                       | Default value | Description                                                                                                                                                                                                                       |
+| ----------- | -------------------------- | ------------- | --------------------------------------------------- |
+| `children`  | **ReactNode**              | -             | Children component passed to this container.        |
+| `open`      | **boolean**                | -             | Controls whether the dropdown is visible or hidden. |
+| `id`        | **string**                 | -             | The id of the button.                               |
+| `className` | **string**                 | -             | Adds class(es) to the root container                |
+| `placement` | **left** &#124; **right**  | `left`        | Controls which direction the menu should grow.      |
 
 ### Example
 
@@ -37,22 +37,9 @@ A floating menu that should be wrapped by a relative element.
 
 ```jsx
 export default function MenuDropdown() {
-  const [open, setOpen] = useState(false)
-
-  const avatarButtonHandler: () => {
-    setOpen(!open)
-  }
-
   return (
     <div style={{ position: 'relative' }}>
-      <NavAvatarButton
-        theme="ghost"
-        mini
-        className="only-destop"
-        photo="https://i.pravatar.cc/300"
-        onClick={avatarButtonHandler}
-      />
-      <Dropdown open={open}>
+      <Dropdown>
         <div style={{ display: 'flex', flexDirection: 'column', rowGap: 12 }}>
           <Button>Prueba menu item 1</Button>
           <Button>Prueba menu item 2</Button>

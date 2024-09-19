@@ -11,14 +11,18 @@ export default function MenuDropdown({ placement }) {
   }
   return (
     <div style={{ position: 'relative' }}>
-      <NavAvatarButton
-        theme="ghost"
-        mini
-        className="only-destop"
-        photo="https://i.pravatar.cc/300"
-        onClick={avatarButtonHandler}
-      />
-      <Dropdown open={open} placement={placement}>
+      <Dropdown
+        placement={placement}
+        menuTrigger={
+          <NavAvatarButton
+            theme="ghost"
+            mini
+            className="only-destop"
+            photo="https://i.pravatar.cc/300"
+            onClick={avatarButtonHandler}
+          />
+        }
+      >
         <div style={{ display: 'flex', flexDirection: 'column', rowGap: 12 }}>
           <Button>Prueba menu item 1</Button>
           <Button>Prueba menu item 2</Button>
