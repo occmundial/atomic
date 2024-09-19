@@ -18,7 +18,7 @@ export type MenuItemBaseProps<T extends ElementType> = {
   dense?: boolean
   disablePadding?: boolean
   disableGutters?: boolean
-  children: ReactNode
+  children?: ReactNode
   selected?: boolean
   component?: T
 } & (ComponentProps<T> extends any ? {} : Omit<ComponentProps<T>, 'children'>)

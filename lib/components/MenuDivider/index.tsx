@@ -3,8 +3,8 @@ import useStyles from './styles'
 import { CSSProperties } from 'react'
 
 type MenuDividerProps = {
-  className: string
-  style: CSSProperties
+  className?: string
+  style?: CSSProperties
 }
 
 const MenuDivider = ({ className, style }: MenuDividerProps) => {

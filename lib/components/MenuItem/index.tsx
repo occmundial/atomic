@@ -15,7 +15,7 @@ import MenuItemBase, { MenuItemBaseProps } from '../MenuItemBase'
 
 type MenuItemProps<T extends ElementType> = {
   disableText?: boolean
-  textProps: TextProps
+  textProps?: TextProps
   iconRightProps?: IconProps
   iconLeftProps?: IconProps
   className?: {
@@ -24,7 +24,7 @@ type MenuItemProps<T extends ElementType> = {
     iconRightContainer?: string
     iconLeftContainer?: string
   }
-  style: {
+  style?: {
     root?: CSSProperties
     textContainer?: CSSProperties
     iconRightContainer?: CSSProperties
