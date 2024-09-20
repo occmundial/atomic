@@ -8,7 +8,7 @@ import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 
-export interface NavIconProps {
+export interface NavButtonProps {
   selected?: boolean
   iconName?: string
   label?: string
@@ -21,7 +21,7 @@ export interface NavIconProps {
   testId?: string
 }
 
-const NavIcon = ({
+const NavButton = ({
   iconName,
   selected,
   label,
@@ -32,7 +32,7 @@ const NavIcon = ({
   width,
   white,
   showBar
-}: NavIconProps) => {
+}: NavButtonProps) => {
   const classes = useStyles()
   return (
     <div
@@ -73,4 +73,4 @@ const NavIcon = ({
   )
 }
 
-export default NavIcon
+export default NavButton

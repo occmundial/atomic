@@ -13,7 +13,7 @@ import Logo from './Logo'
 import { MediaContextProvider, Media, mediaStyle } from './Media'
 import Modal from './Modal'
 import NavAside from './NavAside'
-import NavIcon from './NavIcon'
+import NavButton from './NavButton'
 import NavItem from './NavItem'
 import NavTab from './NavTab'
 import NavTop from './NavTop'
@@ -60,7 +60,7 @@ export {
   mediaStyle,
   Modal,
   NavAside,
-  NavIcon,
+  NavButton,
   NavItem,
   NavTab,
   NavTop,
