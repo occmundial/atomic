@@ -62,6 +62,7 @@ const MenuItemBase = <T extends ElementType = 'div'>(
         !nonActivatable && classes.activatable
       ),
       ref,
+      tabIndex: '0',
       ...props
     },
     children

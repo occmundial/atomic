@@ -31,8 +31,9 @@ export default createUseStyles({
     textDecoration: 'none'
   },
   activatable: {
-    '&:hover': {
-      background: colors.bg.action.tertiary.hover
+    '&:hover, &:focus': {
+      background: colors.bg.action.tertiary.hover,
+      outline: 'none'
     },
     '&:active': {
       background: colors.bg.action.tertiary.active
