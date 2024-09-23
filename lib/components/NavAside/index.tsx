@@ -9,9 +9,7 @@ import classnames from 'classnames'
 
 import Card from '@/components/Card'
 import Flexbox from '@/components/Flexbox'
-import Icon from '@/components/Icon'
-import colors from '@/tokens/colors'
-import iconSizes from '@/tokens/iconSizes'
+import Button from '@/components/Button'
 import useEventListener from '@/hooks/useEventListener'
 
 import styles from './styles'
@@ -84,14 +82,7 @@ const NavAside = ({
                 {top}
               </Flexbox>
             )}
-            <div className={classes.closeIcon}>
-              <Icon
-                iconName="x"
-                size={iconSizes.base}
-                color={colors.grey900}
-                onClick={onClose}
-              />
-            </div>
+            <Button theme="ghost" iconLeft="x" size="md" onClick={onClose} />
           </Flexbox>
           <div className={classes.content}>{children}</div>
         </Card>

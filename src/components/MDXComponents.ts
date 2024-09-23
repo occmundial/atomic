@@ -1,6 +1,5 @@
 import { createElement } from 'react'
 import slugify from 'slugify'
-
 import Demo from './Demo'
 import Code from './Code'
 import InlineCode from './InlineCode'
@@ -51,14 +50,13 @@ import Logo from '@/components/Logo'
 import Footer from './Footer'
 import FooterMini from './FooterMini'
 import NavAvatarButton from '@/components/NavAvatarButton'
-import List from '@/components/List'
-import ListItem from '@/components/ListItem'
-import ListItemButton from '@/components/ListItemButton'
-import ListItemText from '@/components/ListItemText'
-import ListItemAvatar from '@/components/ListItemAvatar'
-import ListItemIcon from '@/components/ListItemIcon'
+import Drawer from '@/components/Drawer'
 import Menu from '@/components/Menu'
 import MenuDropdown from './MenuDropdown'
+import MenuList from '@/components/MenuList'
+import MenuItem from '@/components/MenuItem'
+import MenuUser from '@/components/MenuUser'
+import MenuDivider from '@/components/MenuDivider'
 
 const mdxComponents = {
   // Library components
@@ -97,14 +95,13 @@ const mdxComponents = {
   Footer,
   FooterMini,
   NavAvatarButton,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemAvatar,
-  ListItemButton,
-  ListItemIcon,
+  Drawer,
   Menu,
   MenuDropdown,
+  MenuList,
+  MenuItem,
+  MenuUser,
+  MenuDivider,
   // Docs components
   Demo,
   code: Code,

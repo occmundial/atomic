@@ -49,6 +49,11 @@ export default createUseStyles({
     transition: '0.3s all',
     boxShadow: shadows.lvl1
   },
+  noShadow: {
+    '& $nav': {
+      boxShadow: 'none'
+    }
+  },
   grid: {
     maxWidth: '100%',
     height: '100%',

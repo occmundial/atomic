@@ -1,8 +1,9 @@
 import { createUseStyles } from 'react-jss'
 import { borderRadius } from '@/tokens/future'
+import { colors } from '@/tokens/future'
 
 export default createUseStyles({
-  container: {
+  root: {
     listStyleType: 'none',
     display: 'flex',
     justifyContent: 'flex-start',
@@ -25,5 +26,20 @@ export default createUseStyles({
   },
   alignItemsStart: {
     alignItems: 'start'
+  },
+  containerAnchor: {
+    textDecoration: 'none'
+  },
+  activatable: {
+    '&:hover, &:focus': {
+      background: colors.bg.action.tertiary.hover,
+      outline: 'none'
+    },
+    '&:active': {
+      background: colors.bg.action.tertiary.active
+    }
+  },
+  selected: {
+    background: colors.bg.action.tertiary.active
   }
 })

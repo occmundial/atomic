@@ -112,9 +112,11 @@ Its possible to pass an onClick function to the icons.
 // How to use onClick
 function Component() {
   return (
-    <>
-      <Icon iconName='search' color={colors.sec} onClick={() => alert('Icon clicked!')} />
-    </Icon>
+    <Icon
+      iconName="search"
+      color={colors.sec}
+      onClick={() => alert('Icon clicked!')}
+    />
   )
 }
 ```
