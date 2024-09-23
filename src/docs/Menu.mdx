@@ -1,0 +1,65 @@
+---
+title: Menu
+section: components
+---
+
+import Demo from "@/utils/components/Demo";
+import Menu from "@/components/Menu";
+
+# Menu
+
+---
+
+A floating menu that should be wrapped by a relative element.
+
+- [Props](#Props)
+- [Examples](#Examples)
+
+### Props
+
+| Name              | Type                       | Default value | Description                                                                                                                                                                                                                       |
+| ----------------- | -------------------------- | ------------- | --------------------------------------------------- |
+| `children`        | **ReactNode**              | -             | Children component passed to this container.        |
+| `triggerElement`  | **ReactNode**              | -             | React element that triggers the Menu status.    |
+| `open`            | **boolean**                | -             | Controls whether the Menu is visible or hidden.     |
+| `id`              | **string**                 | -             | The id of the button.                               |
+| `className`       | **string**                 | -             | Adds class(es) to the root container                |
+| `placement`       | **left** &#124; **right**  | `left`        | Controls which direction the menu should grow.      |
+
+### Example
+
+<Toaster />
+
+<Demo title='Menu' background={colors.white}>
+  <div style={{ display: 'flex', gap: '8px', flexDirection: 'row'}}>
+    <MenuDropdown placement="left"/>
+  </div>
+</Demo>
+
+```jsx
+export default function MenuMDX() {
+  return (
+    <div style={{ position: 'relative' }}>
+      <Menu
+        placement={placement}
+        triggerElement={
+          <NavAvatarButton
+            theme="ghost"
+            mini
+            className="only-destop"
+            photo="https://i.pravatar.cc/300"
+            onClick={avatarButtonHandler}
+          />
+        }
+      >
+        <div style={{ display: 'flex', flexDirection: 'column', rowGap: 12 }}>
+          <Button>Prueba menu item 1</Button>
+          <Button>Prueba menu item 2</Button>
+          <Button>Prueba menu item 3</Button>
+          <Button>Prueba menu item 4</Button>
+        </div>
+      </Menu>
+    </div>
+  )
+}
+```

@@ -51,7 +51,7 @@ import Footer from './Footer'
 import FooterMini from './FooterMini'
 import NavAvatarButton from '@/components/NavAvatarButton'
 import Drawer from '@/components/Drawer'
-import Dropdown from '@/components/Dropdown'
+import Menu from '@/components/Menu'
 import MenuDropdown from './MenuDropdown'
 import MenuList from '@/components/MenuList'
 import MenuItem from '@/components/MenuItem'
@@ -96,7 +96,7 @@ const mdxComponents = {
   FooterMini,
   NavAvatarButton,
   Drawer,
-  Dropdown,
+  Menu,
   MenuDropdown,
   MenuList,
   MenuItem,
