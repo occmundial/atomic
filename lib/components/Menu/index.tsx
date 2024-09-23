@@ -13,21 +13,21 @@ import {
   FloatingPortal
 } from '@floating-ui/react'
 
-interface DropdownProps {
+interface MenuProps {
   children: ReactNode
-  menuTrigger?: ReactElement
+  triggerElement?: ReactElement
   id?: string
   className?: string
   placement?: 'left' | 'right'
 }
 
-export default function Dropdown({
+export default function Menu({
   children,
   id,
   className,
-  menuTrigger,
+  triggerElement,
   placement = 'left'
-}: DropdownProps) {
+}: MenuProps) {
   const [open, setOpen] = useState(false)
   const classes = useStyles()
 
@@ -51,8 +51,8 @@ export default function Dropdown({
 
   return (
     <>
-      {menuTrigger
-        ? cloneElement(menuTrigger, {
+      {triggerElement
+        ? cloneElement(triggerElement, {
             ref: refs.setReference,
             ...getReferenceProps()
           })

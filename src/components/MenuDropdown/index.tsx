@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import Button from '@/components/Button'
-import Dropdown from '@/components/Dropdown'
+import Menu from '@/components/Menu'
 import NavAvatarButton from '@/components/NavAvatarButton'
 
-export default function MenuDropdown({ placement }) {
+export default function MenuMDX({ placement }) {
   const [open, setOpen] = useState(false)
 
   const avatarButtonHandler = () => {
@@ -11,9 +11,9 @@ export default function MenuDropdown({ placement }) {
   }
   return (
     <div style={{ position: 'relative' }}>
-      <Dropdown
+      <Menu
         placement={placement}
-        menuTrigger={
+        triggerElement={
           <NavAvatarButton
             theme="ghost"
             mini
@@ -29,7 +29,7 @@ export default function MenuDropdown({ placement }) {
           <Button>Prueba menu item 3</Button>
           <Button>Prueba menu item 4</Button>
         </div>
-      </Dropdown>
+      </Menu>
     </div>
   )
 }
