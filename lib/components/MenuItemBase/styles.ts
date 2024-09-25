@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
 import { borderRadius } from '@/tokens/future'
-import { colors } from '@/tokens/future'
+import { colors, spacing } from '@/tokens/future'
 
 export default createUseStyles({
   root: {
@@ -10,16 +10,16 @@ export default createUseStyles({
     borderRadius: borderRadius['br-xs']
   },
   paddingVertical: {
-    paddingTop: 16,
-    paddingBottom: 16
+    paddingTop: spacing['size-4'],
+    paddingBottom: spacing['size-4']
   },
   paddingVerticalDense: {
-    paddingTop: 12,
-    paddingBottom: 12
+    paddingTop: spacing['size-3'],
+    paddingBottom: spacing['size-3']
   },
   paddingHorizontal: {
-    paddingRight: 12,
-    paddingLeft: 12
+    paddingRight: spacing['size-3'],
+    paddingLeft: spacing['size-3']
   },
   alignItemsCenter: {
     alignItems: 'center'
