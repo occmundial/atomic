@@ -7,7 +7,7 @@ type SpacingClasses = {
 
 function generateSpacingClasses() {
   const spacingClasses: Record<string, object> = {}
-  for (const [key, value] of Object.values(spacing)) {
+  for (const [key, value] of Object.entries(spacing)) {
     spacingClasses[key] = { padding: value }
   }
   return spacingClasses as SpacingClasses
