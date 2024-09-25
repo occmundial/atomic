@@ -48,13 +48,11 @@ const MenuItem = <T extends ElementType = 'div'>(
   ref: Ref<T>
 ) => {
   const classes = useStyles()
-  const listContext = useMenuListContext()
-  const isDense = dense ?? listContext?.dense
 
   return (
     <MenuItemBase
       className={className?.root}
-      dense={isDense}
+      dense={dense}
       component={component}
       ref={ref}
       style={style?.root}
@@ -84,8 +82,8 @@ const MenuItem = <T extends ElementType = 'div'>(
             children
           ) : (
             <Text
-              bodyRegularStrong={!isDense}
-              bodySmallStrong={isDense}
+              bodyRegularStrong={!dense}
+              bodySmallStrong={dense}
               tag="span"
               {...textProps}
             >

@@ -41,6 +41,10 @@ import Tabs from './Tabs'
 import Tab from './Tabs/Tab'
 import TabContent from './Tabs/TabContent'
 import Menu from './Menu'
+import MenuItem from './MenuItem'
+import MenuDivider from './MenuDivider'
+import MenuList from './MenuList'
+import MenuUser from './MenuUser'
 
 export {
   Alert,
@@ -85,5 +89,9 @@ export {
   Tabs,
   Tab,
   TabContent,
-  Menu
+  Menu,
+  MenuItem,
+  MenuDivider,
+  MenuList,
+  MenuUser
 }
