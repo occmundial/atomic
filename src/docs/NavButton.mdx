@@ -1,16 +1,13 @@
 ---
-title: NavIcon
+title: NavButton
 section: components
 ---
 
-import Demo from '@/utils/components/Demo'
-import NavIcon from '@/components/NavTab'
-
-# NavIcon
+# NavButton
 
 ---
 
-The NavIcon component is icon component adapted to work with with Nav components
+The NavButton component is icon component adapted to work with with Nav components
 
 ## Props
 
@@ -35,9 +32,9 @@ The NavIcon component is icon component adapted to work with with Nav components
 You can choose between two themes: Default and white.
 
 <Demo title="Themes" background={colors.white}>
-  <NavIcon iconName="search" label="Búsqueda"/>
+  <NavButton iconName="search" label="Búsqueda"/>
   <div style={{ background: "black" }}>
-    <NavIcon iconName="search" label="Búsqueda" white/>
+    <NavButton iconName="search" label="Búsqueda" white/>
   </div>
 
 </Demo>
@@ -47,8 +44,8 @@ You can choose between two themes: Default and white.
 function Component() {
   return (
     <>
-      <NavIcon iconName="search" label="Búsqueda"/>
-      <NavIcon iconName="search" white label="Búsqueda"/>
+      <NavButton iconName="search" label="Búsqueda"/>
+      <NavButton iconName="search" white label="Búsqueda"/>
     </>
   )
 }
@@ -59,9 +56,9 @@ function Component() {
 Highlights the icon.
 
 <Demo title="Selected" background={colors.white}>
-  <NavIcon iconName="search" selected label="Búsqueda"/>
+  <NavButton iconName="search" selected label="Búsqueda"/>
   <div style={{ background: "black" }}>
-    <NavIcon iconName="search" white selected label="Búsqueda"/>
+    <NavButton iconName="search" white selected label="Búsqueda"/>
   </div>
 </Demo> 
 
@@ -70,8 +67,8 @@ Highlights the icon.
 function Component() {  
   return (
     <>
-      <NavIcon iconName="search" selected label="Búsqueda"/>
-      <NavIcon iconName="search" white selected label="Búsqueda"/>
+      <NavButton iconName="search" selected label="Búsqueda"/>
+      <NavButton iconName="search" white selected label="Búsqueda"/>
     </>
   )
 }
@@ -82,9 +79,9 @@ function Component() {
 Shows an indicator at the bottom of the component.
 
 <Demo title="Show Bar" background={colors.white}>
-  <NavIcon iconName="search" showBar label="Búsqueda"/>
+  <NavButton iconName="search" showBar label="Búsqueda"/>
   <div style={{ background: "black" }}>
-    <NavIcon iconName="search" white showBar label="Búsqueda"/>
+    <NavButton iconName="search" white showBar label="Búsqueda"/>
   </div>
 </Demo> 
 
@@ -93,8 +90,8 @@ Shows an indicator at the bottom of the component.
 function Component() {  
   return (
     <>
-      <NavIcon iconName="search" showBar label="Búsqueda"/>
-      <NavIcon iconName="search" white showBar label="Búsqueda"/>
+      <NavButton iconName="search" showBar label="Búsqueda"/>
+      <NavButton iconName="search" white showBar label="Búsqueda"/>
     </>
   )
 }
@@ -105,9 +102,9 @@ function Component() {
 Defines icon and label stacking direction.
 
 <Demo title="Direction" background={colors.white}>
-  <NavIcon iconName="search" label="Búsqueda" direction="col"/>
+  <NavButton iconName="search" label="Búsqueda" direction="col"/>
   <div style={{ background: "black" }}>
-    <NavIcon iconName="search" white label="Búsqueda" direction="col"/>
+    <NavButton iconName="search" white label="Búsqueda" direction="col"/>
   </div>
 </Demo> 
 
@@ -116,8 +113,8 @@ Defines icon and label stacking direction.
 function Component() {  
   return (
     <>
-      <NavIcon iconName="search" label="Búsqueda" direction="col"/>
-      <NavIcon iconName="search" white label="Búsqueda" direction="col"/>
+      <NavButton iconName="search" label="Búsqueda" direction="col"/>
+      <NavButton iconName="search" white label="Búsqueda" direction="col"/>
     </>
   )
 }
@@ -129,9 +126,9 @@ function Component() {
 Defines component width  
 
 <Demo title="Width" background={colors.white}>
-  <NavIcon iconName="search" label="Búsqueda" width={240}/>
+  <NavButton iconName="search" label="Búsqueda" width={240}/>
   <div style={{ background: "black" }}>
-    <NavIcon iconName="search" white label="Búsqueda" width={240}/>
+    <NavButton iconName="search" white label="Búsqueda" width={240}/>
   </div>
 </Demo> 
 
@@ -140,8 +137,8 @@ Defines component width
 function Component() {  
   return (
     <>
-      <NavIcon iconName="search" label="Búsqueda" width={240}/>
-      <NavIcon iconName="search" white label="Búsqueda" width={240}/>
+      <NavButton iconName="search" label="Búsqueda" width={240}/>
+      <NavButton iconName="search" white label="Búsqueda" width={240}/>
     </>
   )
 }

@@ -18,7 +18,7 @@ The NavTop component is a versatile navigation bar designed for use at the top o
 | `right`        | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the right side of the navigation bar |
 | `center`       | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the center of the navigation bar     |
 | `flexCenter`   | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components of the navigation bar                   |
-| `top`          | **[TopProp](#TopProp)[]**                                                                                                                                                                                      | -                | Defines the Nav Top links                                      |
+| `top`          | **[TopProp](#TopProp)[]**                                                                                                                                                                                      | -                | `[Deprecated]` Defines the Nav Top links                       |
 | `blue`         | **boolean**                                                                                                                                                                                                    | -                | Sets blue theme                                                |
 | `fixed`        | **boolean**                                                                                                                                                                                                    | -                | Sets fixed position                                            |
 | `hideOnScroll` | **boolean**                                                                                                                                                                                                    | -                | Hides the nav on scroll                                        |
@@ -62,15 +62,15 @@ Additional Button props are detailed in the table below.
 | `key`          | **string \| number**                        | -                | Key of the component                    |
 | `text`         | **string \| ReactNode**                     | -                | Defines the child component             |
 
-### IconElement
+### NavButton
 
-An object with the `type` property set to 'icon', where you can use all **[NavIcon props](/NavIcon)**.
+An object with the `type` property set to 'icon', where you can use all **[NavButton props](/NavButton)**.
 Additional NavIcon props are detailed in the table below.
 
 | Name           | Type                                        | Default value    | Description                             |
 | -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
-| `type`         | **icon**                                    | -                | Specifies the type of component to use  |
-| `key`          | **string \| number**                        | -                | Key of the component                    |
+| `type`         | **icon \| navButton**                       | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                          | -                | Key of the component                    |
 
 
 ### CustomElement
@@ -156,7 +156,7 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
       }
       const right = [
         {
-          key: 1,
+          key: 0,
           type: 'button',
           iconLeft: 'cart'
         },

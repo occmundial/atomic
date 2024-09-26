@@ -10,7 +10,7 @@ import classnames from 'classnames'
 import Grid from '@/components/Grid'
 import Flexbox from '@/components/Flexbox'
 import NavItem from '@/components/NavItem'
-import NavIcon from '@/components/NavIcon'
+import NavButton from '@/components/NavButton'
 import NavTop, { TopProps } from '@/components/NavTop'
 import Button, { ButtonProps } from '@/components/Button'
 import Icon from '@/components/Icon'
@@ -54,9 +54,9 @@ export interface DropdownElement {
   testId?: string
 }
 
-export interface IconElement {
+export interface NavButtonElement {
   key: string | number
-  type: 'icon'
+  type: 'navButton'
   label?: string
   onClick?: (e: SyntheticEvent) => void
   selected?: boolean
@@ -85,7 +85,7 @@ export type NavElement =
   | LinkElement
   | ButtonElement
   | DropdownElement
-  | IconElement
+  | NavButtonElement
   | CustomElement
   | LogoElement
   | AvatarButtonElement
@@ -212,10 +212,10 @@ const NavTab = ({
   )
 
   const renderIcon = useCallback(
-    (item: IconElement) => {
+    (item: NavButtonElement) => {
       return (
         <div className={classes.iconWrap} key={item.key}>
-          <NavIcon className={classes.icon} white={blue} {...item} />
+          <NavButton className={classes.icon} white={blue} {...item} />
         </div>
       )
     },
@@ -250,7 +250,7 @@ const NavTab = ({
           return renderDropdownLink(item)
         case 'button':
           return renderButton(item)
-        case 'icon':
+        case 'navButton':
           return renderIcon(item)
         case 'logo':
           return renderLogo(item)
