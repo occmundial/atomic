@@ -54,9 +54,9 @@ export interface DropdownElement {
   testId?: string
 }
 
-export interface IconElement {
+export interface NavButtonElement {
   key: string | number
-  type: 'icon' | 'navButton'
+  type: 'navButton'
   label?: string
   onClick?: (e: SyntheticEvent) => void
   selected?: boolean
@@ -85,7 +85,7 @@ export type NavElement =
   | LinkElement
   | ButtonElement
   | DropdownElement
-  | IconElement
+  | NavButtonElement
   | CustomElement
   | LogoElement
   | AvatarButtonElement
@@ -212,7 +212,7 @@ const NavTab = ({
   )
 
   const renderIcon = useCallback(
-    (item: IconElement) => {
+    (item: NavButtonElement) => {
       return (
         <div className={classes.iconWrap} key={item.key}>
           <NavButton className={classes.icon} white={blue} {...item} />
@@ -250,7 +250,6 @@ const NavTab = ({
           return renderDropdownLink(item)
         case 'button':
           return renderButton(item)
-        case 'icon':
         case 'navButton':
           return renderIcon(item)
         case 'logo':
