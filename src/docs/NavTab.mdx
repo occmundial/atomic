@@ -163,7 +163,7 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
         {
           key: 2,
           type: 'custom',
-          custom: <MenuDropdown placement="right"/>
+          custom: <MenuDropdown placement="right" />
         },
         {
           key: 1,
@@ -365,6 +365,8 @@ function Component() {
           theme:'ghostWhite'
         }
       ]
+      const right2 = [...right]
+      right2[1].theme = 'ghost'
       return (
         <>
           <NavTab isFluid blue top={top} left={left} right={right} />
@@ -441,8 +443,11 @@ function Component() {
     {
       key: 2,
       type: 'button',  
-      text: 'Secondary CTA'
+      text: 'Secondary CTA',
+      theme: 'ghostWhite'
     }
+    const right2 = [...right]
+    right2[1].theme = 'ghost'
   ]
   return (
     <>
@@ -461,17 +466,17 @@ function Component() {
       const [dropdown, setDropdown] = useState(false)
       const center = [{
         key: 1,
-        type: 'icon',
+        type: 'navButton',
         iconName: 'columns-gap'
       },
       {
         key: 2,
-        type: 'icon',
+        type: 'navButton',
         iconName: 'search'
       },
       {
         key: 3,
-        type: 'icon',
+        type: 'navButton',
         iconName: 'person'
       }]
       const left = [{
@@ -499,29 +504,29 @@ function Component() {
 function Component() {
   const [dropdown, setDropdown] = useState(false)
   const center = [{
-    key:1,
-    type:'icon',
-    iconName:'columns-gap'
+    key: 1,
+    type: 'navButton',
+    iconName: 'columns-gap'
   },
   {
-    key:2,
-    type:'icon',
-    iconName:'search'
+    key: 2,
+    type: 'navButton',
+    iconName: 'search'
   },
   {
-    key:3,
-    type:'icon',
-    iconName:'person'
+    key: 3,
+    type: 'navButton',
+    iconName: 'person'
   }]
   const left = [{
-    key:1,
-    type: 'icon',
-    iconName: 'menu'
+    key: 1,
+    type: 'button',
+    iconLeft: 'menu'
   }]
   const right = [{
-    key:1,
-    type:'icon',
-    iconName:'chat'
+    key: 1,
+    type: 'button',
+    iconLeft: 'chat'
   }]
   return (
     <>
@@ -532,24 +537,24 @@ function Component() {
 }
 ```
 
-### NavTab with NavIcons switching
+### NavTab with NavButtons switching
 
-<Demo title="NavTab with NavIcons switching" background={colors.white}>
+<Demo title="NavTab with NavButtons switching" background={colors.white}>
   <Function>
     { () => {
-      const [selected, setSelected] = useState('')
+      const [selected, setSelected] = useState('dashboard')
       const center = [{
         key:1,
-        type:'icon',
+        type:'navButton',
         iconName: 'columns-gap',
         label: 'Dashboard',
-        selected: selected === 'icon',
-        showBar: selected === 'icon',
-        onClick: () => setSelected('icon')
+        selected: selected === 'dashboard',
+        showBar: selected === 'dashboard',
+        onClick: () => setSelected('dashboard')
       },
       {
         key:2,
-        type:'icon',
+        type:'navButton',
         iconName:'search',
         label: 'Search',
         selected: selected === 'search',
@@ -558,12 +563,12 @@ function Component() {
       },
       {
         key:3,
-        type:'icon',
+        type:'navButton',
         iconName:'person',
         label: 'Profile',
-        selected: selected === 'person',
-        showBar: selected === 'person',
-        onClick: () => setSelected('person')
+        selected: selected === 'profile',
+        showBar: selected === 'profile',
+        onClick: () => setSelected('profile')
       }]
       const left = [{
         key:1,
@@ -585,13 +590,19 @@ function Component() {
       }]
       const right = [{
         key:1,
-        type:'button',
-        iconLeft:'cart'
+        type:'navButton',
+        iconName:'cart',
+        selected: selected === 'cart',
+        showBar: selected === 'cart',
+        onClick: () => setSelected('cart')
       },
       {
         key:2,
-        type:'button',
-        iconLeft:'chat'
+        type:'navButton',
+        iconName:'chat',
+        selected: selected === 'chat',
+        showBar: selected === 'chat',
+        onClick: () => setSelected('chat')
       },
       {
         key: 3,
@@ -600,6 +611,8 @@ function Component() {
         size: 'md',
         theme: 'tertiaryWhite'
       }]
+      const right2 = [...right]
+      right2[2].theme = 'tertiary'
       return (
         <>
           <NavTab isFluid blue center={center} left={left} right={right} />
@@ -611,21 +624,21 @@ function Component() {
 </Demo>
 
 ```jsx
-// How to use NavTab with NavIcons switching
+// How to use NavTab with NavButtons switching
 function Component() {
-  const [selected, setSelected] = useState('')
+  const [selected, setSelected] = useState('dashboard')
   const center = [{
     key:1,
-    type:'icon',
+    type:'navButton',
     iconName: 'columns-gap',
     label: 'Dashboard',
     selected: selected === 'icon',
     showBar: selected === 'icon',
-    onClick: () => setSelected('icon')
+    onClick: () => setSelected('dashboard')
   },
   {
     key:2,
-    type:'icon',
+    type:'navButton',
     iconName:'search',
     label: 'Search',
     selected: selected === 'search',
@@ -634,12 +647,12 @@ function Component() {
   },
   {
     key:3,
-    type:'icon',
+    type:'navButton',
     iconName:'person',
     label: 'Profile',
     selected: selected === 'person',
     showBar: selected === 'person',
-    onClick: () => setSelected('person')
+    onClick: () => setSelected('profile')
   }]
   const left = [{
     key:1,
@@ -661,7 +674,7 @@ function Component() {
   }]
   const right = [{
     key:1,
-    type:'icon',
+    type:'navButton',
     iconName:'cart',
     selected: selected === 'cart',
     showBar: selected === 'cart',
@@ -669,7 +682,7 @@ function Component() {
   },
   {
     key:2,
-    type:'icon',
+    type:'navButton',
     iconName:'chat',
     selected: selected === 'chat',
     showBar: selected === 'chat',
@@ -682,97 +695,12 @@ function Component() {
     size: 'md',
     theme: 'tertiaryWhite'
   }]
+  const right2 = [...right]
+  right2[2].theme = 'ghost'
   return (
     <>
       <NavTab isFluid blue center={center} left={left} right={right} />
       <NavTab isFluid center={center} left={left2} right={right} />
-    </>
-  )
-}
-```
-
-### NavTab with icons
-
-<Demo title="NavTab with icons" background={colors.white}>
-  <Function>
-    {() => {
-      const flexCenter = [{
-        key:1,
-        type:'icon',
-        iconName:'columns-gap',
-        label: 'Dashboard',
-        selected: false,
-        onClick: () => { console.log('dashboard') },
-        direction: 'col',
-        width: 96
-      },
-      {
-        key:2,
-        type:'icon',
-        iconName:'search',
-        label: 'Search',
-        selected: false,
-        onClick: () => { console.log('search') },
-        direction: 'col',
-        width: 96
-      },
-      {
-        key:3,
-        type:'icon',
-        iconName:'person',
-        label: 'Profile',
-        selected: true,
-        onClick: () => { console.log('profile') },
-        direction: 'col',
-        width: 96
-      }]
-      return (
-        <>
-          <NavTab isFluid blue flexCenter={flexCenter} />
-          <NavTab isFluid flexCenter={flexCenter} />
-        </>
-      )
-    }}
-  </Function>
-</Demo>
-
-```jsx
-// How to use NavTab with icons
-function Component() {
-  const flexCenter = [{
-    key:1,
-    type:'icon',
-    iconName:'columns-gap',
-    label: 'Dashboard',
-    selected: false,
-    onClick: () => { console.log('dashboard') },
-    direction: 'col',
-    width: 96
-  },
-  {
-    key:2,
-    type:'icon',
-    iconName:'search',
-    label: 'Search',
-    selected: false,
-    onClick: () => { console.log('search') },
-    direction: 'col',
-    width: 96
-  },
-  {
-    key:3,
-    type:'icon',
-    iconName:'person',
-    label: 'Profile',
-    selected: true,
-    onClick: () => { console.log('profile') },
-    direction: 'col',
-    width: 96
-  }]
-  return (
-    <>
-      <NavTab isFluid blue flexCenter={flexCenter} />
-      <NavTab isFluid flexCenter={flexCenter} />
     </>
   )
 }

@@ -2,9 +2,11 @@ import { useState } from 'react'
 import Button from '@/components/Button'
 import Menu from '@/components/Menu'
 import NavAvatarButton from '@/components/NavAvatarButton'
+import useWindowSize from '@/hooks/useWindowSize'
 
 export default function MenuMDX({ placement }) {
   const [open, setOpen] = useState(false)
+  const { width } = useWindowSize()
 
   const avatarButtonHandler = () => {
     setOpen(!open)
@@ -22,6 +24,7 @@ export default function MenuMDX({ placement }) {
             onClick={avatarButtonHandler}
           />
         }
+        drawer={width < 768}
       >
         <div style={{ display: 'flex', flexDirection: 'column', rowGap: 12 }}>
           <Button>Prueba menu item 1</Button>
