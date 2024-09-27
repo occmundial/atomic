@@ -52,22 +52,20 @@ const NavAside = ({
 
   return (
     <div
-      className={classnames(
-        classes.overlay,
-        { [classes.overlayShow]: show },
-        { [classes.overlayHide]: !show }
-      )}
+      className={classnames(classes.overlay, {
+        [classes.overlayShow]: show,
+        [classes.overlayHide]: !show
+      })}
       onClick={onClose}
       onTransitionEnd={onTransitionEnd}
     >
       <div
-        className={classnames(
-          classes.block,
-          { [classes.showLeft]: !right && show },
-          { [classes.showRight]: right && show },
-          { [classes.hideLeft]: !right && !show },
-          { [classes.hideRight]: right && !show }
-        )}
+        className={classnames(classes.block, {
+          [classes.showLeft]: !right && show,
+          [classes.showRight]: right && show,
+          [classes.hideLeft]: !right && !show,
+          [classes.hideRight]: right && !show
+        })}
         onClick={avoidClose}
       >
         <Card raised className={classes.card}>
