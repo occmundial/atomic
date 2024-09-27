@@ -12,6 +12,9 @@ import {
   FloatingFocusManager,
   FloatingPortal
 } from '@floating-ui/react'
+import Portal from '../Portal'
+import Drawer from '../Drawer'
+import NavTab from '../NavTab'
 
 interface MenuProps {
   children: ReactNode
@@ -19,6 +22,7 @@ interface MenuProps {
   id?: string
   className?: string
   placement?: 'left' | 'right'
+  drawer?: boolean
 }
 
 export default function Menu({
@@ -26,7 +30,8 @@ export default function Menu({
   id,
   className,
   triggerElement,
-  placement = 'left'
+  placement = 'left',
+  drawer
 }: MenuProps) {
   const [open, setOpen] = useState(false)
   const classes = useStyles()
@@ -57,7 +62,25 @@ export default function Menu({
             ...getReferenceProps()
           })
         : ''}
-      {open && (
+      <Portal show={open && drawer}>
+        <Drawer
+          header={
+            <NavTab
+              right={[
+                {
+                  key: 'close',
+                  type: 'navButton',
+                  iconName: 'x',
+                  onClick: () => setOpen(false)
+                }
+              ]}
+            />
+          }
+        >
+          {children}
+        </Drawer>
+      </Portal>
+      {open && !drawer && (
         <FloatingPortal>
           <FloatingFocusManager context={context} modal={false}>
             <div
