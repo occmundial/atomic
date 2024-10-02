@@ -16,7 +16,7 @@ export default function MenuMDX({ placement, darkMode = false, className }) {
     <div style={{ position: 'relative' }}>
       <Menu
         placement={placement}
-        className={className.menu}
+        className={className?.menu}
         triggerElement={
           <NavAvatarButton
             darkMode={darkMode}

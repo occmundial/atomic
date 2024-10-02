@@ -400,7 +400,7 @@ function Component() {
         {
           key: 1,
           type: 'custom',
-          custom: <MenuDropdown className={ avatar: "only-desktop", button: "menu" } darkMode />
+          custom: <MenuDropdown className={{ avatar: "only-desktop", button: "menu" }} darkMode />
         },
         {
           key: 2,
@@ -410,9 +410,9 @@ function Component() {
         },
       ];
       const right2 = [...right];
-      right2[0] = {
-        ...right[0],
-        custom: <MenuDropdown className={ avatar: "only-desktop", button: "menu" } />
+      right2[1] = {
+        ...right[1],
+        custom: <MenuDropdown className={{ avatar: "only-desktop", button: "menu" }}  />
       };
       return (
         <>
