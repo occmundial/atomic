@@ -1,3 +1,10 @@
+# [3.0.0-beta.63](https://github.com/occmundial/atomic/compare/v3.0.0-beta.62...v3.0.0-beta.63) (2024-10-02)
+
+
+### Bug Fixes
+
+* Documentation NavAvatarButton ([db8787a](https://github.com/occmundial/atomic/commit/db8787a127e72ed8753d83744d52f9c9aee3d376))
+
 # [3.0.0-beta.62](https://github.com/occmundial/atomic/compare/v3.0.0-beta.61...v3.0.0-beta.62) (2024-10-02)
 
 
