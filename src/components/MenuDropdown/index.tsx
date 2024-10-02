@@ -21,7 +21,7 @@ export default function MenuMDX({ placement, darkMode = false, className }) {
           <NavAvatarButton
             darkMode={darkMode}
             mini
-            className={className.button}
+            className={className?.button}
             photo="https://i.pravatar.cc/300"
             onClick={avatarButtonHandler}
           />

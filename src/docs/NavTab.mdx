@@ -400,7 +400,7 @@ function Component() {
         {
           key: 1,
           type: 'custom',
-          custom: <MenuDropdown className={{ avatar: "only-desktop", button: "menu" }} darkMode />
+          custom: <MenuDropdown className={{ menu: "menu", button: "only-desktop" }} darkMode />
         },
         {
           key: 2,
@@ -412,7 +412,7 @@ function Component() {
       const right2 = [...right];
       right2[1] = {
         ...right[1],
-        custom: <MenuDropdown className={{ avatar: "only-desktop", button: "menu" }}  />
+        custom: <MenuDropdown className={{ menu: "menu", button: "only-desktop" }}  />
       };
       return (
         <>
@@ -429,7 +429,7 @@ function Component() {
                 } 
               }
               .menu {
-                zIndex: 1000
+                z-index: 1000;
               }
             `}
           </style>
@@ -507,7 +507,7 @@ function Component() {
     {
       key: 1,
       type: 'custom',
-      custom: <MenuDropdown className={{ avatar: "only-desktop", button: "menu" }} darkMode />
+      custom: <MenuDropdown className={{ menu: "menu", button: "only-desktop" }} darkMode />
     },
     {
       key: 2,
@@ -519,7 +519,7 @@ function Component() {
   const right2 = [...right];
   right2[0] = {
     ...right[0],
-    custom: <MenuDropdown className={{ avatar: "only-desktop", button: "menu" }} />
+    custom: <MenuDropdown className={{ menu: "menu", button: "only-desktop" }} />
   };
   return (
     <>
