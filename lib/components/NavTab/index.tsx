@@ -20,13 +20,6 @@ import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 import useIcon from '@/hooks/useIcon'
-import NavAvatarButton, { NavAvatarButtonProps } from '../NavAvatarButton'
-
-export type AvatarButtonElement = {
-  key: string | number
-  type: 'avatarButton'
-  props: Omit<NavAvatarButtonProps, 'type'>
-}
 
 export interface LinkElement {
   key: string | number
@@ -88,7 +81,6 @@ export type NavElement =
   | NavButtonElement
   | CustomElement
   | LogoElement
-  | AvatarButtonElement
 
 export interface NavPosition extends Array<NavElement> {}
 
@@ -106,6 +98,7 @@ export interface NavTabProps {
   className?: string
   /** The recommendation is to set the breakpoint at `grid.xl` */
   isFluid?: boolean
+  isResponsive?: boolean
   noShadow?: boolean
 }
 
@@ -121,6 +114,7 @@ const NavTab = ({
   className,
   zIndex,
   hideOnScroll,
+  isResponsive,
   isFluid,
   noShadow
 }: NavTabProps) => {
@@ -197,20 +191,6 @@ const NavTab = ({
     [classes]
   )
 
-  const renderAvatarButton = useCallback(
-    ({ props, key }: AvatarButtonElement) => (
-      <NavAvatarButton
-        theme="ghost"
-        key={key}
-        mini
-        darkMode={blue}
-        {...props}
-        className={classnames(classes.button, props.className)}
-      />
-    ),
-    []
-  )
-
   const renderIcon = useCallback(
     (item: NavButtonElement) => {
       return (
@@ -256,8 +236,6 @@ const NavTab = ({
           return renderLogo(item)
         case 'custom':
           return renderCustom(item)
-        case 'avatarButton':
-          return renderAvatarButton(item)
       }
     },
     [
@@ -266,8 +244,7 @@ const NavTab = ({
       renderButton,
       renderIcon,
       renderLogo,
-      renderCustom,
-      renderAvatarButton
+      renderCustom
     ]
   )
 
@@ -294,7 +271,10 @@ const NavTab = ({
         )}
       >
         <Grid
-          className={classnames(classes.grid, isFluid && classes.gridFluid)}
+          className={classnames(
+            classes.grid,
+            isResponsive && classes.gridResponsive
+          )}
           fluid={isFluid}
         >
           <Flexbox

@@ -59,7 +59,19 @@ export default createUseStyles({
     height: '100%',
     position: 'relative'
   },
-  gridFluid: {
+  gridResponsive: {
+    [`@media screen and (min-width:${grid.xxs}px)`]: {
+      padding: '0 12'
+    },
+    [`@media screen and (min-width:${grid.xs}px)`]: {
+      padding: '0 16'
+    },
+    [`@media screen and (min-width:${grid.sm}px)`]: {
+      padding: '0 24'
+    },
+    [`@media screen and (min-width:${grid.md}px)`]: {
+      padding: '0 40'
+    },
     [`@media screen and (min-width:${grid.lg}px)`]: {
       margin: '0 auto',
       maxWidth: grid.lg - 60

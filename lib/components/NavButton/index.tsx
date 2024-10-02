@@ -1,4 +1,4 @@
-import React, { EventHandler, MouseEvent, useState } from 'react'
+import React, { EventHandler, MouseEvent } from 'react'
 import classnames from 'classnames'
 
 import Text from '@/components/Text'
