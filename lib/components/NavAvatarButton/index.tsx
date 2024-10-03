@@ -5,7 +5,7 @@ import Button, { ButtonProps } from '../Button'
 import Avatar, { AvatarProps } from '../Avatar'
 
 export type NavAvatarButtonProps = {
-  mini: boolean
+  noCompact?: boolean
 } & Omit<ButtonProps, 'children'> &
   Omit<AvatarProps, 'onEdit' | 'onClick' | 'disabled' | 'size'>
 
@@ -14,7 +14,7 @@ const NavAvatarButton = (
     photo,
     name,
     disabled,
-    mini,
+    noCompact,
     theme = 'ghost',
     type,
     className,
@@ -32,7 +32,7 @@ const NavAvatarButton = (
         theme={theme}
         {...buttonProps}
         className={classnames(
-          mini && classes.mini,
+          !noCompact && classes.mini,
           className,
           classes.avatarButton
         )}

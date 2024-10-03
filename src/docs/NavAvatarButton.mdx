@@ -1,0 +1,43 @@
+---
+title: NavAvatarButton
+section: components
+---
+
+
+# NavAvatarButton
+
+---
+
+Button with avatar designed to be used with the NavTab component
+
+## Props
+
+Props of the [Button component](/Button) are also available.
+
+| Name         | Type                                                  | Default value    | Description                                                                |
+| ------------ | ----------------------------------------------------- | ---------------- | -------------------------------------------------------------------------- |
+| `noCompact`  | **boolean**                                           | -                | There are four themes available: main, secondary, white, blue, flat.       |
+| `className`  | **{ avatar: string; button: string; }**               | -                | Adds classes to the avatar and button components.                          |
+| `style`      | **{ avatar: CSSProperties; button: CSSProperties; }** | -                | Adds styles to the avatar and button components.                           |
+| `photo`      | **boolean**                                           | -                | A url to show a photo as the avatar.                                       |
+| `name`       | **boolean**                                           | -                | Pass a name to show two initials as a Avatar.                              |
+
+## Examples
+
+### NavAvatarButton
+
+<Demo title="NavAside" background={colors.white}>
+  <div style={{ padding: '8px 16px', display: 'inline-block' }}>
+    <NavAvatarButton
+      photo="https://i.pravatar.cc/300"
+      onClick={() => console.log('clicked')}
+    />
+  </div>
+  <div style={{ padding: '8px 16px', background: colorsNew.nav.bg.inverse, display: 'inline-block' }}>
+    <NavAvatarButton
+      darkMode
+      photo="https://i.pravatar.cc/300"
+      onClick={() => console.log('clicked')}
+    />
+  </div>
+</Demo>
