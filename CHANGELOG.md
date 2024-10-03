@@ -1,3 +1,10 @@
+# [3.0.0-beta.64](https://github.com/occmundial/atomic/compare/v3.0.0-beta.63...v3.0.0-beta.64) (2024-10-02)
+
+
+### Bug Fixes
+
+* Menu dropdown classes ([96956dd](https://github.com/occmundial/atomic/commit/96956dd65f59609afc49f5a51b12693f42343a1d))
+
 # [3.0.0-beta.63](https://github.com/occmundial/atomic/compare/v3.0.0-beta.62...v3.0.0-beta.63) (2024-10-02)
 
 
