@@ -5,8 +5,19 @@ import MenuList from '@/components/MenuList'
 import MenuUser from '@/components/MenuUser'
 import MenuDivider from '@/components/MenuDivider'
 import MenuItem from '@/components/MenuItem'
+import { Placement } from '@floating-ui/react'
 
-export default function MenuMDX({ placement, darkMode = false, className }) {
+type MenuDx = {
+  placement: Placement
+  darkMode: boolean
+  className: { menu: string; button: string }
+}
+
+export default function MenuMDX({
+  placement = 'bottom-end',
+  darkMode = false,
+  className
+}: MenuDx) {
   const [open, setOpen] = useState(false)
 
   const avatarButtonHandler = () => {
