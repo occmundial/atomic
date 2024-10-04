@@ -1,3 +1,11 @@
+# [3.0.0-beta.66](https://github.com/occmundial/atomic/compare/v3.0.0-beta.65...v3.0.0-beta.66) (2024-10-04)
+
+
+### Bug Fixes
+
+* Remove lidt psdding dense ([a9e3c8a](https://github.com/occmundial/atomic/commit/a9e3c8ad7e075a7d7626a9344039bdc661ea4aef))
+* Remove padding from menu ([dc8503d](https://github.com/occmundial/atomic/commit/dc8503d47a3ffd22c4dbde2d1d28650b20b875e7))
+
 # [3.0.0-beta.65](https://github.com/occmundial/atomic/compare/v3.0.0-beta.64...v3.0.0-beta.65) (2024-10-03)
 
 
