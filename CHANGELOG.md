@@ -1,3 +1,15 @@
+# [3.0.0-beta.65](https://github.com/occmundial/atomic/compare/v3.0.0-beta.64...v3.0.0-beta.65) (2024-10-03)
+
+
+### Bug Fixes
+
+* Documentation hambruguer menu icon ([ac994a1](https://github.com/occmundial/atomic/commit/ac994a1d1033d95450c7f2550265491bcf43c607))
+
+
+### Features
+
+* Added NavAvatarMenu documentation ([7e1a493](https://github.com/occmundial/atomic/commit/7e1a493e27b5822a5d798490b0e48f9e069cde76))
+
 # [3.0.0-beta.64](https://github.com/occmundial/atomic/compare/v3.0.0-beta.63...v3.0.0-beta.64) (2024-10-02)
 
 
