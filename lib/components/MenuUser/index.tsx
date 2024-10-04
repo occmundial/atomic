@@ -87,7 +87,6 @@ const MenuItem = <T extends ElementType = 'div'>(
   return (
     <MenuItemBase
       className={className?.root}
-      dense={isDense}
       component={component as ElementType | undefined}
       ref={ref}
       style={style?.root}
