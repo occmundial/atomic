@@ -1,3 +1,10 @@
+# [3.0.0-beta.67](https://github.com/occmundial/atomic/compare/v3.0.0-beta.66...v3.0.0-beta.67) (2024-10-04)
+
+
+### Bug Fixes
+
+* Menu item position relative to target ([7b4c76f](https://github.com/occmundial/atomic/commit/7b4c76f0bd2fbea3354f032cfeee0543f1bc93a0))
+
 # [3.0.0-beta.66](https://github.com/occmundial/atomic/compare/v3.0.0-beta.65...v3.0.0-beta.66) (2024-10-04)
 
 
