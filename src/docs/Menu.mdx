@@ -17,14 +17,14 @@ A floating menu that should be wrapped by a relative element.
 
 ### Props
 
-| Name              | Type                       | Default value | Description                                                                                                                                                                                                                       |
-| ----------------- | -------------------------- | ------------- | --------------------------------------------------- |
-| `children`        | **ReactNode**              | -             | Children component passed to this container.        |
-| `triggerElement`  | **ReactNode**              | -             | React element that triggers the Menu status.    |
-| `open`            | **boolean**                | -             | Controls whether the Menu is visible or hidden.     |
-| `id`              | **string**                 | -             | The id of the button.                               |
-| `className`       | **string**                 | -             | Adds class(es) to the root container                |
-| `placement`       | **left** &#124; **right**  | `left`        | Controls which direction the menu should grow.      |
+| Name              | Type                                                                                                                                                                                       | Default value | Description                                         |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | --------------------------------------------------- |
+| `children`        | **ReactNode**                                                                                                                                                                              | -             | Children component passed to this container.        |
+| `triggerElement`  | **ReactNode**                                                                                                                                                                              | -             | React element that triggers the Menu status.        |
+| `open`            | **boolean**                                                                                                                                                                                | -             | Controls whether the Menu is visible or hidden.     |
+| `id`              | **string**                                                                                                                                                                                 | -             | The id of the button.                               |
+| `className`       | **string**                                                                                                                                                                                 | -             | Adds class(es) to the root container                |
+| `placement`       | **left** \| **right** \| **top** \| **bottom** \| **bottom-end** \| **left-start** \| **left-end** \| **right-start** \| **right-end** \| **top-start** \| **top-end** \| **bottom-start** | -             | Controls which direction the menu should grow.      |
 
 ### Example
 
@@ -32,7 +32,7 @@ A floating menu that should be wrapped by a relative element.
 
 <Demo title='Menu' background={colors.white}>
   <div style={{ display: 'flex', gap: '8px', flexDirection: 'row'}}>
-    <MenuDropdown placement="left"/>
+    <MenuDropdown placement="bottom-start"/>
   </div>
 </Demo>
 

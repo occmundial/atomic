@@ -1,4 +1,5 @@
 import {
+  ComponentProps,
   CSSProperties,
   ElementType,
   forwardRef,
@@ -7,13 +8,13 @@ import {
 } from 'react'
 import useStyles from './styles'
 import classNames from 'classnames'
-import { useMenuListContext } from '../MenuListProvider'
 import Text, { TextProps } from '../Text'
 import Icon, { IconProps } from '../Icon'
 import { colors } from '@/tokens/future'
 import MenuItemBase, { MenuItemBaseProps } from '../MenuItemBase'
+import { useMenuListContext } from '../MenuListProvider'
 
-type MenuItemProps<T extends ElementType> = {
+type MenuItemStaticProps = {
   disableText?: boolean
   textProps?: TextProps
   iconRightProps?: IconProps
@@ -30,7 +31,10 @@ type MenuItemProps<T extends ElementType> = {
     iconRightContainer?: CSSProperties
     iconLeftContainer?: CSSProperties
   }
-} & MenuItemBaseProps<T>
+}
+
+type MenuItemProps<T extends ElementType> = MenuItemStaticProps &
+  MenuItemBaseProps<T>
 
 const MenuItem = <T extends ElementType = 'div'>(
   {
@@ -42,18 +46,20 @@ const MenuItem = <T extends ElementType = 'div'>(
     dense,
     children,
     style,
-    component = 'div' as T,
+    component,
     ...menuItemprops
   }: MenuItemProps<T>,
   ref: Ref<T>
 ) => {
   const classes = useStyles()
+  const listContext = useMenuListContext()
+  const isDense = dense ?? listContext?.dense
 
   return (
     <MenuItemBase
       className={className?.root}
-      dense={dense}
-      component={component}
+      dense={isDense}
+      component={component as ElementType | undefined}
       ref={ref}
       style={style?.root}
       {...menuItemprops}
@@ -63,7 +69,7 @@ const MenuItem = <T extends ElementType = 'div'>(
           className={classNames(
             classes.iconContainer,
             className?.iconLeftContainer,
-            dense ? classes.iconContainerSizeDense : classes.iconContainerSize
+            isDense ? classes.iconContainerSizeDense : classes.iconContainerSize
           )}
           style={style?.iconLeftContainer}
         >
@@ -82,8 +88,8 @@ const MenuItem = <T extends ElementType = 'div'>(
             children
           ) : (
             <Text
-              bodyRegularStrong={!dense}
-              bodySmallStrong={dense}
+              bodyRegularStrong={!isDense}
+              bodySmallStrong={isDense}
               tag="span"
               {...textProps}
             >
@@ -98,7 +104,7 @@ const MenuItem = <T extends ElementType = 'div'>(
             classes.iconContainer,
             className?.iconRightContainer,
             classes.iconRight,
-            dense ? classes.iconContainerSizeDense : classes.iconContainerSize
+            isDense ? classes.iconContainerSizeDense : classes.iconContainerSize
           )}
           style={style?.iconLeftContainer}
         >
@@ -113,6 +119,6 @@ const MenuItem = <T extends ElementType = 'div'>(
   )
 }
 
-export default forwardRef(MenuItem) as <T extends ElementType>(
+export default forwardRef(MenuItem) as <T extends ElementType = 'div'>(
   p: MenuItemProps<T> & { ref?: Ref<T> }
 ) => ReactElement

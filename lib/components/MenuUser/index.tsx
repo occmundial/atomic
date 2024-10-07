@@ -11,6 +11,7 @@ import classNames from 'classnames'
 import Text, { TextProps } from '../Text'
 import MenuItemBase, { MenuItemBaseProps } from '../MenuItemBase'
 import Avatar, { AvatarProps } from '../Avatar'
+import { useMenuListContext } from '../MenuListProvider'
 
 type MenuItemProps<T extends ElementType> = {
   disableText?: boolean
@@ -52,6 +53,8 @@ const MenuItem = <T extends ElementType = 'div'>(
 ) => {
   const classes = useStyles()
   const primary = children ?? title
+  const listContext = useMenuListContext()
+  const isDense = dense ?? listContext?.dense
 
   const titleText = !primary ? null : disableText ? (
     primary
@@ -59,8 +62,8 @@ const MenuItem = <T extends ElementType = 'div'>(
     <Text
       className={classNames(classes.title, className?.title)}
       tag="span"
-      bodyLargeStrong={!dense}
-      bodyRegularStrong={dense}
+      bodyLargeStrong={!isDense}
+      bodyRegularStrong={isDense}
       {...titleTextProps}
     >
       {primary}
@@ -84,8 +87,7 @@ const MenuItem = <T extends ElementType = 'div'>(
   return (
     <MenuItemBase
       className={className?.root}
-      dense={dense}
-      component={component}
+      component={component as ElementType | undefined}
       ref={ref}
       style={style?.root}
       {...menuItemprops}
@@ -98,7 +100,7 @@ const MenuItem = <T extends ElementType = 'div'>(
           )}
           style={style?.avatarContainer}
         >
-          <Avatar size={dense ? 40 : 56} {...avatarProps} />
+          <Avatar size={isDense ? 40 : 56} {...avatarProps} />
         </div>
       )}
       <div

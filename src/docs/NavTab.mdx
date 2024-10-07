@@ -12,20 +12,21 @@ The NavTop component is a versatile navigation bar designed for use at the top o
 
 ## Props
 
-| Name           | Type                                                                                                                                                                                                           | Default value    | Description                                                    |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | -------------------------------------------------------------- |
-| `left`         | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the left side of the navigation bar  |
-| `right`        | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the right side of the navigation bar |
-| `center`       | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the center of the navigation bar     |
-| `flexCenter`   | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components of the navigation bar                   |
-| `top`          | **[TopProp](#TopProp)[]**                                                                                                                                                                                      | -                | `[Deprecated]` Defines the Nav Top links                       |
-| `blue`         | **boolean**                                                                                                                                                                                                    | -                | Sets blue theme                                                |
-| `fixed`        | **boolean**                                                                                                                                                                                                    | -                | Sets fixed position                                            |
-| `hideOnScroll` | **boolean**                                                                                                                                                                                                    | -                | Hides the nav on scroll                                        |
-| `bottom`       | **boolean**                                                                                                                                                                                                    | -                | Adds bottom padding                                            |
-| `zIndex`       | **number**                                                                                                                                                                                                     | -                | Specifies the nav z-index                                      |
-| `className`    | **string**                                                                                                                                                                                                     | -                | Adds classes to nav container                                  |
-| `isFluid`      | **boolean**                                                                                                                                                                                                    | -                | Adds a responsive padding                                      |
+| Name           | Type                                                                                                                                                                                                           | Default value    | Description                                                                        |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------- |
+| `left`         | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the left side of the navigation bar                      |
+| `right`        | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the right side of the navigation bar                     |
+| `center`       | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the center of the navigation bar                         |
+| `flexCenter`   | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components of the navigation bar                                       |
+| `top`          | **[TopProp](#TopProp)[]**                                                                                                                                                                                      | -                | `[Deprecated]` Defines the Nav Top links                                           |
+| `blue`         | **boolean**                                                                                                                                                                                                    | -                | Sets blue theme                                                                    |
+| `fixed`        | **boolean**                                                                                                                                                                                                    | -                | Sets the NavTab to a fixed position at the top                                     |
+| `hideOnScroll` | **boolean**                                                                                                                                                                                                    | -                | Hides the nav on scroll                                                            |
+| `bottom`       | **boolean**                                                                                                                                                                                                    | -                | Fixes the NavTab to the bottom of the screen (you have to also set fixed as true). |
+| `zIndex`       | **number**                                                                                                                                                                                                     | 999              | Specifies the nav z-index (defaults to 999)                                        |
+| `className`    | **string**                                                                                                                                                                                                     | -                | Adds classes to nav container                                                      |
+| `isFluid`      | **boolean**                                                                                                                                                                                                    | -                | `[Deprecated]` Adds a simple responsive padding                                      |
+| `isResponsive` | **boolean**                                                                                                                                                                                                    | -                | Adds a responsive padding                                                          |
 
 
 ### LinkElement
@@ -64,13 +65,13 @@ Additional Button props are detailed in the table below.
 
 ### NavButton
 
-An object with the `type` property set to 'icon', where you can use all **[NavButton props](/NavButton)**.
+An object with the `type` property set to 'navButton', where you can use all **[NavButton props](/NavButton)**.
 Additional NavIcon props are detailed in the table below.
 
 | Name           | Type                                        | Default value    | Description                             |
 | -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
-| `type`         | **icon \| navButton**                       | -                | Specifies the type of component to use  |
-| `key`          | **string \| number**                          | -                | Key of the component                    |
+| `type`         | **navButton**                               | -                | Specifies the type of component to use  |
+| `key`          | **string \| number**                        | -                | Key of the component                    |
 
 
 ### CustomElement
@@ -100,15 +101,15 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
 
 ## Examples
 
-### NavTab
+### NavTab Unlogged
 
-<Demo title="NavTab" background={colors.white}>
+<Demo title="NavTab Unlogged" background={colors.white}>
   <Function>
     { () => {
-      const [selected, setSelected] = useState('Vacantes')
+      const [selected, setSelected] = useState('Vacantes');
       const left = [
         {
-          key:0,
+          key: 0,
           type: 'logo',
           logo: (
             <a href="#NavTab" style={{ display: 'flex' }}>
@@ -117,8 +118,8 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
           )
         },
         {
-          key:1,
-          type:'icon',
+          key: 1,
+          type: 'navButton',
           label: 'Vacantes',
           className: 'only-desktop',
           selected: selected === 'Vacantes',
@@ -126,8 +127,8 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
           onClick: () => setSelected('Vacantes')
         },
         {
-          key:2,
-          type:'icon',
+          key: 2,
+          type: 'navButton',
           label: 'Talento',
           className: 'only-desktop',
           selected: selected === 'Talento',
@@ -135,44 +136,63 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
           onClick: () => setSelected('Talento')
         },
         {
-          key:3,
-          type:'icon',
+          key: 3,
+          type: 'navButton',
           label: 'Ayuda',
           className: 'only-desktop',
           selected: selected === 'Ayuda',
           showBar: selected === 'Ayuda',
           onClick: () => setSelected('Ayuda')
         }
-      ]
-      const left2 = [...left]
+      ];
+      const left2 = [...left];
       left2[0] = {
-        key:0,
+        key: 0,
         type: 'logo',
         logo: (
           <a href="#NavTab" style={{ display: 'flex' }}>
-            <Logo variant="occLogo" theme="blue" />
+            <Logo variant="occLogo" />
           </a>
         )
-      }
+      };
       const right = [
         {
           key: 0,
           type: 'button',
-          iconLeft: 'cart'
-        },
-        {
-          key: 2,
-          type: 'custom',
-          custom: <MenuDropdown placement="right" />
+          text: 'Juan Alvez',
+          size: 'md',
+          className: 'only-desktop',
         },
         {
           key: 1,
           type: 'button',
+          text: 'Juan Alvez',
+          size: 'md',
+          theme: 'tertiaryWhite',
+          className: 'only-desktop',
+        },
+        {
+          key: 2,
+          type: 'button',
+          iconLeft: 'search'
+        },
+        {
+          key: 3,
+          type: 'button',
           className: 'only-mobile',
           iconLeft: 'menu'
         },
-      ]
-      return (  
+      ];
+      const right2 = [...right];
+      right2[0] = {
+        ...right[0],
+        theme: 'ghostGrey'
+      };
+      right2[1] = {
+        ...right[1],
+        theme: 'tertiary'
+      };
+      return (
         <>
           <style>
             {`
@@ -188,21 +208,25 @@ An object where you can use all **[NavItem props](/NavItem)** except for `white`
               }
             `}
           </style>
+          <p>
+            In this exaple isFluid (deprecated property) is used instead of isResponsise (preferable) to avoid to break the example.
+          </p>
+          <br/>
           <NavTab isFluid blue left={left} right={right} />
-          <NavTab isFluid left={left2} right={right} />
+          <NavTab isFluid left={left2} right={right2} />
         </>
-      )
+      );
     }}
   </Function>
 </Demo>
 
 ```jsx
-// How to use NavTab
+// Example
 function Component() {
-  const [selected, setSelected] = useState('Vacantes')
+  const [selected, setSelected] = useState('Vacantes');
   const left = [
     {
-      key:0,
+      key: 0,
       type: 'logo',
       logo: (
         <a href="#NavTab" style={{ display: 'flex' }}>
@@ -211,8 +235,8 @@ function Component() {
       )
     },
     {
-      key:1,
-      type:'icon',
+      key: 1,
+      type: 'navButton',
       label: 'Vacantes',
       className: 'only-desktop',
       selected: selected === 'Vacantes',
@@ -220,8 +244,8 @@ function Component() {
       onClick: () => setSelected('Vacantes')
     },
     {
-      key:2,
-      type:'icon',
+      key: 2,
+      type: 'navButton',
       label: 'Talento',
       className: 'only-desktop',
       selected: selected === 'Talento',
@@ -229,47 +253,63 @@ function Component() {
       onClick: () => setSelected('Talento')
     },
     {
-      key:3,
-      type:'icon',
+      key: 3,
+      type: 'navButton',
       label: 'Ayuda',
       className: 'only-desktop',
       selected: selected === 'Ayuda',
       showBar: selected === 'Ayuda',
       onClick: () => setSelected('Ayuda')
     }
-  ]
-  const left2 = [...left]
+  ];
+  const left2 = [...left];
   left2[0] = {
-    key:0,
+    key: 0,
     type: 'logo',
     logo: (
       <a href="#NavTab" style={{ display: 'flex' }}>
-        <Logo variant="occLogo" theme="blue" />
+        <Logo variant="occLogo" />
       </a>
     )
-  }
+  };
   const right = [
+    {
+      key: 0,
+      type: 'button',
+      text: 'Juan Alvez',
+      size: 'md',
+      className: 'only-desktop',
+    },
     {
       key: 1,
       type: 'button',
-      iconLeft: 'cart'
+      text: 'Juan Alvez',
+      size: 'md',
+      theme: 'tertiaryWhite',
+      className: 'only-desktop',
     },
     {
       key: 2,
-      type: 'avatarButton',
-      props: {
-        className: 'only-desktop',
-        photo:'https://i.pravatar.cc/300'
-      }
+      type: 'button',
+      iconLeft: 'search'
     },
     {
-      key: 1,
+      key: 3,
       type: 'button',
       className: 'only-mobile',
       iconLeft: 'menu'
     },
-  ]
-  return (  
+  ];
+  const right2 = [...right];
+  right2[0] = {
+    ...right[0],
+    theme: 'ghostGrey'
+  };
+  right2[1] = {
+    ...right[1],
+    theme: 'tertiary'
+  };
+  return (
     <>
       <style>
         {`
@@ -285,17 +325,565 @@ function Component() {
           }
         `}
       </style>
+      <p>
+        In this exaple isFluid (deprecated property) is used instead of isResponsise (preferable) to avoid to break the example.
+      </p>
+      <br/>
       <NavTab isFluid blue left={left} right={right} />
-      <NavTab isFluid left={left2} right={right} />
+      <NavTab isFluid left={left2} right={right2} />
+    </>
+  );
+}
+```
+
+### NavTab Logged
+
+<Demo title="NavTab Logged" background={colors.white}>
+  <Function>
+    { () => {
+      const [selected, setSelected] = useState('Vacantes');
+      const left = [
+        {
+          key: 0,
+          type: 'logo',
+          logo: (
+            <a href="#NavTab" style={{ display: 'flex' }}>
+              <Logo variant="occLogo" theme="white" />
+            </a>
+          )
+        },
+        {
+          key: 1,
+          type: 'navButton',
+          label: 'Vacantes',
+          className: 'only-desktop',
+          selected: selected === 'Vacantes',
+          showBar: selected === 'Vacantes',
+          onClick: () => setSelected('Vacantes')
+        },
+        {
+          key: 2,
+          type: 'navButton',
+          label: 'Talento',
+          className: 'only-desktop',
+          selected: selected === 'Talento',
+          showBar: selected === 'Talento',
+          onClick: () => setSelected('Talento')
+        },
+        {
+          key: 3,
+          type: 'navButton',
+          label: 'Ayuda',
+          className: 'only-desktop',
+          selected: selected === 'Ayuda',
+          showBar: selected === 'Ayuda',
+          onClick: () => setSelected('Ayuda')
+        }
+      ];
+      const left2 = [...left];
+      left2[0] = {
+        key: 0,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <Logo variant="occLogo" />
+          </a>
+        )
+      };
+      const right = [
+        {
+          key: 0,
+          type: 'button',
+          className: 'only-desktop',
+          iconLeft: 'search'
+        },
+        {
+          key: 1,
+          type: 'custom',
+          custom: <MenuDropdown className={{ menu: "menu", button: "only-desktop" }} darkMode />
+        },
+        {
+          key: 2,
+          type: 'button',
+          className: 'only-mobile',
+          iconLeft: 'menu'
+        },
+      ];
+      const right2 = [...right];
+      right2[1] = {
+        ...right[1],
+        custom: <MenuDropdown className={{ menu: "menu", button: "only-desktop" }}  />
+      };
+      return (
+        <>
+          <style>
+            {`
+              @media screen and (min-width: ${grid.sm}px) {
+                .only-mobile {
+                  display: none;
+                } 
+              }
+              @media screen and (max-width: ${grid.sm - 1}px) {
+                .only-desktop {
+                  display: none;
+                } 
+              }
+              .menu {
+                z-index: 1000;
+              }
+            `}
+          </style>
+          <p>
+            In this exaple isFluid (deprecated property) is used instead of isResponsise (preferable) to avoid to break the example.
+          </p>
+          <br/>
+          <NavTab isFluid blue left={left} right={right} />
+          <NavTab isFluid left={left2} right={right2} />
+        </>
+      );
+    }}
+  </Function>
+</Demo>
+
+```jsx  
+// Example
+function Component() {
+  const [selected, setSelected] = useState('Vacantes');
+  const left = [
+    {
+      key: 0,
+      type: 'logo',
+      logo: (
+        <a href="#NavTab" style={{ display: 'flex' }}>
+          <Logo variant="occLogo" theme="white" />
+        </a>
+      )
+    },
+    {
+      key: 1,
+      type: 'navButton',
+      label: 'Vacantes',
+      className: 'only-desktop',
+      selected: selected === 'Vacantes',
+      showBar: selected === 'Vacantes',
+      onClick: () => setSelected('Vacantes')
+    },
+    {
+      key: 2,
+      type: 'navButton',
+      label: 'Talento',
+      className: 'only-desktop',
+      selected: selected === 'Talento',
+      showBar: selected === 'Talento',
+      onClick: () => setSelected('Talento')
+    },
+    {
+      key: 3,
+      type: 'navButton',
+      label: 'Ayuda',
+      className: 'only-desktop',
+      selected: selected === 'Ayuda',
+      showBar: selected === 'Ayuda',
+      onClick: () => setSelected('Ayuda')
+    }
+  ];
+  const left2 = [...left];
+  left2[0] = {
+    key: 0,
+    type: 'logo',
+    logo: (
+      <a href="#NavTab" style={{ display: 'flex' }}>
+        <Logo variant="occLogo" />
+      </a>
+    )
+  };
+  const right = [
+    {
+      key: 0,
+      type: 'button',
+      className: 'only-desktop',
+      iconLeft: 'search'
+    },
+    {
+      key: 1,
+      type: 'custom',
+      custom: <MenuDropdown className={{ menu: "menu", button: "only-desktop" }} darkMode />
+    },
+    {
+      key: 2,
+      type: 'button',
+      className: 'only-mobile',
+      iconLeft: 'menu'
+    },
+  ];
+  const right2 = [...right];
+  right2[0] = {
+    ...right[0],
+    custom: <MenuDropdown className={{ menu: "menu", button: "only-desktop" }} />
+  };
+  return (
+    <>
+      <style>
+        {`
+          @media screen and (min-width: ${grid.sm}px) {
+            .only-mobile {
+              display: none;
+            } 
+          }
+          @media screen and (max-width: ${grid.sm - 1}px) {
+            .only-desktop {
+              display: none;
+            } 
+          }
+          .menu {
+            zIndex: 1000
+          }
+        `}
+      </style>
+      <p>
+        In this exaple isFluid (deprecated property) is used instead of isResponsise (preferable) to avoid to break the example.
+      </p>
+      <br/>
+      <NavTab isFluid blue left={left} right={right} />
+      <NavTab isFluid left={left2} right={right2} />
+    </>
+  );
+}
+```
+
+### NavTab with center
+
+<Demo title="NavTab with center" background={colors.white}>
+  <Function>
+    { () => {
+      const [dropdown, setDropdown] = useState(false)
+      const center = [{
+        key: 1,
+        type: 'navButton',
+        iconName: 'columns-gap'
+      },
+      {
+        key: 2,
+        type: 'navButton',
+        iconName: 'search'
+      },
+      {
+        key: 3,
+        type: 'navButton',
+        iconName: 'person'
+      }]
+      const left = [{
+        key: 1,
+        type: 'button',
+        iconLeft: 'menu'
+      }]
+      const right = [{
+        key: 1,
+        type: 'button',
+        iconLeft: 'chat'
+      }]
+      return (
+        <>
+          <NavTab isFluid blue center={center} left={left} right={right} />
+          <NavTab isFluid center={center} left={left} right={right} />
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// How to use NavTab with center
+function Component() {
+  const [dropdown, setDropdown] = useState(false)
+  const center = [{
+    key:1,
+    type:'navButton',
+    iconName:'columns-gap'
+  },
+  {
+    key:2,
+    type:'navButton',
+    iconName:'search'
+  },
+  {
+    key:3,
+    type:'navButton',
+    iconName:'person'
+  }]
+  const left = [{
+    key:1,
+    type: 'navButton',
+    iconName: 'menu'
+  }]
+  const right = [{
+    key:1,
+    type:'navButton',
+    iconName:'chat'
+  }]
+  return (
+    <>
+      <NavTab isFluid blue center={center} left={left} right={right} />
+      <NavTab isFluid center={center} left={left} right={right} />
     </>
   )
 }
 ```
 
+### NavTab with NavIcons switching
+
+<Demo title="NavTab with NavIcons switching" background={colors.white}>
+  <Function>
+    { () => {
+      const [selected, setSelected] = useState('')
+      const center = [{
+        key:1,
+        type:'navButton',
+        iconName: 'columns-gap',
+        label: 'Dashboard',
+        selected: selected === 'columns-gap',
+        showBar: selected === 'columns-gap',
+        onClick: () => setSelected('columns-gap')
+      },
+      {
+        key:2,
+        type:'navButton',
+        iconName:'search',
+        label: 'Search',
+        selected: selected === 'search',
+        showBar: selected === 'search',
+        onClick: () => setSelected('search')
+      },
+      {
+        key:3,
+        type:'navButton',
+        iconName:'person',
+        label: 'Profile',
+        selected: selected === 'person',
+        showBar: selected === 'person',
+        onClick: () => setSelected('person')
+      }]
+      const left = [{
+        key:1,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <Logo variant="occLogo" theme="white" />
+          </a>
+        )
+      }]
+      const left2 = [{
+        key:1,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <Logo variant="occLogo" theme="blue" />
+          </a>
+        )
+      }]
+      const right = [{
+        key:1,
+        type:'button',
+        iconLeft:'cart'
+      },
+      {
+        key:2,
+        type:'button',
+        iconLeft:'chat'
+      },
+      {
+        key: 3,
+        type: 'button',
+        text: 'Juan Alvez',
+        size: 'md',
+        theme: 'tertiaryWhite'
+      }]
+      const right2 = [...right]
+      right2[2] = {
+        ...right[2],
+        theme: 'tertiary'
+      }
+      return (
+        <>
+          <NavTab isFluid blue center={center} left={left} right={right} />
+          <NavTab isFluid center={center} left={left2} right={right2} />
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// How to use NavTab with NavIcons switching
+function Component() {
+  const [selected, setSelected] = useState('')
+  const center = [{
+    key:1,
+    type:'navButton',
+    iconName: 'columns-gap',
+    label: 'Dashboard',
+    selected: selected === 'columns-gap',
+    showBar: selected === 'columns-gap',
+    onClick: () => setSelected('columns-gap')
+  },
+  {
+    key:2,
+    type:'navButton',
+    iconName:'search',
+    label: 'Search',
+    selected: selected === 'search',
+    showBar: selected === 'search',
+    onClick: () => setSelected('search')
+  },
+  {
+    key:3,
+    type:'navButton',
+    iconName:'person',
+    label: 'Profile',
+    selected: selected === 'person',
+    showBar: selected === 'person',
+    onClick: () => setSelected('person')
+  }]
+  const left = [{
+    key:1,
+    type: 'logo',
+    logo: (
+      <a href="#NavTab" style={{ display: 'flex' }}>
+        <Logo variant="occLogo" theme="white" />
+      </a>
+    )
+  }]
+  const left2 = [{
+    key:1,
+    type: 'logo',
+    logo: (
+      <a href="#NavTab" style={{ display: 'flex' }}>
+        <Logo variant="occLogo" theme="blue" />
+      </a>
+    )
+  }]
+  const right = [{
+    key:1,
+    type:'navButton',
+    iconName:'cart',
+    selected: selected === 'cart',
+    showBar: selected === 'cart',
+    onClick: () => setSelected('cart')
+  },
+  {
+    key:2,
+    type:'navButton',
+    iconName:'chat',
+    selected: selected === 'chat',
+    showBar: selected === 'chat',
+    onClick: () => setSelected('chat')
+  },
+  {
+    key: 3,
+    type: 'button',
+    text: 'Juan Alvez',
+    size: 'md',
+    theme: 'tertiaryWhite'
+  }]
+  return (
+    <>
+      <NavTab isFluid blue center={center} left={left} right={right} />
+      <NavTab isFluid center={center} left={left2} right={right} />
+    </>
+  )
+}
+```
+
+### NavTab with icons
+
+<Demo title="NavTab with icons" background={colors.white}>
+  <Function>
+    {() => {
+      const flexCenter = [{
+        key:1,
+        type:'navButton',
+        iconName:'columns-gap',
+        label: 'Dashboard',
+        selected: false,
+        onClick: () => { console.log('dashboard') },
+        direction: 'col',
+        width: 96
+      },
+      {
+        key:2,
+        type:'navButton',
+        iconName:'search',
+        label: 'Search',
+        selected: false,
+        onClick: () => { console.log('search') },
+        direction: 'col',
+        width: 96
+      },
+      {
+        key:3,
+        type:'navButton',
+        iconName:'person',
+        label: 'Profile',
+        selected: true,
+        onClick: () => { console.log('profile') },
+        direction: 'col',
+        width: 96
+      }]
+      return (
+        <>
+          <NavTab isFluid blue flexCenter={flexCenter} />
+          <NavTab isFluid flexCenter={flexCenter} />
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// How to use NavTab with icons
+function Component() {
+  const flexCenter = [{
+    key:1,
+    type:'navButton',
+    iconName:'columns-gap',
+    label: 'Dashboard',
+    selected: false,
+    onClick: () => { console.log('dashboard') },
+    direction: 'col',
+    width: 96
+  },
+  {
+    key:2,
+    type:'navButton',
+    iconName:'search',
+    label: 'Search',
+    selected: false,
+    onClick: () => { console.log('search') },
+    direction: 'col',
+    width: 96
+  },
+  {
+    key:3,
+    type:'navButton',
+    iconName:'person',
+    label: 'Profile',
+    selected: true,
+    onClick: () => { console.log('profile') },
+    direction: 'col',
+    width: 96
+  }]
+  return (
+    <>
+      <NavTab isFluid blue flexCenter={flexCenter} />
+      <NavTab isFluid flexCenter={flexCenter} />
+    </>
+  )
+}
+```
 
 ### NavTab with NavTop
 
-<Demo title="NavTab with NavTop" background={colors.white}>
+<Demo title="[Deprecated] NavTab with NavTop" background={colors.white}>
   <Function>
     { () => {
       const [dropdown, setDropdown] = useState(false)
@@ -370,7 +958,7 @@ function Component() {
       return (
         <>
           <NavTab isFluid blue top={top} left={left} right={right} />
-          <NavTab isFluid top={top} left={left2} right={right} />
+          <NavTab isFluid top={top} left={left2} right={right2} />
         </>
       )
     }}
@@ -378,7 +966,7 @@ function Component() {
 </Demo>
 
 ```jsx
-// How to use NavTab with NavTop
+// Example
 function Component() {
   const [dropdown, setDropdown] = useState(false)
   const top = [

@@ -10,7 +10,8 @@ import {
   useClick,
   useInteractions,
   FloatingFocusManager,
-  FloatingPortal
+  FloatingPortal,
+  Placement
 } from '@floating-ui/react'
 import Portal from '../Portal'
 import Drawer from '../Drawer'
@@ -21,7 +22,7 @@ interface MenuProps {
   triggerElement?: ReactElement
   id?: string
   className?: string
-  placement?: 'left' | 'right'
+  placement?: Placement
   drawer?: boolean
 }
 
@@ -30,7 +31,7 @@ export default function Menu({
   id,
   className,
   triggerElement,
-  placement = 'left',
+  placement,
   drawer
 }: MenuProps) {
   const [open, setOpen] = useState(false)
@@ -39,7 +40,7 @@ export default function Menu({
   const { refs, floatingStyles, context } = useFloating({
     open,
     onOpenChange: setOpen,
-    placement: placement === 'left' ? 'bottom-start' : 'bottom-end',
+    placement,
     middleware: [offset(16), shift()],
     whileElementsMounted: autoUpdate
   })

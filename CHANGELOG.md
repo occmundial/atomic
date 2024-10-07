@@ -1,3 +1,67 @@
+# [3.0.0-beta.67](https://github.com/occmundial/atomic/compare/v3.0.0-beta.66...v3.0.0-beta.67) (2024-10-04)
+
+
+### Bug Fixes
+
+* Menu item position relative to target ([7b4c76f](https://github.com/occmundial/atomic/commit/7b4c76f0bd2fbea3354f032cfeee0543f1bc93a0))
+
+# [3.0.0-beta.66](https://github.com/occmundial/atomic/compare/v3.0.0-beta.65...v3.0.0-beta.66) (2024-10-04)
+
+
+### Bug Fixes
+
+* Remove lidt psdding dense ([a9e3c8a](https://github.com/occmundial/atomic/commit/a9e3c8ad7e075a7d7626a9344039bdc661ea4aef))
+* Remove padding from menu ([dc8503d](https://github.com/occmundial/atomic/commit/dc8503d47a3ffd22c4dbde2d1d28650b20b875e7))
+
+# [3.0.0-beta.65](https://github.com/occmundial/atomic/compare/v3.0.0-beta.64...v3.0.0-beta.65) (2024-10-03)
+
+
+### Bug Fixes
+
+* Documentation hambruguer menu icon ([ac994a1](https://github.com/occmundial/atomic/commit/ac994a1d1033d95450c7f2550265491bcf43c607))
+
+
+### Features
+
+* Added NavAvatarMenu documentation ([7e1a493](https://github.com/occmundial/atomic/commit/7e1a493e27b5822a5d798490b0e48f9e069cde76))
+
+# [3.0.0-beta.64](https://github.com/occmundial/atomic/compare/v3.0.0-beta.63...v3.0.0-beta.64) (2024-10-02)
+
+
+### Bug Fixes
+
+* Menu dropdown classes ([96956dd](https://github.com/occmundial/atomic/commit/96956dd65f59609afc49f5a51b12693f42343a1d))
+
+# [3.0.0-beta.63](https://github.com/occmundial/atomic/compare/v3.0.0-beta.62...v3.0.0-beta.63) (2024-10-02)
+
+
+### Bug Fixes
+
+* Documentation NavAvatarButton ([db8787a](https://github.com/occmundial/atomic/commit/db8787a127e72ed8753d83744d52f9c9aee3d376))
+
+# [3.0.0-beta.62](https://github.com/occmundial/atomic/compare/v3.0.0-beta.61...v3.0.0-beta.62) (2024-10-02)
+
+
+### Bug Fixes
+
+* Function name ([816376e](https://github.com/occmundial/atomic/commit/816376e01a09d4f17f03abeaf4cc77b9346a6f0a))
+* Made some props of Menu components optional ([09715e3](https://github.com/occmundial/atomic/commit/09715e3cfbfc7f2ecdcdaa54ca9fbebc8ee9a395))
+* MenuItem props names ([87ad4fe](https://github.com/occmundial/atomic/commit/87ad4fe7438c20eace064d0800d9f4711fc016b4))
+* Rename dropdown to menu ([1b94991](https://github.com/occmundial/atomic/commit/1b9499147aabf061a7ca88e75b7ca1f9b9d36152))
+* Rename dropdown to menu ([5c5c5a6](https://github.com/occmundial/atomic/commit/5c5c5a6d01c9be2dc5a068d92af9e9c78571112b))
+* Resolve conflicts ([6d6b8eb](https://github.com/occmundial/atomic/commit/6d6b8eb9221ac0e5b99a0e85e623bc3c23175550))
+* Set overflow hidden for dropdown children container ([031afbf](https://github.com/occmundial/atomic/commit/031afbfadadad9ed09a0cd7f3402794e9885f607))
+* Use of object values intead object entries ([39200a0](https://github.com/occmundial/atomic/commit/39200a0197a630d5a7d92671ed6a48dda187e8fb))
+
+
+### Features
+
+*  Ajudtment to NavTab documentation and small fixes ([47d09be](https://github.com/occmundial/atomic/commit/47d09be27dda72ab86802bed990bf39ee5a6bf5c))
+* Add prop to render element that trigger dropdown ([9bf3a59](https://github.com/occmundial/atomic/commit/9bf3a5971c8b27011a6563bf1651bc370c21a2e3))
+* Added focus styles to MenuItems ([782df49](https://github.com/occmundial/atomic/commit/782df49ee2521d1faf899eeed0e789a96d70d2db))
+* Added Menu documention and updated Menu components ([566f668](https://github.com/occmundial/atomic/commit/566f668d74fa249b3c6bda7326e573322cfe28ea))
+* Small tweaks to Header related components documentations ([bfabafb](https://github.com/occmundial/atomic/commit/bfabafbd58120ba85f73269a39c3c094b845e784))
+
 # [3.0.0-beta.61](https://github.com/occmundial/atomic/compare/v3.0.0-beta.60...v3.0.0-beta.61) (2024-09-13)
 
 

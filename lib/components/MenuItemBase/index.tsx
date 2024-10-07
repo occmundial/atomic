@@ -9,9 +9,8 @@ import {
 } from 'react'
 import useStyles from './styles'
 import classNames from 'classnames'
-import { useMenuListContext } from '../MenuListProvider'
 
-export type MenuItemBaseProps<T extends ElementType> = {
+type MenuItemBaseStaticProps<T extends ElementType> = {
   alignItems?: 'center' | 'start'
   className?: string
   nonActivatable?: boolean
@@ -21,7 +20,15 @@ export type MenuItemBaseProps<T extends ElementType> = {
   children?: ReactNode
   selected?: boolean
   component?: T
-} & (ComponentProps<T> extends any ? {} : Omit<ComponentProps<T>, 'children'>)
+}
+
+type MenuItemBaseDynamicProps<T extends ElementType> = Omit<
+  ComponentProps<T>,
+  keyof MenuItemBaseStaticProps<T>
+>
+
+export type MenuItemBaseProps<T extends ElementType> =
+  MenuItemBaseStaticProps<T> & MenuItemBaseDynamicProps<T>
 
 const MenuItemBase = <T extends ElementType = 'div'>(
   {
@@ -39,8 +46,6 @@ const MenuItemBase = <T extends ElementType = 'div'>(
   ref: Ref<T>
 ) => {
   const classes = useStyles()
-  const listContext = useMenuListContext()
-  const isDense = dense ?? listContext?.dense
 
   return createElement(
     component,
@@ -49,7 +54,7 @@ const MenuItemBase = <T extends ElementType = 'div'>(
         classes.root,
         className,
         !disablePadding
-          ? isDense
+          ? dense
             ? classes.paddingVerticalDense
             : classes.paddingVertical
           : null,
@@ -69,6 +74,6 @@ const MenuItemBase = <T extends ElementType = 'div'>(
   )
 }
 
-export default forwardRef(MenuItemBase) as <T extends ElementType>(
-  p: MenuItemBaseProps<T> & { ref?: Ref<T> }
+export default forwardRef(MenuItemBase) as <T extends ElementType = 'div'>(
+  props: MenuItemBaseProps<T> & { ref?: Ref<T> }
 ) => ReactElement
