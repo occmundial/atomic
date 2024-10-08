@@ -25,13 +25,18 @@ export default function MenuMDX({
   }
   return (
     <div style={{ position: 'relative' }}>
-      <NavAvatarButton
-        darkMode={darkMode}
-        className={className?.button}
-        photo="https://i.pravatar.cc/300"
-        onClick={avatarButtonHandler}
-      />
-      <Menu placement={placement} className={className?.menu}>
+      <Menu
+        placement={placement}
+        className={className?.menu}
+        triggerElement={
+          <NavAvatarButton
+            darkMode={darkMode}
+            className={className?.button}
+            photo="https://i.pravatar.cc/300"
+            onClick={avatarButtonHandler}
+          />
+        }
+      >
         <div style={{ display: 'flex', flexDirection: 'column', rowGap: 12 }}>
           <MenuList component="nav" margin="size-3" dense>
             <MenuUser
