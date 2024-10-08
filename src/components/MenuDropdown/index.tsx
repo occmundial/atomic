@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Menu from '@/components/Menu'
 import NavAvatarButton from '@/components/NavAvatarButton'
-import useWindowSize from '@/hooks/useWindowSize'
 import MenuList from '@/components/MenuList'
 import MenuUser from '@/components/MenuUser'
 import MenuDivider from '@/components/MenuDivider'
@@ -20,26 +19,19 @@ export default function MenuMDX({
   className
 }: MenuDx) {
   const [open, setOpen] = useState(false)
-  const { width } = useWindowSize()
 
   const avatarButtonHandler = () => {
     setOpen(!open)
   }
   return (
     <div style={{ position: 'relative' }}>
-      <Menu
-        placement={placement}
-        className={className?.menu}
-        triggerElement={
-          <NavAvatarButton
-            darkMode={darkMode}
-            className={className?.button}
-            photo="https://i.pravatar.cc/300"
-            onClick={avatarButtonHandler}
-          />
-        }
-        drawer={width < 768}
-      >
+      <NavAvatarButton
+        darkMode={darkMode}
+        className={className?.button}
+        photo="https://i.pravatar.cc/300"
+        onClick={avatarButtonHandler}
+      />
+      <Menu placement={placement} className={className?.menu}>
         <div style={{ display: 'flex', flexDirection: 'column', rowGap: 12 }}>
           <MenuList component="nav" margin="size-3" dense>
             <MenuUser
