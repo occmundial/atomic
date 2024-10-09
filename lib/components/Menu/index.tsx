@@ -1,4 +1,4 @@
-import { LegacyRef, ReactElement, ReactNode, useState } from 'react'
+import { ReactElement, ReactNode } from 'react'
 import useStyles from './styles'
 import {
   useFloating,
