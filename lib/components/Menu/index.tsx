@@ -1,4 +1,4 @@
-import { cloneElement, ReactElement, ReactNode, useState } from 'react'
+import { ReactElement, ReactNode } from 'react'
 import useStyles from './styles'
 import {
   useFloating,
@@ -11,12 +11,16 @@ import {
   useInteractions,
   FloatingFocusManager,
   FloatingPortal,
+  ReferenceType,
   Placement
 } from '@floating-ui/react'
 
 interface MenuProps {
   children: ReactNode
   triggerElement?: ReactElement
+  open: boolean
+  setOpen: (open: boolean) => void
+  triggerRef?: ReferenceType
   id?: string
   className?: string
   placement?: Placement
@@ -26,38 +30,32 @@ export default function Menu({
   children,
   id,
   className,
-  triggerElement,
-  placement
+  triggerRef,
+  open,
+  setOpen,
+  placement = 'left'
 }: MenuProps) {
-  const [open, setOpen] = useState(false)
   const classes = useStyles()
 
   const { refs, floatingStyles, context } = useFloating({
     open,
     onOpenChange: setOpen,
-    placement,
+    placement: placement,
     middleware: [offset(16), shift()],
-    whileElementsMounted: autoUpdate
+    whileElementsMounted: autoUpdate,
+    elements: {
+      reference: triggerRef
+    }
   })
 
   const click = useClick(context)
   const dismiss = useDismiss(context)
   const role = useRole(context)
 
-  const { getReferenceProps, getFloatingProps } = useInteractions([
-    click,
-    dismiss,
-    role
-  ])
+  const { getFloatingProps } = useInteractions([click, dismiss, role])
 
   return (
     <>
-      {triggerElement
-        ? cloneElement(triggerElement, {
-            ref: refs.setReference,
-            ...getReferenceProps()
-          })
-        : ''}
       {open && (
         <FloatingPortal>
           <FloatingFocusManager context={context} modal={false}>

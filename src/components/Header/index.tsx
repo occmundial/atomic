@@ -23,8 +23,8 @@ export default function Header({ docs }: HeaderProps) {
     left: [
       {
         key: 'icon',
-        type: 'button',
-        iconLeft: 'menu',
+        type: 'navButton',
+        iconName: 'menu',
         onClick: () => setShowAside(true)
       },
       {

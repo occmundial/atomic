@@ -954,12 +954,7 @@ function Component() {
         }
       ]
       const right2 = [...right]
-      right2[1] = {
-        key:2,
-        type:'button',  
-        text:'Secondary CTA',
-        theme:'ghost'
-      }
+      right2[1].theme = 'ghost'
       return (
         <>
           <NavTab isFluid blue top={top} left={left} right={right} />
@@ -1036,13 +1031,264 @@ function Component() {
     {
       key: 2,
       type: 'button',  
-      text: 'Secondary CTA'
+      text: 'Secondary CTA',
+      theme: 'ghostWhite'
     }
+    const right2 = [...right]
+    right2[1].theme = 'ghost'
   ]
   return (
     <>
       <NavTab isFluid blue top={top} left={left} right={right} />
       <NavTab isFluid top={top} left={left2} right={right} />
+    </>
+  )
+}
+```
+
+### NavTab with center
+
+<Demo title="NavTab with center" background={colors.white}>
+  <Function>
+    { () => {
+      const [dropdown, setDropdown] = useState(false)
+      const center = [{
+        key: 1,
+        type: 'navButton',
+        iconName: 'columns-gap'
+      },
+      {
+        key: 2,
+        type: 'navButton',
+        iconName: 'search'
+      },
+      {
+        key: 3,
+        type: 'navButton',
+        iconName: 'person'
+      }]
+      const left = [{
+        key: 1,
+        type: 'button',
+        iconLeft: 'menu'
+      }]
+      const right = [{
+        key: 1,
+        type: 'button',
+        iconLeft: 'chat'
+      }]
+      return (
+        <>
+          <NavTab isFluid blue center={center} left={left} right={right} />
+          <NavTab isFluid center={center} left={left} right={right} />
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// How to use NavTab with center
+function Component() {
+  const [dropdown, setDropdown] = useState(false)
+  const center = [{
+    key: 1,
+    type: 'navButton',
+    iconName: 'columns-gap'
+  },
+  {
+    key: 2,
+    type: 'navButton',
+    iconName: 'search'
+  },
+  {
+    key: 3,
+    type: 'navButton',
+    iconName: 'person'
+  }]
+  const left = [{
+    key: 1,
+    type: 'button',
+    iconLeft: 'menu'
+  }]
+  const right = [{
+    key: 1,
+    type: 'button',
+    iconLeft: 'chat'
+  }]
+  return (
+    <>
+      <NavTab isFluid blue center={center} left={left} right={right} />
+      <NavTab isFluid center={center} left={left} right={right} />
+    </>
+  )
+}
+```
+
+### NavTab with NavButtons switching
+
+<Demo title="NavTab with NavButtons switching" background={colors.white}>
+  <Function>
+    { () => {
+      const [selected, setSelected] = useState('dashboard')
+      const center = [{
+        key:1,
+        type:'navButton',
+        iconName: 'columns-gap',
+        label: 'Dashboard',
+        selected: selected === 'dashboard',
+        showBar: selected === 'dashboard',
+        onClick: () => setSelected('dashboard')
+      },
+      {
+        key:2,
+        type:'navButton',
+        iconName:'search',
+        label: 'Search',
+        selected: selected === 'search',
+        showBar: selected === 'search',
+        onClick: () => setSelected('search')
+      },
+      {
+        key:3,
+        type:'navButton',
+        iconName:'person',
+        label: 'Profile',
+        selected: selected === 'profile',
+        showBar: selected === 'profile',
+        onClick: () => setSelected('profile')
+      }]
+      const left = [{
+        key:1,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <Logo variant="occLogo" theme="white" />
+          </a>
+        )
+      }]
+      const left2 = [{
+        key:1,
+        type: 'logo',
+        logo: (
+          <a href="#NavTab" style={{ display: 'flex' }}>
+            <Logo variant="occLogo" theme="blue" />
+          </a>
+        )
+      }]
+      const right = [{
+        key:1,
+        type:'navButton',
+        iconName:'cart',
+        selected: selected === 'cart',
+        showBar: selected === 'cart',
+        onClick: () => setSelected('cart')
+      },
+      {
+        key:2,
+        type:'navButton',
+        iconName:'chat',
+        selected: selected === 'chat',
+        showBar: selected === 'chat',
+        onClick: () => setSelected('chat')
+      },
+      {
+        key: 3,
+        type: 'button',
+        text: 'Juan Alvez',
+        size: 'md',
+        theme: 'tertiaryWhite'
+      }]
+      const right2 = [...right]
+      right2[2].theme = 'tertiary'
+      return (
+        <>
+          <NavTab isFluid blue center={center} left={left} right={right} />
+          <NavTab isFluid center={center} left={left2} right={right} />
+        </>
+      )
+    }}
+  </Function>
+</Demo>
+
+```jsx
+// How to use NavTab with NavButtons switching
+function Component() {
+  const [selected, setSelected] = useState('dashboard')
+  const center = [{
+    key:1,
+    type:'navButton',
+    iconName: 'columns-gap',
+    label: 'Dashboard',
+    selected: selected === 'icon',
+    showBar: selected === 'icon',
+    onClick: () => setSelected('dashboard')
+  },
+  {
+    key:2,
+    type:'navButton',
+    iconName:'search',
+    label: 'Search',
+    selected: selected === 'search',
+    showBar: selected === 'search',
+    onClick: () => setSelected('search')
+  },
+  {
+    key:3,
+    type:'navButton',
+    iconName:'person',
+    label: 'Profile',
+    selected: selected === 'person',
+    showBar: selected === 'person',
+    onClick: () => setSelected('profile')
+  }]
+  const left = [{
+    key:1,
+    type: 'logo',
+    logo: (
+      <a href="#NavTab" style={{ display: 'flex' }}>
+        <Logo variant="occLogo" theme="white" />
+      </a>
+    )
+  }]
+  const left2 = [{
+    key:1,
+    type: 'logo',
+    logo: (
+      <a href="#NavTab" style={{ display: 'flex' }}>
+        <Logo variant="occLogo" theme="blue" />
+      </a>
+    )
+  }]
+  const right = [{
+    key:1,
+    type:'navButton',
+    iconName:'cart',
+    selected: selected === 'cart',
+    showBar: selected === 'cart',
+    onClick: () => setSelected('cart')
+  },
+  {
+    key:2,
+    type:'navButton',
+    iconName:'chat',
+    selected: selected === 'chat',
+    showBar: selected === 'chat',
+    onClick: () => setSelected('chat')
+  },
+  {
+    key: 3,
+    type: 'button',
+    text: 'Juan Alvez',
+    size: 'md',
+    theme: 'tertiaryWhite'
+  }]
+  const right2 = [...right]
+  right2[2].theme = 'ghost'
+  return (
+    <>
+      <NavTab isFluid blue center={center} left={left} right={right} />
+      <NavTab isFluid center={center} left={left2} right={right} />
     </>
   )
 }
