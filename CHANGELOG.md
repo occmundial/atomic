@@ -1,3 +1,13 @@
+# [3.0.0-beta.68](https://github.com/occmundial/atomic/compare/v3.0.0-beta.67...v3.0.0-beta.68) (2024-10-09)
+
+
+### Bug Fixes
+
+* Include a Drawer as the dropdown of Menu ([4087766](https://github.com/occmundial/atomic/commit/40877668ab6c35ed9f40a9bcc220e699bba6dd4a))
+* Integrate header menu components into menu dropdown ([ae0c264](https://github.com/occmundial/atomic/commit/ae0c26494e5bbdf20c95bfaa5772e9a9118745b6))
+* Remove drawer from menu ([7037621](https://github.com/occmundial/atomic/commit/70376217c67af7e7e9c269e9ecfe610079b9ba8c))
+* Restore NavAvatarButton as triggerElement ([b488540](https://github.com/occmundial/atomic/commit/b48854021b4f2b1288f46b3ae96ee5e9f9e244f8))
+
 # [3.0.0-beta.67](https://github.com/occmundial/atomic/compare/v3.0.0-beta.66...v3.0.0-beta.67) (2024-10-04)
 
 
