@@ -24,8 +24,9 @@ const NavAvatarButton = (
 ) => {
   const classes = useStyles()
 
+  console.log(ref, '=asadasda=')
   return (
-    <div ref={ref}>
+    <div ref={ref} className={classes.container}>
       <Button
         iconRight="chevron-down"
         disabled={disabled}

@@ -17,5 +17,8 @@ export default createUseStyles({
         transform: 'translateY(2px)'
       }
     }
+  },
+  container: {
+    display: 'inline-block'
   }
 })
