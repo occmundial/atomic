@@ -1,3 +1,15 @@
+# [3.0.0-beta.69](https://github.com/occmundial/atomic/compare/v3.0.0-beta.68...v3.0.0-beta.69) (2024-10-11)
+
+
+### Bug Fixes
+
+* Remove console log ([c87006a](https://github.com/occmundial/atomic/commit/c87006aea6e489dfaa3dcd82b1dd78b0d01ff844))
+
+
+### Features
+
+* Add full header example ([30e870b](https://github.com/occmundial/atomic/commit/30e870b7b65db6571e421ce8302132d6ece6979f))
+
 # [3.0.0-beta.68](https://github.com/occmundial/atomic/compare/v3.0.0-beta.67...v3.0.0-beta.68) (2024-10-09)
 
 
