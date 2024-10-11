@@ -12,7 +12,8 @@ import {
   FloatingFocusManager,
   FloatingPortal,
   ReferenceType,
-  Placement
+  Placement,
+  useTransitionStyles
 } from '@floating-ui/react'
 
 interface MenuProps {
@@ -48,6 +49,13 @@ export default function Menu({
     }
   })
 
+  const { isMounted, styles } = useTransitionStyles(context, {
+    duration: 200,
+    common: {
+      transitionTimingFunction: 'cubic-bezier(0.25,0.46,0.45,0.94)'
+    }
+  })
+
   const click = useClick(context)
   const dismiss = useDismiss(context)
   const role = useRole(context)
@@ -56,7 +64,7 @@ export default function Menu({
 
   return (
     <>
-      {open && (
+      {isMounted && (
         <FloatingPortal>
           <FloatingFocusManager context={context} modal={false}>
             <div
@@ -65,7 +73,10 @@ export default function Menu({
               }`}
               id={id}
               ref={refs.setFloating}
-              style={floatingStyles}
+              style={{
+                ...floatingStyles,
+                ...styles
+              }}
               {...getFloatingProps()}
             >
               {children}

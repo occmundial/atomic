@@ -39,6 +39,7 @@ const Portal = ({ show, container, children }: Portal) => {
     return children
   }, [children, mount, onTransitionEnd, onAnimationEnd, show])
 
+  console.log(container, '=CONTAINER=')
   return mount
     ? ReactDOM.createPortal(childrenWithProps, container || document.body)
     : null
