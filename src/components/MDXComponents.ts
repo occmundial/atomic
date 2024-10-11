@@ -57,6 +57,7 @@ import MenuList from '@/components/MenuList'
 import MenuItem from '@/components/MenuItem'
 import MenuUser from '@/components/MenuUser'
 import MenuDivider from '@/components/MenuDivider'
+import NavTabHeader from './NavTab'
 
 const mdxComponents = {
   // Library components
@@ -157,7 +158,8 @@ const mdxComponents = {
   PillGroup,
   PillChoice,
   PillStack,
-  AlertSmall
+  AlertSmall,
+  NavTabHeader
 }
 
 export default mdxComponents

@@ -76,7 +76,7 @@ const MenuItem = <T extends ElementType = 'div'>(
     <Text
       className={classNames(classes.subtitle, className?.subtitle)}
       tag="span"
-      small
+      bodyXSmall
       corpSecondary
       {...subtitleTextProps}
     >

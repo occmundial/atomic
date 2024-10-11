@@ -53,11 +53,12 @@ export interface NavButtonElement {
   label?: string
   onClick?: (e: SyntheticEvent) => void
   selected?: boolean
-  iconName: string
+  iconName?: string
   testId?: string
   showBar?: boolean
   direction?: 'col' | 'row'
   width?: number
+  className?: string
 }
 
 export interface CustomElement {
