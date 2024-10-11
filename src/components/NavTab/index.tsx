@@ -181,7 +181,7 @@ export default function NavTabHeader() {
                     />
                   </div>
                   <MenuDivider
-                    style={{ animationDelay: '0.05s' }}
+                    style={{ margin: '4px 0', animationDelay: '0.05s' }}
                     className={open ? classes.animateTranslateY : ''}
                   />
                   <div
@@ -189,19 +189,13 @@ export default function NavTabHeader() {
                     style={{ animationDelay: '0.1s' }}
                   >
                     <MenuItem component="a" href="#MenuList">
-                      Configuración
+                      Vacantes
                     </MenuItem>
                     <MenuItem component="a" href="#MenuList">
-                      Administrador de cuentas
+                      Talento
                     </MenuItem>
                     <MenuItem component="a" href="#MenuList">
-                      Datos de facturación
-                    </MenuItem>
-                    <MenuItem component="a" href="#MenuList">
-                      Reporte de uso
-                    </MenuItem>
-                    <MenuItem component="a" href="#MenuList">
-                      Estado de cuenta
+                      Ayuda
                     </MenuItem>
                   </div>
                   <MenuDivider
@@ -213,8 +207,20 @@ export default function NavTabHeader() {
                     className={open ? classes.animateTranslateY : ''}
                   >
                     <MenuItem component="a" href="#MenuList">
+                      Configuración
+                    </MenuItem>
+                    <MenuItem component="a" href="#MenuList">
                       Sitio de candidatos
                     </MenuItem>
+                  </div>
+                  <MenuDivider
+                    style={{ margin: '4px 0', animationDelay: '0.15s' }}
+                    className={open ? classes.animateTranslateY : ''}
+                  />
+                  <div
+                    style={{ animationDelay: '0.15s' }}
+                    className={open ? classes.animateTranslateY : ''}
+                  >
                     <MenuItem onClick={() => console.log('logged-out')}>
                       Cerrar sesión
                     </MenuItem>
