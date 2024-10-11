@@ -157,8 +157,8 @@ export default function NavTabHeader() {
                       },
                       {
                         key: 'icon',
-                        type: 'navButton',
-                        iconName: 'x',
+                        type: 'button',
+                        iconLeft: 'x-o',
                         onClick: () => setOpen(false),
                         className: `${classes.closeIcon} ${
                           open
