@@ -1,3 +1,75 @@
+# [3.2.0](https://github.com/occmundial/atomic/compare/v3.1.2...v3.2.0) (2024-06-13)
+
+
+### Features
+
+* Update tooltip styles and dummy ([f473e25](https://github.com/occmundial/atomic/commit/f473e2564c635f309a990fcbf1c863ce5c01ab4f))
+
+## [3.1.2](https://github.com/occmundial/atomic/compare/v3.1.1...v3.1.2) (2024-05-23)
+
+
+### Bug Fixes
+
+* Remove unecessary blank spaces ([e102415](https://github.com/occmundial/atomic/commit/e1024156b5399f9a32fa6d07a72926b07f8a4d11))
+
+## [3.1.1](https://github.com/occmundial/atomic/compare/v3.1.0...v3.1.1) (2024-05-23)
+
+
+### Bug Fixes
+
+* Type issues ([a085df8](https://github.com/occmundial/atomic/commit/a085df8a44456fbe30dbe2b7862d9444d6118431))
+
+# [3.1.0](https://github.com/occmundial/atomic/compare/v3.0.0...v3.1.0) (2024-05-22)
+
+
+### Features
+
+* Updated tooltip ([042c324](https://github.com/occmundial/atomic/commit/042c32466dbd4862a3b1adffe5416f26ea9edf61))
+
+
+# [3.0.0](https://github.com/occmundial/atomic/compare/v2.0.0...v3.0.0) (2024-05-20)
+
+
+### Bug Fixes
+
+* Add a dark mode to the button to use the proper theme names ([a59a71d](https://github.com/occmundial/atomic/commit/a59a71d27a507df8b4277288f2e5920e01ff7f6c))
+* Added utils alias ([d50fccf](https://github.com/occmundial/atomic/commit/d50fccffb1e0e1fc563719d66dc1f825334890c6))
+* Button incorrect font ([c1df8f0](https://github.com/occmundial/atomic/commit/c1df8f04cbc63047707c1db3773ba6dfc51b2a94))
+* Change font tokens in button ([c220da2](https://github.com/occmundial/atomic/commit/c220da2a6b7b32944f82c0c792922c4d48c75cd4))
+* Change icon color on Button's ghostPink hover ([4237892](https://github.com/occmundial/atomic/commit/423789271b9897cb2ecd7814763fd2ca7f12f1a8))
+* Change icon size in Pill stack ([a657a0c](https://github.com/occmundial/atomic/commit/a657a0c950f54a8b38290d5f940b6cfd30e5e56c))
+* Change icons in the components ([6c6c657](https://github.com/occmundial/atomic/commit/6c6c6576c3667bffb8233b3090921171e94dc28e))
+* Change logo colors ([c63890e](https://github.com/occmundial/atomic/commit/c63890e45360a99dddf3dfcbb9fc02234ff7ba34))
+* Change toggle icon size ([b3eaf0e](https://github.com/occmundial/atomic/commit/b3eaf0e654b200de9092dc5b7c89274388baf1d9))
+* Fix icon translation ([2227da9](https://github.com/occmundial/atomic/commit/2227da953389a7d431266a18b4003263a3f752fe))
+* Fix loading icon size ([e869110](https://github.com/occmundial/atomic/commit/e869110ca254d375020d40956bf94963bb636934))
+* Fix toggle icon size ([e239a71](https://github.com/occmundial/atomic/commit/e239a71090d90fca5829bb8c09348a045e8ae4b3))
+* Force padding of 0 in ghostPink button ([296c877](https://github.com/occmundial/atomic/commit/296c8774299af5d0619e89f72bbf0726a33a1790))
+* Include json files in the build directory ([c7f81b8](https://github.com/occmundial/atomic/commit/c7f81b86185e0a03b85b535e0766489509f02d16))
+* Make Button theme optional ([334cd2b](https://github.com/occmundial/atomic/commit/334cd2bed91f7e12b421bef95ca3c49f6f2bb0d7))
+* Removed not intended whitespaces ([ed8bfe0](https://github.com/occmundial/atomic/commit/ed8bfe09a27e927a9a98d73c2e0ad6206c3ed3a5))
+* Replaced new font family var with old one ([8e56089](https://github.com/occmundial/atomic/commit/8e56089b22af06e89f8a019ad41c014b6095acd5))
+* Update design tokens ([e2170e4](https://github.com/occmundial/atomic/commit/e2170e41657dd8f17db1bffc058057d27cf82774))
+* Wrong letterSpácing ([a116ca3](https://github.com/occmundial/atomic/commit/a116ca31433fffb473dbcd0dc31079466c9644ac))
+
+
+### Features
+
+* Add a property to the Provider to translate icons ([1bc683d](https://github.com/occmundial/atomic/commit/1bc683dbd8fa8b7a40ac4b1f1c11433143bc0dac))
+* Add new design tokens files ([aaac477](https://github.com/occmundial/atomic/commit/aaac47738a95c19d0a2e2458f55ed223f48fad8a))
+* Change button themes and styles ([57c2405](https://github.com/occmundial/atomic/commit/57c240526d555034f0d69e8f542505cc46115ebe))
+* Condition the new icons int he components ([be7330d](https://github.com/occmundial/atomic/commit/be7330db8ff49a86cebaa332da5eb337d82d7c39))
+* Improve Text documentation with tables ([b412e27](https://github.com/occmundial/atomic/commit/b412e273d48487d43ea77fd8544c5239954eb460))
+* Update font tokens ([759e4cb](https://github.com/occmundial/atomic/commit/759e4cb31370196195944d7b0273d96b799241ed))
+* Updated Text component documentation ([09aa18d](https://github.com/occmundial/atomic/commit/09aa18dba88bdcd4f43f96542f964503d4499f64))
+* Updated text component with new tokens ([8844569](https://github.com/occmundial/atomic/commit/88445690126ecbdf987f2dd321be702b57ad479a))
+
+
+### BREAKING CHANGES
+
+* The library now requires to use atomic-icons version 1.7.0-beta.5 or greater.
+* The themes of the Button component have changed to match the styles of the button in the new design system. The current themes have slightly different names to the new ones but they all have a corresponding new theme that matches, except for the ghostPink theme.
+
 # [3.0.0-beta.69](https://github.com/occmundial/atomic/compare/v3.0.0-beta.68...v3.0.0-beta.69) (2024-10-11)
 
 
@@ -538,42 +610,6 @@ The logic and behavior of the Pager has changed too, now is the parent component
 
 * Update droplist styles with new design tokens ([f85aebe](https://github.com/occmundial/atomic/commit/f85aebe727da48f9da108a63eb0234f3034a9d62))
 
-# [3.0.0](https://github.com/occmundial/atomic/compare/v2.0.0...v3.0.0) (2024-05-20)
-
-
-### Bug Fixes
-
-* Add a dark mode to the button to use the proper theme names ([a59a71d](https://github.com/occmundial/atomic/commit/a59a71d27a507df8b4277288f2e5920e01ff7f6c))
-* Added utils alias ([d50fccf](https://github.com/occmundial/atomic/commit/d50fccffb1e0e1fc563719d66dc1f825334890c6))
-* Button incorrect font ([c1df8f0](https://github.com/occmundial/atomic/commit/c1df8f04cbc63047707c1db3773ba6dfc51b2a94))
-* Change font tokens in button ([c220da2](https://github.com/occmundial/atomic/commit/c220da2a6b7b32944f82c0c792922c4d48c75cd4))
-* Change icon color on Button's ghostPink hover ([4237892](https://github.com/occmundial/atomic/commit/423789271b9897cb2ecd7814763fd2ca7f12f1a8))
-* Change icon size in Pill stack ([a657a0c](https://github.com/occmundial/atomic/commit/a657a0c950f54a8b38290d5f940b6cfd30e5e56c))
-* Change icons in the components ([6c6c657](https://github.com/occmundial/atomic/commit/6c6c6576c3667bffb8233b3090921171e94dc28e))
-* Change logo colors ([c63890e](https://github.com/occmundial/atomic/commit/c63890e45360a99dddf3dfcbb9fc02234ff7ba34))
-* Change toggle icon size ([b3eaf0e](https://github.com/occmundial/atomic/commit/b3eaf0e654b200de9092dc5b7c89274388baf1d9))
-* Fix icon translation ([2227da9](https://github.com/occmundial/atomic/commit/2227da953389a7d431266a18b4003263a3f752fe))
-* Fix loading icon size ([e869110](https://github.com/occmundial/atomic/commit/e869110ca254d375020d40956bf94963bb636934))
-* Fix toggle icon size ([e239a71](https://github.com/occmundial/atomic/commit/e239a71090d90fca5829bb8c09348a045e8ae4b3))
-* Force padding of 0 in ghostPink button ([296c877](https://github.com/occmundial/atomic/commit/296c8774299af5d0619e89f72bbf0726a33a1790))
-* Include json files in the build directory ([c7f81b8](https://github.com/occmundial/atomic/commit/c7f81b86185e0a03b85b535e0766489509f02d16))
-* Make Button theme optional ([334cd2b](https://github.com/occmundial/atomic/commit/334cd2bed91f7e12b421bef95ca3c49f6f2bb0d7))
-* Removed not intended whitespaces ([ed8bfe0](https://github.com/occmundial/atomic/commit/ed8bfe09a27e927a9a98d73c2e0ad6206c3ed3a5))
-* Replaced new font family var with old one ([8e56089](https://github.com/occmundial/atomic/commit/8e56089b22af06e89f8a019ad41c014b6095acd5))
-* Update design tokens ([e2170e4](https://github.com/occmundial/atomic/commit/e2170e41657dd8f17db1bffc058057d27cf82774))
-* Wrong letterSpácing ([a116ca3](https://github.com/occmundial/atomic/commit/a116ca31433fffb473dbcd0dc31079466c9644ac))
-
-
-### Features
-
-* Add a property to the Provider to translate icons ([1bc683d](https://github.com/occmundial/atomic/commit/1bc683dbd8fa8b7a40ac4b1f1c11433143bc0dac))
-* Add new design tokens files ([aaac477](https://github.com/occmundial/atomic/commit/aaac47738a95c19d0a2e2458f55ed223f48fad8a))
-* Change button themes and styles ([57c2405](https://github.com/occmundial/atomic/commit/57c240526d555034f0d69e8f542505cc46115ebe))
-* Condition the new icons int he components ([be7330d](https://github.com/occmundial/atomic/commit/be7330db8ff49a86cebaa332da5eb337d82d7c39))
-* Improve Text documentation with tables ([b412e27](https://github.com/occmundial/atomic/commit/b412e273d48487d43ea77fd8544c5239954eb460))
-* Update font tokens ([759e4cb](https://github.com/occmundial/atomic/commit/759e4cb31370196195944d7b0273d96b799241ed))
-* Updated Text component documentation ([09aa18d](https://github.com/occmundial/atomic/commit/09aa18dba88bdcd4f43f96542f964503d4499f64))
-* Updated text component with new tokens ([8844569](https://github.com/occmundial/atomic/commit/88445690126ecbdf987f2dd321be702b57ad479a))
 
 # [3.0.0-beta.16](https://github.com/occmundial/atomic/compare/v3.0.0-beta.15...v3.0.0-beta.16) (2024-05-21)
 
