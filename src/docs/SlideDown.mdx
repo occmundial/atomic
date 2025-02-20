@@ -1,0 +1,77 @@
+---
+title: SlideDown
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import SlideDown from '@/components/SlideDown'
+import { colors } from '@/components/tokens'
+
+# SlideDown
+
+---
+
+An accordion component.
+
+## Props
+
+| Name           | Type                 | Default value    | Description                                                                                                                        |
+| -------------- | -------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `title`        | **string**           | -                | Title of the tab.                                                                                                                  |
+| `customTitle`  | **string**           | -                | If the title needs to be customized. It will be rendered instead of the title.                                                                                                                  |
+| `children`     | **ReactNode**        | -                | Content to display on open.                                                                                                        |
+| `expanded`     | **boolean*           | false            | Set this as true to show the content by default. If the external prop is the same of the internal state the component dont toggle. |
+| `tag`          | **string**           | -                | Text to show as a label right next to the Title.                                                                                   |
+| `onToggle`     | **function**         | -                | Function to call when the SlideDown expands or collapses. It returns true if it is expanded and false if it is collapsed.          |
+| `textSize`     | **sm | md | lg**     | md               | Size of the Text to show sm, md, lg of the component                                                                               |
+| `strong`       | **boolean**          | false            | Set this as true to set title font weight to bold                                                                                  |
+| `theme`        | **default | blue**   | default          | Theme of the SlideDown                                                                                                             |
+| `noJustified`  | **boolean**          | false            | The tab container flexbox has justify content between by default. Use this property if you need to remove it.                      |
+| `divider`      | **boolean**          | false            | Shows a divider at the bottom                                                                                                      |
+| `icon`         | **string**           | -                | Use the name of any of the icons available in the library.                                                                         |
+| `noPadding`    | **string**           | -                | The container has by default a side padding. Use this property if you need to remove it.                                           |
+| `testId`       | **string**           | -                | The testId property adds the data attribute data-testid to the main element and should be used for testing only.                   |
+
+## Examples
+
+<Demo title="Icon" background={colors.bgWhite}>
+  <SlideDown />
+</Demo>
+
+```jsx
+// How to use SlideDown
+const initialState: SlideDownProps = {
+  title: "SlideDown Title",
+  expanded: false,
+  tag: "",
+  onToggle: () => console.log("onToggle event"),
+  textSize: "md",
+  strong: false,
+  theme: "default",
+  noJustified: false,
+  divider: false,
+  icon: "",
+  noPadding: false,
+  children: "SlideDown Content",
+};
+
+function Component() {
+  return (
+    <SlideDown 
+      title="SlideDown Title"
+      expanded={initialState.expanded}
+      tag={initialState.tag}
+      onToggle={initialState.onToggle}
+      textSize={initialState.textSize}
+      strong={initialState.strong}
+      theme={initialState.theme}
+      noJustified={initialState.noJustified}
+      divider={initialState.divider}
+      icon={initialState.icon}
+      noPadding={initialState.noPadding}
+    >
+      {children}
+    </SlideDown>
+  )
+}
+```

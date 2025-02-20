@@ -1,0 +1,139 @@
+---
+title: Avatar
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Avatar from '@/components/Avatar'
+
+# Avatar
+
+---
+
+Avatar component to represent a user. The component can display the user's photo, the user's initials or a generic icon.
+It can receive an onClick or an onEdit function to handle the click action.
+The onEdit function is used to handle the click action for editing the avatar and it shows a camera icon over the avatar.
+
+- [Props](#Props)
+- [Examples](#Examples)
+  - [Size](#Size)
+  - [Static avatars](#Static-avatars)
+  - [Clickable and editable avatars](#Clickable-and-editable-avatars)
+  - [Disabled avatar](#Disabled-avatar)
+
+## Props
+| Name        | Type             | Default Value | Description                                |
+|-------------|------------------|---------------|--------------------------------------------|
+| `photo`     | **string**       |               | The URL of the avatar photo.               |
+| `name`      | **string**       |               | The name of the user.                      |
+| `size`      | **number**       | 40            | The size of the avatar in pixels.          |
+| `onClick`   | **function**     |               | A function to handle the click action.     |
+| `onEdit`    | **function**     |               | A function to handle the click action for editing. |
+| `disabled`  | **boolean**      | false         | Determines if the avatar is disabled.      |
+| `id`        | **string**       |               | The ID of the avatar.                      |
+| `className` | **string**       |               | Additional CSS class for styling.          |
+| `style`     | **CSSProperties**|               | Additional inline styles for styling.      |
+
+
+## Examples
+
+### Size
+<Demo title="Avatar" background={colors.bgGrey}>
+  <Avatar size={88} />
+  <Avatar size={72} />
+  <Avatar size={56} />
+  <Avatar size={40} />
+</Demo>
+
+```jsx
+// Set property size with a pixel value
+function Component() {
+  return (
+    <>
+      <Avatar size={88} />
+      <Avatar size={72} />
+      <Avatar size={56} />
+      <Avatar size={40} />
+    </>
+  )
+}
+```
+
+### Static avatars
+<Demo title="Photo, initials and default avatars" background={colors.bgGrey}>
+  <Avatar />
+  <Avatar name="Some user" />
+  <Avatar photo="https://i.pravatar.cc/300" />
+</Demo>
+
+```jsx
+// Set the name or the photo property
+function Component() {
+  return (
+    <>
+      <Avatar />
+      <Avatar name="Some user" />
+      <Avatar photo="https://i.pravatar.cc/300" />
+    </>
+  )
+}
+```
+
+### Clickable and editable avatars
+<Demo title="Clickable avatar" background={colors.bgGrey}>
+  <Avatar onClick={() => console.log('Hey')} />
+  <Avatar name="Some user" onClick={() => console.log('Hey')} />
+  <Avatar photo="https://i.pravatar.cc/300" onClick={() => console.log('Hey')} />
+</Demo>
+
+```jsx
+// Set the onClick property
+function Component() {
+  return (
+    <>
+      <Avatar onClick={() => console.log('Hey')} />
+      <Avatar name="Some user" onClick={() => console.log('Hey')} />
+      <Avatar photo="https://i.pravatar.cc/300" onClick={() => console.log('Hey')} />
+    </>
+  )
+}
+```
+
+<Demo title="Editable avatar" background={colors.bgGrey}>
+  <Avatar onEdit={() => console.log('Hey')} />
+  <Avatar name="Some user" onEdit={() => console.log('Hey')} />
+  <Avatar photo="https://i.pravatar.cc/300" onEdit={() => console.log('Hey')} />
+</Demo>
+
+```jsx
+// Set the onEdit property
+function Component() {
+  return (
+    <>
+      <Avatar onEdit={() => console.log('Hey')} />
+      <Avatar name="Some user" onEdit={() => console.log('Hey')} />
+      <Avatar photo="https://i.pravatar.cc/300" onEdit={() => console.log('Hey')} />
+    </>
+  )
+}
+```
+
+### Disabled avatar
+<Demo title="Disabled avatar" background={colors.bgGrey}>
+  <Avatar onClick={() => console.log('Hey')} disabled />
+  <Avatar name="Some user" onClick={() => console.log('Hey')} disabled />
+  <Avatar photo="https://i.pravatar.cc/300" onClick={() => console.log('Hey')} disabled />
+</Demo>
+
+```jsx
+// Disable the avatar
+function Component() {
+  return (
+    <>
+      <Avatar onClick={() => console.log('Hey')} disabled />
+      <Avatar name="Some user" onClick={() => console.log('Hey')} disabled />
+      <Avatar photo="https://i.pravatar.cc/300" onClick={() => console.log('Hey')} disabled />
+    </>
+  )
+}
+```

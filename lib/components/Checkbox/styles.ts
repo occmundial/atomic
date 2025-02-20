@@ -1,15 +1,22 @@
 import { createUseStyles } from 'react-jss'
+import spacing from '@/tokens/future/spacing.json'
+import colors from '@/tokens/future/colors.json'
+import borderRadius from '@/tokens/future/borderRadius.json'
+import shadows from '@/tokens/future/shadows.json'
 
-import colors from '@/tokens/colors'
-import spacing from '@/tokens/spacing'
+const { checkbox, icon } = colors
+const transition = 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s'
+const contentHeight = 48
+const checkboxWidth = 52
+const checkSize = 20
 
 export default createUseStyles({
   cont: {
-    paddingTop: spacing.tiny,
-    paddingBottom: spacing.tiny,
+    paddingTop: spacing['size-2'],
+    paddingBottom: spacing['size-2'],
     boxSizing: 'border-box',
     display: 'flex',
-    alignItems: 'start',
+    alignItems: 'flex-start',
     cursor: 'pointer',
     outline: '0',
     '&:after': {
@@ -17,65 +24,107 @@ export default createUseStyles({
       display: 'table',
       clear: 'both'
     },
-    '&:hover $icon': {
-      fill: colors.grey200
+    '&:focus-visible $check': {
+      boxShadow: shadows['focus-bright-blue']
+    },
+    '&:hover $check $box': {
+      boxShadow: `inset 0 0 0 1px ${checkbox.unselected.border.hover}`
+    },
+    '&:active $check $box': {
+      boxShadow: `inset 0 0 0 2px ${checkbox.unselected.border.hover}`
+    },
+    '&$active, &$undetermined': {
+      '&:hover $check $box': {
+        boxShadow: `inset 0 0 0 1px ${checkbox.selected.border.default}`,
+        background: checkbox.selected.bg.hover
+      },
+      '&:active $check $box': {
+        boxShadow: `inset 0 0 0 2px ${checkbox.selected.border.default}`,
+        background: checkbox.selected.bg.hover
+      }
     }
+  },
+  checkWrap: {
+    width: checkboxWidth,
+    height: contentHeight,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0
   },
   check: {
-    width: spacing.base,
-    height: spacing.base,
-    position: 'relative',
-    '&:before': {
-      content: '""',
-      width: spacing.small,
-      height: spacing.small,
-      borderRadius: 4,
-      position: 'absolute',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      border: `1px solid ${colors.grey200}`,
-      background: colors.bgWhite
-    }
+    width: checkSize,
+    height: checkSize,
+    borderRadius: borderRadius['br-xs'],
+    transition,
+    display: 'grid',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  box: {
+    width: checkSize,
+    height: checkSize,
+    borderRadius: borderRadius['br-xs'],
+    boxShadow: `inset 0 0 0 1px ${checkbox.unselected.border.default}`,
+    background: checkbox.unselected.bg.default,
+    transition,
+    gridRowStart: 1,
+    gridColumnStart: 1
   },
   icon: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    marginTop: -1,
-    fill: 'none',
-    transition: '0.3s fill',
-    zIndex: 1
+    gridRowStart: 1,
+    gridColumnStart: 1,
+    margin: 2
   },
   active: {
-    '& $icon': {
-      fill: [colors.prim, '!important']
+    '& $check $box': {
+      boxShadow: `inset 0 0 0 1px ${checkbox.selected.border.default}`,
+      background: checkbox.selected.bg.default
     }
   },
   undetermined: {
-    '& $icon': {
-      fill: [colors.prim, '!important'],
-      marginTop: 0
+    '& $check $box': {
+      boxShadow: `inset 0 0 0 1px ${checkbox.selected.border.default}`,
+      background: checkbox.selected.bg.default
     }
   },
   disabled: {
-    opacity: 0.4,
-    pointerEvents: 'none'
+    pointerEvents: 'none',
+    '& $check $box': {
+      boxShadow: `inset 0 0 0 1px ${checkbox.unselected.border.default}`,
+      background: checkbox.unselected.bg.disabled
+    },
+    '&$active, &$undetermined': {
+      '& $check $box': {
+        boxShadow: `inset 0 0 0 1px ${checkbox.selected.border.default}`,
+        background: checkbox.selected.bg.disabled
+      }
+    }
+  },
+  labelWrap: {
+    minHeight: contentHeight,
+    display: 'flex',
+    alignItems: 'center',
+    paddingTop: spacing['size-1'],
+    paddingBottom: spacing['size-1'],
+    overflow: 'hidden',
+    flex: 1
   },
   label: {
-    marginLeft: spacing.tiny,
+    marginLeft: spacing['size-3'],
     cursor: 'pointer',
-    float: 'left',
-    flex: '1'
+    flex: 1
   },
   right: {
-    marginLeft: spacing.tiny,
-    float: 'right'
+    marginLeft: spacing['size-2'],
+    pointerEvents: 'none'
   },
   overflow: {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap'
+  },
+  alignLeft: {
+    flex: 'none'
   }
 })

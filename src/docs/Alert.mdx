@@ -5,6 +5,7 @@ section: components
 
 import Demo from '@/utils/components/Demo'
 import Alert from '@/components/Alert'
+import AlertSmall from "@/src/components/Alert/Small"
 
 # Alert
 
@@ -21,41 +22,42 @@ Alert component to display messages within a container.
 
 ## Props
 
-| Name             | Type         | Default value | Description                                                                                                                       |
-| ---------------- | ------------ | ------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `children`       | **string**   | -             | The Text to be rendered inside the Alert container. Some parts can be displayed as bold text if surrounded by \* symbol.          |
-| `theme`          | **string**   | `info`        | Theme of Alert component. Available options are `info`, `warning`, `success`, `error`, `promote`.                                 |
-| `icon`           | **boolean**  | `false`       | Shows an icon assigned for each theme but `promote`.                                                                              |
-| `cta`            | **object**   | -             | An action appended after text. Object has the next properties: `text(string)`, `href(string)`, `target(string)`, `onClick(func)`. |
-| `center`         | **boolean**  | -             | Centers Alert content.                                                                                                            |
-| `noBorderRadius` | **boolean**  | -             | Cancels the default border radius of Alert.                                                                                       |
-| `onClose`        | **function** | -             | Function to call onClick of the X icon.                                                                                           |
-| `spacedClose`    | **boolean**  | -             | Extra padding on the right of the X icon.                                                                                         |
-| `id`             | **string**   | -             | Alert component id.                                                                                                               |
-| `className`      | **string**   | -             | Alert component className.                                                                                                        |
-| `style`          | **object**   | -             | Object with direct style properties.                                                                                              |
+| Name             | Type             | Default value | Description                                                                                                                       |
+| ---------------- | -----------------| ------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `children`       | **string**       | -             | The Text to be rendered inside the Alert container. Some parts can be displayed as bold text if surrounded by \* symbol.          |
+| `theme`          | **string**       | `info`        | Theme of Alert component. Available options are `info`, `warning`, `success`, `error`, `promote`.                                 |
+| `icon`           | **boolean**      | `false`       | Shows an icon assigned for each theme but `promote`.                                                                              |
+| `cta`            | **object**       | -             | An action appended after text. Object has the next properties: `text(string)`, `href(string)`, `target(string)`, `onClick(func)`. |
+| `banner`         | **boolean**      | `false`       | Sets content centered and remove border radius.                                                                                   |
+| `size`           | **large | small**| `false`       | Sets flex direction of content to column and reduce paddings.                                                                                   |
+| `onClose`        | **function**     | -             | Function to call onClick of the X icon.                                                                                           |
+| `id`             | **string**       | -             | Alert component id.                                                                                                               |
+| `className`      | **string**       | -             | Alert component className.                                                                                                        |
+| `style`          | **object**       | -             | Object with direct style properties.                                                                                              |
 
 ### Themes
 
 <Demo title="Alert themes" background={colors.bgGrey}>
-  <Alert theme="info">Alert with info theme</Alert>
-  <Alert theme="warning">Alert with warning theme</Alert>
-  <Alert theme="success">Alert with success theme</Alert>
-  <Alert theme="error">Alert with error theme</Alert>
-  <Alert theme="promote">Alert with promote theme</Alert>
+  <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
+    <Alert theme="info">Alert with info theme</Alert>
+    <Alert theme="warning">Alert with warning theme</Alert>
+    <Alert theme="success">Alert with success theme</Alert>
+    <Alert theme="error">Alert with error theme</Alert>
+    <Alert theme="promote">Alert with promote theme</Alert>
+  </div>
 </Demo>
 
 ```jsx
 // How to use themes
 function Component() {
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
       <Alert theme="info">Alert with info theme</Alert>
       <Alert theme="warning">Alert with warning theme</Alert>
       <Alert theme="success">Alert with success theme</Alert>
       <Alert theme="error">Alert with error theme</Alert>
       <Alert theme="promote">Alert with promote theme</Alert>
-    </>
+    </div>
   )
 }
 ```
@@ -65,18 +67,20 @@ function Component() {
 Each theme has an associated icon.
 
 <Demo title="Alert with icons" background={colors.bgGrey}>
-  <Alert icon theme="info">
-    Alert with icon
-  </Alert>
-  <Alert icon theme="warning">
-    Alert with icon
-  </Alert>
-  <Alert icon theme="success">
-    Alert with icon
-  </Alert>
-  <Alert icon theme="error">
-    Alert with icon
-  </Alert>
+  <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
+    <Alert icon theme="info">
+      Alert with icon
+    </Alert>
+    <Alert icon theme="warning">
+      Alert with icon
+    </Alert>
+    <Alert icon theme="success">
+      Alert with icon
+    </Alert>
+    <Alert icon theme="error">
+      Alert with icon
+    </Alert>
+  </div>
 </Demo>
 
 ```jsx
@@ -102,21 +106,112 @@ function Component() {
 }
 ```
 
-### Bold
+### Small size
 
-You can surround text with \* to make it bold.
+You can pass size small prop when on mobile devices.
 
 <Demo title="Alert with bold text" background={colors.bgGrey}>
-  <Alert theme="info">Alert with *bold* text</Alert>
+  <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
+    <AlertSmall theme="info" />
+    <AlertSmall theme="warning" />
+    <AlertSmall theme="success" />
+    <AlertSmall theme="error" />
+    <AlertSmall theme="promote" />
+  </div>
 </Demo>
 
 ```jsx
-// How to set bold text
+// How to set size
 function Component() {
+  const windowSize = useWindowSize()
   return (
-    <>
-      <Alert theme="info">Alert with *bold* text</Alert>
-    </>
+    <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
+      <Alert
+        icon
+        theme="info"
+        onClose={() => alert('Closing Alert')}
+        size={windowSize.width < grid.xs ? 'small' : 'large'}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat
+      </Alert>
+      <Alert
+        icon
+        theme="warning"
+        onClose={() => alert('Closing Alert')}
+        size={windowSize.width < grid.xs ? 'small' : 'large'}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat
+      </Alert>
+      <Alert
+        icon
+        theme="success"
+        onClose={() => alert('Closing Alert')}
+        size={windowSize.width < grid.xs ? 'small' : 'large'}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat
+      </Alert>
+      <Alert
+        icon
+        theme="error"
+        onClose={() => alert('Closing Alert')}
+        size={windowSize.width < grid.xs ? 'small' : 'large'}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat
+      </Alert>
+      <Alert
+        icon
+        theme="promote"
+        onClose={() => alert('Closing Alert')}
+        size={windowSize.width < grid.xs ? 'small' : 'large'}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat
+      </Alert>
+    </div>
   )
 }
 ```
@@ -160,40 +255,161 @@ function Component() {
 }
 ```
 
-### Others
+### Alert as a Banner
 
 There is some other properties that can be used with Alert component.
 
 <Demo title="Other Alert properties" background={colors.bgGrey}>
-  <Alert
-    theme="info"
-    icon
-    center
-    noBorderRadius
-    onClose={() => alert('Closing Alert')}
-    spacedClose
-  >
-    Alert message.
-  </Alert>
+  <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
+    <Alert
+      theme="info"
+      icon
+      banner
+      onClose={() => alert('Closing Alert')}
+      cta={{
+        href: 'https://www.google.com',
+        target: '_blank',
+        text: 'Click here.',
+        onClick: () => alert('CTA Clicked')
+      }}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    </Alert>
+    <Alert
+      theme="warning"
+      icon
+      banner
+      onClose={() => alert('Closing Alert')}
+      cta={{
+        href: 'https://www.google.com',
+        target: '_blank',
+        text: 'Click here.',
+        onClick: () => alert('CTA Clicked')
+      }}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    </Alert>
+    <Alert
+      theme="success"
+      icon
+      banner
+      onClose={() => alert('Closing Alert')}
+      cta={{
+        href: 'https://www.google.com',
+        target: '_blank',
+        text: 'Click here.',
+        onClick: () => alert('CTA Clicked')
+      }}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    </Alert>
+    <Alert
+      theme="error"
+      icon
+      banner
+      onClose={() => alert('Closing Alert')}
+      cta={{
+        href: 'https://www.google.com',
+        target: '_blank',
+        text: 'Click here.',
+        onClick: () => alert('CTA Clicked')
+      }}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    </Alert>
+    <Alert
+      theme="promote"
+      icon
+      banner
+      onClose={() => alert('Closing Alert')}
+      cta={{
+        href: 'https://www.google.com',
+        target: '_blank',
+        text: 'Click here.',
+        onClick: () => alert('CTA Clicked')
+      }}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    </Alert>
+  </div>
 </Demo>
 
 ```jsx
-// How to use other props
+// Set banner prop
 function Component() {
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
       <Alert
         theme="info"
         icon
-        // Other props
-        center
-        noBorderRadius
+        banner
         onClose={() => alert('Closing Alert')}
-        spacedClose
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
       >
-        Alert message.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
       </Alert>
-    </>
+      <Alert
+        theme="warning"
+        icon
+        banner
+        onClose={() => alert('Closing Alert')}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+      </Alert>
+      <Alert
+        theme="success"
+        icon
+        banner
+        onClose={() => alert('Closing Alert')}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+      </Alert>
+      <Alert
+        theme="error"
+        icon
+        banner
+        onClose={() => alert('Closing Alert')}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+      </Alert>
+      <Alert
+        theme="promote"
+        icon
+        banner
+        onClose={() => alert('Closing Alert')}
+        cta={{
+          href: 'https://www.google.com',
+          target: '_blank',
+          text: 'Click here.',
+          onClick: () => alert('CTA Clicked')
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+      </Alert>
+    </div>
   )
 }
 ```

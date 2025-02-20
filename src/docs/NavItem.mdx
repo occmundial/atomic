@@ -1,0 +1,101 @@
+---
+title: NavItem
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import NavItem from '@/components/NavItem'
+
+# NavItem
+
+---
+
+The NavItem `(Deprecated)` component is an stylish anchor component.
+
+
+## Props
+
+| Name           | Type                          | Default value    | Description                             |
+| -------------- | ----------------------------- | ---------------- | --------------------------------------- |
+| `children`     | **string \| ReactNode**       | -                | Anchor children                         |
+| `link`         | **string**                    | -                | Anchor href attribute                   |
+| `target`       | **string**                    | -                | Anchor link attribute                   |
+| `onClick`      | **EventHandler<MouseEvent\>** | -                | Anchor onCLick event                    |
+| `selected`     | **boolean**                   | -                | Highlights the anchor                   |
+| `notification` | **boolean**                   | -                | Shows a circular bagde above the anchor |
+| `white`        | **boolean**                   | -                | Applys white theme                      |
+| `className`    | **string**                    | -                | Anchor className attribute              |
+| `testId`       | **string**                    | -                | Anchor test id                          |
+
+
+## Examples
+
+### Themes
+
+You can choose between two themes: Default and white.
+
+<Demo title="Themes" background={colors.white}>
+  <NavItem  href="#">Test 1</NavItem>
+  <div style={{ background: "black" }}>
+    <NavItem href="#" white>Test 1</NavItem>
+  </div>
+</Demo>
+
+```jsx
+// How to use Themes
+function Component() {
+  return (
+    <>
+      <NavItem href="#">Test 1</NavItem>
+      <NavItem href="#" white>Test 1</NavItem>
+    </>
+  )
+}
+```
+
+### Selected
+
+Highlights the anchor link.
+
+<Demo title="Themes" background={colors.white}>
+  <NavItem  href="#" selected>Test 1</NavItem>
+  <div style={{ background: "black" }}>
+    <NavItem href="#" white selected>Test 1</NavItem>
+  </div>
+</Demo>
+
+```jsx
+// How to use Selected prop.
+function Component() {
+  return (
+    <>
+      <NavItem href="#" selected>Test 1</NavItem>
+      <NavItem href="#" white selected>Test 1</NavItem>
+    </>
+  )
+}
+```
+
+### Notification
+
+Shows a notification badge.
+
+<Demo title="Themes" background={colors.white}>
+  <NavItem  href="#" notification>Test 1</NavItem>
+  <div style={{ background: "black" }}>
+    <NavItem href="#" white notification>Test 1</NavItem>
+  </div>
+</Demo>
+
+```jsx
+// How to use Notification props.
+function Component() {
+  return (
+    <>
+      <NavItem href="#" notification>Test 1</NavItem>
+      <NavItem href="#" white notification>Test 1</NavItem>
+    </>
+  )
+}
+```
+

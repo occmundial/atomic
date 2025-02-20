@@ -9,8 +9,8 @@ const grid = {
   xsGrid: 564,
   smGrid: 744,
   mdGrid: 984,
-  lgGrid: 1164,
-  xlGrid: 1464
+  lgGrid: 1140,
+  xlGrid: 1440
 }
 
 export default grid

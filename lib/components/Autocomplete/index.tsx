@@ -33,8 +33,8 @@ export interface AutocompleteProps {
     | 'className'
     | 'inputClassName'
     | 'disabled'
-    | 'lockHeight'
     | 'testId'
+    | 'disableAutoComplete'
   >
   droplistProps: Optional<
     DroplistProps,
@@ -47,7 +47,6 @@ export interface AutocompleteProps {
   onFocus?: () => void
   onBlur?: () => void
   onClear?: () => void
-  disableAutoComplete?: boolean
   showInitialData?: boolean
   id?: string
   className?: string
@@ -146,6 +145,10 @@ const Autocomplete = forwardRef(
       [onChange, onEnter]
     )
 
+    const hasBottom =
+      textfieldProps.assistiveText ||
+      (textfieldProps.counter && textfieldProps.maxLength)
+
     return (
       <div
         className={classnames(classes.autoComplete, className)}
@@ -174,8 +177,7 @@ const Autocomplete = forwardRef(
             className={classnames(
               classes.droplist,
               {
-                [classes.pushDroplist]:
-                  textfieldProps?.label || textfieldProps?.lockHeight
+                [classes.pushDroplist]: hasBottom
               },
               droplistProps.className
             )}
@@ -191,7 +193,6 @@ Autocomplete.defaultProps = {
   droplistProps: {
     items: []
   },
-  disableAutoComplete: false,
   showInitialData: false
 }
 

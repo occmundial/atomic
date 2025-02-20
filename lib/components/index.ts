@@ -13,7 +13,7 @@ import Logo from './Logo'
 import { MediaContextProvider, Media, mediaStyle } from './Media'
 import Modal from './Modal'
 import NavAside from './NavAside'
-import NavIcon from './NavIcon'
+import NavButton from './NavButton'
 import NavItem from './NavItem'
 import NavTab from './NavTab'
 import NavTop from './NavTop'
@@ -32,6 +32,19 @@ import Toaster from './Toaster'
 import { toastLauncher } from './Toaster/helper'
 import Toggle from './Toggle'
 import Tooltip from './Tooltip'
+import {
+  TabsProviderControlled,
+  TabsProviderUncontrolled,
+  useTabsContext
+} from './Tabs/context'
+import Tabs from './Tabs'
+import Tab from './Tabs/Tab'
+import TabContent from './Tabs/TabContent'
+import Menu from './Menu'
+import MenuItem from './MenuItem'
+import MenuDivider from './MenuDivider'
+import MenuList from './MenuList'
+import MenuUser from './MenuUser'
 
 export {
   Alert,
@@ -51,7 +64,7 @@ export {
   mediaStyle,
   Modal,
   NavAside,
-  NavIcon,
+  NavButton,
   NavItem,
   NavTab,
   NavTop,
@@ -69,5 +82,16 @@ export {
   Toaster,
   toastLauncher,
   Toggle,
-  Tooltip
+  Tooltip,
+  TabsProviderControlled,
+  TabsProviderUncontrolled,
+  useTabsContext,
+  Tabs,
+  Tab,
+  TabContent,
+  Menu,
+  MenuItem,
+  MenuDivider,
+  MenuList,
+  MenuUser
 }

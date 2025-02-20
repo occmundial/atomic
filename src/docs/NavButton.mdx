@@ -1,0 +1,145 @@
+---
+title: NavButton
+section: components
+---
+
+# NavButton
+
+---
+
+The NavButton component is icon component adapted to work with with Nav components
+
+## Props
+
+| Name           | Type                           | Default value    | Description                                        |
+| -------------- | ------------------------------ | ---------------- | ---------------------------------------            |
+| `selected`     | **boolean**                    | -                | Highlights the icon and label                      |
+| `iconName`     | **string**                     | -                | Icon to diplay                                     |
+| `label`        | **string**                     | -                | Icon label                                         |
+| `onClick`      | **EventHandler<MouseEvent\>**  | -                | Component onCLick event                            |
+| `showBar`      | **boolean**                    | -                | Shows an indicator at the bottom of the component  |
+| `direction`    | **'col' \| 'row'**             | 'row'            | Defines icon and label stacking direction          |
+| `className`    | **string**                     | -                | Anchor className attribute                         |
+| `width`        | **number**                     | -                | Defines component width                            |
+| `white`        | **boolean**                    | -                | Applys white theme                                 |
+| `testId`       | **string**                     | -                | Anchor test id                                     |
+
+
+## Examples
+
+### Themes
+
+You can choose between two themes: Default and white.
+
+<Demo title="Themes" background={colors.white}>
+  <NavButton iconName="search" label="Búsqueda"/>
+  <div style={{ background: "black" }}>
+    <NavButton iconName="search" label="Búsqueda" white/>
+  </div>
+
+</Demo>
+
+```jsx
+// How to use Themes
+function Component() {
+  return (
+    <>
+      <NavButton iconName="search" label="Búsqueda"/>
+      <NavButton iconName="search" white label="Búsqueda"/>
+    </>
+  )
+}
+```
+
+### Selected
+
+Highlights the icon.
+
+<Demo title="Selected" background={colors.white}>
+  <NavButton iconName="search" selected label="Búsqueda"/>
+  <div style={{ background: "black" }}>
+    <NavButton iconName="search" white selected label="Búsqueda"/>
+  </div>
+</Demo> 
+
+```jsx
+// How to use selected prop
+function Component() {  
+  return (
+    <>
+      <NavButton iconName="search" selected label="Búsqueda"/>
+      <NavButton iconName="search" white selected label="Búsqueda"/>
+    </>
+  )
+}
+```
+
+### Show Bar
+
+Shows an indicator at the bottom of the component.
+
+<Demo title="Show Bar" background={colors.white}>
+  <NavButton iconName="search" showBar label="Búsqueda"/>
+  <div style={{ background: "black" }}>
+    <NavButton iconName="search" white showBar label="Búsqueda"/>
+  </div>
+</Demo> 
+
+```jsx
+// How to use showBar prop
+function Component() {  
+  return (
+    <>
+      <NavButton iconName="search" showBar label="Búsqueda"/>
+      <NavButton iconName="search" white showBar label="Búsqueda"/>
+    </>
+  )
+}
+```
+
+### Direction
+
+Defines icon and label stacking direction.
+
+<Demo title="Direction" background={colors.white}>
+  <NavButton iconName="search" label="Búsqueda" direction="col"/>
+  <div style={{ background: "black" }}>
+    <NavButton iconName="search" white label="Búsqueda" direction="col"/>
+  </div>
+</Demo> 
+
+```jsx
+// How to use direction prop
+function Component() {  
+  return (
+    <>
+      <NavButton iconName="search" label="Búsqueda" direction="col"/>
+      <NavButton iconName="search" white label="Búsqueda" direction="col"/>
+    </>
+  )
+}
+```
+
+
+### Width
+
+Defines component width  
+
+<Demo title="Width" background={colors.white}>
+  <NavButton iconName="search" label="Búsqueda" width={240}/>
+  <div style={{ background: "black" }}>
+    <NavButton iconName="search" white label="Búsqueda" width={240}/>
+  </div>
+</Demo> 
+
+```jsx
+// How to use width prop
+function Component() {  
+  return (
+    <>
+      <NavButton iconName="search" label="Búsqueda" width={240}/>
+      <NavButton iconName="search" white label="Búsqueda" width={240}/>
+    </>
+  )
+}
+```

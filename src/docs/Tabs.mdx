@@ -1,0 +1,105 @@
+---
+title: Tabs
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Tabs from '@/components/Tabs'
+import TabsUncontrolled from '@/components/TabsUncontrolled'
+import Tab from '@/components/Tab'
+import { colors } from '@/components/tokens'
+
+# Tabs
+
+---
+
+A Tabs component.
+
+## TabsProviderUncontrolled Props
+
+| Name           | Type            | Default value    | Description                                                                                                                        |
+| -------------- | ----------------| ---------------- | ------------------------------------------ |
+| `children`     | **ReactNode**   | -                | Children content to be render.             |
+
+## TabsProviderControlled Props
+
+| Name                | Type            | Default value    | Description                                                                                                                        |
+| ------------------- | --------------- | ---------------- | ------------------------------------------------ |
+| `children`          | **ReactNode**   | -                | Children content to be render.                   |
+| `value`             | **any**         | -                | Initial value of the tab to be selected.         |
+| `setCurrentValue`   | **any**         | -                | Function to update current tab value selected.   |
+
+## Tabs Props
+
+| Name           | Type                     | Default value    | Description                                                                                                                        |
+| -------------- | ------------------------ | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `children`     | **ReactNode**            | -                | A list of tab components or custom react components                                                                        |
+| `size`         | **'large'** &#124; **'medium'** &#124; **'small'**    | -                | Text to show as a label right next to the Title.                                                      |
+| `onChange`     | **function**             | -                | Function to call when the SlideDown expands or collapses. It returns true if it is expanded and false if it is collapsed.          |
+
+## Tab Props
+
+| Name        | Type          | Default value    | Description                                                                                   |
+| ----------- | ------------- | ---------------- | --------------------------------------------------------------------------------------------- |
+| `title`     | **string**    | -                | Title of the tab.                                                                             |
+| `value`     | **any**       | index position   | Provide your own value to use on change action. Otherwise child position index will be use.   |
+| `icon`      | **string**    | -                | Use the name of any of the icons available in the library.                                    |
+| `counter`   | **string**    | -                | Text to show as a span right next to the Title.                                               |
+| `onChange`  | **function**  | -                | Function to call on tab change                                                                |
+| `disabled`  | **string**    | -                | It disables the tab functionality and shows it with a different style.                        |
+| `testId`    | **string**    | -                | The data-testid of the tab.                                                                   |
+
+
+## Examples
+
+<Demo title="Tab Controlled" background={colors.bgWhite}>
+  <Tabs />
+</Demo>
+
+```jsx
+// How to use Tabs Controlled
+function TabsMDX() {
+  const [value, setValue] = useState<string>('2')
+
+  return (
+    <TabsProviderControlled value={value}>
+      <Tabs onChange={setValue} size="large">
+        <Tab title="Title 1" icon="person" value="1" />
+        <Tab title="Title 2" icon="search" value="2" />
+        <Tab title="Title 3" icon="search" value="3" />
+        <Tab title="Title 4" icon="search" value="4" />
+        <Tab title="Title 5" icon="search" value="5" />
+        <Tab title="Title 6" icon="search" value="6" />
+      </Tabs>
+      <TabContent value="1">Contenido 1</TabContent>
+      <TabContent value="2">Contenido 2</TabContent>
+      <TabContent value="3">Contenido 3</TabContent>
+      <TabContent value="4">Contenido 4</TabContent>
+      <TabContent value="5">Contenido 5</TabContent>
+      <TabContent value="6">Contenido 6</TabContent>
+    </TabsProviderControlled>
+  )
+}
+```
+
+<Demo title="Tab Uncontrolled" background={colors.bgWhite}>
+  <TabsUncontrolled />
+</Demo>
+
+```jsx
+// How to use Tabs Uncontrolled
+function TabsMDX() {
+  return (
+    <TabsProviderUncontrolled>
+      <Tabs size="large">
+        <Tab title="Titulo 1" icon="person" />
+        <Tab title="Titulo 2" icon="search" counter="123" disabled />
+        <Tab title="Titulo 3" icon="search" />
+      </Tabs>
+      <TabContent value={0}>Contenido 1</TabContent>
+      <TabContent value={1}>Contenido 2</TabContent>
+      <TabContent value={2}>Contenido 3</TabContent>
+    </TabsProviderUncontrolled>
+  )
+}
+```

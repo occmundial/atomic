@@ -1,39 +1,44 @@
 import { createUseStyles } from 'react-jss'
 
-import colors from '@/tokens/colors'
-import spacing from '@/tokens/spacing'
+import colors from '@/tokens/future/colors.json'
+import spacing from '@/tokens/future/spacing.json'
+import fonts from '@/tokens/future/fonts.json'
+import shadows from '@/tokens/future/shadows.json'
+import borderRadius from '@/tokens/future/borderRadius.json'
+import { objectToFontValue } from '@/utils/font'
 
 export default createUseStyles({
   pillGroup: {
-    display: 'flex'
+    display: 'flex',
+    background: colors.pill.unselected.bg.default,
+    borderRadius: borderRadius['br-full']
   },
   pill: {
-    background: colors.bgWhite,
-    border: `1px solid ${colors.grey200}`,
-    height: spacing.medium,
-    padding: [0, spacing.small],
+    color: colors.text.indigo.primary,
+    background: 'none',
+    font: objectToFontValue(fonts['body-regular']),
+    height: spacing['size-6'],
+    padding: [0, spacing['size-4']],
+    borderRadius: borderRadius['br-md'],
     position: 'relative',
     zIndex: 1,
     outline: 0,
+    border: 0,
     flex: 1,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     transition: '0.3s all',
     cursor: 'pointer',
-    '&:first-child': {
-      borderTopLeftRadius: spacing.small,
-      borderBottomLeftRadius: spacing.small
-    },
-    '&:last-child': {
-      borderTopRightRadius: spacing.small,
-      borderBottomRightRadius: spacing.small
-    },
-    '&:not(:first-child)': {
-      marginLeft: -1
-    },
     '&:hover': {
-      background: colors.grey50
+      background: colors.pill.unselected.bg.hover
+    },
+    '&:active': {
+      background: colors.pill.unselected.bg.active
+    },
+    '&:focus-visible': {
+      boxShadow: shadows['focus-indigo'],
+      background: 'none'
     }
   },
   text: {
@@ -42,15 +47,12 @@ export default createUseStyles({
     whiteSpace: 'nowrap'
   },
   selected: {
-    background: `${colors.primLighter} !important`,
+    background: `${colors.pill.selected.bg.default} !important`,
     zIndex: 2,
-    borderColor: colors.prim,
-    color: colors.prim
+    color: colors.text.white.primary
   },
   disabled: {
-    background: colors.white,
-    borderColor: colors.grey100,
-    color: colors.grey200,
+    color: colors.text.indigo.secondary,
     zIndex: 0,
     pointerEvents: 'none'
   }

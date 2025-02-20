@@ -10,9 +10,9 @@ import classnames from 'classnames'
 import Grid from '@/components/Grid'
 import Flexbox from '@/components/Flexbox'
 import NavItem from '@/components/NavItem'
-import NavIcon from '@/components/NavIcon'
+import NavButton from '@/components/NavButton'
 import NavTop, { TopProps } from '@/components/NavTop'
-import Button, { ButtonTheme } from '@/components/Button'
+import Button, { ButtonProps } from '@/components/Button'
 import Icon from '@/components/Icon'
 import colors from '@/tokens/colors'
 import spacing from '@/tokens/spacing'
@@ -31,15 +31,11 @@ export interface LinkElement {
   testId?: string
 }
 
-export interface ButtonElement {
+export type ButtonElement = {
   key: string | number
   type: 'button'
-  text?: string
-  onClick?: (e: SyntheticEvent) => void
-  theme?: ButtonTheme
-  iconName?: string
-  testId?: string
-}
+  text?: ReactNode
+} & Omit<ButtonProps, 'children'>
 
 export interface DropdownElement {
   key: string | number
@@ -51,17 +47,18 @@ export interface DropdownElement {
   testId?: string
 }
 
-export interface IconElement {
+export interface NavButtonElement {
   key: string | number
-  type: 'icon'
+  type: 'navButton'
   label?: string
   onClick?: (e: SyntheticEvent) => void
   selected?: boolean
-  iconName: string
+  iconName?: string
   testId?: string
   showBar?: boolean
   direction?: 'col' | 'row'
   width?: number
+  className?: string
 }
 
 export interface CustomElement {
@@ -82,7 +79,7 @@ export type NavElement =
   | LinkElement
   | ButtonElement
   | DropdownElement
-  | IconElement
+  | NavButtonElement
   | CustomElement
   | LogoElement
 
@@ -102,6 +99,8 @@ export interface NavTabProps {
   className?: string
   /** The recommendation is to set the breakpoint at `grid.xl` */
   isFluid?: boolean
+  isResponsive?: boolean
+  noShadow?: boolean
 }
 
 const NavTab = ({
@@ -116,7 +115,9 @@ const NavTab = ({
   className,
   zIndex,
   hideOnScroll,
-  isFluid
+  isResponsive,
+  isFluid,
+  noShadow
 }: NavTabProps) => {
   const classes = useStyles()
   const [show, setShow] = useState(true)
@@ -125,10 +126,7 @@ const NavTab = ({
   const getIcon = useIcon()
 
   const determineVisibility = useCallback(() => {
-    setShow(
-      window.pageYOffset <= spacing.xLarge ||
-        window.pageYOffset <= currentScroll
-    )
+    setShow(window.scrollY <= spacing.xLarge || window.scrollY <= currentScroll)
     setCurrentScroll(window.pageYOffset)
   }, [currentScroll])
 
@@ -180,7 +178,13 @@ const NavTab = ({
   const renderButton = useCallback(
     (item: ButtonElement) => {
       return (
-        <Button className={classes.button} {...item}>
+        <Button
+          theme="ghost"
+          darkMode={blue}
+          size={item.iconLeft || item.iconRight ? 'lg' : 'md'}
+          className={classes.button}
+          {...item}
+        >
           {item.text}
         </Button>
       )
@@ -189,10 +193,10 @@ const NavTab = ({
   )
 
   const renderIcon = useCallback(
-    (item: IconElement) => {
+    (item: NavButtonElement) => {
       return (
         <div className={classes.iconWrap} key={item.key}>
-          <NavIcon className={classes.icon} white={blue} {...item} />
+          <NavButton className={classes.icon} white={blue} {...item} />
         </div>
       )
     },
@@ -227,7 +231,7 @@ const NavTab = ({
           return renderDropdownLink(item)
         case 'button':
           return renderButton(item)
-        case 'icon':
+        case 'navButton':
           return renderIcon(item)
         case 'logo':
           return renderLogo(item)
@@ -246,7 +250,7 @@ const NavTab = ({
   )
 
   return (
-    <div
+    <nav
       className={classnames(
         classes.container,
         { [classes.fixed]: fixed },
@@ -254,6 +258,7 @@ const NavTab = ({
         { [classes.hide]: !show },
         { [classes.isScrolled]: currentScroll > 0 },
         { [classes.bottom]: bottom },
+        { [classes.noShadow]: noShadow },
         className
       )}
       style={zIndex ? { zIndex } : null}
@@ -266,7 +271,13 @@ const NavTab = ({
           { [classes.white]: !blue }
         )}
       >
-        <Grid className={classes.grid} fluid={isFluid}>
+        <Grid
+          className={classnames(
+            classes.grid,
+            isResponsive && classes.gridResponsive
+          )}
+          fluid={isFluid}
+        >
           <Flexbox
             display="flex"
             justifyContent="between"
@@ -323,7 +334,7 @@ const NavTab = ({
           </Flexbox>
         </Grid>
       </div>
-    </div>
+    </nav>
   )
 }
 

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useCallback, CSSProperties } from 'react'
 import classnames from 'classnames'
 
 import Text from '@/components/Text'
+import Tag from '@/components/Tag'
 
 import useStyles from './styles'
 
@@ -9,6 +10,7 @@ interface RadioOption {
   label?: string
   value?: string | number
   right?: string
+  tag?: string
   trk?: string
   testId?: string
   disabled?: boolean
@@ -57,11 +59,24 @@ const Radio = ({
     [onChange]
   )
 
+  const handleKeyDown = e => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      e.preventDefault()
+    }
+  }
+
+  const handleKeyUp = (e, option) => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      handleOnChange(option)
+    }
+  }
+
   return (
     <div id={id}>
       {options.map(option => (
         <div
           id={option.trk}
+          tabIndex={option.disabled ? -1 : 0}
           data-testid={option.testId}
           key={option.value}
           className={classnames(
@@ -71,23 +86,39 @@ const Radio = ({
             className
           )}
           onClick={() => handleOnChange(option)}
+          onKeyDown={handleKeyDown}
+          onKeyUp={e => handleKeyUp(e, option)}
           style={style}
         >
-          <div className={classes.radio} id={option.trk} />
-          {option.label && (
-            <Text
-              tag="label"
-              className={classnames(classes.label, {
-                [classes.overflow]: textOverflow
-              })}
-            >
-              {option.label}
-            </Text>
-          )}
-          {option.right && (
-            <Text tag="label" mid className={classes.right}>
-              {option.right}
-            </Text>
+          <div className={classes.radioWrap}>
+            <div className={classes.radio}>
+              <div className={classes.radioOuter} />
+              <div className={classes.radioInner} />
+            </div>
+          </div>
+          {!!(option.label || option.right || option.tag) && (
+            <div className={classes.labelWrap}>
+              {option.label && (
+                <Text
+                  tag="label"
+                  className={classnames(classes.label, {
+                    [classes.overflow]: textOverflow
+                  })}
+                >
+                  {option.label}
+                </Text>
+              )}
+              {option.right && (
+                <Text tag="label" corpSecondary className={classes.right}>
+                  {option.right}
+                </Text>
+              )}
+              {option.tag && (
+                <Tag theme="link" className={classes.tag}>
+                  {option.tag}
+                </Tag>
+              )}
+            </div>
           )}
         </div>
       ))}

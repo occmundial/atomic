@@ -1,5 +1,11 @@
-import { useState, useEffect, ReactNode, useCallback, useMemo } from 'react'
-import classNames from 'classnames'
+import {
+  useState,
+  useEffect,
+  ReactNode,
+  useCallback,
+  useMemo,
+  MouseEventHandler
+} from 'react'
 
 import Text from '@/components/Text'
 import Icon from '@/components/Icon'
@@ -11,9 +17,10 @@ import usePrevious from '@/hooks/usePrevious'
 import useStyles from './styles'
 import useIcon from '@/hooks/useIcon'
 
-interface SlideDownProps {
+export interface SlideDownProps {
   children: ReactNode
   title?: string
+  customTitle?: ReactNode
   expanded?: boolean
   tag?: string
   onToggle?: (value: boolean) => void
@@ -21,47 +28,46 @@ interface SlideDownProps {
   strong?: boolean
   theme?: 'default' | 'blue'
   noJustified?: boolean
+  divider?: boolean
+  icon?: string
+  noPadding?: boolean
 }
 
 const SlideDown = ({
   children,
   expanded,
   title,
+  customTitle,
   tag,
   onToggle,
   textSize,
   theme,
   strong,
-  noJustified
+  noJustified,
+  divider,
+  icon,
+  noPadding
 }: SlideDownProps) => {
   const classes = useStyles()
   const [_expanded, setExpanded] = useState(expanded)
-  const [toggled, setToggled] = useState(expanded)
   const prevExpanded = usePrevious(expanded)
 
   const getIcon = useIcon()
 
-  const toggleContent = useCallback(
-    (value: boolean) => {
-      if (value) setExpanded(value)
-      else setToggled(value)
-      if (onToggle) onToggle(value)
-      setTimeout(
-        () => {
-          if (value) setToggled(value)
-          else setExpanded(value)
-        },
-        value ? 0 : 300
-      )
+  const toggleContent: MouseEventHandler<HTMLDivElement> = useCallback(
+    e => {
+      e.stopPropagation()
+      setExpanded(!_expanded)
+      if (onToggle) onToggle(!_expanded)
     },
-    [onToggle]
+    [onToggle, _expanded]
   )
 
   useEffect(() => {
     if (prevExpanded !== expanded) {
-      toggleContent(expanded)
+      setExpanded(expanded)
     }
-  }, [expanded, prevExpanded, toggleContent])
+  }, [expanded, prevExpanded])
 
   const _textSize = useMemo(() => {
     switch (textSize) {
@@ -102,53 +108,71 @@ const SlideDown = ({
   )
 
   return (
-    <div className={classes.wrapper}>
-      <div className={classes.button} onClick={() => toggleContent(!_expanded)}>
+    <div className={divider ? classes.divider : ''}>
+      <div
+        className={`${classes.button} ${
+          textSize === 'lg' ? classes.largePadding : classes.normalPadding
+        }${!noPadding ? ` ${classes.buttonPadding}` : ''}`}
+        role="button"
+        onClick={toggleContent}
+      >
         <Flexbox
           display="flex"
           justifyContent={!noJustified ? 'between' : null}
           alignItems="start"
         >
-          <Flexbox display="flex" alignItems="center">
-            <Flexbox display="flex" alignItems="start" wrap="wrap">
-              <div>
-                <Text
-                  {...textProps}
-                  strong={strong}
-                  tag="label"
-                  className={classes.text}
-                >
-                  {title}
-                </Text>
-                {tag && (
-                  <Tag theme="info" className={classes.tag}>
-                    {tag}
-                  </Tag>
-                )}
-              </div>
-            </Flexbox>
+          <Flexbox display="flex" alignItems="center" wrap="wrap">
+            {icon ? (
+              <Icon
+                iconName={icon}
+                size={16}
+                color={iconColor}
+                className={classes.leftIcon}
+              />
+            ) : (
+              ''
+            )}
+            {customTitle || (
+              <Text
+                {...textProps}
+                strong={strong}
+                tag="label"
+                className={classes.text}
+              >
+                {title}
+              </Text>
+            )}
+            {tag && (
+              <Tag theme="info" className={classes.tag}>
+                {tag}
+              </Tag>
+            )}
           </Flexbox>
           <Flexbox flex="0 0 auto">
             <Icon
               iconName={getIcon('arrow-down', 'chevron-down')}
               color={iconColor}
-              className={classes.icon}
-              style={{ transform: toggled ? 'rotate(180deg)' : '' }}
+              size={16}
+              className={`${classes.icon}${
+                _expanded ? ` ${classes.rotateIcon}` : ''
+              }`}
             />
           </Flexbox>
         </Flexbox>
       </div>
-      {_expanded && (
+      <div
+        className={`${classes.contentWrapper}${
+          _expanded ? ` ${classes.showContentWrapper}` : ''
+        }`}
+      >
         <div
-          className={classNames(
-            classes.content,
-            { [classes.show]: toggled },
-            { [classes.hide]: !toggled }
-          )}
+          className={`${classes.content}${
+            _expanded ? ` ${classes.showContent}` : ''
+          }`}
         >
           {children}
         </div>
-      )}
+      </div>
     </div>
   )
 }
@@ -156,7 +180,10 @@ const SlideDown = ({
 SlideDown.defaultProps = {
   textSize: 'md',
   theme: 'default',
-  noJustified: false
+  noJustified: false,
+  divider: false,
+  icon: '',
+  noPadding: false
 }
 
 export default SlideDown

@@ -1,217 +1,172 @@
-import React, {
-  useState,
-  useEffect,
-  useCallback,
-  MouseEvent,
-  ReactElement
-} from 'react'
+import React, { useCallback, useEffect } from 'react'
 import classnames from 'classnames'
 
-import Icon from '@/components/Icon'
-import usePrevious from '@/hooks/usePrevious'
-import colors from '@/tokens/colors'
-
 import Page from './Page'
-import Break from './Break'
 import useStyles from './styles'
-import iconSizes from '@/tokens/iconSizes'
 import useIcon from '@/hooks/useIcon'
+import Button from '../Button'
+
+type PaginatorElement = {
+  key: string
+  type: 'page' | 'break'
+  selected?: boolean
+  disabled?: boolean
+}
 
 interface PagerProps {
+  currentPage: number
   pageCount?: number
-  pageRangeDisplayed?: number
-  marginPagesDisplayed?: number
+  centerPages?: number
+  marginPages?: number
   previousLabel?: string
   nextLabel?: string
   onPageChange?: (selected: number) => void
-  initialPage?: number
-  forcePage?: number
-  disableInitialCallback?: boolean
   hideNumbers?: boolean
-  breakLabel?: string
+  breakSymbol?: string
+  disabled?: boolean
   className?: string
+  testId?: string
 }
 
 const Pager = ({
-  initialPage,
-  forcePage,
-  disableInitialCallback,
-  pageCount,
-  pageRangeDisplayed,
-  marginPagesDisplayed,
-  breakLabel,
-  previousLabel,
-  nextLabel,
+  currentPage,
+  pageCount = 10,
+  centerPages = 3,
+  marginPages = 2,
+  breakSymbol = '...',
+  previousLabel = 'Previous',
+  nextLabel = 'Next',
   hideNumbers,
+  disabled,
   className,
-  onPageChange
+  onPageChange,
+  testId
 }: PagerProps) => {
   const classes = useStyles()
-  const [selected, setSelected] = useState(initialPage || forcePage || 1)
-  const prevForcePage = usePrevious(forcePage)
 
   const getIcon = useIcon()
 
-  const callCallback = useCallback(
-    (selectedItem: number) => {
-      if (onPageChange) onPageChange(selectedItem)
-    },
-    [onPageChange]
-  )
-
-  useEffect(() => {
-    if (typeof initialPage !== 'undefined' && !disableInitialCallback) {
-      callCallback(initialPage)
-    }
-  }, [callCallback, disableInitialCallback, initialPage])
-
-  useEffect(() => {
-    if (typeof forcePage !== 'undefined' && prevForcePage !== forcePage) {
-      setSelected(forcePage)
-    }
-  }, [forcePage, prevForcePage])
-
   const handlePageSelected = useCallback(
-    (newSelected, e: MouseEvent) => {
-      if (selected === newSelected) return
-      setSelected(newSelected)
-      callCallback(newSelected)
+    (newPage: number) => {
+      if (currentPage === newPage) return
+      if (onPageChange) onPageChange(newPage)
     },
-    [callCallback, selected]
+    [currentPage, onPageChange]
   )
 
-  const handlePrevPage = useCallback(
-    (e: MouseEvent) => {
-      if (selected > 1) handlePageSelected(selected - 1, e)
-    },
-    [handlePageSelected, selected]
-  )
+  useEffect(() => {
+    if (currentPage > pageCount || currentPage < 1) {
+      handlePageSelected(1)
+    }
+  }, [currentPage, pageCount, handlePageSelected])
 
-  const handleNextPage = useCallback(
-    (e: MouseEvent) => {
-      if (selected < pageCount) handlePageSelected(selected + 1, e)
-    },
-    [handlePageSelected, selected, pageCount]
-  )
+  const handlePrevPage = () => {
+    if (currentPage > 1) handlePageSelected(currentPage - 1)
+  }
 
-  const getPageElement = useCallback(
-    (index: number) => (
-      <Page
-        key={index}
-        onClick={event => handlePageSelected(index, event)}
-        selected={selected === index}
-        page={index}
-      />
-    ),
-    [handlePageSelected, selected]
-  )
+  const handleNextPage = () => {
+    if (currentPage < pageCount) handlePageSelected(currentPage + 1)
+  }
 
-  const pagination = useCallback(() => {
-    const items = []
-    if (pageCount <= pageRangeDisplayed) {
-      for (let index = 1; index <= pageCount; index++) {
-        items.push(getPageElement(index))
+  const addPage = (page: number) => {
+    const pageData: PaginatorElement = {
+      key: page.toString(),
+      type: 'page',
+      selected: currentPage === page
+    }
+    return pageData
+  }
+
+  const getStartAndEndPages = () => {
+    let startPage = Math.max(
+      currentPage - Math.floor(centerPages / 2),
+      marginPages + 1
+    )
+    let endPage = Math.min(startPage + centerPages - 1, pageCount - marginPages)
+
+    if (endPage === pageCount - marginPages) {
+      startPage = Math.max(endPage - centerPages + 1, marginPages + 1)
+    }
+
+    return { startPage, endPage }
+  }
+
+  function getPagination(): PaginatorElement[] {
+    const elements: PaginatorElement[] = []
+
+    if (pageCount <= centerPages + marginPages * 2) {
+      for (let i = 1; i <= pageCount; i++) {
+        elements.push(addPage(i))
       }
     } else {
-      let leftSide = pageRangeDisplayed / 2
-      let rightSide = pageRangeDisplayed - leftSide
-
-      if (selected > pageCount - pageRangeDisplayed / 2) {
-        rightSide = pageCount - selected
-        leftSide = pageRangeDisplayed - rightSide
-      } else if (selected < pageRangeDisplayed / 2) {
-        leftSide = selected
-        rightSide = pageRangeDisplayed - leftSide
+      for (let i = 1; i <= marginPages; i++) {
+        elements.push(addPage(i))
       }
 
-      let index: number
-      let page: number
-      let breakView: ReactElement
+      const { startPage, endPage } = getStartAndEndPages()
 
-      for (index = 1; index <= pageCount; index++) {
-        page = index
+      if (currentPage > marginPages + 1 && startPage > marginPages + 1) {
+        elements.push({ key: 'left-break', type: 'break' })
+      }
 
-        if (page <= marginPagesDisplayed) {
-          items.push(getPageElement(index))
-          continue
-        }
+      for (let i = startPage; i <= endPage; i++) {
+        elements.push(addPage(i))
+      }
 
-        if (page > pageCount - marginPagesDisplayed) {
-          items.push(getPageElement(index))
-          continue
-        }
+      if (currentPage < pageCount - marginPages - 1) {
+        elements.push({ key: 'right-break', type: 'break' })
+      }
 
-        if (index >= selected - leftSide && index <= selected + rightSide) {
-          items.push(getPageElement(index))
-          continue
-        }
-
-        if (
-          breakLabel &&
-          items[items.length - 1] !== breakView &&
-          marginPagesDisplayed > 0
-        ) {
-          breakView = <Break key={index} label={breakLabel} />
-          items.push(breakView)
-        }
+      for (let i = pageCount - marginPages + 1; i <= pageCount; i++) {
+        elements.push(addPage(i))
       }
     }
-    return items
-  }, [
-    breakLabel,
-    getPageElement,
-    marginPagesDisplayed,
-    pageCount,
-    pageRangeDisplayed,
-    selected
-  ])
+
+    return elements
+  }
 
   return (
-    <ul className={classnames(classes.pager, className)}>
-      <li
-        className={classnames(classes.btn, classes.prev, {
-          [classes.disabled]: selected === 1,
-          [classes.prevOnly]: hideNumbers
-        })}
-        tabIndex={0}
+    <div className={classnames(classes.pager, className)} data-testid={testId}>
+      <Button
+        className={classes.prev}
+        disabled={currentPage === 1 || disabled}
+        theme="secondary"
         onClick={handlePrevPage}
+        iconLeft="arrow-left"
+        size={!previousLabel ? 'lg' : 'sm'}
+        testId={testId ? `${testId}-prev-button` : undefined}
       >
-        <Icon
-          iconName={getIcon('arrow-left', 'chevron-left')}
-          color={colors.inkLight}
-          size={iconSizes.tiny}
-          className={classes.icon}
-        />{' '}
         {previousLabel}
-      </li>
-      {!hideNumbers && pagination()}
-      <li
-        className={classnames(classes.btn, classes.next, {
-          [classes.disabled]: selected === pageCount,
-          [classes.nextOnly]: hideNumbers
+      </Button>
+      {!hideNumbers &&
+        getPagination().map(({ key, type, selected }) => {
+          if (type === 'page') {
+            return (
+              <Page
+                key={key}
+                onClick={() => handlePageSelected(Number(key))}
+                selected={selected}
+                page={Number(key)}
+                disabled={disabled}
+                testId={testId ? `${testId}-page-${key}` : undefined}
+              />
+            )
+          }
+          return <Page key={key} page={breakSymbol} disabled={disabled} />
         })}
-        tabIndex={0}
+      <Button
+        className={classes.next}
+        disabled={currentPage === pageCount || disabled}
+        theme="secondary"
         onClick={handleNextPage}
+        iconRight="arrow-right"
+        size={!nextLabel ? 'lg' : 'sm'}
+        testId={testId ? `${testId}-next-button` : undefined}
       >
-        {nextLabel}{' '}
-        <Icon
-          iconName={getIcon('arrow-right', 'chevron-right')}
-          color={colors.inkLight}
-          size={iconSizes.tiny}
-          className={classes.icon}
-        />
-      </li>
-    </ul>
+        {nextLabel}
+      </Button>
+    </div>
   )
-}
-
-Pager.defaultProps = {
-  pageCount: 10,
-  pageRangeDisplayed: 2,
-  marginPagesDisplayed: 3,
-  previousLabel: 'Previous',
-  nextLabel: 'Next',
-  breakLabel: '...'
 }
 
 export default Pager

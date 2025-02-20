@@ -1,7 +1,4 @@
 import classnames from 'classnames'
-
-import Text from '@/components/Text'
-
 import { PillType } from '../'
 import useStyles from './styles'
 
@@ -27,6 +24,7 @@ const Group = ({
         <button
           key={item.id}
           id={idPrefix ? `${idPrefix}${item.id}` : null}
+          disabled={item.disabled}
           data-testid={testId ? `${testId}${index}` : null}
           className={classnames(
             classes.pill,
@@ -34,13 +32,9 @@ const Group = ({
             { [classes.disabled]: selected !== item.id && item.disabled }
           )}
           onClick={selected !== item.id ? () => onSelect(item.id) : null}
+          type="button"
         >
-          <Text
-            disabled={selected !== item.id && item.disabled}
-            className={classes.text}
-          >
-            {item.label}
-          </Text>
+          {item.label}
         </button>
       ))}
     </div>

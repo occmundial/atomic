@@ -17,7 +17,7 @@ Alert component to display messages within a container.
 | Name              | Type                   | Default value | Description                                                                                                                                                                                                       |
 | -------------     | ---------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------                                                  |
 | `tag`             | **string**             | `div`         | This function accepts any HTMLElement or JSXElementConstructor as its parameter. Examples of valid inputs include 'div', 'span', and 'section'.                                                                   |
-| `activatorProps`  | **object**             | `{}`          | This prop facilitates passing props to the Tooltip activator by accepting an object with tag-prop-compatible properties.                                                                                           |
+| `activatorProps`  | **object**             | `{}`          | This prop facilitates passing props to the Tooltip activator by accepting an object with tag-prop-compatible properties.                                                                                          |
 | `tooltipProps`    | **object**             | `{}`          | This prop facilitates passing props to the Tooltip container by accepting an object with div-compatible properties like 'styles', 'onClick', 'className', and more.                                               |
 | `autoUpdate`      | **object** **boolean** | `true`        | Automatically updates the position of the floating element when necessary to ensure it stays anchored. For further details on available options, visit [here](https://floating-ui.com/docs/autoUpdate#options)."  |
 | `flip`            | **object** **boolean** | -             | "Adjusts the positioning of the floating element to ensure it remains visible. For further details on available options, visit [here](https://floating-ui.com/docs/flip#options)."                                |
@@ -34,6 +34,7 @@ Alert component to display messages within a container.
 | `fit`             | **boolean**            | `false`       | This property allows the Tooltip to be adjusted to the length of the associated component.                                                                                                                        |
 | `width`           | **number/string/null** | `220`         | The "Width" property of the Tooltip enables modification of its width and accepts a number (e.g., 220), a string (e.g., '220px' or 'auto') or null as its value.                                                  |
 | `onChange`        | **function**           | ``            | Callback fired when the Tooltip show state changes. The function signature is (open: boolean) => void.                                                                                                            |
+| `icon`            | **string**             | -             | Displays an icon on the left side of the button.                                                                                                                                                                  |
 
 ## Examples
 
@@ -148,14 +149,14 @@ function Component() {
   >
     <Flexbox flex-direction="column">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '70px' }}>
-        <Tooltip placement="bottom" text="Bottom" open>
+        <Tooltip placement="bottom" text="Bottom" open theme="dark">
           <Button size="md">Button</Button>
         </Tooltip>
-        <Tooltip placement="bottom-start" text="Bottom-start" open>
+        <Tooltip placement="bottom-start" text="Bottom-start" open theme="light">
           <Button size="md">Button</Button>
         </Tooltip>
         <div style={{ marginBottom: '70px' }}>
-          <Tooltip placement="bottom-end" text="Botton-end" open>
+          <Tooltip placement="bottom-end" text="Botton-end" open theme="dark">
             <Button size="md">Button</Button>
           </Tooltip>
         </div>
@@ -262,9 +263,9 @@ function Component() {
 }
 ```
 
-### Flip
+### Icon
 
-<Demo title="Fit property" background={colors.bgGrey}>
+<Demo title="Icon property" background={colors.bgGrey}>
   <Flexbox
     display="flex"
     justifyContent="center"
@@ -274,11 +275,11 @@ function Component() {
     <Flexbox flex-direction="column">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '110px' }}>
         <div style={{ marginTop: '70px' }}>
-          <Tooltip text="This is a large text" open flip placement="bottom" activatorProps={{ "data-test": "tooltip-flip" }}>
+          <Tooltip text="This is a large text" icon="check-circle" open theme="dark">
             <Button size="md">Button</Button>
           </Tooltip>
         </div>
-        <Tooltip text={<span>This is another large text</span>} flip={{ fallbackPlacements: ['bottom'] }} open placement="left">
+        <Tooltip text="This is another large text" icon="check-circle" open theme="light">
           <Button size="md">Button</Button>
         </Tooltip>
       </div>
@@ -292,11 +293,11 @@ function Component() {
   return (
     <>
       {/* `false` is the default value. */}
-      <Tooltip text="This is a large text" open flip placement="bottom" activatorProps={{ "data-test": "tooltip-flip" }}>
-        <Button size="md">Button</Button>
+      <Tooltip text="This is a large text" open>
+        <Button>Button</Button>
       </Tooltip>
-      <Tooltip text={<span>This is another large text</span>} flip={{ fallbackPlacements: ['bottom'] }} open placement="left">
-        <Button size="md">Button</Button>
+      <Tooltip text="This is another large text" fit={true} open>
+        <Button>Button</Button>
       </Tooltip>
     </>
   )

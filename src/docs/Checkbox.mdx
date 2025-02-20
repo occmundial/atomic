@@ -1,0 +1,123 @@
+---
+title: Checkbox
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Checkbox from '@/components/Checkbox'
+import { colors } from '@/components/tokens'
+
+# Checkbox
+
+---
+
+A simple Checkbox component that allows users to select an option.
+
+## Props
+
+| Name           | Type                    | Default value    | Description                                                                                                      |
+| -------------- | ----------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `value`        | **boolean**             | -                | Default value for the checkbox.                                                                                  |
+| `undetermined` | **boolean**             | -                | Used for partial check or when is unable to retrieve the value as absolute.                                      |
+| `onChange`     | **function**            | -                | Callback function called when the component needs to change the element state. (value) => void                   |
+| `disabled`     | **boolean**             | -                | Disable the toggle.                                                                                              |
+| `label`        | **ReactNode**           | -                | Text to display next to the checkbox.                                                                            |
+| `right`        | **string** **boolean**  | -                | Text to show on the right.                                                                                       |
+| `textOverflow` | **boolean**             | -                | Use this prop to overflow the text of the label, adding '...' and the end.                                       |
+| `trk`          | **boolean**             | -                | Id for catching selected element for tracking.                                                                   |
+| `id`           | **string**              | -                | Id of the component                                                                                              |
+| `className`    | **string**              | -                | Adds class(es) to the togglecontainer                                                                            |
+| `style`        | **CSSProperties**       | -                | Adds style(s) to the toggle container                                                                            |
+| `testId`       | **string**              | -                | The testId property adds the data attribute data-testid to the main element and should be used for testing only. |
+
+
+## Examples
+
+### Checkbox with default value
+
+<Demo title="Icon" background={colors.bgWhite}>
+  <Checkbox id="A1" value={true} label="Selected" />
+</Demo>
+
+```jsx
+// How to use selected value
+function Component() {
+  return (
+    <Checkbox id="A1" value={true} label="Selected" />
+  )
+}
+```
+
+### Disabled checkbox
+
+<Demo title="Icon" background={colors.bgWhite}>
+  <Checkbox id="A1" value={true} label="Disabled" disabled />
+  <Checkbox id="A1" value={false} label="Disabled" disabled />
+  <Checkbox id="A1" value={false} label="Disabled" undetermined disabled />
+</Demo>
+
+```jsx
+// How to use selected value
+function Component() {
+  return (
+    <Checkbox id="A1" value={true} label="Disabled" disabled />
+    <Checkbox id="A1" value={false} label="Disabled" disabled />
+    <Checkbox id="A1" value={false} label="Disabled" undetermined disabled />
+  )
+}
+```
+
+### Checkbox with text on the right
+
+<Demo title="Icon" background={colors.bgWhite}>
+  <Checkbox id="A1" value={false} label="Checkbox" right="Right" />
+</Demo>
+
+```jsx
+// How to use selected value
+function Component() {
+  return (
+    <Checkbox id="A1" value={false} label="Checkbox" right="Right" />
+  )
+}
+```
+
+### Text overflow
+
+<Demo title="Icon" background={colors.bgWhite}>
+  <Checkbox 
+    id="A1" 
+    value={true} 
+    label="Bacon ipsum dolor amet landjaeger kevin tri-tip strip steak tenderloin, jerky brisket boudin fatback corned beef ball tip buffalo. Bacon ipsum dolor amet landjaeger kevin tri-tip strip steak tenderloin, jerky brisket boudin fatback corned beef ball tip buffalo." 
+    textOverflow 
+  />
+</Demo>
+
+```jsx
+// How to use selected value
+function Component() {
+  return (
+    <Checkbox 
+      id="A1" 
+      value={true} 
+      label="Bacon ipsum dolor amet landjaeger kevin tri-tip strip steak tenderloin, jerky brisket boudin fatback corned beef ball tip buffalo. Bacon ipsum dolor amet landjaeger kevin tri-tip strip steak tenderloin, jerky brisket boudin fatback corned beef ball tip buffalo." 
+      textOverflow 
+    />
+  )
+}
+```
+
+### Checkbox with default value
+
+<Demo title="Icon" background={colors.bgWhite}>
+  <Checkbox id="A1" value={false} undetermined label="Undetermined" />
+</Demo>
+
+```jsx
+// How to use selected value
+function Component() {
+  return (
+    <Checkbox id="A1" value={true} undetermined label="Undetermined" />
+  )
+}
+```

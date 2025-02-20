@@ -1,73 +1,138 @@
 import { createUseStyles } from 'react-jss'
 
-import colors from '@/tokens/colors'
-import spacing from '@/tokens/spacing'
+import spacing from '@/tokens/future/spacing.json'
+import colors from '@/tokens/future/colors.json'
+import shadows from '@/tokens/future/shadows.json'
+import borderRadius from '@/tokens/future/borderRadius.json'
+
+const { radio } = colors
+const transition = 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s'
+const contentHeight = 48
+const radioWidth = 52
+const radioSize = 20
+const radioInnerSize = 10
 
 export default createUseStyles({
   cont: {
-    paddingTop: spacing.tiny,
-    paddingBottom: spacing.tiny,
     boxSizing: 'border-box',
     display: 'flex',
-    alignItems: 'start',
+    alignItems: 'flex-start',
     cursor: 'pointer',
     outline: '0',
-    '&:after': {
-      content: '""',
-      display: 'table',
-      clear: 'both'
+    '&:focus-visible $radio': {
+      boxShadow: shadows['focus-bright-blue']
     },
-    '&:hover $radio:after': {
-      background: colors.grey200
+    '&:hover $radio $radioOuter': {
+      boxShadow: `inset 0 0 0 1px ${radio.unselected.border.hover}`
+    },
+    '&:active $radio $radioOuter': {
+      boxShadow: `inset 0 0 0 2px ${radio.unselected.border.hover}`
+    },
+    '&$active': {
+      '&:hover': {
+        '& $radio $radioOuter': {
+          boxShadow: `inset 0 0 0 2px ${radio.selected.border.hover}`
+        },
+        '& $radio $radioInner': {
+          background: radio.selected.bg.hover
+        }
+      },
+      '&:active': {
+        '& $radio $radioOuter': {
+          boxShadow: `inset 0 0 0 3px ${radio.selected.border.hover} !important`
+        },
+        '& $radio $radioInner': {
+          background: radio.selected.bg.hover
+        }
+      }
     }
+  },
+  radioWrap: {
+    width: radioWidth,
+    height: contentHeight,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0
   },
   radio: {
-    width: spacing.base,
-    height: spacing.base,
-    position: 'relative',
-    '&:before': {
-      content: '""',
-      width: spacing.small,
-      height: spacing.small,
-      borderRadius: '50%',
-      position: 'absolute',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      border: `1px solid ${colors.grey200}`,
-      background: colors.bgWhite
-    },
-    '&:after': {
-      content: '""',
-      width: 6,
-      height: 6,
-      borderRadius: '50%',
-      position: 'absolute',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      transition: '0.3s all',
-      background: 'transparent'
-    }
+    width: radioSize,
+    height: radioSize,
+    borderRadius: borderRadius['br-full'],
+    transition,
+    display: 'grid',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  radioOuter: {
+    width: radioSize,
+    height: radioSize,
+    borderRadius: borderRadius['br-full'],
+    boxShadow: `inset 0 0 0 1px ${radio.unselected.border.default}`,
+    background: radio.bg.default,
+    transition,
+    gridRowStart: 1,
+    gridColumnStart: 1
+  },
+  radioInner: {
+    width: radioInnerSize,
+    height: radioInnerSize,
+    margin: 5,
+    borderRadius: borderRadius['br-full'],
+    background: radio.bg.default,
+    transition,
+    gridRowStart: 1,
+    gridColumnStart: 1
   },
   active: {
-    '& $radio:after': {
-      background: [colors.prim, '!important']
+    '& $radio': {
+      '& $radioOuter': {
+        boxShadow: `inset 0 0 0 2px ${radio.selected.border.default}`
+      },
+      '& $radioInner': {
+        background: radio.selected.bg.default
+      }
     }
   },
   disabled: {
-    opacity: 0.4,
-    pointerEvents: 'none'
+    pointerEvents: 'none',
+    '& $radio $radioOuter': {
+      background: radio.bg.disabled
+    },
+    '& $radio $radioInner': {
+      background: radio.bg.disabled
+    },
+    '&$active': {
+      '& $radio $radioOuter': {
+        boxShadow: `inset 0 0 0 2px ${radio.selected.border.disabled}`
+      },
+      '& $radio $radioInner': {
+        background: radio.selected.bg.disabled
+      }
+    }
+  },
+  labelWrap: {
+    minHeight: contentHeight,
+    display: 'flex',
+    alignItems: 'center',
+    paddingTop: spacing['size-1'],
+    paddingBottom: spacing['size-1'],
+    overflow: 'hidden',
+    flex: 1
   },
   label: {
-    marginLeft: spacing.tiny,
+    marginLeft: spacing['size-3'],
+    pointerEvents: 'none',
     cursor: 'pointer',
-    float: 'left',
-    flex: '1'
+    flex: 1
   },
   right: {
-    marginLeft: spacing.tiny,
-    float: 'right'
+    marginLeft: spacing['size-2'],
+    pointerEvents: 'none'
+  },
+  tag: {
+    marginLeft: spacing['size-2'],
+    pointerEvents: 'none'
   },
   overflow: {
     overflow: 'hidden',

@@ -1,10 +1,12 @@
 import { createUseStyles } from 'react-jss'
 
-import colors from '@/tokens/colors'
-import spacing from '@/tokens/spacing'
-import shadows from '@/tokens/shadows'
+import colors from '@/tokens/future/colors.json'
+import spacing from '@/tokens/future/spacing.json'
+import shadows from '@/tokens/future/shadows.json'
+import borderRadius from '@/tokens/future/borderRadius.json'
+import fonts from '@/tokens/future/fonts.json'
+import { objectToFontValue } from '@/utils/font'
 import grid from '@/tokens/grid'
-import iconSizes from '@/tokens/iconSizes'
 
 export default createUseStyles({
   '@keyframes slideToasterIn': {
@@ -12,16 +14,18 @@ export default createUseStyles({
     to: { transform: 'translateX(0)', opacity: 1 }
   },
   toast: {
-    borderRadius: spacing.radius,
-    boxShadow: shadows.lvl5,
-    padding: [spacing.tiny, spacing.small],
+    borderRadius: borderRadius['br-xs'],
+    boxShadow: shadows['elevation-elevation-5'],
+    padding: spacing['size-3'],
     pointerEvents: 'auto',
     zIndex: 1001,
     animation: '$slideToasterIn 0.3s ease-out',
     transition: '0.3s all ease-out',
+    outlineOffset: '-1px',
     [`@media screen and (min-width:${grid.xs}px)`]: {
       maxWidth: 480,
-      padding: spacing.small
+      minWidth: 400,
+      padding: spacing['size-4']
     },
     [`@media screen and (max-width:${grid.xs - 1}px)`]: {
       width: '100%'
@@ -32,59 +36,121 @@ export default createUseStyles({
     opacity: 0
   },
   success: {
-    background: colors.success
+    backgroundColor: colors.alert.success.bg,
+    outline: `1px solid ${colors.alert.success.border}`
   },
   error: {
-    background: colors.error
+    backgroundColor: colors.alert.error.bg,
+    outline: `1px solid ${colors.alert.error.border}`
   },
   warning: {
-    background: colors.warning
+    backgroundColor: colors.alert.warning.bg,
+    outline: `1px solid ${colors.alert.warning.border}`
   },
   info: {
-    background: colors.info
+    backgroundColor: colors.alert.info.bg,
+    outline: `1px solid ${colors.alert.info.border}`
+  },
+  promote: {
+    backgroundColor: colors.alert.neutral.bg,
+    outline: `1px solid ${colors.alert.neutral.border}`
+  },
+  textInfo: {
+    color: colors.text.indigo.primary
+  },
+  textWarning: {
+    color: colors.text.warning
+  },
+  textSuccess: {
+    color: colors.text.success
+  },
+  textError: {
+    color: colors.text.error
+  },
+  textPromote: {
+    color: colors.text.white.primary
+  },
+  linkInfo: {
+    color: colors.text.indigo.primary,
+    backgroundRepeat: 'no-repeat',
+    background: `linear-gradient(${colors.link.brand.bg.hover}, ${colors.link.brand.bg.hover})`,
+    '&:active': {
+      background: `linear-gradient(${colors.link.brand.bg.active}, ${colors.link.brand.bg.active})`
+    }
+  },
+  linkWarning: {
+    color: colors.text.warning,
+    backgroundRepeat: 'no-repeat',
+    background: `linear-gradient(${colors.link.warning.bg.hover}, ${colors.link.warning.bg.hover})`,
+    '&:active': {
+      background: `linear-gradient(${colors.link.warning.bg.active}, ${colors.link.warning.bg.active})`
+    }
+  },
+  linkSuccess: {
+    color: colors.text.success,
+    backgroundRepeat: 'no-repeat',
+    background: `linear-gradient(${colors.link.success.bg.hover}, ${colors.link.success.bg.hover})`,
+    '&:active': {
+      background: `linear-gradient(${colors.link.success.bg.active}, ${colors.link.success.bg.active})`
+    }
+  },
+  linkError: {
+    color: colors.text.error,
+    backgroundRepeat: 'no-repeat',
+    background: `linear-gradient(${colors.link.error.bg.hover}, ${colors.link.error.bg.hover})`,
+    '&:active': {
+      background: `linear-gradient(${colors.link.error.bg.active}, ${colors.link.error.bg.active})`
+    }
+  },
+  linkPromote: {
+    color: colors.text.white.primary,
+    backgroundRepeat: 'no-repeat',
+    background: `linear-gradient(${colors.link.white.bg.hover}, ${colors.link.white.bg.hover})`,
+    '&:active': {
+      background: `linear-gradient(${colors.link.white.bg.active}, ${colors.link.white.bg.active})`
+    }
+  },
+  title: {
+    font: objectToFontValue(fonts['alert-default']),
+    margin: 0
+  },
+  description: {
+    font: objectToFontValue(fonts['alert-description']),
+    margin: [spacing['size-1'], 0, 0]
   },
   content: {
-    [`@media screen and (max-width:${grid.xs - 1}px)`]: {
-      flexDirection: 'column'
+    flexDirection: 'column',
+    [`@media screen and (min-width:${grid.xs}px)`]: {
+      flexDirection: 'row'
     }
   },
   icon: {
-    marginRight: spacing.small,
-    width: iconSizes.small,
-    height: iconSizes.small,
-    [`@media screen and (min-width:${grid.xs}px)`]: {
-      width: iconSizes.base,
-      height: iconSizes.base
-    },
-    [`@media screen and (max-width:${grid.xs - 1}px)`]: {
-      display: 'none'
-    }
-  },
-  action: {
-    marginTop: spacing.xTiny,
-    cursor: 'pointer',
-    background: 'none',
-    border: 'none',
-    [`@media screen and (min-width:${grid.xs}px)`]: {
-      margin: -spacing.small,
-      marginLeft: spacing.small,
-      padding: [0, spacing.small],
-      borderRadius: [0, spacing.radius, spacing.radius, 0],
-      borderLeft: '1px solid rgba(255, 255, 255, 0.1)',
-      transition: '0.3s all',
-      '&:hover': {
-        background: 'rgba(255, 255, 255, 0.15)'
-      }
-    },
-    [`@media screen and (max-width:${grid.xs - 1}px)`]: {
-      alignSelf: 'flex-end'
-    }
+    marginRight: spacing['size-2'],
+    alignSelf: 'start'
   },
   actionWrap: {
     height: '100%'
   },
   actionText: {
-    textTransform: 'uppercase',
-    whiteSpace: 'nowrap'
+    font: objectToFontValue(fonts['link-small-strong']),
+    whiteSpace: 'nowrap',
+    textDecoration: 'underline',
+    cursor: 'pointer',
+    alignSelf: 'start',
+    transition: 'all ease-out 150ms',
+    backgroundSize: '0%',
+    '&:hover': {
+      backgroundSize: '100%',
+      cursor: 'pointer'
+    },
+    margin: [spacing['size-2'], 0, 0],
+    [`@media screen and (min-width:${grid.xs}px)`]: {
+      margin: [0, 0, 0, spacing['size-4']],
+      alignSelf: 'center'
+    }
+  },
+  closeIcon: {
+    marginLeft: spacing['size-4'],
+    alignSelf: 'center'
   }
 })

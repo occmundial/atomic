@@ -1,0 +1,299 @@
+---
+title: Toaster
+section: components
+---
+
+import Demo from "@/utils/components/Demo";
+import SimpleToaster from "@/components/SimpleToaster";
+import Toaster from "@/components/Toaster";
+
+# Toaster
+
+---
+
+The Toaster component allows you to trigger any of the predefined types of alerts. Insert the Toaster component in any part of your site, and handle the alerts with the toaster object's API.
+
+- [Props](#Props)
+  - [Toaster Props](#ToasterProps)
+  - [ToastLauncher Props](#ToastLauncherProps)
+  - [Themes](#Themes)
+  - [Others](#Others)
+
+### Toaster Props
+
+| Name        | Type            | Default value | Description                                                                                                                                                                                                                       |
+| ----------- | --------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `container` | **DOM Element** | ``            | DOM Element to append the Toaster component into it. If you don't specify a container the Toaster will be rendered in the exact same DOM position you used it. This can in some cases generate problems with z-index or position. |
+
+### ToastLauncher Props
+
+| Name          | Type        | Default value | Description                                                                                                              |
+| ------------- | ----------- | ------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `title`       | **string**  | ``            | Toast title.                                                                                                             |
+| `description` | **string**  | ``            | Toast description.                                                                                                       |
+| `action`      | **Object**  | ``            | Object to render an anchor tag as a Button. Object props: label - Button text, action - function to call on button click |
+| `closeIcon`   | **boolean** | ``            | With this parameter the toast will render a close icon                                                                   |
+| `testId`      | **string**  | ``            | The testId property adds the data attribute data-testid to the main element and should be used for testing only.         |
+
+### Themes
+
+<Toaster />
+
+<Demo title='Success' background={colors.white}>
+  <div style={{ display: 'flex', gap: '8px', flexDirection: 'row'}}>
+    <SimpleToaster
+      btnText='Success'
+      theme='success'
+    />
+    <SimpleToaster
+      btnText='Warning'
+      theme='warning'
+    />
+    <SimpleToaster
+      btnText='Info'
+      theme='info'
+    />
+    <SimpleToaster
+      btnText='Error'
+      theme='error'
+    />
+    <SimpleToaster
+      btnText='Promote'
+      theme='promote'
+    />
+  </div>
+</Demo>
+
+```jsx
+import { Toaster, toastLauncher } from "@occmundial/atomic/components";
+
+// Success
+function Component() {
+  return (
+    <Fragment>
+      <Button
+        onClick={() =>
+          toastLauncher.success({
+            title: "Simple toast",
+          })
+        }
+      >
+        Success
+      </Button>
+      <Button
+        onClick={() =>
+          toastLauncher.warning({
+            title: "Simple toast",
+          })
+        }
+      >
+        Warning
+      </Button>
+      <Button
+        onClick={() =>
+          toastLauncher.info({
+            title: "Simple toast",
+          })
+        }
+      >
+        Info
+      </Button>
+      <Button
+        onClick={() =>
+          toastLauncher.error({
+            title: "Simple toast",
+          })
+        }
+      >
+        Error
+      </Button>
+      <Button
+        onClick={() =>
+          toastLauncher.promote({
+            title: "Simple toast",
+          })
+        }
+      >
+        Promote
+      </Button>
+      <Toaster container={document.body} />
+    </Fragment>
+  );
+}
+```
+
+### Others
+
+<Demo title='Toast with description' background={colors.white}>
+  <div style={{ display: 'flex', gap: '8px', flexDirection: 'row'}}>
+    <SimpleToaster
+      btnText='Success'
+      theme='success'
+      description='This is a description text'
+    />
+    <SimpleToaster
+      btnText='Warning'
+      theme='warning'
+      description='This is a description text'
+    />
+    <SimpleToaster
+      btnText='Info'
+      theme='info'
+      description='This is a description text'
+    />
+    <SimpleToaster
+      btnText='Error'
+      theme='error'
+      description='This is a description text'
+    />
+    <SimpleToaster
+      btnText='Promote'
+      theme='promote'
+      description='This is a description text'
+    />
+  </div>
+</Demo>
+
+```jsx
+import { Toaster, toastLauncher } from "@occmundial/atomic/components";
+
+// Description
+function Component() {
+  return (
+    <Fragment>
+      <Button
+        onClick={() =>
+          toastLauncher.success({
+            title: "Simple toast",
+            description: "This is a description text",
+          })
+        }
+      >
+        Launch toast
+      </Button>
+      <Toaster container={document.body} />
+    </Fragment>
+  );
+}
+```
+
+<Demo title='Toast with close icon' background={colors.white}>
+  <div style={{ display: 'flex', gap: '8px', flexDirection: 'row'}}>
+    <SimpleToaster
+      btnText='Success'
+      theme='success'
+      description='This is a description text'
+      closeIcon
+    />
+    <SimpleToaster
+      btnText='Warning'
+      theme='warning'
+      description='This is a description text'
+      closeIcon
+    />
+    <SimpleToaster
+      btnText='Info'
+      theme='info'
+      description='This is a description text'
+      closeIcon
+    />
+    <SimpleToaster
+      btnText='Error'
+      theme='error'
+      description='This is a description text'
+      closeIcon
+    />
+    <SimpleToaster
+      btnText='Promote'
+      theme='promote'
+      description='This is a description text'
+      closeIcon
+    />
+  </div>
+</Demo>
+
+```jsx
+import { Toaster, toastLauncher } from "@occmundial/atomic/components";
+
+// Close icon
+function Component() {
+  return (
+    <Fragment>
+      <Button
+        onClick={() =>
+          toastLauncher.success({
+            title: "Simple toast",
+            description: "This is a description text",
+            closeIcon: true,
+          })
+        }
+      >
+        Launch toast
+      </Button>
+      <Toaster container={document.body} />
+    </Fragment>
+  );
+}
+```
+
+<Demo title='Toast with an action' background={colors.white}>
+  <div style={{ display: 'flex', gap: '8px', flexDirection: 'row'}}>
+    <SimpleToaster
+      btnText='Success'
+      theme='success'
+      description='This is a description text'
+      action
+    />
+    <SimpleToaster
+      btnText='Warning'
+      theme='warning'
+      description='This is a description text'
+      action
+    />
+    <SimpleToaster
+      btnText='Info'
+      theme='info'
+      description='This is a description text'
+      action
+    />
+    <SimpleToaster
+      btnText='Error'
+      theme='error'
+      description='This is a description text'
+      action
+    />
+    <SimpleToaster
+      btnText='Promote'
+      theme='promote'
+      description='This is a description text'
+      action
+    />
+  </div>
+</Demo>
+
+```jsx
+import { Toaster, toastLauncher } from "@occmundial/atomic/components";
+
+// Action link
+function Component() {
+  return (
+    <Fragment>
+      <Button
+        onClick={() =>
+          toastLauncher.success({
+            title: "Simple toast",
+            description: "This is a description text",
+            action: {
+              label: 'Label',
+              onClick: () => console.log('Action clicked')
+            }
+          })
+        }
+      >
+        Launch toast
+      </Button>
+      <Toaster container={document.body} />
+    </Fragment>
+  );
+}
+```

@@ -1,0 +1,116 @@
+---
+title: Droplist
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Droplist from '@/components/Droplist'
+import { colors } from '@/components/tokens'
+
+# Droplist
+
+---
+
+The Droplist component displays a list and filters it with the prop 'term'.
+
+## Props
+
+| Name           | Type                    | Default value    | Description                                                                                                                  |
+| -----------    | ----------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `items`        | **Item[]**, **Group[]** | -                | Array of Item[] or Group[] to render Droplist items                                                                          |
+| `term`         | **string**              | -                | Term to filter the items of the Droplist.                                                                                    |
+| `groups`       | **boolean**             | false            | If true Droplist will render as a grouped list (Group[])                                                                     |
+| `onClick`      | **function**            | -                | Callback function that is called when an item is clicked.                                                                    |
+| `onMouseDown`  | **function**            | -                | Callback function that is called when is pressed down on an item.                                                            |
+| `onMouseUp`    | **function**            | -                | Callback function that is called when is pressed up on an item.                                                              |
+| `onEnter`      | **function**            | -                | Callback function that is called when the Enter key is pressed down.                                                         |
+| `filter`       | **boolean**             | true             | Filters given items if they match with the term                                                                              |
+| `isOnFocus`    | **boolean**             | -                | With this parameter the Droplist will have navigation with up and down keys.                                                 |
+| `id`           | **string**              | -                | Id of the component                                                                                                          |
+| `className`    | **string**              | -                | Adds class(es) to each option container                                                                                      |
+| `style`        | **CSSProperties**       | -                | Adds style(s) to each option container                                                                                       |
+| `testId`       | **string**              | -                | The testId property adds the data attribute data-testid to the main element and should be used for testing only.             |
+
+## Examples
+
+### List items
+
+<Demo title="Droplist" background={colors.bgWhite}>
+  <Droplist
+    items={
+      [
+        { text: 'Item 1', textRight: '(10)', iconName: 'location' },
+        { text: 'Item 2', textRight: '(5)', iconName: 'location' },
+        { text: 'Item 3', textRight: '(30)', iconName: 'location' }
+      ]
+    }
+  />
+</Demo>
+
+```jsx
+// How to use selected value
+function Component() {
+  const items = [
+    { text: 'Item 1', textRight: '(10)', iconName: 'location' },
+    { text: 'Item 2', textRight: '(5)', iconName: 'location' },
+    { text: 'Item 3', textRight: '(30)', iconName: 'location' }
+  ]
+return (
+  <Droplist
+    items={items}
+  />
+);
+}
+```
+
+### Groups
+
+<Demo title="Droplist" background={colors.bgWhite}>
+  <Droplist
+    items={[
+      {
+        text:'Group 1',
+        items: [
+          { text: 'Item 1', textRight: '(10)' },
+          { text: 'Item 2', textRight: '(5)' },
+          { text: 'Item 3', textRight: '(30)' }
+        ]
+      },
+      {
+        text:'Group 2',
+        items: [
+          { text: 'Item 4', textRight: '(25)' }
+        ]
+      }
+    ]}
+    groups
+  />
+</Demo>
+
+```jsx
+// How to use selected value
+function Component() {
+  const items = [
+    {
+      text:'Group 1',
+      items: [
+        { text: 'Item 1', textRight: '(10)' },
+        { text: 'Item 2', textRight: '(5)' },
+        { text: 'Item 3', textRight: '(30)' }
+      ]
+    },
+    {
+      text:'Group 2',
+      items: [
+        { name: 'Item 4', textRight: '(25)' }
+      ]
+    }
+  ];
+return (
+  <Droplist
+    items={items}
+    groups
+  />
+);
+}
+```

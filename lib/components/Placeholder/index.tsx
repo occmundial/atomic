@@ -1,12 +1,31 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import classnames from 'classnames'
 
 import Flexbox from '@/components/Flexbox'
 
 import useStyles from './styles'
+import { classTranslation } from '../Text/helper'
 
 export interface PlaceholderProps {
+  className: string
+  style: CSSProperties
+  theme: 'light' | 'dark'
   textSize?:
+    | 'display'
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'tag'
+    | 'bodyXLarge'
+    | 'bodyLargeStrong'
+    | 'bodyLarge'
+    | 'bodyRegularStrong'
+    | 'bodyRegular'
+    | 'bodySmallStrong'
+    | 'bodySmall'
+    | 'bodyXSmall'
     | 'hero'
     | 'headline'
     | 'heading'
@@ -28,24 +47,33 @@ const Placeholder = ({
   top,
   bottom,
   width,
-  height
+  height,
+  className,
+  style,
+  theme = 'light'
 }: PlaceholderProps) => {
   const classes = useStyles()
+  const textSizeTranslated = classTranslation.get(textSize) ?? textSize
+
   return (
     <Flexbox
       display="flex"
       alignItems="center"
+      style={style}
       className={classnames(
-        { [classes[textSize]]: textSize },
-        { [classes[`top${top}`]]: top },
-        { [classes[`bottom${bottom}`]]: bottom }
+        classes[textSizeTranslated],
+        top && classes[`top${top}`],
+        bottom && classes[`bottom${bottom}`],
+        classes[theme],
+        round && classes.round,
+        className
       )}
     >
       <div
-        className={classnames(classes.placeholder, { [classes.round]: round })}
+        className={classnames(classes.placeholder)}
         style={{
           width: width ? width : '100%',
-          height: height ? height : 14
+          height: height ? height : !textSize ? 14 : '100%'
         }}
       />
     </Flexbox>

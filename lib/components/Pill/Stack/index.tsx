@@ -1,9 +1,8 @@
 import { MouseEvent, useCallback } from 'react'
 import classnames from 'classnames'
 
-import Text from '@/components/Text'
 import Icon from '@/components/Icon'
-import colors from '@/tokens/colors'
+import colors from '@/tokens/future/colors.json'
 
 import useStyles from './styles'
 import useIcon from '@/hooks/useIcon'
@@ -49,20 +48,28 @@ const Stack = ({
   return (
     <button
       className={classnames(classes.pill, { [classes.disabled]: disabled })}
+      disabled={disabled}
       onClick={() => handleOnClick(id)}
       id={idPrefix ? `${idPrefix}${id}` : null}
       data-testid={testId ? `${testId}${id}` : null}
+      type="button"
     >
       {children && (
-        <Text className={classes.text} tag="span" disabled={disabled}>
+        <span
+          className={`${classes.text}${
+            disabled ? ` ${classes.textDisabled}` : ''
+          }`}
+        >
           {children}
-        </Text>
+        </span>
       )}
       {onClose && (
         <span className={classes.closeCont} onClick={e => handleOnClose(e, id)}>
           <Icon
             iconName={getIcon('x-micro', 'x')}
-            color={colors.grey300}
+            color={
+              disabled ? colors.icon.brand.disabled : colors.icon.brand.default
+            }
             size={16}
           />
         </span>

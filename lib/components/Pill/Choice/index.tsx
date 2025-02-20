@@ -1,10 +1,6 @@
 import { useCallback, useMemo } from 'react'
-import classnames from 'classnames'
-
 import Icon from '@/components/Icon'
-import Text from '@/components/Text'
-import colors from '@/tokens/colors'
-import iconSizes from '@/tokens/iconSizes'
+import colors from '@/tokens/future/colors.json'
 
 import useStyles from './styles'
 
@@ -18,6 +14,35 @@ interface PillChoiceProps {
   rightIcon: string
   idPrefix: string
   testId: string
+}
+
+const getStylesByStatus = (selected, disabled) => {
+  if (selected) {
+    if (disabled) {
+      return {
+        iconColor: colors.icon.inverse.disabled,
+        button: 'selectedDisabled',
+        text: 'textSelectedDisabled'
+      }
+    }
+    return {
+      iconColor: colors.icon.inverse.default,
+      button: 'selected',
+      text: 'textSelected'
+    }
+  }
+  if (disabled) {
+    return {
+      iconColor: colors.icon.brand.disabled,
+      button: 'disabled',
+      text: 'textDisabled'
+    }
+  }
+  return {
+    iconColor: colors.icon.brand.default,
+    button: 'enabled',
+    text: 'textEnabled'
+  }
 }
 
 const Choice = ({
@@ -37,37 +62,40 @@ const Choice = ({
     if (onClick) onClick(id)
   }, [id, onClick])
 
-  const iconColor = useMemo(
-    () => (disabled ? colors.grey200 : selected ? colors.prim : colors.grey900),
-    [disabled, selected]
+  const conditionedStyles = useMemo(
+    () => getStylesByStatus(!!selected, !!disabled),
+    [selected, disabled]
   )
 
   return (
     <button
-      className={classnames(
-        classes.pill,
-        { [classes.selected]: selected },
-        { [classes.disabled]: !selected && disabled }
-      )}
+      className={`${classes.pill} ${classes[conditionedStyles.button]}`}
       onClick={handleOnClick}
+      disabled={disabled}
       id={idPrefix ? `${idPrefix}${id}` : null}
       data-testid={testId ? `${testId}${id}` : null}
+      type="button"
     >
       {leftIcon && (
-        <Icon iconName={leftIcon} color={iconColor} size={iconSizes.small} />
+        <Icon
+          iconName={leftIcon}
+          color={conditionedStyles.iconColor}
+          className={classes.leftIcon}
+          size={16}
+        />
       )}
       {children && (
-        <Text
-          tag="span"
-          className={classes.text}
-          primary={selected}
-          disabled={!selected && disabled}
-        >
+        <span className={`${classes.text} ${classes[conditionedStyles.text]}`}>
           {children}
-        </Text>
+        </span>
       )}
       {rightIcon && (
-        <Icon iconName={rightIcon} color={iconColor} size={iconSizes.small} />
+        <Icon
+          iconName={rightIcon}
+          color={conditionedStyles.iconColor}
+          className={classes.rightIcon}
+          size={16}
+        />
       )}
     </button>
   )

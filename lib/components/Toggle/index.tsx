@@ -4,7 +4,8 @@ import React, {
   CSSProperties,
   ReactNode,
   useRef,
-  useCallback
+  useCallback,
+  useMemo
 } from 'react'
 import classnames from 'classnames'
 
@@ -12,8 +13,7 @@ import Text from '@/components/Text'
 import Icon from '@/components/Icon'
 
 import useStyles from './styles'
-import colors from '@/tokens/colors'
-import useAtomic from '@/hooks/useAtomic'
+import colors from '@/tokens/future/colors.json'
 import useIcon from '@/hooks/useIcon'
 
 const ICON_SIZE = 16
@@ -28,6 +28,8 @@ interface ToggleProps {
   className?: string
   style?: CSSProperties
 }
+
+const { icon } = colors
 
 const Toggle = ({
   value,
@@ -60,9 +62,30 @@ const Toggle = ({
     }
   }, [onChange, disabled, _value])
 
+  const iconColor = useMemo(() => {
+    if (disabled) return icon.default.disabled
+    return _value ? icon.brand.bold : icon.brand.disabled
+  }, [disabled, _value])
+
+  const handleKeyDown = e => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      e.preventDefault()
+    }
+  }
+
+  const handleKeyUp = e => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      toggle()
+    }
+  }
+
   return (
     <div
       id={id}
+      tabIndex={disabled ? -1 : 0}
+      onClick={toggle}
+      onKeyDown={handleKeyDown}
+      onKeyUp={handleKeyUp}
       className={classnames(
         classes.cont,
         { [classes.disabled]: disabled },
@@ -70,25 +93,33 @@ const Toggle = ({
       )}
       style={style}
     >
-      <div
-        id={trk}
-        className={classnames(classes.switch, { [classes.checked]: _value })}
-        onClick={toggle}
-      >
-        <span className={classes.slider}>
-          <Icon
-            iconName={
-              _value ? getIcon('check-o', 'check') : getIcon('x-micro-o', 'x')
-            }
-            size={ICON_SIZE}
-            color={_value ? colors.prim : colors.grey400}
-          />
-        </span>
+      <div className={classes.switchWrap}>
+        <div
+          id={trk}
+          className={classnames(classes.switch, { [classes.checked]: _value })}
+        >
+          <div className={classes.switchBg}>
+            <span className={classes.slider}>
+              <Icon
+                iconName={
+                  _value
+                    ? getIcon('check-o', 'check')
+                    : getIcon('x-micro-o', 'x')
+                }
+                className={classes.icon}
+                size={ICON_SIZE}
+                color={iconColor}
+              />
+            </span>
+          </div>
+        </div>
       </div>
       {label && (
-        <Text tag="label" className={classes.label}>
-          {label}
-        </Text>
+        <div className={classes.labelWrap}>
+          <Text tag="label" className={classes.label}>
+            {label}
+          </Text>
+        </div>
       )}
     </div>
   )

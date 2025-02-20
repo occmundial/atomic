@@ -14,14 +14,24 @@ import {
 import MaskedInput from 'react-text-mask'
 import classnames from 'classnames'
 
-import Text from '@/components/Text'
 import Icon from '@/components/Icon'
-import colors from '@/tokens/colors'
+import Button from '@/components/Button'
 import iconSizes from '@/tokens/iconSizes'
 import usePrevious from '@/hooks/usePrevious'
 
+import newColors from '@/tokens/future/colors.json'
+
 import useStyles from './styles'
 import useIcon from '@/hooks/useIcon'
+
+export interface OptionProps {
+  key: string | number
+  label: string
+  value: string
+  disabled?: boolean
+  grouped?: boolean
+  options?: OptionProps[]
+}
 
 export interface TextFieldProps {
   type?: string
@@ -36,7 +46,6 @@ export interface TextFieldProps {
   clear?: boolean
   error?: boolean
   allowError?: boolean
-  lockHeight?: boolean
   value?: string
   selectOnFocus?: boolean
   mask?: any
@@ -57,9 +66,8 @@ export interface TextFieldProps {
   onChange?: (value: string) => void
   onKeyUp?: (code: string) => void
   onClear?: () => void
-  options?: any[]
+  options?: OptionProps[]
   iconName?: string
-  searchField?: boolean
   inputClassName?: string
   regex?: string | RegExp
   required?: boolean
@@ -100,12 +108,10 @@ const TextField = forwardRef(
       error,
       assistiveText,
       allowError,
-      lockHeight,
       required,
       mask,
       guide,
       pattern,
-      searchField,
       inputMode,
       disableAutoComplete,
       testId
@@ -208,10 +214,8 @@ const TextField = forwardRef(
           ? 'disabled'
           : status !== 'focus' && errorStatus
           ? 'error'
-          : status !== 'focus' && searchField && value
-          ? 'filled'
           : status,
-      [status, disabled, errorStatus, searchField, value]
+      [status, disabled, errorStatus]
     )
 
     const inputType = useMemo(
@@ -232,23 +236,19 @@ const TextField = forwardRef(
           { [classes.hasIcon]: iconName },
           { [classes.hasClear]: clear },
           { [classes.alignRight]: alignRight },
-          { [classes.searchField]: searchField },
-          { [classes.searchFieldHasIcon]: searchField && iconName },
           { [classes.select]: type === 'select' },
           { [classes.textarea]: type === 'textarea' },
           { [classes.hasPass]: type === 'password' },
           inputClassName
         ),
-      [alignRight, classes, clear, iconName, inputClassName, type, searchField]
+      [alignRight, classes, clear, iconName, inputClassName, type]
     )
 
     const setIconColor = useMemo(() => {
-      if (disabled) return colors.grey500
-      if (status === 'focus' && searchField) return colors.prim
-      if (error && (allowError || touched)) return colors.error
-      if (status !== 'focus' && searchField && value) return colors.grey900
-      return colors.grey500
-    }, [disabled, searchField, allowError, error, touched, status, value])
+      if (disabled) return newColors.icon.default.disabled
+      if (status === 'focus') return newColors.icon.brand.bold
+      return newColors.icon.default.default
+    }, [disabled, status])
 
     const commonProps = useMemo(
       () => ({
@@ -345,7 +345,7 @@ const TextField = forwardRef(
                         value={option.value}
                         disabled={option.disabled}
                         {...(testId && {
-                          'data-testid': `${testId}__item-${item.value}`
+                          'data-testid': `${testId}__item-${option.value}`
                         })}
                       >
                         {option.label}
@@ -417,39 +417,38 @@ const TextField = forwardRef(
       () =>
         disabled ? (
           type !== 'select' ? (
-            <div className={classes.passIcon}>
-              <Icon
-                iconName={getIcon('eye-o', 'eye')}
-                size={iconSizes.small}
-                color={colors.grey200}
-              />
-            </div>
+            <Button
+              theme="ghost"
+              type="button"
+              iconLeft={getIcon('eye-o', 'eye')}
+              size="md"
+              disabled
+              className={classes.rightButton}
+            />
           ) : null
         ) : type !== 'select' ? (
-          <div
-            onMouseDown={togglePass}
+          <Button
+            onClick={togglePass}
             onMouseUp={focusInput}
             onMouseOut={outOfPassIcon}
-            className={classes.passIcon}
-          >
-            <Icon
-              iconName={
-                showPass
-                  ? getIcon('eye-o', 'eye')
-                  : getIcon('eye-close-o', 'eye-slash')
-              }
-              size={iconSizes.small}
-              color={showPass ? colors.grey900 : colors.grey400}
-            />
-          </div>
+            iconLeft={
+              showPass
+                ? getIcon('eye-o', 'eye')
+                : getIcon('eye-close-o', 'eye-slash')
+            }
+            theme="ghost"
+            size="md"
+            type="button"
+            className={classes.rightButton}
+          />
         ) : null,
       [
-        classes.passIcon,
+        classes.rightButton,
         disabled,
-        focusInput,
-        outOfPassIcon,
         showPass,
         togglePass,
+        focusInput,
+        outOfPassIcon,
         type,
         getIcon
       ]
@@ -457,87 +456,65 @@ const TextField = forwardRef(
 
     return (
       <div className={_className} style={style}>
-        {(label || lockHeight) && (
+        {label && (
           <div className={classes.top}>
-            {label && (
-              <Text
-                small
-                tag="label"
-                disabled={disabled}
-                className={classnames(classes.label, classes.left)}
-              >
-                {label}
-              </Text>
-            )}
+            {label && <label className={classes.label}>{label}</label>}
           </div>
         )}
         <div className={classes.inputWrap}>
           {iconName && (
             <Icon
               iconName={iconName}
-              size={iconSizes.small}
+              size={24}
               className={classes.icon}
               color={setIconColor}
             />
           )}
           {type == 'select' && (
-            <div className={classes.selectIcon}>
-              <Icon
-                iconName={getIcon('arrow-down', 'chevron-down')}
-                size={iconSizes.small}
-                color={disabled ? colors.grey200 : colors.grey900}
-              />
-            </div>
-          )}
-          {type == 'password' && passIcon}
-          {_value && clear && (
-            <div
-              onClick={_onClear}
-              className={classes.clear}
-              {...(testId && {
-                'data-testid': `${testId}__container-close-icon`
-              })}
-            >
-              <Icon
-                iconName="x"
-                color={colors.grey400}
-                size={iconSizes.small}
-              />
-            </div>
+            <Icon
+              iconName={getIcon('arrow-down', 'chevron-down')}
+              size={24}
+              className={classes.selectIcon}
+              color={
+                disabled
+                  ? newColors.icon.default.disabled
+                  : newColors.icon.default.default
+              }
+            />
           )}
           {element}
+          {type == 'password' && passIcon}
+          {_value && clear && (
+            <Button
+              iconLeft="x"
+              theme="ghost"
+              onClick={_onClear}
+              size="md"
+              type="button"
+              className={classes.rightButton}
+              {...(testId && {
+                testId: `${testId}__container-close-icon`
+              })}
+            />
+          )}
         </div>
-        {(assistiveText || (counter && maxLength) || lockHeight) && (
+        {(assistiveText || (counter && maxLength)) && (
           <div className={classes.bottom}>
-            {assistiveText && (
-              <Text
-                micro
-                tag="label"
-                disabled={disabled && realStatus !== 'error'}
-                low={!disabled && realStatus !== 'error'}
-                error={!disabled && realStatus === 'error'}
-                className={classnames(classes.label, classes.left)}
-              >
-                {realStatus == 'error' ? (
-                  <Icon
-                    iconName={getIcon('warning', 'alert')}
-                    size={iconSizes.tiny}
-                    className={classes.errorIcon}
-                  />
-                ) : null}{' '}
-                {assistiveText}
-              </Text>
-            )}
+            <span className={classes.assistiveTextWrap}>
+              {assistiveText && (
+                <label
+                  className={classnames(classes.assistiveText, {
+                    [classes.assistiveError]: realStatus === 'error'
+                  })}
+                >
+                  {assistiveText}
+                </label>
+              )}
+            </span>
             {counter && maxLength && (
-              <Text
-                small
-                tag="label"
-                disabled={disabled}
-                low={!disabled}
-                className={classnames(classes.label, classes.right)}
-              >
+              <label className={classes.counter}>
                 {_value.length} / {maxLength}
-              </Text>
+              </label>
             )}
           </div>
         )}

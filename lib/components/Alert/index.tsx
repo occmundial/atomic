@@ -1,20 +1,35 @@
-import { useCallback, useMemo, CSSProperties, ReactElement } from 'react'
-import classnames from 'classnames'
+import { CSSProperties, ReactElement } from 'react'
 
 import Flexbox from '@/components/Flexbox'
-import Text from '@/components/Text'
 import Icon from '@/components/Icon'
 
 import useStyles from './styles'
-import iconSizes from '@/tokens/iconSizes'
+import Button from '../Button'
+import colors from '@/tokens/future/colors.json'
+import AlertText from './AlertText'
 
-const boldRegex = /\*(.*?)\*/g
 const icons = {
-  info: 'info',
-  warning: 'warning',
-  success: 'check',
-  error: 'x-micro',
+  info: 'info-circle',
+  warning: 'alert',
+  success: 'check-circle',
+  error: 'x-circle',
   promote: null
+}
+
+const colorTextClasses = {
+  info: 'textInfo',
+  promote: 'textPromote',
+  warning: 'textWarning',
+  success: 'textSuccess',
+  error: 'textError'
+}
+
+const colorLinkClasses = {
+  info: 'linkInfo',
+  promote: 'linkPromote',
+  warning: 'linkWarning',
+  success: 'linkSuccess',
+  error: 'linkError'
 }
 
 interface AlertAction {
@@ -28,14 +43,14 @@ interface AlertProps {
   theme?: 'info' | 'warning' | 'success' | 'error' | 'promote'
   children: ReactElement | string
   icon?: boolean
-  noBorderRadius?: boolean
-  center?: boolean
+  banner?: boolean
   onClose?: () => void
-  spacedClose?: boolean
   cta?: AlertAction
   id?: string
   className?: string
   style?: CSSProperties
+  size?: 'large' | 'small'
+  testId?: string
 }
 
 const Alert = ({
@@ -45,98 +60,84 @@ const Alert = ({
   icon,
   theme,
   children,
-  noBorderRadius,
-  center,
+  banner,
   onClose,
-  spacedClose,
-  cta
+  cta,
+  size = 'large',
+  testId
 }: AlertProps) => {
   const classes = useStyles()
-  const iconName = useMemo(() => icons[theme], [theme])
-
-  const boldMatch = useCallback((match, i) => {
-    return (
-      <Text key={i} strong tag="b" current>
-        {match}
-      </Text>
-    )
-  }, [])
-
-  const replaceStringToBold = useCallback(
-    text => {
-      if (text === '') return [text]
-      const chunks = text.split(boldRegex)
-      if (chunks.length === 1) return [text]
-      return chunks.map((chunk: string, i: number) =>
-        i % 2 === 0 ? chunk : boldMatch(chunk, i)
-      ) as (JSX.Element | string)[]
-    },
-    [boldMatch]
-  )
-
-  const renderText = useCallback(() => {
-    let text: any[] = []
-    if (typeof children === 'string') text = replaceStringToBold(children)
-    else text = [children]
-
-    if (cta) {
-      text.push(
-        <>
-          {' '}
-          <Text tag="span" current>
-            <a
-              className={classes.cta}
-              href={cta.href}
-              target={cta.target}
-              onClick={cta.onClick}
-            >
-              {cta.text}
-            </a>
-          </Text>
-        </>
-      )
-    }
-    return text
-  }, [classes, children, replaceStringToBold, cta])
 
   return (
     <div id={id} className={className} style={style}>
       <Flexbox
-        display="flex"
         justifyContent="start"
-        className={classnames(classes.container, classes[theme], {
-          [classes.noBorderRadius]: noBorderRadius
-        })}
+        display="flex"
+        className={`${classes.container} ${classes[theme]}${
+          banner ? ` ${classes.noBorderRadius}` : ''
+        }`}
       >
-        <Flexbox
-          display="flex"
-          flex="1"
-          justifyContent={center ? 'center' : null}
-          alignItems="center"
-        >
-          {icon && (
+        <Flexbox display="flex" flex="1" alignItems="stretch">
+          {icon && theme !== 'promote' && (
             <Icon
-              iconName={iconName}
+              iconName={icons[theme]}
               className={classes.icon}
-              size={iconSizes.base}
+              color={
+                theme === 'info'
+                  ? colors.icon.brand.default
+                  : colors.icon[theme]
+              }
             />
           )}
-          <div
-            className={classnames(
-              { [classes.textWithIcon]: icon },
-              { [classes.text]: !icon }
-            )}
+          <Flexbox
+            display="flex"
+            direction={size === 'small' ? 'col' : 'row'}
+            justifyContent={banner ? 'center' : 'start'}
+            alignSelf="center"
+            flex="1"
+            className={banner ? ` ${classes.maxWidth}` : ''}
           >
-            <Text standard tag="div" current>
-              {renderText()}
-            </Text>
-          </div>
+            <AlertText
+              classes={`${classes.normalText} ${
+                classes[colorTextClasses[theme]]
+              }${!banner ? ` ${classes.growText}` : ''}`}
+              text={children}
+            />
+            {cta && (
+              <a
+                className={`${classes.cta} ${classes[colorLinkClasses[theme]]}${
+                  size === 'large' && banner
+                    ? ` ${classes.ctaBanner}`
+                    : size === 'large'
+                    ? ` ${classes.ctaAlert}`
+                    : ''
+                }`}
+                href={cta.href}
+                target={cta.target}
+                onClick={cta.onClick}
+                {...(testId && {
+                  'data-testid': `${testId}__link`
+                })}
+              >
+                {cta.text}
+              </a>
+            )}
+          </Flexbox>
         </Flexbox>
         {onClose && (
-          <Icon
-            iconName="x"
+          <Button
             onClick={onClose}
-            className={spacedClose ? classes.spacedClose : null}
+            size="md"
+            className={
+              size === 'small'
+                ? classes.closeIconSmallMargin
+                : classes.closeIconMargin
+            }
+            iconLeft="x"
+            theme={theme === 'promote' ? 'ghostWhite' : 'ghost'}
+            {...(testId && {
+              testId: `${testId}__close-icon`
+            })}
           />
         )}
       </Flexbox>

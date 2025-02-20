@@ -1,3 +1,170 @@
+# [4.0.0-beta.1](https://github.com/occmundial/atomic/compare/v3.2.0...v4.0.0-beta.1) (2025-02-20)
+
+
+### Bug Fixes
+
+* Add alignLeft prop to Checkbox ([27c6994](https://github.com/occmundial/atomic/commit/27c699473476ac758f55eefaccacf961b12f5953))
+* Add bp styles to fluid grid and reuse col bp ([fc36520](https://github.com/occmundial/atomic/commit/fc36520f14a3759ad0c33cad6d817660c2edd8a1))
+* Add cursor pointer to bottom links ([4762c4a](https://github.com/occmundial/atomic/commit/4762c4a437f845b71da572b6b9cd17ff22e459e8))
+* Add dropdown export ([a4a4c02](https://github.com/occmundial/atomic/commit/a4a4c02bba614f940b782e61849d5e819586717d))
+* Add event props to the Button component ([753255f](https://github.com/occmundial/atomic/commit/753255f8301a501722a5d71cd8b456b514f250f8))
+* Add hover styles for link in toaster ([3f85bde](https://github.com/occmundial/atomic/commit/3f85bde1e3e9788e3827fd2ca9cec1a0cf43383a))
+* Add hover styles to alert link action ([42f74a4](https://github.com/occmundial/atomic/commit/42f74a479b201dae6ecc445ef8af0bfbd36b550f))
+* Add margin zero to grid and add padding top for modal when img top ([89d031a](https://github.com/occmundial/atomic/commit/89d031a6a7e2c736f05b5466ed7698df87c3dcab))
+* Add new props to set bg transparent and borders ([477fdf7](https://github.com/occmundial/atomic/commit/477fdf7f9fbaba40f3d9b3d251c927e7b2eae1e3))
+* Add shadow on focus to pagination ([f4fa37e](https://github.com/occmundial/atomic/commit/f4fa37ed022c7d96caaff5eaf619a8ec7249463d))
+* Add state to set programatically set overflow for animation purpuse ([9821a72](https://github.com/occmundial/atomic/commit/9821a72e206f483bafd9fe1b82188a5547cb5458))
+* Add state to set programatically set overflow for animation purpuse ([582f335](https://github.com/occmundial/atomic/commit/582f3358aa502cf2ace4896a03a741f1672f334c))
+* Add tabindex zero to bottom links ([e7d0bd5](https://github.com/occmundial/atomic/commit/e7d0bd5088478a2fe95e552bf4105371b66c7d0a))
+* Add tag style for Radio ([5d26373](https://github.com/occmundial/atomic/commit/5d26373e98789b8f5ce1347a6ab055a60949e190))
+* Add the disabled property to Pager ([a7a6d4c](https://github.com/occmundial/atomic/commit/a7a6d4c06c0ff995a1cd6c8325f8bac5eaf4f5fa))
+* Adjust gap in social content and use app gallery cdn img ([c836bfc](https://github.com/occmundial/atomic/commit/c836bfcab9d8323625a405b9de64907ea3debf65))
+* Align title if not description ([3b5120b](https://github.com/occmundial/atomic/commit/3b5120b31f9980945d7050074e552ad27bf74ecd))
+* Change default margin and center pages values ([80f900b](https://github.com/occmundial/atomic/commit/80f900b3df7e167860ef943fabd958affa60d2aa))
+* Change display flex for grid in columns links ([9884077](https://github.com/occmundial/atomic/commit/9884077cde3c14e7b17abf6ab82ff0afe932571d))
+* Change div divider for box shadow ([0b196a5](https://github.com/occmundial/atomic/commit/0b196a5a9ea9e403c14aad1ad5963034d56dc296))
+* Change focus behavior of Button ([da0200b](https://github.com/occmundial/atomic/commit/da0200b5e43b70a52195ec788c3ab84cd9e38aba))
+* Change font size of bottom links and coypright ([0f173e5](https://github.com/occmundial/atomic/commit/0f173e52c32b0f6d4b1661fad37a6d83289ac166))
+* Change icon close size to md ([225802b](https://github.com/occmundial/atomic/commit/225802b31c4b361371cf556e3412dbc1b7ca0729))
+* Change icon size and adjust margins ([b3027f4](https://github.com/occmundial/atomic/commit/b3027f4cd12581530532f4513006d709e9c0ef9d))
+* Change iconRight styles in Button ([364aba5](https://github.com/occmundial/atomic/commit/364aba5e363fa2aa802b4ff4eac8e7539d5272e7))
+* Change lg Button padding ([4f77f16](https://github.com/occmundial/atomic/commit/4f77f1687fc1a4accbe9d291521f131fa1631e0f))
+* Change next image for native img in docs examples ([eb1ff97](https://github.com/occmundial/atomic/commit/eb1ff97249250477ca9cfe1bf34286a13dddf506))
+* Change outline for box shadow ([f9240bb](https://github.com/occmundial/atomic/commit/f9240bbb9a10a014ec417ad8bcc2266c744ebcf0))
+* Change Pager icons ([1ddf50c](https://github.com/occmundial/atomic/commit/1ddf50cee4ef9783dfdd0c5d74c81f101d0f72fc))
+* Change spacing between Pill elements ([491b39b](https://github.com/occmundial/atomic/commit/491b39b4b84e6481f148fb537ab8e67164af84c3))
+* Change structure and styles of Radio ([bdff7db](https://github.com/occmundial/atomic/commit/bdff7db4e3e194aa70dcbaafac524616218bcf43))
+* Change structure and styles of Toggle ([2ddf660](https://github.com/occmundial/atomic/commit/2ddf6603d1520ea3f3ffc1ff35c36aa26cf440d5))
+* Change tab label color when selected and adjust indicator height ([20893ca](https://github.com/occmundial/atomic/commit/20893ca2b7858e2dd3be90e233a527f0aa33ca9b))
+* Change text component to p tag ([8853a7a](https://github.com/occmundial/atomic/commit/8853a7a96a3877fac45c1245b74f349ba0ad773f))
+* Change textarea padding and remove searchField prop ([f0b23a9](https://github.com/occmundial/atomic/commit/f0b23a927ba58443e474ef52a9afa97062e2e5bc))
+* Change the break symbol prop name ([96e4742](https://github.com/occmundial/atomic/commit/96e4742fb742c8f9fc609c4ad252bb634fb37080))
+* Changed outline with shadow ([8700b64](https://github.com/occmundial/atomic/commit/8700b646b1b2781db8147b0fb026c79497656534))
+* Changed tag border to outline ([ccc66c3](https://github.com/occmundial/atomic/commit/ccc66c31625d98e81d4c290c8c5aab00257926b7))
+* Documentation hambruguer menu icon ([ac994a1](https://github.com/occmundial/atomic/commit/ac994a1d1033d95450c7f2550265491bcf43c607))
+* Documentation NavAvatarButton ([db8787a](https://github.com/occmundial/atomic/commit/db8787a127e72ed8753d83744d52f9c9aee3d376))
+* Export tabs components ([4b671bc](https://github.com/occmundial/atomic/commit/4b671bcc6787c844d39536342628c59420deccfc))
+* Fix styles and structure of Checkbox ([8369fbc](https://github.com/occmundial/atomic/commit/8369fbc2500bb496e624450438cbb4b3e33b185f))
+* Fix styles for fullScreen modal ([1d7f7ff](https://github.com/occmundial/atomic/commit/1d7f7ff150143f839404aa34c32b30001b134cd3))
+* Fix styles of Autocomplete ([36f3437](https://github.com/occmundial/atomic/commit/36f3437bee55a9549af9c67546f80cf911fb9288))
+* Fix TextField styles ([b356d95](https://github.com/occmundial/atomic/commit/b356d952999eef8738380041d69ea55b16e1ebfd))
+* Fix the Autocomplete props ([465d88e](https://github.com/occmundial/atomic/commit/465d88eb26d5bcd096b7319406421f78171ce996))
+* Fix the height of the Modal ([561de04](https://github.com/occmundial/atomic/commit/561de0457d3aa43fe9b95997cce587b22be9286c))
+* Fix the styles for the TextField's select type ([7117a14](https://github.com/occmundial/atomic/commit/7117a140d2df2c2b7eb5000d14286b54045b3dd5))
+* Function name ([816376e](https://github.com/occmundial/atomic/commit/816376e01a09d4f17f03abeaf4cc77b9346a6f0a))
+* Handle key press on Avatar ([eb38c23](https://github.com/occmundial/atomic/commit/eb38c238c07c205998d0558687afe85dcc115a29))
+* Implement new design tokens into the NavAside component ([adfee3a](https://github.com/occmundial/atomic/commit/adfee3a891745644c777ac6aeb7f2a3aca949e73))
+* Include a Drawer as the dropdown of Menu ([4087766](https://github.com/occmundial/atomic/commit/40877668ab6c35ed9f40a9bcc220e699bba6dd4a))
+* Insert break in Pager only when there's a page gap ([1296a45](https://github.com/occmundial/atomic/commit/1296a45d4ce990ebfd188ed8b75a68027a8262ce))
+* Integrate header menu components into menu dropdown ([ae0c264](https://github.com/occmundial/atomic/commit/ae0c26494e5bbdf20c95bfaa5772e9a9118745b6))
+* Made some props of Menu components optional ([09715e3](https://github.com/occmundial/atomic/commit/09715e3cfbfc7f2ecdcdaa54ca9fbebc8ee9a395))
+* Menu dropdown classes ([96956dd](https://github.com/occmundial/atomic/commit/96956dd65f59609afc49f5a51b12693f42343a1d))
+* Menu item position relative to target ([7b4c76f](https://github.com/occmundial/atomic/commit/7b4c76f0bd2fbea3354f032cfeee0543f1bc93a0))
+* MenuItem props names ([87ad4fe](https://github.com/occmundial/atomic/commit/87ad4fe7438c20eace064d0800d9f4711fc016b4))
+* Modify structure, styles,behavior and props of Avatar ([79f3d9f](https://github.com/occmundial/atomic/commit/79f3d9fdb3430dbb474cafb867f99ceda5fb9d12))
+* Move tab list border to parent ([46b3dc9](https://github.com/occmundial/atomic/commit/46b3dc9c209f94a9db02974437bcaf6ceed26ea6))
+* Navtem notification error ([271cb32](https://github.com/occmundial/atomic/commit/271cb32f2910b16297e7d31acbddf6eef8285192))
+* Placeholder round style ([5760f7b](https://github.com/occmundial/atomic/commit/5760f7bddb51ad9c3982a72f3081a9ffeea00900))
+* Placeholders font sizes and margins ([04bab15](https://github.com/occmundial/atomic/commit/04bab154d91bd50dd40463eae6efaf5c11d12f57))
+* Remove console log ([c87006a](https://github.com/occmundial/atomic/commit/c87006aea6e489dfaa3dcd82b1dd78b0d01ff844))
+* Remove drawer from menu ([7037621](https://github.com/occmundial/atomic/commit/70376217c67af7e7e9c269e9ecfe610079b9ba8c))
+* Remove extra padding in label ([03f17af](https://github.com/occmundial/atomic/commit/03f17afb904f9e129dbd6eca4db4653b7eaa17ef))
+* Remove footerV2 files and update docs ([38ec124](https://github.com/occmundial/atomic/commit/38ec124b5d231340e28bb9f060553bacd27b02e2))
+* Remove lidt psdding dense ([a9e3c8a](https://github.com/occmundial/atomic/commit/a9e3c8ad7e075a7d7626a9344039bdc661ea4aef))
+* Remove lockHeight prop from Autocomplete ([de316d2](https://github.com/occmundial/atomic/commit/de316d2c9aa633ad2d192b5935abee71d0be2dac))
+* Remove old spacing in list styles ([9470eb2](https://github.com/occmundial/atomic/commit/9470eb28e879f7d53942070fe49ed3e1218a4abb))
+* Remove padding from menu ([dc8503d](https://github.com/occmundial/atomic/commit/dc8503d47a3ffd22c4dbde2d1d28650b20b875e7))
+* Remove tag margin top ([269feaa](https://github.com/occmundial/atomic/commit/269feaab4d620c7b6975c9c3c3d36542c7cc6695))
+* Remove the classes prop from the modal ([3c87eef](https://github.com/occmundial/atomic/commit/3c87eef5f529c644f079921877dfe78ed1e9a168))
+* Remove the lockHeight prop and set the options type ([c6c05d6](https://github.com/occmundial/atomic/commit/c6c05d6efa387ba96abe044569dfc471702f0f11))
+* Remove unused imports ([0dea2ec](https://github.com/occmundial/atomic/commit/0dea2ec209da84e175035146cb8e11c739f0f67d))
+* Remove unused style ([e665eea](https://github.com/occmundial/atomic/commit/e665eeabdff20793a62e69b152afac7ef957e9a6))
+* Remove unused styles ([cf7a6c9](https://github.com/occmundial/atomic/commit/cf7a6c9caf62f9cc1ef6ef0a9269a27f6da598b9))
+* Remove wrapper margin bottom ([fad18f3](https://github.com/occmundial/atomic/commit/fad18f3dabd65b7edbb90cef79dfd12297000066))
+* Remove wrong Button prop ([df45b7d](https://github.com/occmundial/atomic/commit/df45b7da8d1170f226b0012377dbd50f3e271460))
+* Rename dropdown to menu ([1b94991](https://github.com/occmundial/atomic/commit/1b9499147aabf061a7ca88e75b7ca1f9b9d36152))
+* Rename dropdown to menu ([5c5c5a6](https://github.com/occmundial/atomic/commit/5c5c5a6d01c9be2dc5a068d92af9e9c78571112b))
+* Render initials only if there's no photo prop ([d3251da](https://github.com/occmundial/atomic/commit/d3251da405f6ad68cd14b53a71ac137f4936cfe2))
+* Replace Text elements for custom labels ([71bc708](https://github.com/occmundial/atomic/commit/71bc7083852f92661c57472e231e03a00f4cd055))
+* Resolve conflicts ([6d6b8eb](https://github.com/occmundial/atomic/commit/6d6b8eb9221ac0e5b99a0e85e623bc3c23175550))
+* Resolve conflicts ([1f2e0fe](https://github.com/occmundial/atomic/commit/1f2e0fe3346eb9a7f6ec8f3518abb76102a9cfeb))
+* Resolve conflicts with beta ([f749ea6](https://github.com/occmundial/atomic/commit/f749ea6d9752bc6a3023069cc56cdacfe96118c3))
+* Restore NavAvatarButton as triggerElement ([b488540](https://github.com/occmundial/atomic/commit/b48854021b4f2b1288f46b3ae96ee5e9f9e244f8))
+* Revert conditional render tab content ([3d2ed15](https://github.com/occmundial/atomic/commit/3d2ed150f3187968df4d3605b5ef8fc34378a270))
+* Revert some changes, remove unnecesary bp and add padding to grid ([0f275d7](https://github.com/occmundial/atomic/commit/0f275d7ab55db6ec848fbd7d5f9654f0b0d6b276))
+* Set aux props optional and update docs ([629787f](https://github.com/occmundial/atomic/commit/629787fb29e60ad035926f70abf947e732a05762))
+* Set correct icon color when selected ([219604f](https://github.com/occmundial/atomic/commit/219604f26639d4119eaad60155d4639da89e8ade))
+* Set fixed width for root container ([bdbfd31](https://github.com/occmundial/atomic/commit/bdbfd3145978b3407c31ed3fd555ddb0aba39d48))
+* Set only padding vertical for footer container ([282c0bd](https://github.com/occmundial/atomic/commit/282c0bd3bf634a37a2ad2a8e59869bcad8925b4b))
+* Set overflow hidden for dropdown children container ([031afbf](https://github.com/occmundial/atomic/commit/031afbfadadad9ed09a0cd7f3402794e9885f607))
+* Text translations ([664d634](https://github.com/occmundial/atomic/commit/664d63454b31f2eb4715cf3740fa4c17b1819bf3))
+* Undo padding change ([d3c2b56](https://github.com/occmundial/atomic/commit/d3c2b567eb8746bb7528c40b916223f41ff9a107))
+* Use of object values intead object entries ([39200a0](https://github.com/occmundial/atomic/commit/39200a0197a630d5a7d92671ed6a48dda187e8fb))
+
+
+### Features
+
+*  Ajudtment to NavTab documentation and small fixes ([47d09be](https://github.com/occmundial/atomic/commit/47d09be27dda72ab86802bed990bf39ee5a6bf5c))
+* Add a Drawer component ([20e76ce](https://github.com/occmundial/atomic/commit/20e76ce2677292901e4cd24e3e885fba885b6a41))
+* Add full header example ([30e870b](https://github.com/occmundial/atomic/commit/30e870b7b65db6571e421ce8302132d6ece6979f))
+* Add prop to render element that trigger dropdown ([9bf3a59](https://github.com/occmundial/atomic/commit/9bf3a5971c8b27011a6563bf1651bc370c21a2e3))
+* Add testId prop to Pager ([d55079d](https://github.com/occmundial/atomic/commit/d55079dc292c826b58f32a3bc0e1e7ba0a0341fd))
+* Add type button to eye icon ([2750792](https://github.com/occmundial/atomic/commit/2750792408dcafdfcf700ca6211d07d6d42e4488))
+* Add unit test ([5ff0220](https://github.com/occmundial/atomic/commit/5ff022027262f036685ffb1f9756516522dd18ce))
+* Added attribute type button to buttons ([af411bc](https://github.com/occmundial/atomic/commit/af411bc7c42eadeb07fc5eb89dfb0dbc5ca8866c))
+* Added className and styles props ([08da9eb](https://github.com/occmundial/atomic/commit/08da9eb51a7e9feace0cc06d8f817b736b6a16d8))
+* Added focus styles to MenuItems ([782df49](https://github.com/occmundial/atomic/commit/782df49ee2521d1faf899eeed0e789a96d70d2db))
+* Added list element and basic examples ([2a6c368](https://github.com/occmundial/atomic/commit/2a6c3688d87b3352faec3cdb1d19bff962a6c97b))
+* Added Menu documention and updated Menu components ([566f668](https://github.com/occmundial/atomic/commit/566f668d74fa249b3c6bda7326e573322cfe28ea))
+* Added Nav Item related documentation ([2fa1387](https://github.com/occmundial/atomic/commit/2fa13878a8d55be5d4c7a85f258f98f457886476))
+* Added NavAvatarMenu documentation ([7e1a493](https://github.com/occmundial/atomic/commit/7e1a493e27b5822a5d798490b0e48f9e069cde76))
+* Added Navtab example and remove NavTab menu example ([cb6b88a](https://github.com/occmundial/atomic/commit/cb6b88a0f5ebc02c1d565d1c9fd0ae7b7368bb6a))
+* Added NavTab props description and occ logo to examples ([337a994](https://github.com/occmundial/atomic/commit/337a994352648cede7790a2a8b867ffd74332526))
+* Added photo prop ([702ffe4](https://github.com/occmundial/atomic/commit/702ffe448db8de1da251a2d5152e700b48fd7cc1))
+* Added type button to Texfield Password show/hide button ([e3b9d30](https://github.com/occmundial/atomic/commit/e3b9d302b85a12efe6c23c25befa435e26dd30ea))
+* Change styles and behavior of the Pager ([510cadc](https://github.com/occmundial/atomic/commit/510cadc4654e24516c3d13c4375f7a216dc9c7d7))
+* Change styles of the Modal component ([73199f9](https://github.com/occmundial/atomic/commit/73199f916b94030fdf8979df4bd73afbd6924298))
+* Checkbox redesigned and documentation created ([4a90723](https://github.com/occmundial/atomic/commit/4a9072387f583d6601b305d8f3c5a321949bad3d))
+* Conditional render tabcontent and add aria attributes ([0f98bf5](https://github.com/occmundial/atomic/commit/0f98bf599e0dbbfed360c7f721eca1f9b46669c3))
+* Create a context provider for tabs controlled ([acbda68](https://github.com/occmundial/atomic/commit/acbda681b7364b8cd331a6a0e7014887d02493ce))
+* Create a context provider for tabs controlled ([cbc84e4](https://github.com/occmundial/atomic/commit/cbc84e4b29b6520a781941539ec55dd76013e405))
+* Create dropdown component for header purpose ([9f8deaa](https://github.com/occmundial/atomic/commit/9f8deaa2df6c31760c08129a36cfc4a8cd0c4bdd))
+* Created radio documentation ([b56677b](https://github.com/occmundial/atomic/commit/b56677b495be71f1785ed883db6023d337756fce))
+* First version of tabs ([2133b55](https://github.com/occmundial/atomic/commit/2133b551c0ef7569c60b65a45310d77685fcfde4))
+* Hide scrollbar ([3af67bc](https://github.com/occmundial/atomic/commit/3af67bc056565677b1162820c4cc0b93481b93d3))
+* Hide scrollbar ([8201d6c](https://github.com/occmundial/atomic/commit/8201d6c1b49973b9bcf25ce7c64bf4fd45032cbd))
+* Improved nav components documentation ([3c11c6a](https://github.com/occmundial/atomic/commit/3c11c6a2886cebaa567658dee912d68117f0ecbf))
+* New footer styles version 1 ([8af31ac](https://github.com/occmundial/atomic/commit/8af31acce65ffd022d00b3b2e440fdd03432bf13))
+* Replaced the <div> tag with a <nav> tag ([c1b69e9](https://github.com/occmundial/atomic/commit/c1b69e9c2c9f3a74df677ca8cd019412bc8a81a0))
+* Resolve various bugs ([e0f8dcc](https://github.com/occmundial/atomic/commit/e0f8dcc876fea8bad7a7185dde21fd3a19f50ec0))
+* Small tweaks to Header related components documentations ([bfabafb](https://github.com/occmundial/atomic/commit/bfabafbd58120ba85f73269a39c3c094b845e784))
+* Tag design and dcumentation updated ([681cd9c](https://github.com/occmundial/atomic/commit/681cd9c67442862f980c67aa8f19e9ff6b207b38))
+* Updaed placeholder component styles ([cdb97fa](https://github.com/occmundial/atomic/commit/cdb97fae24ec6aa0d793299021c09cdc5d6b20bc))
+* Update alert with new design tokens and add new props ([36cc3de](https://github.com/occmundial/atomic/commit/36cc3de4c0ecafd9d4516d11f27d9bb21b4bb4a4))
+* Update droplist styles with new design tokens ([f85aebe](https://github.com/occmundial/atomic/commit/f85aebe727da48f9da108a63eb0234f3034a9d62))
+* Update grid with new design tokens ([fdfee4e](https://github.com/occmundial/atomic/commit/fdfee4e8992cf5d845eb6c2bb2d2f357c05c0588))
+* Update pill styles with design tokens ([e2cb3b6](https://github.com/occmundial/atomic/commit/e2cb3b6942837cd50fd262044b387ad9e5f2194f))
+* Update slidedown with new design tokens ([b7e7d9b](https://github.com/occmundial/atomic/commit/b7e7d9b50a3042e165ea63408b40d5610d1d55a9))
+* Update the TextField component to use the new tokens ([2721761](https://github.com/occmundial/atomic/commit/2721761b178f3d69b151076345ec9272488dc559))
+* Update toaster with new design tokens ([9cd59f7](https://github.com/occmundial/atomic/commit/9cd59f72f1c08d6a6e35ad12c2db439a2ce7c777))
+* Update tooltip with new design tokens ([e9bf5f4](https://github.com/occmundial/atomic/commit/e9bf5f4e9717821b2f81f9ac879f7a7ed5bbcbb5))
+* Updated header styles ([09144e4](https://github.com/occmundial/atomic/commit/09144e4abeaa9c311748d94f59308d112932f34c))
+* Updated radio styles ([6e6b8bb](https://github.com/occmundial/atomic/commit/6e6b8bbe9fb5bf5dab987df3d1e9c64aa61e5258))
+* Updated toogle component and documentation ([81f6f24](https://github.com/occmundial/atomic/commit/81f6f24345857c6e946ffdb811fd372202a7faa9))
+* Validate disabled next component and change focus selector ([b56a8fe](https://github.com/occmundial/atomic/commit/b56a8fe5f68f497847b89f157bafb94a658a037a))
+
+
+### Performance Improvements
+
+* Create a handler for the scroll to avoid a re-render ([e98f8ca](https://github.com/occmundial/atomic/commit/e98f8ca88336477b7225959d726821795f871aa8))
+
+
+### BREAKING CHANGES
+
+* Rename Pager's prop names.
+The logic and behavior of the Pager has changed too, now is the parent component the responsible for handling the page number, the Pager is only a modifier and no longer has an internal state and management of the current page.
+* Remove the searchField prop from the TextField component
+
 # [3.2.0](https://github.com/occmundial/atomic/compare/v3.1.2...v3.2.0) (2024-06-13)
 
 
@@ -25,6 +192,7 @@
 ### Features
 
 * Updated tooltip ([042c324](https://github.com/occmundial/atomic/commit/042c32466dbd4862a3b1adffe5416f26ea9edf61))
+
 
 # [3.0.0](https://github.com/occmundial/atomic/compare/v2.0.0...v3.0.0) (2024-05-20)
 
@@ -68,6 +236,582 @@
 
 * The library now requires to use atomic-icons version 1.7.0-beta.5 or greater.
 * The themes of the Button component have changed to match the styles of the button in the new design system. The current themes have slightly different names to the new ones but they all have a corresponding new theme that matches, except for the ghostPink theme.
+
+# [3.0.0-beta.69](https://github.com/occmundial/atomic/compare/v3.0.0-beta.68...v3.0.0-beta.69) (2024-10-11)
+
+
+### Bug Fixes
+
+* Remove console log ([c87006a](https://github.com/occmundial/atomic/commit/c87006aea6e489dfaa3dcd82b1dd78b0d01ff844))
+
+
+### Features
+
+* Add full header example ([30e870b](https://github.com/occmundial/atomic/commit/30e870b7b65db6571e421ce8302132d6ece6979f))
+
+# [3.0.0-beta.68](https://github.com/occmundial/atomic/compare/v3.0.0-beta.67...v3.0.0-beta.68) (2024-10-09)
+
+
+### Bug Fixes
+
+* Include a Drawer as the dropdown of Menu ([4087766](https://github.com/occmundial/atomic/commit/40877668ab6c35ed9f40a9bcc220e699bba6dd4a))
+* Integrate header menu components into menu dropdown ([ae0c264](https://github.com/occmundial/atomic/commit/ae0c26494e5bbdf20c95bfaa5772e9a9118745b6))
+* Remove drawer from menu ([7037621](https://github.com/occmundial/atomic/commit/70376217c67af7e7e9c269e9ecfe610079b9ba8c))
+* Restore NavAvatarButton as triggerElement ([b488540](https://github.com/occmundial/atomic/commit/b48854021b4f2b1288f46b3ae96ee5e9f9e244f8))
+
+# [3.0.0-beta.67](https://github.com/occmundial/atomic/compare/v3.0.0-beta.66...v3.0.0-beta.67) (2024-10-04)
+
+
+### Bug Fixes
+
+* Menu item position relative to target ([7b4c76f](https://github.com/occmundial/atomic/commit/7b4c76f0bd2fbea3354f032cfeee0543f1bc93a0))
+
+# [3.0.0-beta.66](https://github.com/occmundial/atomic/compare/v3.0.0-beta.65...v3.0.0-beta.66) (2024-10-04)
+
+
+### Bug Fixes
+
+* Remove lidt psdding dense ([a9e3c8a](https://github.com/occmundial/atomic/commit/a9e3c8ad7e075a7d7626a9344039bdc661ea4aef))
+* Remove padding from menu ([dc8503d](https://github.com/occmundial/atomic/commit/dc8503d47a3ffd22c4dbde2d1d28650b20b875e7))
+
+# [3.0.0-beta.65](https://github.com/occmundial/atomic/compare/v3.0.0-beta.64...v3.0.0-beta.65) (2024-10-03)
+
+
+### Bug Fixes
+
+* Documentation hambruguer menu icon ([ac994a1](https://github.com/occmundial/atomic/commit/ac994a1d1033d95450c7f2550265491bcf43c607))
+
+
+### Features
+
+* Added NavAvatarMenu documentation ([7e1a493](https://github.com/occmundial/atomic/commit/7e1a493e27b5822a5d798490b0e48f9e069cde76))
+
+# [3.0.0-beta.64](https://github.com/occmundial/atomic/compare/v3.0.0-beta.63...v3.0.0-beta.64) (2024-10-02)
+
+
+### Bug Fixes
+
+* Menu dropdown classes ([96956dd](https://github.com/occmundial/atomic/commit/96956dd65f59609afc49f5a51b12693f42343a1d))
+
+# [3.0.0-beta.63](https://github.com/occmundial/atomic/compare/v3.0.0-beta.62...v3.0.0-beta.63) (2024-10-02)
+
+
+### Bug Fixes
+
+* Documentation NavAvatarButton ([db8787a](https://github.com/occmundial/atomic/commit/db8787a127e72ed8753d83744d52f9c9aee3d376))
+
+# [3.0.0-beta.62](https://github.com/occmundial/atomic/compare/v3.0.0-beta.61...v3.0.0-beta.62) (2024-10-02)
+
+
+### Bug Fixes
+
+* Function name ([816376e](https://github.com/occmundial/atomic/commit/816376e01a09d4f17f03abeaf4cc77b9346a6f0a))
+* Made some props of Menu components optional ([09715e3](https://github.com/occmundial/atomic/commit/09715e3cfbfc7f2ecdcdaa54ca9fbebc8ee9a395))
+* MenuItem props names ([87ad4fe](https://github.com/occmundial/atomic/commit/87ad4fe7438c20eace064d0800d9f4711fc016b4))
+* Rename dropdown to menu ([1b94991](https://github.com/occmundial/atomic/commit/1b9499147aabf061a7ca88e75b7ca1f9b9d36152))
+* Rename dropdown to menu ([5c5c5a6](https://github.com/occmundial/atomic/commit/5c5c5a6d01c9be2dc5a068d92af9e9c78571112b))
+* Resolve conflicts ([6d6b8eb](https://github.com/occmundial/atomic/commit/6d6b8eb9221ac0e5b99a0e85e623bc3c23175550))
+* Set overflow hidden for dropdown children container ([031afbf](https://github.com/occmundial/atomic/commit/031afbfadadad9ed09a0cd7f3402794e9885f607))
+* Use of object values intead object entries ([39200a0](https://github.com/occmundial/atomic/commit/39200a0197a630d5a7d92671ed6a48dda187e8fb))
+
+
+### Features
+
+*  Ajudtment to NavTab documentation and small fixes ([47d09be](https://github.com/occmundial/atomic/commit/47d09be27dda72ab86802bed990bf39ee5a6bf5c))
+* Add prop to render element that trigger dropdown ([9bf3a59](https://github.com/occmundial/atomic/commit/9bf3a5971c8b27011a6563bf1651bc370c21a2e3))
+* Added focus styles to MenuItems ([782df49](https://github.com/occmundial/atomic/commit/782df49ee2521d1faf899eeed0e789a96d70d2db))
+* Added Menu documention and updated Menu components ([566f668](https://github.com/occmundial/atomic/commit/566f668d74fa249b3c6bda7326e573322cfe28ea))
+* Small tweaks to Header related components documentations ([bfabafb](https://github.com/occmundial/atomic/commit/bfabafbd58120ba85f73269a39c3c094b845e784))
+
+# [3.0.0-beta.61](https://github.com/occmundial/atomic/compare/v3.0.0-beta.60...v3.0.0-beta.61) (2024-09-13)
+
+
+### Bug Fixes
+
+* Add dropdown export ([a4a4c02](https://github.com/occmundial/atomic/commit/a4a4c02bba614f940b782e61849d5e819586717d))
+* Set fixed width for root container ([bdbfd31](https://github.com/occmundial/atomic/commit/bdbfd3145978b3407c31ed3fd555ddb0aba39d48))
+
+
+### Features
+
+* Create dropdown component for header purpose ([9f8deaa](https://github.com/occmundial/atomic/commit/9f8deaa2df6c31760c08129a36cfc4a8cd0c4bdd))
+
+# [3.0.0-beta.60](https://github.com/occmundial/atomic/compare/v3.0.0-beta.59...v3.0.0-beta.60) (2024-09-12)
+
+
+### Bug Fixes
+
+* Implement new design tokens into the NavAside component ([adfee3a](https://github.com/occmundial/atomic/commit/adfee3a891745644c777ac6aeb7f2a3aca949e73))
+
+
+### Features
+
+* Add a Drawer component ([20e76ce](https://github.com/occmundial/atomic/commit/20e76ce2677292901e4cd24e3e885fba885b6a41))
+
+# [3.0.0-beta.59](https://github.com/occmundial/atomic/compare/v3.0.0-beta.58...v3.0.0-beta.59) (2024-09-12)
+
+
+### Features
+
+* Added list element and basic examples ([2a6c368](https://github.com/occmundial/atomic/commit/2a6c3688d87b3352faec3cdb1d19bff962a6c97b))
+
+# [3.0.0-beta.58](https://github.com/occmundial/atomic/compare/v3.0.0-beta.57...v3.0.0-beta.58) (2024-09-10)
+
+
+### Bug Fixes
+
+* Remove wrapper margin bottom ([fad18f3](https://github.com/occmundial/atomic/commit/fad18f3dabd65b7edbb90cef79dfd12297000066))
+
+# [3.0.0-beta.57](https://github.com/occmundial/atomic/compare/v3.0.0-beta.56...v3.0.0-beta.57) (2024-09-09)
+
+
+### Features
+
+* Added photo prop ([702ffe4](https://github.com/occmundial/atomic/commit/702ffe448db8de1da251a2d5152e700b48fd7cc1))
+* Resolve various bugs ([e0f8dcc](https://github.com/occmundial/atomic/commit/e0f8dcc876fea8bad7a7185dde21fd3a19f50ec0))
+
+# [3.0.0-beta.56](https://github.com/occmundial/atomic/compare/v3.0.0-beta.55...v3.0.0-beta.56) (2024-09-05)
+
+
+### Bug Fixes
+
+* Add new props to set bg transparent and borders ([477fdf7](https://github.com/occmundial/atomic/commit/477fdf7f9fbaba40f3d9b3d251c927e7b2eae1e3))
+* Set only padding vertical for footer container ([282c0bd](https://github.com/occmundial/atomic/commit/282c0bd3bf634a37a2ad2a8e59869bcad8925b4b))
+
+# [3.0.0-beta.55](https://github.com/occmundial/atomic/compare/v3.0.0-beta.54...v3.0.0-beta.55) (2024-09-04)
+
+
+### Bug Fixes
+
+* Navtem notification error ([271cb32](https://github.com/occmundial/atomic/commit/271cb32f2910b16297e7d31acbddf6eef8285192))
+
+
+### Features
+
+* Added Nav Item related documentation ([2fa1387](https://github.com/occmundial/atomic/commit/2fa13878a8d55be5d4c7a85f258f98f457886476))
+* Added Navtab example and remove NavTab menu example ([cb6b88a](https://github.com/occmundial/atomic/commit/cb6b88a0f5ebc02c1d565d1c9fd0ae7b7368bb6a))
+* Added NavTab props description and occ logo to examples ([337a994](https://github.com/occmundial/atomic/commit/337a994352648cede7790a2a8b867ffd74332526))
+* Improved nav components documentation ([3c11c6a](https://github.com/occmundial/atomic/commit/3c11c6a2886cebaa567658dee912d68117f0ecbf))
+* Replaced the <div> tag with a <nav> tag ([c1b69e9](https://github.com/occmundial/atomic/commit/c1b69e9c2c9f3a74df677ca8cd019412bc8a81a0))
+* Updated header styles ([09144e4](https://github.com/occmundial/atomic/commit/09144e4abeaa9c311748d94f59308d112932f34c))
+
+# [3.0.0-beta.54](https://github.com/occmundial/atomic/compare/v3.0.0-beta.53...v3.0.0-beta.54) (2024-09-04)
+
+
+### Bug Fixes
+
+* Change display flex for grid in columns links ([9884077](https://github.com/occmundial/atomic/commit/9884077cde3c14e7b17abf6ab82ff0afe932571d))
+
+# [3.0.0-beta.53](https://github.com/occmundial/atomic/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2024-09-04)
+
+
+### Bug Fixes
+
+* Add cursor pointer to bottom links ([4762c4a](https://github.com/occmundial/atomic/commit/4762c4a437f845b71da572b6b9cd17ff22e459e8))
+* Add state to set programatically set overflow for animation purpuse ([9821a72](https://github.com/occmundial/atomic/commit/9821a72e206f483bafd9fe1b82188a5547cb5458))
+* Add state to set programatically set overflow for animation purpuse ([582f335](https://github.com/occmundial/atomic/commit/582f3358aa502cf2ace4896a03a741f1672f334c))
+* Add tabindex zero to bottom links ([e7d0bd5](https://github.com/occmundial/atomic/commit/e7d0bd5088478a2fe95e552bf4105371b66c7d0a))
+* Adjust gap in social content and use app gallery cdn img ([c836bfc](https://github.com/occmundial/atomic/commit/c836bfcab9d8323625a405b9de64907ea3debf65))
+* Change font size of bottom links and coypright ([0f173e5](https://github.com/occmundial/atomic/commit/0f173e52c32b0f6d4b1661fad37a6d83289ac166))
+* Change next image for native img in docs examples ([eb1ff97](https://github.com/occmundial/atomic/commit/eb1ff97249250477ca9cfe1bf34286a13dddf506))
+* Remove footerV2 files and update docs ([38ec124](https://github.com/occmundial/atomic/commit/38ec124b5d231340e28bb9f060553bacd27b02e2))
+* Remove old spacing in list styles ([9470eb2](https://github.com/occmundial/atomic/commit/9470eb28e879f7d53942070fe49ed3e1218a4abb))
+* Set aux props optional and update docs ([629787f](https://github.com/occmundial/atomic/commit/629787fb29e60ad035926f70abf947e732a05762))
+
+
+### Features
+
+* New footer styles version 1 ([8af31ac](https://github.com/occmundial/atomic/commit/8af31acce65ffd022d00b3b2e440fdd03432bf13))
+
+# [3.0.0-beta.52](https://github.com/occmundial/atomic/compare/v3.0.0-beta.51...v3.0.0-beta.52) (2024-09-03)
+
+
+### Bug Fixes
+
+* Add margin zero to grid and add padding top for modal when img top ([89d031a](https://github.com/occmundial/atomic/commit/89d031a6a7e2c736f05b5466ed7698df87c3dcab))
+
+# [3.0.0-beta.51](https://github.com/occmundial/atomic/compare/v3.0.0-beta.50...v3.0.0-beta.51) (2024-08-26)
+
+
+### Bug Fixes
+
+* Set correct icon color when selected ([219604f](https://github.com/occmundial/atomic/commit/219604f26639d4119eaad60155d4639da89e8ade))
+
+# [3.0.0-beta.50](https://github.com/occmundial/atomic/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2024-08-23)
+
+
+### Features
+
+* Hide scrollbar ([3af67bc](https://github.com/occmundial/atomic/commit/3af67bc056565677b1162820c4cc0b93481b93d3))
+* Hide scrollbar ([8201d6c](https://github.com/occmundial/atomic/commit/8201d6c1b49973b9bcf25ce7c64bf4fd45032cbd))
+
+# [3.0.0-beta.49](https://github.com/occmundial/atomic/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2024-08-23)
+
+
+### Bug Fixes
+
+* Export tabs components ([4b671bc](https://github.com/occmundial/atomic/commit/4b671bcc6787c844d39536342628c59420deccfc))
+* Move tab list border to parent ([46b3dc9](https://github.com/occmundial/atomic/commit/46b3dc9c209f94a9db02974437bcaf6ceed26ea6))
+* Revert conditional render tab content ([3d2ed15](https://github.com/occmundial/atomic/commit/3d2ed150f3187968df4d3605b5ef8fc34378a270))
+
+
+### Features
+
+* Conditional render tabcontent and add aria attributes ([0f98bf5](https://github.com/occmundial/atomic/commit/0f98bf599e0dbbfed360c7f721eca1f9b46669c3))
+
+# [3.0.0-beta.48](https://github.com/occmundial/atomic/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2024-08-22)
+
+
+### Bug Fixes
+
+* Change tab label color when selected and adjust indicator height ([20893ca](https://github.com/occmundial/atomic/commit/20893ca2b7858e2dd3be90e233a527f0aa33ca9b))
+* Remove unused imports ([0dea2ec](https://github.com/occmundial/atomic/commit/0dea2ec209da84e175035146cb8e11c739f0f67d))
+
+
+### Features
+
+* Add unit test ([5ff0220](https://github.com/occmundial/atomic/commit/5ff022027262f036685ffb1f9756516522dd18ce))
+* Create a context provider for tabs controlled ([acbda68](https://github.com/occmundial/atomic/commit/acbda681b7364b8cd331a6a0e7014887d02493ce))
+* Create a context provider for tabs controlled ([cbc84e4](https://github.com/occmundial/atomic/commit/cbc84e4b29b6520a781941539ec55dd76013e405))
+* First version of tabs ([2133b55](https://github.com/occmundial/atomic/commit/2133b551c0ef7569c60b65a45310d77685fcfde4))
+* Validate disabled next component and change focus selector ([b56a8fe](https://github.com/occmundial/atomic/commit/b56a8fe5f68f497847b89f157bafb94a658a037a))
+
+# [3.0.0-beta.47](https://github.com/occmundial/atomic/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2024-08-14)
+
+
+### Features
+
+* Add type button to eye icon ([2750792](https://github.com/occmundial/atomic/commit/2750792408dcafdfcf700ca6211d07d6d42e4488))
+
+# [3.0.0-beta.46](https://github.com/occmundial/atomic/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2024-08-14)
+
+
+### Bug Fixes
+
+* Placeholder round style ([5760f7b](https://github.com/occmundial/atomic/commit/5760f7bddb51ad9c3982a72f3081a9ffeea00900))
+
+
+### Features
+
+* Added type button to Texfield Password show/hide button ([e3b9d30](https://github.com/occmundial/atomic/commit/e3b9d302b85a12efe6c23c25befa435e26dd30ea))
+
+# [3.0.0-beta.45](https://github.com/occmundial/atomic/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2024-08-09)
+
+
+### Features
+
+* Added attribute type button to buttons ([af411bc](https://github.com/occmundial/atomic/commit/af411bc7c42eadeb07fc5eb89dfb0dbc5ca8866c))
+
+# [3.0.0-beta.44](https://github.com/occmundial/atomic/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2024-08-08)
+
+
+### Bug Fixes
+
+* Remove tag margin top ([269feaa](https://github.com/occmundial/atomic/commit/269feaab4d620c7b6975c9c3c3d36542c7cc6695))
+
+# [3.0.0-beta.43](https://github.com/occmundial/atomic/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2024-08-08)
+
+
+### Bug Fixes
+
+* Change div divider for box shadow ([0b196a5](https://github.com/occmundial/atomic/commit/0b196a5a9ea9e403c14aad1ad5963034d56dc296))
+
+# [3.0.0-beta.42](https://github.com/occmundial/atomic/compare/v3.0.0-beta.41...v3.0.0-beta.42) (2024-08-08)
+
+
+### Bug Fixes
+
+* Placeholders font sizes and margins ([04bab15](https://github.com/occmundial/atomic/commit/04bab154d91bd50dd40463eae6efaf5c11d12f57))
+
+
+### Features
+
+* Added className and styles props ([08da9eb](https://github.com/occmundial/atomic/commit/08da9eb51a7e9feace0cc06d8f817b736b6a16d8))
+* Updaed placeholder component styles ([cdb97fa](https://github.com/occmundial/atomic/commit/cdb97fae24ec6aa0d793299021c09cdc5d6b20bc))
+
+# [3.0.0-beta.41](https://github.com/occmundial/atomic/compare/v3.0.0-beta.40...v3.0.0-beta.41) (2024-08-08)
+
+
+### Bug Fixes
+
+* Change spacing between Pill elements ([491b39b](https://github.com/occmundial/atomic/commit/491b39b4b84e6481f148fb537ab8e67164af84c3))
+
+
+### Features
+
+* Update slidedown with new design tokens ([b7e7d9b](https://github.com/occmundial/atomic/commit/b7e7d9b50a3042e165ea63408b40d5610d1d55a9))
+
+# [3.0.0-beta.40](https://github.com/occmundial/atomic/compare/v3.0.0-beta.39...v3.0.0-beta.40) (2024-08-05)
+
+
+### Bug Fixes
+
+* Fix styles for fullScreen modal ([1d7f7ff](https://github.com/occmundial/atomic/commit/1d7f7ff150143f839404aa34c32b30001b134cd3))
+
+# [3.0.0-beta.39](https://github.com/occmundial/atomic/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2024-08-01)
+
+
+### Bug Fixes
+
+* Change lg Button padding ([4f77f16](https://github.com/occmundial/atomic/commit/4f77f1687fc1a4accbe9d291521f131fa1631e0f))
+* Fix the height of the Modal ([561de04](https://github.com/occmundial/atomic/commit/561de0457d3aa43fe9b95997cce587b22be9286c))
+* Remove the classes prop from the modal ([3c87eef](https://github.com/occmundial/atomic/commit/3c87eef5f529c644f079921877dfe78ed1e9a168))
+
+
+### Features
+
+* Change styles of the Modal component ([73199f9](https://github.com/occmundial/atomic/commit/73199f916b94030fdf8979df4bd73afbd6924298))
+
+
+### Performance Improvements
+
+* Create a handler for the scroll to avoid a re-render ([e98f8ca](https://github.com/occmundial/atomic/commit/e98f8ca88336477b7225959d726821795f871aa8))
+
+# [3.0.0-beta.38](https://github.com/occmundial/atomic/compare/v3.0.0-beta.37...v3.0.0-beta.38) (2024-07-31)
+
+
+### Bug Fixes
+
+* Render initials only if there's no photo prop ([d3251da](https://github.com/occmundial/atomic/commit/d3251da405f6ad68cd14b53a71ac137f4936cfe2))
+
+# [3.0.0-beta.37](https://github.com/occmundial/atomic/compare/v3.0.0-beta.36...v3.0.0-beta.37) (2024-07-24)
+
+
+### Features
+
+* Update tooltip with new design tokens ([e9bf5f4](https://github.com/occmundial/atomic/commit/e9bf5f4e9717821b2f81f9ac879f7a7ed5bbcbb5))
+
+# [3.0.0-beta.36](https://github.com/occmundial/atomic/compare/v3.0.0-beta.35...v3.0.0-beta.36) (2024-07-22)
+
+
+### Bug Fixes
+
+* Add bp styles to fluid grid and reuse col bp ([fc36520](https://github.com/occmundial/atomic/commit/fc36520f14a3759ad0c33cad6d817660c2edd8a1))
+* Revert some changes, remove unnecesary bp and add padding to grid ([0f275d7](https://github.com/occmundial/atomic/commit/0f275d7ab55db6ec848fbd7d5f9654f0b0d6b276))
+
+
+### Features
+
+* Update grid with new design tokens ([fdfee4e](https://github.com/occmundial/atomic/commit/fdfee4e8992cf5d845eb6c2bb2d2f357c05c0588))
+
+# [3.0.0-beta.35](https://github.com/occmundial/atomic/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2024-07-19)
+
+
+### Features
+
+* Add testId prop to Pager ([d55079d](https://github.com/occmundial/atomic/commit/d55079dc292c826b58f32a3bc0e1e7ba0a0341fd))
+
+# [3.0.0-beta.34](https://github.com/occmundial/atomic/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2024-07-16)
+
+
+### Bug Fixes
+
+* Change Pager icons ([1ddf50c](https://github.com/occmundial/atomic/commit/1ddf50cee4ef9783dfdd0c5d74c81f101d0f72fc))
+
+# [3.0.0-beta.33](https://github.com/occmundial/atomic/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2024-07-15)
+
+
+### Bug Fixes
+
+* Add the disabled property to Pager ([a7a6d4c](https://github.com/occmundial/atomic/commit/a7a6d4c06c0ff995a1cd6c8325f8bac5eaf4f5fa))
+
+# [3.0.0-beta.32](https://github.com/occmundial/atomic/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2024-07-15)
+
+
+### Bug Fixes
+
+* Add shadow on focus to pagination ([f4fa37e](https://github.com/occmundial/atomic/commit/f4fa37ed022c7d96caaff5eaf619a8ec7249463d))
+* Change default margin and center pages values ([80f900b](https://github.com/occmundial/atomic/commit/80f900b3df7e167860ef943fabd958affa60d2aa))
+* Change iconRight styles in Button ([364aba5](https://github.com/occmundial/atomic/commit/364aba5e363fa2aa802b4ff4eac8e7539d5272e7))
+* Change the break symbol prop name ([96e4742](https://github.com/occmundial/atomic/commit/96e4742fb742c8f9fc609c4ad252bb634fb37080))
+* Insert break in Pager only when there's a page gap ([1296a45](https://github.com/occmundial/atomic/commit/1296a45d4ce990ebfd188ed8b75a68027a8262ce))
+
+
+### Features
+
+* Change styles and behavior of the Pager ([510cadc](https://github.com/occmundial/atomic/commit/510cadc4654e24516c3d13c4375f7a216dc9c7d7))
+
+
+### BREAKING CHANGES
+
+* Rename Pager's prop names.
+The logic and behavior of the Pager has changed too, now is the parent component the responsible for handling the page number, the Pager is only a modifier and no longer has an internal state and management of the current page.
+
+# [3.0.0-beta.31](https://github.com/occmundial/atomic/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2024-07-10)
+
+
+### Bug Fixes
+
+* Change icon close size to md ([225802b](https://github.com/occmundial/atomic/commit/225802b31c4b361371cf556e3412dbc1b7ca0729))
+
+# [3.0.0-beta.30](https://github.com/occmundial/atomic/compare/v3.0.0-beta.29...v3.0.0-beta.30) (2024-07-09)
+
+
+### Bug Fixes
+
+* Remove extra padding in label ([03f17af](https://github.com/occmundial/atomic/commit/03f17afb904f9e129dbd6eca4db4653b7eaa17ef))
+* Undo padding change ([d3c2b56](https://github.com/occmundial/atomic/commit/d3c2b567eb8746bb7528c40b916223f41ff9a107))
+
+# [3.0.0-beta.29](https://github.com/occmundial/atomic/compare/v3.0.0-beta.28...v3.0.0-beta.29) (2024-07-08)
+
+
+### Bug Fixes
+
+* Add hover styles for link in toaster ([3f85bde](https://github.com/occmundial/atomic/commit/3f85bde1e3e9788e3827fd2ca9cec1a0cf43383a))
+
+# [3.0.0-beta.28](https://github.com/occmundial/atomic/compare/v3.0.0-beta.27...v3.0.0-beta.28) (2024-07-08)
+
+
+### Bug Fixes
+
+* Changed outline with shadow ([8700b64](https://github.com/occmundial/atomic/commit/8700b646b1b2781db8147b0fb026c79497656534))
+* Changed tag border to outline ([ccc66c3](https://github.com/occmundial/atomic/commit/ccc66c31625d98e81d4c290c8c5aab00257926b7))
+
+# [3.0.0-beta.27](https://github.com/occmundial/atomic/compare/v3.0.0-beta.26...v3.0.0-beta.27) (2024-07-05)
+
+
+### Bug Fixes
+
+* Align title if not description ([3b5120b](https://github.com/occmundial/atomic/commit/3b5120b31f9980945d7050074e552ad27bf74ecd))
+
+
+### Features
+
+* Update toaster with new design tokens ([9cd59f7](https://github.com/occmundial/atomic/commit/9cd59f72f1c08d6a6e35ad12c2db439a2ce7c777))
+
+# [3.0.0-beta.26](https://github.com/occmundial/atomic/compare/v3.0.0-beta.25...v3.0.0-beta.26) (2024-07-05)
+
+
+### Bug Fixes
+
+* Add hover styles to alert link action ([42f74a4](https://github.com/occmundial/atomic/commit/42f74a479b201dae6ecc445ef8af0bfbd36b550f))
+
+# [3.0.0-beta.25](https://github.com/occmundial/atomic/compare/v3.0.0-beta.24...v3.0.0-beta.25) (2024-06-28)
+
+
+### Bug Fixes
+
+* Handle key press on Avatar ([eb38c23](https://github.com/occmundial/atomic/commit/eb38c238c07c205998d0558687afe85dcc115a29))
+* Modify structure, styles,behavior and props of Avatar ([79f3d9f](https://github.com/occmundial/atomic/commit/79f3d9fdb3430dbb474cafb867f99ceda5fb9d12))
+* Resolve conflicts with beta ([f749ea6](https://github.com/occmundial/atomic/commit/f749ea6d9752bc6a3023069cc56cdacfe96118c3))
+
+
+### Features
+
+* Update alert with new design tokens and add new props ([36cc3de](https://github.com/occmundial/atomic/commit/36cc3de4c0ecafd9d4516d11f27d9bb21b4bb4a4))
+
+# [3.0.0-beta.24](https://github.com/occmundial/atomic/compare/v3.0.0-beta.23...v3.0.0-beta.24) (2024-06-26)
+
+
+### Bug Fixes
+
+* Add alignLeft prop to Checkbox ([27c6994](https://github.com/occmundial/atomic/commit/27c699473476ac758f55eefaccacf961b12f5953))
+* Add tag style for Radio ([5d26373](https://github.com/occmundial/atomic/commit/5d26373e98789b8f5ce1347a6ab055a60949e190))
+* Change focus behavior of Button ([da0200b](https://github.com/occmundial/atomic/commit/da0200b5e43b70a52195ec788c3ab84cd9e38aba))
+* Change structure and styles of Radio ([bdff7db](https://github.com/occmundial/atomic/commit/bdff7db4e3e194aa70dcbaafac524616218bcf43))
+* Change structure and styles of Toggle ([2ddf660](https://github.com/occmundial/atomic/commit/2ddf6603d1520ea3f3ffc1ff35c36aa26cf440d5))
+* Fix styles and structure of Checkbox ([8369fbc](https://github.com/occmundial/atomic/commit/8369fbc2500bb496e624450438cbb4b3e33b185f))
+
+
+### Features
+
+* Tag design and dcumentation updated ([681cd9c](https://github.com/occmundial/atomic/commit/681cd9c67442862f980c67aa8f19e9ff6b207b38))
+
+# [3.0.0-beta.23](https://github.com/occmundial/atomic/compare/v3.0.0-beta.22...v3.0.0-beta.23) (2024-06-19)
+
+
+### Bug Fixes
+
+* Change icon size and adjust margins ([b3027f4](https://github.com/occmundial/atomic/commit/b3027f4cd12581530532f4513006d709e9c0ef9d))
+
+# [3.0.0-beta.22](https://github.com/occmundial/atomic/compare/v3.0.0-beta.21...v3.0.0-beta.22) (2024-06-05)
+
+
+### Features
+
+* Checkbox redesigned and documentation created ([4a90723](https://github.com/occmundial/atomic/commit/4a9072387f583d6601b305d8f3c5a321949bad3d))
+
+# [3.0.0-beta.21](https://github.com/occmundial/atomic/compare/v3.0.0-beta.20...v3.0.0-beta.21) (2024-06-05)
+
+
+### Bug Fixes
+
+* Text translations ([664d634](https://github.com/occmundial/atomic/commit/664d63454b31f2eb4715cf3740fa4c17b1819bf3))
+
+# [3.0.0-beta.20](https://github.com/occmundial/atomic/compare/v3.0.0-beta.19...v3.0.0-beta.20) (2024-05-30)
+
+
+### Bug Fixes
+
+* Resolve conflicts ([1f2e0fe](https://github.com/occmundial/atomic/commit/1f2e0fe3346eb9a7f6ec8f3518abb76102a9cfeb))
+
+
+### Features
+
+* Update pill styles with design tokens ([e2cb3b6](https://github.com/occmundial/atomic/commit/e2cb3b6942837cd50fd262044b387ad9e5f2194f))
+
+# [3.0.0-beta.19](https://github.com/occmundial/atomic/compare/v3.0.0-beta.18...v3.0.0-beta.19) (2024-05-28)
+
+
+### Features
+
+* Updated toogle component and documentation ([81f6f24](https://github.com/occmundial/atomic/commit/81f6f24345857c6e946ffdb811fd372202a7faa9))
+
+# [3.0.0-beta.18](https://github.com/occmundial/atomic/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2024-05-27)
+
+
+### Bug Fixes
+
+* Fix styles of Autocomplete ([36f3437](https://github.com/occmundial/atomic/commit/36f3437bee55a9549af9c67546f80cf911fb9288))
+* Fix the Autocomplete props ([465d88e](https://github.com/occmundial/atomic/commit/465d88eb26d5bcd096b7319406421f78171ce996))
+
+# [3.0.0-beta.17](https://github.com/occmundial/atomic/compare/v3.0.0-beta.16...v3.0.0-beta.17) (2024-05-21)
+
+
+### Bug Fixes
+
+* Change text component to p tag ([8853a7a](https://github.com/occmundial/atomic/commit/8853a7a96a3877fac45c1245b74f349ba0ad773f))
+
+
+### Features
+
+* Update droplist styles with new design tokens ([f85aebe](https://github.com/occmundial/atomic/commit/f85aebe727da48f9da108a63eb0234f3034a9d62))
+
+
+# [3.0.0-beta.16](https://github.com/occmundial/atomic/compare/v3.0.0-beta.15...v3.0.0-beta.16) (2024-05-21)
+
+
+### Bug Fixes
+
+* Add event props to the Button component ([753255f](https://github.com/occmundial/atomic/commit/753255f8301a501722a5d71cd8b456b514f250f8))
+* Change outline for box shadow ([f9240bb](https://github.com/occmundial/atomic/commit/f9240bbb9a10a014ec417ad8bcc2266c744ebcf0))
+* Change textarea padding and remove searchField prop ([f0b23a9](https://github.com/occmundial/atomic/commit/f0b23a927ba58443e474ef52a9afa97062e2e5bc))
+* Fix TextField styles ([b356d95](https://github.com/occmundial/atomic/commit/b356d952999eef8738380041d69ea55b16e1ebfd))
+* Fix the styles for the TextField's select type ([7117a14](https://github.com/occmundial/atomic/commit/7117a140d2df2c2b7eb5000d14286b54045b3dd5))
+* Remove lockHeight prop from Autocomplete ([de316d2](https://github.com/occmundial/atomic/commit/de316d2c9aa633ad2d192b5935abee71d0be2dac))
+* Remove the lockHeight prop and set the options type ([c6c05d6](https://github.com/occmundial/atomic/commit/c6c05d6efa387ba96abe044569dfc471702f0f11))
+* Remove unused style ([e665eea](https://github.com/occmundial/atomic/commit/e665eeabdff20793a62e69b152afac7ef957e9a6))
+* Remove unused styles ([cf7a6c9](https://github.com/occmundial/atomic/commit/cf7a6c9caf62f9cc1ef6ef0a9269a27f6da598b9))
+* Remove wrong Button prop ([df45b7d](https://github.com/occmundial/atomic/commit/df45b7da8d1170f226b0012377dbd50f3e271460))
+* Replace Text elements for custom labels ([71bc708](https://github.com/occmundial/atomic/commit/71bc7083852f92661c57472e231e03a00f4cd055))
+
+
+### Features
+
+* Update the TextField component to use the new tokens ([2721761](https://github.com/occmundial/atomic/commit/2721761b178f3d69b151076345ec9272488dc559))
+
+
+### BREAKING CHANGES
+
+* Remove the searchField prop from the TextField component
+
+# [3.0.0-beta.15](https://github.com/occmundial/atomic/compare/v3.0.0-beta.14...v3.0.0-beta.15) (2024-05-10)
+
+
+### Features
+
+* Created radio documentation ([b56677b](https://github.com/occmundial/atomic/commit/b56677b495be71f1785ed883db6023d337756fce))
+* Updated radio styles ([6e6b8bb](https://github.com/occmundial/atomic/commit/6e6b8bbe9fb5bf5dab987df3d1e9c64aa61e5258))
 
 # [3.0.0-beta.14](https://github.com/occmundial/atomic/compare/v3.0.0-beta.13...v3.0.0-beta.14) (2024-05-02)
 

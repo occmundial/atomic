@@ -1,0 +1,141 @@
+---
+title: MenuUser
+section: components
+---
+
+# MenuUser
+
+---
+
+MenuItem component with Avatar and subtitle.
+
+## Props
+
+Props of the native component [Avatar](/Avatar) are also available.
+
+| Name                 | Type                                                                                                  | Default value  | Description                                                                                                                                                                                                        |
+| -------------------- | ----------------------------------------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `alignItems`         | **center \| start**                                                                                   | `center`       | Defines the align-items style property.                                                                                                                                                                            |
+| `className`          | **{ root: string; title: string; subtitle: string; avatarContainer: string; textContainer: string }** | -              | Adds classes to the root div container.                                                                                                                                                                            |
+| `styles`             | **{ root: CSSProperties; textContainer: CSSProperties; avatarContainer: CSSProperties  }**            | -              | Adds classes to the root div container.                                                                                                                                                                            |
+| `nonActivatable`     | **boolean**                                                                                           | `false`        | Use to remove hover, focus and active stylings.                                                                                                                                                                    |
+| `dense`              | **boolean**                                                                                           | -              | If true, compact vertical padding designed for keyboard and mouse input is used. The prop defaults to the value inherited from the parent List component.                                                          |
+| `disablePadding`     | **boolean**                                                                                           | `false`        | If true, all padding is removed.                                                                                                                                                                                   |
+| `disableGutters`     | **boolean**                                                                                           | `false`        | If true, the left and right padding is removed.                                                                                                                                                                    |
+| `children`           | **ReactNode**                                                                                         | -              | Alias for the title prop.                                                                                                                                                                                          |
+| `selected`           | **boolean**                                                                                           | `false`        | Use to apply selected styling.                                                                                                                                                                                     |
+| `component`          | **ElementType**                                                                                       | `div`          | The component used for the root node. Either a string to use a HTML element or a component.                                                                                                                        |
+| `disableText`        | **boolean**                                                                                           | `false`        | If true, the children won't be wrapped by a Text component. This can be useful to render an alternative Text variant by wrapping the children (or title) Text, and optional subtitle text with the Text component. |
+| `title`              | **ReactNode**                                                                                         | -              | The title content element.                                                                                                                                                                                         |
+| `titleTextProps`     | **[TextProps](/Text#Props)**                                                                          | -              | These props will be forwarded to the title Text component (as long as disableText is not true).                                                                                                                    |
+| `subtitle`           | **ReactNode**                                                                                         | -              | The subtitle content element.                                                                                                                                                                                      |
+| `subtitleTextProps`  | **[TextProps](/Text#Props)**                                                                          | -              | These props will be forwarded to the subtitle Text component (as long as disableText is not true).                                                                                                                 |
+| `avatarProps`        | **[AvatarProps](/Avatar#Props)**                                                                      | -              | These props will be forwarded to the Avatar component.                                                                                                                                                             |
+
+
+## Examples
+
+### Menu User
+
+<Demo title="Menu User" background={colors.white}>
+  { [...Array(3).keys()].map(val => (
+    <MenuUser 
+      key={val}
+      title="Nombre Apellido"
+      subtitle="ejemplo@correo.com"
+      avatarProps={{
+        photo:"https://i.pravatar.cc/300"
+      }}
+    />
+  ))}
+</Demo>
+
+```jsx
+// Code
+function Component() {
+  return (
+    { [...Array(3).keys()].map(val => (
+      <MenuUser 
+        key={val}
+        title="Nombre Apellido"
+        subtitle="ejemplo@correo.com"
+        avatarProps={{
+        photo:"https://i.pravatar.cc/300"
+        }}
+      />
+    ))}
+  )
+}
+```
+
+### Dense prop
+
+<Demo title="Dense props" background={colors.white}>
+  { [...Array(3).keys()].map(val => (
+    <MenuUser 
+      dense
+      key={val}
+      title="Nombre Apellido"
+      subtitle="ejemplo@correo.com"
+      avatarProps={{
+          photo: "https://i.pravatar.cc/300"
+      }}
+    />
+  ))}
+</Demo>
+
+```jsx
+// Code
+function Component() {
+  return (
+    { [...Array(3).keys()].map(val => (
+      <MenuUser 
+        key={val}
+        dense
+        title="Nombre Apellido"
+        subtitle="ejemplo@correo.com"
+        avatarProps={{
+        photo: "https://i.pravatar.cc/300"
+        }}
+      />
+    ))}
+  )
+}
+```
+
+### Component prop
+
+<Demo title="Component props" background={colors.white}>
+  { [...Array(3).keys()].map(val => (
+    <MenuUser 
+      key={val}
+      title="Nombre Apellido"
+      subtitle="ejemplo@correo.com"
+      avatarProps={{
+        photo: "https://i.pravatar.cc/300"
+      }}
+      component="a"
+      href="#Component prop"
+    />
+  ))}
+</Demo>
+
+```jsx
+// Code
+function Component() {
+  return (
+    { [...Array(3).keys()].map(val => (
+      <MenuUser 
+        key={val}
+        title="Nombre Apellido"
+        subtitle="ejemplo@correo.com"
+        avatarProps={{
+          photo: "https://i.pravatar.cc/300"
+        }}
+        component="a"
+        href="#Component prop"
+      />
+    ))}
+  )
+}
+```

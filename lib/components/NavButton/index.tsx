@@ -1,4 +1,4 @@
-import React, { EventHandler, MouseEvent, useState } from 'react'
+import React, { EventHandler, MouseEvent } from 'react'
 import classnames from 'classnames'
 
 import Text from '@/components/Text'
@@ -8,7 +8,7 @@ import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
 
-export interface NavIconProps {
+export interface NavButtonProps {
   selected?: boolean
   iconName?: string
   label?: string
@@ -21,20 +21,19 @@ export interface NavIconProps {
   testId?: string
 }
 
-const NavIcon = ({
+const NavButton = ({
   iconName,
   selected,
   label,
   onClick,
-  direction,
+  direction = 'row',
   className,
   testId,
   width,
   white,
   showBar
-}: NavIconProps) => {
+}: NavButtonProps) => {
   const classes = useStyles()
-  const [hover, setHover] = useState(false)
   return (
     <div
       className={classnames(
@@ -43,14 +42,11 @@ const NavIcon = ({
         { [classes.black]: !white },
         { [classes.selectedWhite]: selected && white },
         { [classes.selected]: selected && !white },
-        { [classes.showBarSec]: showBar && white },
-        { [classes.showBar]: showBar && !white },
+        { [classes.showBar]: showBar },
         className
       )}
       onClick={onClick}
       style={{ width }}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
       data-testid={testId}
     >
       <Flexbox
@@ -60,21 +56,13 @@ const NavIcon = ({
         alignItems="center"
         className={classes.flex}
       >
-        <Icon
-          iconName={iconName}
-          size={iconSizes.base}
-          className={classnames(classes.icon, {
-            [classes.withOpacity]: hover && white
-          })}
-        />
+        {iconName && <Icon iconName={iconName} size={iconSizes.base} />}
         {label && (
-          <Text micro current>
+          <Text bodyRegularStrong current>
             <span
-              className={classnames(
-                classes.text,
-                { [classes.withOpacity]: hover && white },
-                { [classes.pushText]: direction !== 'col' }
-              )}
+              className={classnames(classes.text, {
+                [classes.pushText]: direction === 'row' && iconName
+              })}
             >
               {label}
             </span>
@@ -85,4 +73,4 @@ const NavIcon = ({
   )
 }
 
-export default NavIcon
+export default NavButton

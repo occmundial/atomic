@@ -6,8 +6,12 @@ import components from '@/src/components/MDXComponents'
 import scope from '@/src/utils/scope'
 
 export default function DocsPage({ docs, doc }) {
+  if (doc && doc.slug === 'Header') {
+    return <MDXRemote {...doc.mdx} components={components} scope={scope} />
+  }
+
   return (
-    <Layout docs={docs}>
+    <Layout docs={docs} doc={doc}>
       <MDXRemote {...doc.mdx} components={components} scope={scope} />
     </Layout>
   )

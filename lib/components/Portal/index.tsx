@@ -26,16 +26,18 @@ const Portal = ({ show, container, children }: Portal) => {
   }, [, show, showPrev])
 
   const onTransitionEnd = useCallback(() => setMount(false), [])
+  const onAnimationEnd = useCallback(() => setMount(false), [])
 
   const childrenWithProps = useMemo(() => {
     if (isValidElement(children)) {
       return cloneElement(children as ReactElement, {
         onTransitionEnd: !show && mount ? onTransitionEnd : null,
+        onAnimationEnd: !show && mount ? onAnimationEnd : null,
         show
       })
     }
     return children
-  }, [children, mount, onTransitionEnd, show])
+  }, [children, mount, onTransitionEnd, onAnimationEnd, show])
 
   return mount
     ? ReactDOM.createPortal(childrenWithProps, container || document.body)

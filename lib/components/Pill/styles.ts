@@ -1,46 +1,55 @@
 import { createUseStyles } from 'react-jss'
 
-import colors from '@/tokens/colors'
-import spacing from '@/tokens/spacing'
+import colors from '@/tokens/future/colors.json'
+import spacing from '@/tokens/future/spacing.json'
+import fonts from '@/tokens/future/fonts.json'
+import { objectToFontValue } from '@/utils/font'
 
 export default createUseStyles({
   container: {
     position: 'relative',
-    marginBottom: spacing.tiny
+    display: 'flex',
+    flexDirection: 'column',
+    marginBottom: spacing['size-2']
   },
   top: {
-    height: spacing.base,
+    height: 21,
     display: 'flex',
     alignItems: 'center',
-    '&:after': {
-      content: '""',
-      clear: 'both'
-    }
+    marginBottom: spacing['size-2']
   },
   left: {
     float: 'left'
   },
-  disabled: {
-    '& $label': {
-      color: colors.inkLightest
-    }
-  },
   bottom: {
-    height: spacing.base,
+    height: 21,
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: spacing['size-2']
+  },
+  validAssistiveText: {
+    color: colors.text.corp.secondary
+  },
+  errorAssistiveText: {
+    color: colors.text.error
   },
   errorIcon: {
     marginTop: -2,
-    marginRight: spacing.xTiny,
-    color: colors.errorText
+    marginRight: spacing['size-1']
   },
   stackGroup: {
     display: 'flex',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    gap: `${spacing['size-4']} ${spacing['size-2']}`
   },
   choiceGroup: {
     display: 'flex',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    gap: `${spacing['size-4']} ${spacing['size-2']}`
+  },
+  label: {
+    font: objectToFontValue(fonts['text-field-label']),
+    color: colors.text.corp.primary,
+    transition: '0.3s all'
   }
 })
