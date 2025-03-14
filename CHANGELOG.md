@@ -1,3 +1,11 @@
+# [4.1.0](https://github.com/occmundial/atomic/compare/v4.0.0...v4.1.0) (2025-03-14)
+
+
+### Features
+
+* Add information to set the ct tokens ([a7b14fc](https://github.com/occmundial/atomic/commit/a7b14fcaf2d15d5f77de23aa6fda1f48dae920bc))
+* Update branch ([9347719](https://github.com/occmundial/atomic/commit/9347719829e98786fcba5c6ca2a3d556a491a2a7))
+
 # [4.0.0](https://github.com/occmundial/atomic/compare/v3.2.0...v4.0.0) (2025-02-20)
 
 
