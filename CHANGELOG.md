@@ -1,3 +1,10 @@
+# [4.2.0-ct.2](https://github.com/occmundial/atomic/compare/v4.2.0-ct.1...v4.2.0-ct.2) (2025-03-18)
+
+
+### Bug Fixes
+
+* Add missing file to export ct tokens ([d860fa5](https://github.com/occmundial/atomic/commit/d860fa5964f50467a81d0a0236ddb958e382a3b5))
+
 # [4.2.0-ct.1](https://github.com/occmundial/atomic/compare/v4.1.0...v4.2.0-ct.1) (2025-03-18)
 
 
