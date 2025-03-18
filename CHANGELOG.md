@@ -1,3 +1,10 @@
+# [4.2.0-ct.1](https://github.com/occmundial/atomic/compare/v4.1.0...v4.2.0-ct.1) (2025-03-18)
+
+
+### Features
+
+* Add new ct colors ([1f13abc](https://github.com/occmundial/atomic/commit/1f13abcd0ed82cb876eee2d82346d95c3534570b))
+
 # [4.1.0](https://github.com/occmundial/atomic/compare/v4.0.0...v4.1.0) (2025-03-14)
 
 
