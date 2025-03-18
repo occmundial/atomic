@@ -4,6 +4,10 @@
     {
       "name": "beta",
       "prerelease": true
+    },
+    {
+      "name": "ct",
+      "prerelease": true
     }
   ],
   "dryRun": false,
