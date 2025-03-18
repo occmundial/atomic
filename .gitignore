@@ -39,3 +39,5 @@ yarn-error.log*
 
 # TS dev files
 tsconfig.tsbuildinfo
+
+.idea/
