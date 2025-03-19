@@ -9,6 +9,7 @@
   },
   "blue": {
     "100": "#f6fbff",
+    "200": "#DBEFFF",
     "500": "#005da9",
     "600": "#0D3878",
     "700": "#08224A",
@@ -269,6 +270,42 @@
       }
     }
   },
+  "tag": {
+    "info": {
+      "bg": "#f6fbff",
+      "border": "#DBEFFF",
+      "text": "#005da9",
+      "icon": "#005da9"
+    },
+    "success": {
+      "bg": "#ebfbf1",
+      "border": "#d7f6e3",
+      "text": "#16542e",
+      "icon": "#38d373"
+    },
+    "error": {
+      "bg": "#fce8e8",
+      "border": "#FBDFDF",
+      "text": "#a51717",
+      "icon": "#e82020"
+    },
+    "warning": {
+      "bg": "#fff8e9",
+      "border": "#fff1d3",
+      "text": "#664a0e",
+      "icon": "#ffba24"
+    },
+    "promo": {
+      "bg": "#061C3C",
+      "text": "#ffffff",
+      "icon": "#ffffff"
+    },
+    "featured": {
+      "bg": "#0D3878",
+      "text": "#ffffff",
+      "icon": "#ffffff"
+    }
+  },
   "bg": {
     "action": {
       "primary": {
@@ -335,6 +372,9 @@
       "subtle": "#E2E6E9",
       "default": "#98A2AC",
       "bold": "#0D3878"
+    },
+    "accent": {
+      "subtle": "#DBEFFF"
     }
   },
   "text": {
