@@ -1,5 +1,10 @@
 const fonts = {
-  body: `'OccText', sans-serif`
+  CT: {
+    body: `'Arial'`
+  },
+  OCC: {
+    body: `'OccText', sans-serif`
+  }
 }
 
 export default fonts
