@@ -1,4 +1,5 @@
 import { createUseStyles } from 'react-jss'
+import useBrand from '@/hooks/useBrand'
 
 import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
@@ -33,7 +34,8 @@ const bodyXSmall = newFonts['body-x-small']
 export default createUseStyles({
   text: {
     letterSpacing: 0,
-    fontFamily: fonts.body,
+    fontFamily: (props: { brand: string }) =>
+      props.brand ? fonts[props.brand].body : fonts.OCC.body,
     fontWeight: 300,
     fontStyle: 'normal',
     margin: 0

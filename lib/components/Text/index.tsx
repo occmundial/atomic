@@ -3,6 +3,7 @@ import classnames from 'classnames'
 
 import useStyles from './styles'
 import { classTranslation } from './helper'
+import useBrand from '@/hooks/useBrand'
 
 type OldTextProps = {
   hero?: boolean
@@ -208,7 +209,8 @@ const Text = ({
   id,
   style
 }: TextProps) => {
-  const classes = useStyles()
+  const brand = useBrand()
+  const classes = useStyles({ brand })
 
   const sizeActive = useMemo(
     () =>
