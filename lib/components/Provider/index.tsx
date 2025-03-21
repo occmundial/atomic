@@ -21,6 +21,7 @@ export interface AtomicData {
   iconsPrefix: string
   /** Use the new icons and the icon name translation */
   translateIconsV2: boolean
+  brand: string
 }
 
 interface AtomicProviderProps {

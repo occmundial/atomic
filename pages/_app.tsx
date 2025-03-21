@@ -22,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <MediaContextProvider>
         <AtomicProvider
           data={{
+            brand: 'CT',
             translateIconsV2: true,
             iconsUrl:
               'https://cdn-icons.occ.com.mx/atomic-icons-1.7.0-beta.8.svg'
