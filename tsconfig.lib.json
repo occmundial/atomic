@@ -18,6 +18,7 @@
       "baseUrl": ".",
       "paths": {
         "@/components/*": ["lib/components/*"],
+        "@/constants/*": ["lib/constants/*"],
         "@/tokens/*": ["lib/tokens/*"],
         "@/hooks/*": ["lib/hooks/*"],
         "@/utils/*": ["lib/utils/*"],
