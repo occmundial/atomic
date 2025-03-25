@@ -38,6 +38,7 @@ const AtomicProvider = ({ data, children }: AtomicProviderProps) => {
     iconsPath: '',
     translateIconsV2: false,
     iconsPrefix: 'atomic',
+    brand: 'OCC',
     ...data
   })
   const valueRef = useRef<Partial<AtomicData>>()
