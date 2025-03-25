@@ -8,5 +8,8 @@ type FontToken = {
   letterSpacing?: string
 }
 
-export const objectToFontValue = (font: FontToken) =>
-  `${font.fontWeight} ${font.fontSize}/${font.lineHeight} ${fontsOld.body}`
+export const objectToFontValue = (font: FontToken, brand?: string) => {
+  return `${font.fontWeight} ${font.fontSize}/${font.lineHeight} ${
+    brand ? fontsOld[brand].body : fontsOld.OCC.body
+  }`
+}

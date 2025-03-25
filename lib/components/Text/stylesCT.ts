@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
 
-import { OCC as brand } from '@/constants/index'
+import { CT as brand } from '@/constants/index'
 
 import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'

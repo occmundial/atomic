@@ -2,6 +2,7 @@ import { ReactNode, useMemo, createElement, CSSProperties } from 'react'
 import classnames from 'classnames'
 
 import useStyles from './styles'
+import useStylesCT from './stylesCT'
 import { classTranslation } from './helper'
 import useBrand from '@/hooks/useBrand'
 
@@ -210,7 +211,8 @@ const Text = ({
   style
 }: TextProps) => {
   const brand = useBrand()
-  const classes = useStyles({ brand })
+  const styles = { OCC: useStyles(), CT: useStylesCT() }
+  const classes = brand ? styles[brand] : styles.OCC
 
   const sizeActive = useMemo(
     () =>
