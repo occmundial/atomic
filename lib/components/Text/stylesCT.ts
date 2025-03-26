@@ -1,5 +1,3 @@
-import { createUseStyles } from 'react-jss'
-
 import { CT as brand } from '@/constants/index'
 
 import colors from '@/tokens/colors'
@@ -32,7 +30,7 @@ const bodySmallStrong = newFonts['body-small-strong']
 const bodySmall = newFonts['body-small']
 const bodyXSmall = newFonts['body-x-small']
 
-export default createUseStyles({
+const styles = {
   text: {
     letterSpacing: 0,
     fontFamily: fonts[brand].body,
@@ -245,4 +243,6 @@ export default createUseStyles({
   bottom12: {
     marginBottom: newSpacing['size-12']
   }
-})
+}
+
+export default styles
