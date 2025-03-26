@@ -21,7 +21,6 @@ export interface AtomicData {
   iconsPrefix: string
   /** Use the new icons and the icon name translation */
   translateIconsV2: boolean
-  brand: string
 }
 
 interface AtomicProviderProps {
@@ -38,7 +37,6 @@ const AtomicProvider = ({ data, children }: AtomicProviderProps) => {
     iconsPath: '',
     translateIconsV2: false,
     iconsPrefix: 'atomic',
-    brand: 'OCC',
     ...data
   })
   const valueRef = useRef<Partial<AtomicData>>()

@@ -1,5 +1,4 @@
 import useAtomic from './useAtomic'
-import useBrand from './useBrand'
 import useEventListener from './useEventListener'
 import useIsClient from './useIsClient'
 import usePrevious from './usePrevious'
@@ -9,7 +8,6 @@ import useIsMounted from './useIsMounted'
 
 export {
   useAtomic,
-  useBrand,
   useEventListener,
   useIsClient,
   usePrevious,
