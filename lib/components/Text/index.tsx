@@ -1,11 +1,8 @@
 import { ReactNode, useMemo, createElement, CSSProperties } from 'react'
-import { createUseStyles } from 'react-jss'
 import classnames from 'classnames'
 
-import stylesOCC from './styles'
-import stylesCT from './stylesCT'
+import useStyles from './styles'
 import { classTranslation } from './helper'
-import useBrand from '@/hooks/useBrand'
 
 type OldTextProps = {
   hero?: boolean
@@ -211,8 +208,6 @@ const Text = ({
   id,
   style
 }: TextProps) => {
-  const brand = useBrand()
-  const useStyles = createUseStyles(brand === 'CT' ? stylesCT : stylesOCC)
   const classes = useStyles()
 
   const sizeActive = useMemo(
