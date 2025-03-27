@@ -9,7 +9,8 @@
   },
   "blue": {
     "100": "#f6fbff",
-    "200": "#DBEFFF",
+    "200": "#EAF3FB",
+    "300": "#DBEFFF",
     "500": "#005da9",
     "600": "#0D3878",
     "700": "#08224A",
@@ -336,7 +337,10 @@
     "success": "#ebfbf1",
     "white": "#ffffff",
     "default": "#f6fbff",
-    "warning": "#fff8e9"
+    "warning": "#fff8e9",
+    "brand": {
+      "subtle": "#EAF3FB"
+    }
   },
   "icon": {
     "default": {
