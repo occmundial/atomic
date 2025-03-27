@@ -17,7 +17,7 @@ const scope = {
   useState,
   colorsNew,
   grid,
-  ct:{
+  ct: {
     colors: ctColors
   }
 }

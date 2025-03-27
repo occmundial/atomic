@@ -1,7 +1,5 @@
 import { createUseStyles } from 'react-jss'
 
-import fonts from '@/tokens/fonts'
-
 import newColors from '@/tokens/future/colors.json'
 import newFonts from '@/tokens/future/fonts.json'
 import borderRadius from '@/tokens/future/borderRadius.json'
