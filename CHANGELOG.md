@@ -1,3 +1,19 @@
+# [4.2.0-ct.4](https://github.com/occmundial/atomic/compare/v4.2.0-ct.3...v4.2.0-ct.4) (2025-03-27)
+
+
+### Bug Fixes
+
+* Remove brand for provider ([a79d4e7](https://github.com/occmundial/atomic/commit/a79d4e71f0c685056371391a34729ec9b309b196))
+
+
+### Features
+
+* Add brand to context ([0ebbfe5](https://github.com/occmundial/atomic/commit/0ebbfe5ac1803126ec9622c4820246340c389745))
+* Add hook to get brand value ([73411fb](https://github.com/occmundial/atomic/commit/73411fb93797f5af3c1d0e87cd94f5531a9a4c83))
+* Create constants and set directory ([8e66fe8](https://github.com/occmundial/atomic/commit/8e66fe832fb1554a65017feeb438590e61d6d1b8))
+* Get and set font from brand on Text ([dc82499](https://github.com/occmundial/atomic/commit/dc82499747940b9d6e11e2fbba0c0163de7494fb))
+* Set default value for brand ([6727760](https://github.com/occmundial/atomic/commit/6727760c9f90370d8803e14086698ab46c687469))
+
 # [4.2.0-ct.3](https://github.com/occmundial/atomic/compare/v4.2.0-ct.2...v4.2.0-ct.3) (2025-03-19)
 
 
