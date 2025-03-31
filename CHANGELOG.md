@@ -1,3 +1,10 @@
+# [4.2.0-ct.5](https://github.com/occmundial/atomic/compare/v4.2.0-ct.4...v4.2.0-ct.5) (2025-03-31)
+
+
+### Features
+
+* New tokens and default weight in TextCT ([fd0a549](https://github.com/occmundial/atomic/commit/fd0a5498601eaddacb92e3034d568d53b56abc11))
+
 # [4.2.0-ct.4](https://github.com/occmundial/atomic/compare/v4.2.0-ct.3...v4.2.0-ct.4) (2025-03-27)
 
 
