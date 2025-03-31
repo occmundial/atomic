@@ -3,6 +3,9 @@ import path from 'path'
 import { serialize } from 'next-mdx-remote/serialize'
 import matter from 'gray-matter'
 import glob from 'fast-glob'
+import { CT } from '@/constants/index'
+
+const showCT = process.env.ATOMIC_BRAND === CT
 
 export async function getMdxContent(source) {
   const contentGlob = `${source}/**/*.mdx`
@@ -30,5 +33,7 @@ export async function getMdxContent(source) {
       }
     })
   )
-  return content
+  return content.filter(
+    ({ data }) => data.title !== (showCT ? 'Button' : 'ButtonCT')
+  )
 }

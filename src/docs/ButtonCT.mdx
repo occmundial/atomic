@@ -1,0 +1,372 @@
+---
+title: ButtonCT
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Button from '@/components/Button'
+
+# Button CT
+
+---
+
+- [Props](#Props)
+- [Examples](#Examples)
+  - [Theme](#Theme)
+  - [Size](#Size)
+  - [Block](#Block)
+  - [Icon](#Icon)
+  - [Loading](#Loading)
+  - [Disabled](#Disabled)
+  - [Round](#Round)
+  - [Click](#Click)
+  - [Href](#Href)
+
+A flexible component button, with six pre-stablished themes.
+The button can behave like any button with onClick event, or like an anchor with href and target.
+
+## Props
+
+| Name        | Type          | Default value | Description                                                                                                                                        |
+| ----------- | ------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`  | **ReactNode** | -             | Children component passed to this container.                                                                                                       |
+| `theme`     | **string**    | `primary`     | Button's predefined styles. Available options are: `primary`, `secondary`, `tertiary`, `tertiaryWhite`, `ghostPink`, `ghostGrey` and `ghostWhite`. |
+| `size`      | **string**    | `md`          | Button size. Available options are: `sm`, `md` and `lg`.                                                                                           |
+| `block`     | **boolean**   | `false`       | If true, the button will be displayed in a block.                                                                                                  |
+| `disabled`  | **boolean**   | `false`       | It disables the button functionality and shows it with a different style.                                                                          |
+| `icon`      | **string**    | -             | Displays an icon on the left side of the button.                                                                                                   |
+| `iconRight` | **string**    | -             | Displays as icon on the right side of the button.                                                                                                  |
+| `round`     | **boolean**   | -             | Property to make the button round when it only has an `iconLeft` and no `children`.                                                                |
+| `loading`   | **boolean**   | `false`       | The loading state disables the button and displays a spinner inside.                                                                               |
+| `onClick`   | **function**  | -             | Callback function that is called when the button is clicked.                                                                                       |
+| `onMouseDown`| **function** | -             | Callback function that is called when the button is pressed.                                                                                       |
+| `onMouseUp` | **function**  | -             | Callback function that is called when the button is released.                                                                                      |
+| `onMouseOut`| **function**  | -             | Callback function that is called when the mouse leaves the button.                                                                                 |
+| `type`      | **string**    | -             | Button's type to use in HTML Forms. Available options are: `button`, `submit`, `reset`.                                                            |
+| `name`      | **string**    | -             | The name of the button, used in HTML forms.                                                                                                        |
+| `value`     | **any**       | -             | The value of the button, used in HTML forms.                                                                                                       |
+| `href`      | **string**    | -             | The link that the button will navigate to.                                                                                                         |
+| `target`    | **string**    | -             | The link target.                                                                                                                                   |
+| `rel`       | **string**    | -             | Only used if the `href` attribute is present.                                                                                                      |
+| `id`        | **string**    | -             | The id of the button.                                                                                                                              |
+| `testId`    | **string**    | -             | The data-testid of the button.                                                                                                                     |
+| `className` | **string**    | -             | The className of the button.                                                                                                                       |
+| `style`     | **object**    | -             | The style of the button.                                                                                                                           |
+
+## Examples
+
+### Theme
+
+You can choose any of the 3 predefined themes.
+
+<Demo title="Button themes">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button style={{ margin: spacing.tiny }}>Primary</Button>
+    <Button theme="secondary" style={{ margin: spacing.tiny }}>
+      Secondary
+    </Button>
+    <Button theme="tertiary" style={{ margin: spacing.tiny }}>
+      Tertiary
+    </Button>
+    <Button theme="ghost" style={{ margin: spacing.tiny }}>
+      Ghost
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use Button themes
+function Component() {
+  return (
+    <>
+      {/* `primary` is the default value. */}
+      <Button>Primary</Button>
+      <Button theme="secondary">Secondary</Button>
+      <Button theme="ghostGrey">Ghost Grey</Button>
+    </>
+  )
+}
+```
+
+### Size
+
+There's 3 available sizes for Buttons:
+
+<Demo title="Button sizes">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="sm" style={{ margin: spacing.tiny }}>
+      Small
+    </Button>
+    <Button size="md" style={{ margin: spacing.tiny }}>
+      Medium
+    </Button>
+    <Button size="lg" style={{ margin: spacing.tiny }}>
+      Large
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use Button sizes
+function Component() {
+  return (
+    <>
+      {/* `sm` is the default value. */}
+      <Button>Small</Button>
+      <Button size="md">Medium</Button>
+      <Button size="lg">Large</Button>
+    </>
+  )
+}
+```
+
+### Block
+
+<Demo title="Button block">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="md" block>
+      Block
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use block
+function Component() {
+  return (
+    <>
+      <Button size="md" block>
+        Block
+      </Button>
+    </>
+  )
+}
+```
+
+### Icon
+
+<Demo title="Button with icon">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button iconLeft="search" style={{ margin: spacing.tiny }}>
+      Icon at left side
+    </Button>
+    <Button iconRight="book" style={{ margin: spacing.tiny }}>
+      Icon at right side
+    </Button>
+    <Button iconLeft="search" iconRight="book">
+      Icon at both sides
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to set an icon
+function Component() {
+  return (
+    <>
+      <Button iconLeft="search">Icon at left side</Button>
+      <Button iconRight="book">Icon at right side</Button>
+      <Button iconLeft="search" iconRight="book">
+        Icon at both sides
+      </Button>
+    </>
+  )
+}
+```
+
+### Icon-only
+
+<Demo title="Button with only an icon">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="lg" iconLeft="search" style={{ margin: spacing.tiny }} />
+    <Button size="md" iconLeft="search" style={{ margin: spacing.tiny }} />
+    <Button iconLeft="search" style={{ margin: spacing.tiny }} />
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to set an icon-only button
+function Component() {
+  return (
+    <>
+      <Button size="lg" iconLeft="search" />
+      <Button size="md" iconLeft="search" />
+      <Button iconLeft="search" />
+    </>
+  )
+}
+```
+
+### Loading
+
+<Demo title="Button loading">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="md" loading>
+      Loading
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use loading
+function Component() {
+  return (
+    <>
+      <Button size="md" loading>
+        Loading
+      </Button>
+    </>
+  )
+}
+```
+
+### Disabled
+
+<Demo title="Button disabled">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="md" disabled>
+      Disabled
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use disabled
+function Component() {
+  return (
+    <>
+      <Button size="md" disabled>
+        Disabled
+      </Button>
+    </>
+  )
+}
+```
+
+### Round
+
+<Demo title="Button round">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="md" round iconLeft="search" />
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use round
+function Component() {
+  return (
+    <>
+      {/* The button can be round only when it has no child and has an iconLeft, round properties. */}
+      <Button size="md" round iconLeft="search" />
+    </>
+  )
+}
+```
+
+### Click
+
+<Demo title="Button onClick">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button size="md" onClick={() => alert('Button clicked!')}>
+      Button
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use onClick
+function Component() {
+  return (
+    <>
+      <Button size="md" onClick={() => alert('Button clicked!')}>
+        Button
+      </Button>
+    </>
+  )
+}
+```
+
+### Href
+
+The button can recive the href, target, and rel properties of an anchor, to render a link with the styling of a button.
+
+<Demo title="Button href">
+  <Flexbox
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    wrap="wrap"
+  >
+    <Button
+      size="md"
+      href="https://github.com/occmundial/atomic"
+      target="_blank"
+      rel="nofollow"
+    >
+      Button href
+    </Button>
+  </Flexbox>
+</Demo>
+
+```jsx
+// How to use href, rel and target
+function Component() {
+  return (
+    <>
+      <Button
+        size="md"
+        href="https://github.com/occmundial/atomic"
+        target="_blank"
+        rel="nofollow"
+      >
+        Button href
+      </Button>
+    </>
+  )
+}
+```
