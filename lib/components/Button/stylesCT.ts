@@ -4,7 +4,7 @@ import colors from '@/tokens/ct/colors.json'
 import spacing from '@/tokens/future/spacing.json'
 import borderRadius from '@/tokens/ct/borderRadius.json'
 import fonts from '@/tokens/future/fonts.json'
-import shadows from '@/tokens/future/shadows.json'
+import shadows from '@/tokens/ct/shadows.json'
 import { objectToFontValue } from '@/utils/font'
 
 const sm = fonts['button-small']
@@ -67,10 +67,10 @@ const styles = {
       background: colors.button.primary.bg.active
     },
     '&:focus': {
-      boxShadow: `0px 0px 0px 3px ${colors.bg.white}, 0px 0px 0px 5px ${colors.button.primary.bg.default}`
+      boxShadow: shadows['focus-orange']
     },
     '&:focus-visible': {
-      boxShadow: `0px 0px 0px 3px ${colors.bg.white}, 0px 0px 0px 5px ${colors.button.primary.bg.default}`
+      boxShadow: shadows['focus-orange']
     },
     '&$disabled': {
       background: colors.button.primary.bg.disabled,
@@ -94,7 +94,7 @@ const styles = {
       background: colors.button.secondary.bg.active
     },
     '&:focus-visible': {
-      boxShadow: `0px 0px 0px 3px ${colors.bg.white}, 0px 0px 0px 5px ${colors.button.secondary.bg.default}`
+      boxShadow: shadows['focus-blue']
     },
     '&$disabled': {
       background: colors.button.secondary.bg.disabled,
@@ -126,11 +126,14 @@ const styles = {
       background: colors.button.ghost.bg.active
     },
     '&:focus-visible': {
-      boxShadow: `0px 0px 0px 3px ${colors.bg.white}, 0px 0px 0px 5px ${colors.button.ghost.icon.default}`
+      boxShadow: shadows['focus-grey']
     },
     '&$disabled': {
       background: 'transparent',
-      color: colors.button.ghost.text.disabled
+      color: colors.button.ghost.text.disabled,
+      '&$iconOnly': {
+        background: colors.button.ghost.bg.active
+      }
     },
     '& $icon': {
       fill: colors.button.ghost.icon.default
