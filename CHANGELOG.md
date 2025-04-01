@@ -1,3 +1,10 @@
+# [4.2.0-ct.6](https://github.com/occmundial/atomic/compare/v4.2.0-ct.5...v4.2.0-ct.6) (2025-04-01)
+
+
+### Features
+
+* Update design tokens ([bd5cb64](https://github.com/occmundial/atomic/commit/bd5cb642899ad62ff9dbf9c5f883ccf996270b15))
+
 # [4.2.0-ct.5](https://github.com/occmundial/atomic/compare/v4.2.0-ct.4...v4.2.0-ct.5) (2025-03-31)
 
 
