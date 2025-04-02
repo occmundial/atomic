@@ -1,9 +1,8 @@
 import { CT as brand } from '@/constants/index'
-import legacyColors from '@/tokens/colors'
 import colors from '@/tokens/ct/colors.json'
-import spacing from '@/tokens/future/spacing.json'
+import spacing from '@/tokens/ct/spacing.json'
 import borderRadius from '@/tokens/ct/borderRadius.json'
-import fonts from '@/tokens/future/fonts.json'
+import fonts from '@/tokens/ct/fonts.json'
 import shadows from '@/tokens/ct/shadows.json'
 import { objectToFontValue } from '@/utils/font'
 
