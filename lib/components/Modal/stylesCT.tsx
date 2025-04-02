@@ -1,3 +1,4 @@
+import { CT as brand } from '@/constants/index'
 import spacing from '@/tokens/spacing'
 import grid from '@/tokens/grid'
 import colors from '@/tokens/colors'
@@ -23,7 +24,7 @@ const styles = {
     position: 'fixed',
     width: '100%',
     height: '100%',
-    background: 'rgba(0, 0, 5, 0.85)',
+    background: 'rgba(0, 0, 0, 0.40)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -66,7 +67,6 @@ const styles = {
     overflow: 'hidden',
     transition: '0.3s opacity, 0.3s margin-top',
     borderRadius: borderRadius['br-sm'],
-    border: `1px solid ${newColors.border.default.default}`,
     background: colors.bgWhite,
     [`@media screen and (max-width:${grid.xs - 1}px)`]: {
       minHeight: ({ fullSize }: ModalProps) => fullSize && '100vh',
@@ -90,18 +90,18 @@ const styles = {
     maxWidth: '100%',
     '& $header': {
       height: 56,
-      padding: [newSpacing['size-2'], newSpacing['size-3']]
+      padding: newSpacing['size-4']
     },
     '& $title': {
-      font: objectToFontValue(fonts['mobile-h4-m'])
+      font: objectToFontValue(fonts['heading-h4'], brand)
     },
     '& $contentChild': {
-      padding: newSpacing['size-3']
+      padding: newSpacing['size-4']
     },
     '& $footer': {
       flexDirection: 'column-reverse',
       gap: newSpacing['size-1'],
-      padding: newSpacing['size-3']
+      padding: newSpacing['size-4']
     }
   },
   fullSize: {
@@ -127,7 +127,7 @@ const styles = {
   header: {
     height: 56,
     flexGrow: 0,
-    padding: [newSpacing['size-2'], newSpacing['size-3']],
+    padding: newSpacing['size-4'],
     display: 'flex',
     alignItems: 'center',
     zIndex: 1,
@@ -136,12 +136,7 @@ const styles = {
     transition: '0.2s all',
     [`@media screen and (min-width:${grid.xs}px)`]: {
       height: 72,
-      padding: [
-        newSpacing['size-4'],
-        newSpacing['size-4'],
-        newSpacing['size-4'],
-        newSpacing['size-7']
-      ]
+      padding: [newSpacing['size-6']]
     }
   },
   stickyHeader: {
@@ -155,9 +150,9 @@ const styles = {
   },
   title: {
     margin: 0,
-    font: objectToFontValue(fonts['mobile-h4-m']),
+    font: objectToFontValue(fonts['mobile-h4-m'], brand),
     [`@media screen and (min-width:${grid.xs}px)`]: {
-      font: objectToFontValue(fonts['heading-h4'])
+      font: objectToFontValue(fonts['heading-h4'], brand)
     }
   },
   content: {
@@ -173,19 +168,19 @@ const styles = {
     }
   },
   contentChild: {
-    padding: newSpacing['size-3'],
+    padding: newSpacing['size-4'],
     borderBottom: '1px solid transparent',
     [`@media screen and (min-width:${grid.xs}px)`]: {
-      padding: [newSpacing['size-3'], newSpacing['size-7']]
+      padding: [0, newSpacing['size-6']]
     }
   },
   noHeader: {
     [`@media screen and (min-width:${grid.sm}px)`]: {
-      paddingTop: newSpacing['size-7']
+      paddingTop: newSpacing['size-7'] //Pendiente ajuste para CT
     }
   },
   noFooter: {
-    paddingBottom: newSpacing['size-7']
+    paddingBottom: newSpacing['size-7'] //Pendiente ajuste para CT
   },
   headerBorder: {
     borderBottom: `1px solid ${newColors.border.default.subtle}`
@@ -193,13 +188,13 @@ const styles = {
   footer: {
     flexGrow: 0,
     textAlign: 'right',
-    padding: newSpacing['size-3'],
+    padding: newSpacing['size-4'],
     borderTop: '1px solid transparent',
     display: 'flex',
     flexDirection: 'column-reverse',
     gap: newSpacing['size-1'],
     [`@media screen and (min-width:${grid.xs}px)`]: {
-      padding: [newSpacing['size-4'], newSpacing['size-7']],
+      padding: newSpacing['size-6'],
       flexDirection: 'row',
       justifyContent: 'flex-end',
       gap: newSpacing['size-2']
@@ -235,7 +230,7 @@ const styles = {
     }
   },
   imgTopPadding: {
-    paddingTop: newSpacing['size-5']
+    paddingTop: newSpacing['size-5'] //Pendiente ajuste para CT
   }
 }
 
