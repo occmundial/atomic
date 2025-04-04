@@ -125,7 +125,8 @@ const styles = {
       background: colors.button.ghost.bg.active
     },
     '&:focus-visible': {
-      boxShadow: shadows['focus-grey']
+      boxShadow: shadows['focus-grey'],
+      background: colors.bg.white
     },
     '&$disabled': {
       background: 'transparent',
