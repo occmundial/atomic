@@ -22,6 +22,9 @@ const styles = {
     borderColor: colors['option-card']['border']['default'],
     '&:hover': {
       borderColor: colors['option-card']['border']['hover']
+    },
+    '&:active': {
+      borderColor: colors['option-card']['border']['active']
     }
   },
   rest: {},
