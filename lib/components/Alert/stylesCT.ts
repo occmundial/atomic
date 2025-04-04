@@ -10,13 +10,13 @@ const spacing4 = spacing['size-4']
 
 const styles = {
   container: {
-    padding: [spacing['size-2'], spacing4],
+    padding: spacing['size-3'],
     borderRadius: borderRadius['br-xs'],
     minHeight: '56px',
     alignItems: 'center',
     outlineOffset: '-1px',
     [`@media screen and (min-width:${grid.xs}px)`]: {
-      padding: spacing4
+      padding: [spacing['size-2'], spacing4]
     }
   },
   noBorderRadius: {
@@ -67,7 +67,7 @@ const styles = {
     flexShrink: 0
   },
   closeIconMargin: {
-    marginLeft: spacing['size-4']
+    marginLeft: spacing4
   },
   closeIconSmallMargin: {
     marginLeft: spacing['size-3']
