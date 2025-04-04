@@ -6,10 +6,10 @@ const styles = {
   card: {
     background: colors.bg.white,
     borderRadius: spacing['size-2'],
-    padding: spacing['size-5'],
+    padding: `${spacing['size-4']} ${spacing['size-3']}`,
     position: 'relative',
     [`@media screen and (min-width:${grid.xs}px)`]: {
-      padding: spacing['size-4']
+      padding: `${spacing['size-5']} ${spacing['size-4']}`
     }
   },
   cardNoPadding: {
