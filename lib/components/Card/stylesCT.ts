@@ -14,7 +14,7 @@ const styles = {
   },
   cardNoPadding: {
     extend: 'card',
-    padding: 0
+    padding: '0 !important'
   },
   flat: {
     borderWidth: 1,

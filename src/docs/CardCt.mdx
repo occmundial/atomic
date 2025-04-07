@@ -1,0 +1,58 @@
+---
+title: CardCT
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Card from '@/components/Card'
+import { spacing } from '@/components/tokens'
+
+# Card CT
+
+---
+
+Container with a card style.
+
+- [Props](#Props)
+  - [Elevations](#Elevations)
+  - [NoPadding](#NoPadding)
+
+## Props
+
+| Name        | Type          | Default value | Description                                                      |
+| ----------- | ------------- | ------------- | ---------------------------------------------------------------- |
+| `children`  | **ReactNode** | -             | Children component passed to this container.                     |
+| `noPadding` | **boolean**   | -             | The card has a default padding, use this prop to remove it.      |
+| `id`        | **string**    | -             | The card component id.                                           |
+| `className` | **string**    | -             | The card component className.                                    |
+| `style`     | **object**    | -             | Object with direct style properties.                             |
+
+## Examples
+
+### Elevations
+
+You can choose from 1 elevation types
+
+<Demo title="Elevations of card" background={colors.bgGrey}>
+  <div style={{ marginBottom: spacing.small }}>
+    <Card>This is a default card</Card>
+  </div>
+</Demo>
+
+
+### NoPadding
+
+<Demo title="No padding card" background={colors.bgGrey}>
+  <Card noPadding>This is a card with no padding</Card>
+</Demo>
+
+```jsx
+// How to use noPadding
+function Component() {
+  return (
+    <>
+      <Card noPadding>This is a card with no padding</Card>
+    </>
+  )
+}
+```
