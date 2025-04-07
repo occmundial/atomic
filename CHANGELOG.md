@@ -1,3 +1,47 @@
+# [4.2.0-ct.7](https://github.com/occmundial/atomic/compare/v4.2.0-ct.6...v4.2.0-ct.7) (2025-04-07)
+
+
+### Bug Fixes
+
+* Replace styles ([97c870c](https://github.com/occmundial/atomic/commit/97c870c34af165cd7fc9ba0ca0fa97e11e86e5c4))
+
+
+### Features
+
+* Add button CT component ([3f95b58](https://github.com/occmundial/atomic/commit/3f95b5860f0e4826ba9660515892fbea5f62c13c))
+* Replace imports ([d5d684c](https://github.com/occmundial/atomic/commit/d5d684cafee5ccddf38d4ff559663d86c5356272))
+* Replace shoadow ([97aab7b](https://github.com/occmundial/atomic/commit/97aab7bcad8903ab6f1253d0c0d66afdc1b4667f))
+
+# [4.2.0-ct.6](https://github.com/occmundial/atomic/compare/v4.2.0-ct.5...v4.2.0-ct.6) (2025-04-01)
+
+
+### Features
+
+* Update design tokens ([bd5cb64](https://github.com/occmundial/atomic/commit/bd5cb642899ad62ff9dbf9c5f883ccf996270b15))
+
+# [4.2.0-ct.5](https://github.com/occmundial/atomic/compare/v4.2.0-ct.4...v4.2.0-ct.5) (2025-03-31)
+
+
+### Features
+
+* New tokens and default weight in TextCT ([fd0a549](https://github.com/occmundial/atomic/commit/fd0a5498601eaddacb92e3034d568d53b56abc11))
+
+# [4.2.0-ct.4](https://github.com/occmundial/atomic/compare/v4.2.0-ct.3...v4.2.0-ct.4) (2025-03-27)
+
+
+### Bug Fixes
+
+* Remove brand for provider ([a79d4e7](https://github.com/occmundial/atomic/commit/a79d4e71f0c685056371391a34729ec9b309b196))
+
+
+### Features
+
+* Add brand to context ([0ebbfe5](https://github.com/occmundial/atomic/commit/0ebbfe5ac1803126ec9622c4820246340c389745))
+* Add hook to get brand value ([73411fb](https://github.com/occmundial/atomic/commit/73411fb93797f5af3c1d0e87cd94f5531a9a4c83))
+* Create constants and set directory ([8e66fe8](https://github.com/occmundial/atomic/commit/8e66fe832fb1554a65017feeb438590e61d6d1b8))
+* Get and set font from brand on Text ([dc82499](https://github.com/occmundial/atomic/commit/dc82499747940b9d6e11e2fbba0c0163de7494fb))
+* Set default value for brand ([6727760](https://github.com/occmundial/atomic/commit/6727760c9f90370d8803e14086698ab46c687469))
+
 # [4.2.0-ct.3](https://github.com/occmundial/atomic/compare/v4.2.0-ct.2...v4.2.0-ct.3) (2025-03-19)
 
 
