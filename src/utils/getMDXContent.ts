@@ -6,7 +6,9 @@ import glob from 'fast-glob'
 import { CT } from '@/constants/index'
 
 const showCT = process.env.ATOMIC_BRAND === CT
-const excludedTitles = showCT ? ['Button', 'Tag'] : ['ButtonCT', 'TagCT']
+const excludedTitles = showCT
+  ? ['Alert', 'Button', 'Card', 'Pill', 'Modal', 'Tag']
+  : ['AlertCT', 'ButtonCT', 'CardCT', 'PillCT', 'ModalCT', 'TagCT']
 
 export async function getMdxContent(source) {
   const contentGlob = `${source}/**/*.mdx`
@@ -34,6 +36,5 @@ export async function getMdxContent(source) {
       }
     })
   )
-
   return content.filter(({ data }) => !excludedTitles.includes(data.title))
 }

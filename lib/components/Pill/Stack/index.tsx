@@ -2,7 +2,6 @@ import { MouseEvent, useCallback } from 'react'
 import classnames from 'classnames'
 
 import Icon from '@/components/Icon'
-import colors from '@/tokens/future/colors.json'
 
 import useStyles from './styles'
 import useIcon from '@/hooks/useIcon'
@@ -67,10 +66,8 @@ const Stack = ({
         <span className={classes.closeCont} onClick={e => handleOnClose(e, id)}>
           <Icon
             iconName={getIcon('x-micro', 'x')}
-            color={
-              disabled ? colors.icon.brand.disabled : colors.icon.brand.default
-            }
             size={16}
+            className={disabled ? classes.iconDisabled : classes.icon}
           />
         </span>
       )}
