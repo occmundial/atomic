@@ -4,9 +4,9 @@ import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
 import grid from '@/tokens/grid'
 
-import newFonts from '@/tokens/future/fonts.json'
-import newColors from '@/tokens/future/colors.json'
-import newSpacing from '@/tokens/future/spacing.json'
+import newFonts from '@/tokens/ct/fonts.json'
+import newColors from '@/tokens/ct/colors.json'
+import newSpacing from '@/tokens/ct/spacing.json'
 import { objectToFontValue } from '@/utils/font'
 
 const display = newFonts['display-display-clean']
@@ -110,13 +110,13 @@ const styles = {
   },
   // Colors
   indigoPrimary: {
-    color: newColors.text.indigo.primary
+    color: newColors.text.default.default // Pendiente
   },
   indigoSecondary: {
-    color: newColors.text.indigo.secondary
+    color: newColors.text.default.default // Pendiente
   },
   pinkPrimary: {
-    color: newColors.text.pink.primary
+    color: newColors.text.default.default // Pendiente
   },
   success: {
     color: newColors.text.success
@@ -134,10 +134,10 @@ const styles = {
     color: colors.inkLightest
   },
   whiteSecondary: {
-    color: newColors.text.white.secondary
+    color: newColors.text.default.default // Pendiente
   },
   whitePrimary: {
-    color: newColors.text.white.primary
+    color: newColors.text.default.default // Pendiente
   },
   link: {
     color: colors.textLink
@@ -147,13 +147,13 @@ const styles = {
   },
   // Emphasis
   corpPrimary: {
-    color: newColors.text.corp.primary
+    color: newColors.text.default.default // Pendiente
   },
   corpSecondary: {
-    color: newColors.text.corp.secondary
+    color: newColors.text.default.default // Pendiente
   },
   corpDisabled: {
-    color: newColors.text.corp.disabled
+    color: newColors.text.default.default // Pendiente
   },
   // Align
   left: {
