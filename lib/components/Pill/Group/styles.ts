@@ -1,3 +1,4 @@
+// Pendiente por definir estilos de CT
 import { createUseStyles } from 'react-jss'
 
 import colors from '@/tokens/future/colors.json'

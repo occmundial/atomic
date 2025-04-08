@@ -3,6 +3,7 @@ import Icon from '@/components/Icon'
 import colors from '@/tokens/future/colors.json'
 
 import useStyles from './styles'
+import { CT } from '@/constants/index'
 
 interface PillChoiceProps {
   id: string | number
@@ -16,30 +17,30 @@ interface PillChoiceProps {
   testId: string
 }
 
-const getStylesByStatus = (selected, disabled) => {
+const getStylesByStatus = (selected, disabled, brand = false) => {
   if (selected) {
     if (disabled) {
       return {
-        iconColor: colors.icon.inverse.disabled,
+        iconColor: brand ? undefined : colors.icon.inverse.disabled,
         button: 'selectedDisabled',
         text: 'textSelectedDisabled'
       }
     }
     return {
-      iconColor: colors.icon.inverse.default,
+      iconColor: brand ? undefined : colors.icon.inverse.default,
       button: 'selected',
       text: 'textSelected'
     }
   }
   if (disabled) {
     return {
-      iconColor: colors.icon.brand.disabled,
+      iconColor: brand ? undefined : colors.icon.brand.disabled,
       button: 'disabled',
       text: 'textDisabled'
     }
   }
   return {
-    iconColor: colors.icon.brand.default,
+    iconColor: brand ? undefined : colors.icon.brand.default,
     button: 'enabled',
     text: 'textEnabled'
   }
@@ -62,10 +63,10 @@ const Choice = ({
     if (onClick) onClick(id)
   }, [id, onClick])
 
-  const conditionedStyles = useMemo(
-    () => getStylesByStatus(!!selected, !!disabled),
-    [selected, disabled]
-  )
+  const conditionedStyles = useMemo(() => {
+    const brand = process.env.ATOMIC_BRAND === CT
+    return getStylesByStatus(!!selected, !!disabled, brand)
+  }, [selected, disabled])
 
   return (
     <button
