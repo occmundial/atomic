@@ -1,3 +1,19 @@
+# [4.2.0-ct.9](https://github.com/occmundial/atomic/compare/v4.2.0-ct.8...v4.2.0-ct.9) (2025-04-08)
+
+
+### Bug Fixes
+
+* Add CardCT docs ([844c136](https://github.com/occmundial/atomic/commit/844c136222df62868363f11aace5d4b7d884a824))
+* Change name ([2a6c31f](https://github.com/occmundial/atomic/commit/2a6c31f0edbf121489648107dd6a23bfc1b65104))
+* Remove useless styles to ct card ([a2a55cf](https://github.com/occmundial/atomic/commit/a2a55cf1855e8175d57840a0cb59d1170b0fab29))
+* Use correct paddings ([89f6e1c](https://github.com/occmundial/atomic/commit/89f6e1cbd27ea9886be8ed763af3800ba6aecc5a))
+
+
+### Features
+
+* Add active stile in ct card ([66342fb](https://github.com/occmundial/atomic/commit/66342fb50770b4d5b1806c17de650f2ebcd961bf))
+* Add Card CT styles ([701c618](https://github.com/occmundial/atomic/commit/701c61812975563f69d1346b8ee2764058654ab2))
+
 # [4.2.0-ct.8](https://github.com/occmundial/atomic/compare/v4.2.0-ct.7...v4.2.0-ct.8) (2025-04-08)
 
 
