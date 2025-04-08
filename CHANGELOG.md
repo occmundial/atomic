@@ -1,3 +1,18 @@
+# [4.2.0-ct.8](https://github.com/occmundial/atomic/compare/v4.2.0-ct.7...v4.2.0-ct.8) (2025-04-08)
+
+
+### Bug Fixes
+
+* Documentation ([b77f774](https://github.com/occmundial/atomic/commit/b77f7749a28b39f630e54b55e5f7de3e7b43bf06))
+* Padding alert ([7691cc2](https://github.com/occmundial/atomic/commit/7691cc2d53e0fc570100d567e9ad51740882123e))
+
+
+### Features
+
+* Add Alert CT styles ([8fd0125](https://github.com/occmundial/atomic/commit/8fd0125f9d8cfe5f45bef479566b3bcde5d9c070))
+* Add Pills CT ([e11ac84](https://github.com/occmundial/atomic/commit/e11ac8405bcf58210f626258fa4793b607630d35))
+* Merge with base ([d973fa7](https://github.com/occmundial/atomic/commit/d973fa7c7d283aae0831b7b580c5d6631582581f))
+
 # [4.2.0-ct.7](https://github.com/occmundial/atomic/compare/v4.2.0-ct.6...v4.2.0-ct.7) (2025-04-07)
 
 
