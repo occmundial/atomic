@@ -5,6 +5,7 @@ import type { AppProps } from 'next/app'
 import AtomicProvider from '@/components/Provider'
 import { MediaContextProvider } from '@/components/Media'
 import useIsClient from '@/hooks/useIsClient'
+import { CT } from '@/constants/index'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const isClient = useIsClient()
@@ -24,7 +25,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           data={{
             translateIconsV2: true,
             iconsUrl:
-              'https://cdn-icons.occ.com.mx/atomic-icons-1.7.0-beta.8.svg'
+              process.env.ATOMIC_BRAND === CT
+                ? 'https://cdn-icons.occ.com.mx/atomic-icons-ct-1.1.0.svg'
+                : 'https://cdn-icons.occ.com.mx/atomic-icons-1.7.0-beta.8.svg'
           }}
         >
           <Component key={isClient} {...pageProps} />
