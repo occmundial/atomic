@@ -117,20 +117,17 @@ const styles = {
       display: 'none'
     },
     paddingRight: newSpacing['size-8'],
-    '& optgroup': {
-      font: objectToFontValue(label, brand)
-      //color: newColors.text.corp.secondary
-    },
+    '& optgroup': {},
     '& option': {
-      font: objectToFontValue(placeholder),
-      //color: newColors.text.corp.primary,
-      '&:disabled': {
-        //color: newColors.text.corp.disabled
-      }
+      font: objectToFontValue(placeholder, brand),
+      color: newColors.text.default.bold,
+      background: newColors['text-field'].bg.default,
+      border: `1px solid ${newColors['text-field'].border.default}`,
+      boxShadow: shadows['elevation-elevation-4'],
+      borderRadius: borderRadius['br-sm'],
+      '&:disabled': {}
     },
-    '&:invalid, & option[value=""]': {
-      //color: newColors.text.corp.disabled
-    }
+    '&:invalid, & option[value=""]': {}
   },
   textarea: {
     resize: 'none',
