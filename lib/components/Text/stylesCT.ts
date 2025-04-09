@@ -109,15 +109,9 @@ const styles = {
     fontWeight: defaultWeight
   },
   // Colors
-  indigoPrimary: {
-    color: newColors.text.default.default // Pendiente
-  },
-  indigoSecondary: {
-    color: newColors.text.default.default // Pendiente
-  },
-  pinkPrimary: {
-    color: newColors.text.default.default // Pendiente
-  },
+  indigoPrimary: {},
+  indigoSecondary: {},
+  pinkPrimary: {},
   success: {
     color: newColors.text.success
   },
@@ -133,12 +127,8 @@ const styles = {
   disabled: {
     color: colors.inkLightest
   },
-  whiteSecondary: {
-    color: newColors.text.default.default // Pendiente
-  },
-  whitePrimary: {
-    color: newColors.text.default.default // Pendiente
-  },
+  whiteSecondary: {},
+  whitePrimary: {},
   link: {
     color: colors.textLink
   },
@@ -146,15 +136,9 @@ const styles = {
     color: 'currentcolor'
   },
   // Emphasis
-  corpPrimary: {
-    color: newColors.text.default.default // Pendiente
-  },
-  corpSecondary: {
-    color: newColors.text.default.default // Pendiente
-  },
-  corpDisabled: {
-    color: newColors.text.default.default // Pendiente
-  },
+  corpPrimary: {},
+  corpSecondary: {},
+  corpDisabled: {},
   // Align
   left: {
     textAlign: 'left'
