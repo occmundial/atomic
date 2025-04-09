@@ -38,13 +38,12 @@ import Text from '@/components/Text'
 | `bodySmallStrong`   | `-`            | **bool**   |               | bodySmallStrong typography style.                                     |
 | `bodySmall`         | `-`            | **bool**   | -             | bodySmall typography style.                                           |
 | `bodyXSmall`        | `-`            | **bool**   | -             | bodyXSmall typography style.                                          |
-| `-`                 | `strong`       | **bool**   | -             | Strong style. Only applies in large, standard, small and micro sizes. |
-| `-`                 | `success`      | **bool**   | -             | <Text tag="span" success> Success </Text> emphasis color style.                                         |
-| `-`                 | `error`        | **bool**   | -             | <Text tag="span" error> Error </Text> emphasis color style.                                           |
-| `-`                 | `warning`      | **bool**   | -             | <Text tag="span" warning> Warning </Text> emphasis color style.                                         |
-| `-`                 | `info`         | **bool**   | -             | <Text tag="span" info> Info </Text> emphasis color style.                                            |
-| `-`                 | `disabled`     | **bool**   | -             | <Text tag="span" disabled> Disabled </Text> emphasis color style.                                        |
-| `-`                 | `link`         | **bool**   | -             | <Text tag="span" link> Link </Text> emphasis color style.                                            |
+| `-`                 | `success`      | **bool**   | -             | <Text tag="span" success> Success </Text> emphasis color style.       |
+| `-`                 | `error`        | **bool**   | -             | <Text tag="span" error> Error </Text> emphasis color style.           |
+| `-`                 | `warning`      | **bool**   | -             | <Text tag="span" warning> Warning </Text> emphasis color style.       |
+| `-`                 | `info`         | **bool**   | -             | <Text tag="span" info> Info </Text> emphasis color style.             |
+| `-`                 | `disabled`     | **bool**   | -             | <Text tag="span" disabled> Disabled </Text> emphasis color style.     |
+| `-`                 | `link`         | **bool**   | -             | <Text tag="span" link> Link </Text> emphasis color style.             |
 | `-`                 | `left`         | **bool**   | -             | Left align style.                                                     |
 | `-`                 | `center`       | **bool**   | -             | Center align style.                                                   |
 | `-`                 | `right`        | **bool**   | -             | Right align style.                                                    |
@@ -250,48 +249,62 @@ You can choose spacing for top and bottom
       <thead>
         <tr>
           <th>Prop</th>
+          <th></th>
         </tr>
       </thead>
   
       <tbody>
         <tr>
           <td><Text bottom0>Bottom0</Text></td>
+          <td><Text top0>Top0</Text></td>
         </tr>
         <tr>
           <td><Text bottom1>Bottom1</Text></td>
+          <td><Text top1>Top1</Text></td>
         </tr>
         <tr>
           <td><Text bottom2>Bottom2</Text></td>
+          <td><Text top2>Top2</Text></td>
         </tr>
         <tr>
           <td><Text bottom3>Bottom3</Text></td>
+          <td><Text top3>Top3</Text></td>
         </tr>
         <tr>
           <td><Text bottom4>Bottom4</Text></td>
+          <td><Text top4>Top4</Text></td>
         </tr>
         <tr>
           <td><Text bottom5>Bottom5</Text></td>
+          <td><Text top5>Top5</Text></td>
         </tr>
         <tr>
           <td><Text bottom6>Bottom6</Text></td>
+          <td><Text top6>Top6</Text></td>
         </tr>
         <tr>
           <td><Text bottom7>Bottom7</Text></td>
+          <td><Text top7>Top7</Text></td>
         </tr>
         <tr>
           <td><Text bottom8>Bottom8</Text></td>
+          <td><Text top8>Top89</Text></td>
         </tr>
         <tr>
           <td><Text bottom9>Bottom9</Text></td>
+          <td><Text top9>Top9</Text></td>
         </tr>
         <tr>
           <td><Text bottom10>Bottom10</Text></td>
+          <td><Text top10>Top10</Text></td>
         </tr>
         <tr>
           <td><Text bottom11>Bottom11</Text></td>
+          <td><Text top11>Top11</Text></td>
         </tr>
         <tr>
           <td><Text bottom12>Bottom12</Text></td>
+          <td><Text top12>Top12</Text></td>
         </tr>
       </tbody>
     </table>
@@ -315,45 +328,6 @@ function Component() {
       <Text bottom10>Bottom10</Text>
       <Text bottom11>Bottom11</Text>
       <Text bottom12>Bottom12</Text>
-    </>
-  )
-}
-```
-
-### Strong
-
-You can set strong to render a message in bold text
-
-<Demo title="Text strong" background={colors.white}>
-  <Flexbox display="flex" justifyContent="start" direction="col" wrap="wrap">
-    <Text large strong>
-      Large strong
-    </Text>
-    <Text strong>Standard strong</Text>
-    <Text small strong>
-      Small strong
-    </Text>
-    <Text micro strong>
-      Micro strong
-    </Text>
-  </Flexbox>
-</Demo>
-
-```jsx
-// How to use strong
-function Component() {
-  return (
-    <>
-      <Text large strong>
-        Large strong
-      </Text>
-      <Text strong>Standard strong</Text>
-      <Text small strong>
-        Small strong
-      </Text>
-      <Text micro strong>
-        Micro strong
-      </Text>
     </>
   )
 }

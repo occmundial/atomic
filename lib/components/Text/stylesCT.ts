@@ -29,7 +29,6 @@ const bodyRegular = newFonts['body-regular']
 const bodySmallStrong = newFonts['body-small-strong']
 const bodySmall = newFonts['body-small']
 const bodyXSmall = newFonts['body-x-small']
-const defaultWeight = 400
 
 const styles = {
   text: {
@@ -103,10 +102,6 @@ const styles = {
   },
   bodyXSmall: {
     font: objectToFontValue(bodyXSmall, brand)
-  },
-  // Weight
-  strong: {
-    fontWeight: defaultWeight
   },
   // Colors
   indigoPrimary: {},
