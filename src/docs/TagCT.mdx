@@ -1,12 +1,12 @@
 ---
-title: Tag
+title: Tag CT
 section: components
 ---
 
 import Demo from '@/utils/components/Demo'
 import Tag from '@/components/Tag'
 
-# Tag
+# Tag CT
 
 ---
 
@@ -22,7 +22,7 @@ Tag component with different themes.
 | Name        | Type          | Default value | Description                                                                                                         |
 | ----------- | ------------- | ------------- | ------------------------------------------------------------------------------------------------------------------- |
 | `children`  | **ReactNode** | -             | Children component passed to this container.                                                                        |
-| `theme`     | **string**    | `'default'`   | The theme of the Tag component. Chose from 'primary', 'featured', 'promo', 'success', 'warning', 'error' and 'info' |
+| `theme`     | **string**    | `'default'`   | The theme of the Tag component. Chose from 'featured', 'promo', 'success', 'warning', 'error' and 'info'            |
 | `iconName`  | **string**    | -             | Name of the icon to render inside the Tag.                                                                          |
 | `size`      | **string**    | `'small'`     | The size of the Tag. Chose from `small`, `medium` and `large`                                                       |
 | `className` | **string**    | -             | className of the Tag component.                                                                                     |
@@ -40,13 +40,13 @@ Tag component with different themes.
     wrap="wrap"
     alignItems="center"
   >
-    <Tag theme="primary" size="small">
+    <Tag theme="featured" size="small">
       Tag small
     </Tag>
-    <Tag theme="primary" size="medium">
+    <Tag theme="featured" size="medium">
       Tag Medium
     </Tag>
-    <Tag theme="primary" size="large">
+    <Tag theme="featured" size="large">
       Tag Large
     </Tag>
   </Flexbox>
@@ -57,13 +57,13 @@ Tag component with different themes.
 function Component() {
   return (
     <>
-      <Tag theme="primary" size="small">
+      <Tag theme="featured" size="small">
         Tag small
       </Tag>
-      <Tag theme="primary" size="medium">
+      <Tag theme="featured" size="medium">
         Tag Medium
       </Tag>
-      <Tag theme="primary" size="large">
+      <Tag theme="featured" size="large">
         Tag Large
       </Tag>
     </>
@@ -75,11 +75,8 @@ function Component() {
 
 <Demo title="Tag themes" background={colors.bgGrey}>
   <Flexbox display="flex" direction="row" justifyContent="between" wrap="wrap">
-    <Tag size="medium" theme="default">
-      Tag Default
-    </Tag>
-    <Tag size="medium" theme="primary">
-      Tag Primary
+    <Tag size="medium" theme="featured">
+      Tag Featured
     </Tag>
     <Tag size="medium" theme="info">
       Tag Info
@@ -93,12 +90,6 @@ function Component() {
     <Tag size="medium" theme="error">
       Tag Error
     </Tag>
-    <Tag size="medium" theme="basic">
-      Tag Basic
-    </Tag>
-    <Tag size="medium" theme="link">
-      Tag Link
-    </Tag>
     <Tag size="medium" theme="promo">
       Tag Promo
     </Tag>
@@ -110,11 +101,8 @@ function Component() {
 function Component() {
   return (
     <>
-      <Tag size="medium" theme="default">
-        Tag Default
-      </Tag>
-      <Tag size="medium" theme="primary">
-        Tag Primary
+      <Tag size="medium" theme="featured">
+        Tag Featured
       </Tag>
       <Tag size="medium" theme="info">
         Tag Info
@@ -128,11 +116,8 @@ function Component() {
       <Tag size="medium" theme="error">
         Tag Error
       </Tag>
-      <Tag size="medium" theme="basic">
-        Tag Basic
-      </Tag>
-      <Tag size="medium" theme="link">
-        Tag Link
+      <Tag size="medium" theme="promo">
+        Tag Promo
       </Tag>
     </>
   )
@@ -143,13 +128,13 @@ function Component() {
 
 <Demo title="Tag Icon" background={colors.bgGrey}>
   <Flexbox display="flex" direction="row" justifyContent="between" wrap="wrap" alignItems="center" style={{padding: "8px"}}>
-    <Tag theme="primary" size="small" iconName="search">
+    <Tag theme="featured" size="small" iconName="search">
       Tag Icon
     </Tag>
-    <Tag theme="primary" size="medium" iconName="search">
+    <Tag theme="featured" size="medium" iconName="search">
       Tag Icon
     </Tag>
-    <Tag theme="primary" size="large" iconName="search">
+    <Tag theme="featured" size="large" iconName="search">
       Tag Icon
     </Tag>
   </Flexbox>
@@ -205,13 +190,13 @@ function Component() {
   return (
     <>
       // The icon should match name with one in atomic-icons library
-      <Tag theme="primary" size="small" iconName="search">
+      <Tag theme="featured" size="small" iconName="search">
         Tag Icon
       </Tag>
-      <Tag theme="primary" size="medium" iconName="search">
+      <Tag theme="featured" size="medium" iconName="search">
         Tag Icon
       </Tag>
-      <Tag theme="primary" size="large" iconName="search">
+      <Tag theme="featured" size="large" iconName="search">
         Tag Icon
       </Tag>
 

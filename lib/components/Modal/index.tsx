@@ -74,7 +74,7 @@ const Modal = (props: ModalProps) => {
     testId
   } = props
   useLockBodyScroll()
-  const classes = useStyles(props)
+  const classes = useStyles({ ...props, fullSize: props.fullSize ?? false })
   const [headerBorder, setHeaderBorder] = React.useState(false)
   const [footerBorder, setFooterBorder] = React.useState(false)
 
