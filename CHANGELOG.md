@@ -1,3 +1,57 @@
+# [4.2.0-ct.10](https://github.com/occmundial/atomic/compare/v4.2.0-ct.9...v4.2.0-ct.10) (2025-04-10)
+
+
+### Bug Fixes
+
+* FullSize props ([fa0f719](https://github.com/occmundial/atomic/commit/fa0f719c20d3b722d2a4e6074541f0353a47c7d7))
+
+
+### Features
+
+* Add Documentation ([ae46c33](https://github.com/occmundial/atomic/commit/ae46c33c6073c9527d096fb480542e5cca7d4f76))
+* Add documentation modal ([815e302](https://github.com/occmundial/atomic/commit/815e302125d4b4c7ed07226b9b22ea4f5082ae86))
+* Add Tag CT ([4a844df](https://github.com/occmundial/atomic/commit/4a844df20dbba13e1682d0beeb24fd4220e7558d))
+* Add Textfield CT ([3180318](https://github.com/occmundial/atomic/commit/3180318556846c1fba66828ad93512611fcdae10))
+* Merge with base ([ac21406](https://github.com/occmundial/atomic/commit/ac214067d59fb49ceef0b145c76688506c4f912d))
+* Merge with base ([0fdeae5](https://github.com/occmundial/atomic/commit/0fdeae53ed69010f07c13467443e32c0e378f1b3))
+* Modal CT ([596c2c5](https://github.com/occmundial/atomic/commit/596c2c5a0ad7dfd4667f28027d7ac0e7ad2a5a81))
+* Replace spacing for Modal CT ([b70577b](https://github.com/occmundial/atomic/commit/b70577bf30ce2e6be379deceb34786628f25cae1))
+* Select styles ([744b354](https://github.com/occmundial/atomic/commit/744b354048ef12484068a16b0f7da72920cfa1b1))
+
+# [4.2.0-ct.10](https://github.com/occmundial/atomic/compare/v4.2.0-ct.9...v4.2.0-ct.10) (2025-04-09)
+
+
+### Bug Fixes
+
+* FullSize props ([fa0f719](https://github.com/occmundial/atomic/commit/fa0f719c20d3b722d2a4e6074541f0353a47c7d7))
+
+
+### Features
+
+* Add Documentation ([ae46c33](https://github.com/occmundial/atomic/commit/ae46c33c6073c9527d096fb480542e5cca7d4f76))
+* Add documentation modal ([815e302](https://github.com/occmundial/atomic/commit/815e302125d4b4c7ed07226b9b22ea4f5082ae86))
+* Add Tag CT ([4a844df](https://github.com/occmundial/atomic/commit/4a844df20dbba13e1682d0beeb24fd4220e7558d))
+* Merge with base ([ac21406](https://github.com/occmundial/atomic/commit/ac214067d59fb49ceef0b145c76688506c4f912d))
+* Merge with base ([0fdeae5](https://github.com/occmundial/atomic/commit/0fdeae53ed69010f07c13467443e32c0e378f1b3))
+* Modal CT ([596c2c5](https://github.com/occmundial/atomic/commit/596c2c5a0ad7dfd4667f28027d7ac0e7ad2a5a81))
+* Replace spacing for Modal CT ([b70577b](https://github.com/occmundial/atomic/commit/b70577bf30ce2e6be379deceb34786628f25cae1))
+
+# [4.2.0-ct.9](https://github.com/occmundial/atomic/compare/v4.2.0-ct.8...v4.2.0-ct.9) (2025-04-08)
+
+
+### Bug Fixes
+
+* Add CardCT docs ([844c136](https://github.com/occmundial/atomic/commit/844c136222df62868363f11aace5d4b7d884a824))
+* Change name ([2a6c31f](https://github.com/occmundial/atomic/commit/2a6c31f0edbf121489648107dd6a23bfc1b65104))
+* Remove useless styles to ct card ([a2a55cf](https://github.com/occmundial/atomic/commit/a2a55cf1855e8175d57840a0cb59d1170b0fab29))
+* Use correct paddings ([89f6e1c](https://github.com/occmundial/atomic/commit/89f6e1cbd27ea9886be8ed763af3800ba6aecc5a))
+
+
+### Features
+
+* Add active stile in ct card ([66342fb](https://github.com/occmundial/atomic/commit/66342fb50770b4d5b1806c17de650f2ebcd961bf))
+* Add Card CT styles ([701c618](https://github.com/occmundial/atomic/commit/701c61812975563f69d1346b8ee2764058654ab2))
+
 # [4.2.0-ct.8](https://github.com/occmundial/atomic/compare/v4.2.0-ct.7...v4.2.0-ct.8) (2025-04-08)
 
 
