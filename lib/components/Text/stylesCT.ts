@@ -1,6 +1,5 @@
 import { CT as brand } from '@/constants/index'
 
-import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
 import grid from '@/tokens/grid'
 
