@@ -1,3 +1,10 @@
+# [4.2.0-ct.11](https://github.com/occmundial/atomic/compare/v4.2.0-ct.10...v4.2.0-ct.11) (2025-04-10)
+
+
+### Features
+
+*  Toggle CT styles ([fe667e9](https://github.com/occmundial/atomic/commit/fe667e9e25be9a9074c97ce4343edc84c85d0d36))
+
 # [4.2.0-ct.10](https://github.com/occmundial/atomic/compare/v4.2.0-ct.9...v4.2.0-ct.10) (2025-04-10)
 
 
