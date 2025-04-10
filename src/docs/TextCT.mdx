@@ -180,22 +180,38 @@ You can choose from 11 colors
   
       <tbody>
         <tr>
-          <td><Text success>Success</Text></td>
+          <td><Text>High #313944</Text></td>
         </tr>
         <tr>
-          <td><Text warning>Warning</Text></td>
+          <td><Text mid>Medium #4B5968</Text></td>
         </tr>
         <tr>
-          <td><Text error>Error</Text></td>
+          <td><Text low>Low #98A2AC</Text></td>
         </tr>
         <tr>
-          <td><Text info>Info</Text></td>
+          <td><Text primary>Primary #0D3878</Text></td>
         </tr>
         <tr>
-          <td><Text disabled>Disabled</Text></td>
+          <td><Text secondary>Secondary #005DA9</Text></td>
         </tr>
         <tr>
-          <td> <Text link>Link</Text></td>
+          <td><Text brand>Brand #FF5B00</Text></td>
+        </tr>
+        <tr>
+          <td><Text success>Success #16542E</Text></td>
+        </tr>
+        <tr>
+          <td><Text warning>Warning #664A0E</Text></td>
+        </tr>
+        <tr>
+          <td><Text error>Error #A51717</Text></td>
+        </tr>
+        <tr>
+          <td>
+            <div style={{ background: "gray" }}>
+              <Text white>White "#FFFFFF"</Text>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -206,12 +222,18 @@ You can choose from 11 colors
 function Component() {
   return (
     <>
+      <Text>High</Text>
+      <Text mid>Medium</Text>
+      <Text low>Low</Text>
+      <Text primary>Primary</Text>
+      <Text secondary>Secondary</Text>
+      <Text brand>Brand</Text>
       <Text success>Success</Text>
       <Text warning>Warning</Text>
       <Text error>Error</Text>
-      <Text info>Info</Text>
-      <Text disabled>Disabled</Text>
-      <Text link>Link</Text>
+      <div style={{ background: 'gray' }}>
+        <Text white>White</Text>
+      </div>
     </>
   )
 }

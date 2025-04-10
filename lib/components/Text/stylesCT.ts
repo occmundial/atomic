@@ -104,9 +104,15 @@ const styles = {
     font: objectToFontValue(bodyXSmall, brand)
   },
   // Colors
-  indigoPrimary: {},
-  indigoSecondary: {},
-  pinkPrimary: {},
+  indigoPrimary: {
+    color: newColors.text.accent.bold
+  },
+  brand: {
+    color: newColors.text.brand.bold
+  },
+  pinkPrimary: {
+    color: newColors.text.accent.default
+  },
   success: {
     color: newColors.text.success
   },
@@ -116,24 +122,23 @@ const styles = {
   error: {
     color: newColors.text.error
   },
-  info: {
-    color: colors.infoText
-  },
-  disabled: {
-    color: colors.inkLightest
-  },
   whiteSecondary: {},
-  whitePrimary: {},
-  link: {
-    color: colors.textLink
+  whitePrimary: {
+    color: newColors.text.inverse.bold
   },
   current: {
     color: 'currentcolor'
   },
   // Emphasis
-  corpPrimary: {},
-  corpSecondary: {},
-  corpDisabled: {},
+  corpPrimary: {
+    color: newColors.text.default.bold
+  },
+  corpSecondary: {
+    color: newColors.text.default.default
+  },
+  corpDisabled: {
+    color: newColors.text.default.disabled
+  },
   // Align
   left: {
     textAlign: 'left'
