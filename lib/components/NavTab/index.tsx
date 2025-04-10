@@ -19,7 +19,6 @@ import spacing from '@/tokens/spacing'
 import iconSizes from '@/tokens/iconSizes'
 
 import useStyles from './styles'
-import useIcon from '@/hooks/useIcon'
 
 export interface LinkElement {
   key: string | number
@@ -123,8 +122,6 @@ const NavTab = ({
   const [show, setShow] = useState(true)
   const [currentScroll, setCurrentScroll] = useState(0)
 
-  const getIcon = useIcon()
-
   const determineVisibility = useCallback(() => {
     setShow(window.scrollY <= spacing.xLarge || window.scrollY <= currentScroll)
     setCurrentScroll(window.pageYOffset)
@@ -162,7 +159,7 @@ const NavTab = ({
         >
           {item.text}{' '}
           <Icon
-            iconName={getIcon('arrow-down', 'chevron-down')}
+            iconName={'chevron-down'}
             size={iconSizes.small}
             className={classnames(classes.arrow, {
               [classes.arrowUp]: item.selected
