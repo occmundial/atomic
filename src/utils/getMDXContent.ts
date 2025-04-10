@@ -7,8 +7,16 @@ import { CT } from '@/constants/index'
 
 const showCT = process.env.ATOMIC_BRAND === CT
 const excludedTitles = showCT
-  ? ['Alert', 'Button', 'Card', 'Pill', 'Modal', 'Tag']
-  : ['AlertCT', 'ButtonCT', 'CardCT', 'PillCT', 'ModalCT', 'TagCT']
+  ? ['Alert', 'Button', 'Card', 'Pill', 'Modal', 'Tag', 'TextField']
+  : [
+      'AlertCT',
+      'ButtonCT',
+      'CardCT',
+      'PillCT',
+      'ModalCT',
+      'TagCT',
+      'TextFieldCT'
+    ]
 
 export async function getMdxContent(source) {
   const contentGlob = `${source}/**/*.mdx`
