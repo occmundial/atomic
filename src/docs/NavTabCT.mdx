@@ -16,28 +16,9 @@ The NavTop component is a versatile navigation bar designed for use at the top o
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------- |
 | `left`         | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the left side of the navigation bar                      |
 | `right`        | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the right side of the navigation bar                     |
-| `center`       | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components on the center of the navigation bar                         |
-| `flexCenter`   | **([LinkElement](#LinkElement) \| [ButtonElement](#ButtonElement) \| [DropdownElement](#DropdownElement) \| [IconElement](#IconElement) \| [CustomElement](#CustomElement) \| [LogoElement](#LogoElement))[]** | -                | Defines the components of the navigation bar                                       |
-| `top`          | **[TopProp](#TopProp)[]**                                                                                                                                                                                      | -                | `[Deprecated]` Defines the Nav Top links                                           |
-| `fixed`        | **boolean**                                                                                                                                                                                                    | -                | Sets the NavTab to a fixed position at the top                                     |
-| `hideOnScroll` | **boolean**                                                                                                                                                                                                    | -                | Hides the nav on scroll                                                            |
-| `bottom`       | **boolean**                                                                                                                                                                                                    | -                | Fixes the NavTab to the bottom of the screen (you have to also set fixed as true). |
-| `zIndex`       | **number**                                                                                                                                                                                                     | 999              | Specifies the nav z-index (defaults to 999)                                        |
 | `className`    | **string**                                                                                                                                                                                                     | -                | Adds classes to nav container                                                      |
 | `isFluid`      | **boolean**                                                                                                                                                                                                    | -                | `[Deprecated]` Adds a simple responsive padding                                      |
-| `isResponsive` | **boolean**                                                                                                                                                                                                    | -                | Adds a responsive padding                                                          |
 
-
-### LinkElement
-
-An object with the `type` property set to 'link', where you can use all **[NavItem props](/NavItem)** except for `children`, which should be replaced with `text`. 
-Additional Button props are detailed in the table below.
-
-| Name           | Type                                        | Default value    | Description                             |
-| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
-| `type`         | **link**                                    | -                | Specifies the type of component to use  |
-| `key`          | **string \| number**                        | -                | Key of the component                    |
-| `text`         | **string \| ReactNode**                     | -                | Defines the child component             |
 
 ### ButtonElement
 
@@ -50,40 +31,6 @@ Additional Button props are detailed in the table below.
 | `key`          | **string \| number**                        | -                | Key of the component                    |
 | `text`         | **string \| ReactNode**                     | -                | Defines the child component             |
 
-
-### DropdownElement
-
-An object with the `type` property set to 'link', where you can use all **[NavItem props](/NavItem)** except for `children`, which should be replaced with `text` and `selected`.
-Additional Button props are detailed in the table below.
-
-| Name           | Type                                        | Default value    | Description                             |
-| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
-| `type`         | **dropdownLink**                            | -                | Specifies the type of component to use  |
-| `key`          | **string \| number**                        | -                | Key of the component                    |
-| `text`         | **string \| ReactNode**                     | -                | Defines the child component             |
-
-### NavButton
-
-An object with the `type` property set to 'navButton', where you can use all **[NavButton props](/NavButton)**.
-Additional NavIcon props are detailed in the table below.
-
-| Name           | Type                                        | Default value    | Description                             |
-| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
-| `type`         | **navButton**                               | -                | Specifies the type of component to use  |
-| `key`          | **string \| number**                        | -                | Key of the component                    |
-
-
-### CustomElement
-
-An object with the `type` property set to 'custom'.
-
-| Name           | Type                                        | Default value    | Description                             |
-| -------------- | ------------------------------------------- | ---------------- | --------------------------------------- |
-| `type`         | **custom**                                  | -                | Specifies the type of component to use  |
-| `key`          | **string \| number**                        | -                | Key of the component                    |
-| `custom`       | **ReactNode**                               | -                | Defines the child component             |
-| `testId`       | **string**                                  | -                | Anchor test id                          |
-
 ### LogoElement 
 
 An object with the `type` property set to 'logo'.
@@ -94,9 +41,6 @@ An object with the `type` property set to 'logo'.
 | `key`          | **string \| number**                        | -                | Key of the component                    |
 | `logo`         | **ReactNode**                               | -                | Defines the child component             |
 | `testId`       | **string**                                  | -                | Anchor test id                          |
-
-### TopProp
-An object where you can use all **[NavItem props](/NavItem)** except for `white`, `small` and `className`.
 
 ## Examples
 
