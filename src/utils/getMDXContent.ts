@@ -16,7 +16,8 @@ const excludedTitles = showCT
       'Tag',
       'TextField',
       'Toggle',
-      'NavTab'
+      'NavTab',
+      'Text'
     ]
   : [
       'AlertCT',
@@ -27,7 +28,8 @@ const excludedTitles = showCT
       'TagCT',
       'TextFieldCT',
       'ToggleCT',
-      'NavTabCT'
+      'NavTabCT',
+      'TextCT'
     ]
 
 export async function getMdxContent(source) {
