@@ -62,6 +62,7 @@ type NewTextProps = {
   corpPrimary?: boolean
   corpSecondary?: boolean
   corpDisabled?: boolean
+  brand?: boolean
   top0?: boolean
   top1?: boolean
   top2?: boolean
@@ -137,6 +138,7 @@ const Text = ({
   whitePrimary,
   corpSecondary,
   corpDisabled,
+  brand,
   top0,
   top1,
   top2,
@@ -295,6 +297,7 @@ const Text = ({
         { disabled },
         { white },
         { link },
+        { brand },
         { current }
       ]),
     [
@@ -312,6 +315,7 @@ const Text = ({
       disabled,
       white,
       link,
+      brand,
       current
     ]
   )

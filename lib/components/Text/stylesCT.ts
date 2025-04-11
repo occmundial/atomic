@@ -1,12 +1,11 @@
 import { CT as brand } from '@/constants/index'
 
-import colors from '@/tokens/colors'
 import fonts from '@/tokens/fonts'
 import grid from '@/tokens/grid'
 
-import newFonts from '@/tokens/future/fonts.json'
-import newColors from '@/tokens/future/colors.json'
-import newSpacing from '@/tokens/future/spacing.json'
+import newFonts from '@/tokens/ct/fonts.json'
+import newColors from '@/tokens/ct/colors.json'
+import newSpacing from '@/tokens/ct/spacing.json'
 import { objectToFontValue } from '@/utils/font'
 
 const display = newFonts['display-display-clean']
@@ -29,7 +28,6 @@ const bodyRegular = newFonts['body-regular']
 const bodySmallStrong = newFonts['body-small-strong']
 const bodySmall = newFonts['body-small']
 const bodyXSmall = newFonts['body-x-small']
-const defaultWeight = 400
 
 const styles = {
   text: {
@@ -104,19 +102,15 @@ const styles = {
   bodyXSmall: {
     font: objectToFontValue(bodyXSmall, brand)
   },
-  // Weight
-  strong: {
-    fontWeight: defaultWeight
-  },
   // Colors
   indigoPrimary: {
-    color: newColors.text.indigo.primary
+    color: newColors.text.accent.bold
   },
-  indigoSecondary: {
-    color: newColors.text.indigo.secondary
+  brand: {
+    color: newColors.text.brand.bold
   },
   pinkPrimary: {
-    color: newColors.text.pink.primary
+    color: newColors.text.accent.default
   },
   success: {
     color: newColors.text.success
@@ -127,33 +121,22 @@ const styles = {
   error: {
     color: newColors.text.error
   },
-  info: {
-    color: colors.infoText
-  },
-  disabled: {
-    color: colors.inkLightest
-  },
-  whiteSecondary: {
-    color: newColors.text.white.secondary
-  },
+  whiteSecondary: {},
   whitePrimary: {
-    color: newColors.text.white.primary
-  },
-  link: {
-    color: colors.textLink
+    color: newColors.text.inverse.bold
   },
   current: {
     color: 'currentcolor'
   },
   // Emphasis
   corpPrimary: {
-    color: newColors.text.corp.primary
+    color: newColors.text.default.bold
   },
   corpSecondary: {
-    color: newColors.text.corp.secondary
+    color: newColors.text.default.default
   },
   corpDisabled: {
-    color: newColors.text.corp.disabled
+    color: newColors.text.default.disabled
   },
   // Align
   left: {
