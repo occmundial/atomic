@@ -41,7 +41,8 @@ const styles = {
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    pointerEvents: 'none'
+    pointerEvents: 'none',
+    fontFamily: 'Arial'
   },
   loadCont: {
     display: 'flex',
