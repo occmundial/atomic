@@ -7,6 +7,7 @@ import newFonts from '@/tokens/ct/fonts.json'
 import newColors from '@/tokens/ct/colors.json'
 import newSpacing from '@/tokens/ct/spacing.json'
 import { objectToFontValue } from '@/utils/font'
+import { link } from 'fs'
 
 const display = newFonts['display-display-clean']
 const displayM = newFonts['mobile-display-clean-m']
@@ -102,10 +103,12 @@ const styles = {
   bodyXSmall: {
     font: objectToFontValue(bodyXSmall, brand)
   },
+  strong: {},
   // Colors
   indigoPrimary: {
     color: newColors.text.accent.bold
   },
+  indigoSecondary: {},
   brand: {
     color: newColors.text.brand.bold
   },
@@ -121,10 +124,13 @@ const styles = {
   error: {
     color: newColors.text.error
   },
+  info: {},
+  disabled: {},
   whiteSecondary: {},
   whitePrimary: {
     color: newColors.text.inverse.bold
   },
+  link: {},
   current: {
     color: 'currentcolor'
   },
