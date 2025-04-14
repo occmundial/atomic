@@ -5,19 +5,21 @@ import occHorizontal from '@/tokens/icons/occHorizontal'
 import occVertical from '@/tokens/icons/occVertical'
 import occIcon from '@/tokens/icons/occIcon'
 import occLogo from '@/tokens/icons/occLogo'
+import ctLogo from '@/tokens/icons/ctLogo'
 import { base } from '@/tokens/icons'
 
 import useStyles from './styles'
 import colors from '@/tokens/future/colors.json'
 
-type LogoVariant = 'horizontal' | 'vertical' | 'icon' | 'occLogo'
+type LogoVariant = 'horizontal' | 'vertical' | 'icon' | 'occLogo' | 'ctLogo'
 type LogoTheme = 'blue' | 'white' | 'black' | 'grey'
 
 const variants = {
   horizontal: occHorizontal,
   vertical: occVertical,
   icon: occIcon,
-  occLogo: occLogo
+  occLogo: occLogo,
+  ctLogo: ctLogo
 }
 
 const logoColors = {

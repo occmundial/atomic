@@ -16,6 +16,7 @@ const excludedTitles = showCT
       'Tag',
       'TextField',
       'Toggle',
+      'NavTab',
       'Text'
     ]
   : [
@@ -27,6 +28,7 @@ const excludedTitles = showCT
       'TagCT',
       'TextFieldCT',
       'ToggleCT',
+      'NavTabCT',
       'TextCT'
     ]
 
