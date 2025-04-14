@@ -1,3 +1,24 @@
+# [4.2.0-ct.12](https://github.com/occmundial/atomic/compare/v4.2.0-ct.11...v4.2.0-ct.12) (2025-04-14)
+
+
+### Bug Fixes
+
+* FontFamily Button ([0a3f03c](https://github.com/occmundial/atomic/commit/0a3f03ccad80bbfce6336305842ea76f1d400a84))
+* Remove getIcon function ([960cc65](https://github.com/occmundial/atomic/commit/960cc65d1f4b819a789020581e2de7a454f331d2))
+* Remove unnecessary props ([e2e7ae4](https://github.com/occmundial/atomic/commit/e2e7ae4f13a057f1eb79caed1b2a5e941fd8792b))
+* Restore styles ([954da6b](https://github.com/occmundial/atomic/commit/954da6b6c68dfc2aecbd9c2128550ad270ae4900))
+
+
+### Features
+
+* Add font and colors ([1721376](https://github.com/occmundial/atomic/commit/17213764ea30293fef095a6b08fef76833c2169b))
+* Add NavTab CT styles ([72dc763](https://github.com/occmundial/atomic/commit/72dc7634c2b1806b4f97648590061aad864b334c))
+* Add new colors ([7a168dc](https://github.com/occmundial/atomic/commit/7a168dc5120f3331963ad8f38252c3a3295a25c9))
+* Add prop ([e20cd34](https://github.com/occmundial/atomic/commit/e20cd34ebaf9d14cf9dcd8b72b068da7964779ee))
+* Remove unused props ([456e28e](https://github.com/occmundial/atomic/commit/456e28e03d85aeb0b08d064fc6b8fae071c7846a))
+* Update description props ([d8f920e](https://github.com/occmundial/atomic/commit/d8f920e62704c03959fc7c0cc837f224fadc476a))
+* Use CT logo ([e8b4c74](https://github.com/occmundial/atomic/commit/e8b4c7499e8b32c39dce5d9a04c71a6b17244d43))
+
 # [4.2.0-ct.11](https://github.com/occmundial/atomic/compare/v4.2.0-ct.10...v4.2.0-ct.11) (2025-04-10)
 
 
