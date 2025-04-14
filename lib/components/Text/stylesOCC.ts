@@ -114,6 +114,7 @@ const styles = {
   indigoSecondary: {
     color: newColors.text.indigo.secondary
   },
+  brand: {},
   pinkPrimary: {
     color: newColors.text.pink.primary
   },
