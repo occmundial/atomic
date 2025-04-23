@@ -1,8 +1,6 @@
 import { CT as brand } from '@/constants/index'
 import spacing from '@/tokens/spacing'
 import grid from '@/tokens/grid'
-import colors from '@/tokens/colors'
-
 import newColors from '@/tokens/ct/colors.json'
 import newSpacing from '@/tokens/ct/spacing.json'
 import borderRadius from '@/tokens/ct/borderRadius.json'
@@ -67,7 +65,7 @@ const styles = {
     overflow: 'hidden',
     transition: '0.3s opacity, 0.3s margin-top',
     borderRadius: borderRadius['br-sm'],
-    background: colors.bgWhite,
+    background: newColors.bg.white,
     [`@media screen and (max-width:${grid.xs - 1}px)`]: {
       minHeight: ({ fullSize }: ModalProps) => fullSize && '100vh',
       borderRadius: ({ fullSize }: ModalProps) => fullSize && 0
@@ -149,6 +147,7 @@ const styles = {
     //background: newColors.bg.surface.default
   },
   title: {
+    color: newColors.text.default.bold,
     margin: 0,
     font: objectToFontValue(fonts['mobile-h4-m'], brand),
     [`@media screen and (min-width:${grid.xs}px)`]: {
@@ -163,7 +162,6 @@ const styles = {
       width: 6
     },
     '&::-webkit-scrollbar-thumb': {
-      background: colors.grey200,
       borderRadius: 3
     }
   },
