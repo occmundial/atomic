@@ -1,3 +1,10 @@
+# [4.2.0-ct.13](https://github.com/occmundial/atomic/compare/v4.2.0-ct.12...v4.2.0-ct.13) (2025-04-23)
+
+
+### Bug Fixes
+
+* Color title modal CT ([b8a2f2f](https://github.com/occmundial/atomic/commit/b8a2f2f17c9b02c542f669cd44965f22a5cd2e5c))
+
 # [4.2.0-ct.12](https://github.com/occmundial/atomic/compare/v4.2.0-ct.11...v4.2.0-ct.12) (2025-04-14)
 
 
