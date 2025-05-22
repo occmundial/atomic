@@ -12,7 +12,7 @@ import useStyles from './styles'
 import colors from '@/tokens/future/colors.json'
 
 type LogoVariant = 'horizontal' | 'vertical' | 'icon' | 'occLogo' | 'ctLogo'
-type LogoTheme = 'blue' | 'white' | 'black' | 'grey'
+type LogoTheme = 'blue' | 'white' | 'black' | 'grey' | 'ct'
 
 const variants = {
   horizontal: occHorizontal,
@@ -61,7 +61,9 @@ export default function Logo({
       })}
       style={{
         ...style,
-        background: base(variantInfo.icon(logoColors[theme])),
+        background: base(
+          variantInfo.icon(logoColors[theme === 'ct' ? '' : theme])
+        ),
         width: width ?? variantInfo.width,
         height: height ?? variantInfo.height
       }}
