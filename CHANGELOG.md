@@ -1,3 +1,11 @@
+# [4.2.0-ct.14](https://github.com/occmundial/atomic/compare/v4.2.0-ct.13...v4.2.0-ct.14) (2025-05-23)
+
+
+### Features
+
+* Add ct theme in Logo componnet ([b4d6d49](https://github.com/occmundial/atomic/commit/b4d6d49b4399070cd552e032ff4a278f57269ef2))
+* Droplist CT ([c614c86](https://github.com/occmundial/atomic/commit/c614c869d9341ce8a75e5a0e71f88a8fd0f97163))
+
 # [4.2.0-ct.13](https://github.com/occmundial/atomic/compare/v4.2.0-ct.12...v4.2.0-ct.13) (2025-04-23)
 
 
