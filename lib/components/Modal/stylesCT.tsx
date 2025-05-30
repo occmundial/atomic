@@ -123,7 +123,6 @@ const styles = {
     maxHeight: '85vh'
   },
   header: {
-    height: 56,
     flexGrow: 0,
     padding: newSpacing['size-4'],
     display: 'flex',
@@ -133,7 +132,6 @@ const styles = {
     border: '1px solid transparent',
     transition: '0.2s all',
     [`@media screen and (min-width:${grid.xs}px)`]: {
-      height: 72,
       padding: [newSpacing['size-6']]
     }
   },
