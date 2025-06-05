@@ -1,3 +1,10 @@
+# [4.2.0-ct.15](https://github.com/occmundial/atomic/compare/v4.2.0-ct.14...v4.2.0-ct.15) (2025-06-05)
+
+
+### Bug Fixes
+
+* Remove title height ([a41a30b](https://github.com/occmundial/atomic/commit/a41a30bc7930ad892984bc1c1c624d5f7d63fe6e))
+
 # [4.2.0-ct.14](https://github.com/occmundial/atomic/compare/v4.2.0-ct.13...v4.2.0-ct.14) (2025-05-23)
 
 
