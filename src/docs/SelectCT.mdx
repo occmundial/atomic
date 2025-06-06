@@ -1,0 +1,60 @@
+---
+title: Select CT
+section: components
+---
+
+import Demo from '@/utils/components/Demo'
+import Select from '@/components/SelectCT'
+import { spacing } from '@/components/tokens'
+
+# Select CT
+
+---
+
+- [Props](#Props)
+- [Examples](#Examples)
+
+The TextField component is used to get user input. It can be used to get text, numbers, dates, etc. It can also be used to get user input from a list of options.
+It supports the following types:
+- any text or number input type (text, number, tel, url, etc.)
+- select
+- textarea
+- password
+
+You can also use custom patterns for validation.
+The TextField can handle default, focus, error and disabled states.
+
+## Props
+
+| Name                | Type                      | Default | Description                                                                 |
+| ------------------- | ------------------------- | ------- | --------------------------------------------------------------------------- |
+| `label`             | **string**                |         | The label for the input field.                                              |
+| `placeholder`       | **string**                |         | The placeholder text for the input field.                                   |
+| `disabled`          | **boolean**               | `false` | Determines if the input field is disabled.                                  |
+| `value`             | **string**                | ``      | The value of the input field.                                               |
+| `onFocus`           | **function**             |         | Event handler for when the input field is focused.                          |
+| `onBlur`            | **function**             |         | Event handler for when the input field loses focus.                         |
+| `onChange`          | **function**             |         | Event handler for when the input value changes.                             |
+| `options`           | **OptionProps[]**        | []      | The list of options for a select input field.                               |
+| `inputClassName`    | **string**                |         | The class name for the input field.                                         |
+| `id`                | **string**                |         | The id attribute of the input field.                                        |
+| `className`         | **string**                |         | The class name for the input field container.                               |
+| `style`             | **CSSProperties**         |         | The inline style for the input field container.                             |
+| `testId`            | **string**                |         | The test id attribute for testing purposes.                                 |
+
+## Examples
+
+<Demo title="Select">
+  <div style={{ maxWidth: 320 }}>
+    <Select iconName="x" label="Select" value="" type="select" options={[{ value: '1', label: 'Option 1' }, { value: '2', label: 'Option 2' }, { value: '3', label: 'Option 3' }, { value: '4', label: 'Option 4' }]} />
+  </div>
+</Demo>
+
+```jsx
+// How to implement a Select
+function Component() {
+  return (
+    <Select label="Select" value="" type="select" options={[{ value: '1', label: 'Option 1' }, { value: '2', label: 'Option 2' }, { value: '3', label: 'Option 3' }, { value: '4', label: 'Option 4' }]} />
+  )
+}
+```
