@@ -1,3 +1,11 @@
+# [4.2.0-ct.16](https://github.com/occmundial/atomic/compare/v4.2.0-ct.15...v4.2.0-ct.16) (2025-06-10)
+
+
+### Features
+
+* Add StylesCT Autocomplete ([a3b0e10](https://github.com/occmundial/atomic/commit/a3b0e105a8ebba46dac06be1965b13b4d64ba2ea))
+* Select documentation ([473b7f2](https://github.com/occmundial/atomic/commit/473b7f28ab7e6d809370d92fd74507b755cab0cb))
+
 # [4.2.0-ct.15](https://github.com/occmundial/atomic/compare/v4.2.0-ct.14...v4.2.0-ct.15) (2025-06-05)
 
 
