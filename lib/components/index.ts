@@ -45,6 +45,7 @@ import MenuItem from './MenuItem'
 import MenuDivider from './MenuDivider'
 import MenuList from './MenuList'
 import MenuUser from './MenuUser'
+import Select from './SelectCT'
 
 export {
   Alert,
@@ -93,5 +94,6 @@ export {
   MenuItem,
   MenuDivider,
   MenuList,
-  MenuUser
+  MenuUser,
+  Select
 }

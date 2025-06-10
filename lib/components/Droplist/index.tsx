@@ -43,12 +43,14 @@ export interface DroplistProps {
   onMouseDown?: (item: Item) => void
   onMouseUp?: (item: Item) => void
   onEnter?: (item: Item) => void
+  onNavigate?: (item: Item | null) => void
   filter?: boolean
   isOnFocus?: boolean
   id?: string
   className?: string
   style?: CSSProperties
   testId?: string
+  selectedValue?: string
 }
 
 const Droplist = ({
@@ -61,10 +63,12 @@ const Droplist = ({
   onEnter,
   onMouseDown,
   onMouseUp,
+  onNavigate,
   className,
   id,
   style,
-  testId
+  testId,
+  selectedValue
 }: DroplistProps) => {
   const classes = useStyles()
   const [currentItem, setCurrentItem] = useState(-1)
@@ -245,9 +249,25 @@ const Droplist = ({
   )
 
   useEffect(() => {
+    if (!onNavigate) return
+    const item = (_items as Item[])[currentItem] ?? null
+    onNavigate(item)
+  }, [currentItem, _items, onNavigate])
+
+  useEffect(() => {
     global.addEventListener('keydown', onKeyDown)
     return () => global.removeEventListener('keydown', onKeyDown)
   })
+
+  useEffect(() => {
+    if (!selectedValue) return
+    const index = (_items as Item[]).findIndex(
+      item => item.text === selectedValue
+    )
+    if (index !== -1) {
+      setCurrentItem(index)
+    }
+  }, [selectedValue, _items])
 
   useEffect(() => {
     if (filter) filterItems(items, term)

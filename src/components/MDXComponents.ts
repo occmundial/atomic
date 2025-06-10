@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import { createElement } from 'react'
 import slugify from 'slugify'
 import Demo from './Demo'
@@ -17,6 +18,7 @@ import Icon from '@/components/Icon'
 import Text from '@/components/Text'
 import TextField from '@/components/TextField'
 import Autocomplete from '@/components/Autocomplete'
+import Select from '@/components/SelectCT'
 import colorsNew from '@/tokens/future/colors.json'
 
 import Anchor from './Anchor'
@@ -65,6 +67,7 @@ const mdxComponents = {
   Text,
   TextField,
   Autocomplete,
+  Select,
   Alert,
   Tag,
   Icon,

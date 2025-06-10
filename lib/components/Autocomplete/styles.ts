@@ -1,19 +1,9 @@
 import { createUseStyles } from 'react-jss'
 
-import spacing from '@/tokens/future/spacing.json'
+import { CT } from '@/constants/index'
+import stylesCT from './stylesCT'
+import stylesOCC from './stylesOCC'
 
-export default createUseStyles({
-  autoComplete: {
-    position: 'relative'
-  },
-  droplist: {
-    position: 'absolute',
-    zIndex: 2,
-    top: `calc(100% + ${spacing['size-2']})`,
-    left: 0,
-    width: '100%'
-  },
-  pushDroplist: {
-    top: `calc(100% - 21px)`
-  }
-})
+export default createUseStyles(
+  process.env.ATOMIC_BRAND === CT ? stylesCT : stylesOCC
+)

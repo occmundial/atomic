@@ -53,7 +53,12 @@ const styles = {
     font: objectToFontValue(fonts['body-regular'], brand),
     color: colors.text.default.bold
   },
-  onFocus: {},
+  onFocus: {
+    background: colors.bg.brand.subtle,
+    '&:hover': {
+      background: colors.bg.brand.subtle
+    }
+  },
   icon: {
     marginRight: spacing['size-2']
   },
