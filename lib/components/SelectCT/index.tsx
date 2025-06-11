@@ -211,6 +211,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
             isOnFocus
             testId={`${testId}__droplist`}
             selectedValue={_value}
+            className={classes.droplist}
           />
         )}
       </div>

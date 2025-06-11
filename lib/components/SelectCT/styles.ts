@@ -109,5 +109,9 @@ export default createUseStyles({
     top: '50%',
     transform: 'translateY(-50%)',
     pointerEvents: 'none'
+  },
+  droplist: {
+    position: 'absolute',
+    width: '100%'
   }
 })
