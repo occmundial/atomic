@@ -13,7 +13,8 @@ const styles = {
   },
   pushDroplist: {
     top: `calc(100% - 21px)`
-  }
+  },
+  withoutText: {}
 }
 
 export default styles

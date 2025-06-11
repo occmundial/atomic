@@ -177,7 +177,8 @@ const Autocomplete = forwardRef(
             className={classnames(
               classes.droplist,
               {
-                [classes.pushDroplist]: hasBottom
+                [classes.pushDroplist]: hasBottom,
+                [classes.withoutText]: !hasBottom
               },
               droplistProps.className
             )}

@@ -13,6 +13,9 @@ const styles = {
   },
   pushDroplist: {
     top: `calc(100% - 28px)`
+  },
+  withoutText: {
+    top: '100%'
   }
 }
 
