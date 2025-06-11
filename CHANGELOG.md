@@ -1,3 +1,11 @@
+# [4.2.0-ct.17](https://github.com/occmundial/atomic/compare/v4.2.0-ct.16...v4.2.0-ct.17) (2025-06-11)
+
+
+### Bug Fixes
+
+* Position absolute in Droplist ([3853471](https://github.com/occmundial/atomic/commit/3853471da1a61d2c0a0d90964a1ba09652bac393))
+* Select and autocomplete ([8dd3e6c](https://github.com/occmundial/atomic/commit/8dd3e6cd17f288c8b25bfb347013d21542e9e124))
+
 # [4.2.0-ct.16](https://github.com/occmundial/atomic/compare/v4.2.0-ct.15...v4.2.0-ct.16) (2025-06-10)
 
 
