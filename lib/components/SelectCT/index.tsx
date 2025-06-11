@@ -147,7 +147,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
 
     const handleSelect = useCallback(
       (item: { id: string; text: string }) => {
-        setValue(item.id)
+        setValue(item.text)
         setIsOpen(false)
         setStatus('default')
         onChange?.(item.id)
