@@ -111,6 +111,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
         setIsOpen(false)
         if (onChange) onChange(`${item.id}`)
         if (onMouseDown) onMouseDown(item)
+        onBlur?.(_value)
       },
       [onChange, onMouseDown]
     )
@@ -121,6 +122,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
         setIsOpen(false)
         if (onChange) onChange(`${item.id}`)
         if (onEnter) onEnter(item)
+        onBlur?.(_value)
       },
       [onChange, onEnter]
     )
