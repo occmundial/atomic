@@ -1,3 +1,10 @@
+# [4.2.0-ct.18](https://github.com/occmundial/atomic/compare/v4.2.0-ct.17...v4.2.0-ct.18) (2025-06-12)
+
+
+### Bug Fixes
+
+* Select CT ([e703010](https://github.com/occmundial/atomic/commit/e703010f9931b9b6772bfa9ee55c1c1073a22ba6))
+
 # [4.2.0-ct.17](https://github.com/occmundial/atomic/compare/v4.2.0-ct.16...v4.2.0-ct.17) (2025-06-11)
 
 
