@@ -1,3 +1,10 @@
+# [4.2.0-ct.19](https://github.com/occmundial/atomic/compare/v4.2.0-ct.18...v4.2.0-ct.19) (2025-06-12)
+
+
+### Bug Fixes
+
+* OnChange event in Select CT ([aa88382](https://github.com/occmundial/atomic/commit/aa88382055f8d7b07746f975febf74e76df37170))
+
 # [4.2.0-ct.18](https://github.com/occmundial/atomic/compare/v4.2.0-ct.17...v4.2.0-ct.18) (2025-06-12)
 
 
