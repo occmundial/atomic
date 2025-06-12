@@ -262,7 +262,7 @@ const Droplist = ({
   useEffect(() => {
     if (!selectedValue) return
     const index = (_items as Item[]).findIndex(
-      item => item.text === selectedValue
+      item => item.id === selectedValue
     )
     if (index !== -1) {
       setCurrentItem(index)

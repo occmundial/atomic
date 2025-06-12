@@ -107,7 +107,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
 
     const _onMouseDown = useCallback(
       (item: Item) => {
-        setValue(item.text)
+        setValue(`${item.id}`)
         setIsOpen(false)
         if (onChange) onChange(item.text)
         if (onMouseDown) onMouseDown(item)
@@ -117,7 +117,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
 
     const _onEnter = useCallback(
       (item: Item) => {
-        setValue(item.text)
+        setValue(`${item.id}`)
         setIsOpen(false)
         if (onChange) onChange(item.text)
         if (onEnter) onEnter(item)
@@ -147,7 +147,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
 
     const handleSelect = useCallback(
       (item: { id: string; text: string }) => {
-        setValue(item.text)
+        setValue(`${item.text}`)
         setIsOpen(false)
         setStatus('default')
         onChange?.(item.id)
@@ -156,7 +156,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     )
 
     const selectedLabel = useMemo(() => {
-      return options.find(opt => opt.label === _value)?.label || ''
+      return options.find(opt => opt.value === _value)?.label || ''
     }, [_value, options])
 
     const droplistItems = options.map(item => ({
@@ -206,7 +206,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
             onClick={handleSelect}
             onMouseDown={_onMouseDown}
             onEnter={_onEnter}
-            onNavigate={item => item && setValue(item?.text || '')}
+            onNavigate={item => item && setValue(`${item?.id}` || '')}
             onMouseUp={_onMouseDown}
             isOnFocus
             testId={`${testId}__droplist`}
