@@ -109,7 +109,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       (item: Item) => {
         setValue(`${item.id}`)
         setIsOpen(false)
-        if (onChange) onChange(item.text)
+        if (onChange) onChange(`${item.id}`)
         if (onMouseDown) onMouseDown(item)
       },
       [onChange, onMouseDown]
@@ -119,7 +119,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       (item: Item) => {
         setValue(`${item.id}`)
         setIsOpen(false)
-        if (onChange) onChange(item.text)
+        if (onChange) onChange(`${item.id}`)
         if (onEnter) onEnter(item)
       },
       [onChange, onEnter]
@@ -147,7 +147,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
 
     const handleSelect = useCallback(
       (item: { id: string; text: string }) => {
-        setValue(`${item.text}`)
+        setValue(`${item.id}`)
         setIsOpen(false)
         setStatus('default')
         onChange?.(item.id)
