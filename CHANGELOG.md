@@ -1,3 +1,10 @@
+# [4.2.0-ct.20](https://github.com/occmundial/atomic/compare/v4.2.0-ct.19...v4.2.0-ct.20) (2025-06-12)
+
+
+### Bug Fixes
+
+* OnBlur select CT ([531bd1f](https://github.com/occmundial/atomic/commit/531bd1fd22e7eb5dfe139fb21b8991ef096c1131))
+
 # [4.2.0-ct.19](https://github.com/occmundial/atomic/compare/v4.2.0-ct.18...v4.2.0-ct.19) (2025-06-12)
 
 
