@@ -1,3 +1,10 @@
+# [4.2.0-ct.21](https://github.com/occmundial/atomic/compare/v4.2.0-ct.20...v4.2.0-ct.21) (2025-06-13)
+
+
+### Bug Fixes
+
+* Blur and focus in Select CT ([baf27ba](https://github.com/occmundial/atomic/commit/baf27bae9031958bcc599029726a851097f2dcbc))
+
 # [4.2.0-ct.20](https://github.com/occmundial/atomic/compare/v4.2.0-ct.19...v4.2.0-ct.20) (2025-06-12)
 
 
