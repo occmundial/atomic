@@ -92,7 +92,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     const _onFocus = useCallback(
       (open: boolean) => {
         if (disabled) return
-        setStatus('focus')
+        setStatus(!open ? 'focus' : 'default')
         setIsOpen(!open)
         onFocus?.()
       },
@@ -102,7 +102,6 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     const _onBlur = useCallback(() => {
       setStatus('default')
       setIsOpen(false)
-      onBlur?.(_value)
     }, [onBlur, _value])
 
     const _onMouseDown = useCallback(
@@ -110,8 +109,9 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
         setValue(`${item.id}`)
         setIsOpen(false)
         if (onChange) onChange(`${item.id}`)
-        if (onMouseDown) onMouseDown(item)
-        onBlur?.(_value)
+        if (onMouseDown) onMouseDown(`${item.id}`)
+        _onBlur()
+        onBlur?.(`${item.id}`)
       },
       [onChange, onMouseDown]
     )
@@ -121,8 +121,9 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
         setValue(`${item.id}`)
         setIsOpen(false)
         if (onChange) onChange(`${item.id}`)
-        if (onEnter) onEnter(item)
-        onBlur?.(_value)
+        if (onEnter) onEnter(`${item.id}`)
+        _onBlur()
+        onBlur?.(`${item.id}`)
       },
       [onChange, onEnter]
     )
@@ -152,7 +153,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
         setValue(`${item.id}`)
         setIsOpen(false)
         setStatus('default')
-        onChange?.(item.id)
+        onChange?.(`${item.id}`)
       },
       [onChange]
     )
