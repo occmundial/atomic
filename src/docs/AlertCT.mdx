@@ -39,7 +39,7 @@ Alert component to display messages within a container.
 
 <Demo title="Alert themes" background={colors.bgGrey}>
   <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
-    <Alert theme="info">Alert with info theme</Alert>
+    <Alert theme="ctInfo">Alert with info theme</Alert>
     <Alert theme="warning">Alert with warning theme</Alert>
     <Alert theme="error">Alert with error theme</Alert>
   </div>
@@ -50,7 +50,7 @@ Alert component to display messages within a container.
 function Component() {
   return (
     <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
-      <Alert theme="info">Alert with info theme</Alert>
+      <Alert theme="ctInfo">Alert with info theme</Alert>
       <Alert theme="warning">Alert with warning theme</Alert>
       <Alert theme="error">Alert with error theme</Alert>
     </div>
@@ -64,7 +64,7 @@ Each theme has an associated icon.
 
 <Demo title="Alert with icons" background={colors.bgGrey}>
   <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
-    <Alert icon theme="info">
+    <Alert icon theme="ctInfo">
       Alert with icon
     </Alert>
     <Alert icon theme="warning">
@@ -81,7 +81,7 @@ Each theme has an associated icon.
 function Component() {
   return (
     <>
-      <Alert icon theme="info">
+      <Alert icon theme="ctInfo">
         Alert with icon
       </Alert>
       <Alert icon theme="warning">
@@ -101,7 +101,7 @@ You can pass size small prop when on mobile devices.
 
 <Demo title="Alert with bold text" background={colors.bgGrey}>
   <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
-    <AlertSmall theme="info" />
+    <AlertSmall theme="ctInfo" />
     <AlertSmall theme="warning" />
     <AlertSmall theme="error" />
   </div>
@@ -115,7 +115,7 @@ function Component() {
     <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
       <Alert
         icon
-        theme="info"
+        theme="ctInfo"
         onClose={() => alert('Closing Alert')}
         size={windowSize.width < grid.xs ? 'small' : 'large'}
         cta={{
@@ -175,7 +175,7 @@ You can pass cta properties to render a button at the end of the alert text.
 
 <Demo title="Alert with cta" background={colors.bgGrey}>
   <Alert
-    theme="info"
+    theme="ctInfo"
     cta={{
       href: 'https://www.google.com',
       target: '_blank',
@@ -193,7 +193,7 @@ function Component() {
   return (
     <>
       <Alert
-        theme="info"
+        theme="ctInfo"
         cta={{
           href: 'https://www.google.com',
           target: '_blank',
@@ -215,7 +215,7 @@ There is some other properties that can be used with Alert component.
 <Demo title="Other Alert properties" background={colors.bgGrey}>
   <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
     <Alert
-      theme="info"
+      theme="ctInfo"
       icon
       banner
       onClose={() => alert('Closing Alert')}
@@ -265,7 +265,7 @@ function Component() {
   return (
     <div style={{ display: "flex", flexDirection: 'column', gap: '8px'}}>
       <Alert
-        theme="info"
+        theme="ctInfo"
         icon
         banner
         onClose={() => alert('Closing Alert')}
