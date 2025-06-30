@@ -6,6 +6,7 @@ import Icon from '@/components/Icon'
 import useStyles from './styles'
 import Button from '../Button'
 import colors from '@/tokens/future/colors.json'
+import ctColors from '@/tokens/ct/colors.json'
 import AlertText from './AlertText'
 
 const icons = {
@@ -13,11 +14,13 @@ const icons = {
   warning: 'alert',
   success: 'check-circle',
   error: 'x-circle',
-  promote: null
+  promote: null,
+  ctInfo: 'info-circle'
 }
 
 const colorTextClasses = {
   info: 'textInfo',
+  ctInfo: 'textInfo',
   promote: 'textPromote',
   warning: 'textWarning',
   success: 'textSuccess',
@@ -29,7 +32,8 @@ const colorLinkClasses = {
   promote: 'linkPromote',
   warning: 'linkWarning',
   success: 'linkSuccess',
-  error: 'linkError'
+  error: 'linkError',
+  ctInfo: 'linkInfo'
 }
 
 interface AlertAction {
@@ -40,7 +44,7 @@ interface AlertAction {
 }
 
 interface AlertProps {
-  theme?: 'info' | 'warning' | 'success' | 'error' | 'promote'
+  theme?: 'info' | 'warning' | 'success' | 'error' | 'promote' | 'ctInfo'
   children: ReactElement | string
   icon?: boolean
   banner?: boolean
@@ -85,6 +89,8 @@ const Alert = ({
               color={
                 theme === 'info'
                   ? colors.icon.brand.default
+                  : theme === 'ctInfo'
+                  ? ctColors.alert.info.icon
                   : colors.icon[theme]
               }
             />

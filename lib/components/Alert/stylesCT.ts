@@ -25,6 +25,9 @@ const styles = {
   info: {
     backgroundColor: colors.alert.info.bg
   },
+  ctInfo: {
+    backgroundColor: colors.alert.info.bg
+  },
   warning: {
     backgroundColor: colors.alert.warning.bg
   },
