@@ -29,13 +29,13 @@ const styles = {
     backgroundColor: colors.alert.warning.bg
   },
   success: {
-    display: 'none' // No habilitado aún para CT
+    display: 'none' // No habilitado aún para CT.
   },
   error: {
     backgroundColor: colors.alert.error.bg
   },
   promote: {
-    display: 'none' // No habilitado aún para CT
+    display: 'none' // No habilitado aún para CT.
   },
   textInfo: {
     color: colors.text.accent.default
