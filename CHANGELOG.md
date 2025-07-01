@@ -1,3 +1,10 @@
+# [4.2.0-ct.23](https://github.com/occmundial/atomic/compare/v4.2.0-ct.22...v4.2.0-ct.23) (2025-07-01)
+
+
+### Features
+
+* Use CT color token in alert icon ([e58947a](https://github.com/occmundial/atomic/commit/e58947ad0963d000568436fb8f089f87b6a3f7a7))
+
 # [4.2.0-ct.22](https://github.com/occmundial/atomic/compare/v4.2.0-ct.21...v4.2.0-ct.22) (2025-07-01)
 
 
