@@ -1,3 +1,15 @@
+# [4.2.0-ct.22](https://github.com/occmundial/atomic/compare/v4.2.0-ct.21...v4.2.0-ct.22) (2025-07-01)
+
+
+### Bug Fixes
+
+* Remove class ([e930d47](https://github.com/occmundial/atomic/commit/e930d4716f277d1ad698c3655857eef2d53c57d9))
+
+
+### Features
+
+* Use CT color token in alert icon ([ce261eb](https://github.com/occmundial/atomic/commit/ce261ebbd7dd20a9f4d53ea4885b62a05655433f))
+
 # [4.2.0-ct.21](https://github.com/occmundial/atomic/compare/v4.2.0-ct.20...v4.2.0-ct.21) (2025-06-13)
 
 
