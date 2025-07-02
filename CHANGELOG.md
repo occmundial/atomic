@@ -1,3 +1,10 @@
+# [4.2.0-ct.24](https://github.com/occmundial/atomic/compare/v4.2.0-ct.23...v4.2.0-ct.24) (2025-07-02)
+
+
+### Features
+
+* Add ctInfo style in alert component ([092e545](https://github.com/occmundial/atomic/commit/092e545f042b728b624612e241b6059e32b3bb13))
+
 # [4.2.0-ct.23](https://github.com/occmundial/atomic/compare/v4.2.0-ct.22...v4.2.0-ct.23) (2025-07-01)
 
 
