@@ -23,6 +23,10 @@ const styles = {
     backgroundColor: colors.alert.info.bg,
     outline: `1px solid ${colors.alert.info.border}`
   },
+  ctInfo: {
+    backgroundColor: colors.alert.info.bg,
+    outline: `1px solid ${colors.alert.info.border}`
+  },
   warning: {
     backgroundColor: colors.alert.warning.bg,
     outline: `1px solid ${colors.alert.warning.border}`
