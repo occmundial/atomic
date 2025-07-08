@@ -24,6 +24,7 @@ import {
 } from '@floating-ui/react'
 import classNames from 'classnames'
 import colors from '@/tokens/colors'
+import ctColors from '@/tokens/ct/colors.json'
 import newColors from '@/tokens/future/colors.json'
 import Icon from '../Icon'
 import { useOpenTooltipState } from './hooks'
@@ -37,14 +38,16 @@ enum Themes {
   DARK = 'dark',
   LIGHT = 'light',
   INFO = 'info',
-  PURPLE = 'purple'
+  PURPLE = 'purple',
+  DARKCT = 'darkCt'
 }
 
 const colorsArrow = {
   [Themes.DARK]: newColors.bg.neutral,
   [Themes.INFO]: infoLight,
   [Themes.LIGHT]: newColors.bg.surface.default,
-  [Themes.PURPLE]: info
+  [Themes.PURPLE]: info,
+  [Themes.DARKCT]: ctColors.bg.action.secondary.active
 }
 
 const borderColors = {
@@ -63,6 +66,10 @@ const borderColors = {
   [Themes.PURPLE]: {
     bg: info,
     border: info
+  },
+  [Themes.DARKCT]: {
+    bg: ctColors.bg.action.secondary.active,
+    border: ctColors.bg.action.secondary.active
   }
 }
 
