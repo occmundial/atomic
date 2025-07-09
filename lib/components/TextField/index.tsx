@@ -79,6 +79,7 @@ export interface TextFieldProps {
   style?: CSSProperties
   testId?: string
   about?: string
+  widthAbout?: number | string | null
 }
 
 const TextField = forwardRef(
@@ -118,7 +119,8 @@ const TextField = forwardRef(
       inputMode,
       disableAutoComplete,
       testId,
-      about
+      about,
+      widthAbout
     }: TextFieldProps,
     ref
   ) => {
@@ -471,6 +473,7 @@ const TextField = forwardRef(
                   placement="right"
                   openOnHover
                   closeDelay={1000}
+                  width={widthAbout || null}
                 >
                   <Icon
                     iconName={'info-circle'}
