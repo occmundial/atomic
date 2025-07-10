@@ -172,6 +172,13 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     marginTop: newSpacing['size-2']
+  },
+  aboutContainer: {
+    display: 'flex',
+    alignItems: 'center'
+  },
+  aboutIcon: {
+    marginRight: newSpacing['size-1']
   }
 }
 

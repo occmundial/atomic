@@ -5,6 +5,7 @@ import spacing from '@/tokens/future/spacing.json'
 import borderRadius from '@/tokens/future/borderRadius.json'
 import fonts from '@/tokens/future/fonts.json'
 import { objectToFontValue } from '@/utils/font'
+import ctColors from '@/tokens/ct/colors.json'
 
 const { infoLight, infoText, info, white } = colors
 
@@ -28,6 +29,10 @@ export default createUseStyles({
     background: newColors.bg.neutral,
     color: white,
     boxShadow: `inset 0 0 0 1px ${newColors.border.inverse.subtle}`
+  },
+  darkCt: {
+    background: ctColors.bg.action.secondary.active,
+    color: white
   },
   light: {
     background: newColors.bg.surface.default,

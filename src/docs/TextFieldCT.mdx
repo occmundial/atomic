@@ -65,6 +65,21 @@ The TextField can handle default, focus, error and disabled states.
 
 ## Examples
 
+<Demo title="TextField with about icon">
+  <div style={{ maxWidth: 320 }}>
+    <TextField label="Label" assistiveText="Assistive text" placeholder="Placeholder" about="Tooltip" widthAbout={300}/>
+  </div>
+</Demo>
+
+```jsx
+// How to implement a TextField with about icon
+function Component() {
+  return (
+    <TextField label="Label" assistiveText="Assistive text" placeholder="Placeholder" about="Tooltip" widthAbout={300}/>
+  )
+}
+```
+
 <Demo title="Simple TextField">
   <div style={{ maxWidth: 320 }}>
     <TextField label="Label" assistiveText="Assistive text" placeholder="Placeholder" />

@@ -16,10 +16,12 @@ import classnames from 'classnames'
 
 import Icon from '@/components/Icon'
 import Button from '@/components/Button'
+import Tooltip from '@/components/Tooltip'
 import iconSizes from '@/tokens/iconSizes'
 import usePrevious from '@/hooks/usePrevious'
 
 import newColors from '@/tokens/future/colors.json'
+import ctColors from '@/tokens/ct/colors.json'
 
 import useStyles from './styles'
 import useIcon from '@/hooks/useIcon'
@@ -76,6 +78,8 @@ export interface TextFieldProps {
   className?: string
   style?: CSSProperties
   testId?: string
+  about?: string
+  widthAbout?: number | string | null
 }
 
 const TextField = forwardRef(
@@ -114,7 +118,9 @@ const TextField = forwardRef(
       pattern,
       inputMode,
       disableAutoComplete,
-      testId
+      testId,
+      about,
+      widthAbout
     }: TextFieldProps,
     ref
   ) => {
@@ -458,7 +464,32 @@ const TextField = forwardRef(
       <div className={_className} style={style}>
         {label && (
           <div className={classes.top}>
-            {label && <label className={classes.label}>{label}</label>}
+            {about ? (
+              <div className={classes.aboutContainer}>
+                <label className={classes.label}>{label}</label>
+                <Tooltip
+                  theme="darkCt"
+                  text={about}
+                  placement="right"
+                  openOnHover
+                  closeDelay={1000}
+                  width={widthAbout || null}
+                >
+                  <Icon
+                    iconName={'info-circle'}
+                    size={13.5}
+                    color={
+                      disabled
+                        ? ctColors.button.ghost.icon.disabled
+                        : ctColors.button.ghost.icon.default
+                    }
+                    className={classes.aboutIcon}
+                  />
+                </Tooltip>
+              </div>
+            ) : (
+              label && <label className={classes.label}>{label}</label>
+            )}
           </div>
         )}
         <div className={classes.inputWrap}>
