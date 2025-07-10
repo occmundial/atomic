@@ -174,7 +174,11 @@ const styles = {
   },
   aboutContainer: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    '& > div': {
+      display: 'flex',
+      alignItems: 'center'
+    }
   },
   aboutIcon: {
     marginLeft: newSpacing['size-1']
