@@ -1,3 +1,10 @@
+# [4.2.0-ct.26](https://github.com/occmundial/atomic/compare/v4.2.0-ct.25...v4.2.0-ct.26) (2025-07-10)
+
+
+### Features
+
+*  Add new props to TextFieldCT documentation, align about icon ([d743729](https://github.com/occmundial/atomic/commit/d7437292ad9fd67747ee167b7213d85fc86cf5f5))
+
 # [4.2.0-ct.25](https://github.com/occmundial/atomic/compare/v4.2.0-ct.24...v4.2.0-ct.25) (2025-07-10)
 
 
