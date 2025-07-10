@@ -1,3 +1,11 @@
+# [4.2.0-ct.25](https://github.com/occmundial/atomic/compare/v4.2.0-ct.24...v4.2.0-ct.25) (2025-07-10)
+
+
+### Features
+
+* Change tooltip width in textfield ([73b57d7](https://github.com/occmundial/atomic/commit/73b57d77cdee646190fb642717bc5ba5fe983837))
+* Textfield with about icon ([1f0c1ad](https://github.com/occmundial/atomic/commit/1f0c1ad1762dc23bea885cc0163112803db11cc6))
+
 # [4.2.0-ct.24](https://github.com/occmundial/atomic/compare/v4.2.0-ct.23...v4.2.0-ct.24) (2025-07-02)
 
 
