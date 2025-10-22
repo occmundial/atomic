@@ -6,13 +6,12 @@ import shadows from '@/tokens/ct/shadows.json'
 import { CT as brand } from '@/constants/index'
 
 import { objectToFontValue } from '@/utils/font'
-import { createUseStyles } from 'react-jss'
 
 const placeholder = newFonts['text-field-placeholder']
 const label = newFonts['text-field-label']
 const TRANSITION = 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s'
 
-export default createUseStyles({
+const styles = {
   container: {
     position: 'relative'
   },
@@ -115,4 +114,6 @@ export default createUseStyles({
     width: '100%',
     zIndex: 1000
   }
-})
+}
+
+export default styles

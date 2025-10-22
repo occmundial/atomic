@@ -197,7 +197,7 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
             {_value ? selectedLabel : placeholder}
           </div>
           <Icon
-            iconName={getIcon('arrow-down', 'chevron-down')}
+            iconName="chevron-down"
             size={24}
             className={classes.selectIcon}
             color={iconColor}
