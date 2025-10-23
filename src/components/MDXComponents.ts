@@ -18,7 +18,7 @@ import Icon from '@/components/Icon'
 import Text from '@/components/Text'
 import TextField from '@/components/TextField'
 import Autocomplete from '@/components/Autocomplete'
-import Select from '@/components/SelectCT'
+import Select from '@/components/Select'
 import colorsNew from '@/tokens/future/colors.json'
 
 import Anchor from './Anchor'
