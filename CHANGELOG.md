@@ -1,3 +1,10 @@
+# [4.2.0-ct.27](https://github.com/occmundial/atomic/compare/v4.2.0-ct.26...v4.2.0-ct.27) (2025-10-23)
+
+
+### Features
+
+* Add select component for OCC ([953bec5](https://github.com/occmundial/atomic/commit/953bec56e4dcf14f7cc85f718d2d0688e7bea980))
+
 # [4.2.0-ct.26](https://github.com/occmundial/atomic/compare/v4.2.0-ct.25...v4.2.0-ct.26) (2025-07-10)
 
 
