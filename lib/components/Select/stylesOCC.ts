@@ -10,6 +10,9 @@ import { objectToFontValue } from '@/utils/font'
 const placeholder = newFonts['text-field-placeholder']
 const label = newFonts['text-field-label']
 const TRANSITION = 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s'
+const border = {
+  FOCUS: `inset 0 0 0 2px ${newColors['text-field'].border.focus}`
+}
 
 const styles = {
   container: {
@@ -25,7 +28,7 @@ const styles = {
   },
   focus: {
     '& $input': {
-      border: `1px solid ${newColors['text-field'].border.focus}`
+      boxShadow: `${border.FOCUS}, ${shadows['focus-bright-blue']} !important`
     }
   },
   label: {
