@@ -1,3 +1,10 @@
+# [4.2.0-ct.29](https://github.com/occmundial/atomic/compare/v4.2.0-ct.28...v4.2.0-ct.29) (2025-10-24)
+
+
+### Features
+
+* Add height on select ([58a5004](https://github.com/occmundial/atomic/commit/58a5004c328aea1900972b9fc97a56222dafdfb9))
+
 # [4.2.0-ct.28](https://github.com/occmundial/atomic/compare/v4.2.0-ct.27...v4.2.0-ct.28) (2025-10-24)
 
 
