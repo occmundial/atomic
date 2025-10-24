@@ -8,11 +8,13 @@ import { objectToFontValue } from '@/utils/font'
 const styles = {
   block: {
     background: colors['text-field'].bg.default,
+    maxHeight: '320px',
+    overflowY: 'auto',
+    overflowX: 'hidden',
     border: `1px solid ${colors['text-field'].border.default}`,
     borderRadius: borderRadius['br-xs'],
     padding: [spacing['size-2']],
-    boxShadow: shadows['elevation-elevation-4'],
-    overflow: 'hidden'
+    boxShadow: shadows['elevation-elevation-4']
   },
   text: {
     margin: 0
