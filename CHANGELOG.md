@@ -1,3 +1,10 @@
+# [4.2.0-ct.28](https://github.com/occmundial/atomic/compare/v4.2.0-ct.27...v4.2.0-ct.28) (2025-10-24)
+
+
+### Features
+
+* Add shadow select ([248b84a](https://github.com/occmundial/atomic/commit/248b84a16dac5e5f6c7b97f29e4ca3070b7e899d))
+
 # [4.2.0-ct.27](https://github.com/occmundial/atomic/compare/v4.2.0-ct.26...v4.2.0-ct.27) (2025-10-23)
 
 
