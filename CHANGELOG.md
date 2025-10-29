@@ -1,3 +1,10 @@
+# [4.2.0-ct.30](https://github.com/occmundial/atomic/compare/v4.2.0-ct.29...v4.2.0-ct.30) (2025-10-29)
+
+
+### Features
+
+* Add error select props ([0e882f1](https://github.com/occmundial/atomic/commit/0e882f159509e8c624371bebf6f8ef7a751fd47f))
+
 # [4.2.0-ct.29](https://github.com/occmundial/atomic/compare/v4.2.0-ct.28...v4.2.0-ct.29) (2025-10-24)
 
 
