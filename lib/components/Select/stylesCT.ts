@@ -10,6 +10,7 @@ import { objectToFontValue } from '@/utils/font'
 const placeholder = newFonts['text-field-placeholder']
 const label = newFonts['text-field-label']
 const TRANSITION = 'all cubic-bezier(0.25,0.46,0.45,0.94) 0.2s'
+const assistiveText = newFonts['text-field-assistive-text']
 
 const styles = {
   container: {
@@ -113,6 +114,24 @@ const styles = {
     position: 'absolute',
     width: '100%',
     zIndex: 1000
+  },
+  error: {
+    boxShadow: `inset 0 0 0 1px ${newColors['text-field'].border.error}`
+  },
+  bottom: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginTop: newSpacing['size-2']
+  },
+  assistiveTextWrap: {
+    display: 'flex'
+  },
+  assistiveText: {
+    font: objectToFontValue(assistiveText, brand),
+    color: newColors['text-field'].text.aux
+  },
+  assistiveError: {
+    color: newColors['text-field'].text.error
   }
 }
 

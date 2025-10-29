@@ -41,12 +41,14 @@ The TextField can handle default, focus, error and disabled states.
 | `className`         | **string**                |         | The class name for the input field container.                               |
 | `style`             | **CSSProperties**         |         | The inline style for the input field container.                             |
 | `testId`            | **string**                |         | The test id attribute for testing purposes.                                 |
+| `error`             | **boolean**               | `false` | Determines if the input field has an error state.                           |
+| `assistiveText`     | **ReactNode**             |         | An assistive text shown below the input field.                              |
 
 ## Examples
 
 <Demo title="Select">
   <div style={{ maxWidth: 320 }}>
-    <Select label="Select" value="3" 
+    <Select label="Select" value="3"
       options={[{ value: '1', label: 'Option 1' }, 
                 { value: '2', label: 'Option 2' },
                 { value: '3', label: 'Option 3' },
