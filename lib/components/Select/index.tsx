@@ -42,6 +42,8 @@ export interface SelectProps {
   inputClassName?: string
   id?: string
   style?: CSSProperties
+  error?: boolean
+  assistiveText?: string
 }
 
 const Select = forwardRef<HTMLInputElement, SelectProps>(
@@ -61,7 +63,9 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
       className,
       inputClassName,
       id,
-      style
+      style,
+      error,
+      assistiveText
     },
     ref
   ) => {
@@ -173,7 +177,8 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
     const _inputClassName = classnames(
       classes.input,
       classes.select,
-      inputClassName
+      inputClassName,
+      error && classes.error
     )
 
     const iconColor = disabled
@@ -203,6 +208,22 @@ const Select = forwardRef<HTMLInputElement, SelectProps>(
             color={iconColor}
           />
         </div>
+        {assistiveText && (
+          <div className={classes.bottom}>
+            <span className={classes.assistiveTextWrap}>
+              {assistiveText && (
+                <label
+                  className={classnames(
+                    classes.assistiveText,
+                    classes.assistiveError
+                  )}
+                >
+                  {assistiveText}
+                </label>
+              )}
+            </span>
+          </div>
+        )}
         {isOpen && (
           <Droplist
             items={droplistItems}
