@@ -1,3 +1,10 @@
+# [4.2.0-ct.31](https://github.com/occmundial/atomic/compare/v4.2.0-ct.30...v4.2.0-ct.31) (2025-11-06)
+
+
+### Features
+
+* Change font value ([96985c3](https://github.com/occmundial/atomic/commit/96985c35c172978bef5aed5a94b885845cc97a56))
+
 # [4.2.0-ct.30](https://github.com/occmundial/atomic/compare/v4.2.0-ct.29...v4.2.0-ct.30) (2025-10-29)
 
 
