@@ -1,4 +1,4 @@
-import { CT as brand } from '@/constants/index'
+import { OCC as brand } from '@/constants/index'
 import legacyColors from '@/tokens/colors'
 import colors from '@/tokens/future/colors.json'
 import spacing from '@/tokens/future/spacing.json'
