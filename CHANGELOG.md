@@ -1,3 +1,10 @@
+# [4.2.0-ct.32](https://github.com/occmundial/atomic/compare/v4.2.0-ct.31...v4.2.0-ct.32) (2025-11-19)
+
+
+### Bug Fixes
+
+* Pill OCC Font ([e81e3a2](https://github.com/occmundial/atomic/commit/e81e3a24e69d2a5a0650dd6826f2b8aae5c85186))
+
 # [4.2.0-ct.31](https://github.com/occmundial/atomic/compare/v4.2.0-ct.30...v4.2.0-ct.31) (2025-11-06)
 
 
