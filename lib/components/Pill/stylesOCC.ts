@@ -1,4 +1,3 @@
-import { CT as brand } from '@/constants/index'
 import colors from '@/tokens/future/colors.json'
 import spacing from '@/tokens/future/spacing.json'
 import fonts from '@/tokens/future/fonts.json'
@@ -47,9 +46,8 @@ const styles = {
     gap: `${spacing['size-4']} ${spacing['size-2']}`
   },
   label: {
-    font: objectToFontValue(fonts['text-field-label'], brand),
-    color: colors.text.corp.primary,
-    transition: '0.3s all'
+    font: objectToFontValue(fonts['text-field-label']),
+    color: colors.text.corp.primary
   }
 }
 
