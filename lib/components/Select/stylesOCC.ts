@@ -3,8 +3,6 @@ import newFonts from '@/tokens/future/fonts.json'
 import borderRadius from '@/tokens/future/borderRadius.json'
 import newSpacing from '@/tokens/future/spacing.json'
 import shadows from '@/tokens/future/shadows.json'
-import { OCC as brand } from '@/constants/index'
-
 import { objectToFontValue } from '@/utils/font'
 
 const placeholder = newFonts['text-field-placeholder']
@@ -33,7 +31,7 @@ const styles = {
     }
   },
   label: {
-    font: objectToFontValue(label, brand),
+    font: objectToFontValue(label),
     color: newColors['text'].corp.primary
   },
   inputWrap: {
@@ -48,7 +46,7 @@ const styles = {
     width: '100%',
     height: 48,
     color: newColors['text'].corp.primary,
-    font: objectToFontValue(placeholder, brand),
+    font: objectToFontValue(placeholder),
     background: newColors['text-field'].bg.default,
     borderRadius: borderRadius['br-xs'],
     padding: newSpacing['size-1'],
@@ -83,7 +81,7 @@ const styles = {
     paddingRight: newSpacing['size-8'],
     '& optgroup': {},
     '& option': {
-      font: objectToFontValue(placeholder, brand),
+      font: objectToFontValue(placeholder),
       color: newColors.text.corp.primary,
       background: newColors['text-field'].bg.default,
       border: `1px solid ${newColors['text-field'].border.default}`,
